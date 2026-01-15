@@ -6,17 +6,21 @@ type Props = {
 
 export default function LanguageSwitch({ current }: Props) {
   return (
-    <nav className="flex gap-2 text-sm print:hidden">
+    <nav className="flex gap-2 text-sm print:hidden text-slate-200">
       <Link
         href="/resume"
-        className={current === "pt" ? "font-semibold underline" : "underline"}
+        className={`rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
+          current === "pt" ? "font-semibold underline" : "underline"
+        }`}
       >
         PT
       </Link>
-      <span>|</span>
+      <span className="text-slate-500">|</span>
       <Link
         href="/resume/en"
-        className={current === "en" ? "font-semibold underline" : "underline"}
+        className={`rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
+          current === "en" ? "font-semibold underline" : "underline"
+        }`}
       >
         EN
       </Link>

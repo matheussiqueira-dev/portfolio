@@ -3,52 +3,48 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-12">
-      
-      {/* FOTO */}
-      <div className="flex-shrink-0">
-        <Image
-          src="/profile.jpg"
-          alt="Matheus Siqueira"
-          width={220}
-          height={220}
-          priority
-          className="rounded-full object-cover border"
-        />
-      </div>
+    <section className="px-6 pt-28 pb-20">
+      <div className="max-w-6xl mx-auto grid gap-12 md:grid-cols-[1.1fr_0.9fr] items-center">
+        <div className="flex flex-col gap-6 text-center md:text-left">
+          <p className="text-xs uppercase tracking-[0.3em] text-slate-400 motion-safe:animate-fade-up">
+            Tecnologia / Web / Dados / Infraestrutura
+          </p>
+          <h1 className="text-4xl md:text-5xl font-semibold leading-tight tracking-tight text-white motion-safe:animate-fade-up [animation-delay:120ms]">
+            Matheus Siqueira
+          </h1>
+          <p className="text-base md:text-lg leading-relaxed text-slate-300 motion-safe:animate-fade-up [animation-delay:220ms]">
+            Em formação em Ciência da Computação, com experiência prática em dados,
+            infraestrutura e desenvolvimento web. Trabalho com foco em impacto,
+            organização e entrega de soluções modernas.
+          </p>
 
-      {/* TEXTO */}
-      <div className="flex flex-col gap-6 text-center md:text-left max-w-2xl">
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-          Matheus Siqueira
-        </h1>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start motion-safe:animate-fade-up [animation-delay:320ms]">
+            <Link
+              href="/resume"
+              className="px-6 py-3 rounded-full border border-white/20 text-sm font-medium text-white transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+            >
+              Ver currículo
+            </Link>
 
-        <h2 className="text-lg md:text-xl text-neutral-600">
-          Profissional de Tecnologia · Web · Dados · Infraestrutura
-        </h2>
+            <Link
+              href="/#contact"
+              className="px-6 py-3 rounded-full bg-white text-sm font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+            >
+              Entrar em contato
+            </Link>
+          </div>
+        </div>
 
-        <p className="text-base leading-relaxed text-neutral-800">
-          Profissional de tecnologia em formação, atualmente cursando Ciência da Computação, 
-          com experiência prática em análise de dados, infraestrutura e desenvolvimento de 
-          aplicações web. Atuo com foco em soluções reais, organização de dados e construção 
-          de interfaces modernas e funcionais.
-        </p>
-
-        {/* AÇÕES */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-          <Link
-            href="/resume"
-            className="px-6 py-3 rounded border text-sm font-medium hover:bg-neutral-100 transition"
-          >
-            Ver Currículo
-          </Link>
-
-          <Link
-            href="#contact"
-            className="px-6 py-3 rounded bg-black text-white text-sm font-medium hover:opacity-90 transition"
-          >
-            Entrar em Contato
-          </Link>
+        <div className="flex justify-center md:justify-end motion-safe:animate-fade-in">
+          <Image
+            src="/profile.jpg"
+            alt="Matheus Siqueira"
+            width={320}
+            height={320}
+            sizes="(max-width: 768px) 220px, 320px"
+            priority
+            className="rounded-3xl object-cover border border-white/10 shadow-2xl"
+          />
         </div>
       </div>
     </section>

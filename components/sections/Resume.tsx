@@ -4,23 +4,20 @@ import LanguageSwitch from "../ui/LanguageSwitch";
 
 export default function Resume() {
   return (
-    <main className="max-w-3xl mx-auto flex flex-col gap-10 print:gap-6 print:px-0">
-      {/* HEADER */}
+    <main className="max-w-3xl mx-auto flex flex-col gap-10 text-slate-100 print:text-black print:gap-6 print:px-0">
       <header className="flex flex-col gap-3 print:gap-2">
-        <h1 className="text-4xl font-bold print:text-2xl">
+        <h1 className="text-4xl font-bold print:text-2xl text-white">
           {resume.name}
         </h1>
 
-        <p className="text-lg print:text-base">
+        <p className="text-lg print:text-base text-slate-300">
           {resume.role}
         </p>
 
-        {/* LANGUAGE SWITCH */}
         <LanguageSwitch current="pt" />
 
-        {/* CONTACT INFO */}
-        <div className="flex flex-col gap-1 text-sm">
-          <span>Recife, Pernambuco — Brasil</span>
+        <div className="flex flex-col gap-1 text-sm text-slate-300">
+          <span>Recife, Pernambuco - Brasil</span>
 
           <a
             href="mailto:matheussiqueirahub@gmail.com"
@@ -51,64 +48,59 @@ export default function Resume() {
             href="https://wa.me/5581999203683"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline w-fit text-green-600 font-medium"
+            className="underline w-fit text-emerald-400 font-medium"
           >
             WhatsApp
           </a>
         </div>
 
-        {/* PDF BUTTON */}
         <PrintButton />
       </header>
 
-      {/* RESUMO */}
       <section>
-        <h2 className="text-2xl font-semibold mb-2 print:text-lg">
+        <h2 className="text-2xl font-semibold mb-2 print:text-lg text-white">
           Resumo
         </h2>
-        <p>{resume.summary}</p>
+        <p className="text-slate-300">{resume.summary}</p>
       </section>
 
-      {/* EXPERIÊNCIA */}
       <section>
-        <h2 className="text-2xl font-semibold mb-4 print:text-lg">
+        <h2 className="text-2xl font-semibold mb-4 print:text-lg text-white">
           Experiência
         </h2>
 
         {resume.experience.map((item) => (
           <div key={item.company} className="mb-4">
-            <strong>
-              {item.role} — {item.company}
+            <strong className="text-slate-100">
+              {item.role} - {item.company}
             </strong>
-            <div className="text-sm">{item.period}</div>
-            <p>{item.description}</p>
+            <div className="text-sm text-slate-400">{item.period}</div>
+            <p className="text-slate-300">{item.description}</p>
           </div>
         ))}
       </section>
 
-      {/* FORMAÇÃO */}
       <section>
-        <h2 className="text-2xl font-semibold mb-4 print:text-lg">
+        <h2 className="text-2xl font-semibold mb-4 print:text-lg text-white">
           Formação
         </h2>
 
         {resume.education.map((item) => (
           <div key={item.institution} className="mb-2">
-            <strong>{item.course}</strong>
-            <div className="text-sm">
-              {item.institution} — {item.period}
+            <strong className="text-slate-100">{item.course}</strong>
+            <div className="text-sm text-slate-400">
+              {item.institution} - {item.period}
             </div>
           </div>
         ))}
       </section>
 
-      {/* COMPETÊNCIAS */}
       <section>
-        <h2 className="text-2xl font-semibold mb-4 print:text-lg">
+        <h2 className="text-2xl font-semibold mb-4 print:text-lg text-white">
           Competências
         </h2>
 
-        <ul className="list-disc list-inside">
+        <ul className="list-disc list-inside text-slate-300">
           {resume.skills.map((skill) => (
             <li key={skill}>{skill}</li>
           ))}

@@ -1,7 +1,7 @@
 function getCurrentPeriod(): number {
   const startPeriod = 3;
   const startYear = 2026;
-  const startMonth = 0; // janeiro
+  const startMonth = 0;
 
   const now = new Date();
   const monthsDiff =
@@ -24,7 +24,7 @@ export const resume = {
     {
       company: "Secretaria da Fazenda",
       role: "Analista de Dados (Estágio)",
-      period: "2025 — Atual",
+      period: "2025 - Atual",
       description:
         "Atuação com análise de dados, construção de dashboards em Power BI e suporte à tomada de decisão baseada em indicadores.",
     },
@@ -34,11 +34,11 @@ export const resume = {
     {
       institution: "Infinity School",
       course: "Programação Full Stack",
-      period: "2024 — Atual",
+      period: "2024 - Atual",
     },
     {
       institution: "UNIFG",
-      course: `Ciência da Computação — Bacharelado — ${getCurrentPeriod()}º período`,
+      course: `Ciência da Computação - Bacharelado - ${getCurrentPeriod()}º período`,
       period: "Em andamento",
     },
   ],
