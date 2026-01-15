@@ -1,10 +1,10 @@
-import Resume from "../../components/sections/Resume";
 import type { Metadata } from "next";
+import Resume from "../../components/sections/Resume";
 
 export const metadata: Metadata = {
-  title: "Currículo",
+  title: "Currículo | Matheus Siqueira",
   description:
-    "Currículo profissional de Matheus Siqueira — Desenvolvedor Frontend.",
+    "Currículo profissional de Matheus Siqueira, com foco em desenvolvimento web, dados e tecnologia.",
 };
 
 export default function ResumePage() {

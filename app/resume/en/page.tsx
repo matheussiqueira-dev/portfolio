@@ -1,9 +1,10 @@
-import { ResumeEn } from "../../../components/sections";
+import ResumeEn from "../../../components/sections/ResumeEn";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Resume | Matheus Siqueira",
-  description: "Frontend Developer resume in English.",
+  description:
+    "English resume of Matheus Siqueira, focused on web development, data, and technology.",
 };
 
 export default function ResumeEnPage() {

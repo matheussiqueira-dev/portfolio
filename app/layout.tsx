@@ -14,9 +14,35 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Matheus Siqueira | Tecnologia, Desenvolvimento e Dados",
+  metadataBase: new URL("https://www.matheussiqueira.dev"),
+  title: {
+    default: "Matheus Siqueira | Tecnologia, Web e Dados",
+    template: "%s | Matheus Siqueira",
+  },
   description:
-    "Portfólio profissional de Matheus Siqueira. Tecnologia, desenvolvimento web, dados e infraestrutura.",
+    "Portfólio profissional de Matheus Siqueira, com foco em tecnologia, desenvolvimento web, dados e infraestrutura.",
+  openGraph: {
+    title: "Matheus Siqueira | Tecnologia, Web e Dados",
+    description:
+      "Portfólio profissional de Matheus Siqueira, com foco em tecnologia, desenvolvimento web, dados e infraestrutura.",
+    url: "/",
+    siteName: "Matheus Siqueira",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: "/profile.jpg",
+        alt: "Matheus Siqueira",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Matheus Siqueira | Tecnologia, Web e Dados",
+    description:
+      "Portfólio profissional de Matheus Siqueira, com foco em tecnologia, desenvolvimento web, dados e infraestrutura.",
+    images: ["/profile.jpg"],
+  },
 };
 
 export default function RootLayout({
@@ -27,8 +53,13 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-[#0b0d10] text-slate-100 relative`}
       >
+        <div className="pointer-events-none fixed inset-0 -z-10" aria-hidden="true">
+          <div className="absolute -top-40 left-0 h-72 w-72 rounded-full bg-emerald-500/10 blur-3xl" />
+          <div className="absolute top-10 right-0 h-96 w-96 rounded-full bg-sky-500/10 blur-3xl" />
+          <div className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
+        </div>
         <Header />
         {children}
       </body>
