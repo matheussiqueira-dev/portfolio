@@ -17,8 +17,8 @@ export default function Projects() {
             Estudos de caso em destaque
           </h2>
           <p className="text-base text-slate-300 max-w-2xl">
-            Projetos que combinam produto digital, dados e automação, com foco em
-            clareza, performance e manutenção.
+            Projetos que combinam produto digital, dados e automa??o, com foco em
+            clareza, performance e manuten??o.
           </p>
         </div>
 

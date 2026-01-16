@@ -6,7 +6,7 @@ const navItems = [
   { href: "/#projects", label: "Projetos" },
   { href: "/projects", label: "Projects" },
   { href: "/#contact", label: "Contato" },
-  { href: "/resume", label: "Currículo" },
+  { href: "/resume", label: "Curr?culo" },
 ];
 
 const languageItems = [
@@ -27,7 +27,7 @@ export default function Header() {
 
         <nav
           className="hidden md:flex items-center gap-6 text-sm text-slate-300"
-          aria-label="Navegação principal"
+          aria-label="Navega??o principal"
         >
           {navItems.map((item) => (
             <Link

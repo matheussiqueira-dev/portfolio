@@ -46,9 +46,15 @@ export default function ProjectsPage() {
             Estudos de caso e projetos
           </h1>
           <p className="text-base md:text-lg text-slate-300 max-w-3xl">
-            Casos práticos que destacam soluções em dados, automação e
+            Casos pr?ticos que destacam solu??es em dados, automa??o e
             desenvolvimento web, com foco em clareza e entrega.
           </p>
+          <Link
+            href="/demos"
+            className="inline-flex w-fit text-sm text-emerald-200 underline decoration-emerald-400/50 underline-offset-4 transition hover:text-emerald-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
+          >
+            Ver p?gina de demos
+          </Link>
         </header>
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -113,9 +119,12 @@ export default function ProjectsPage() {
                     Abrir demo
                   </a>
                 ) : (
-                  <span className="rounded-full border border-white/10 px-4 py-2 text-slate-400">
-                    Demo: em breve
-                  </span>
+                  <Link
+                    href={`/projects/${project.slug}#capturas`}
+                    className="rounded-full border border-emerald-400/40 px-4 py-2 text-emerald-200 transition hover:border-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
+                  >
+                    Ver demonstra??o
+                  </Link>
                 )}
               </div>
             </article>

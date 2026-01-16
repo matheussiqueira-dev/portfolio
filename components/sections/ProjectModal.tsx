@@ -79,7 +79,7 @@ export default function ProjectModal({ project }: Props) {
         <div className="flex items-start justify-between gap-4">
           <h3 className="text-lg font-semibold text-white">{project.name}</h3>
           <span className="text-xs uppercase tracking-[0.3em] text-slate-400">
-            {project.year ?? "Case study"}
+            {project.year ?? "Projeto"}
           </span>
         </div>
 
@@ -136,9 +136,16 @@ export default function ProjectModal({ project }: Props) {
               rel="noopener noreferrer"
               className="text-xs text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
             >
-              Demo
+              Abrir demo
             </a>
-          ) : null}
+          ) : (
+            <Link
+              href={`/projects/${project.slug}#capturas`}
+              className="text-xs text-emerald-200 underline decoration-emerald-400/50 underline-offset-4 transition hover:text-emerald-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60 rounded"
+            >
+              Ver demonstra??o
+            </Link>
+          )}
         </div>
       </article>
 
@@ -238,12 +245,15 @@ export default function ProjectModal({ project }: Props) {
                   rel="noopener noreferrer"
                   className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                 >
-                  Ver demo
+                  Abrir demo
                 </a>
               ) : (
-                <span className="rounded-full border border-white/10 px-4 py-2 text-xs text-slate-400">
-                  Demo: em breve
-                </span>
+                <Link
+                  href={`/projects/${project.slug}#capturas`}
+                  className="rounded-full border border-emerald-400/40 px-4 py-2 text-xs font-semibold text-emerald-200 transition hover:border-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
+                >
+                  Ver demonstra??o
+                </Link>
               )}
               <Link
                 href={`/projects/${project.slug}`}

@@ -7,16 +7,17 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto grid gap-12 md:grid-cols-[1.1fr_0.9fr] items-center">
         <div className="flex flex-col gap-6 text-center md:text-left">
           <p className="text-xs uppercase tracking-[0.3em] text-slate-400 motion-safe:animate-fade-up">
-            Tecnologia, Desenvolvimento Web e Dados
+            Tecnologia ? Desenvolvimento Web ? Dados ? Infraestrutura
           </p>
           <h1 className="text-4xl md:text-5xl font-semibold leading-tight tracking-tight text-white motion-safe:animate-fade-up [animation-delay:120ms]">
             Matheus Siqueira
           </h1>
+          <p className="text-lg md:text-xl font-medium text-slate-100 motion-safe:animate-fade-up [animation-delay:160ms]">
+            Desenvolvimento web e dados para solu??es digitais confi?veis.
+          </p>
           <p className="text-base md:text-lg leading-relaxed text-slate-300 motion-safe:animate-fade-up [animation-delay:220ms]">
-            Em formação em Ciência da Computação, atuo entre desenvolvimento web,
-            dados e infraestrutura para transformar objetivos em produtos e
-            processos eficientes. Trabalho com foco em organização, entrega e
-            impacto mensurável.
+            Atuo do front-end ?s integra??es, combinando dados e automa??o para
+            entregar produtos claros, escal?veis e com impacto real.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start motion-safe:animate-fade-up [animation-delay:320ms]">
@@ -24,7 +25,7 @@ export default function Hero() {
               href="/resume"
               className="px-6 py-3 rounded-full border border-white/20 text-sm font-medium text-white transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
             >
-              Ver currículo
+              Ver curr?culo
             </Link>
 
             <Link

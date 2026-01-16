@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import MediaGallery from "@/components/ui/MediaGallery";
 import { projects } from "@/data/projects";
 
 type PageProps = {
@@ -24,8 +25,8 @@ export function generateMetadata({ params }: PageProps): Metadata {
 
   if (!project) {
     return {
-      title: "Projeto não encontrado | Matheus Siqueira",
-      description: "Projeto não encontrado.",
+      title: "Projeto n?o encontrado | Matheus Siqueira",
+      description: "Projeto n?o encontrado.",
     };
   }
 
@@ -33,7 +34,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
   const description = firstSentence
     ? `${project.tagline} ${firstSentence}.`
     : project.tagline;
-  const cover = project.screenshots[0];
+  const cover =
+    project.screenshots.find((shot) => shot.src.includes("/cover.")) ??
+    project.screenshots[0];
 
   return {
     title: `${project.name} | Matheus Siqueira`,
@@ -71,6 +74,13 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
     notFound();
   }
 
+  const cover =
+    project.screenshots.find((shot) => shot.src.includes("/cover.")) ??
+    project.screenshots[0];
+  const galleryItems = project.screenshots.filter(
+    (shot) => shot.src !== cover?.src
+  );
+
   return (
     <main className="min-h-screen px-6 py-24">
       <div className="max-w-6xl mx-auto">
@@ -100,7 +110,7 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
               rel="noopener noreferrer"
               className="rounded-full border border-white/20 px-4 py-2 text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
             >
-              GitHub
+              Ver no GitHub
             </a>
             {project.demoUrl ? (
               <a
@@ -112,17 +122,20 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
                 Abrir demo
               </a>
             ) : (
-              <span className="rounded-full border border-white/10 px-4 py-2 text-slate-400">
-                Demo: em breve
-              </span>
+              <Link
+                href="#como-executar"
+                className="rounded-full border border-emerald-400/40 px-4 py-2 font-semibold text-emerald-200 transition hover:border-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
+              >
+                Como executar localmente
+              </Link>
             )}
           </div>
 
-          {project.screenshots[0] ? (
+          {cover ? (
             <div className="rounded-3xl border border-white/10 bg-white/5 p-3">
               <Image
-                src={project.screenshots[0].src}
-                alt={project.screenshots[0].alt}
+                src={cover.src}
+                alt={cover.alt}
                 width={1200}
                 height={630}
                 sizes="(max-width: 768px) 100vw, 960px"
@@ -134,12 +147,12 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
         </header>
 
         <div className="mt-14 grid gap-12">
-          <section className="scroll-mt-20">
-            <h2 className="text-2xl font-semibold text-white mb-4">O que é</h2>
+          <section id="o-que-e" className="scroll-mt-20">
+            <h2 className="text-2xl font-semibold text-white mb-4">O que ?</h2>
             <p className="text-base text-slate-300">{project.tagline}</p>
           </section>
 
-          <section className="scroll-mt-20">
+          <section id="problema" className="scroll-mt-20">
             <h2 className="text-2xl font-semibold text-white mb-4">Problema</h2>
             <ul className="space-y-2 text-slate-300">
               {project.problem.map((item) => (
@@ -151,8 +164,8 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
             </ul>
           </section>
 
-          <section className="scroll-mt-20">
-            <h2 className="text-2xl font-semibold text-white mb-4">Solução</h2>
+          <section id="solucao" className="scroll-mt-20">
+            <h2 className="text-2xl font-semibold text-white mb-4">Solu??o</h2>
             <ul className="space-y-2 text-slate-300">
               {project.solution.map((item) => (
                 <li key={item} className="flex gap-2">
@@ -163,21 +176,21 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
             </ul>
           </section>
 
-          <section className="scroll-mt-20">
+          <section id="funcionalidades" className="scroll-mt-20">
             <h2 className="text-2xl font-semibold text-white mb-4">
               Funcionalidades
             </h2>
             <ul className="space-y-2 text-slate-300">
               {project.features.map((item) => (
                 <li key={item} className="flex gap-2">
-                  <span className="mt-1 text-emerald-400">✓</span>
+                  <span className="mt-1 text-emerald-400">?</span>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </section>
 
-          <section className="scroll-mt-20">
+          <section id="stack" className="scroll-mt-20">
             <h2 className="text-2xl font-semibold text-white mb-4">Stack</h2>
             <div className="flex flex-wrap gap-2">
               {project.stack.map((tech) => (
@@ -191,9 +204,9 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
             </div>
           </section>
 
-          <section className="scroll-mt-20">
+          <section id="como-executar" className="scroll-mt-20">
             <h2 className="text-2xl font-semibold text-white mb-4">
-              Como rodar local
+              Como executar
             </h2>
             <ol className="list-decimal list-inside space-y-2 text-slate-300">
               {project.howToRun.map((item) => (
@@ -202,7 +215,7 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
             </ol>
           </section>
 
-          <section className="scroll-mt-20">
+          <section id="links" className="scroll-mt-20">
             <h2 className="text-2xl font-semibold text-white mb-4">Links</h2>
             <div className="flex flex-wrap gap-3 text-sm">
               <a
@@ -230,27 +243,13 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
             </div>
           </section>
 
-          <section className="scroll-mt-20">
-            <h2 className="text-2xl font-semibold text-white mb-4">
-              Screenshots
-            </h2>
-            <div className="grid gap-6 md:grid-cols-2">
-              {project.screenshots.map((screenshot) => (
-                <div
-                  key={screenshot.src}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-3"
-                >
-                  <Image
-                    src={screenshot.src}
-                    alt={screenshot.alt}
-                    width={1200}
-                    height={630}
-                    sizes="(max-width: 768px) 100vw, 520px"
-                    className="w-full rounded-xl object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+          <section id="capturas" className="scroll-mt-20">
+            <h2 className="text-2xl font-semibold text-white mb-4">Capturas</h2>
+            <MediaGallery
+              items={galleryItems}
+              fallbackSrc={cover?.src}
+              fallbackAlt={cover?.alt ?? `Captura de ${project.name}`}
+            />
           </section>
         </div>
 
@@ -259,8 +258,8 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
             Vamos conversar sobre este projeto?
           </h2>
           <p className="text-slate-300 max-w-2xl">
-            Posso detalhar decisões técnicas, desafios e próximos passos. Se
-            quiser conversar, é só chamar.
+            Posso detalhar decis?es t?cnicas, desafios e pr?ximos passos. Se
+            quiser conversar, ? s? chamar.
           </p>
           <Link
             href="/#contact"

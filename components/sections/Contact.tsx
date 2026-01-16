@@ -7,12 +7,12 @@ export default function Contact() {
             Contato
           </p>
           <h2 className="text-3xl md:text-4xl font-semibold text-white">
-            Vamos conversar sobre o seu próximo projeto
+            Vamos tirar seu projeto do papel
           </h2>
           <p className="text-base md:text-lg text-slate-300 leading-relaxed">
-            Estou aberto a oportunidades em tecnologia, dados e desenvolvimento
-            web. Se você busca alguém com visão analítica, comunicação clara e
-            foco em entrega, me chama por qualquer canal abaixo.
+            Estou dispon?vel para oportunidades em tecnologia, dados e
+            desenvolvimento web. Me chama no canal que fizer mais sentido e eu
+            retorno r?pido.
           </p>
         </div>
 

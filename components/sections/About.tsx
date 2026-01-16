@@ -8,23 +8,18 @@ export default function About() {
               Sobre
             </p>
             <h2 className="text-3xl md:text-4xl font-semibold text-white mt-3">
-              Tecnologia com foco em valor real
+              Tecnologia com foco em execu??o
             </h2>
           </div>
 
           <div className="space-y-4 text-base md:text-lg leading-relaxed text-slate-300">
             <p>
-              Sou estudante de Ciência da Computação e desenvolvedor com foco
-              em criar soluções digitais completas, do front-end às integrações
-              de dados.
+              Sou estudante de Ci?ncia da Computa??o e desenvolvedor com foco em
+              construir produtos digitais claros, escal?veis e f?ceis de manter.
             </p>
             <p>
-              Tenho experiência com dashboards, automações e APIs, buscando
-              sempre performance, clareza e manutenção simples.
-            </p>
-            <p>
-              Quero atuar em projetos que conectem tecnologia, pessoas e
-              resultados de negócio.
+              Atuo com dados, integra??es e automa??o para transformar objetivos
+              de neg?cio em solu??es bem entregues.
             </p>
           </div>
 
@@ -43,15 +38,19 @@ export default function About() {
           <ul className="space-y-4 text-sm text-slate-300">
             <li>
               <p className="text-white font-semibold">Web</p>
-              <p>Interfaces, performance e acessibilidade com React e Next.js.</p>
+              <p>Interfaces responsivas e acess?veis com React e Next.js.</p>
             </li>
             <li>
               <p className="text-white font-semibold">Dados</p>
-              <p>Dashboards, SQL e visualizações que apoiam decisões rápidas.</p>
+              <p>SQL, dashboards e indicadores para decis?es r?pidas.</p>
             </li>
             <li>
-              <p className="text-white font-semibold">Infraestrutura</p>
-              <p>Automação, integração com APIs e boas práticas de entrega.</p>
+              <p className="text-white font-semibold">APIs</p>
+              <p>Integra??es, autentica??o e contratos bem definidos.</p>
+            </li>
+            <li>
+              <p className="text-white font-semibold">Infra e entrega</p>
+              <p>Automa??o, deploy e boas pr?ticas de versionamento.</p>
             </li>
           </ul>
         </div>

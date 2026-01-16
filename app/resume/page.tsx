@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Resume from "../../components/sections/Resume";
 
 export const metadata: Metadata = {
-  title: "Currículo | Matheus Siqueira",
+  title: "Curr?culo | Matheus Siqueira",
   description:
-    "Currículo profissional de Matheus Siqueira, com foco em desenvolvimento web, dados e tecnologia.",
+    "Curr?culo profissional de Matheus Siqueira, com foco em desenvolvimento web, dados e tecnologia.",
   openGraph: {
-    title: "Currículo | Matheus Siqueira",
+    title: "Curr?culo | Matheus Siqueira",
     description:
-      "Currículo profissional de Matheus Siqueira, com foco em desenvolvimento web, dados e tecnologia.",
+      "Curr?culo profissional de Matheus Siqueira, com foco em desenvolvimento web, dados e tecnologia.",
     url: "/resume",
     locale: "pt_BR",
     type: "website",
@@ -17,15 +17,15 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Currículo de Matheus Siqueira",
+        alt: "Curr?culo de Matheus Siqueira",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Currículo | Matheus Siqueira",
+    title: "Curr?culo | Matheus Siqueira",
     description:
-      "Currículo profissional de Matheus Siqueira, com foco em desenvolvimento web, dados e tecnologia.",
+      "Curr?culo profissional de Matheus Siqueira, com foco em desenvolvimento web, dados e tecnologia.",
     images: ["/og.png"],
   },
 };
