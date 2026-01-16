@@ -58,7 +58,7 @@ export default function MobileMenu({ navItems, languageItems }: Props) {
         onClick={() => setOpen((prev) => !prev)}
         className="inline-flex items-center justify-center rounded border border-white/15 px-3 py-2 text-sm text-white transition hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
       >
-        <span className="sr-only">Toggle menu</span>
+        <span className="sr-only">Abrir menu</span>
         <span className="relative block h-4 w-5">
           <span
             className={`absolute left-0 top-0 h-0.5 w-full bg-white transition ${

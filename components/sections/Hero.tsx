@@ -3,19 +3,20 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="px-6 pt-28 pb-20">
+    <section className="px-6 pt-28 pb-24">
       <div className="max-w-6xl mx-auto grid gap-12 md:grid-cols-[1.1fr_0.9fr] items-center">
         <div className="flex flex-col gap-6 text-center md:text-left">
           <p className="text-xs uppercase tracking-[0.3em] text-slate-400 motion-safe:animate-fade-up">
-            Tecnologia / Web / Dados / Infraestrutura
+            Tecnologia, Desenvolvimento Web e Dados
           </p>
           <h1 className="text-4xl md:text-5xl font-semibold leading-tight tracking-tight text-white motion-safe:animate-fade-up [animation-delay:120ms]">
             Matheus Siqueira
           </h1>
           <p className="text-base md:text-lg leading-relaxed text-slate-300 motion-safe:animate-fade-up [animation-delay:220ms]">
-            Em formação em Ciência da Computação, com experiência prática em dados,
-            infraestrutura e desenvolvimento web. Trabalho com foco em impacto,
-            organização e entrega de soluções modernas.
+            Em formação em Ciência da Computação, atuo entre desenvolvimento web,
+            dados e infraestrutura para transformar objetivos em produtos e
+            processos eficientes. Trabalho com foco em organização, entrega e
+            impacto mensurável.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start motion-safe:animate-fade-up [animation-delay:320ms]">
@@ -41,7 +42,7 @@ export default function Hero() {
             alt="Matheus Siqueira"
             width={320}
             height={320}
-            sizes="(max-width: 768px) 220px, 320px"
+            sizes="(max-width: 768px) 70vw, 320px"
             priority
             className="rounded-3xl object-cover border border-white/10 shadow-2xl"
           />

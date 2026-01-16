@@ -1,18 +1,18 @@
 export default function Contact() {
   return (
-    <section id="contact" className="scroll-mt-24 px-6 py-20">
+    <section id="contact" className="scroll-mt-24 px-6 py-24">
       <div className="max-w-6xl mx-auto grid gap-10 md:grid-cols-[1.1fr_0.9fr] items-start">
         <div className="space-y-4">
           <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
             Contato
           </p>
           <h2 className="text-3xl md:text-4xl font-semibold text-white">
-            Vamos conversar sobre seu próximo projeto
+            Vamos conversar sobre o seu próximo projeto
           </h2>
           <p className="text-base md:text-lg text-slate-300 leading-relaxed">
-            Estou disponível para oportunidades em tecnologia, dados e desenvolvimento
-            web. Se você precisa de alguém com visão analítica e foco em entrega,
-            me chama por qualquer canal abaixo.
+            Estou aberto a oportunidades em tecnologia, dados e desenvolvimento
+            web. Se você busca alguém com visão analítica, comunicação clara e
+            foco em entrega, me chama por qualquer canal abaixo.
           </p>
         </div>
 

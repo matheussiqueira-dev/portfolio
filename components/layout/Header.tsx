@@ -2,10 +2,11 @@ import Link from "next/link";
 import MobileMenu from "./MobileMenu";
 
 const navItems = [
-  { href: "/#about", label: "About" },
-  { href: "/#projects", label: "Projects" },
-  { href: "/#contact", label: "Contact" },
-  { href: "/resume", label: "Resume" },
+  { href: "/#about", label: "Sobre" },
+  { href: "/#projects", label: "Projetos" },
+  { href: "/projects", label: "Projects" },
+  { href: "/#contact", label: "Contato" },
+  { href: "/resume", label: "Currículo" },
 ];
 
 const languageItems = [

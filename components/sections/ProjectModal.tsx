@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import Link from "next/link";
 import type { Project } from "../../data/projects";
 
 const FOCUSABLE_SELECTOR =
@@ -14,6 +15,7 @@ export default function ProjectModal({ project }: Props) {
   const [open, setOpen] = useState(false);
   const titleId = useId();
   const descId = useId();
+  const dialogId = useId();
   const dialogRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const wasOpenRef = useRef(false);
@@ -75,15 +77,24 @@ export default function ProjectModal({ project }: Props) {
     <>
       <article className="rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col gap-4 transition hover:-translate-y-1 hover:border-white/20">
         <div className="flex items-start justify-between gap-4">
-          <h3 className="text-lg font-semibold text-white">{project.title}</h3>
+          <h3 className="text-lg font-semibold text-white">{project.name}</h3>
           <span className="text-xs uppercase tracking-[0.3em] text-slate-400">
-            Projeto
+            {project.year ?? "Case study"}
           </span>
         </div>
 
         <p className="text-sm leading-relaxed text-slate-300">
-          {project.summary}
+          {project.tagline}
         </p>
+
+        <ul className="space-y-2 text-sm text-slate-300">
+          {project.highlights.map((item) => (
+            <li key={item} className="flex gap-2">
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
 
         <ul className="flex flex-wrap gap-2 text-xs text-slate-200">
           {project.stack.map((tech) => (
@@ -102,6 +113,7 @@ export default function ProjectModal({ project }: Props) {
             type="button"
             onClick={() => setOpen(true)}
             aria-haspopup="dialog"
+            aria-controls={dialogId}
             aria-expanded={open}
             className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
           >
@@ -109,7 +121,7 @@ export default function ProjectModal({ project }: Props) {
           </button>
 
           <a
-            href={project.github}
+            href={project.repoUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
@@ -117,9 +129,9 @@ export default function ProjectModal({ project }: Props) {
             GitHub
           </a>
 
-          {project.demo ? (
+          {project.demoUrl ? (
             <a
-              href={project.demo}
+              href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
@@ -137,10 +149,12 @@ export default function ProjectModal({ project }: Props) {
         >
           <div
             ref={dialogRef}
+            id={dialogId}
             role="dialog"
             aria-modal="true"
             aria-labelledby={titleId}
             aria-describedby={descId}
+            tabIndex={-1}
             className="w-full max-w-2xl rounded-3xl border border-white/10 bg-[#0b0d10] p-8 text-slate-100 shadow-2xl motion-safe:animate-fade-in"
             onClick={(event) => event.stopPropagation()}
           >
@@ -150,7 +164,7 @@ export default function ProjectModal({ project }: Props) {
                   Detalhes do projeto
                 </p>
                 <h3 id={titleId} className="text-2xl font-semibold text-white">
-                  {project.title}
+                  {project.name}
                 </h3>
               </div>
               <button
@@ -168,10 +182,24 @@ export default function ProjectModal({ project }: Props) {
 
             <div className="mt-6">
               <h4 className="text-sm font-semibold text-white mb-3">
-                O que eu fiz / impacto
+                Destaques
               </h4>
               <ul className="space-y-2 text-sm text-slate-300">
-                {project.impact.map((item) => (
+                {project.highlights.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-6">
+              <h4 className="text-sm font-semibold text-white mb-3">
+                Funcionalidades
+              </h4>
+              <ul className="space-y-2 text-sm text-slate-300">
+                {project.features.map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
                     <span>{item}</span>
@@ -196,23 +224,33 @@ export default function ProjectModal({ project }: Props) {
 
             <div className="mt-8 flex flex-wrap gap-4">
               <a
-                href={project.github}
+                href={project.repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border border-white/20 px-4 py-2 text-xs text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
               >
                 GitHub
               </a>
-              {project.demo ? (
+              {project.demoUrl ? (
                 <a
-                  href={project.demo}
+                  href={project.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                 >
                   Ver demo
                 </a>
-              ) : null}
+              ) : (
+                <span className="rounded-full border border-white/10 px-4 py-2 text-xs text-slate-400">
+                  Demo: em breve
+                </span>
+              )}
+              <Link
+                href={`/projects/${project.slug}`}
+                className="rounded-full border border-emerald-400/40 px-4 py-2 text-xs font-semibold text-emerald-200 transition hover:border-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
+              >
+                Ver case completo
+              </Link>
             </div>
           </div>
         </div>

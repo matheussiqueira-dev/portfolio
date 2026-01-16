@@ -16,13 +16,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.matheussiqueira.dev"),
   title: {
-    default: "Matheus Siqueira | Tecnologia, Web e Dados",
+    default: "Matheus Siqueira | Tecnologia, Desenvolvimento Web e Dados",
     template: "%s | Matheus Siqueira",
   },
   description:
     "Portfólio profissional de Matheus Siqueira, com foco em tecnologia, desenvolvimento web, dados e infraestrutura.",
   openGraph: {
-    title: "Matheus Siqueira | Tecnologia, Web e Dados",
+    title: "Matheus Siqueira | Tecnologia, Desenvolvimento Web e Dados",
     description:
       "Portfólio profissional de Matheus Siqueira, com foco em tecnologia, desenvolvimento web, dados e infraestrutura.",
     url: "/",
@@ -31,17 +31,19 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/profile.jpg",
-        alt: "Matheus Siqueira",
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Matheus Siqueira - Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Matheus Siqueira | Tecnologia, Web e Dados",
+    title: "Matheus Siqueira | Tecnologia, Desenvolvimento Web e Dados",
     description:
       "Portfólio profissional de Matheus Siqueira, com foco em tecnologia, desenvolvimento web, dados e infraestrutura.",
-    images: ["/profile.jpg"],
+    images: ["/og.png"],
   },
 };
 
