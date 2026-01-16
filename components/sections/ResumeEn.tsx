@@ -1,4 +1,4 @@
-﻿import { resumeEn } from "@/data/resume.en";
+import { resumeEn } from "@/data/resume.en";
 import PrintButton from "../ui/PrintButton";
 import LanguageSwitch from "../ui/LanguageSwitch";
 
@@ -52,7 +52,7 @@ export default function ResumeEn() {
         </div>
 
         <div className="mt-6 flex flex-wrap items-center gap-4 print:hidden">
-          <LanguageSwitch current="en" />
+          <LanguageSwitch />
           <PrintButton label="Download Resume (PDF)" />
         </div>
       </header>
@@ -116,7 +116,7 @@ export default function ResumeEn() {
                   {item.course}
                 </p>
                 <p className="text-sm text-slate-400 print:text-slate-600">
-                  {item.institution} • {item.period}
+                  {item.institution} - {item.period}
                 </p>
               </div>
             ))}

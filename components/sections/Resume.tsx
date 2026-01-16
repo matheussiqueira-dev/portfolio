@@ -1,4 +1,4 @@
-﻿import { resume } from "@/data/resume";
+import { resume } from "@/data/resume";
 import PrintButton from "../ui/PrintButton";
 import LanguageSwitch from "../ui/LanguageSwitch";
 
@@ -9,7 +9,7 @@ export default function Resume() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
           <div className="space-y-3">
             <p className="text-xs uppercase tracking-[0.3em] text-slate-400 print:text-slate-600">
-              Currículo
+              Curriculo
             </p>
             <h1 className="text-4xl md:text-5xl font-semibold text-white print:text-black">
               {resume.name}
@@ -52,7 +52,7 @@ export default function Resume() {
         </div>
 
         <div className="mt-6 flex flex-wrap items-center gap-4 print:hidden">
-          <LanguageSwitch current="pt" />
+          <LanguageSwitch />
           <PrintButton />
         </div>
       </header>
@@ -67,7 +67,7 @@ export default function Resume() {
 
         <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-6 print:border-none print:bg-transparent print:p-0">
           <h2 className="text-xl font-semibold text-white print:text-black">
-            Experiência
+            Experiencia
           </h2>
           {resume.experience.map((item) => (
             <div key={item.company} className="space-y-2">
@@ -92,7 +92,7 @@ export default function Resume() {
         <aside className="space-y-8">
           <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
             <h2 className="text-xl font-semibold text-white print:text-black">
-              Competências
+              Competencias
             </h2>
             <div className="flex flex-wrap gap-2">
               {resume.skills.map((skill) => (
@@ -108,7 +108,7 @@ export default function Resume() {
 
           <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
             <h2 className="text-xl font-semibold text-white print:text-black">
-              Formação
+              Formacao
             </h2>
             {resume.education.map((item) => (
               <div key={item.institution} className="space-y-1">
@@ -116,7 +116,7 @@ export default function Resume() {
                   {item.course}
                 </p>
                 <p className="text-sm text-slate-400 print:text-slate-600">
-                  {item.institution} • {item.period}
+                  {item.institution} - {item.period}
                 </p>
               </div>
             ))}

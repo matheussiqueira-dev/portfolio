@@ -1,23 +1,32 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import type { Locale } from "@/lib/i18n";
-import { localizeHref } from "@/lib/i18n";
-import { siteCopy } from "@/lib/siteCopy";
-import { getProjectCopy, type Project } from "../../data/projects";
+import { useEffect, useId, useRef, useState } from "react";
+import type { Project } from "@/data/projects.types";
+import type { SiteContent } from "@/data/site.types";
 
 const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
 
 type Props = {
   project: Project;
-  locale?: Locale;
+  labels: SiteContent["projects"];
+  localePrefix?: string;
 };
 
-export default function ProjectModal({ project, locale = "pt" }: Props) {
-  const copy = siteCopy[locale].modal;
-  const projectCopy = getProjectCopy(project, locale);
+const getCover = (project: Project) =>
+  project.screenshots.find((shot) => shot.src.includes("cover")) ??
+  project.screenshots[0];
+
+const getHighlight = (project: Project) =>
+  project.features[0] ?? project.solution[0] ?? project.problem[0];
+
+export default function ProjectModal({
+  project,
+  labels,
+  localePrefix = "",
+}: Props) {
   const [open, setOpen] = useState(false);
   const titleId = useId();
   const descId = useId();
@@ -25,6 +34,11 @@ export default function ProjectModal({ project, locale = "pt" }: Props) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const wasOpenRef = useRef(false);
+  const cover = getCover(project);
+  const highlight = getHighlight(project);
+  const caseHref = localePrefix
+    ? `${localePrefix}/projects/${project.slug}`
+    : `/projects/${project.slug}`;
 
   useEffect(() => {
     if (open) {
@@ -82,25 +96,37 @@ export default function ProjectModal({ project, locale = "pt" }: Props) {
   return (
     <>
       <article className="rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col gap-4 transition hover:-translate-y-1 hover:border-white/20">
+        {cover ? (
+          <div className="relative aspect-[1200/630] w-full overflow-hidden rounded-xl border border-white/10">
+            <Image
+              src={cover.src}
+              alt={cover.alt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 520px"
+              className="object-cover"
+            />
+          </div>
+        ) : null}
+
         <div className="flex items-start justify-between gap-4">
-          <h3 className="text-lg font-semibold text-white">{project.name}</h3>
+          <h3 className="text-lg font-semibold text-white">{project.title}</h3>
           <span className="text-xs uppercase tracking-[0.3em] text-slate-400">
-            {project.year ?? copy.projectLabel}
+            {labels.cardLabel}
           </span>
         </div>
 
         <p className="text-sm leading-relaxed text-slate-300">
-          {projectCopy.tagline}
+          {project.tagline}
         </p>
 
-        <ul className="space-y-2 text-sm text-slate-300">
-          {projectCopy.highlights.map((item) => (
-            <li key={item} className="flex gap-2">
-              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
+        {highlight ? (
+          <div className="space-y-1">
+            <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+              {labels.highlightLabel}
+            </p>
+            <p className="text-sm text-slate-300">{highlight}</p>
+          </div>
+        ) : null}
 
         <ul className="flex flex-wrap gap-2 text-xs text-slate-200">
           {project.stack.map((tech) => (
@@ -123,8 +149,15 @@ export default function ProjectModal({ project, locale = "pt" }: Props) {
             aria-expanded={open}
             className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
           >
-            {copy.viewDetails}
+            {labels.detailsLabel}
           </button>
+
+          <Link
+            href={caseHref}
+            className="text-xs text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
+          >
+            {labels.caseLabel}
+          </Link>
 
           <a
             href={project.repoUrl}
@@ -132,7 +165,7 @@ export default function ProjectModal({ project, locale = "pt" }: Props) {
             rel="noopener noreferrer"
             className="text-xs text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
           >
-            {copy.github}
+            {labels.modal.githubLabel}
           </a>
 
           {project.demoUrl ? (
@@ -142,16 +175,9 @@ export default function ProjectModal({ project, locale = "pt" }: Props) {
               rel="noopener noreferrer"
               className="text-xs text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
             >
-              {copy.openDemo}
+              {labels.modal.demoLabel}
             </a>
-          ) : (
-            <Link
-              href={localizeHref(`/projects/${project.slug}#capturas`, locale)}
-              className="text-xs text-emerald-200 underline decoration-emerald-400/50 underline-offset-4 transition hover:text-emerald-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60 rounded"
-            >
-              {copy.viewDemo}
-            </Link>
-          )}
+          ) : null}
         </div>
       </article>
 
@@ -168,16 +194,16 @@ export default function ProjectModal({ project, locale = "pt" }: Props) {
             aria-labelledby={titleId}
             aria-describedby={descId}
             tabIndex={-1}
-            className="w-full max-w-2xl rounded-3xl border border-white/10 bg-[#0b0d10] p-8 text-slate-100 shadow-2xl motion-safe:animate-fade-in"
+            className="w-full max-w-3xl rounded-3xl border border-white/10 bg-[#0b0d10] p-8 text-slate-100 shadow-2xl motion-safe:animate-fade-in"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-start justify-between gap-6">
               <div>
                 <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
-                  {copy.projectDetails}
+                  {labels.modal.title}
                 </p>
                 <h3 id={titleId} className="text-2xl font-semibold text-white">
-                  {project.name}
+                  {project.title}
                 </h3>
               </div>
               <button
@@ -185,90 +211,95 @@ export default function ProjectModal({ project, locale = "pt" }: Props) {
                 onClick={() => setOpen(false)}
                 className="rounded-full border border-white/20 px-3 py-1 text-xs text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
               >
-                {copy.close}
+                {labels.modal.closeLabel}
               </button>
             </div>
 
-            <p id={descId} className="mt-4 text-sm text-slate-300">
-              {projectCopy.description}
-            </p>
+            <div id={descId} className="mt-6 space-y-6">
+              <section>
+                <h4 className="text-sm font-semibold text-white mb-3">
+                  {labels.modal.problemTitle}
+                </h4>
+                <ul className="space-y-2 text-sm text-slate-300">
+                  {project.problem.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-amber-400" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
 
-            <div className="mt-6">
-              <h4 className="text-sm font-semibold text-white mb-3">
-                {copy.highlights}
-              </h4>
-              <ul className="space-y-2 text-sm text-slate-300">
-                {projectCopy.highlights.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+              <section>
+                <h4 className="text-sm font-semibold text-white mb-3">
+                  {labels.modal.solutionTitle}
+                </h4>
+                <ul className="space-y-2 text-sm text-slate-300">
+                  {project.solution.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
 
-            <div className="mt-6">
-              <h4 className="text-sm font-semibold text-white mb-3">
-                {copy.features}
-              </h4>
-              <ul className="space-y-2 text-sm text-slate-300">
-                {projectCopy.features.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+              <section>
+                <h4 className="text-sm font-semibold text-white mb-3">
+                  {labels.modal.featuresTitle}
+                </h4>
+                <ul className="space-y-2 text-sm text-slate-300">
+                  {project.features.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-sky-400" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
 
-            <div className="mt-6">
-              <h4 className="text-sm font-semibold text-white mb-3">
-                {copy.stack}
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {project.stack.map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-200"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+              <section>
+                <h4 className="text-sm font-semibold text-white mb-3">
+                  {labels.modal.stackTitle}
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-200"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </section>
             </div>
 
             <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href={caseHref}
+                className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+              >
+                {labels.modal.caseCta}
+              </Link>
               <a
                 href={project.repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border border-white/20 px-4 py-2 text-xs text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
               >
-                {copy.github}
+                {labels.modal.githubLabel}
               </a>
               {project.demoUrl ? (
                 <a
                   href={project.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                  className="rounded-full border border-white/20 px-4 py-2 text-xs text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                 >
-                  {copy.openDemo}
+                  {labels.modal.demoLabel}
                 </a>
-              ) : (
-                <Link
-                  href={localizeHref(`/projects/${project.slug}#capturas`, locale)}
-                  className="rounded-full border border-emerald-400/40 px-4 py-2 text-xs font-semibold text-emerald-200 transition hover:border-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
-                >
-                  {copy.viewDemo}
-                </Link>
-              )}
-              <Link
-                href={localizeHref(`/projects/${project.slug}`, locale)}
-                className="rounded-full border border-emerald-400/40 px-4 py-2 text-xs font-semibold text-emerald-200 transition hover:border-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
-              >
-                {copy.fullCase}
-              </Link>
+              ) : null}
             </div>
           </div>
         </div>

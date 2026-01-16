@@ -1,4 +1,4 @@
-﻿function getCurrentPeriod(): number {
+function getCurrentPeriod(): number {
   const startPeriod = 3;
   const startYear = 2026;
   const startMonth = 0;
@@ -15,46 +15,40 @@
 
 export const resume = {
   name: "Matheus Siqueira",
-  role: "Desenvolvedor Web e Dados",
-
+  role: "Analista de Dados Junior",
   summary:
-    "Estudante de Ciência da Computação com foco em desenvolvimento web, dados e automação. Experiência com React, Next.js, APIs e análise de dados para apoiar decisões. Busco entregar soluções claras, escaláveis e fáceis de manter.",
-
+    "Analista de Dados Junior com foco em BI, SQL e automacao. Experiencia com Power BI, DAX, Power Query e Python para analise, ETL e indicadores de decisao em ambientes publicos e fiscais.",
   experience: [
     {
-      company: "Secretaria da Fazenda",
-      role: "Analista de Dados (Estágio)",
+      company: "Secretaria da Fazenda do Estado de Pernambuco",
+      role: "Analista de Dados (Estagio)",
       period: "2025 - Atual",
       description:
-        "Análise de dados, construção de dashboards no Power BI e suporte à tomada de decisão com indicadores de desempenho.",
+        "Dashboards em Power BI, analise SQL e automacao com Python para consolidar dados fiscais e apoiar decisoes gerenciais.",
     },
   ],
-
   education: [
     {
       institution: "Infinity School",
-      course: "Programação Full Stack",
+      course: "Programacao Full Stack",
       period: "2024 - Atual",
     },
     {
       institution: "UNIFG",
-      course: `Ciência da Computação — Bacharelado — ${getCurrentPeriod()}º período`,
+      course: `Ciencia da Computacao - Bacharelado - ${getCurrentPeriod()} periodo`,
       period: "Em andamento",
     },
   ],
-
   skills: [
+    "Power BI",
+    "SQL",
+    "DAX",
+    "Power Query",
+    "Python",
+    "Pandas",
+    "FastAPI",
+    "Git",
     "React",
     "Next.js",
-    "TypeScript",
-    "JavaScript",
-    "HTML",
-    "CSS",
-    "Tailwind CSS",
-    "Python",
-    "FastAPI",
-    "SQL",
-    "Power BI",
-    "Git",
   ],
 };

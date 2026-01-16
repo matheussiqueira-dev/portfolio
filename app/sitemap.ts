@@ -1,4 +1,4 @@
-﻿import type { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -61,7 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/resume/en`,
+      url: `${baseUrl}/en/resume`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,

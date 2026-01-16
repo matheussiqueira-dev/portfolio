@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 
@@ -33,7 +33,8 @@ export default function MediaGallery({
   fallbackAlt,
   videoFallbackText,
 }: Props) {
-  const fallbackText = videoFallbackText ?? "Seu navegador não suporta vídeo HTML5.";
+  const fallbackText =
+    videoFallbackText ?? "Seu navegador nao suporta video HTML5.";
   const normalizedItems =
     items.length > 0
       ? items

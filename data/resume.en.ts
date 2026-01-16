@@ -1,20 +1,17 @@
-﻿export const resumeEn = {
+export const resumeEn = {
   name: "Matheus Siqueira",
-  role: "Web and Data Developer",
-
+  role: "Junior Data Analyst",
   summary:
-    "Computer Science student focused on web development, data, and automation. Experience with React, Next.js, APIs, and data analysis to support decision-making. I build clear, scalable, and maintainable solutions.",
-
+    "Junior Data Analyst focused on BI, SQL, and automation. Experience with Power BI, DAX, Power Query, and Python for analysis, ETL, and decision-ready indicators in public and fiscal contexts.",
   experience: [
     {
-      company: "State Treasury Department",
+      company: "Pernambuco State Treasury",
       role: "Data Analyst Intern",
       period: "2025 - Present",
       description:
-        "Data analysis, Power BI dashboards, and decision support based on performance indicators.",
+        "Power BI dashboards, SQL analysis, and Python automation to consolidate fiscal data and support leadership decisions.",
     },
   ],
-
   education: [
     {
       institution: "Infinity School",
@@ -23,23 +20,20 @@
     },
     {
       institution: "UNIFG",
-      course: "Computer Science — Bachelor's Degree",
+      course: "Computer Science - Bachelor's Degree",
       period: "In progress",
     },
   ],
-
   skills: [
+    "Power BI",
+    "SQL",
+    "DAX",
+    "Power Query",
+    "Python",
+    "Pandas",
+    "FastAPI",
+    "Git",
     "React",
     "Next.js",
-    "TypeScript",
-    "JavaScript",
-    "HTML",
-    "CSS",
-    "Tailwind CSS",
-    "Python",
-    "FastAPI",
-    "SQL",
-    "Power BI",
-    "Git",
   ],
 };

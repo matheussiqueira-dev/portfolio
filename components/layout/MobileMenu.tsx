@@ -1,34 +1,26 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
+import LanguageSwitch from "@/components/ui/LanguageSwitch";
 
 type NavItem = {
   href: string;
   label: string;
 };
 
-type LanguageItem = {
-  href: string;
-  label: string;
-  flagSrc: string;
-  flagAlt: string;
-};
-
 type Props = {
   navItems: NavItem[];
-  languageItems: LanguageItem[];
-  navLabel: string;
   languageLabel: string;
-  openMenuLabel: string;
+  menuLabel: string;
+  toggleLabel: string;
 };
 
 export default function MobileMenu({
   navItems,
-  languageItems,
-  navLabel,
   languageLabel,
-  openMenuLabel,
+  menuLabel,
+  toggleLabel,
 }: Props) {
   const [open, setOpen] = useState(false);
   const menuId = useId();
@@ -67,7 +59,7 @@ export default function MobileMenu({
         onClick={() => setOpen((prev) => !prev)}
         className="inline-flex items-center justify-center rounded border border-white/15 px-3 py-2 text-sm text-white transition hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
       >
-        <span className="sr-only">{openMenuLabel}</span>
+        <span className="sr-only">{toggleLabel}</span>
         <span className="relative block h-4 w-5">
           <span
             className={`absolute left-0 top-0 h-0.5 w-full bg-white transition ${
@@ -99,7 +91,10 @@ export default function MobileMenu({
             className="absolute right-0 top-0 h-full w-72 bg-[#0b0d10] px-6 py-8 shadow-xl motion-safe:animate-fade-in"
             onClick={(event) => event.stopPropagation()}
           >
-            <nav className="flex flex-col gap-4 text-base text-slate-100" aria-label={navLabel}>
+            <nav
+              className="flex flex-col gap-4 text-base text-slate-100"
+              aria-label={menuLabel}
+            >
               {navItems.map((item) => (
                 <Link
                   key={item.href}
@@ -116,25 +111,11 @@ export default function MobileMenu({
               <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
                 {languageLabel}
               </p>
-              <div className="mt-4 flex flex-col gap-3 text-sm text-slate-200">
-                {languageItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className="flex items-center gap-2 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={item.flagSrc}
-                      alt={item.flagAlt}
-                      width={18}
-                      height={18}
-                      className="rounded-sm"
-                    />
-                    {item.label}
-                  </Link>
-                ))}
+              <div className="mt-4 text-sm text-slate-200">
+                <LanguageSwitch
+                  direction="column"
+                  onNavigate={() => setOpen(false)}
+                />
               </div>
             </div>
           </div>

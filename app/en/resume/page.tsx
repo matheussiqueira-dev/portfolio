@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Resume from "@/components/sections/Resume";
+import ResumeEn from "@/components/sections/ResumeEn";
 
 export const metadata: Metadata = {
-  title: "Curriculo | Matheus Siqueira",
+  title: "Resume | Matheus Siqueira",
   description:
-    "Curriculo profissional de Matheus Siqueira com foco em dados, BI e automacao.",
+    "English resume of Matheus Siqueira focused on data, BI, and automation.",
   alternates: {
     languages: {
       "pt-BR": "/resume",
@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ResumePage() {
+export default function ResumeEnPage() {
   return (
     <main className="min-h-screen px-6 py-20">
-      <Resume />
+      <ResumeEn />
     </main>
   );
 }

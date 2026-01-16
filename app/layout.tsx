@@ -16,15 +16,16 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.matheussiqueira.dev"),
   title: {
-    default: "Matheus Siqueira | Tecnologia, Desenvolvimento Web e Dados",
+    default:
+      "Matheus Siqueira | Analista de Dados Junior (Power BI, SQL, Python)",
     template: "%s | Matheus Siqueira",
   },
   description:
-    "Portfólio profissional de Matheus Siqueira, com foco em tecnologia, desenvolvimento web, dados e infraestrutura.",
+    "Portfolio de Matheus Siqueira, Analista de Dados Junior em Recife. BI com Power BI, analise SQL, automacao Python e dados publicos.",
   openGraph: {
-    title: "Matheus Siqueira | Tecnologia, Desenvolvimento Web e Dados",
+    title: "Matheus Siqueira | Analista de Dados Junior (Power BI, SQL, Python)",
     description:
-      "Portfólio profissional de Matheus Siqueira, com foco em tecnologia, desenvolvimento web, dados e infraestrutura.",
+      "Portfolio de Matheus Siqueira, Analista de Dados Junior em Recife. BI com Power BI, analise SQL, automacao Python e dados publicos.",
     url: "/",
     siteName: "Matheus Siqueira",
     locale: "pt_BR",
@@ -34,15 +35,15 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Matheus Siqueira - Portfólio",
+        alt: "Matheus Siqueira - Analista de Dados Junior",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Matheus Siqueira | Tecnologia, Desenvolvimento Web e Dados",
+    title: "Matheus Siqueira | Analista de Dados Junior (Power BI, SQL, Python)",
     description:
-      "Portfólio profissional de Matheus Siqueira, com foco em tecnologia, desenvolvimento web, dados e infraestrutura.",
+      "Portfolio de Matheus Siqueira, Analista de Dados Junior em Recife. BI com Power BI, analise SQL, automacao Python e dados publicos.",
     images: ["/og.png"],
   },
 };
@@ -55,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-[#0b0d10] text-slate-100 relative`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-[#0b0d10] text-slate-100 relative pt-16`}
       >
         <div className="pointer-events-none fixed inset-0 -z-10" aria-hidden="true">
           <div className="absolute -top-40 left-0 h-72 w-72 rounded-full bg-emerald-500/10 blur-3xl" />
