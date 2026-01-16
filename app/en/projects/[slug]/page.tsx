@@ -20,13 +20,13 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({ params }: PageProps): Metadata {
-  const locale = "pt";
+  const locale = "en";
   const project = getProjectBySlug(params.slug);
 
   if (!project) {
     return {
-      title: "Projeto não encontrado | Matheus Siqueira",
-      description: "Projeto não encontrado.",
+      title: "Project not found | Matheus Siqueira",
+      description: "Project not found.",
     };
   }
 
@@ -43,12 +43,12 @@ export function generateMetadata({ params }: PageProps): Metadata {
     title: `${project.name} | Matheus Siqueira`,
     description,
     alternates: {
-      canonical: `/projects/${project.slug}`,
+      canonical: `/en/projects/${project.slug}`,
     },
     openGraph: {
       title: `${project.name} | Matheus Siqueira`,
       description,
-      url: `/projects/${project.slug}`,
+      url: `/en/projects/${project.slug}`,
       type: "article",
       images: [
         {
@@ -68,8 +68,8 @@ export function generateMetadata({ params }: PageProps): Metadata {
   };
 }
 
-export default function ProjectCaseStudyPage({ params }: PageProps) {
-  const locale = "pt";
+export default function ProjectCaseStudyPageEn({ params }: PageProps) {
+  const locale = "en";
   const copy = siteCopy[locale].caseStudy;
   const mediaCopy = siteCopy[locale].media;
   const project = getProjectBySlug(params.slug);
@@ -265,7 +265,7 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
             <MediaGallery
               items={galleryItems}
               fallbackSrc={cover?.src}
-              fallbackAlt={cover?.alt ?? `Captura de ${project.name}`}
+              fallbackAlt={cover?.alt ?? `Screenshot of ${project.name}`}
               videoFallbackText={mediaCopy.videoFallback}
             />
           </section>
@@ -275,9 +275,7 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
           <h2 className="text-2xl font-semibold text-white">
             {copy.ctaTitle}
           </h2>
-          <p className="text-slate-300 max-w-2xl">
-            {copy.ctaBody}
-          </p>
+          <p className="text-slate-300 max-w-2xl">{copy.ctaBody}</p>
           <Link
             href={localizeHref("/#contact", locale)}
             className="w-fit rounded-full bg-white px-5 py-2 text-sm font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"

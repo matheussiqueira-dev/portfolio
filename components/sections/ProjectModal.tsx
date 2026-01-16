@@ -2,16 +2,22 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
-import type { Project } from "../../data/projects";
+import type { Locale } from "@/lib/i18n";
+import { localizeHref } from "@/lib/i18n";
+import { siteCopy } from "@/lib/siteCopy";
+import { getProjectCopy, type Project } from "../../data/projects";
 
 const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
 
 type Props = {
   project: Project;
+  locale?: Locale;
 };
 
-export default function ProjectModal({ project }: Props) {
+export default function ProjectModal({ project, locale = "pt" }: Props) {
+  const copy = siteCopy[locale].modal;
+  const projectCopy = getProjectCopy(project, locale);
   const [open, setOpen] = useState(false);
   const titleId = useId();
   const descId = useId();
@@ -79,16 +85,16 @@ export default function ProjectModal({ project }: Props) {
         <div className="flex items-start justify-between gap-4">
           <h3 className="text-lg font-semibold text-white">{project.name}</h3>
           <span className="text-xs uppercase tracking-[0.3em] text-slate-400">
-            {project.year ?? "Projeto"}
+            {project.year ?? copy.projectLabel}
           </span>
         </div>
 
         <p className="text-sm leading-relaxed text-slate-300">
-          {project.tagline}
+          {projectCopy.tagline}
         </p>
 
         <ul className="space-y-2 text-sm text-slate-300">
-          {project.highlights.map((item) => (
+          {projectCopy.highlights.map((item) => (
             <li key={item} className="flex gap-2">
               <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400" />
               <span>{item}</span>
@@ -117,7 +123,7 @@ export default function ProjectModal({ project }: Props) {
             aria-expanded={open}
             className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
           >
-            Ver detalhes
+            {copy.viewDetails}
           </button>
 
           <a
@@ -126,7 +132,7 @@ export default function ProjectModal({ project }: Props) {
             rel="noopener noreferrer"
             className="text-xs text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
           >
-            GitHub
+            {copy.github}
           </a>
 
           {project.demoUrl ? (
@@ -136,14 +142,14 @@ export default function ProjectModal({ project }: Props) {
               rel="noopener noreferrer"
               className="text-xs text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
             >
-              Abrir demo
+              {copy.openDemo}
             </a>
           ) : (
             <Link
-              href={`/projects/${project.slug}#capturas`}
+              href={localizeHref(`/projects/${project.slug}#capturas`, locale)}
               className="text-xs text-emerald-200 underline decoration-emerald-400/50 underline-offset-4 transition hover:text-emerald-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60 rounded"
             >
-              Ver demonstra??o
+              {copy.viewDemo}
             </Link>
           )}
         </div>
@@ -168,7 +174,7 @@ export default function ProjectModal({ project }: Props) {
             <div className="flex items-start justify-between gap-6">
               <div>
                 <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
-                  Detalhes do projeto
+                  {copy.projectDetails}
                 </p>
                 <h3 id={titleId} className="text-2xl font-semibold text-white">
                   {project.name}
@@ -179,20 +185,20 @@ export default function ProjectModal({ project }: Props) {
                 onClick={() => setOpen(false)}
                 className="rounded-full border border-white/20 px-3 py-1 text-xs text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
               >
-                Fechar
+                {copy.close}
               </button>
             </div>
 
             <p id={descId} className="mt-4 text-sm text-slate-300">
-              {project.description}
+              {projectCopy.description}
             </p>
 
             <div className="mt-6">
               <h4 className="text-sm font-semibold text-white mb-3">
-                Destaques
+                {copy.highlights}
               </h4>
               <ul className="space-y-2 text-sm text-slate-300">
-                {project.highlights.map((item) => (
+                {projectCopy.highlights.map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
                     <span>{item}</span>
@@ -203,10 +209,10 @@ export default function ProjectModal({ project }: Props) {
 
             <div className="mt-6">
               <h4 className="text-sm font-semibold text-white mb-3">
-                Funcionalidades
+                {copy.features}
               </h4>
               <ul className="space-y-2 text-sm text-slate-300">
-                {project.features.map((item) => (
+                {projectCopy.features.map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
                     <span>{item}</span>
@@ -216,7 +222,9 @@ export default function ProjectModal({ project }: Props) {
             </div>
 
             <div className="mt-6">
-              <h4 className="text-sm font-semibold text-white mb-3">Stack</h4>
+              <h4 className="text-sm font-semibold text-white mb-3">
+                {copy.stack}
+              </h4>
               <div className="flex flex-wrap gap-2">
                 {project.stack.map((tech) => (
                   <span
@@ -236,7 +244,7 @@ export default function ProjectModal({ project }: Props) {
                 rel="noopener noreferrer"
                 className="rounded-full border border-white/20 px-4 py-2 text-xs text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
               >
-                GitHub
+                {copy.github}
               </a>
               {project.demoUrl ? (
                 <a
@@ -245,21 +253,21 @@ export default function ProjectModal({ project }: Props) {
                   rel="noopener noreferrer"
                   className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                 >
-                  Abrir demo
+                  {copy.openDemo}
                 </a>
               ) : (
                 <Link
-                  href={`/projects/${project.slug}#capturas`}
+                  href={localizeHref(`/projects/${project.slug}#capturas`, locale)}
                   className="rounded-full border border-emerald-400/40 px-4 py-2 text-xs font-semibold text-emerald-200 transition hover:border-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
                 >
-                  Ver demonstra??o
+                  {copy.viewDemo}
                 </Link>
               )}
               <Link
-                href={`/projects/${project.slug}`}
+                href={localizeHref(`/projects/${project.slug}`, locale)}
                 className="rounded-full border border-emerald-400/40 px-4 py-2 text-xs font-semibold text-emerald-200 transition hover:border-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
               >
-                Ver case completo
+                {copy.fullCase}
               </Link>
             </div>
           </div>

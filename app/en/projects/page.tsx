@@ -7,19 +7,19 @@ import { siteCopy } from "@/lib/siteCopy";
 export const metadata: Metadata = {
   title: "Projects | Matheus Siqueira",
   description:
-    "Lista de projetos e estudos de caso com foco em tecnologia, dados e desenvolvimento web.",
+    "List of projects and case studies focused on technology, data, and web development.",
   openGraph: {
     title: "Projects | Matheus Siqueira",
     description:
-      "Lista de projetos e estudos de caso com foco em tecnologia, dados e desenvolvimento web.",
-    url: "/projects",
+      "List of projects and case studies focused on technology, data, and web development.",
+    url: "/en/projects",
     type: "website",
     images: [
       {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Projetos de Matheus Siqueira",
+        alt: "Projects by Matheus Siqueira",
       },
     ],
   },
@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Projects | Matheus Siqueira",
     description:
-      "Lista de projetos e estudos de caso com foco em tecnologia, dados e desenvolvimento web.",
+      "List of projects and case studies focused on technology, data, and web development.",
     images: ["/og.png"],
   },
 };
 
-export default function ProjectsPage() {
-  const locale = "pt";
+export default function ProjectsPageEn() {
+  const locale = "en";
   const copy = siteCopy[locale].projectsPage;
   const sortedProjects = [...projects].sort(
     (a, b) => Number(b.featured) - Number(a.featured)

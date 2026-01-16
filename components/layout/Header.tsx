@@ -1,25 +1,58 @@
+﻿"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { getLocaleFromPath, localizeHref } from "@/lib/i18n";
+import { siteCopy } from "@/lib/siteCopy";
 import MobileMenu from "./MobileMenu";
 
-const navItems = [
-  { href: "/#about", label: "Sobre" },
-  { href: "/#projects", label: "Projetos" },
-  { href: "/projects", label: "Projects" },
-  { href: "/#contact", label: "Contato" },
-  { href: "/resume", label: "Curr?culo" },
-];
+type NavItem = {
+  href: string;
+  label: string;
+};
 
-const languageItems = [
-  { href: "/", label: "PT-BR", flagSrc: "/flags/br.png", flagAlt: "PT-BR" },
-  { href: "/resume/en", label: "EN-US", flagSrc: "/flags/us.png", flagAlt: "EN-US" },
-];
+type LanguageItem = {
+  href: string;
+  label: string;
+  flagSrc: string;
+  flagAlt: string;
+};
 
 export default function Header() {
+  const pathname = usePathname() ?? "/";
+  const locale = getLocaleFromPath(pathname);
+  const copy = siteCopy[locale].nav;
+
+  const navItems: NavItem[] = [
+    { href: "/#about", label: copy.about },
+    { href: "/projects", label: copy.projects },
+    { href: "/#contact", label: copy.contact },
+    { href: "/resume", label: copy.resume },
+  ].map((item) => ({
+    ...item,
+    href: localizeHref(item.href, locale),
+  }));
+
+  const languageItems: LanguageItem[] = [
+    {
+      href: localizeHref(pathname, "pt"),
+      label: "PT-BR",
+      flagSrc: "/flags/br.png",
+      flagAlt: "Português",
+    },
+    {
+      href: localizeHref(pathname, "en"),
+      label: "EN-US",
+      flagSrc: "/flags/us.png",
+      flagAlt: "English",
+    },
+  ];
+
   return (
     <header className="fixed top-0 w-full z-50 border-b border-white/10 bg-[#0b0d10]/80 backdrop-blur">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link
-          href="/"
+          href={localizeHref("/", locale)}
           className="font-semibold text-white tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
         >
           Matheus Siqueira
@@ -27,7 +60,7 @@ export default function Header() {
 
         <nav
           className="hidden md:flex items-center gap-6 text-sm text-slate-300"
-          aria-label="Navega??o principal"
+          aria-label={locale === "pt" ? "Navegação principal" : "Main navigation"}
         >
           {navItems.map((item) => (
             <Link
@@ -60,7 +93,13 @@ export default function Header() {
           ))}
         </div>
 
-        <MobileMenu navItems={navItems} languageItems={languageItems} />
+        <MobileMenu
+          navItems={navItems}
+          languageItems={languageItems}
+          navLabel={locale === "pt" ? "Menu principal" : "Main menu"}
+          languageLabel={copy.languages}
+          openMenuLabel={copy.openMenu}
+        />
       </div>
     </header>
   );

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 
@@ -13,6 +13,7 @@ type Props = {
   items: MediaItem[];
   fallbackSrc?: string;
   fallbackAlt?: string;
+  videoFallbackText?: string;
 };
 
 const inferType = (src: string): MediaItem["type"] => {
@@ -26,7 +27,13 @@ const inferType = (src: string): MediaItem["type"] => {
   return "image";
 };
 
-export default function MediaGallery({ items, fallbackSrc, fallbackAlt }: Props) {
+export default function MediaGallery({
+  items,
+  fallbackSrc,
+  fallbackAlt,
+  videoFallbackText,
+}: Props) {
+  const fallbackText = videoFallbackText ?? "Seu navegador não suporta vídeo HTML5.";
   const normalizedItems =
     items.length > 0
       ? items
@@ -63,7 +70,7 @@ export default function MediaGallery({ items, fallbackSrc, fallbackAlt }: Props)
                 className="w-full rounded-xl object-cover"
               >
                 <source src={item.src} type="video/mp4" />
-                Seu navegador não suporta vídeo HTML5.
+                {fallbackText}
               </video>
             ) : type === "gif" ? (
               // eslint-disable-next-line @next/next/no-img-element

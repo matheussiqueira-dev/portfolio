@@ -1,5 +1,5 @@
-import ResumeEn from "../../../components/sections/ResumeEn";
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
+import ResumeEn from "@/components/sections/ResumeEn";
 
 export const metadata: Metadata = {
   title: "Resume | Matheus Siqueira",

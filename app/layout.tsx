@@ -20,11 +20,11 @@ export const metadata: Metadata = {
     template: "%s | Matheus Siqueira",
   },
   description:
-    "Portf?lio profissional de Matheus Siqueira, com foco em tecnologia, desenvolvimento web, dados e infraestrutura.",
+    "Portfólio profissional de Matheus Siqueira, com foco em tecnologia, desenvolvimento web, dados e infraestrutura.",
   openGraph: {
     title: "Matheus Siqueira | Tecnologia, Desenvolvimento Web e Dados",
     description:
-      "Portf?lio profissional de Matheus Siqueira, com foco em tecnologia, desenvolvimento web, dados e infraestrutura.",
+      "Portfólio profissional de Matheus Siqueira, com foco em tecnologia, desenvolvimento web, dados e infraestrutura.",
     url: "/",
     siteName: "Matheus Siqueira",
     locale: "pt_BR",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Matheus Siqueira - Portfolio",
+        alt: "Matheus Siqueira - Portfólio",
       },
     ],
   },
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Matheus Siqueira | Tecnologia, Desenvolvimento Web e Dados",
     description:
-      "Portf?lio profissional de Matheus Siqueira, com foco em tecnologia, desenvolvimento web, dados e infraestrutura.",
+      "Portfólio profissional de Matheus Siqueira, com foco em tecnologia, desenvolvimento web, dados e infraestrutura.",
     images: ["/og.png"],
   },
 };

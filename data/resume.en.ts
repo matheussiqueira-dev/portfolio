@@ -1,17 +1,17 @@
-export const resumeEn = {
+﻿export const resumeEn = {
   name: "Matheus Siqueira",
-  role: "Frontend Developer",
+  role: "Web and Data Developer",
 
   summary:
-    "Frontend Developer in training, studying Computer Science, focused on building web applications using React, Next.js and TypeScript. For a complete overview of my background and experience, please visit my LinkedIn profile.",
+    "Computer Science student focused on web development, data, and automation. Experience with React, Next.js, APIs, and data analysis to support decision-making. I build clear, scalable, and maintainable solutions.",
 
   experience: [
     {
       company: "State Treasury Department",
       role: "Data Analyst Intern",
-      period: "2025 — Present",
+      period: "2025 - Present",
       description:
-        "Worked with data analysis, Power BI dashboards and decision support based on indicators.",
+        "Data analysis, Power BI dashboards, and decision support based on performance indicators.",
     },
   ],
 
@@ -19,7 +19,7 @@ export const resumeEn = {
     {
       institution: "Infinity School",
       course: "Full Stack Development Program",
-      period: "2024 — Present",
+      period: "2024 - Present",
     },
     {
       institution: "UNIFG",
@@ -36,8 +36,10 @@ export const resumeEn = {
     "HTML",
     "CSS",
     "Tailwind CSS",
-    "Git",
-    "Power BI",
+    "Python",
+    "FastAPI",
     "SQL",
+    "Power BI",
+    "Git",
   ],
 };

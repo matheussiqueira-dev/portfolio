@@ -1,102 +1,128 @@
-import { resumeEn } from "../../data/resume.en";
+﻿import { resumeEn } from "@/data/resume.en";
 import PrintButton from "../ui/PrintButton";
 import LanguageSwitch from "../ui/LanguageSwitch";
 
 export default function ResumeEn() {
   return (
-    <main className="max-w-3xl mx-auto flex flex-col gap-10 text-slate-100 print:text-black print:gap-6 print:px-0">
-      <header className="flex flex-col gap-3 print:gap-2">
-        <h1 className="text-4xl font-bold print:text-2xl text-white">
-          {resumeEn.name}
-        </h1>
+    <div className="max-w-5xl mx-auto space-y-10 text-slate-100 print:text-black print:space-y-6">
+      <header className="rounded-3xl border border-white/10 bg-white/5 p-8 md:p-10 print:border-none print:bg-transparent print:p-0">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+          <div className="space-y-3">
+            <p className="text-xs uppercase tracking-[0.3em] text-slate-400 print:text-slate-600">
+              Resume
+            </p>
+            <h1 className="text-4xl md:text-5xl font-semibold text-white print:text-black">
+              {resumeEn.name}
+            </h1>
+            <p className="text-lg text-slate-300 print:text-slate-700">
+              {resumeEn.role}
+            </p>
+          </div>
 
-        <p className="text-lg print:text-base text-slate-300">
-          {resumeEn.role}
-        </p>
-
-        <LanguageSwitch current="en" />
-
-        <div className="flex flex-col gap-1 text-sm text-slate-300">
-          <span>Recife, Pernambuco - Brazil</span>
-
-          <a
-            href="mailto:matheussiqueirahub@gmail.com"
-            className="underline w-fit"
-          >
-            matheussiqueirahub@gmail.com
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/matheussiqueira-dev/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline w-fit"
-          >
-            LinkedIn
-          </a>
-
-          <a
-            href="https://github.com/matheussiqueira-dev"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline w-fit"
-          >
-            GitHub
-          </a>
+          <div className="flex flex-col gap-2 text-sm text-slate-300 print:text-slate-700">
+            <span>Recife, Pernambuco - Brazil</span>
+            <a href="mailto:matheussiqueirahub@gmail.com" className="underline w-fit">
+              matheussiqueirahub@gmail.com
+            </a>
+            <a
+              href="https://www.linkedin.com/in/matheussiqueira-dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline w-fit"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/matheussiqueira-dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline w-fit"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://wa.me/5581999203683"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline w-fit text-emerald-400 font-medium"
+            >
+              WhatsApp
+            </a>
+          </div>
         </div>
 
-        <PrintButton label="Download Resume (PDF)" />
+        <div className="mt-6 flex flex-wrap items-center gap-4 print:hidden">
+          <LanguageSwitch current="en" />
+          <PrintButton label="Download Resume (PDF)" />
+        </div>
       </header>
 
-      <section>
-        <h2 className="text-2xl font-semibold mb-2 print:text-lg text-white">
-          Summary
-        </h2>
-        <p className="text-slate-300">{resumeEn.summary}</p>
-      </section>
+      <div className="grid gap-8 md:grid-cols-[2fr_1fr]">
+        <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
+          <h2 className="text-xl font-semibold text-white print:text-black">
+            Summary
+          </h2>
+          <p className="text-slate-300 print:text-slate-700">{resumeEn.summary}</p>
+        </section>
 
-      <section>
-        <h2 className="text-2xl font-semibold mb-4 print:text-lg text-white">
-          Experience
-        </h2>
-
-        {resumeEn.experience.map((item) => (
-          <div key={item.company} className="mb-4">
-            <strong className="text-slate-100">
-              {item.role} - {item.company}
-            </strong>
-            <div className="text-sm text-slate-400">{item.period}</div>
-            <p className="text-slate-300">{item.description}</p>
-          </div>
-        ))}
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-semibold mb-4 print:text-lg text-white">
-          Education
-        </h2>
-
-        {resumeEn.education.map((item) => (
-          <div key={item.institution} className="mb-2">
-            <strong className="text-slate-100">{item.course}</strong>
-            <div className="text-sm text-slate-400">
-              {item.institution} - {item.period}
+        <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-6 print:border-none print:bg-transparent print:p-0">
+          <h2 className="text-xl font-semibold text-white print:text-black">
+            Experience
+          </h2>
+          {resumeEn.experience.map((item) => (
+            <div key={item.company} className="space-y-2">
+              <div>
+                <p className="text-sm uppercase tracking-[0.2em] text-slate-400 print:text-slate-600">
+                  {item.period}
+                </p>
+                <h3 className="text-lg font-semibold text-white print:text-black">
+                  {item.role}
+                </h3>
+                <p className="text-sm text-slate-400 print:text-slate-600">
+                  {item.company}
+                </p>
+              </div>
+              <p className="text-sm text-slate-300 print:text-slate-700">
+                {item.description}
+              </p>
             </div>
-          </div>
-        ))}
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-semibold mb-4 print:text-lg text-white">
-          Skills
-        </h2>
-
-        <ul className="list-disc list-inside text-slate-300">
-          {resumeEn.skills.map((skill) => (
-            <li key={skill}>{skill}</li>
           ))}
-        </ul>
-      </section>
-    </main>
+        </section>
+
+        <aside className="space-y-8">
+          <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
+            <h2 className="text-xl font-semibold text-white print:text-black">
+              Skills
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {resumeEn.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-200 print:text-slate-700 print:border-slate-300"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </section>
+
+          <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
+            <h2 className="text-xl font-semibold text-white print:text-black">
+              Education
+            </h2>
+            {resumeEn.education.map((item) => (
+              <div key={item.institution} className="space-y-1">
+                <p className="text-sm font-semibold text-white print:text-black">
+                  {item.course}
+                </p>
+                <p className="text-sm text-slate-400 print:text-slate-600">
+                  {item.institution} • {item.period}
+                </p>
+              </div>
+            ))}
+          </section>
+        </aside>
+      </div>
+    </div>
   );
 }

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
@@ -18,9 +18,18 @@ type LanguageItem = {
 type Props = {
   navItems: NavItem[];
   languageItems: LanguageItem[];
+  navLabel: string;
+  languageLabel: string;
+  openMenuLabel: string;
 };
 
-export default function MobileMenu({ navItems, languageItems }: Props) {
+export default function MobileMenu({
+  navItems,
+  languageItems,
+  navLabel,
+  languageLabel,
+  openMenuLabel,
+}: Props) {
   const [open, setOpen] = useState(false);
   const menuId = useId();
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -58,7 +67,7 @@ export default function MobileMenu({ navItems, languageItems }: Props) {
         onClick={() => setOpen((prev) => !prev)}
         className="inline-flex items-center justify-center rounded border border-white/15 px-3 py-2 text-sm text-white transition hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
       >
-        <span className="sr-only">Abrir menu</span>
+        <span className="sr-only">{openMenuLabel}</span>
         <span className="relative block h-4 w-5">
           <span
             className={`absolute left-0 top-0 h-0.5 w-full bg-white transition ${
@@ -90,10 +99,7 @@ export default function MobileMenu({ navItems, languageItems }: Props) {
             className="absolute right-0 top-0 h-full w-72 bg-[#0b0d10] px-6 py-8 shadow-xl motion-safe:animate-fade-in"
             onClick={(event) => event.stopPropagation()}
           >
-            <nav
-              className="flex flex-col gap-4 text-base text-slate-100"
-              aria-label="Menu principal"
-            >
+            <nav className="flex flex-col gap-4 text-base text-slate-100" aria-label={navLabel}>
               {navItems.map((item) => (
                 <Link
                   key={item.href}
@@ -108,7 +114,7 @@ export default function MobileMenu({ navItems, languageItems }: Props) {
 
             <div className="mt-8 border-t border-white/10 pt-6">
               <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
-                Idiomas
+                {languageLabel}
               </p>
               <div className="mt-4 flex flex-col gap-3 text-sm text-slate-200">
                 {languageItems.map((item) => (

@@ -1,4 +1,4 @@
-function getCurrentPeriod(): number {
+﻿function getCurrentPeriod(): number {
   const startPeriod = 3;
   const startYear = 2026;
   const startMonth = 0;
@@ -15,10 +15,10 @@ function getCurrentPeriod(): number {
 
 export const resume = {
   name: "Matheus Siqueira",
-  role: "Desenvolvedor Frontend",
+  role: "Desenvolvedor Web e Dados",
 
   summary:
-    "Desenvolvedor Frontend em formação, cursando Ciência da Computação, com foco em React, Next.js e TypeScript. Para um resumo completo da minha trajetória e experiências, consulte meu perfil no LinkedIn.",
+    "Estudante de Ciência da Computação com foco em desenvolvimento web, dados e automação. Experiência com React, Next.js, APIs e análise de dados para apoiar decisões. Busco entregar soluções claras, escaláveis e fáceis de manter.",
 
   experience: [
     {
@@ -26,7 +26,7 @@ export const resume = {
       role: "Analista de Dados (Estágio)",
       period: "2025 - Atual",
       description:
-        "Atuação com análise de dados, construção de dashboards em Power BI e suporte à tomada de decisão baseada em indicadores.",
+        "Análise de dados, construção de dashboards no Power BI e suporte à tomada de decisão com indicadores de desempenho.",
     },
   ],
 
@@ -38,7 +38,7 @@ export const resume = {
     },
     {
       institution: "UNIFG",
-      course: `Ciência da Computação - Bacharelado - ${getCurrentPeriod()}º período`,
+      course: `Ciência da Computação — Bacharelado — ${getCurrentPeriod()}º período`,
       period: "Em andamento",
     },
   ],
@@ -51,8 +51,10 @@ export const resume = {
     "HTML",
     "CSS",
     "Tailwind CSS",
-    "Git",
-    "Power BI",
+    "Python",
+    "FastAPI",
     "SQL",
+    "Power BI",
+    "Git",
   ],
 };

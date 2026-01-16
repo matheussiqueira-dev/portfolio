@@ -6,10 +6,10 @@ import Projects from "../components/sections/Projects";
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
+      <Hero locale="pt" />
+      <About locale="pt" />
+      <Projects locale="pt" />
+      <Contact locale="pt" />
     </main>
   );
 }
