@@ -21,7 +21,7 @@ const getCover = (project: Project) =>
   project.screenshots[0];
 
 const getHighlight = (project: Project) =>
-  project.impact[0] ??
+  project.highlights[0] ??
   project.demonstrates[0] ??
   project.features[0] ??
   project.solution[0] ??
@@ -134,6 +134,17 @@ export default function ProjectModal({
               {labels.highlightLabel}
             </p>
             <p className="text-sm text-slate-300">{highlight}</p>
+          </div>
+        ) : null}
+
+        {project.demonstrates[0] ? (
+          <div className="space-y-1">
+            <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+              {labels.modal.demonstratesTitle}
+            </p>
+            <p className="text-sm text-slate-300">
+              {project.demonstrates[0]}
+            </p>
           </div>
         ) : null}
 
@@ -263,6 +274,20 @@ export default function ProjectModal({
                   {project.features.map((item) => (
                     <li key={item} className="flex gap-2">
                       <span className="mt-2 h-1.5 w-1.5 rounded-full bg-sky-400" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              <section>
+                <h4 className="text-sm font-semibold text-white mb-3">
+                  {labels.modal.demonstratesTitle}
+                </h4>
+                <ul className="space-y-2 text-sm text-slate-300">
+                  {project.demonstrates.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400" />
                       <span>{item}</span>
                     </li>
                   ))}

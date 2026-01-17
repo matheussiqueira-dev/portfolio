@@ -16,7 +16,7 @@ export type Project = {
   dataUsed: string[];
   solution: string[];
   features: string[];
-  impact: string[];
+  highlights: string[];
   demonstrates: string[];
   howToRun: string[];
   screenshots: ProjectMedia[];

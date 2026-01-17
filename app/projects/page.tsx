@@ -159,7 +159,9 @@ export default function ProjectsPage({ searchParams }: PageProps) {
               </div>
 
               <p className="text-sm text-slate-400 leading-relaxed">
-                {project.impact[0] ?? project.features[0] ?? project.problem[0]}
+                {project.highlights[0] ??
+                  project.features[0] ??
+                  project.problem[0]}
               </p>
 
               <div className="text-xs text-slate-400">

@@ -95,6 +95,16 @@ export default function DemosPageEn() {
                   {project.tagline}
                 </p>
               </div>
+              <div className="rounded-xl border border-white/10 bg-black/20 p-4">
+                <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+                  {siteEn.demos.howToRunLabel}
+                </p>
+                <ol className="mt-3 list-decimal list-inside space-y-1 text-xs text-slate-300">
+                  {project.howToRun.slice(0, 3).map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ol>
+              </div>
               <div className="flex flex-wrap gap-3 text-xs text-slate-200">
                 <Link
                   href={`/en/projects/${project.slug}`}

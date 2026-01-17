@@ -20,9 +20,11 @@ export function generateStaticParams() {
 }
 
 const buildMetaDescription = (project: Project) => {
-  const parts = [project.tagline, project.impact[0], project.demonstrates[0]].filter(
-    Boolean,
-  );
+  const parts = [
+    project.tagline,
+    project.highlights[0],
+    project.demonstrates[0],
+  ].filter(Boolean);
   const text = parts.join(" ").trim();
 
   if (text.length > 170) {
@@ -101,12 +103,15 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
   const description = buildMetaDescription(project);
   const projectJsonLd = {
     "@context": "https://schema.org",
-    "@type": "SoftwareSourceCode",
+    "@type": "SoftwareApplication",
     name: project.title,
     description,
     url: `${baseUrl}/projects/${project.slug}`,
+    applicationCategory: "DeveloperApplication",
+    operatingSystem: "Web",
     codeRepository: project.repoUrl,
     programmingLanguage: project.stack,
+    featureList: project.features,
     author: {
       "@type": "Person",
       name: siteName,
@@ -250,7 +255,7 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
               {sitePt.projectDetail.impactTitle}
             </h2>
             <ul className="space-y-2 text-slate-300">
-              {project.impact.map((item) => (
+              {project.highlights.map((item) => (
                 <li key={item} className="flex gap-2">
                   <span className="mt-2 h-1.5 w-1.5 rounded-full bg-amber-400" />
                   <span>{item}</span>
