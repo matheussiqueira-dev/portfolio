@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Geist, Geist_Mono } from "next/font/google";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import Header from "@/components/layout/Header";
 import JsonLd from "@/components/seo/JsonLd";
 import { baseUrl, sameAsLinks, siteName } from "@/lib/seo";
@@ -19,32 +20,60 @@ const geistMono = Geist_Mono({
   preload: false,
 });
 
+const siteDescription =
+  "Analista de Dados e BI com foco em dados publicos, governo, Power BI, SQL, DAX e Python. Dashboards estrategicos, ETL e automacao para decisoes gerenciais.";
+const siteKeywords = [
+  "Data Analyst",
+  "Business Intelligence",
+  "Power BI",
+  "SQL",
+  "DAX",
+  "Python",
+  "Dados publicos",
+  "Governo",
+  "ETL",
+  "Dashboards",
+];
+
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     default: `${siteName} | Analista de Dados & BI`,
     template: `%s | ${siteName}`,
   },
-  description:
-    "Analista de Dados e BI com foco em dados publicos, Power BI, SQL e Python. Dashboards estrategicos, ETL e automacao para decisoes gerenciais, eficiencia e transparencia.",
+  description: siteDescription,
+  keywords: siteKeywords,
+  authors: [{ name: siteName, url: baseUrl }],
+  creator: siteName,
+  publisher: siteName,
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+  },
   alternates: {
     canonical: "/",
     languages: {
       "pt-BR": "/",
       "en-US": "/en",
+      "x-default": "/",
     },
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
   },
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
     title: `${siteName} | Analista de Dados & BI`,
-    description:
-      "Analista de Dados e BI com foco em dados publicos, Power BI, SQL e Python. Dashboards estrategicos, ETL e automacao para decisoes gerenciais, eficiencia e transparencia.",
+    description: siteDescription,
     url: "/",
     siteName,
     locale: "pt_BR",
@@ -61,8 +90,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${siteName} | Analista de Dados & BI`,
-    description:
-      "Analista de Dados e BI com foco em dados publicos, Power BI, SQL e Python. Dashboards estrategicos, ETL e automacao para decisoes gerenciais, eficiencia e transparencia.",
+    description: siteDescription,
     images: ["/og.png"],
   },
 };
@@ -75,6 +103,7 @@ const structuredData = [
     url: baseUrl,
     image: `${baseUrl}/profile.jpg`,
     jobTitle: "Data Analyst",
+    description: siteDescription,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Recife",
@@ -98,7 +127,7 @@ const structuredData = [
     "@type": "WebSite",
     name: siteName,
     url: baseUrl,
-    inLanguage: "pt-BR",
+    inLanguage: ["pt-BR", "en-US"],
     publisher: {
       "@type": "Person",
       name: siteName,
@@ -115,9 +144,6 @@ export default function RootLayout({
 
   return (
     <html lang="pt-BR">
-      <head>
-        <JsonLd data={structuredData} />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-[#0b0d10] text-slate-100 relative pt-16`}
       >
@@ -127,6 +153,8 @@ export default function RootLayout({
           <div className="absolute bottom-0 left-1/3 h-56 w-56 rounded-full bg-white/5 blur-3xl md:h-80 md:w-80" />
         </div>
         <Header />
+        <GoogleAnalytics />
+        <JsonLd data={structuredData} />
         {children}
         {shouldInjectSpeedInsights ? <SpeedInsights /> : null}
       </body>

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
+import { track } from "@/lib/analytics";
 import type { Project } from "@/data/projects.types";
 import type { SiteContent } from "@/data/site.types";
 
@@ -43,6 +44,9 @@ export default function ProjectModal({
   const caseHref = localePrefix
     ? `${localePrefix}/projects/${project.slug}`
     : `/projects/${project.slug}`;
+  const trackCta = (label: string, location: string) => {
+    track("click_cta", { label, location, project: project.slug });
+  };
 
   useEffect(() => {
     if (open) {
@@ -158,6 +162,7 @@ export default function ProjectModal({
 
           <Link
             href={caseHref}
+            onClick={() => trackCta(labels.caseLabel, "Project Card")}
             className="text-xs text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
           >
             {labels.caseLabel}
@@ -167,6 +172,7 @@ export default function ProjectModal({
             href={project.repoUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackCta(labels.modal.githubLabel, "Project Card")}
             className="text-xs text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
           >
             {labels.modal.githubLabel}
@@ -177,6 +183,7 @@ export default function ProjectModal({
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackCta(labels.modal.demoLabel, "Project Card")}
               className="text-xs text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
             >
               {labels.modal.demoLabel}
@@ -282,6 +289,7 @@ export default function ProjectModal({
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href={caseHref}
+                onClick={() => trackCta(labels.modal.caseCta, "Project Modal")}
                 className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
               >
                 {labels.modal.caseCta}
@@ -290,6 +298,7 @@ export default function ProjectModal({
                 href={project.repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackCta(labels.modal.githubLabel, "Project Modal")}
                 className="rounded-full border border-white/20 px-4 py-2 text-xs text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
               >
                 {labels.modal.githubLabel}
@@ -299,6 +308,7 @@ export default function ProjectModal({
                   href={project.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackCta(labels.modal.demoLabel, "Project Modal")}
                   className="rounded-full border border-white/20 px-4 py-2 text-xs text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                 >
                   {labels.modal.demoLabel}

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { track } from "@/lib/analytics";
 
 type Props = {
   direction?: "row" | "column";
@@ -37,7 +38,10 @@ export default function LanguageSwitch({ direction = "row", onNavigate }: Props)
     >
       <Link
         href={ptPath}
-        onClick={onNavigate}
+        onClick={() => {
+          track("click_cta", { label: "PT-BR", location: "Language Switch" });
+          onNavigate?.();
+        }}
         aria-label="Alternar para Portugues"
         aria-current={!isEn ? "page" : undefined}
         className={`flex items-center gap-2 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded ${
@@ -57,7 +61,10 @@ export default function LanguageSwitch({ direction = "row", onNavigate }: Props)
 
       <Link
         href={enPath}
-        onClick={onNavigate}
+        onClick={() => {
+          track("click_cta", { label: "EN-US", location: "Language Switch" });
+          onNavigate?.();
+        }}
         aria-label="Switch to English"
         aria-current={isEn ? "page" : undefined}
         className={`flex items-center gap-2 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded ${

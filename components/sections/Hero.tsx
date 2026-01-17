@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import profileImage from "@/public/profile.jpg";
 import type { SiteContent } from "@/data/site.types";
 
@@ -31,26 +31,29 @@ export default function Hero({ content, localePrefix = "" }: Props) {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center sm:items-stretch">
-            <Link
+            <TrackedLink
               href={projectsHref}
+              tracking={{ label: content.ctas.primary, location: "Hero" }}
               className="px-6 py-3 rounded-full bg-white text-sm font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
             >
               {content.ctas.primary}
-            </Link>
+            </TrackedLink>
 
-            <Link
+            <TrackedLink
               href={resumeHref}
+              tracking={{ label: content.ctas.secondary, location: "Hero" }}
               className="px-6 py-3 rounded-full border border-white/20 text-sm font-medium text-white transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
             >
               {content.ctas.secondary}
-            </Link>
+            </TrackedLink>
 
-            <Link
+            <TrackedLink
               href={contactHref}
+              tracking={{ label: content.ctas.tertiary, location: "Hero" }}
               className="text-sm font-medium text-slate-300 underline decoration-white/30 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
             >
               {content.ctas.tertiary}
-            </Link>
+            </TrackedLink>
           </div>
         </div>
 

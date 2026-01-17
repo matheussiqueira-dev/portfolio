@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { TrackedAnchor, TrackedLink } from "@/components/analytics/TrackedLink";
 import JsonLd from "@/components/seo/JsonLd";
 import { projectsEn } from "@/data/projects.en";
 import { siteEn } from "@/data/site.en";
@@ -181,29 +182,41 @@ export default function ProjectsPageEn({ searchParams }: PageProps) {
               </ul>
 
               <div className="flex flex-wrap gap-3 pt-2 text-xs text-slate-200">
-                <Link
+                <TrackedLink
                   href={`/en/projects/${project.slug}`}
+                  tracking={{
+                    label: siteEn.projectsPage.caseLabel,
+                    location: "Projects List",
+                  }}
                   className="rounded-full border border-white/20 px-4 py-2 font-semibold text-white transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                 >
                   {siteEn.projectsPage.caseLabel}
-                </Link>
-                <a
+                </TrackedLink>
+                <TrackedAnchor
                   href={project.repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  tracking={{
+                    label: siteEn.projects.modal.githubLabel,
+                    location: "Projects List",
+                  }}
                   className="rounded-full border border-white/10 px-4 py-2 transition hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                 >
                   {siteEn.projects.modal.githubLabel}
-                </a>
+                </TrackedAnchor>
                 {project.demoUrl ? (
-                  <a
+                  <TrackedAnchor
                     href={project.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    tracking={{
+                      label: siteEn.projects.modal.demoLabel,
+                      location: "Projects List",
+                    }}
                     className="rounded-full border border-emerald-400/40 px-4 py-2 text-emerald-200 transition hover:border-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
                   >
                     {siteEn.projects.modal.demoLabel}
-                  </a>
+                  </TrackedAnchor>
                 ) : (
                   <span className="rounded-full border border-white/10 px-4 py-2 text-slate-400">
                     {siteEn.demos.demoSoonLabel}
