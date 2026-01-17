@@ -26,8 +26,41 @@ Set these in Vercel or your local `.env.local`:
 
 ```
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your_value_here
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 ```
+
+## Windows (EPERM/OneDrive) — solucao definitiva
+
+Se voce estiver rodando o projeto dentro do OneDrive, e comum ver erros de
+`EPERM` ou `lock` ao apagar a pasta `.next`.
+
+Recomendado (melhor opcao):
+- Mova o repositorio para `C:\\dev\\portfolio` (fora do OneDrive).
+- Rode `npm install` e `npm run dev` normalmente.
+
+Se nao puder mover agora, use a mitigacao abaixo:
+1) Limpar caches antes de build/dev:
+```
+npm run clean
+```
+
+2) Encerrar processos presos nas portas 3000/3001:
+```
+Get-NetTCPConnection -LocalPort 3000,3001 |
+  Select-Object -ExpandProperty OwningProcess |
+  Sort-Object -Unique |
+  ForEach-Object { Stop-Process -Id $_ -Force }
+```
+
+3) Se o lock persistir, feche o OneDrive momentaneamente e tente novamente.
+
+## Checklist de validacao (pre-deploy)
+- ✅ build ok
+- ✅ sitemap ok
+- ✅ tags GA + verification ok (via env)
+- ✅ PT padrao / EN funcional
+- ✅ projects e cases funcionando
 
 ## Learn More
 

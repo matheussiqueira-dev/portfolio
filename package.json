@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "clean": "rimraf .next",
+    "clean": "rimraf .next node_modules/.cache .turbo",
     "rebuild": "npm run clean && npm run build"
   },
   "dependencies": {
