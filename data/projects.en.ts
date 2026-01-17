@@ -7,11 +7,17 @@ export const projectsEn: Project[] = [
     tagline: "Gesture-controlled web interface for touchless navigation.",
     role: "Analyst/Developer",
     stack: ["Python", "FastAPI", "OpenCV", "MediaPipe", "React"],
-    repoUrl: "https://github.com/matheussiqueira-dev/touchless-web-gesture-interface",
+    repoUrl:
+      "https://github.com/matheussiqueira-dev/touchless-web-gesture-interface",
     problem: [
       "Touch-restricted environments required hands-free control.",
-      "Non-technical users needed a simple interaction model.",
-      "Low latency was required for live dashboards.",
+      "Non-technical users needed simple and intuitive interaction.",
+      "Low latency was critical for live dashboards.",
+    ],
+    dataUsed: [
+      "Real-time camera video stream.",
+      "Hand gesture coordinates and keypoints.",
+      "Gesture-driven UI events.",
     ],
     solution: [
       "Hand tracking pipeline with MediaPipe and OpenCV.",
@@ -22,6 +28,15 @@ export const projectsEn: Project[] = [
       "Configurable gesture-to-action map.",
       "Calibration mode with sensitivity tuning.",
       "Real-time visual feedback for each gesture.",
+    ],
+    impact: [
+      "Hands-free operation for analytical panels and interfaces.",
+      "Improved accessibility and hygiene in contact-restricted spaces.",
+      "Foundation for fast commands in live dashboards.",
+    ],
+    demonstrates: [
+      "Integrates real-time data with UX for decision support.",
+      "Shows ability to prototype analytical products with natural interaction.",
     ],
     howToRun: [
       "Clone the repo and set up the Python environment.",
@@ -52,6 +67,11 @@ export const projectsEn: Project[] = [
       "There was no unified conversation history.",
       "The team needed to reduce response time with quality.",
     ],
+    dataUsed: [
+      "User messages and conversation history.",
+      "Session context and classified intents.",
+      "Usage logs and metadata for analysis.",
+    ],
     solution: [
       "Prompt flow with session-level context.",
       "Structured knowledge base with fast retrieval.",
@@ -61,6 +81,15 @@ export const projectsEn: Project[] = [
       "Intent fallback for safe responses.",
       "Session history with topic classification.",
       "Usage metrics to evolve content.",
+    ],
+    impact: [
+      "More consistent and traceable responses at scale.",
+      "Reduced response time without sacrificing quality.",
+      "Foundation for performance metrics and continuous improvement.",
+    ],
+    demonstrates: [
+      "Data modeling for conversational data and robust APIs.",
+      "Product vision for automation and smart support flows.",
     ],
     howToRun: [
       "Provision the database and environment variables.",
@@ -90,6 +119,11 @@ export const projectsEn: Project[] = [
       "Lane and obstacle detection had to run in real time.",
       "Processing needed to stay lightweight.",
     ],
+    dataUsed: [
+      "Virtual sensor signals and simulated camera input.",
+      "Telemetry data for speed, position, and trajectory.",
+      "Synthetic data for training and validation.",
+    ],
     solution: [
       "Vision pipeline with optimized preprocessing.",
       "Model trained with synthetic and real data.",
@@ -99,6 +133,15 @@ export const projectsEn: Project[] = [
       "Lane detection with trajectory correction.",
       "Speed control based on obstacles.",
       "Inference visualization for debugging.",
+    ],
+    impact: [
+      "Safe and fast testing of control logic.",
+      "Visual analysis of model behavior.",
+      "Foundation for iterative improvements without risk.",
+    ],
+    demonstrates: [
+      "Ability to work with visual data and simulations.",
+      "Signal interpretation and real-time decision-making.",
     ],
     howToRun: [
       "Install Python dependencies and required drivers.",
@@ -128,6 +171,11 @@ export const projectsEn: Project[] = [
       "Permissions and authentication were inconsistent.",
       "Manual reports slowed auditing.",
     ],
+    dataUsed: [
+      "Catalog, user, and lending records.",
+      "Loan status and due dates.",
+      "Operational metadata for audit trails.",
+    ],
     solution: [
       "REST API with JWT, roles, and business rules.",
       "Relational modeling for books, users, and loans.",
@@ -137,6 +185,15 @@ export const projectsEn: Project[] = [
       "Full lending and return flow.",
       "Advanced search by category, author, and status.",
       "Operational logs with audit trail.",
+    ],
+    impact: [
+      "Standardized processes and fewer inconsistencies.",
+      "Higher traceability and confidence in records.",
+      "Support for operational decisions and compliance.",
+    ],
+    demonstrates: [
+      "Relational data modeling and clear business rules.",
+      "Focus on data quality, traceability, and integrity.",
     ],
     howToRun: [
       "Configure PostgreSQL and environment variables.",
@@ -166,6 +223,11 @@ export const projectsEn: Project[] = [
       "Manual reports delayed commercial decisions.",
       "There was no consolidated view of municipal revenue.",
     ],
+    dataUsed: [
+      "Municipal revenue and public fiscal datasets.",
+      "Revenue indicators by period and municipality.",
+      "Historical series for comparison and trend analysis.",
+    ],
     solution: [
       "ETL with Python and Power Query to consolidate sources.",
       "Data model focused on fiscal indicators.",
@@ -175,6 +237,15 @@ export const projectsEn: Project[] = [
       "Revenue indicators by period and municipality.",
       "Visual alerts for anomalies and variation.",
       "Monitoring panel with dynamic filters.",
+    ],
+    impact: [
+      "Consolidated view for managers and revenue teams.",
+      "Fast identification of fiscal anomalies and trends.",
+      "Foundation for strategic decisions in public revenue.",
+    ],
+    demonstrates: [
+      "End-to-end BI with public and fiscal data.",
+      "Delivery of strategic dashboards focused on decisions.",
     ],
     howToRun: [
       "Connect fiscal sources and configure the ETL pipeline.",

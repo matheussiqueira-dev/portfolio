@@ -13,8 +13,11 @@ export type Project = {
   repoUrl: string;
   demoUrl?: string;
   problem: string[];
+  dataUsed: string[];
   solution: string[];
   features: string[];
+  impact: string[];
+  demonstrates: string[];
   howToRun: string[];
   screenshots: ProjectMedia[];
 };

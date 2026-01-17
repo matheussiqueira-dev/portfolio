@@ -12,12 +12,35 @@ type PageProps = {
 export const metadata: Metadata = {
   title: "Projetos | Matheus Siqueira",
   description:
-    "Lista de projetos e estudos de caso com foco em dados, BI e automacao.",
+    "Projetos e estudos de caso em dados, BI e automacao com Power BI, SQL e Python, voltados a dados publicos, fiscalizacao e tomada de decisao gerencial no setor publico.",
   alternates: {
     languages: {
       "pt-BR": "/projects",
       "en-US": "/en/projects",
     },
+  },
+  openGraph: {
+    title: "Projetos | Matheus Siqueira",
+    description:
+      "Projetos e estudos de caso em dados, BI e automacao com Power BI, SQL e Python, voltados a dados publicos, fiscalizacao e tomada de decisao gerencial no setor publico.",
+    url: "/projects",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Projetos de Matheus Siqueira",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projetos | Matheus Siqueira",
+    description:
+      "Projetos e estudos de caso em dados, BI e automacao com Power BI, SQL e Python, voltados a dados publicos, fiscalizacao e tomada de decisao gerencial no setor publico.",
+    images: ["/og.png"],
   },
 };
 
@@ -101,8 +124,17 @@ export default function ProjectsPage({ searchParams }: PageProps) {
               </div>
 
               <p className="text-sm text-slate-400 leading-relaxed">
-                {project.features[0] ?? project.problem[0]}
+                {project.impact[0] ?? project.features[0] ?? project.problem[0]}
               </p>
+
+              <div className="text-xs text-slate-400">
+                <span className="uppercase tracking-[0.2em] text-slate-500">
+                  {sitePt.projectsPage.demonstratesLabel}
+                </span>
+                <p className="mt-2 text-slate-300">
+                  {project.demonstrates[0]}
+                </p>
+              </div>
 
               <ul className="flex flex-wrap gap-2 text-xs text-slate-200">
                 {project.stack.map((tech) => (

@@ -6,12 +6,35 @@ import { sitePt } from "@/data/site.pt";
 export const metadata: Metadata = {
   title: "Demos | Matheus Siqueira",
   description:
-    "Links de demos e repositorios dos projetos de Matheus Siqueira.",
+    "Demos e repositorios dos projetos de dados, BI e automacao, com foco em casos reais, validacao tecnica rapida e avaliacao objetiva por recrutadores e gestores tecnicos.",
   alternates: {
     languages: {
       "pt-BR": "/demos",
       "en-US": "/en/demos",
     },
+  },
+  openGraph: {
+    title: "Demos | Matheus Siqueira",
+    description:
+      "Demos e repositorios dos projetos de dados, BI e automacao, com foco em casos reais, validacao tecnica rapida e avaliacao objetiva por recrutadores e gestores tecnicos.",
+    url: "/demos",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Demos e repositorios",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Demos | Matheus Siqueira",
+    description:
+      "Demos e repositorios dos projetos de dados, BI e automacao, com foco em casos reais, validacao tecnica rapida e avaliacao objetiva por recrutadores e gestores tecnicos.",
+    images: ["/og.png"],
   },
 };
 

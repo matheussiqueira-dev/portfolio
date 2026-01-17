@@ -20,7 +20,11 @@ const getCover = (project: Project) =>
   project.screenshots[0];
 
 const getHighlight = (project: Project) =>
-  project.features[0] ?? project.solution[0] ?? project.problem[0];
+  project.impact[0] ??
+  project.demonstrates[0] ??
+  project.features[0] ??
+  project.solution[0] ??
+  project.problem[0];
 
 export default function ProjectModal({
   project,

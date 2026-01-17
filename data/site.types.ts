@@ -34,7 +34,10 @@ export type SiteContent = {
     };
     stack: {
       title: string;
-      items: string[];
+      groups: {
+        title: string;
+        items: string[];
+      }[];
     };
   };
   projects: {
@@ -66,14 +69,18 @@ export type SiteContent = {
     allLabel: string;
     caseLabel: string;
     demosLabel: string;
+    demonstratesLabel: string;
     filters: string[];
   };
   projectDetail: {
     contextTitle: string;
     problemTitle: string;
+    dataTitle: string;
     solutionTitle: string;
     featuresTitle: string;
+    impactTitle: string;
     stackTitle: string;
+    demonstratesTitle: string;
     galleryTitle: string;
     howToRunTitle: string;
     linksTitle: string;

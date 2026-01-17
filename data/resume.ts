@@ -17,14 +17,14 @@ export const resume = {
   name: "Matheus Siqueira",
   role: "Analista de Dados Junior",
   summary:
-    "Analista de Dados Junior com foco em BI, SQL e automacao. Experiencia com Power BI, DAX, Power Query e Python para analise, ETL e indicadores de decisao em ambientes publicos e fiscais.",
+    "Analista de Dados Junior com experiencia pratica em Business Intelligence, Power BI, SQL e Python, atuando no setor publico com dados fiscais e de arrecadacao. Experiencia comprovada na criacao de dashboards estrategicos, automacao de processos e rotinas de ETL que apoiam decisoes gerenciais e aumentam a eficiencia operacional. Formacao multidisciplinar, com base em Marketing, Ciencia da Computacao e especializacoes em Dados, Cloud e Seguranca da Informacao.",
   experience: [
     {
       company: "Secretaria da Fazenda do Estado de Pernambuco",
       role: "Analista de Dados (Estagio)",
       period: "2025 - Atual",
       description:
-        "Dashboards em Power BI, analise SQL e automacao com Python para consolidar dados fiscais e apoiar decisoes gerenciais.",
+        "Desenvolvi dashboards em Power BI, implementei analises SQL e automatizei rotinas com Python para consolidar dados fiscais e apoiar decisoes gerenciais.",
     },
   ],
   education: [

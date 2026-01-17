@@ -6,12 +6,35 @@ import { siteEn } from "@/data/site.en";
 export const metadata: Metadata = {
   title: "Demos | Matheus Siqueira",
   description:
-    "Links to demos and repositories for Matheus Siqueira's projects.",
+    "Demos and repositories for data, BI, and automation projects, focused on real cases, fast technical validation, and objective recruiter and hiring manager review.",
   alternates: {
     languages: {
       "pt-BR": "/demos",
       "en-US": "/en/demos",
     },
+  },
+  openGraph: {
+    title: "Demos | Matheus Siqueira",
+    description:
+      "Demos and repositories for data, BI, and automation projects, focused on real cases, fast technical validation, and objective recruiter and hiring manager review.",
+    url: "/en/demos",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Demos and repositories",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Demos | Matheus Siqueira",
+    description:
+      "Demos and repositories for data, BI, and automation projects, focused on real cases, fast technical validation, and objective recruiter and hiring manager review.",
+    images: ["/og.png"],
   },
 };
 

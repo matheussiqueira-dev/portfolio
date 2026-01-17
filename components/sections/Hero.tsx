@@ -10,6 +10,7 @@ type Props = {
 export default function Hero({ content, localePrefix = "" }: Props) {
   const projectsHref = localePrefix ? `${localePrefix}#projects` : "/#projects";
   const resumeHref = localePrefix ? `${localePrefix}/resume` : "/resume";
+  const contactHref = localePrefix ? `${localePrefix}#contact` : "/#contact";
 
   return (
     <section id="home" className="scroll-mt-24 px-6 pt-28 pb-20">
@@ -44,9 +45,7 @@ export default function Hero({ content, localePrefix = "" }: Props) {
             </Link>
 
             <Link
-              href="https://www.linkedin.com/in/matheussiqueira-dev/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={contactHref}
               className="text-sm font-medium text-slate-300 underline decoration-white/30 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
             >
               {content.ctas.tertiary}

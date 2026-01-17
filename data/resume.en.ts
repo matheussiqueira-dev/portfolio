@@ -2,14 +2,14 @@ export const resumeEn = {
   name: "Matheus Siqueira",
   role: "Junior Data Analyst",
   summary:
-    "Junior Data Analyst focused on BI, SQL, and automation. Experience with Power BI, DAX, Power Query, and Python for analysis, ETL, and decision-ready indicators in public and fiscal contexts.",
+    "Junior Data Analyst with hands-on experience in Business Intelligence, Power BI, SQL, and Python, working in the public sector with fiscal and revenue data. Proven experience building strategic dashboards, automating processes, and ETL routines that support managerial decisions and increase operational efficiency. Multidisciplinary background in Marketing, Computer Science, and specializations in Data, Cloud, and Information Security.",
   experience: [
     {
       company: "Pernambuco State Treasury",
       role: "Data Analyst Intern",
       period: "2025 - Present",
       description:
-        "Power BI dashboards, SQL analysis, and Python automation to consolidate fiscal data and support leadership decisions.",
+        "Built Power BI dashboards, implemented SQL analysis, and automated routines with Python to consolidate fiscal data and support leadership decisions.",
     },
   ],
   education: [

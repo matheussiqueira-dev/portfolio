@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import MediaGallery from "@/components/ui/MediaGallery";
 import { getProjectBySlugEn, projectSlugsEn } from "@/data/projects.en";
+import type { Project } from "@/data/projects.types";
 import { siteEn } from "@/data/site.en";
 
 type PageProps = {
@@ -15,6 +16,30 @@ type PageProps = {
 export function generateStaticParams() {
   return projectSlugsEn.map((slug) => ({ slug }));
 }
+
+const buildMetaDescription = (project: Project) => {
+  const parts = [
+    project.tagline,
+    project.impact[0],
+    project.demonstrates[0],
+    project.dataUsed[0],
+    project.solution[0],
+  ].filter(Boolean);
+  let text = "";
+
+  for (const part of parts) {
+    text = text ? `${text} ${part}` : part;
+    if (text.length >= 160) {
+      break;
+    }
+  }
+
+  if (text.length > 170) {
+    return `${text.slice(0, 167).trimEnd()}...`;
+  }
+
+  return text;
+};
 
 export function generateMetadata({ params }: PageProps): Metadata {
   const project = getProjectBySlugEn(params.slug);
@@ -30,9 +55,11 @@ export function generateMetadata({ params }: PageProps): Metadata {
     project.screenshots.find((shot) => shot.src.includes("/cover.")) ??
     project.screenshots[0];
 
+  const description = buildMetaDescription(project);
+
   return {
     title: `${project.title} | Matheus Siqueira`,
-    description: project.tagline,
+    description,
     alternates: {
       canonical: `/en/projects/${project.slug}`,
       languages: {
@@ -42,7 +69,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
     },
     openGraph: {
       title: `${project.title} | Matheus Siqueira`,
-      description: project.tagline,
+      description,
       url: `/en/projects/${project.slug}`,
       type: "article",
       images: [
@@ -57,7 +84,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
     twitter: {
       card: "summary_large_image",
       title: `${project.title} | Matheus Siqueira`,
-      description: project.tagline,
+      description,
       images: [cover?.src ?? "/og.png"],
     },
   };
@@ -164,6 +191,20 @@ export default function ProjectCaseStudyPageEn({ params }: PageProps) {
             </ul>
           </section>
 
+          <section id="data" className="scroll-mt-20">
+            <h2 className="text-2xl font-semibold text-white mb-4">
+              {siteEn.projectDetail.dataTitle}
+            </h2>
+            <ul className="space-y-2 text-slate-300">
+              {project.dataUsed.map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-sky-400" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
           <section id="solution" className="scroll-mt-20">
             <h2 className="text-2xl font-semibold text-white mb-4">
               {siteEn.projectDetail.solutionTitle}
@@ -192,6 +233,20 @@ export default function ProjectCaseStudyPageEn({ params }: PageProps) {
             </ul>
           </section>
 
+          <section id="impact" className="scroll-mt-20">
+            <h2 className="text-2xl font-semibold text-white mb-4">
+              {siteEn.projectDetail.impactTitle}
+            </h2>
+            <ul className="space-y-2 text-slate-300">
+              {project.impact.map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-amber-400" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
           <section id="stack" className="scroll-mt-20">
             <h2 className="text-2xl font-semibold text-white mb-4">
               {siteEn.projectDetail.stackTitle}
@@ -206,6 +261,20 @@ export default function ProjectCaseStudyPageEn({ params }: PageProps) {
                 </span>
               ))}
             </div>
+          </section>
+
+          <section id="demonstrates" className="scroll-mt-20">
+            <h2 className="text-2xl font-semibold text-white mb-4">
+              {siteEn.projectDetail.demonstratesTitle}
+            </h2>
+            <ul className="space-y-2 text-slate-300">
+              {project.demonstrates.map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </section>
 
           <section id="how-to-run" className="scroll-mt-20">

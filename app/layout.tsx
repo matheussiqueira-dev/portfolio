@@ -16,16 +16,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.matheussiqueira.dev"),
   title: {
-    default:
-      "Matheus Siqueira | Analista de Dados Junior (Power BI, SQL, Python)",
+    default: "Matheus Siqueira | Analista de Dados & BI",
     template: "%s | Matheus Siqueira",
   },
   description:
-    "Portfolio de Matheus Siqueira, Analista de Dados Junior em Recife. BI com Power BI, analise SQL, automacao Python e dados publicos.",
+    "Analista de Dados e BI com foco em dados publicos, Power BI, SQL e Python. Dashboards estrategicos, ETL e automacao para decisoes gerenciais, eficiencia e transparencia.",
   openGraph: {
-    title: "Matheus Siqueira | Analista de Dados Junior (Power BI, SQL, Python)",
+    title: "Matheus Siqueira | Analista de Dados & BI",
     description:
-      "Portfolio de Matheus Siqueira, Analista de Dados Junior em Recife. BI com Power BI, analise SQL, automacao Python e dados publicos.",
+      "Analista de Dados e BI com foco em dados publicos, Power BI, SQL e Python. Dashboards estrategicos, ETL e automacao para decisoes gerenciais, eficiencia e transparencia.",
     url: "/",
     siteName: "Matheus Siqueira",
     locale: "pt_BR",
@@ -35,15 +34,15 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Matheus Siqueira - Analista de Dados Junior",
+        alt: "Matheus Siqueira | Analista de Dados & BI",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Matheus Siqueira | Analista de Dados Junior (Power BI, SQL, Python)",
+    title: "Matheus Siqueira | Analista de Dados & BI",
     description:
-      "Portfolio de Matheus Siqueira, Analista de Dados Junior em Recife. BI com Power BI, analise SQL, automacao Python e dados publicos.",
+      "Analista de Dados e BI com foco em dados publicos, Power BI, SQL e Python. Dashboards estrategicos, ETL e automacao para decisoes gerenciais, eficiencia e transparencia.",
     images: ["/og.png"],
   },
 };

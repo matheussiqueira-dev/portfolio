@@ -57,18 +57,27 @@ export default function About({ content }: Props) {
             </div>
           </div>
 
-          <aside className="rounded-2xl border border-white/10 bg-white/5 p-6 h-fit">
-            <h3 className="text-lg font-semibold text-white mb-4">
+          <aside className="rounded-2xl border border-white/10 bg-white/5 p-6 h-fit space-y-6">
+            <h3 className="text-lg font-semibold text-white">
               {content.stack.title}
             </h3>
-            <div className="flex flex-wrap gap-2">
-              {content.stack.items.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-200"
-                >
-                  {item}
-                </span>
+            <div className="space-y-5">
+              {content.stack.groups.map((group) => (
+                <div key={group.title} className="space-y-2">
+                  <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
+                    {group.title}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {group.items.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-200"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </aside>

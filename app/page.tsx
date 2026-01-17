@@ -7,14 +7,41 @@ import { projects } from "@/data/projects";
 import { sitePt } from "@/data/site.pt";
 
 export const metadata: Metadata = {
-  title: "Inicio",
+  title:
+    "Analista de Dados & BI | Power BI, SQL, Python | Dados Publicos e Tomada de Decisao",
   description:
-    "Portfolio de Matheus Siqueira, Analista de Dados Junior com foco em BI, SQL e Python.",
+    "Analista de Dados e BI na Secretaria da Fazenda de Pernambuco. Power BI, SQL e Python para dashboards estrategicos, ETL e automacao que apoiam decisoes gerenciais.",
   alternates: {
     languages: {
       "pt-BR": "/",
       "en-US": "/en",
     },
+  },
+  openGraph: {
+    title:
+      "Analista de Dados & BI | Power BI, SQL, Python | Dados Publicos e Tomada de Decisao",
+    description:
+      "Analista de Dados e BI na Secretaria da Fazenda de Pernambuco. Power BI, SQL e Python para dashboards estrategicos, ETL e automacao que apoiam decisoes gerenciais.",
+    url: "/",
+    siteName: "Matheus Siqueira",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Matheus Siqueira | Analista de Dados e BI",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Analista de Dados & BI | Power BI, SQL, Python | Dados Publicos e Tomada de Decisao",
+    description:
+      "Analista de Dados e BI na Secretaria da Fazenda de Pernambuco. Power BI, SQL e Python para dashboards estrategicos, ETL e automacao que apoiam decisoes gerenciais.",
+    images: ["/og.png"],
   },
 };
 
