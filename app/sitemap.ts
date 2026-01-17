@@ -4,70 +4,71 @@ import { baseUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
+  const base = baseUrl.replace(/\/$/, "");
 
   return [
     {
-      url: `${baseUrl}/`,
+      url: `${base}/`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 1,
     },
     {
-      url: `${baseUrl}/en`,
+      url: `${base}/en`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/projects`,
+      url: `${base}/projects`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/en/projects`,
+      url: `${base}/en/projects`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/demos`,
+      url: `${base}/demos`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/en/demos`,
+      url: `${base}/en/demos`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.6,
     },
     ...projects.map((project) => ({
-      url: `${baseUrl}/projects/${project.slug}`,
+      url: `${base}/projects/${project.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
     ...projects.map((project) => ({
-      url: `${baseUrl}/en/projects/${project.slug}`,
+      url: `${base}/en/projects/${project.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
     {
-      url: `${baseUrl}/resume`,
+      url: `${base}/resume`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/resume/en`,
+      url: `${base}/resume/en`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/en/resume`,
+      url: `${base}/en/resume`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
