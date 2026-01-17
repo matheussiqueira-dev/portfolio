@@ -1,6 +1,13 @@
-type TrackParams = Record<string, string | number | boolean | null | undefined>;
+type GtagEventParams = {
+  event_category: string;
+  event_label?: string;
+};
 
-type Gtag = (command: "event", eventName: string, params?: TrackParams) => void;
+type Gtag = (
+  command: "event",
+  action: string,
+  params?: GtagEventParams
+) => void;
 
 declare global {
   interface Window {
@@ -8,7 +15,7 @@ declare global {
   }
 }
 
-export const track = (eventName: string, params?: TrackParams) => {
+export const trackEvent = (action: string, category: string, label?: string) => {
   if (typeof window === "undefined") {
     return;
   }
@@ -17,7 +24,10 @@ export const track = (eventName: string, params?: TrackParams) => {
     return;
   }
 
-  window.gtag("event", eventName, params);
+  window.gtag("event", action, {
+    event_category: category,
+    event_label: label,
+  });
 };
 
 export {};

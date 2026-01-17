@@ -34,6 +34,9 @@ const siteKeywords = [
   "ETL",
   "Dashboards",
 ];
+const googleVerification =
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
+  "SUBSTITUIR_PELO_TOKEN_HTML_DO_GOOGLE";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -46,9 +49,6 @@ export const metadata: Metadata = {
   authors: [{ name: siteName, url: baseUrl }],
   creator: siteName,
   publisher: siteName,
-  verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
-  },
   alternates: {
     canonical: "/",
     languages: {
@@ -145,6 +145,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        <meta
+          name="google-site-verification"
+          content={googleVerification}
+        />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"

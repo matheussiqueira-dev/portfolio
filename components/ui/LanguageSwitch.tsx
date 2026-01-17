@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { track } from "@/lib/analytics";
+import { trackEvent } from "@/lib/analytics";
 
 type Props = {
   direction?: "row" | "column";
@@ -39,7 +39,7 @@ export default function LanguageSwitch({ direction = "row", onNavigate }: Props)
       <Link
         href={ptPath}
         onClick={() => {
-          track("click_cta", { label: "PT-BR", location: "Language Switch" });
+          trackEvent("click_language", "engagement", "PT-BR");
           onNavigate?.();
         }}
         aria-label="Alternar para Portugues"
@@ -62,7 +62,7 @@ export default function LanguageSwitch({ direction = "row", onNavigate }: Props)
       <Link
         href={enPath}
         onClick={() => {
-          track("click_cta", { label: "EN-US", location: "Language Switch" });
+          trackEvent("click_language", "engagement", "EN-US");
           onNavigate?.();
         }}
         aria-label="Switch to English"

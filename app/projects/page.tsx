@@ -186,8 +186,9 @@ export default function ProjectsPage({ searchParams }: PageProps) {
                 <TrackedLink
                   href={`/projects/${project.slug}`}
                   tracking={{
-                    label: sitePt.projectsPage.caseLabel,
-                    location: "Projects List",
+                    action: "view_case",
+                    category: "engagement",
+                    label: project.slug,
                   }}
                   className="rounded-full border border-white/20 px-4 py-2 font-semibold text-white transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                 >
@@ -198,8 +199,9 @@ export default function ProjectsPage({ searchParams }: PageProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   tracking={{
-                    label: sitePt.projects.modal.githubLabel,
-                    location: "Projects List",
+                    action: "click_github",
+                    category: "outbound",
+                    label: project.slug,
                   }}
                   className="rounded-full border border-white/10 px-4 py-2 transition hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                 >
@@ -210,10 +212,6 @@ export default function ProjectsPage({ searchParams }: PageProps) {
                     href={project.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    tracking={{
-                      label: sitePt.projects.modal.demoLabel,
-                      location: "Projects List",
-                    }}
                     className="rounded-full border border-emerald-400/40 px-4 py-2 text-emerald-200 transition hover:border-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
                   >
                     {sitePt.projects.modal.demoLabel}

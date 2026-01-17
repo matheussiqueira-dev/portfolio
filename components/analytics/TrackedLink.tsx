@@ -2,11 +2,12 @@
 
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { track } from "@/lib/analytics";
+import { trackEvent } from "@/lib/analytics";
 
 type Tracking = {
-  label: string;
-  location: string;
+  action: string;
+  category: string;
+  label?: string;
 };
 
 type TrackedLinkProps = {
@@ -30,10 +31,7 @@ const handleTrack = (tracking?: Tracking) => {
     return;
   }
 
-  track("click_cta", {
-    label: tracking.label,
-    location: tracking.location,
-  });
+  trackEvent(tracking.action, tracking.category, tracking.label);
 };
 
 export function TrackedLink({

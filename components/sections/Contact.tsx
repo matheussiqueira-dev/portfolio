@@ -1,3 +1,4 @@
+import { TrackedAnchor } from "@/components/analytics/TrackedLink";
 import type { SiteContent } from "@/data/site.types";
 
 type Props = {
@@ -43,15 +44,20 @@ export default function Contact({ content }: Props) {
             <span>{content.cards.linkedin}</span>
             <span className="text-slate-400">/matheussiqueira-dev</span>
           </a>
-          <a
+          <TrackedAnchor
             href="https://github.com/matheussiqueira-dev"
             target="_blank"
             rel="noopener noreferrer"
+            tracking={{
+              action: "click_github",
+              category: "outbound",
+              label: "github_profile",
+            }}
             className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-sm text-slate-200 transition hover:border-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
           >
             <span>{content.cards.github}</span>
             <span className="text-slate-400">/matheussiqueira-dev</span>
-          </a>
+          </TrackedAnchor>
           <a
             href="https://wa.me/5581999203683"
             target="_blank"
