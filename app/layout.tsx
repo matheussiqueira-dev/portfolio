@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Geist, Geist_Mono } from "next/font/google";
-import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import Header from "@/components/layout/Header";
 import JsonLd from "@/components/seo/JsonLd";
 import { baseUrl, sameAsLinks, siteName } from "@/lib/seo";
@@ -144,6 +144,22 @@ export default function RootLayout({
 
   return (
     <html lang="pt-BR">
+      <head>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-[#0b0d10] text-slate-100 relative pt-16`}
       >
@@ -153,7 +169,6 @@ export default function RootLayout({
           <div className="absolute bottom-0 left-1/3 h-56 w-56 rounded-full bg-white/5 blur-3xl md:h-80 md:w-80" />
         </div>
         <Header />
-        <GoogleAnalytics />
         <JsonLd data={structuredData} />
         {children}
         {shouldInjectSpeedInsights ? <SpeedInsights /> : null}

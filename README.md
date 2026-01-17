@@ -26,7 +26,7 @@ Set these in Vercel or your local `.env.local`:
 
 ```
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your_value_here
-NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 ```
 
 ## Learn More
