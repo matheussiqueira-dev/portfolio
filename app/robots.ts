@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { baseUrl } from "@/lib/seo";
 
 export default function robots(): MetadataRoute.Robots {
+  const base = baseUrl.replace(/\/$/, "");
+
   return {
     rules: [
       {
@@ -9,7 +11,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    host: baseUrl,
-    sitemap: `${baseUrl}/sitemap.xml`,
+    host: base,
+    sitemap: `${base}/sitemap.xml`,
   };
 }

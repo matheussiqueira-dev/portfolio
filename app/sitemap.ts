@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
+import { projectsEn } from "@/data/projects.en";
 import { baseUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -49,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
-    ...projects.map((project) => ({
+    ...projectsEn.map((project) => ({
       url: `${base}/en/projects/${project.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
