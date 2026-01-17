@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { siteName } from "@/lib/seo";
+import { baseUrl, siteName } from "@/lib/seo";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   title: {
     default: `${siteName} | Data Analyst & BI`,
     template: `%s | ${siteName}`,
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     languages: {
       "pt-BR": "/",
       "en-US": "/en",
+      "x-default": "/",
     },
   },
   openGraph: {
