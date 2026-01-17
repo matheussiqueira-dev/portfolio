@@ -59,60 +59,63 @@ export default function ResumeEn() {
 
       <div className="grid gap-8 md:grid-cols-[2fr_1fr]">
         <div className="space-y-8">
-          <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
-            <h2 className="text-xl font-semibold text-white print:text-black">
-              Summary
-            </h2>
-            <p className="text-slate-300 print:text-slate-700">
-              {resumeEn.summary}
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-sm text-slate-300 print:text-slate-700">
-              {resumeEn.summaryBullets.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </section>
+        <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
+          <h2 className="text-xl font-semibold text-white print:text-black">
+            Professional Summary
+          </h2>
+          <p className="text-slate-300 print:text-slate-700">
+            {resumeEn.summary}
+          </p>
+          <ul className="list-disc list-inside space-y-2 text-sm text-slate-300 print:text-slate-700">
+            {resumeEn.summaryBullets.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </section>
 
-          <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
-            <h2 className="text-xl font-semibold text-white print:text-black">
-              Results
-            </h2>
-            <ul className="list-disc list-inside space-y-2 text-sm text-slate-300 print:text-slate-700">
-              {resumeEn.results.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </section>
+        <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
+          <h2 className="text-xl font-semibold text-white print:text-black">
+            Results
+          </h2>
+          <ul className="list-disc list-inside space-y-2 text-sm text-slate-300 print:text-slate-700">
+            {resumeEn.results.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </section>
 
-          <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-6 print:border-none print:bg-transparent print:p-0">
-            <h2 className="text-xl font-semibold text-white print:text-black">
-              Experience
-            </h2>
-            {resumeEn.experience.map((item) => (
-              <div key={item.company} className="space-y-2">
-                <div>
-                  <p className="text-sm uppercase tracking-[0.2em] text-slate-400 print:text-slate-600">
-                    {item.period}
-                  </p>
-                  <h3 className="text-lg font-semibold text-white print:text-black">
-                    {item.role}
-                  </h3>
-                  <p className="text-sm text-slate-400 print:text-slate-600">
-                    {item.company}
-                  </p>
-                </div>
-                <p className="text-sm text-slate-300 print:text-slate-700">
-                  {item.description}
+        <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-6 print:border-none print:bg-transparent print:p-0">
+          <h2 className="text-xl font-semibold text-white print:text-black">
+            Experience
+          </h2>
+          {resumeEn.experience.map((item) => (
+            <div key={item.company} className="space-y-3">
+              <div>
+                <p className="text-sm uppercase tracking-[0.2em] text-slate-400 print:text-slate-600">
+                  {item.period}
+                </p>
+                <h3 className="text-lg font-semibold text-white print:text-black">
+                  {item.role}
+                </h3>
+                <p className="text-sm text-slate-400 print:text-slate-600">
+                  {item.company}
+                  {item.location ? ` — ${item.location}` : ""}
                 </p>
               </div>
-            ))}
-          </section>
+              <ul className="list-disc list-inside space-y-2 text-sm text-slate-300 print:text-slate-700">
+                {item.highlights.map((highlight) => (
+                  <li key={highlight}>{highlight}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </section>
         </div>
 
         <aside className="space-y-8">
           <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-6 print:border-none print:bg-transparent print:p-0">
             <h2 className="text-xl font-semibold text-white print:text-black">
-              Skills
+              Skills & Tools
             </h2>
             {resumeEn.skills.groups.map((group) => (
               <div key={group.title} className="space-y-3">
@@ -133,18 +136,27 @@ export default function ResumeEn() {
             ))}
           </section>
 
-          <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
+          <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-6 print:border-none print:bg-transparent print:p-0">
             <h2 className="text-xl font-semibold text-white print:text-black">
               Education
             </h2>
-            {resumeEn.education.map((item) => (
-              <div key={item.institution} className="space-y-1">
-                <p className="text-sm font-semibold text-white print:text-black">
-                  {item.course}
+            {resumeEn.education.groups.map((group) => (
+              <div key={group.title} className="space-y-3">
+                <p className="text-xs uppercase tracking-[0.2em] text-slate-400 print:text-slate-600">
+                  {group.title}
                 </p>
-                <p className="text-sm text-slate-400 print:text-slate-600">
-                  {item.institution} - {item.period}
-                </p>
+                <div className="space-y-3">
+                  {group.items.map((item) => (
+                    <div key={`${group.title}-${item.course}`} className="space-y-1">
+                      <p className="text-sm font-semibold text-white print:text-black">
+                        {item.course}
+                      </p>
+                      <p className="text-sm text-slate-400 print:text-slate-600">
+                        {item.institution} - {item.period}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </section>

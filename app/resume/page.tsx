@@ -6,7 +6,7 @@ import { baseUrl, sameAsLinks, siteName } from "@/lib/seo";
 
 const resumeTitle = "Curriculo | Matheus Siqueira";
 const resumeDescription =
-  "Curriculo de Matheus Siqueira, Analista de Dados Junior em BI, Power BI, SQL e Python, com experiencia em dados publicos, ETL, automacao e dashboards para decisao gerencial.";
+  "Curriculo de Matheus Siqueira, Analista de Dados Junior e Business Intelligence Analyst com Power BI, SQL, DAX, Python e ETL aplicados a dados publicos e decisoes gerenciais.";
 
 const resumeJsonLd = {
   "@context": "https://schema.org",

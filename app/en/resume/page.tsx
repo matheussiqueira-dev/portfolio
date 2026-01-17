@@ -6,7 +6,7 @@ import { baseUrl, sameAsLinks, siteName } from "@/lib/seo";
 
 const resumeTitle = "Resume | Matheus Siqueira";
 const resumeDescription =
-  "Resume of Matheus Siqueira, Junior Data Analyst in BI, Power BI, SQL, and Python, with experience in public data, ETL, automation, and decision-ready dashboards.";
+  "Resume of Matheus Siqueira, Junior Data Analyst and Business Intelligence Analyst with Power BI, SQL, DAX, Python, and ETL for public data and decision-ready dashboards.";
 
 const resumeJsonLd = {
   "@context": "https://schema.org",
