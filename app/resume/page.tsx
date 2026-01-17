@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     languages: {
       "pt-BR": "/resume",
       "en-US": "/en/resume",
+      "x-default": "/resume",
     },
   },
   openGraph: {

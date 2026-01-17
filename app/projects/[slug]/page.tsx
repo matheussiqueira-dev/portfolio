@@ -20,21 +20,10 @@ export function generateStaticParams() {
 }
 
 const buildMetaDescription = (project: Project) => {
-  const parts = [
-    project.tagline,
-    project.impact[0],
-    project.demonstrates[0],
-    project.dataUsed[0],
-    project.solution[0],
-  ].filter(Boolean);
-  let text = "";
-
-  for (const part of parts) {
-    text = text ? `${text} ${part}` : part;
-    if (text.length >= 160) {
-      break;
-    }
-  }
+  const parts = [project.tagline, project.impact[0], project.demonstrates[0]].filter(
+    Boolean,
+  );
+  const text = parts.join(" ").trim();
 
   if (text.length > 170) {
     return `${text.slice(0, 167).trimEnd()}...`;
@@ -60,17 +49,18 @@ export function generateMetadata({ params }: PageProps): Metadata {
   const description = buildMetaDescription(project);
 
   return {
-    title: `${project.title} | Matheus Siqueira`,
+    title: `${project.title} - Case Study`,
     description,
     alternates: {
       canonical: `/projects/${project.slug}`,
       languages: {
         "pt-BR": `/projects/${project.slug}`,
         "en-US": `/en/projects/${project.slug}`,
+        "x-default": `/projects/${project.slug}`,
       },
     },
     openGraph: {
-      title: `${project.title} | Matheus Siqueira`,
+      title: `${project.title} - Case Study`,
       description,
       url: `/projects/${project.slug}`,
       locale: "pt_BR",
@@ -87,7 +77,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${project.title} | Matheus Siqueira`,
+      title: `${project.title} - Case Study`,
       description,
       images: [cover?.src ?? "/og.png"],
     },
@@ -108,30 +98,21 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
     ? project.screenshots.filter((shot) => shot.src !== cover.src)
     : project.screenshots;
   const imageUrl = cover?.src ? `${baseUrl}${cover.src}` : `${baseUrl}/og.png`;
+  const description = buildMetaDescription(project);
   const projectJsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": "SoftwareSourceCode",
     name: project.title,
+    description,
     url: `${baseUrl}/projects/${project.slug}`,
-    description: project.tagline,
-    inLanguage: "pt-BR",
-    isPartOf: {
-      "@type": "WebSite",
+    codeRepository: project.repoUrl,
+    programmingLanguage: project.stack,
+    author: {
+      "@type": "Person",
       name: siteName,
       url: baseUrl,
     },
-    mainEntity: {
-      "@type": "CreativeWork",
-      name: project.title,
-      description: project.tagline,
-      url: `${baseUrl}/projects/${project.slug}`,
-      image: imageUrl,
-      keywords: project.stack.join(", "),
-      author: {
-        "@type": "Person",
-        name: siteName,
-      },
-    },
+    image: imageUrl,
   };
 
   return (

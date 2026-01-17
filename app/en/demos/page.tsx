@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     languages: {
       "pt-BR": "/demos",
       "en-US": "/en/demos",
+      "x-default": "/demos",
     },
   },
   openGraph: {
