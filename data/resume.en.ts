@@ -5,7 +5,7 @@ export const resumeEn = {
     "Junior Data Analyst with hands-on experience in Business Intelligence, Power BI, SQL, and Python, working in the public sector with fiscal and revenue data. Proven experience building strategic dashboards, automating processes, and ETL routines that support managerial decisions and increase operational efficiency. Multidisciplinary background in Marketing, Computer Science, and specializations in Data, Cloud, and Information Security.",
   experience: [
     {
-      company: "Pernambuco State Treasury",
+      company: "Municipal Treasury Department",
       role: "Data Analyst Intern",
       period: "2025 - Present",
       description:

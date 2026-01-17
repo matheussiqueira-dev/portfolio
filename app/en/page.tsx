@@ -11,7 +11,7 @@ import { baseUrl, siteName } from "@/lib/seo";
 const homeTitle =
   "Data Analyst & BI | Power BI, SQL, Python | Public Data & Decision-Making";
 const homeDescription =
-  "Data Analyst & BI at the Pernambuco State Treasury. Power BI, SQL, and Python for strategic dashboards, ETL, and automation that support clear managerial decisions.";
+  "Data Analyst & BI at the Municipal Treasury Department. Power BI, SQL, and Python for strategic dashboards, ETL, and automation that support clear managerial decisions.";
 
 const homeJsonLd = {
   "@context": "https://schema.org",

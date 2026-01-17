@@ -14,7 +14,7 @@ export const sitePt: SiteContent = {
     subtitle:
       "Power BI, SQL, Python e automacao aplicados a gestao publica e inteligencia fiscal",
     description:
-      "Analista de Dados Junior com mais de um ano de experiencia pratica em Business Intelligence aplicado, atuando na Secretaria da Fazenda de Pernambuco. Desenvolvo dashboards estrategicos, pipelines de dados e automacoes que reduzem retrabalho, aumentam eficiencia operacional e apoiam decisoes gerenciais baseadas em dados confiaveis.",
+      "Analista de Dados Junior com mais de um ano de experiencia pratica em Business Intelligence aplicado, atuando na Secretaria Municipal da Fazenda. Desenvolvo dashboards estrategicos, pipelines de dados e automacoes que reduzem retrabalho, aumentam eficiencia operacional e apoiam decisoes gerenciais baseadas em dados confiaveis.",
     ctas: {
       primary: "Ver projetos de dados",
       secondary: "Ver curriculo",
@@ -26,7 +26,7 @@ export const sitePt: SiteContent = {
     title: "Perfil orientado a BI, dados publicos e decisao",
     who: {
       title: "Quem sou",
-      body: "Sou Analista de Dados Junior com atuacao focada em Business Intelligence, dados publicos e apoio a tomada de decisao no setor governamental. Atualmente atuo como estagiario em Analise de Dados na Secretaria da Fazenda do Estado de Pernambuco, trabalhando diretamente com arrecadacao tributaria, dados fiscais e indicadores estrategicos para gestores publicos.",
+      body: "Sou Analista de Dados Junior com atuacao focada em Business Intelligence, dados publicos e apoio a tomada de decisao no setor governamental. Atualmente atuo como estagiario em Analise de Dados na Secretaria Municipal da Fazenda, trabalhando diretamente com arrecadacao tributaria, dados fiscais e indicadores estrategicos para gestores publicos.",
     },
     deliver: {
       title: "O que eu entrego",

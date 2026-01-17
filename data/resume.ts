@@ -20,7 +20,7 @@ export const resume = {
     "Analista de Dados Junior com experiencia pratica em Business Intelligence, Power BI, SQL e Python, atuando no setor publico com dados fiscais e de arrecadacao. Experiencia comprovada na criacao de dashboards estrategicos, automacao de processos e rotinas de ETL que apoiam decisoes gerenciais e aumentam a eficiencia operacional. Formacao multidisciplinar, com base em Marketing, Ciencia da Computacao e especializacoes em Dados, Cloud e Seguranca da Informacao.",
   experience: [
     {
-      company: "Secretaria da Fazenda do Estado de Pernambuco",
+      company: "Secretaria Municipal da Fazenda",
       role: "Analista de Dados (Estagio)",
       period: "2025 - Atual",
       description:

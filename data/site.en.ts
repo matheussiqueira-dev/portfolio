@@ -14,7 +14,7 @@ export const siteEn: SiteContent = {
     subtitle:
       "Power BI, SQL, Python, and automation applied to public management and fiscal intelligence",
     description:
-      "Junior Data Analyst with over one year of hands-on experience in applied Business Intelligence at the Pernambuco State Treasury. I build strategic dashboards, data pipelines, and automations that reduce rework, increase operational efficiency, and support managerial decisions with reliable data.",
+      "Junior Data Analyst with over one year of hands-on experience in applied Business Intelligence at the Municipal Treasury Department. I build strategic dashboards, data pipelines, and automations that reduce rework, increase operational efficiency, and support managerial decisions with reliable data.",
     ctas: {
       primary: "View data projects",
       secondary: "View resume",
@@ -26,7 +26,7 @@ export const siteEn: SiteContent = {
     title: "BI and public data focus with decision support",
     who: {
       title: "Who I am",
-      body: "I am a Junior Data Analyst focused on Business Intelligence, public data, and decision support in government. I currently intern in Data Analysis at the Pernambuco State Treasury, working with tax revenue, fiscal data, and strategic indicators for public managers.",
+      body: "I am a Junior Data Analyst focused on Business Intelligence, public data, and decision support in government. I currently intern in Data Analysis at the Municipal Treasury Department, working with tax revenue, fiscal data, and strategic indicators for public managers.",
     },
     deliver: {
       title: "What I deliver",
