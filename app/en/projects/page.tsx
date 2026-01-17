@@ -10,6 +10,25 @@ const pageTitle = "Projects | Matheus Siqueira";
 const pageDescription =
   "Projects and case studies in data, BI, and automation with Power BI, SQL, and Python, focused on public data, compliance, and decision-making in government contexts.";
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: `${baseUrl}/en`,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: siteEn.projectsPage.title,
+      item: `${baseUrl}/en/projects`,
+    },
+  ],
+};
+
 const projectsPageJsonLd = [
   {
     "@context": "https://schema.org",
@@ -35,6 +54,7 @@ const projectsPageJsonLd = [
       url: `${baseUrl}/en/projects/${project.slug}`,
     })),
   },
+  breadcrumbJsonLd,
 ];
 
 type PageProps = {

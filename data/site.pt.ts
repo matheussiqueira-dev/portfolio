@@ -25,31 +25,31 @@ export const sitePt: SiteContent = {
     eyebrow: "Sobre",
     title: "Analista de Dados e BI orientado a impacto em gestao publica",
     who: {
-      title: "Quem sou",
-      body: "Sou Analista de Dados Junior com atuacao focada em Business Intelligence, dados publicos e apoio a tomada de decisao no setor governamental. Atualmente atuo como estagiario em Analise de Dados na Secretaria Municipal da Fazenda, trabalhando diretamente com arrecadacao tributaria, dados fiscais e indicadores estrategicos. Em paralelo, estou em formacao em desenvolvimento web para criar produtos de dados mais eficientes.",
+      title: "O que faco",
+      body: "Atuo como Analista de Dados Junior com foco em Business Intelligence, dados publicos e apoio a tomada de decisao. Hoje trabalho com arrecadacao tributaria, dados fiscais e indicadores estrategicos na Secretaria Municipal da Fazenda, desenvolvendo visoes claras para gestores. Em paralelo, sigo em formacao em desenvolvimento web para fortalecer produtos de dados e sistemas analiticos.",
     },
     deliver: {
-      title: "O que eu entrego",
+      title: "Como faco",
       bullets: [
         "Dashboards estrategicos em Power BI para acompanhamento de arrecadacao e gestao fiscal.",
-        "Pipelines de ETL com SQL e Python, integrando multiplas bases publicas.",
+        "Modelagem e transformacao com DAX e Power Query para dados confiaveis.",
+        "Pipelines de ETL com SQL e Python integrando multiplas bases publicas.",
         "Automacao de relatorios com reducao de retrabalho e tempo operacional.",
         "Analises exploratorias para identificar tendencias e anomalias fiscais.",
-        "Padronizacao e governanca basica para dados confiaveis.",
       ],
     },
     highlights: {
-      title: "Destaques profissionais",
+      title: "Resultados",
       items: [
-        "Experiencia real com dados fiscais e publicos sensiveis em ambiente governamental.",
+        "Reducao de retrabalho e tempo de consolidacao em rotinas recorrentes.",
         "Dashboards executivos e operacionais para acompanhamento de arrecadacao.",
-        "Automacoes que reduzem retrabalho e aumentam consistencia dos dados.",
+        "Automacoes que aumentam consistencia e rastreabilidade dos dados.",
+        "Padronizacao de indicadores para decisoes gerenciais.",
         "Colaboracao com gestores e times multidisciplinares.",
-        "Foco em padronizacao, rastreabilidade e documentacao.",
       ],
     },
     stack: {
-      title: "Stack tecnica",
+      title: "Ferramentas",
       groups: [
         {
           title: "Analise e BI",

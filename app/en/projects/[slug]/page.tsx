@@ -119,10 +119,34 @@ export default function ProjectCaseStudyPageEn({ params }: PageProps) {
     },
     image: imageUrl,
   };
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${baseUrl}/en`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: siteEn.projectsPage.title,
+        item: `${baseUrl}/en/projects`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: project.title,
+        item: `${baseUrl}/en/projects/${project.slug}`,
+      },
+    ],
+  };
 
   return (
     <main className="min-h-screen px-6 py-24">
-      <JsonLd data={projectJsonLd} />
+      <JsonLd data={[projectJsonLd, breadcrumbJsonLd]} />
       <div className="max-w-6xl mx-auto">
         <header className="space-y-6">
           <Link

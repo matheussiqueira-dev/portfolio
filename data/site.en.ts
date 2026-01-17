@@ -25,31 +25,31 @@ export const siteEn: SiteContent = {
     eyebrow: "About",
     title: "Data Analyst and BI focused on public impact",
     who: {
-      title: "Who I am",
-      body: "I am a Junior Data Analyst focused on Business Intelligence, public data, and decision support in government. I currently intern in Data Analysis at the Municipal Treasury Department, working with tax revenue, fiscal data, and strategic indicators. In parallel, I am training in web development to build better data products.",
+      title: "What I do",
+      body: "I work as a Junior Data Analyst focused on Business Intelligence, public data, and decision support. I handle tax revenue, fiscal data, and strategic indicators at the Municipal Treasury Department, building clear views for decision-makers. In parallel, I am training in web development to strengthen data products and analytical systems.",
     },
     deliver: {
-      title: "What I deliver",
+      title: "How I do it",
       bullets: [
         "Strategic Power BI dashboards to track fiscal and revenue indicators.",
+        "Modeling and transformations with DAX and Power Query.",
         "ETL pipelines with SQL and Python integrating public data sources.",
         "Report automation to reduce rework and operational time.",
         "Exploratory analysis to identify fiscal trends and anomalies.",
-        "Basic governance and standardization for reliable data.",
       ],
     },
     highlights: {
-      title: "Professional highlights",
+      title: "Results",
       items: [
-        "Hands-on work with sensitive fiscal and public data in government.",
+        "Reduced rework and consolidation time in recurring routines.",
         "Executive and operational dashboards for revenue monitoring.",
-        "Automations that reduce rework and improve data consistency.",
+        "Automations that improve consistency and traceability.",
+        "Standardized indicators for managerial decisions.",
         "Collaboration with managers and cross-functional teams.",
-        "Focus on standardization, traceability, and documentation.",
       ],
     },
     stack: {
-      title: "Technical stack",
+      title: "Tools",
       groups: [
         {
           title: "Analysis and BI",
