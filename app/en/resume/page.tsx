@@ -1,24 +1,26 @@
 import type { Metadata } from "next";
 import JsonLd from "@/components/seo/JsonLd";
 import ResumeEn from "@/components/sections/ResumeEn";
-import { baseUrl, siteName } from "@/lib/seo";
+import { resumeEn } from "@/data/resume.en";
+import { baseUrl, sameAsLinks, siteName } from "@/lib/seo";
 
 const resumeTitle = "Resume | Matheus Siqueira";
 const resumeDescription =
-  "Resume of Matheus Siqueira, Junior Data Analyst in BI, Power BI, SQL, and Python, with experience in public data, ETL, and dashboards for clear managerial decisions.";
+  "Resume of Matheus Siqueira, Junior Data Analyst in BI, Power BI, SQL, and Python, with experience in public data, ETL, automation, and decision-ready dashboards.";
 
 const resumeJsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: resumeTitle,
+  "@type": "Person",
+  name: resumeEn.name,
+  jobTitle: resumeEn.role,
+  description: resumeEn.summary,
   url: `${baseUrl}/en/resume`,
-  description: resumeDescription,
-  inLanguage: "en-US",
-  isPartOf: {
-    "@type": "WebSite",
-    name: siteName,
-    url: baseUrl,
+  sameAs: sameAsLinks,
+  worksFor: {
+    "@type": "Organization",
+    name: "Municipal Treasury Department",
   },
+  knowsAbout: resumeEn.skills.groups.flatMap((group) => group.items),
 };
 
 export const metadata: Metadata = {

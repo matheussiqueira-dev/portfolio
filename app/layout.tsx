@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 });
 
 const siteDescription =
-  "Analista de Dados e BI com foco em dados publicos, governo, Power BI, SQL, DAX e Python. Dashboards estrategicos, ETL e automacao para decisoes gerenciais.";
+  "Analista de Dados Junior e BI com foco em dados publicos e fiscais, Power BI, SQL, DAX e Python. Dashboards estrategicos, ETL e automacao para decisoes gerenciais.";
 const siteKeywords = [
   "Data Analyst",
   "Business Intelligence",
@@ -34,9 +34,9 @@ const siteKeywords = [
   "ETL",
   "Dashboards",
 ];
-const googleVerification =
-  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
-  "SUBSTITUIR_PELO_TOKEN_HTML_DO_GOOGLE";
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+const gaId =
+  process.env.NEXT_PUBLIC_GA_ID || process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -49,6 +49,9 @@ export const metadata: Metadata = {
   authors: [{ name: siteName, url: baseUrl }],
   creator: siteName,
   publisher: siteName,
+  verification: {
+    google: googleSiteVerification || undefined,
+  },
   alternates: {
     canonical: "/",
     languages: {
@@ -145,24 +148,24 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        <meta
-          name="google-site-verification"
-          content={googleVerification}
-        />
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}', {
-              page_path: window.location.pathname,
-            });
-          `}
-        </Script>
+        {gaId ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gaId}', {
+                  page_path: window.location.pathname,
+                });
+              `}
+            </Script>
+          </>
+        ) : null}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-[#0b0d10] text-slate-100 relative pt-16`}
