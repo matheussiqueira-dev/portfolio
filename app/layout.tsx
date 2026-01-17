@@ -34,9 +34,12 @@ const siteKeywords = [
   "ETL",
   "Dashboards",
 ];
-const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+const googleSiteVerification =
+  process.env.NEXT_PUBLIC_GSC_VERIFICATION ||
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 const gaId =
   process.env.NEXT_PUBLIC_GA_ID || process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const gaTrackingId = gaId?.trim();
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -148,10 +151,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        {gaId ? (
+        {gaTrackingId ? (
           <>
             <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`}
               strategy="afterInteractive"
             />
             <Script id="google-analytics" strategy="afterInteractive">
@@ -159,7 +162,7 @@ export default function RootLayout({
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${gaId}', {
+                gtag('config', '${gaTrackingId}', {
                   page_path: window.location.pathname,
                 });
               `}

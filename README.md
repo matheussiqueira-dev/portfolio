@@ -25,9 +25,10 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 Set these in Vercel or your local `.env.local`:
 
 ```
-NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your_value_here
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_GSC_VERIFICATION=your_value_here
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your_value_here
 ```
 
 ## Windows (EPERM/OneDrive) — solucao definitiva
