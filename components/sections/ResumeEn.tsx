@@ -58,52 +58,79 @@ export default function ResumeEn() {
       </header>
 
       <div className="grid gap-8 md:grid-cols-[2fr_1fr]">
-        <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
-          <h2 className="text-xl font-semibold text-white print:text-black">
-            Summary
-          </h2>
-          <p className="text-slate-300 print:text-slate-700">{resumeEn.summary}</p>
-        </section>
+        <div className="space-y-8">
+          <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
+            <h2 className="text-xl font-semibold text-white print:text-black">
+              Summary
+            </h2>
+            <p className="text-slate-300 print:text-slate-700">
+              {resumeEn.summary}
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-sm text-slate-300 print:text-slate-700">
+              {resumeEn.summaryBullets.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </section>
 
-        <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-6 print:border-none print:bg-transparent print:p-0">
-          <h2 className="text-xl font-semibold text-white print:text-black">
-            Experience
-          </h2>
-          {resumeEn.experience.map((item) => (
-            <div key={item.company} className="space-y-2">
-              <div>
-                <p className="text-sm uppercase tracking-[0.2em] text-slate-400 print:text-slate-600">
-                  {item.period}
-                </p>
-                <h3 className="text-lg font-semibold text-white print:text-black">
-                  {item.role}
-                </h3>
-                <p className="text-sm text-slate-400 print:text-slate-600">
-                  {item.company}
+          <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
+            <h2 className="text-xl font-semibold text-white print:text-black">
+              Results
+            </h2>
+            <ul className="list-disc list-inside space-y-2 text-sm text-slate-300 print:text-slate-700">
+              {resumeEn.results.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-6 print:border-none print:bg-transparent print:p-0">
+            <h2 className="text-xl font-semibold text-white print:text-black">
+              Experience
+            </h2>
+            {resumeEn.experience.map((item) => (
+              <div key={item.company} className="space-y-2">
+                <div>
+                  <p className="text-sm uppercase tracking-[0.2em] text-slate-400 print:text-slate-600">
+                    {item.period}
+                  </p>
+                  <h3 className="text-lg font-semibold text-white print:text-black">
+                    {item.role}
+                  </h3>
+                  <p className="text-sm text-slate-400 print:text-slate-600">
+                    {item.company}
+                  </p>
+                </div>
+                <p className="text-sm text-slate-300 print:text-slate-700">
+                  {item.description}
                 </p>
               </div>
-              <p className="text-sm text-slate-300 print:text-slate-700">
-                {item.description}
-              </p>
-            </div>
-          ))}
-        </section>
+            ))}
+          </section>
+        </div>
 
         <aside className="space-y-8">
-          <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
+          <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-6 print:border-none print:bg-transparent print:p-0">
             <h2 className="text-xl font-semibold text-white print:text-black">
               Skills
             </h2>
-            <div className="flex flex-wrap gap-2">
-              {resumeEn.skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-200 print:text-slate-700 print:border-slate-300"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
+            {resumeEn.skills.groups.map((group) => (
+              <div key={group.title} className="space-y-3">
+                <p className="text-xs uppercase tracking-[0.2em] text-slate-400 print:text-slate-600">
+                  {group.title}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((skill) => (
+                    <span
+                      key={skill}
+                      className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-200 print:text-slate-700 print:border-slate-300"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </section>
 
           <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">

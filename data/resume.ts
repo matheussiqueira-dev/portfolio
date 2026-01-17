@@ -15,9 +15,21 @@ function getCurrentPeriod(): number {
 
 export const resume = {
   name: "Matheus Siqueira",
-  role: "Analista de Dados Junior",
+  role: "Analista de Dados Junior | BI",
   summary:
-    "Analista de Dados Junior com experiencia pratica em Business Intelligence, Power BI, SQL e Python, atuando no setor publico com dados fiscais e de arrecadacao. Experiencia comprovada na criacao de dashboards estrategicos, automacao de processos e rotinas de ETL que apoiam decisoes gerenciais e aumentam a eficiencia operacional. Formacao multidisciplinar, com base em Marketing, Ciencia da Computacao e especializacoes em Dados, Cloud e Seguranca da Informacao.",
+    "Analista de Dados Junior com experiencia em Business Intelligence, Power BI, SQL e Python, atuando com dados publicos e fiscais em ambiente governamental. Foco em dashboards estrategicos, ETL e automacao para apoiar decisoes gerenciais. Em formacao em desenvolvimento web para produtos de dados.",
+  summaryBullets: [
+    "Dashboards em Power BI para arrecadacao e gestao fiscal.",
+    "ETL com SQL e Python integrando bases publicas.",
+    "Automacao de rotinas e padronizacao de dados.",
+    "Documentacao e governanca basica para rastreabilidade.",
+    "Colaboracao com gestores e times multidisciplinares.",
+  ],
+  results: [
+    "Reducao estimada de tempo de consolidacao em rotinas recorrentes (~30%).",
+    "Automacao de relatorios com economia de horas semanais.",
+    "Padronizacao de indicadores para acompanhamento executivo.",
+  ],
   experience: [
     {
       company: "Secretaria Municipal da Fazenda",
@@ -39,16 +51,20 @@ export const resume = {
       period: "Em andamento",
     },
   ],
-  skills: [
-    "Power BI",
-    "SQL",
-    "DAX",
-    "Power Query",
-    "Python",
-    "Pandas",
-    "FastAPI",
-    "Git",
-    "React",
-    "Next.js",
-  ],
+  skills: {
+    groups: [
+      {
+        title: "Dados e BI",
+        items: ["Power BI", "DAX", "Power Query", "SQL", "Data Visualization"],
+      },
+      {
+        title: "Backend e Automacao",
+        items: ["Python", "Pandas", "ETL", "APIs REST", "FastAPI"],
+      },
+      {
+        title: "Web e Produto",
+        items: ["JavaScript", "React", "Next.js", "Git/GitHub"],
+      },
+    ],
+  },
 };

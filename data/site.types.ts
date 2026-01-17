@@ -55,6 +55,7 @@ export type SiteContent = {
       problemTitle: string;
       solutionTitle: string;
       featuresTitle: string;
+      demonstratesTitle: string;
       stackTitle: string;
       githubLabel: string;
       demoLabel: string;
@@ -111,6 +112,7 @@ export type SiteContent = {
     fullCaseLabel: string;
     openDemoLabel: string;
     demoSoonLabel: string;
+    howToRunLabel: string;
     publishTitle: string;
     publishItems: string[];
   };

@@ -10,11 +10,11 @@ export const siteEn: SiteContent = {
   },
   hero: {
     eyebrow: "Data Analyst | BI | Public Sector",
-    title: "Turning public data into strategic decisions",
+    title: "Data Analyst & BI for public decision-making",
     subtitle:
-      "Power BI, SQL, Python, and automation applied to public management and fiscal intelligence",
+      "Power BI, SQL, Python, and automation applied to public data and fiscal management",
     description:
-      "Junior Data Analyst with over one year of hands-on experience in applied Business Intelligence at the Municipal Treasury Department. I build strategic dashboards, data pipelines, and automations that reduce rework, increase operational efficiency, and support managerial decisions with reliable data.",
+      "Junior Data Analyst with hands-on experience in applied Business Intelligence at the Municipal Treasury Department. I build strategic dashboards, data pipelines, and automations with Power BI, SQL, and Python to support managerial decisions with reliable data. I am also training in web development for data products and analytical systems.",
     ctas: {
       primary: "View data projects",
       secondary: "View resume",
@@ -23,29 +23,29 @@ export const siteEn: SiteContent = {
   },
   about: {
     eyebrow: "About",
-    title: "BI and public data focus with decision support",
+    title: "Data Analyst and BI focused on public impact",
     who: {
       title: "Who I am",
-      body: "I am a Junior Data Analyst focused on Business Intelligence, public data, and decision support in government. I currently intern in Data Analysis at the Municipal Treasury Department, working with tax revenue, fiscal data, and strategic indicators for public managers.",
+      body: "I am a Junior Data Analyst focused on Business Intelligence, public data, and decision support in government. I currently intern in Data Analysis at the Municipal Treasury Department, working with tax revenue, fiscal data, and strategic indicators. In parallel, I am training in web development to build better data products.",
     },
     deliver: {
       title: "What I deliver",
       bullets: [
-        "Strategic Power BI dashboards to track municipal revenue.",
-        "ETL routines with SQL and Python integrating public data sources.",
-        "Report and process automation to reduce operational time and rework.",
-        "Exploratory analysis to identify trends and fiscal anomalies.",
-        "Decision-oriented visualizations beyond aesthetics.",
+        "Strategic Power BI dashboards to track fiscal and revenue indicators.",
+        "ETL pipelines with SQL and Python integrating public data sources.",
+        "Report automation to reduce rework and operational time.",
+        "Exploratory analysis to identify fiscal trends and anomalies.",
+        "Basic governance and standardization for reliable data.",
       ],
     },
     highlights: {
       title: "Professional highlights",
       items: [
-        "+40% reduction in data consolidation time.",
-        "Direct work with sensitive fiscal and public data.",
-        "Real experience in government environments and large-scale data.",
-        "Analytical interface with managers and cross-functional teams.",
-        "Strong focus on data quality, organization, and traceability.",
+        "Hands-on work with sensitive fiscal and public data in government.",
+        "Executive and operational dashboards for revenue monitoring.",
+        "Automations that reduce rework and improve data consistency.",
+        "Collaboration with managers and cross-functional teams.",
+        "Focus on standardization, traceability, and documentation.",
       ],
     },
     stack: {
@@ -57,8 +57,8 @@ export const siteEn: SiteContent = {
             "Power BI",
             "DAX",
             "Power Query",
-            "Analytical modeling",
-            "Indicators",
+            "Data Visualization",
+            "Data Analytics",
           ],
         },
         {
@@ -104,6 +104,7 @@ export const siteEn: SiteContent = {
       problemTitle: "Problem",
       solutionTitle: "Solution",
       featuresTitle: "Features",
+      demonstratesTitle: "What it shows",
       stackTitle: "Stack",
       githubLabel: "GitHub",
       demoLabel: "Demo",
@@ -145,7 +146,7 @@ export const siteEn: SiteContent = {
     eyebrow: "Contact",
     title: "Let's talk?",
     description:
-      "I am open to Junior Data Analyst or BI opportunities, especially where data supports real decisions. If you need someone with practical experience, data responsibility, and analytical vision, let's connect.",
+      "I am open to Junior Data Analyst or BI opportunities, especially where data supports real decisions. I bring hands-on public data and BI experience and I am training in web development. If you need someone with practical experience and analytical ownership, let's connect.",
     ctaTitle: "Open to Data and BI opportunities",
     ctaSubtitle: "LinkedIn and email replies are fast.",
     cards: {
@@ -159,11 +160,12 @@ export const siteEn: SiteContent = {
     eyebrow: "Demos",
     title: "Demos and repositories",
     description:
-      "Demos and repositories for quick evaluation of data, BI, and automation projects.",
+      "Demos and repositories for quick evaluation of data, BI, and automation projects, with clear local run steps.",
     viewProjectsLabel: "View projects",
     fullCaseLabel: "Full case",
     openDemoLabel: "Open demo",
     demoSoonLabel: "Demo soon",
+    howToRunLabel: "How to run locally",
     publishTitle: "How I publish demos",
     publishItems: [
       "Web (Next.js/React): Vercel with automatic GitHub deploy.",

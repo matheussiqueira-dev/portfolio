@@ -10,11 +10,11 @@ export const sitePt: SiteContent = {
   },
   hero: {
     eyebrow: "Analista de Dados | BI | Setor Publico",
-    title: "Transformando dados publicos em decisoes estrategicas",
+    title: "Analista de Dados & BI para decisao publica",
     subtitle:
-      "Power BI, SQL, Python e automacao aplicados a gestao publica e inteligencia fiscal",
+      "Power BI, SQL, Python e automacao aplicados a dados publicos e gestao fiscal",
     description:
-      "Analista de Dados Junior com mais de um ano de experiencia pratica em Business Intelligence aplicado, atuando na Secretaria Municipal da Fazenda. Desenvolvo dashboards estrategicos, pipelines de dados e automacoes que reduzem retrabalho, aumentam eficiencia operacional e apoiam decisoes gerenciais baseadas em dados confiaveis.",
+      "Analista de Dados Junior com experiencia pratica em Business Intelligence aplicado na Secretaria Municipal da Fazenda. Desenvolvo dashboards estrategicos, pipelines de dados e automacoes com Power BI, SQL e Python para apoiar decisoes gerenciais com dados confiaveis. Em formacao em desenvolvimento web para produtos de dados e sistemas analiticos.",
     ctas: {
       primary: "Ver projetos de dados",
       secondary: "Ver curriculo",
@@ -23,29 +23,29 @@ export const sitePt: SiteContent = {
   },
   about: {
     eyebrow: "Sobre",
-    title: "Perfil orientado a BI, dados publicos e decisao",
+    title: "Analista de Dados e BI orientado a impacto em gestao publica",
     who: {
       title: "Quem sou",
-      body: "Sou Analista de Dados Junior com atuacao focada em Business Intelligence, dados publicos e apoio a tomada de decisao no setor governamental. Atualmente atuo como estagiario em Analise de Dados na Secretaria Municipal da Fazenda, trabalhando diretamente com arrecadacao tributaria, dados fiscais e indicadores estrategicos para gestores publicos.",
+      body: "Sou Analista de Dados Junior com atuacao focada em Business Intelligence, dados publicos e apoio a tomada de decisao no setor governamental. Atualmente atuo como estagiario em Analise de Dados na Secretaria Municipal da Fazenda, trabalhando diretamente com arrecadacao tributaria, dados fiscais e indicadores estrategicos. Em paralelo, estou em formacao em desenvolvimento web para criar produtos de dados mais eficientes.",
     },
     deliver: {
       title: "O que eu entrego",
       bullets: [
-        "Dashboards estrategicos em Power BI para acompanhamento de arrecadacao municipal.",
-        "Rotinas de ETL com SQL e Python, integrando multiplas bases publicas.",
-        "Automacao de relatorios e processos, reduzindo tempo operacional e retrabalho.",
-        "Analises exploratorias para identificacao de tendencias e anomalias fiscais.",
-        "Visualizacoes orientadas a decisao gerencial, nao apenas estetica.",
+        "Dashboards estrategicos em Power BI para acompanhamento de arrecadacao e gestao fiscal.",
+        "Pipelines de ETL com SQL e Python, integrando multiplas bases publicas.",
+        "Automacao de relatorios com reducao de retrabalho e tempo operacional.",
+        "Analises exploratorias para identificar tendencias e anomalias fiscais.",
+        "Padronizacao e governanca basica para dados confiaveis.",
       ],
     },
     highlights: {
       title: "Destaques profissionais",
       items: [
-        "+40% de reducao no tempo de consolidacao de dados.",
-        "Atuacao direta com dados fiscais e publicos sensiveis.",
-        "Experiencia real em ambiente governamental e dados de grande escala.",
-        "Interface analitica com gestores e times multidisciplinares.",
-        "Foco em qualidade, organizacao e rastreabilidade dos dados.",
+        "Experiencia real com dados fiscais e publicos sensiveis em ambiente governamental.",
+        "Dashboards executivos e operacionais para acompanhamento de arrecadacao.",
+        "Automacoes que reduzem retrabalho e aumentam consistencia dos dados.",
+        "Colaboracao com gestores e times multidisciplinares.",
+        "Foco em padronizacao, rastreabilidade e documentacao.",
       ],
     },
     stack: {
@@ -57,8 +57,8 @@ export const sitePt: SiteContent = {
             "Power BI",
             "DAX",
             "Power Query",
-            "Modelagem analitica",
-            "Indicadores",
+            "Data Visualization",
+            "Data Analytics",
           ],
         },
         {
@@ -98,6 +98,7 @@ export const sitePt: SiteContent = {
       problemTitle: "Problema",
       solutionTitle: "Solucao",
       featuresTitle: "Funcionalidades",
+      demonstratesTitle: "O que demonstra",
       stackTitle: "Stack",
       githubLabel: "GitHub",
       demoLabel: "Demo",
@@ -139,7 +140,7 @@ export const sitePt: SiteContent = {
     eyebrow: "Contato",
     title: "Vamos conversar?",
     description:
-      "Estou aberto a oportunidades como Analista de Dados Junior ou BI, especialmente em contextos onde dados apoiam decisoes reais. Se voce busca alguem com experiencia pratica, responsabilidade com dados e visao analitica, vamos conversar.",
+      "Estou aberto a oportunidades como Analista de Dados Junior ou BI, especialmente em contextos onde dados apoiam decisoes reais. Tenho experiencia pratica em dados publicos, automacao e BI, e estou em formacao em desenvolvimento web. Se busca alguem com responsabilidade com dados e visao analitica, vamos conversar.",
     ctaTitle: "Aberto a oportunidades em Dados e BI",
     ctaSubtitle: "LinkedIn e e-mail respondidos rapidamente.",
     cards: {
@@ -153,11 +154,12 @@ export const sitePt: SiteContent = {
     eyebrow: "Demos",
     title: "Demos e repositorios",
     description:
-      "Demos e repositorios para avaliacao rapida de projetos de dados, BI e automacao.",
+      "Demos e repositorios para avaliacao rapida de projetos de dados, BI e automacao, com instrucoes claras para rodar localmente.",
     viewProjectsLabel: "Ver projetos",
     fullCaseLabel: "Case completo",
     openDemoLabel: "Abrir demo",
     demoSoonLabel: "Demo em breve",
+    howToRunLabel: "Como executar (local)",
     publishTitle: "Como publico demos",
     publishItems: [
       "Web (Next.js/React): Vercel com deploy automatico do GitHub.",

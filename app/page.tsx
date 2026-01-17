@@ -11,7 +11,7 @@ import { baseUrl, siteName } from "@/lib/seo";
 const homeTitle =
   "Analista de Dados & BI | Power BI, SQL, Python | Dados Publicos e Tomada de Decisao";
 const homeDescription =
-  "Analista de Dados e BI na Secretaria Municipal da Fazenda. Power BI, SQL e Python para dashboards estrategicos, ETL e automacao que apoiam decisoes gerenciais.";
+  "Analista de Dados e Business Intelligence na Secretaria Municipal da Fazenda. Power BI, SQL e Python para dashboards estrategicos, ETL e automacao que apoiam decisoes gerenciais.";
 
 const homeJsonLd = {
   "@context": "https://schema.org",
