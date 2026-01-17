@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import profileImage from "@/public/profile.jpg";
 import type { SiteContent } from "@/data/site.types";
 
 type Props = {
@@ -16,20 +17,20 @@ export default function Hero({ content, localePrefix = "" }: Props) {
     <section id="home" className="scroll-mt-24 px-6 pt-28 pb-20">
       <div className="max-w-6xl mx-auto grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-center">
         <div className="flex flex-col gap-6 text-center lg:text-left">
-          <p className="text-xs uppercase tracking-[0.3em] text-slate-400 motion-safe:animate-fade-up">
+          <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
             {content.eyebrow}
           </p>
-          <h1 className="text-4xl md:text-5xl font-semibold leading-tight tracking-tight text-white motion-safe:animate-fade-up [animation-delay:120ms]">
+          <h1 className="text-4xl md:text-5xl font-semibold leading-tight tracking-tight text-white">
             {content.title}
           </h1>
-          <p className="text-lg md:text-xl text-slate-200 font-medium motion-safe:animate-fade-up [animation-delay:160ms]">
+          <p className="text-lg md:text-xl text-slate-200 font-medium">
             {content.subtitle}
           </p>
-          <p className="text-base md:text-lg leading-relaxed text-slate-300 motion-safe:animate-fade-up [animation-delay:220ms]">
+          <p className="text-base md:text-lg leading-relaxed text-slate-300">
             {content.description}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center sm:items-stretch motion-safe:animate-fade-up [animation-delay:320ms]">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center sm:items-stretch">
             <Link
               href={projectsHref}
               className="px-6 py-3 rounded-full bg-white text-sm font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
@@ -53,15 +54,18 @@ export default function Hero({ content, localePrefix = "" }: Props) {
           </div>
         </div>
 
-        <div className="flex justify-center lg:justify-end motion-safe:animate-fade-in">
+        <div className="flex justify-center lg:justify-end">
           <Image
-            src="/profile.jpg"
+            src={profileImage}
             alt="Matheus Siqueira"
             width={320}
             height={320}
-            sizes="(max-width: 768px) 220px, 320px"
+            sizes="(max-width: 768px) 140px, 320px"
             priority
-            className="rounded-2xl object-cover border border-white/10 shadow-2xl"
+            placeholder="blur"
+            quality={70}
+            fetchPriority="high"
+            className="rounded-2xl object-cover border border-white/10 shadow-xl"
           />
         </div>
       </div>

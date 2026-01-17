@@ -6,7 +6,7 @@ type Props = {
 
 export default function About({ content }: Props) {
   return (
-    <section id="about" className="scroll-mt-24 px-6 py-20">
+    <section id="about" className="scroll-mt-24 px-6 py-20 content-auto">
       <div className="max-w-6xl mx-auto space-y-10">
         <header>
           <p className="text-xs uppercase tracking-[0.3em] text-slate-400">

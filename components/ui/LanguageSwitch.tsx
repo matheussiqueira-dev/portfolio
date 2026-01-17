@@ -48,8 +48,8 @@ export default function LanguageSwitch({ direction = "row", onNavigate }: Props)
         <img
           src="/flags/br.png"
           alt="PT-BR"
-          width={18}
-          height={18}
+          width={20}
+          height={14}
           className="rounded-sm"
         />
         PT-BR
@@ -68,8 +68,8 @@ export default function LanguageSwitch({ direction = "row", onNavigate }: Props)
         <img
           src="/flags/us.png"
           alt="EN-US"
-          width={18}
-          height={18}
+          width={20}
+          height={11}
           className="rounded-sm"
         />
         EN-US

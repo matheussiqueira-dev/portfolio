@@ -17,7 +17,7 @@ export default function Projects({
   const projectsHref = localePrefix ? `${localePrefix}/projects` : "/projects";
 
   return (
-    <section id="projects" className="scroll-mt-24 px-6 py-20">
+    <section id="projects" className="scroll-mt-24 px-6 py-20 content-auto">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col gap-4 mb-10">
           <p className="text-xs uppercase tracking-[0.3em] text-slate-400">

@@ -6,7 +6,7 @@ type Props = {
 
 export default function Contact({ content }: Props) {
   return (
-    <section id="contact" className="scroll-mt-24 px-6 py-20">
+    <section id="contact" className="scroll-mt-24 px-6 py-20 content-auto">
       <div className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-start">
         <div className="space-y-4">
           <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
