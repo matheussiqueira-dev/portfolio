@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
+import { baseUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.matheussiqueira.dev";
   const now = new Date();
 
   return [
@@ -59,6 +59,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/resume/en`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
     },
     {
       url: `${baseUrl}/en/resume`,

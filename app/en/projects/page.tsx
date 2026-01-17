@@ -1,7 +1,40 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import JsonLd from "@/components/seo/JsonLd";
 import { projectsEn } from "@/data/projects.en";
 import { siteEn } from "@/data/site.en";
+import { baseUrl, siteName } from "@/lib/seo";
+
+const pageTitle = "Projects | Matheus Siqueira";
+const pageDescription =
+  "Projects and case studies in data, BI, and automation with Power BI, SQL, and Python, focused on public data, compliance, and decision-making in government contexts.";
+
+const projectsPageJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: pageTitle,
+    url: `${baseUrl}/en/projects`,
+    description: pageDescription,
+    inLanguage: "en-US",
+    isPartOf: {
+      "@type": "WebSite",
+      name: siteName,
+      url: baseUrl,
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Featured projects",
+    itemListElement: projectsEn.map((project, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: project.title,
+      url: `${baseUrl}/en/projects/${project.slug}`,
+    })),
+  },
+];
 
 type PageProps = {
   searchParams?: {
@@ -10,22 +43,22 @@ type PageProps = {
 };
 
 export const metadata: Metadata = {
-  title: "Projects | Matheus Siqueira",
-  description:
-    "Projects and case studies in data, BI, and automation with Power BI, SQL, and Python, focused on public data, compliance, and decision-making in government contexts.",
+  title: pageTitle,
+  description: pageDescription,
   alternates: {
+    canonical: "/en/projects",
     languages: {
       "pt-BR": "/projects",
       "en-US": "/en/projects",
     },
   },
   openGraph: {
-    title: "Projects | Matheus Siqueira",
-    description:
-      "Projects and case studies in data, BI, and automation with Power BI, SQL, and Python, focused on public data, compliance, and decision-making in government contexts.",
+    title: pageTitle,
+    description: pageDescription,
     url: "/en/projects",
     locale: "en_US",
     type: "website",
+    siteName,
     images: [
       {
         url: "/og.png",
@@ -37,9 +70,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Projects | Matheus Siqueira",
-    description:
-      "Projects and case studies in data, BI, and automation with Power BI, SQL, and Python, focused on public data, compliance, and decision-making in government contexts.",
+    title: pageTitle,
+    description: pageDescription,
     images: ["/og.png"],
   },
 };
@@ -55,6 +87,7 @@ export default function ProjectsPageEn({ searchParams }: PageProps) {
 
   return (
     <main className="min-h-screen px-6 py-24">
+      <JsonLd data={projectsPageJsonLd} />
       <div className="max-w-6xl mx-auto">
         <header className="mb-12 space-y-4">
           <p className="text-xs uppercase tracking-[0.3em] text-slate-400">

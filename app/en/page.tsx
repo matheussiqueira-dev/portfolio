@@ -3,26 +3,45 @@ import About from "@/components/sections/About";
 import Contact from "@/components/sections/Contact";
 import Hero from "@/components/sections/Hero";
 import Projects from "@/components/sections/Projects";
+import JsonLd from "@/components/seo/JsonLd";
 import { projectsEn } from "@/data/projects.en";
 import { siteEn } from "@/data/site.en";
+import { baseUrl, siteName } from "@/lib/seo";
+
+const homeTitle =
+  "Data Analyst & BI | Power BI, SQL, Python | Public Data & Decision-Making";
+const homeDescription =
+  "Data Analyst & BI at the Pernambuco State Treasury. Power BI, SQL, and Python for strategic dashboards, ETL, and automation that support clear managerial decisions.";
+
+const homeJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: homeTitle,
+  url: `${baseUrl}/en`,
+  description: homeDescription,
+  inLanguage: "en-US",
+  isPartOf: {
+    "@type": "WebSite",
+    name: siteName,
+    url: baseUrl,
+  },
+};
 
 export const metadata: Metadata = {
-  title: "Data Analyst & BI | Power BI, SQL, Python | Public Data & Decision-Making",
-  description:
-    "Data Analyst & BI at the Pernambuco State Treasury. Power BI, SQL, and Python for strategic dashboards, ETL, and automation that support clear managerial decisions.",
+  title: homeTitle,
+  description: homeDescription,
   alternates: {
+    canonical: "/en",
     languages: {
       "pt-BR": "/",
       "en-US": "/en",
     },
   },
   openGraph: {
-    title:
-      "Data Analyst & BI | Power BI, SQL, Python | Public Data & Decision-Making",
-    description:
-      "Data Analyst & BI at the Pernambuco State Treasury. Power BI, SQL, and Python for strategic dashboards, ETL, and automation that support clear managerial decisions.",
+    title: homeTitle,
+    description: homeDescription,
     url: "/en",
-    siteName: "Matheus Siqueira",
+    siteName,
     locale: "en_US",
     type: "website",
     images: [
@@ -36,10 +55,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Data Analyst & BI | Power BI, SQL, Python | Public Data & Decision-Making",
-    description:
-      "Data Analyst & BI at the Pernambuco State Treasury. Power BI, SQL, and Python for strategic dashboards, ETL, and automation that support clear managerial decisions.",
+    title: homeTitle,
+    description: homeDescription,
     images: ["/og.png"],
   },
 };
@@ -47,6 +64,7 @@ export const metadata: Metadata = {
 export default function HomeEn() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={homeJsonLd} />
       <Hero content={siteEn.hero} localePrefix="/en" />
       <About content={siteEn.about} />
       <Projects content={siteEn.projects} projects={projectsEn} localePrefix="/en" />

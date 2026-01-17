@@ -1,23 +1,43 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/seo/JsonLd";
 import Resume from "@/components/sections/Resume";
+import { baseUrl, siteName } from "@/lib/seo";
+
+const resumeTitle = "Curriculo | Matheus Siqueira";
+const resumeDescription =
+  "Curriculo de Matheus Siqueira, Analista de Dados Junior em BI, Power BI, SQL e Python, com experiencia em dados publicos, ETL e dashboards para decisao gerencial.";
+
+const resumeJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: resumeTitle,
+  url: `${baseUrl}/resume`,
+  description: resumeDescription,
+  inLanguage: "pt-BR",
+  isPartOf: {
+    "@type": "WebSite",
+    name: siteName,
+    url: baseUrl,
+  },
+};
 
 export const metadata: Metadata = {
-  title: "Curriculo | Matheus Siqueira",
-  description:
-    "Curriculo de Matheus Siqueira, Analista de Dados Junior em BI, Power BI, SQL e Python, com experiencia em dados publicos, ETL e dashboards para decisao gerencial.",
+  title: resumeTitle,
+  description: resumeDescription,
   alternates: {
+    canonical: "/resume",
     languages: {
       "pt-BR": "/resume",
       "en-US": "/en/resume",
     },
   },
   openGraph: {
-    title: "Curriculo | Matheus Siqueira",
-    description:
-      "Curriculo de Matheus Siqueira, Analista de Dados Junior em BI, Power BI, SQL e Python, com experiencia em dados publicos, ETL e dashboards para decisao gerencial.",
+    title: resumeTitle,
+    description: resumeDescription,
     url: "/resume",
     locale: "pt_BR",
     type: "website",
+    siteName,
     images: [
       {
         url: "/og.png",
@@ -29,9 +49,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Curriculo | Matheus Siqueira",
-    description:
-      "Curriculo de Matheus Siqueira, Analista de Dados Junior em BI, Power BI, SQL e Python, com experiencia em dados publicos, ETL e dashboards para decisao gerencial.",
+    title: resumeTitle,
+    description: resumeDescription,
     images: ["/og.png"],
   },
 };
@@ -39,6 +58,7 @@ export const metadata: Metadata = {
 export default function ResumePage() {
   return (
     <main className="min-h-screen px-6 py-20">
+      <JsonLd data={resumeJsonLd} />
       <Resume />
     </main>
   );

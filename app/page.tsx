@@ -3,27 +3,45 @@ import About from "@/components/sections/About";
 import Contact from "@/components/sections/Contact";
 import Hero from "@/components/sections/Hero";
 import Projects from "@/components/sections/Projects";
+import JsonLd from "@/components/seo/JsonLd";
 import { projects } from "@/data/projects";
 import { sitePt } from "@/data/site.pt";
+import { baseUrl, siteName } from "@/lib/seo";
+
+const homeTitle =
+  "Analista de Dados & BI | Power BI, SQL, Python | Dados Publicos e Tomada de Decisao";
+const homeDescription =
+  "Analista de Dados e BI na Secretaria da Fazenda de Pernambuco. Power BI, SQL e Python para dashboards estrategicos, ETL e automacao que apoiam decisoes gerenciais.";
+
+const homeJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: homeTitle,
+  url: `${baseUrl}/`,
+  description: homeDescription,
+  inLanguage: "pt-BR",
+  isPartOf: {
+    "@type": "WebSite",
+    name: siteName,
+    url: baseUrl,
+  },
+};
 
 export const metadata: Metadata = {
-  title:
-    "Analista de Dados & BI | Power BI, SQL, Python | Dados Publicos e Tomada de Decisao",
-  description:
-    "Analista de Dados e BI na Secretaria da Fazenda de Pernambuco. Power BI, SQL e Python para dashboards estrategicos, ETL e automacao que apoiam decisoes gerenciais.",
+  title: homeTitle,
+  description: homeDescription,
   alternates: {
+    canonical: "/",
     languages: {
       "pt-BR": "/",
       "en-US": "/en",
     },
   },
   openGraph: {
-    title:
-      "Analista de Dados & BI | Power BI, SQL, Python | Dados Publicos e Tomada de Decisao",
-    description:
-      "Analista de Dados e BI na Secretaria da Fazenda de Pernambuco. Power BI, SQL e Python para dashboards estrategicos, ETL e automacao que apoiam decisoes gerenciais.",
+    title: homeTitle,
+    description: homeDescription,
     url: "/",
-    siteName: "Matheus Siqueira",
+    siteName,
     locale: "pt_BR",
     type: "website",
     images: [
@@ -37,10 +55,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Analista de Dados & BI | Power BI, SQL, Python | Dados Publicos e Tomada de Decisao",
-    description:
-      "Analista de Dados e BI na Secretaria da Fazenda de Pernambuco. Power BI, SQL e Python para dashboards estrategicos, ETL e automacao que apoiam decisoes gerenciais.",
+    title: homeTitle,
+    description: homeDescription,
     images: ["/og.png"],
   },
 };
@@ -48,6 +64,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={homeJsonLd} />
       <Hero content={sitePt.hero} />
       <About content={sitePt.about} />
       <Projects content={sitePt.projects} projects={projects} />

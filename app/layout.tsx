@@ -2,32 +2,51 @@ import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/layout/Header";
+import JsonLd from "@/components/seo/JsonLd";
+import { baseUrl, sameAsLinks, siteName } from "@/lib/seo";
 import "./globals.css";
 
 const geistSans = Geist({
   subsets: ["latin"],
   variable: "--font-geist-sans",
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-geist-mono",
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.matheussiqueira.dev"),
+  metadataBase: new URL(baseUrl),
   title: {
-    default: "Matheus Siqueira | Analista de Dados & BI",
-    template: "%s | Matheus Siqueira",
+    default: `${siteName} | Analista de Dados & BI`,
+    template: `%s | ${siteName}`,
   },
   description:
     "Analista de Dados e BI com foco em dados publicos, Power BI, SQL e Python. Dashboards estrategicos, ETL e automacao para decisoes gerenciais, eficiencia e transparencia.",
+  alternates: {
+    canonical: "/",
+    languages: {
+      "pt-BR": "/",
+      "en-US": "/en",
+    },
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
-    title: "Matheus Siqueira | Analista de Dados & BI",
+    title: `${siteName} | Analista de Dados & BI`,
     description:
       "Analista de Dados e BI com foco em dados publicos, Power BI, SQL e Python. Dashboards estrategicos, ETL e automacao para decisoes gerenciais, eficiencia e transparencia.",
     url: "/",
-    siteName: "Matheus Siqueira",
+    siteName,
     locale: "pt_BR",
     type: "website",
     images: [
@@ -41,31 +60,75 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Matheus Siqueira | Analista de Dados & BI",
+    title: `${siteName} | Analista de Dados & BI`,
     description:
       "Analista de Dados e BI com foco em dados publicos, Power BI, SQL e Python. Dashboards estrategicos, ETL e automacao para decisoes gerenciais, eficiencia e transparencia.",
     images: ["/og.png"],
   },
 };
 
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: siteName,
+    url: baseUrl,
+    image: `${baseUrl}/profile.jpg`,
+    jobTitle: "Data Analyst",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Recife",
+      addressRegion: "PE",
+      addressCountry: "BR",
+    },
+    sameAs: sameAsLinks,
+    knowsAbout: [
+      "Business Intelligence",
+      "Power BI",
+      "SQL",
+      "Python",
+      "Public Data",
+      "ETL",
+      "Data Visualization",
+      "Data Analysis",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteName,
+    url: baseUrl,
+    inLanguage: "pt-BR",
+    publisher: {
+      "@type": "Person",
+      name: siteName,
+    },
+  },
+];
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const shouldInjectSpeedInsights = process.env.VERCEL === "1";
+
   return (
     <html lang="pt-BR">
+      <head>
+        <JsonLd data={structuredData} />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-[#0b0d10] text-slate-100 relative pt-16`}
       >
         <div className="pointer-events-none fixed inset-0 -z-10" aria-hidden="true">
-          <div className="absolute -top-40 left-0 h-72 w-72 rounded-full bg-emerald-500/10 blur-3xl" />
-          <div className="absolute top-10 right-0 h-96 w-96 rounded-full bg-sky-500/10 blur-3xl" />
-          <div className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
+          <div className="absolute -top-32 left-0 h-48 w-48 rounded-full bg-emerald-500/10 blur-3xl md:-top-40 md:h-72 md:w-72" />
+          <div className="absolute top-6 right-0 h-56 w-56 rounded-full bg-sky-500/10 blur-3xl md:top-10 md:h-96 md:w-96" />
+          <div className="absolute bottom-0 left-1/3 h-56 w-56 rounded-full bg-white/5 blur-3xl md:h-80 md:w-80" />
         </div>
         <Header />
         {children}
-        <SpeedInsights />
+        {shouldInjectSpeedInsights ? <SpeedInsights /> : null}
       </body>
     </html>
   );

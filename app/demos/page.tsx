@@ -1,25 +1,45 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import JsonLd from "@/components/seo/JsonLd";
 import { projects } from "@/data/projects";
 import { sitePt } from "@/data/site.pt";
+import { baseUrl, siteName } from "@/lib/seo";
+
+const pageTitle = "Demos | Matheus Siqueira";
+const pageDescription =
+  "Demos e repositorios dos projetos de dados, BI e automacao, com foco em casos reais, validacao tecnica rapida e avaliacao objetiva por recrutadores e gestores tecnicos.";
+
+const demosJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: pageTitle,
+  url: `${baseUrl}/demos`,
+  description: pageDescription,
+  inLanguage: "pt-BR",
+  isPartOf: {
+    "@type": "WebSite",
+    name: siteName,
+    url: baseUrl,
+  },
+};
 
 export const metadata: Metadata = {
-  title: "Demos | Matheus Siqueira",
-  description:
-    "Demos e repositorios dos projetos de dados, BI e automacao, com foco em casos reais, validacao tecnica rapida e avaliacao objetiva por recrutadores e gestores tecnicos.",
+  title: pageTitle,
+  description: pageDescription,
   alternates: {
+    canonical: "/demos",
     languages: {
       "pt-BR": "/demos",
       "en-US": "/en/demos",
     },
   },
   openGraph: {
-    title: "Demos | Matheus Siqueira",
-    description:
-      "Demos e repositorios dos projetos de dados, BI e automacao, com foco em casos reais, validacao tecnica rapida e avaliacao objetiva por recrutadores e gestores tecnicos.",
+    title: pageTitle,
+    description: pageDescription,
     url: "/demos",
     locale: "pt_BR",
     type: "website",
+    siteName,
     images: [
       {
         url: "/og.png",
@@ -31,9 +51,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Demos | Matheus Siqueira",
-    description:
-      "Demos e repositorios dos projetos de dados, BI e automacao, com foco em casos reais, validacao tecnica rapida e avaliacao objetiva por recrutadores e gestores tecnicos.",
+    title: pageTitle,
+    description: pageDescription,
     images: ["/og.png"],
   },
 };
@@ -41,6 +60,7 @@ export const metadata: Metadata = {
 export default function DemosPage() {
   return (
     <main className="min-h-screen px-6 py-24">
+      <JsonLd data={demosJsonLd} />
       <div className="max-w-6xl mx-auto">
         <header className="mb-10 space-y-4">
           <p className="text-xs uppercase tracking-[0.3em] text-slate-400">

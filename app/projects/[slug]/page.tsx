@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import JsonLd from "@/components/seo/JsonLd";
 import MediaGallery from "@/components/ui/MediaGallery";
 import { getProjectBySlug, projectSlugs } from "@/data/projects";
 import type { Project } from "@/data/projects.types";
 import { sitePt } from "@/data/site.pt";
+import { baseUrl, siteName } from "@/lib/seo";
 
 type PageProps = {
   params: {
@@ -71,7 +73,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
       title: `${project.title} | Matheus Siqueira`,
       description,
       url: `/projects/${project.slug}`,
+      locale: "pt_BR",
       type: "article",
+      siteName: "Matheus Siqueira",
       images: [
         {
           url: cover?.src ?? "/og.png",
@@ -103,9 +107,36 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
   const galleryItems = cover
     ? project.screenshots.filter((shot) => shot.src !== cover.src)
     : project.screenshots;
+  const imageUrl = cover?.src ? `${baseUrl}${cover.src}` : `${baseUrl}/og.png`;
+  const projectJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: project.title,
+    url: `${baseUrl}/projects/${project.slug}`,
+    description: project.tagline,
+    inLanguage: "pt-BR",
+    isPartOf: {
+      "@type": "WebSite",
+      name: siteName,
+      url: baseUrl,
+    },
+    mainEntity: {
+      "@type": "CreativeWork",
+      name: project.title,
+      description: project.tagline,
+      url: `${baseUrl}/projects/${project.slug}`,
+      image: imageUrl,
+      keywords: project.stack.join(", "),
+      author: {
+        "@type": "Person",
+        name: siteName,
+      },
+    },
+  };
 
   return (
     <main className="min-h-screen px-6 py-24">
+      <JsonLd data={projectJsonLd} />
       <div className="max-w-6xl mx-auto">
         <header className="space-y-6">
           <Link
