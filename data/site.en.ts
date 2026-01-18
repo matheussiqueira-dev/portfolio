@@ -10,12 +10,11 @@ export const siteEn: SiteContent = {
     resume: "Resume",
   },
   hero: {
-    eyebrow: "Data Analyst | BI | Public Sector",
-    title: "Data Analyst & BI for public decision-making",
-    subtitle:
-      "Power BI, SQL, Python, and automation applied to public data and fiscal management",
+    eyebrow: "Junior Data Analyst | Power BI | SQL | Python | BI",
+    title: "Junior Data Analyst specialized in Power BI, SQL, and Python",
+    subtitle: "I turn data into clear insights to support business decisions.",
     description:
-      "Junior Data Analyst with hands-on experience in applied Business Intelligence at the Municipal Treasury Department. I build strategic dashboards, data pipelines, and automations with Power BI, SQL, and Python to support managerial decisions with reliable data. I am also training in web development for data products and analytical systems.",
+      "Computer Science student with hands-on experience in Business Intelligence, data analysis, process automation, and strategic dashboards. Skilled in Power BI, SQL, and Python to transform data into actionable insights.",
     ctas: {
       primary: "View data projects",
       secondary: "View professional resume",
@@ -24,67 +23,62 @@ export const siteEn: SiteContent = {
   },
   about: {
     eyebrow: "About",
-    title: "Data Analyst and BI focused on public impact",
+    title: "Junior Data Analyst focused on BI and analytics delivery",
     who: {
-      title: "What I do",
-      body: "I work as a Junior Data Analyst focused on Business Intelligence, public data, and decision support. I handle tax revenue, fiscal data, and strategic indicators at the Municipal Treasury Department, building clear views for decision-makers. In parallel, I am training in web development to strengthen data products and analytical systems.",
+      title: "Who I am",
+      body: "Junior Data Analyst focused on Business Intelligence, analytics automation, and data visualization. Currently studying Computer Science and working with Power BI, SQL, and Python to organize data, build reliable indicators, and support business decisions.",
     },
     deliver: {
-      title: "How I do it",
+      title: "What I deliver",
       bullets: [
-        "Strategic Power BI dashboards to track fiscal and revenue indicators.",
-        "Modeling and transformations with DAX and Power Query.",
-        "ETL pipelines with SQL and Python integrating public data sources.",
-        "Report automation to reduce rework and operational time.",
-        "Exploratory analysis to identify fiscal trends and anomalies.",
+        "Executive Power BI dashboards for KPIs and performance.",
+        "KPI-driven analyses aligned with business goals.",
+        "Analytics automation with SQL and Python.",
+        "Data modeling and transformations with DAX and Power Query.",
+        "Documentation and standardization for data consistency.",
       ],
     },
     highlights: {
-      title: "Results",
+      title: "Professional profile",
       items: [
-        "Reduced rework and consolidation time in recurring routines.",
         "+39 certificates in Data, BI, AI, Cloud, and Security.",
-        "Executive and operational dashboards for revenue monitoring.",
-        "Automations that improve consistency and traceability.",
-        "Standardized indicators for managerial decisions.",
-        "Collaboration with managers and cross-functional teams.",
+        "Analytical thinking and focus on actionable indicators.",
+        "Clear communication with stakeholders and technical teams.",
+        "Data-driven decision-making and information organization.",
+        "Collaboration in agile, cross-functional teams.",
+        "Commitment to data quality and governance.",
       ],
     },
     stack: {
-      title: "Tools",
+      title: "Core stack",
       groups: [
         {
-          title: "Analysis and BI",
+          title: "Data & BI",
           items: [
             "Power BI",
             "DAX",
             "Power Query",
-            "Data Visualization",
-            "Data Analytics",
+            "SQL",
+            "ETL",
+            "Dashboards",
           ],
         },
         {
-          title: "Data and Automation",
-          items: ["SQL", "Python", "Pandas", "ETL", "Automation"],
+          title: "Analytics & Automation",
+          items: ["Python", "Pandas", "Data Analytics", "Automation", "KPIs"],
         },
         {
-          title: "Web and Analytical Systems",
-          items: [
-            "JavaScript",
-            "React",
-            "Next.js",
-            "REST APIs",
-            "Data consumption",
-          ],
+          title: "Web & Integrations",
+          items: ["JavaScript", "TypeScript", "React", "Next.js", "REST APIs"],
         },
         {
-          title: "Tools and Methods",
+          title: "Tools & Methods",
           items: [
             "Git/GitHub",
             "Scrum",
             "Agile environments",
-            "Public data",
-            "Basic governance",
+            "Documentation",
+            "Data governance",
           ],
         },
       ],
@@ -92,9 +86,9 @@ export const siteEn: SiteContent = {
   },
   projects: {
     eyebrow: "Projects",
-    title: "Data cases with decision impact",
+    title: "Data and BI case studies for business impact",
     description:
-      "Projects connecting public data, BI, and automation to support clear decisions and reduce rework.",
+      "Projects connecting BI, automation, and data engineering to support business decisions and clear indicators.",
     cardLabel: "Project",
     highlightLabel: "Impact",
     detailsLabel: "View details",
@@ -117,7 +111,7 @@ export const siteEn: SiteContent = {
     eyebrow: "Projects",
     title: "Data projects and case studies",
     description:
-      "Full cases with context, data used, impact, technologies, and clear proof of analytical profile.",
+      "Full cases with context, data used, impact, technologies, and clear business value.",
     filterLabel: "Filter by stack",
     allLabel: "All",
     caseLabel: "Open case",
@@ -148,7 +142,7 @@ export const siteEn: SiteContent = {
     eyebrow: "Contact",
     title: "Let's talk?",
     description:
-      "I am open to Junior Data Analyst or BI opportunities, especially where data supports real decisions. I bring hands-on public data and BI experience and I am training in web development. If you need someone with practical experience and analytical ownership, let's connect.",
+      "I am open to Junior Data Analyst or BI opportunities. I deliver dashboards, automation, and KPI-driven analysis with Power BI, SQL, and Python. If you need someone with organized data work and analytical ownership, let's connect.",
     ctaTitle: "Open to Data and BI opportunities",
     ctaSubtitle: "LinkedIn and email replies are fast.",
     cards: {

@@ -223,7 +223,7 @@ export const siteCopy: Record<Locale, SiteCopy> = {
       fullCase: "Case completo",
       openDemo: "Abrir demo",
       demoSoon: "Demo: em breve",
-      publishTitle: "Como eu publico demos",
+      publishTitle: "Como disponibilizo demos",
       publishItems: [
         "Web (Next.js/React): Vercel com deploy automático do GitHub.",
         "Front-end puro (HTML/JS): GitHub Pages ou Vercel.",

@@ -8,7 +8,7 @@ import { baseUrl, siteName } from "@/lib/seo";
 
 const pageTitle = "Projects | Matheus Siqueira";
 const pageDescription =
-  "Projects and case studies in data, BI, and automation with Power BI, SQL, and Python, focused on public data, compliance, and decision-making in government contexts.";
+  "Projects and case studies in data, BI, and automation with Power BI, SQL, and Python, focused on data organization, dashboards, and business decisions.";
 
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",

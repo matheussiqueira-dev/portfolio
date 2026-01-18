@@ -10,12 +10,12 @@ export const sitePt: SiteContent = {
     resume: "Curriculo",
   },
   hero: {
-    eyebrow: "Analista de Dados | BI | Setor Publico",
-    title: "Analista de Dados Junior | Power BI | SQL | Python | BI",
+    eyebrow: "Analista de Dados Junior | Power BI | SQL | Python | BI",
+    title: "Analista de Dados Junior especializado em Power BI, SQL e Python",
     subtitle:
-      "Power BI, SQL, Python e automacao aplicados a dados publicos e gestao fiscal",
+      "Transformo dados em insights claros para apoiar decisoes de negocio.",
     description:
-      "Analista de Dados Junior com experiencia pratica em Business Intelligence aplicado na Secretaria Municipal da Fazenda. Desenvolvo dashboards estrategicos, pipelines de dados e automacoes com Power BI, SQL e Python para apoiar decisoes gerenciais com dados confiaveis. Em formacao em desenvolvimento web para produtos de dados e sistemas analiticos.",
+      "Profissional em formacao em Ciencia da Computacao, com experiencia pratica em Business Intelligence, analise de dados, automacao de processos e construcao de dashboards estrategicos. Atuo com Power BI, SQL e Python para organizar dados, gerar indicadores confiaveis e apoiar a tomada de decisao.",
     ctas: {
       primary: "Ver projetos de dados",
       secondary: "Ver curriculo profissional",
@@ -24,52 +24,53 @@ export const sitePt: SiteContent = {
   },
   about: {
     eyebrow: "Sobre",
-    title: "Analista de Dados Junior | Power BI | SQL | Python | BI",
+    title: "Analista de Dados Junior com foco em BI e automacao",
     who: {
-      title: "O que faco",
-      body: "Atuo como Analista de Dados Junior com foco em Business Intelligence, dados publicos e apoio a tomada de decisao. Hoje trabalho com arrecadacao tributaria, dados fiscais e indicadores estrategicos na Secretaria Municipal da Fazenda, desenvolvendo visoes claras para gestores. Em paralelo, sigo em formacao em desenvolvimento web para fortalecer produtos de dados e sistemas analiticos.",
+      title: "Quem sou",
+      body: "Analista de Dados Junior com foco em Business Intelligence, automacao e visualizacao de dados. Em formacao em Ciencia da Computacao, trabalho com Power BI, SQL e Python para organizar dados, construir indicadores confiaveis e apoiar decisoes de negocio.",
     },
     deliver: {
-      title: "Como faco",
+      title: "O que entrego",
       bullets: [
-        "Dashboards estrategicos em Power BI para acompanhamento de arrecadacao e gestao fiscal.",
-        "Modelagem e transformacao com DAX e Power Query para dados confiaveis.",
-        "Pipelines de ETL com SQL e Python integrando multiplas bases publicas.",
-        "Automacao de relatorios com reducao de retrabalho e tempo operacional.",
-        "Analises exploratorias para identificar tendencias e anomalias fiscais.",
+        "Dashboards claros e executivos em Power BI para KPIs e performance.",
+        "Analises orientadas a indicadores e metas de negocio.",
+        "Automacao de rotinas analiticas com SQL e Python.",
+        "Modelagem e transformacoes com DAX e Power Query.",
+        "Documentacao e padronizacao para consistencia dos dados.",
       ],
     },
     highlights: {
-      title: "Resultados",
+      title: "Perfil profissional",
       items: [
-        "Reducao de retrabalho e tempo de consolidacao em rotinas recorrentes.",
         "+39 certificados em Dados, BI, IA, Cloud e Seguranca.",
-        "Dashboards executivos e operacionais para acompanhamento de arrecadacao.",
-        "Automacoes que aumentam consistencia e rastreabilidade dos dados.",
-        "Padronizacao de indicadores para decisoes gerenciais.",
-        "Colaboracao com gestores e times multidisciplinares.",
+        "Pensamento analitico e foco em indicadores acionaveis.",
+        "Comunicacao clara com stakeholders e times tecnicos.",
+        "Decisao baseada em dados e organizacao da informacao.",
+        "Colaboracao em times ageis e multidisciplinares.",
+        "Compromisso com qualidade e governanca de dados.",
       ],
     },
     stack: {
-      title: "Ferramentas",
+      title: "Stack principal",
       groups: [
         {
-          title: "Analise e BI",
+          title: "Data e BI",
           items: [
             "Power BI",
             "DAX",
             "Power Query",
-            "Data Visualization",
-            "Data Analytics",
+            "SQL",
+            "ETL",
+            "Dashboards",
           ],
         },
         {
-          title: "Dados e Automacao",
-          items: ["SQL", "Python", "Pandas", "ETL", "Automacao"],
+          title: "Analise e Automacao",
+          items: ["Python", "Pandas", "Data Analytics", "Automacao", "KPIs"],
         },
         {
-          title: "Web e Sistemas Analiticos",
-          items: ["JavaScript", "React", "Next.js", "APIs REST", "Consumo de dados"],
+          title: "Web e Integracoes",
+          items: ["JavaScript", "TypeScript", "React", "Next.js", "APIs REST"],
         },
         {
           title: "Ferramentas e Metodologias",
@@ -77,8 +78,8 @@ export const sitePt: SiteContent = {
             "Git/GitHub",
             "Scrum",
             "Ambientes ageis",
-            "Dados publicos",
-            "Governanca basica",
+            "Documentacao",
+            "Governanca de dados",
           ],
         },
       ],
@@ -86,9 +87,9 @@ export const sitePt: SiteContent = {
   },
   projects: {
     eyebrow: "Projetos",
-    title: "Cases de dados com impacto em decisao",
+    title: "Cases de dados e BI com impacto em negocio",
     description:
-      "Projetos que conectam dados publicos, BI e automacao para apoiar decisoes claras e reduzir retrabalho.",
+      "Projetos que conectam BI, automacao e engenharia de dados para apoiar decisoes de negocio e gerar indicadores claros.",
     cardLabel: "Projeto",
     highlightLabel: "Impacto",
     detailsLabel: "Ver detalhes",
@@ -111,7 +112,7 @@ export const sitePt: SiteContent = {
     eyebrow: "Projetos",
     title: "Projetos e cases em dados",
     description:
-      "Cases completos com contexto, dados utilizados, impacto, tecnologias e demonstracao clara do perfil analitico.",
+      "Cases completos com contexto, dados utilizados, impacto, tecnologias e demonstracao clara de valor para o negocio.",
     filterLabel: "Filtrar por stack",
     allLabel: "Todos",
     caseLabel: "Abrir case",
@@ -142,7 +143,7 @@ export const sitePt: SiteContent = {
     eyebrow: "Contato",
     title: "Vamos conversar?",
     description:
-      "Estou aberto a oportunidades como Analista de Dados Junior ou BI, especialmente em contextos onde dados apoiam decisoes reais. Tenho experiencia pratica em dados publicos, automacao e BI, e estou em formacao em desenvolvimento web. Se busca alguem com responsabilidade com dados e visao analitica, vamos conversar.",
+      "Estou aberto a oportunidades como Analista de Dados Junior ou BI. Entrego dashboards, automacao e analises orientadas a KPIs com Power BI, SQL e Python. Se busca alguem com organizacao de dados e comunicacao clara, vamos conversar.",
     ctaTitle: "Aberto a oportunidades em Dados e BI",
     ctaSubtitle: "LinkedIn e e-mail respondidos rapidamente.",
     cards: {
@@ -169,7 +170,7 @@ export const sitePt: SiteContent = {
     openDemoLabel: "Abrir demo",
     demoSoonLabel: "Demo em breve",
     howToRunLabel: "Como executar (local)",
-    publishTitle: "Como publico demos",
+    publishTitle: "Como disponibilizo demos",
     publishItems: [
       "Web (Next.js/React): Vercel com deploy automatico do GitHub.",
       "Front-end puro (HTML/JS): GitHub Pages ou Vercel.",

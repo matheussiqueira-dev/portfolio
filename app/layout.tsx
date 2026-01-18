@@ -21,18 +21,19 @@ const geistMono = Geist_Mono({
 });
 
 const siteDescription =
-  "Analista de Dados Junior e BI com foco em dados publicos e fiscais, Power BI, SQL, DAX e Python. Dashboards estrategicos, ETL e automacao para decisoes gerenciais.";
+  "Portfolio profissional de Analista de Dados Junior com foco em Business Intelligence, Power BI, SQL e Python. Dashboards, automacao de analises e projetos em dados.";
 const siteKeywords = [
+  "Analista de Dados Junior",
   "Data Analyst",
   "Business Intelligence",
   "Power BI",
   "SQL",
   "DAX",
   "Python",
-  "Dados publicos",
-  "Governo",
   "ETL",
   "Dashboards",
+  "Data Analytics",
+  "Data Visualization",
 ];
 const googleSiteVerification =
   process.env.NEXT_PUBLIC_GSC_VERIFICATION ||
@@ -46,7 +47,7 @@ const websiteId = `${baseUrl}/#website`;
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: `${siteName} | Analista de Dados & BI`,
+    default: `${siteName} | Analista de Dados Junior | Power BI | SQL | Python | BI`,
     template: `%s | ${siteName}`,
   },
   description: siteDescription,
@@ -80,7 +81,7 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
   openGraph: {
-    title: `${siteName} | Analista de Dados & BI`,
+    title: `${siteName} | Analista de Dados Junior | Power BI | SQL | Python | BI`,
     description: siteDescription,
     url: "/",
     siteName,
@@ -91,13 +92,13 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Matheus Siqueira | Analista de Dados & BI",
+        alt: "Matheus Siqueira | Analista de Dados Junior",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} | Analista de Dados & BI`,
+    title: `${siteName} | Analista de Dados Junior | Power BI | SQL | Python | BI`,
     description: siteDescription,
     images: ["/og.png"],
   },
@@ -111,12 +112,8 @@ const structuredData = [
     name: siteName,
     url: baseUrl,
     image: `${baseUrl}/profile.webp`,
-    jobTitle: "Analista de Dados Junior",
+    jobTitle: "Junior Data Analyst",
     description: siteDescription,
-    worksFor: {
-      "@type": "Organization",
-      name: "Secretaria Municipal da Fazenda",
-    },
     address: {
       "@type": "PostalAddress",
       addressLocality: "Recife",
@@ -131,10 +128,9 @@ const structuredData = [
       "DAX",
       "Power Query",
       "Python",
-      "Public Data",
-      "Public Finance",
-      "ETL",
+      "Data Analytics",
       "Data Visualization",
+      "ETL",
       "Data Analysis",
     ],
     alumniOf: [

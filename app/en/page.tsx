@@ -9,9 +9,9 @@ import { siteEn } from "@/data/site.en";
 import { baseUrl, siteName } from "@/lib/seo";
 
 const homeTitle =
-  "Data Analyst & BI | Power BI, SQL, Python | Public Data & Decision-Making";
+  "Matheus Siqueira | Junior Data Analyst | Power BI | SQL | Python | BI";
 const homeDescription =
-  "Data Analyst & Business Intelligence at the Municipal Treasury Department. Power BI, SQL, and Python for strategic dashboards, ETL, and automation that support clear managerial decisions.";
+  "Computer Science student with hands-on experience in Business Intelligence, data analysis, process automation, and strategic dashboards. Skilled in Power BI, SQL, and Python to transform data into actionable insights.";
 
 const homeJsonLd = {
   "@context": "https://schema.org",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Matheus Siqueira | Data Analyst & BI",
+        alt: "Matheus Siqueira | Junior Data Analyst",
       },
     ],
   },
