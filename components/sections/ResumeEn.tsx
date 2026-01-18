@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { resumeEn } from "@/data/resume.en";
 import PrintButton from "../ui/PrintButton";
 import LanguageSwitch from "../ui/LanguageSwitch";
@@ -12,17 +11,23 @@ export default function ResumeEn() {
             <p className="text-xs uppercase tracking-[0.3em] text-slate-400 print:text-slate-600">
               Resume
             </p>
+            <p className="text-sm font-semibold text-slate-200 print:text-slate-700">
+              {resumeEn.name}
+            </p>
             <h1 className="text-3xl font-semibold text-white md:text-4xl print:text-black">
-              Matheus Siqueira - Data Analyst (BI/Power BI)
+              Junior Data Analyst | Power BI | SQL | Python | Business Intelligence
             </h1>
-            <p className="text-sm text-slate-400 print:text-slate-600">
-              {resumeEn.role}
+            <p className="text-sm text-slate-300 print:text-slate-700">
+              {resumeEn.headline}
             </p>
           </div>
 
           <div className="flex flex-col gap-2 text-sm text-slate-300 print:text-slate-700">
             <span>Recife, Pernambuco - Brazil</span>
-            <a href="mailto:matheussiqueirahub@gmail.com" className="underline w-fit">
+            <a
+              href="mailto:matheussiqueirahub@gmail.com"
+              className="underline w-fit"
+            >
               matheussiqueirahub@gmail.com
             </a>
             <a
@@ -62,32 +67,16 @@ export default function ResumeEn() {
         <div className="space-y-8">
           <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
             <h2 className="text-xl font-semibold text-white print:text-black">
-              Summary
+              Professional Summary
             </h2>
             <p className="text-slate-300 print:text-slate-700">
               {resumeEn.summary}
             </p>
-            <ul className="list-disc list-inside space-y-2 text-sm text-slate-300 print:text-slate-700">
-              {resumeEn.summaryBullets.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
-            <h2 className="text-xl font-semibold text-white print:text-black">
-              Impact
-            </h2>
-            <ul className="list-disc list-inside space-y-2 text-sm text-slate-300 print:text-slate-700">
-              {resumeEn.impact.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
           </section>
 
           <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-6 print:border-none print:bg-transparent print:p-0">
             <h2 className="text-xl font-semibold text-white print:text-black">
-              Experience
+              Professional Experience
             </h2>
             {resumeEn.experience.map((item) => (
               <div key={item.company} className="space-y-3">
@@ -114,27 +103,15 @@ export default function ResumeEn() {
         </div>
 
         <aside className="space-y-8">
-          <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-6 print:border-none print:bg-transparent print:p-0">
+          <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
             <h2 className="text-xl font-semibold text-white print:text-black">
-              Skills
+              Core Skills
             </h2>
-            {resumeEn.skills.groups.map((group) => (
-              <div key={group.title} className="space-y-3">
-                <p className="text-xs uppercase tracking-[0.2em] text-slate-400 print:text-slate-600">
-                  {group.title}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {group.items.map((skill) => (
-                    <span
-                      key={skill}
-                      className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-200 print:text-slate-700 print:border-slate-300"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
+            <ul className="list-disc list-inside space-y-2 text-sm text-slate-300 print:text-slate-700">
+              {resumeEn.coreSkills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
           </section>
 
           <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-6 print:border-none print:bg-transparent print:p-0">
@@ -164,23 +141,22 @@ export default function ResumeEn() {
 
           <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
             <h2 className="text-xl font-semibold text-white print:text-black">
-              Featured projects
+              Certifications
             </h2>
-            <ul className="space-y-3">
-              {resumeEn.featuredProjects.map((project) => (
-                <li key={project.slug}>
-                  <Link
-                    href={`/en/projects/${project.slug}`}
-                    className="group block rounded-2xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-white/20 hover:bg-white/10 print:border-slate-300 print:bg-transparent"
-                  >
-                    <p className="text-sm font-semibold text-white group-hover:text-white print:text-black">
-                      {project.title}
-                    </p>
-                    <p className="text-xs text-slate-400 print:text-slate-600">
-                      {project.stack.join(" / ")}
-                    </p>
-                  </Link>
-                </li>
+            <ul className="list-disc list-inside space-y-2 text-sm text-slate-300 print:text-slate-700">
+              {resumeEn.certifications.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
+            <h2 className="text-xl font-semibold text-white print:text-black">
+              Languages
+            </h2>
+            <ul className="list-disc list-inside space-y-2 text-sm text-slate-300 print:text-slate-700">
+              {resumeEn.languages.map((item) => (
+                <li key={item}>{item}</li>
               ))}
             </ul>
           </section>

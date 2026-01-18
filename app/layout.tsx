@@ -21,9 +21,9 @@ const geistMono = Geist_Mono({
 });
 
 const siteDescription =
-  "Portfolio profissional de Analista de Dados Junior com foco em Business Intelligence, Power BI, SQL e Python. Dashboards, automacao de analises e projetos em dados.";
+  "Portfólio profissional de Analista de Dados Júnior com foco em Business Intelligence, Power BI, SQL e Python. Dashboards, automação de análises e projetos em dados.";
 const siteKeywords = [
-  "Analista de Dados Junior",
+  "Analista de Dados Júnior",
   "Data Analyst",
   "Business Intelligence",
   "Power BI",
@@ -47,7 +47,7 @@ const websiteId = `${baseUrl}/#website`;
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: `${siteName} | Analista de Dados Junior | Power BI | SQL | Python | BI`,
+    default: `${siteName} | Analista de Dados Júnior | Power BI | SQL | Python | BI`,
     template: `%s | ${siteName}`,
   },
   description: siteDescription,
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
   openGraph: {
-    title: `${siteName} | Analista de Dados Junior | Power BI | SQL | Python | BI`,
+    title: `${siteName} | Analista de Dados Júnior | Power BI | SQL | Python | BI`,
     description: siteDescription,
     url: "/",
     siteName,
@@ -92,13 +92,13 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Matheus Siqueira | Analista de Dados Junior",
+        alt: "Matheus Siqueira | Analista de Dados Júnior",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} | Analista de Dados Junior | Power BI | SQL | Python | BI`,
+    title: `${siteName} | Analista de Dados Júnior | Power BI | SQL | Python | BI`,
     description: siteDescription,
     images: ["/og.png"],
   },
@@ -122,16 +122,15 @@ const structuredData = [
     },
     sameAs: sameAsLinks,
     knowsAbout: [
+      "Data Analytics",
       "Business Intelligence",
       "Power BI",
       "SQL",
-      "DAX",
-      "Power Query",
       "Python",
-      "Data Analytics",
       "Data Visualization",
       "ETL",
-      "Data Analysis",
+      "Dashboards",
+      "KPIs",
     ],
     alumniOf: [
       {

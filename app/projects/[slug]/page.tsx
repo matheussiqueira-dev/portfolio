@@ -39,8 +39,8 @@ export function generateMetadata({ params }: PageProps): Metadata {
 
   if (!project) {
     return {
-      title: "Projeto nao encontrado | Matheus Siqueira",
-      description: "Projeto nao encontrado.",
+      title: "Projeto não encontrado | Matheus Siqueira",
+      description: "Projeto não encontrado.",
     };
   }
 
@@ -126,7 +126,7 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
       {
         "@type": "ListItem",
         position: 1,
-        name: "Inicio",
+        name: "Início",
         item: `${baseUrl}/`,
       },
       {

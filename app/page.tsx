@@ -9,9 +9,9 @@ import { sitePt } from "@/data/site.pt";
 import { baseUrl, siteName } from "@/lib/seo";
 
 const homeTitle =
-  "Matheus Siqueira | Analista de Dados Junior | Power BI | SQL | Python | BI";
+  "Matheus Siqueira | Analista de Dados Júnior | Power BI | SQL | Python | BI";
 const homeDescription =
-  "Profissional em formacao em Ciencia da Computacao, com experiencia pratica em Business Intelligence, analise de dados, automacao de processos e construcao de dashboards estrategicos. Atuo com Power BI, SQL e Python para organizar dados, gerar indicadores confiaveis e apoiar a tomada de decisao.";
+  "Profissional em formação em Ciência da Computação, com experiência prática em Business Intelligence, análise de dados, automação de processos e construção de dashboards estratégicos. Atuo com Power BI, SQL e Python para organizar dados, gerar indicadores confiáveis e apoiar a tomada de decisão.";
 
 const homeJsonLd = {
   "@context": "https://schema.org",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Matheus Siqueira | Analista de Dados Junior",
+        alt: "Matheus Siqueira | Analista de Dados Júnior",
       },
     ],
   },

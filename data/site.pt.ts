@@ -2,52 +2,52 @@ import type { SiteContent } from "./site.types";
 
 export const sitePt: SiteContent = {
   nav: {
-    home: "Inicio",
+    home: "Início",
     about: "Sobre",
     projects: "Projetos",
     contact: "Contato",
     certificates: "Certificados",
-    resume: "Curriculo",
+    resume: "Currículo",
   },
   hero: {
-    eyebrow: "Analista de Dados Junior | Power BI | SQL | Python | BI",
-    title: "Analista de Dados Junior especializado em Power BI, SQL e Python",
+    eyebrow: "Analista de Dados Júnior | Power BI | SQL | Python | BI",
+    title: "Analista de Dados Júnior especializado em Power BI, SQL e Python",
     subtitle:
-      "Transformo dados em insights claros para apoiar decisoes de negocio.",
+      "Transformo dados em insights claros para apoiar decisões de negócio.",
     description:
-      "Profissional em formacao em Ciencia da Computacao, com experiencia pratica em Business Intelligence, analise de dados, automacao de processos e construcao de dashboards estrategicos. Atuo com Power BI, SQL e Python para organizar dados, gerar indicadores confiaveis e apoiar a tomada de decisao.",
+      "Profissional em formação em Ciência da Computação, com experiência prática em Business Intelligence, análise de dados, automação de processos e construção de dashboards estratégicos. Atuo com Power BI, SQL e Python para organizar dados, gerar indicadores confiáveis e apoiar a tomada de decisão.",
     ctas: {
       primary: "Ver projetos de dados",
-      secondary: "Ver curriculo profissional",
+      secondary: "Ver currículo profissional",
       tertiary: "Entrar em contato",
     },
   },
   about: {
     eyebrow: "Sobre",
-    title: "Analista de Dados Junior com foco em BI e automacao",
+    title: "Analista de Dados Júnior com foco em BI e automação",
     who: {
       title: "Quem sou",
-      body: "Analista de Dados Junior com foco em Business Intelligence, automacao e visualizacao de dados. Em formacao em Ciencia da Computacao, trabalho com Power BI, SQL e Python para organizar dados, construir indicadores confiaveis e apoiar decisoes de negocio.",
+      body: "Analista de Dados Júnior com foco em Business Intelligence, automação e visualização de dados. Em formação em Ciência da Computação, trabalho com Power BI, SQL e Python para organizar dados, construir indicadores confiáveis e apoiar decisões de negócio.",
     },
     deliver: {
       title: "O que entrego",
       bullets: [
         "Dashboards claros e executivos em Power BI para KPIs e performance.",
-        "Analises orientadas a indicadores e metas de negocio.",
-        "Automacao de rotinas analiticas com SQL e Python.",
-        "Modelagem e transformacoes com DAX e Power Query.",
-        "Documentacao e padronizacao para consistencia dos dados.",
+        "Análises orientadas a indicadores e metas de negócio.",
+        "Automação de rotinas analíticas com SQL e Python.",
+        "Modelagem e transformações com DAX e Power Query.",
+        "Documentação e padronização para consistência dos dados.",
       ],
     },
     highlights: {
       title: "Perfil profissional",
       items: [
-        "+39 certificados em Dados, BI, IA, Cloud e Seguranca.",
-        "Pensamento analitico e foco em indicadores acionaveis.",
-        "Comunicacao clara com stakeholders e times tecnicos.",
-        "Decisao baseada em dados e organizacao da informacao.",
-        "Colaboracao em times ageis e multidisciplinares.",
-        "Compromisso com qualidade e governanca de dados.",
+        "+39 certificados em Dados, BI, IA, Cloud e Segurança.",
+        "Pensamento analítico e foco em indicadores acionáveis.",
+        "Comunicação clara com stakeholders e times técnicos.",
+        "Decisão baseada em dados e organização da informação.",
+        "Colaboração em times ágeis e multidisciplinares.",
+        "Compromisso com qualidade e governança de dados.",
       ],
     },
     stack: {
@@ -65,11 +65,18 @@ export const sitePt: SiteContent = {
           ],
         },
         {
-          title: "Analise e Automacao",
-          items: ["Python", "Pandas", "Data Analytics", "Automacao", "KPIs"],
+          title: "Análise e Automação",
+          items: [
+            "Python",
+            "Pandas",
+            "Data Analytics",
+            "Automação",
+            "KPIs",
+            "Data Visualization",
+          ],
         },
         {
-          title: "Web e Integracoes",
+          title: "Web e Integrações",
           items: ["JavaScript", "TypeScript", "React", "Next.js", "APIs REST"],
         },
         {
@@ -77,9 +84,10 @@ export const sitePt: SiteContent = {
           items: [
             "Git/GitHub",
             "Scrum",
-            "Ambientes ageis",
-            "Documentacao",
-            "Governanca de dados",
+            "Kanban",
+            "Ambientes ágeis",
+            "Documentação",
+            "Governança de Dados",
           ],
         },
       ],
@@ -87,9 +95,9 @@ export const sitePt: SiteContent = {
   },
   projects: {
     eyebrow: "Projetos",
-    title: "Cases de dados e BI com impacto em negocio",
+    title: "Cases de dados e BI com impacto em negócio",
     description:
-      "Projetos que conectam BI, automacao e engenharia de dados para apoiar decisoes de negocio e gerar indicadores claros.",
+      "Projetos que conectam BI, automação e engenharia de dados para apoiar decisões de negócio e gerar indicadores claros.",
     cardLabel: "Projeto",
     highlightLabel: "Impacto",
     detailsLabel: "Ver detalhes",
@@ -99,7 +107,7 @@ export const sitePt: SiteContent = {
       title: "Detalhes do projeto",
       closeLabel: "Fechar",
       problemTitle: "Problema",
-      solutionTitle: "Solucao",
+      solutionTitle: "Solução",
       featuresTitle: "Funcionalidades",
       demonstratesTitle: "O que demonstra",
       stackTitle: "Stack",
@@ -112,7 +120,7 @@ export const sitePt: SiteContent = {
     eyebrow: "Projetos",
     title: "Projetos e cases em dados",
     description:
-      "Cases completos com contexto, dados utilizados, impacto, tecnologias e demonstracao clara de valor para o negocio.",
+      "Cases completos com contexto, dados utilizados, impacto, tecnologias e demonstração clara de valor para o negócio.",
     filterLabel: "Filtrar por stack",
     allLabel: "Todos",
     caseLabel: "Abrir case",
@@ -124,9 +132,9 @@ export const sitePt: SiteContent = {
     contextTitle: "Contexto",
     problemTitle: "Problema",
     dataTitle: "Dados utilizados",
-    solutionTitle: "Solucao",
+    solutionTitle: "Solução",
     featuresTitle: "Funcionalidades",
-    impactTitle: "Impacto e decisao",
+    impactTitle: "Impacto e decisão",
     stackTitle: "Tecnologias aplicadas",
     demonstratesTitle: "O que este projeto demonstra",
     galleryTitle: "Capturas",
@@ -136,14 +144,14 @@ export const sitePt: SiteContent = {
     backLabel: "Voltar para projetos",
     ctaTitle: "Vamos conversar sobre este projeto?",
     ctaBody:
-      "Posso detalhar decisoes, desafios e proximos passos. Se quiser conversar, estou a disposicao.",
+      "Posso detalhar decisões, desafios e próximos passos. Se quiser conversar, estou à disposição.",
     ctaButton: "Entrar em contato",
   },
   contact: {
     eyebrow: "Contato",
     title: "Vamos conversar?",
     description:
-      "Estou aberto a oportunidades como Analista de Dados Junior ou BI. Entrego dashboards, automacao e analises orientadas a KPIs com Power BI, SQL e Python. Se busca alguem com organizacao de dados e comunicacao clara, vamos conversar.",
+      "Estou aberto a oportunidades como Analista de Dados Júnior ou BI. Entrego dashboards, automação e análises orientadas a KPIs com Power BI, SQL e Python. Se busca alguém com organização de dados e comunicação clara, vamos conversar.",
     ctaTitle: "Aberto a oportunidades em Dados e BI",
     ctaSubtitle: "LinkedIn e e-mail respondidos rapidamente.",
     cards: {
@@ -155,16 +163,16 @@ export const sitePt: SiteContent = {
   },
   certificatesSection: {
     eyebrow: "Certificados",
-    title: "Certificados em Dados, BI, IA, Cloud e Seguranca",
+    title: "Certificados em Dados, BI, IA, Cloud e Segurança",
     description:
-      "Colecao completa com PDFs locais de Alura, Assimov e Ulife. Filtre por plataforma e encontre rapidamente certificacoes em Power BI, SQL, Python, IA e Cloud.",
+      "Coleção completa com PDFs locais de Alura, Assimov e Ulife. Filtre por plataforma e encontre rapidamente certificações em Power BI, SQL, Python, IA e Cloud.",
     ctaLabel: "Ver certificados",
   },
   demos: {
     eyebrow: "Demos",
-    title: "Demos e repositorios",
+    title: "Demos e repositórios",
     description:
-      "Demos e repositorios para avaliacao rapida de projetos de dados, BI e automacao, com instrucoes claras para rodar localmente.",
+      "Demos e repositórios para avaliação rápida de projetos de dados, BI e automação, com instruções claras para rodar localmente.",
     viewProjectsLabel: "Ver projetos",
     fullCaseLabel: "Case completo",
     openDemoLabel: "Abrir demo",
@@ -172,7 +180,7 @@ export const sitePt: SiteContent = {
     howToRunLabel: "Como executar (local)",
     publishTitle: "Como disponibilizo demos",
     publishItems: [
-      "Web (Next.js/React): Vercel com deploy automatico do GitHub.",
+      "Web (Next.js/React): Vercel com deploy automático do GitHub.",
       "Front-end puro (HTML/JS): GitHub Pages ou Vercel.",
       "API FastAPI: Render ou Fly com /docs habilitado.",
     ],
@@ -181,6 +189,6 @@ export const sitePt: SiteContent = {
     label: "Idiomas",
   },
   media: {
-    videoFallback: "Seu navegador nao suporta video HTML5.",
+    videoFallback: "Seu navegador não suporta vídeo HTML5.",
   },
 };

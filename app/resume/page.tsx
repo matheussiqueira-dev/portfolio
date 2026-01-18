@@ -4,9 +4,9 @@ import Resume from "@/components/sections/Resume";
 import { baseUrl, siteName } from "@/lib/seo";
 
 const resumeTitle =
-  "Curriculo | Analista de Dados & Business Intelligence | Matheus Siqueira";
+  "Analista de Dados Júnior | Power BI, SQL, Python | Currículo";
 const resumeDescription =
-  "Analista de Dados com experiencia em Power BI, SQL e Python, atuando com dados publicos e fiscais em BI governamental, ETL e suporte a decisao estrategica.";
+  "Currículo de Analista de Dados Júnior com foco em Business Intelligence, Power BI, SQL e Python. Experiência em dashboards, ETL e análise de dados.";
 
 const resumeJsonLd = {
   "@context": "https://schema.org",
@@ -27,16 +27,25 @@ export const metadata: Metadata = {
   title: resumeTitle,
   description: resumeDescription,
   keywords: [
-    "analista de dados",
+    "analista de dados júnior",
+    "data analyst",
     "business intelligence",
     "power bi",
     "sql",
-    "dax",
-    "power query",
     "python",
-    "bi governamental",
-    "dados publicos",
+    "dax",
+    "etl",
+    "dashboards",
+    "kpis",
+    "data visualization",
     "data analytics",
+    "automação de processos",
+    "análise exploratória",
+    "modelagem de dados",
+    "relatórios executivos",
+    "metodologias ágeis",
+    "scrum",
+    "kanban",
   ],
   alternates: {
     canonical: "/resume",
@@ -58,7 +67,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Curriculo profissional de Matheus Siqueira",
+        alt: "Currículo profissional de Matheus Siqueira",
       },
     ],
   },

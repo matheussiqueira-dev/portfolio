@@ -7,7 +7,7 @@ import { baseUrl, siteName } from "@/lib/seo";
 
 const pageTitle = "Demos | Matheus Siqueira";
 const pageDescription =
-  "Demos e repositorios dos projetos de dados, BI e automacao, com foco em casos reais, validacao tecnica rapida e avaliacao objetiva por recrutadores e gestores tecnicos.";
+  "Demos e repositórios dos projetos de dados, BI e automação, com foco em casos reais, validação técnica rápida e avaliação objetiva por recrutadores e gestores técnicos.";
 
 const demosJsonLd = {
   "@context": "https://schema.org",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Demos e repositorios",
+        alt: "Demos e repositórios",
       },
     ],
   },

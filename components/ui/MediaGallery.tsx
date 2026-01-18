@@ -34,7 +34,7 @@ export default function MediaGallery({
   videoFallbackText,
 }: Props) {
   const fallbackText =
-    videoFallbackText ?? "Seu navegador nao suporta video HTML5.";
+    videoFallbackText ?? "Seu navegador não suporta vídeo HTML5.";
   const normalizedItems =
     items.length > 0
       ? items

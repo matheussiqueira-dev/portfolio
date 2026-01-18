@@ -65,7 +65,14 @@ export const siteEn: SiteContent = {
         },
         {
           title: "Analytics & Automation",
-          items: ["Python", "Pandas", "Data Analytics", "Automation", "KPIs"],
+          items: [
+            "Python",
+            "Pandas",
+            "Data Analytics",
+            "Automation",
+            "KPIs",
+            "Data Visualization",
+          ],
         },
         {
           title: "Web & Integrations",
@@ -76,6 +83,7 @@ export const siteEn: SiteContent = {
           items: [
             "Git/GitHub",
             "Scrum",
+            "Kanban",
             "Agile environments",
             "Documentation",
             "Data governance",

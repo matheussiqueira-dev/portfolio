@@ -3,10 +3,9 @@ import JsonLd from "@/components/seo/JsonLd";
 import ResumeEn from "@/components/sections/ResumeEn";
 import { baseUrl, siteName } from "@/lib/seo";
 
-const resumeTitle =
-  "Resume | Data Analyst & Business Intelligence | Matheus Siqueira";
+const resumeTitle = "Junior Data Analyst Resume | Power BI, SQL, Python";
 const resumeDescription =
-  "Data Analyst with Power BI, SQL, and Python experience working with public and fiscal data for government BI, ETL pipelines, and strategic decision support.";
+  "Junior Data Analyst resume with experience in Business Intelligence, Power BI, SQL, Python, dashboards, ETL and data analysis.";
 
 const resumeJsonLd = {
   "@context": "https://schema.org",
@@ -27,16 +26,25 @@ export const metadata: Metadata = {
   title: resumeTitle,
   description: resumeDescription,
   keywords: [
+    "junior data analyst",
     "data analyst",
     "business intelligence",
     "power bi",
     "sql",
-    "dax",
-    "power query",
     "python",
-    "government bi",
-    "public data",
+    "dax",
+    "etl",
+    "dashboards",
+    "kpis",
+    "data visualization",
     "data analytics",
+    "process automation",
+    "exploratory analysis",
+    "data modeling",
+    "executive reports",
+    "agile methods",
+    "scrum",
+    "kanban",
   ],
   alternates: {
     canonical: "/en/resume",
