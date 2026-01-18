@@ -4,9 +4,10 @@ import ResumeEn from "@/components/sections/ResumeEn";
 import { resumeEn } from "@/data/resume.en";
 import { baseUrl, sameAsLinks, siteName } from "@/lib/seo";
 
-const resumeTitle = "Resume | Matheus Siqueira";
+const resumeTitle =
+  "Resume | Data Analyst & Business Intelligence | Matheus Siqueira";
 const resumeDescription =
-  "Resume of Matheus Siqueira, Junior Data Analyst and Business Intelligence Analyst with Power BI, SQL, DAX, Python, and ETL for public data and decision-ready dashboards.";
+  "Data Analyst with experience in Power BI, SQL, Python, and public data. Government BI, ETL automation, and strategic decision support for managers and executives.";
 
 const resumeJsonLd = {
   "@context": "https://schema.org",
@@ -26,6 +27,16 @@ const resumeJsonLd = {
 export const metadata: Metadata = {
   title: resumeTitle,
   description: resumeDescription,
+  keywords: [
+    "data analyst",
+    "business intelligence",
+    "power bi",
+    "sql",
+    "python",
+    "government bi",
+    "public data",
+    "data analytics",
+  ],
   alternates: {
     canonical: "/en/resume",
     languages: {

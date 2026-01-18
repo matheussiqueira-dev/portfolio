@@ -11,10 +11,13 @@ export default function ResumeEn() {
             <p className="text-xs uppercase tracking-[0.3em] text-slate-400 print:text-slate-600">
               Resume
             </p>
-            <h1 className="text-4xl md:text-5xl font-semibold text-white print:text-black">
-              {resumeEn.name}
+            <h1 className="text-3xl md:text-4xl font-semibold text-white print:text-black">
+              Professional Resume — Data Analyst & Business Intelligence
             </h1>
-            <p className="text-lg text-slate-300 print:text-slate-700">
+            <p className="text-base text-slate-200 print:text-slate-700">
+              {resumeEn.name}
+            </p>
+            <p className="text-sm text-slate-400 print:text-slate-600">
               {resumeEn.role}
             </p>
           </div>
@@ -73,20 +76,9 @@ export default function ResumeEn() {
           </ul>
         </section>
 
-        <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
-          <h2 className="text-xl font-semibold text-white print:text-black">
-            Results
-          </h2>
-          <ul className="list-disc list-inside space-y-2 text-sm text-slate-300 print:text-slate-700">
-            {resumeEn.results.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </section>
-
         <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-6 print:border-none print:bg-transparent print:p-0">
           <h2 className="text-xl font-semibold text-white print:text-black">
-            Experience
+            Professional Experience
           </h2>
           {resumeEn.experience.map((item) => (
             <div key={item.company} className="space-y-3">
@@ -115,7 +107,7 @@ export default function ResumeEn() {
         <aside className="space-y-8">
           <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-6 print:border-none print:bg-transparent print:p-0">
             <h2 className="text-xl font-semibold text-white print:text-black">
-              Skills & Tools
+              Technical Skills
             </h2>
             {resumeEn.skills.groups.map((group) => (
               <div key={group.title} className="space-y-3">
@@ -138,13 +130,13 @@ export default function ResumeEn() {
 
           <section className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-6 print:border-none print:bg-transparent print:p-0">
             <h2 className="text-xl font-semibold text-white print:text-black">
-              Education
+              Academic Education
             </h2>
             {resumeEn.education.groups.map((group) => (
               <div key={group.title} className="space-y-3">
-                <p className="text-xs uppercase tracking-[0.2em] text-slate-400 print:text-slate-600">
+                <h3 className="text-sm uppercase tracking-[0.2em] text-slate-400 print:text-slate-600">
                   {group.title}
-                </p>
+                </h3>
                 <div className="space-y-3">
                   {group.items.map((item) => (
                     <div key={`${group.title}-${item.course}`} className="space-y-1">

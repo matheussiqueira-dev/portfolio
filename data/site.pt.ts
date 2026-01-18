@@ -17,7 +17,7 @@ export const sitePt: SiteContent = {
       "Analista de Dados Junior com experiencia pratica em Business Intelligence aplicado na Secretaria Municipal da Fazenda. Desenvolvo dashboards estrategicos, pipelines de dados e automacoes com Power BI, SQL e Python para apoiar decisoes gerenciais com dados confiaveis. Em formacao em desenvolvimento web para produtos de dados e sistemas analiticos.",
     ctas: {
       primary: "Ver projetos de dados",
-      secondary: "Ver curriculo",
+      secondary: "Ver curriculo profissional",
       tertiary: "Entrar em contato",
     },
   },

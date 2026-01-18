@@ -17,7 +17,7 @@ export const siteEn: SiteContent = {
       "Junior Data Analyst with hands-on experience in applied Business Intelligence at the Municipal Treasury Department. I build strategic dashboards, data pipelines, and automations with Power BI, SQL, and Python to support managerial decisions with reliable data. I am also training in web development for data products and analytical systems.",
     ctas: {
       primary: "View data projects",
-      secondary: "View resume",
+      secondary: "View professional resume",
       tertiary: "Get in touch",
     },
   },
