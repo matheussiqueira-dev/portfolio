@@ -7,6 +7,7 @@ export const siteEn: SiteContent = {
     projects: "Projects",
     contact: "Contact",
     certificates: "Certificates",
+    academic: "Academic",
     resume: "Resume",
   },
   hero: {

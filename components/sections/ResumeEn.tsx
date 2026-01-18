@@ -11,12 +11,12 @@ export default function ResumeEn() {
             <p className="text-xs uppercase tracking-[0.3em] text-slate-400 print:text-slate-600">
               Resume
             </p>
-            <p className="text-sm font-semibold text-slate-200 print:text-slate-700">
+            <h1 className="text-4xl font-semibold text-white md:text-5xl print:text-black">
               {resumeEn.name}
-            </p>
-            <h1 className="text-3xl font-semibold text-white md:text-4xl print:text-black">
-              Junior Data Analyst | Power BI | SQL | Python | Business Intelligence
             </h1>
+            <p className="text-base font-semibold text-slate-200 md:text-lg print:text-slate-700">
+              Junior Data Analyst | Power BI | SQL | Python | Business Intelligence
+            </p>
             <p className="text-sm text-slate-300 print:text-slate-700">
               {resumeEn.headline}
             </p>
@@ -52,7 +52,7 @@ export default function ResumeEn() {
               rel="noopener noreferrer"
               className="underline w-fit text-emerald-400 font-medium"
             >
-              WhatsApp
+              WhatsApp +55 (81) 99920-3683
             </a>
           </div>
         </div>

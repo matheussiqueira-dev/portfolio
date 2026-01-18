@@ -1,7 +1,7 @@
 import type { Certificate, CertificatesPageContent } from "./certificates.types";
 
 export const certificatesPageEn: CertificatesPageContent = {
-  "title": "Certificates | Junior Data Analyst | Power BI | SQL | Python | BI",
+  "title": "Certificates",
   "description": "Certificates in Data Analytics, Business Intelligence, Power BI, SQL, Python, AI, Cloud, and Security with local PDFs.",
   "searchPlaceholder": "Search certificate",
   "filterLabel": "Filter by provider",

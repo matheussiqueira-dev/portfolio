@@ -7,6 +7,7 @@ export const sitePt: SiteContent = {
     projects: "Projetos",
     contact: "Contato",
     certificates: "Certificados",
+    academic: "Acadêmico",
     resume: "Currículo",
   },
   hero: {

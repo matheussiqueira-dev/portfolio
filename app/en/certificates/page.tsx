@@ -8,6 +8,8 @@ import {
 import { baseUrl, siteName } from "@/lib/seo";
 
 const certificatesTitle = certificatesPageEn.title;
+const certificatesMetaTitle =
+  "Certificates | Junior Data Analyst | Power BI | SQL | Python | BI";
 const certificatesDescription = certificatesPageEn.description;
 
 const certificatesJsonLd = {
@@ -31,7 +33,7 @@ const certificatesJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: certificatesTitle,
+  title: certificatesMetaTitle,
   description: certificatesDescription,
   alternates: {
     canonical: "/en/certificates",
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: certificatesTitle,
+    title: certificatesMetaTitle,
     description: certificatesDescription,
     url: "/en/certificates",
     siteName,
@@ -59,7 +61,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: certificatesTitle,
+    title: certificatesMetaTitle,
     description: certificatesDescription,
     images: ["/og.png"],
   },
