@@ -40,6 +40,8 @@ const googleSiteVerification =
 const gaId =
   process.env.NEXT_PUBLIC_GA_ID || process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const gaTrackingId = gaId?.trim();
+const personId = `${baseUrl}/#person`;
+const websiteId = `${baseUrl}/#website`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -105,11 +107,16 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": personId,
     name: siteName,
     url: baseUrl,
     image: `${baseUrl}/profile.jpg`,
-    jobTitle: "Data Analyst",
+    jobTitle: "Analista de Dados Junior",
     description: siteDescription,
+    worksFor: {
+      "@type": "Organization",
+      name: "Secretaria Municipal da Fazenda",
+    },
     address: {
       "@type": "PostalAddress",
       addressLocality: "Recife",
@@ -121,22 +128,43 @@ const structuredData = [
       "Business Intelligence",
       "Power BI",
       "SQL",
+      "DAX",
+      "Power Query",
       "Python",
       "Public Data",
+      "Public Finance",
       "ETL",
       "Data Visualization",
       "Data Analysis",
+    ],
+    alumniOf: [
+      {
+        "@type": "CollegeOrUniversity",
+        name: "UNIFG",
+      },
+      {
+        "@type": "EducationalOrganization",
+        name: "UNINASSAU",
+      },
+      {
+        "@type": "EducationalOrganization",
+        name: "Infinity School",
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        name: "City College of San Francisco",
+      },
     ],
   },
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": websiteId,
     name: siteName,
     url: baseUrl,
     inLanguage: ["pt-BR", "en-US"],
     publisher: {
-      "@type": "Person",
-      name: siteName,
+      "@id": personId,
     },
   },
 ];

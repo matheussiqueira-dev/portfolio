@@ -2,13 +2,19 @@ export const resume = {
   name: "Matheus Siqueira",
   role: "Analista de Dados Junior | Business Intelligence",
   summary:
-    "Analista de Dados com atuacao em Business Intelligence aplicado ao setor publico, especializado em Power BI, SQL, Python e automacao de processos analiticos. Experiencia pratica em dados fiscais e governamentais, com foco em tomada de decisao estrategica, eficiencia operacional e visualizacoes orientadas a gestores. Formacao solida em Ciencia da Computacao, Inteligencia Artificial, Cloud Computing e Seguranca da Informacao.",
+    "Analista de Dados Junior com experiencia em Business Intelligence aplicado ao setor publico, com foco em dados fiscais, arrecadacao e suporte a decisao. Atua na Secretaria Municipal da Fazenda, construindo dashboards estrategicos em Power BI, definindo indicadores e traduzindo dados publicos em informacao acionavel para gestores. Domina SQL para analise e modelagem, DAX e Power Query para transformacoes e metricas, e Python para ETL e automacao de rotinas que reduzem retrabalho e aumentam a confiabilidade. Experiencia em analise exploratoria, deteccao de tendencias e anomalias, documentacao de processos e governanca basica de dados. Habituado a ambientes ageis e multidisciplinares, integra diferentes bases e padroniza KPIs para comparacoes consistentes. Em formacao em desenvolvimento web para produtos de dados e sistemas analiticos. Busca oportunidades como Data Analyst, Business Intelligence Analyst ou BI Developer, unindo analise tecnica, visao de negocio e comunicacao clara.",
   summaryBullets: [
-    "Dashboards estrategicos em Power BI para arrecadacao e indicadores fiscais.",
-    "ETL com SQL, DAX e Power Query integrando bases publicas.",
-    "Automacao de relatorios com Python reduzindo retrabalho operacional.",
-    "Analise exploratoria para identificar tendencias e anomalias fiscais.",
-    "Suporte direto a gestao estrategica com insights acionaveis.",
+    "Power BI e SQL aplicados a dados publicos e fiscais.",
+    "ETL com DAX, Power Query e Python para dados confiaveis.",
+    "Analise exploratoria e deteccao de anomalias.",
+    "Visualizacoes orientadas a decisao gerencial.",
+    "Automacao de relatorios e rotinas analiticas.",
+  ],
+  impact: [
+    "Reducao de retrabalho com automacao de rotinas e relatorios.",
+    "Padronizacao de indicadores fiscais para comparacao consistente.",
+    "Consolidacao de multiplas bases publicas em visao unica.",
+    "Apoio a decisoes estrategicas com analises claras e acionaveis.",
   ],
   experience: [
     {
@@ -17,15 +23,14 @@ export const resume = {
       role: "Estagiario em Analise de Dados",
       period: "2025 - Atual",
       highlights: [
-        "Desenvolveu dashboards estrategicos em Power BI.",
+        "Desenvolveu dashboards estrategicos em Power BI para gestores.",
         "Monitorou arrecadacao municipal e indicadores fiscais.",
         "Analisou dados com SQL, DAX e Power Query.",
-        "Construiu pipelines ETL automatizados.",
-        "Integracao de multiplas bases publicas.",
-        "Automatizou relatorios com Python.",
-        "Identificou tendencias e anomalias fiscais.",
-        "Apoiou diretamente a gestao estrategica.",
-        "Atuou em ambiente agil e multidisciplinar.",
+        "Construiu pipelines ETL automatizados e integracao de bases publicas.",
+        "Automatizou relatorios com Python e scripts de consolidacao.",
+        "Identificou tendencias e anomalias fiscais em analises exploratorias.",
+        "Apoiou diretamente a gestao estrategica com insights acionaveis.",
+        "Atuou em ambiente agil e colaborativo com times multidisciplinares.",
       ],
     },
     {
@@ -34,12 +39,11 @@ export const resume = {
       role: "Analista de Cargos e Salarios",
       period: "2017 - 2019",
       highlights: [
-        "Analise estruturada de dados funcionais e orcamentarios.",
-        "Modelagem de faixas salariais orientadas a dados.",
-        "Benchmarks e pesquisas salariais.",
-        "Analise de impacto financeiro.",
-        "Suporte analitico a tomada de decisao executiva.",
-        "Comunicacao de insights para liderancas publicas.",
+        "Analisou e padronizou dados funcionais e orcamentarios.",
+        "Modelou faixas salariais orientadas a dados e benchmarks.",
+        "Realizou estudos de impacto financeiro e KPIs de pessoal.",
+        "Apoiou decisoes executivas com analises e conformidade legal.",
+        "Comunicou insights para liderancas e stakeholders publicos.",
       ],
     },
     {
@@ -48,18 +52,71 @@ export const resume = {
       role: "Assistente Comercial",
       period: "2014 - 2017",
       highlights: [
-        "Analise de dados comerciais e vendas.",
-        "Relatorios gerenciais e KPIs.",
-        "Suporte analitico a estrategia comercial.",
-        "Organizacao e integridade de dados.",
-        "Interface entre dados, marketing e vendas.",
+        "Analisou dados de vendas, pedidos e clientes.",
+        "Produziu relatorios gerenciais e KPIs comerciais.",
+        "Apoiou estrategia comercial e marketing com dados.",
+        "Garantiu organizacao e integridade de dados operacionais.",
       ],
     },
   ],
+  skills: {
+    groups: [
+      {
+        title: "Data & BI",
+        items: [
+          "Business Intelligence",
+          "Data Analytics",
+          "Data Visualization",
+          "Data Warehouse",
+          "ETL",
+          "KPIs",
+          "Governanca de Dados",
+        ],
+      },
+      {
+        title: "Ferramentas",
+        items: ["Power BI", "DAX", "Power Query", "SQL", "Tableau", "Excel"],
+      },
+      {
+        title: "Programacao",
+        items: [
+          "Python",
+          "JavaScript",
+          "TypeScript",
+          "Node.js",
+          "React",
+          "APIs REST",
+        ],
+      },
+      {
+        title: "Dados & IA",
+        items: [
+          "Estatistica",
+          "Data Science",
+          "Machine Learning",
+          "Big Data",
+          "MLOps",
+          "Analitica Preditiva",
+        ],
+      },
+      {
+        title: "Processos",
+        items: ["Scrum", "Kanban", "OKRs", "Metodologias Ageis"],
+      },
+      {
+        title: "Cloud & Seguranca",
+        items: ["Oracle Cloud", "Cloud Computing", "Seguranca da Informacao"],
+      },
+      {
+        title: "Idiomas",
+        items: ["Ingles C1"],
+      },
+    ],
+  },
   education: {
     groups: [
       {
-        title: "Formacao academica",
+        title: "Formacao Academica",
         items: [
           {
             course: "Ciencia da Computacao",
@@ -77,11 +134,6 @@ export const resume = {
         title: "Pos-graduacoes",
         items: [
           {
-            course: "Inteligencia Artificial e Ciencia de Dados",
-            institution: "UNIFG",
-            period: "2025",
-          },
-          {
             course: "Cloud & Edge Computing",
             institution: "UNIFG",
             period: "2025",
@@ -91,10 +143,15 @@ export const resume = {
             institution: "UNIFG",
             period: "2025",
           },
+          {
+            course: "Inteligencia Artificial e Ciencia de Dados",
+            institution: "UNIFG",
+            period: "2025",
+          },
         ],
       },
       {
-        title: "Formacoes complementares",
+        title: "Formacoes Complementares",
         items: [
           {
             course: "Tecnico em Programacao Full Stack A.I.",
@@ -115,54 +172,52 @@ export const resume = {
       },
     ],
   },
-  skills: {
-    groups: [
+  featuredProjects: [
+    {
+      slug: "nucleo-comercial-dados",
+      title: "Nucleo Comercial de Dados",
+      stack: ["Power BI", "SQL", "Python"],
+    },
+    {
+      slug: "chatbot-ia-api",
+      title: "Chatbot IA API",
+      stack: ["Python", "FastAPI"],
+    },
+    {
+      slug: "self-drive-car",
+      title: "Self-Drive Car",
+      stack: ["Python", "OpenCV", "TensorFlow"],
+    },
+    {
+      slug: "library-api-advanced",
+      title: "Library API Advanced",
+      stack: ["TypeScript", "PostgreSQL"],
+    },
+    {
+      slug: "touchless-web-gesture-interface",
+      title: "Touchless Web Gesture Interface",
+      stack: ["Python", "OpenCV", "React"],
+    },
+  ],
+  contact: {
+    title: "Contato",
+    description:
+      "Aberto a oportunidades em Data Analytics, BI e analise de dados no setor publico ou privado.",
+    links: [
       {
-        title: "Data & BI",
-        items: [
-          "Analise de Dados",
-          "Business Intelligence",
-          "Data Analytics",
-          "Data Visualization",
-          "Modelagem de Dados",
-          "KPIs",
-          "Governanca de Dados",
-        ],
+        label: "Email",
+        href: "mailto:matheussiqueirahub@gmail.com",
+        value: "matheussiqueirahub@gmail.com",
       },
       {
-        title: "Ferramentas",
-        items: ["Power BI", "DAX", "Power Query", "Tableau", "Excel", "SQL"],
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/matheussiqueira-dev/",
+        value: "linkedin.com/in/matheussiqueira-dev",
       },
       {
-        title: "Programacao",
-        items: [
-          "Python",
-          "Pandas",
-          "JavaScript",
-          "TypeScript",
-          "Node.js",
-          "React.js",
-          "APIs REST",
-        ],
-      },
-      {
-        title: "Cloud & IA",
-        items: [
-          "Cloud Computing",
-          "Oracle Cloud",
-          "Inteligencia Artificial",
-          "Machine Learning",
-          "MLOps",
-          "Analitica Preditiva",
-        ],
-      },
-      {
-        title: "Metodologias",
-        items: ["Scrum", "Kanban", "OKRs", "Metodologias Ageis"],
-      },
-      {
-        title: "Idiomas",
-        items: ["Ingles avancado (C1)"],
+        label: "GitHub",
+        href: "https://github.com/matheussiqueira-dev",
+        value: "github.com/matheussiqueira-dev",
       },
     ],
   },

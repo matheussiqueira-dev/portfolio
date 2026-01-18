@@ -1,27 +1,26 @@
 import type { Metadata } from "next";
 import JsonLd from "@/components/seo/JsonLd";
 import ResumeEn from "@/components/sections/ResumeEn";
-import { resumeEn } from "@/data/resume.en";
-import { baseUrl, sameAsLinks, siteName } from "@/lib/seo";
+import { baseUrl, siteName } from "@/lib/seo";
 
 const resumeTitle =
   "Resume | Data Analyst & Business Intelligence | Matheus Siqueira";
 const resumeDescription =
-  "Data Analyst with experience in Power BI, SQL, Python, and public data. Government BI, ETL automation, and strategic decision support for managers and executives.";
+  "Data Analyst with Power BI, SQL, and Python experience working with public and fiscal data for government BI, ETL pipelines, and strategic decision support.";
 
 const resumeJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: resumeEn.name,
-  jobTitle: resumeEn.role,
-  description: resumeEn.summary,
+  "@type": "ProfilePage",
+  name: resumeTitle,
+  description: resumeDescription,
   url: `${baseUrl}/en/resume`,
-  sameAs: sameAsLinks,
-  worksFor: {
-    "@type": "Organization",
-    name: "Municipal Treasury Department",
+  inLanguage: "en-US",
+  about: {
+    "@id": `${baseUrl}/#person`,
   },
-  knowsAbout: resumeEn.skills.groups.flatMap((group) => group.items),
+  isPartOf: {
+    "@id": `${baseUrl}/#website`,
+  },
 };
 
 export const metadata: Metadata = {
@@ -32,6 +31,8 @@ export const metadata: Metadata = {
     "business intelligence",
     "power bi",
     "sql",
+    "dax",
+    "power query",
     "python",
     "government bi",
     "public data",

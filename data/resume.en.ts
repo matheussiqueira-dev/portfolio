@@ -2,29 +2,34 @@ export const resumeEn = {
   name: "Matheus Siqueira",
   role: "Junior Data Analyst | Business Intelligence",
   summary:
-    "Data Analyst with Business Intelligence experience in the public sector, specialized in Power BI, SQL, Python, and automation of analytical processes. Hands-on experience with fiscal and governmental data, focused on strategic decision-making, operational efficiency, and executive-oriented visualizations. Strong academic background in Computer Science, Artificial Intelligence, Cloud Computing, and Information Security.",
+    "Junior Data Analyst with Business Intelligence experience in the public sector, focused on fiscal data, revenue monitoring, and decision support. Works at the Municipal Treasury Secretariat, delivering strategic Power BI dashboards, defining KPIs, and translating public data into actionable insights for managers. Skilled in SQL for analysis and modeling, DAX and Power Query for transformations and metrics, and Python for ETL and automation that reduce rework and improve data reliability. Experienced in exploratory analysis, trend and anomaly detection, process documentation, and basic data governance. Comfortable in agile, multidisciplinary teams, integrating multiple sources and standardizing KPIs for consistent comparisons. Currently strengthening web development skills for data products and analytical systems. Seeking opportunities as a Data Analyst, Business Intelligence Analyst, or BI Developer with a focus on impact and clear communication.",
   summaryBullets: [
-    "Strategic Power BI dashboards for revenue and fiscal indicators.",
-    "ETL with SQL, DAX, and Power Query integrating public databases.",
-    "Python automation to reduce operational rework.",
+    "Power BI dashboards for fiscal indicators and revenue tracking.",
+    "ETL with SQL, DAX, Power Query, and Python.",
     "Exploratory analysis to detect trends and anomalies.",
-    "Direct support for strategic management decisions.",
+    "Visualization focused on managerial decision-making.",
+    "Automation that improves data reliability and efficiency.",
+  ],
+  impact: [
+    "Reduced rework through automated ETL and reporting routines.",
+    "Standardized fiscal indicators for consistent comparisons.",
+    "Consolidated multiple public data sources into a single view.",
+    "Supported strategic decisions with clear, actionable analysis.",
   ],
   experience: [
     {
-      company: "Municipal Treasury Department",
+      company: "Municipal Treasury Secretariat",
       location: "Jaboatao dos Guararapes",
       role: "Data Analysis Intern",
       period: "2025 - Present",
       highlights: [
-        "Built strategic dashboards in Power BI.",
+        "Delivered strategic Power BI dashboards for managers.",
         "Monitored municipal revenue and fiscal indicators.",
         "Analyzed data with SQL, DAX, and Power Query.",
-        "Built automated ETL pipelines.",
-        "Integrated multiple public data sources.",
-        "Automated reports with Python.",
-        "Identified trends and fiscal anomalies.",
-        "Supported strategic management decisions.",
+        "Built automated ETL pipelines and integrated public sources.",
+        "Automated reports with Python and consolidation scripts.",
+        "Identified fiscal trends and anomalies in exploratory analysis.",
+        "Supported strategic management with actionable insights.",
         "Worked in agile, multidisciplinary teams.",
       ],
     },
@@ -34,12 +39,11 @@ export const resumeEn = {
       role: "Compensation Analyst",
       period: "2017 - 2019",
       highlights: [
-        "Structured analysis of payroll and budget data.",
-        "Data-driven salary band modeling.",
-        "Salary benchmarks and market research.",
-        "Financial impact analysis.",
-        "Analytical support for executive decision-making.",
-        "Communicated insights to public leadership.",
+        "Standardized payroll and budget datasets.",
+        "Modeled salary bands based on data and benchmarks.",
+        "Produced financial impact analyses and HR KPIs.",
+        "Supported executive decisions with data-driven insights.",
+        "Communicated findings to public-sector stakeholders.",
       ],
     },
     {
@@ -48,14 +52,67 @@ export const resumeEn = {
       role: "Commercial Assistant",
       period: "2014 - 2017",
       highlights: [
-        "Commercial and sales data analysis.",
-        "Management reports and KPIs.",
-        "Analytical support for commercial strategy.",
-        "Data organization and integrity.",
-        "Interface between data, marketing, and sales.",
+        "Analyzed sales, orders, and customer data.",
+        "Delivered management reports and commercial KPIs.",
+        "Supported commercial strategy with analytical insights.",
+        "Maintained data quality and operational integrity.",
       ],
     },
   ],
+  skills: {
+    groups: [
+      {
+        title: "Data & BI",
+        items: [
+          "Business Intelligence",
+          "Data Analytics",
+          "Data Visualization",
+          "Data Warehouse",
+          "ETL",
+          "KPIs",
+          "Data Governance",
+        ],
+      },
+      {
+        title: "Tools",
+        items: ["Power BI", "DAX", "Power Query", "SQL", "Tableau", "Excel"],
+      },
+      {
+        title: "Programming",
+        items: [
+          "Python",
+          "JavaScript",
+          "TypeScript",
+          "Node.js",
+          "React",
+          "REST APIs",
+        ],
+      },
+      {
+        title: "Data & AI",
+        items: [
+          "Statistics",
+          "Data Science",
+          "Machine Learning",
+          "Big Data",
+          "MLOps",
+          "Predictive Analytics",
+        ],
+      },
+      {
+        title: "Process",
+        items: ["Scrum", "Kanban", "OKRs", "Agile Methods"],
+      },
+      {
+        title: "Cloud & Security",
+        items: ["Oracle Cloud", "Cloud Computing", "Information Security"],
+      },
+      {
+        title: "Languages",
+        items: ["English (C1)"],
+      },
+    ],
+  },
   education: {
     groups: [
       {
@@ -115,54 +172,52 @@ export const resumeEn = {
       },
     ],
   },
-  skills: {
-    groups: [
+  featuredProjects: [
+    {
+      slug: "nucleo-comercial-dados",
+      title: "Commercial Data Hub",
+      stack: ["Power BI", "SQL", "Python"],
+    },
+    {
+      slug: "chatbot-ia-api",
+      title: "Chatbot IA API",
+      stack: ["Python", "FastAPI"],
+    },
+    {
+      slug: "self-drive-car",
+      title: "Self-Drive Car",
+      stack: ["Python", "OpenCV", "TensorFlow"],
+    },
+    {
+      slug: "library-api-advanced",
+      title: "Library API Advanced",
+      stack: ["TypeScript", "PostgreSQL"],
+    },
+    {
+      slug: "touchless-web-gesture-interface",
+      title: "Touchless Web Gesture Interface",
+      stack: ["Python", "OpenCV", "React"],
+    },
+  ],
+  contact: {
+    title: "Contact",
+    description:
+      "Open to opportunities in Data Analytics, BI, and public sector or private data teams.",
+    links: [
       {
-        title: "Data & BI",
-        items: [
-          "Data Analysis",
-          "Business Intelligence",
-          "Data Analytics",
-          "Data Visualization",
-          "Data Modeling",
-          "KPIs",
-          "Data Governance",
-        ],
+        label: "Email",
+        href: "mailto:matheussiqueirahub@gmail.com",
+        value: "matheussiqueirahub@gmail.com",
       },
       {
-        title: "Tools",
-        items: ["Power BI", "DAX", "Power Query", "Tableau", "Excel", "SQL"],
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/matheussiqueira-dev/",
+        value: "linkedin.com/in/matheussiqueira-dev",
       },
       {
-        title: "Programming",
-        items: [
-          "Python",
-          "Pandas",
-          "JavaScript",
-          "TypeScript",
-          "Node.js",
-          "React.js",
-          "REST APIs",
-        ],
-      },
-      {
-        title: "Cloud & AI",
-        items: [
-          "Cloud Computing",
-          "Oracle Cloud",
-          "Artificial Intelligence",
-          "Machine Learning",
-          "MLOps",
-          "Predictive Analytics",
-        ],
-      },
-      {
-        title: "Methods",
-        items: ["Scrum", "Kanban", "OKRs", "Agile Methods"],
-      },
-      {
-        title: "Languages",
-        items: ["English (C1)"],
+        label: "GitHub",
+        href: "https://github.com/matheussiqueira-dev",
+        value: "github.com/matheussiqueira-dev",
       },
     ],
   },
