@@ -44,3 +44,9 @@ next-env.d.ts
 # Agent/Codex local tooling
 .agent/
 .codex/
+
+# Lighthouse / Core Web Vitals reports
+REPORT.cwv.*.json
+REPORT.*.json
+*.lighthouse*.json
+
