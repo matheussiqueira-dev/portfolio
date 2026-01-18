@@ -2,7 +2,7 @@ import type { Certificate, CertificatesPageContent } from "./certificates.types"
 
 export const certificatesPagePt: CertificatesPageContent = {
   "title": "Certificados",
-  "description": "Certificados em Data Analytics, Business Intelligence, Power BI, SQL, Python, IA, Cloud e Seguranca, com PDFs locais para consulta.",
+  "description": "Certificados em Data Analytics, Business Intelligence, Power BI, SQL, Python, IA, Cloud e Segurança, com PDFs locais para consulta.",
   "searchPlaceholder": "Buscar certificado",
   "filterLabel": "Filtrar por plataforma",
   "allLabel": "Todos",
@@ -58,7 +58,7 @@ export const certificatesPt: Certificate[] = [
   },
   {
     "id": "bi-com-excel-criando-um-dashboard-sem-complicacao",
-    "title": "BI com Excel criando um Dashboard sem complicacao",
+    "title": "BI com Excel criando um Dashboard sem complicação",
     "issuer": "Alura",
     "areaTags": [
       "Business Intelligence",
@@ -68,7 +68,7 @@ export const certificatesPt: Certificate[] = [
   },
   {
     "id": "bi-com-excel-trabalhando-com-tabelas-dinamicas-com-power-pivot",
-    "title": "BI com Excel trabalhando com tabelas dinamicas com Power Pivot",
+    "title": "BI com Excel trabalhando com tabelas dinâmicas com Power Pivot",
     "issuer": "Alura",
     "areaTags": [
       "Business Intelligence",
@@ -78,7 +78,7 @@ export const certificatesPt: Certificate[] = [
   },
   {
     "id": "carreira-analise-de-dados-boas-vindas-e-primeiros-passos",
-    "title": "Carreira Analise de Dados Boas-vindas e primeiros passos",
+    "title": "Carreira Análise de Dados Boas-vindas e primeiros passos",
     "issuer": "Alura",
     "areaTags": [
       "Data Analytics",
@@ -98,7 +98,7 @@ export const certificatesPt: Certificate[] = [
   },
   {
     "id": "comecando-em-programacao-carreira-e-primeiros-passos",
-    "title": "Comecando em Programacao carreira e primeiros passos",
+    "title": "Comecando em Programação carreira e primeiros passos",
     "issuer": "Alura",
     "areaTags": [
       "JavaScript"
@@ -107,7 +107,7 @@ export const certificatesPt: Certificate[] = [
   },
   {
     "id": "logica-de-programacao-mergulhe-em-programacao-com-javascript",
-    "title": "Logica de programacao mergulhe em programacao com JavaScript",
+    "title": "Lógica de programacao mergulhe em programacao com JavaScript",
     "issuer": "Alura",
     "areaTags": [
       "JavaScript"
@@ -126,7 +126,7 @@ export const certificatesPt: Certificate[] = [
   },
   {
     "id": "power-bi-construindo-calculos-com-dax",
-    "title": "Power BI construindo calculos com DAX",
+    "title": "Power BI construindo cálculos com DAX",
     "issuer": "Alura",
     "areaTags": [
       "Power BI",
@@ -178,7 +178,7 @@ export const certificatesPt: Certificate[] = [
   },
   {
     "id": "praticando-excel-utilizando-formulas-matematicas",
-    "title": "Praticando Excel utilizando formulas matematicas",
+    "title": "Praticando Excel utilizando fórmulas matematicas",
     "issuer": "Alura",
     "areaTags": [
       "Excel",
@@ -197,7 +197,7 @@ export const certificatesPt: Certificate[] = [
   },
   {
     "id": "ux-design-entenda-a-area-da-user-experience",
-    "title": "UX Design entenda a area da User Experience",
+    "title": "UX Design entenda a área da User Experience",
     "issuer": "Alura",
     "areaTags": [
       "UX"
@@ -206,7 +206,7 @@ export const certificatesPt: Certificate[] = [
   },
   {
     "id": "aplicacoes-ia-comece-por-aqui",
-    "title": "Aplicacoes IA - Comece por aqui",
+    "title": "Aplicações IA - Comece por aqui",
     "issuer": "Assimov",
     "areaTags": [
       "Machine Learning",
@@ -216,7 +216,7 @@ export const certificatesPt: Certificate[] = [
   },
   {
     "id": "aprendendo-python-conceitos-basicos",
-    "title": "Aprendendo Python Conceitos Basicos",
+    "title": "Aprendendo Python Conceitos Básicos",
     "issuer": "Assimov",
     "areaTags": [
       "Python"
@@ -235,7 +235,7 @@ export const certificatesPt: Certificate[] = [
   },
   {
     "id": "criando-seu-setup-para-programacao-python",
-    "title": "Criando seu Setup para Programacao Python",
+    "title": "Criando seu Setup para Programação Python",
     "issuer": "Assimov",
     "areaTags": [
       "Python"
@@ -275,7 +275,7 @@ export const certificatesPt: Certificate[] = [
   },
   {
     "id": "introducao-a-logica-de-programacao",
-    "title": "Introducao a Logica de Programacao",
+    "title": "Introdução a Lógica de Programação",
     "issuer": "Assimov",
     "areaTags": [
       "JavaScript"
@@ -294,7 +294,7 @@ export const certificatesPt: Certificate[] = [
   },
   {
     "id": "python-para-usuarios-de-excel",
-    "title": "Python para Usuarios de Excel",
+    "title": "Python para Usuários de Excel",
     "issuer": "Assimov",
     "areaTags": [
       "Python",
@@ -374,7 +374,7 @@ export const certificatesPt: Certificate[] = [
   },
   {
     "id": "programacao-de-solucoes-computacionais",
-    "title": "Programacao de solucoes computacionais",
+    "title": "Programação de solucoes computacionais",
     "issuer": "Ulife",
     "areaTags": [
       "Python"

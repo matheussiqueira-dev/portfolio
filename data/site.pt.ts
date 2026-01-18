@@ -8,45 +8,46 @@ export const sitePt: SiteContent = {
     contact: "Contato",
     certificates: "Certificados",
     academic: "Acadêmico",
+    demos: "Demos",
+    hire: "Contrate",
     resume: "Currículo",
   },
   hero: {
     eyebrow: "Analista de Dados Júnior | Power BI | SQL | Python | BI",
-    title: "Analista de Dados Júnior especializado em Power BI, SQL e Python",
-    subtitle:
-      "Transformo dados em insights claros para apoiar decisões de negócio.",
+    title: "Analista de Dados Júnior | Power BI | SQL | Python | Business Intelligence",
+    subtitle: "Transformo dados em insights claros para apoiar decisões de negócio.",
     description:
-      "Profissional em formação em Ciência da Computação, com experiência prática em Business Intelligence, análise de dados, automação de processos e construção de dashboards estratégicos. Atuo com Power BI, SQL e Python para organizar dados, gerar indicadores confiáveis e apoiar a tomada de decisão.",
+      "Analista de Dados Júnior com experiência em Business Intelligence, análise de dados e automação. Trabalho com Power BI, SQL, DAX, Power Query e Python para ETL, organização de dados e dashboards executivos. Aberto a oportunidades no Brasil (remoto ou híbrido).",
     ctas: {
       primary: "Ver projetos de dados",
-      secondary: "Ver currículo profissional",
+      secondary: "Ver currículo",
       tertiary: "Entrar em contato",
     },
   },
   about: {
     eyebrow: "Sobre",
-    title: "Analista de Dados Júnior com foco em BI e automação",
+    title: "Perfil orientado a BI, automação e visualização de dados",
     who: {
       title: "Quem sou",
-      body: "Analista de Dados Júnior com foco em Business Intelligence, automação e visualização de dados. Em formação em Ciência da Computação, trabalho com Power BI, SQL e Python para organizar dados, construir indicadores confiáveis e apoiar decisões de negócio.",
+      body: "Analista de Dados Júnior em formação em Ciência da Computação, com foco em Business Intelligence e Data Analytics. Atuo com Power BI, SQL e Python para estruturar dados, criar indicadores confiáveis e apoiar decisões de negócio.",
     },
     deliver: {
-      title: "O que entrego",
+      title: "Como gero valor",
       bullets: [
-        "Dashboards claros e executivos em Power BI para KPIs e performance.",
+        "Dashboards executivos em Power BI para KPIs e performance.",
         "Análises orientadas a indicadores e metas de negócio.",
-        "Automação de rotinas analíticas com SQL e Python.",
-        "Modelagem e transformações com DAX e Power Query.",
+        "ETL e automação de rotinas analíticas com SQL e Python.",
+        "Modelagem analítica com DAX e Power Query.",
         "Documentação e padronização para consistência dos dados.",
       ],
     },
     highlights: {
-      title: "Perfil profissional",
+      title: "Destaques",
       items: [
         "+39 certificados em Dados, BI, IA, Cloud e Segurança.",
-        "Pensamento analítico e foco em indicadores acionáveis.",
+        "Pensamento analítico com foco em KPIs acionáveis.",
         "Comunicação clara com stakeholders e times técnicos.",
-        "Decisão baseada em dados e organização da informação.",
+        "Decisões orientadas por dados e organização da informação.",
         "Colaboração em times ágeis e multidisciplinares.",
         "Compromisso com qualidade e governança de dados.",
       ],
@@ -55,40 +56,33 @@ export const sitePt: SiteContent = {
       title: "Stack principal",
       groups: [
         {
-          title: "Data e BI",
-          items: [
-            "Power BI",
-            "DAX",
-            "Power Query",
-            "SQL",
-            "ETL",
-            "Dashboards",
-          ],
+          title: "Data & BI",
+          items: ["Power BI", "DAX", "Power Query", "SQL", "ETL", "Dashboards"],
         },
         {
-          title: "Análise e Automação",
+          title: "Python & Analytics",
           items: [
             "Python",
             "Pandas",
             "Data Analytics",
-            "Automação",
-            "KPIs",
             "Data Visualization",
+            "KPIs",
+            "Automação",
           ],
         },
         {
-          title: "Web e Integrações",
+          title: "Web & Integrações",
           items: ["JavaScript", "TypeScript", "React", "Next.js", "APIs REST"],
         },
         {
-          title: "Ferramentas e Metodologias",
+          title: "Ferramentas & Processos",
           items: [
             "Git/GitHub",
             "Scrum",
             "Kanban",
-            "Ambientes ágeis",
             "Documentação",
             "Governança de Dados",
+            "Boas práticas",
           ],
         },
       ],
@@ -96,11 +90,11 @@ export const sitePt: SiteContent = {
   },
   projects: {
     eyebrow: "Projetos",
-    title: "Cases de dados e BI com impacto em negócio",
+    title: "Case studies em dados, BI e automação",
     description:
-      "Projetos que conectam BI, automação e engenharia de dados para apoiar decisões de negócio e gerar indicadores claros.",
-    cardLabel: "Projeto",
-    highlightLabel: "Impacto",
+      "Cases que combinam Power BI, SQL, Python, ETL e data apps para gerar indicadores claros e apoiar decisões de negócio.",
+    cardLabel: "Case",
+    highlightLabel: "Destaques",
     detailsLabel: "Ver detalhes",
     caseLabel: "Case completo",
     viewAllLabel: "Ver todos os cases",
@@ -119,7 +113,7 @@ export const sitePt: SiteContent = {
   },
   projectsPage: {
     eyebrow: "Projetos",
-    title: "Projetos e cases em dados",
+    title: "Projetos e estudos de caso",
     description:
       "Cases completos com contexto, dados utilizados, impacto, tecnologias e demonstração clara de valor para o negócio.",
     filterLabel: "Filtrar por stack",
@@ -150,10 +144,10 @@ export const sitePt: SiteContent = {
   },
   contact: {
     eyebrow: "Contato",
-    title: "Vamos conversar?",
+    title: "Pronto para conversar?",
     description:
-      "Estou aberto a oportunidades como Analista de Dados Júnior ou BI. Entrego dashboards, automação e análises orientadas a KPIs com Power BI, SQL e Python. Se busca alguém com organização de dados e comunicação clara, vamos conversar.",
-    ctaTitle: "Aberto a oportunidades em Dados e BI",
+      "Aberto a oportunidades como Analista de Dados Júnior ou BI. Entrego dashboards, automação e análises orientadas a KPIs com Power BI, SQL e Python.",
+    ctaTitle: "Disponível para oportunidades em Dados e BI",
     ctaSubtitle: "LinkedIn e e-mail respondidos rapidamente.",
     cards: {
       email: "Email",
@@ -166,7 +160,7 @@ export const sitePt: SiteContent = {
     eyebrow: "Certificados",
     title: "Certificados em Dados, BI, IA, Cloud e Segurança",
     description:
-      "Coleção completa com PDFs locais de Alura, Assimov e Ulife. Filtre por plataforma e encontre rapidamente certificações em Power BI, SQL, Python, IA e Cloud.",
+      "Coleção com PDFs locais de Alura, Assimov e Ulife. Encontre certificações em Power BI, SQL, Python, IA e Cloud.",
     ctaLabel: "Ver certificados",
   },
   demos: {

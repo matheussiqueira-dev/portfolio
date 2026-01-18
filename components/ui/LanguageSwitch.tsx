@@ -9,7 +9,21 @@ type Props = {
   onNavigate?: () => void;
 };
 
+const PATH_MAP: Record<string, string> = {
+  "/academico": "/en/academic",
+  "/contrate": "/en/hire",
+  "/data-analyst-junior": "/en/junior-data-analyst",
+};
+
+const REVERSE_MAP: Record<string, string> = Object.fromEntries(
+  Object.entries(PATH_MAP).map(([pt, en]) => [en, pt]),
+);
+
 const getPtPath = (pathname: string) => {
+  if (REVERSE_MAP[pathname]) {
+    return REVERSE_MAP[pathname];
+  }
+
   if (!pathname.startsWith("/en")) {
     return pathname;
   }
@@ -19,6 +33,10 @@ const getPtPath = (pathname: string) => {
 };
 
 const getEnPath = (pathname: string) => {
+  if (PATH_MAP[pathname]) {
+    return PATH_MAP[pathname];
+  }
+
   if (pathname.startsWith("/en")) {
     return pathname;
   }

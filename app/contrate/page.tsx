@@ -1,24 +1,25 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { projectsEn } from "@/data/projects.en";
+import { projects } from "@/data/projects";
 import { baseUrl, siteName } from "@/lib/seo";
 
-const pageTitle = "Junior Data Analyst for Hire | Power BI, SQL, Python";
+const pageTitle =
+  "Contrate | Matheus Siqueira | Analista de Dados Júnior | Power BI | SQL | Python";
 const pageDescription =
-  "Junior Data Analyst focused on Business Intelligence, Power BI, SQL, and Python. Open to remote or hybrid opportunities.";
+  "Analista de Dados Júnior com foco em Business Intelligence, Power BI, SQL e Python. Disponível para oportunidades no Brasil (remoto ou híbrido).";
 
 const valueDelivery = [
-  "KPI-focused dashboards with Power BI for executive visibility.",
-  "Data modeling and reliable indicator definitions.",
-  "ETL and analytics automation with SQL and Python.",
-  "Exploratory analysis to identify patterns and trends.",
-  "Clear reporting with documented analysis workflows.",
+  "Dashboards orientados a KPIs com Power BI para leitura executiva.",
+  "Modelagem de dados e definição de indicadores confiáveis.",
+  "ETL e automação de rotinas analíticas com SQL e Python.",
+  "Análises exploratórias para identificar padrões e tendências.",
+  "Documentação e padronização para consistência das análises.",
 ];
 
 const practicalStack = {
   "BI & Analytics": ["Power BI", "DAX", "Power Query", "Dashboards", "KPIs"],
-  "Data & ETL": ["SQL", "Python", "Pandas", "ETL", "Data Modeling"],
-  "Versioning & Collaboration": ["Git/GitHub", "Scrum", "Kanban", "Documentation"],
+  "Dados & ETL": ["SQL", "Python", "Pandas", "ETL", "Data Modeling"],
+  "Versão & Colaboração": ["Git/GitHub", "Scrum", "Kanban", "Documentação"],
 };
 
 const featuredSlugs = [
@@ -30,14 +31,14 @@ const featuredSlugs = [
 ];
 
 const featuredProjects = featuredSlugs
-  .map((slug) => projectsEn.find((project) => project.slug === slug))
+  .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is NonNullable<typeof project> => Boolean(project));
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   alternates: {
-    canonical: "/en/hire",
+    canonical: "/contrate",
     languages: {
       "pt-BR": "/contrate",
       "en-US": "/en/hire",
@@ -47,8 +48,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: pageTitle,
     description: pageDescription,
-    url: "/en/hire",
-    locale: "en_US",
+    url: "/contrate",
+    locale: "pt_BR",
     type: "website",
     siteName,
     images: [
@@ -56,7 +57,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Hire Matheus Siqueira — Junior Data Analyst",
+        alt: "Contrate Matheus Siqueira — Analista de Dados Júnior",
       },
     ],
   },
@@ -68,20 +69,21 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HirePage() {
+export default function ContratePage() {
   return (
     <main className="min-h-screen px-6 py-24">
       <div className="max-w-6xl mx-auto space-y-16">
         <header className="space-y-4">
           <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
-            Recruiters and data leads
+            Recrutadores e gestores de dados
           </p>
           <h1 className="text-4xl md:text-5xl font-semibold text-white">
-            Matheus Siqueira — Junior Data Analyst | Power BI | SQL | Python
+            Matheus Siqueira — Analista de Dados Júnior | Power BI | SQL | Python
           </h1>
           <p className="text-lg text-slate-300 max-w-3xl">
-            Experience in Business Intelligence, dashboards, and analytics
-            automation for business decisions. Open to remote or hybrid roles.
+            Experiência em Business Intelligence, dashboards e automação de
+            análises para decisões de negócio. Disponível para oportunidades no
+            Brasil (remoto ou híbrido).
           </p>
           <div className="flex flex-wrap gap-4">
             <a
@@ -90,13 +92,13 @@ export default function HirePage() {
               rel="noopener noreferrer"
               className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
             >
-              Contact me
+              Entrar em contato
             </a>
             <a
               href="mailto:matheussiqueirahub@gmail.com"
               className="rounded-full border border-white/20 px-6 py-3 text-sm text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
             >
-              Email
+              Enviar e-mail
             </a>
             <a
               href="https://www.linkedin.com/in/matheussiqueira-dev/"
@@ -111,7 +113,7 @@ export default function HirePage() {
 
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold text-white">
-            How I deliver value
+            Como eu gero valor
           </h2>
           <ul className="list-disc list-inside space-y-2 text-slate-300">
             {valueDelivery.map((item) => (
@@ -121,9 +123,7 @@ export default function HirePage() {
         </section>
 
         <section className="rounded-3xl border border-white/10 bg-white/5 p-8 space-y-6">
-          <h2 className="text-2xl font-semibold text-white">
-            Stack in practice
-          </h2>
+          <h2 className="text-2xl font-semibold text-white">Stack na prática</h2>
           <div className="grid gap-6 md:grid-cols-3">
             {Object.entries(practicalStack).map(([title, items]) => (
               <div key={title} className="space-y-3">
@@ -142,7 +142,7 @@ export default function HirePage() {
 
         <section className="space-y-6">
           <h2 className="text-2xl font-semibold text-white">
-            Projects that prove capability
+            Projetos que demonstram capacidade
           </h2>
           <div className="grid gap-6 md:grid-cols-2">
             {featuredProjects.map((project) => (
@@ -170,10 +170,10 @@ export default function HirePage() {
                   ))}
                 </div>
                 <Link
-                  href={`/en/projects/${project.slug}`}
+                  href={`/projects/${project.slug}`}
                   className="inline-flex w-fit text-sm text-emerald-200 underline decoration-emerald-400/50 underline-offset-4 transition hover:text-emerald-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
                 >
-                  View full case
+                  Ver case completo
                 </Link>
               </article>
             ))}
@@ -182,10 +182,10 @@ export default function HirePage() {
 
         <section className="rounded-3xl border border-white/10 bg-white/5 p-8 space-y-4">
           <h2 className="text-2xl font-semibold text-white">
-            Let&apos;s talk
+            Vamos conversar?
           </h2>
           <p className="text-slate-300">
-            Available for interviews and selection processes. Fast response time.
+            Aberto a processos seletivos e entrevistas. Respondo rapidamente.
           </p>
           <div className="flex flex-wrap gap-3">
             <a
@@ -200,7 +200,7 @@ export default function HirePage() {
               href="mailto:matheussiqueirahub@gmail.com"
               className="rounded-full border border-white/20 px-5 py-2 text-sm text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
             >
-              Email
+              E-mail
             </a>
             <a
               href="https://www.linkedin.com/in/matheussiqueira-dev/"

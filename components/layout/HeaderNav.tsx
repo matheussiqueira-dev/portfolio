@@ -10,15 +10,20 @@ import MobileMenu from "./MobileMenu";
 const buildNavItems = (prefix: string, labels: typeof sitePt.nav) => {
   const anchorBase = prefix ? `${prefix}#` : "/#";
   const pageBase = prefix ? prefix : "";
+  const academicHref = prefix ? "/en/academic" : "/academico";
+  const hireHref = prefix ? "/en/hire" : "/contrate";
+  const demosHref = prefix ? "/en/demos" : "/demos";
 
   return [
     { href: `${anchorBase}home`, label: labels.home },
     { href: `${anchorBase}about`, label: labels.about },
     { href: `${anchorBase}projects`, label: labels.projects },
-    { href: `${anchorBase}contact`, label: labels.contact },
-    { href: `${pageBase}/certificates`, label: labels.certificates },
-    { href: `${pageBase}/academico`, label: labels.academic },
+    { href: demosHref, label: labels.demos },
     { href: `${pageBase}/resume`, label: labels.resume },
+    { href: academicHref, label: labels.academic },
+    { href: `${pageBase}/certificates`, label: labels.certificates },
+    { href: hireHref, label: labels.hire },
+    { href: `${anchorBase}contact`, label: labels.contact },
   ];
 };
 
@@ -28,7 +33,7 @@ export default function HeaderNav() {
   const prefix = isEn ? "/en" : "";
   const content = isEn ? siteEn : sitePt;
   const navItems = buildNavItems(prefix, content.nav);
-  const navLabel = isEn ? "Main navigation" : "Navegacao principal";
+  const navLabel = isEn ? "Main navigation" : "Navegação principal";
   const menuLabel = isEn ? "Main menu" : "Menu principal";
   const toggleLabel = isEn ? "Toggle menu" : "Abrir menu";
 

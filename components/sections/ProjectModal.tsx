@@ -54,7 +54,7 @@ export default function ProjectModal({ project, onClose }: Props) {
       highlightsTitle: isEn ? "Highlights" : "Destaques",
       howToRunTitle: isEn ? "How to run" : "Como executar",
       roleLabel: isEn ? "Role" : "Papel",
-      galleryTitle: isEn ? "Media" : "Midia",
+      galleryTitle: isEn ? "Media" : "Mídia",
       demoSoon: isEn ? "Demo: coming soon" : "Demo: em breve",
     };
   }, [isEn]);

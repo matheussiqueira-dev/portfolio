@@ -52,7 +52,7 @@ export default function ResumeEn() {
               rel="noopener noreferrer"
               className="underline w-fit text-emerald-400 font-medium"
             >
-              WhatsApp +55 (81) 99920-3683
+              WhatsApp: +55 (81) 99920-3683
             </a>
           </div>
         </div>

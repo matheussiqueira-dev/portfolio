@@ -3,18 +3,18 @@ import fs from "node:fs";
 import path from "node:path";
 import { siteName } from "@/lib/seo";
 
-const pageTitle = "Acadêmico | Matheus Siqueira";
+const pageTitle = "Academic | Matheus Siqueira";
 const pageDescription =
-  "Formação, especializações, certificados e skills de Matheus Siqueira — Analista de Dados Júnior | Power BI | SQL | Python | BI.";
+  "Education, certifications and skills — Junior Data Analyst | Power BI | SQL | Python | BI.";
 
 const education = [
-  "Ciência da Computação (UNIFG) em andamento (3º período 2025–2029)",
-  "Pós: Cloud & Edge Computing (UNIFG, 2025)",
-  "Pós: Segurança da Informação (UNIFG, 2025)",
-  "Pós: IA e Ciência de Dados (UNIFG, 2025)",
-  "Técnico: Programação FullStack A.I. (Infinity School, 2023–2025)",
-  "MBA: Mídias Digitais, Performance e Analytics (UNINASSAU, 2023–2024)",
-  "Graduação: Marketing (UNIFG, 2015–2017)",
+  "Computer Science (UNIFG) in progress (3rd semester 2025–2029)",
+  "Postgraduate: Cloud & Edge Computing (UNIFG, 2025)",
+  "Postgraduate: Information Security (UNIFG, 2025)",
+  "Postgraduate: AI and Data Science (UNIFG, 2025)",
+  "Technical: FullStack A.I. Programming (Infinity School, 2023–2025)",
+  "MBA: Digital Media, Performance and Analytics (UNINASSAU, 2023–2024)",
+  "Bachelor's: Marketing (UNIFG, 2015–2017)",
   "ESL C1 (City College of San Francisco, 2019–2020)",
 ];
 
@@ -82,29 +82,28 @@ const skillGroups = [
   },
   {
     title: "SQL/DB",
-    items: [
-      "SQL",
-      "Data Warehouse",
-      "Oracle DB",
-      "MongoDB",
-      "Modelagem de Dados",
-    ],
+    items: ["SQL", "Data Warehouse", "Oracle DB", "MongoDB", "Data Modeling"],
   },
   {
     title: "Python/Data",
-    items: ["Python", "Pandas", "Dash", "Automação", "ETL"],
+    items: ["Python", "Pandas", "Dash", "Automation", "ETL"],
   },
   {
-    title: "Eng/Cloud/Sec",
-    items: ["Cloud Computing", "Oracle Cloud", "Segurança da Informação", "Shell Script"],
+    title: "Engineering/Cloud/Security",
+    items: [
+      "Cloud Computing",
+      "Oracle Cloud",
+      "Information Security",
+      "Shell Script",
+    ],
   },
   {
     title: "Web/Dev",
     items: ["JavaScript", "TypeScript", "Node.js", "React", "HTML5", "CSS", "APIs"],
   },
   {
-    title: "Métodos/Processos",
-    items: ["Scrum", "Kanban", "OKR", "A/B test", "Governança"],
+    title: "Methods/Process",
+    items: ["Scrum", "Kanban", "OKR", "A/B test", "Governance"],
   },
 ];
 
@@ -146,7 +145,7 @@ const getCertificateFiles = () => {
         }));
     });
 
-    return files.sort((a, b) => a.name.localeCompare(b.name, "pt-BR"));
+    return files.sort((a, b) => a.name.localeCompare(b.name, "en-US"));
   } catch {
     return [];
   }
@@ -161,7 +160,7 @@ export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   alternates: {
-    canonical: "/academico",
+    canonical: "/en/academic",
     languages: {
       "pt-BR": "/academico",
       "en-US": "/en/academic",
@@ -171,8 +170,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: pageTitle,
     description: pageDescription,
-    url: "/academico",
-    locale: "pt_BR",
+    url: "/en/academic",
+    locale: "en_US",
     type: "website",
     siteName,
     images: [
@@ -180,7 +179,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Formação acadêmica e certificados de Matheus Siqueira",
+        alt: "Academic background and certificates of Matheus Siqueira",
       },
     ],
   },
@@ -192,7 +191,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AcademicoPage() {
+export default function AcademicPage() {
   const certificateFiles = getCertificateFiles();
 
   return (
@@ -200,21 +199,19 @@ export default function AcademicoPage() {
       <div className="max-w-6xl mx-auto space-y-16">
         <header className="space-y-4">
           <h1 className="text-4xl md:text-5xl font-semibold text-white">
-            Acadêmico
+            Academic
           </h1>
           <h2 className="text-xl md:text-2xl font-semibold text-slate-200">
-            Formação, especializações, cursos e competências técnicas
+            Education, certifications, and technical skills
           </h2>
           <p className="text-base md:text-lg text-slate-300 max-w-4xl">
-            Analista de Dados Júnior | Power BI | SQL | Python | BI | Business
+            Junior Data Analyst | Power BI | SQL | Python | BI | Business
             Intelligence | ETL | DAX | Power Query.
           </p>
         </header>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-white">
-            Formação Acadêmica
-          </h2>
+          <h2 className="text-2xl font-semibold text-white">Education</h2>
           <ul className="list-disc list-inside space-y-2 text-slate-300">
             {education.map((item) => (
               <li key={item}>{item}</li>
@@ -223,7 +220,7 @@ export default function AcademicoPage() {
         </section>
 
         <section className="space-y-8">
-          <h2 className="text-2xl font-semibold text-white">Certificados</h2>
+          <h2 className="text-2xl font-semibold text-white">Certificates</h2>
           <div className="grid gap-6 md:grid-cols-3">
             {Object.entries(certificates).map(([issuer, items]) => (
               <div key={issuer} className="space-y-3">
@@ -262,7 +259,7 @@ export default function AcademicoPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-white">Arquivos</h2>
+          <h2 className="text-2xl font-semibold text-white">Files</h2>
           {certificateFiles.length > 0 ? (
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {certificateFiles.map((file) => (
@@ -284,7 +281,7 @@ export default function AcademicoPage() {
               rel="noopener noreferrer"
               className="inline-flex w-fit rounded-full border border-white/20 px-5 py-2 text-sm text-slate-200 transition hover:border-white/40"
             >
-              Ver pasta completa no Drive
+              View full folder on Drive
             </a>
           )}
         </section>

@@ -8,7 +8,7 @@ import { baseUrl, siteName } from "@/lib/seo";
 
 const pageTitle = "Projetos | Matheus Siqueira";
 const pageDescription =
-  "Projetos e estudos de caso em dados, BI e automação com Power BI, SQL e Python, focados em organização de dados, dashboards e decisão de negócio.";
+  "Projetos e estudos de caso em dados, BI e automação com Power BI, SQL e Python, focados em dashboards, ETL e indicadores de negócio.";
 
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",

@@ -21,19 +21,23 @@ const geistMono = Geist_Mono({
 });
 
 const siteDescription =
-  "Portfólio profissional de Analista de Dados Júnior com foco em Business Intelligence, Power BI, SQL e Python. Dashboards, automação de análises e projetos em dados.";
+  "Portfólio profissional de Analista de Dados Júnior com foco em Business Intelligence, Power BI, SQL e Python. Dashboards, ETL e automação de análises.";
 const siteKeywords = [
   "Analista de Dados Júnior",
   "Data Analyst",
+  "Data Analyst Jr",
   "Business Intelligence",
   "Power BI",
   "SQL",
   "DAX",
+  "Power Query",
   "Python",
   "ETL",
   "Dashboards",
+  "KPIs",
   "Data Analytics",
   "Data Visualization",
+  "Brasil remoto",
 ];
 const googleSiteVerification =
   process.env.NEXT_PUBLIC_GSC_VERIFICATION ||

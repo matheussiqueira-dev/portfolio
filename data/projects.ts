@@ -35,9 +35,9 @@ export const projects: Project[] = [
       "Base para comandos rápidos em dashboards ao vivo.",
     ],
     demonstrates: [
-      "Visão computacional aplicada à UX de dados.",
+      "Visão computacional aplicada a data apps e UX.",
       "Pipeline em tempo real com foco em baixa latência.",
-      "Capacidade de prototipar produtos analíticos interativos.",
+      "Prototipação de interfaces analíticas interativas.",
     ],
     howToRun: [
       "Pré-requisitos: Python 3.10+, Node 18 e câmera habilitada.",
@@ -91,7 +91,7 @@ export const projects: Project[] = [
     ],
     demonstrates: [
       "Modelagem de dados conversacionais e APIs robustas.",
-      "Preocupação com observabilidade e governança.",
+      "Observabilidade, auditoria e governança.",
       "Visão de produto para automação de suporte.",
     ],
     howToRun: [
@@ -146,8 +146,8 @@ export const projects: Project[] = [
     ],
     demonstrates: [
       "Trabalho com dados visuais e simulações.",
-      "Pipeline de ML aplicado à decisão em tempo real.",
-      "Visão de produto experimental com foco em validação.",
+      "Pipeline de ML aplicado a decisões em tempo real.",
+      "Experimentação com foco em validação.",
     ],
     howToRun: [
       "Pré-requisitos: Python 3.10+, OpenCV e TensorFlow.",
@@ -252,7 +252,7 @@ export const projects: Project[] = [
     highlights: [
       "Visão consolidada para lideranças e time comercial.",
       "Detecção rápida de tendências e desvios.",
-      "Base consistente para decisão comercial.",
+      "Base consistente para decisões comerciais.",
     ],
     demonstrates: [
       "BI end-to-end com dados de negócio.",

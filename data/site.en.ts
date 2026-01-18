@@ -8,44 +8,46 @@ export const siteEn: SiteContent = {
     contact: "Contact",
     certificates: "Certificates",
     academic: "Academic",
+    demos: "Demos",
+    hire: "Hire",
     resume: "Resume",
   },
   hero: {
     eyebrow: "Junior Data Analyst | Power BI | SQL | Python | BI",
-    title: "Junior Data Analyst specialized in Power BI, SQL, and Python",
+    title: "Junior Data Analyst | Power BI | SQL | Python | Business Intelligence",
     subtitle: "I turn data into clear insights to support business decisions.",
     description:
-      "Computer Science student with hands-on experience in Business Intelligence, data analysis, process automation, and strategic dashboards. Skilled in Power BI, SQL, and Python to transform data into actionable insights.",
+      "Junior Data Analyst with experience in Business Intelligence, data analysis, and automation. I work with Power BI, SQL, DAX, Power Query, and Python for ETL, data organization, and executive dashboards. Open to remote or hybrid roles.",
     ctas: {
       primary: "View data projects",
-      secondary: "View professional resume",
+      secondary: "View resume",
       tertiary: "Get in touch",
     },
   },
   about: {
     eyebrow: "About",
-    title: "Junior Data Analyst focused on BI and analytics delivery",
+    title: "Profile focused on BI, automation, and data visualization",
     who: {
       title: "Who I am",
-      body: "Junior Data Analyst focused on Business Intelligence, analytics automation, and data visualization. Currently studying Computer Science and working with Power BI, SQL, and Python to organize data, build reliable indicators, and support business decisions.",
+      body: "Junior Data Analyst studying Computer Science, focused on Business Intelligence and Data Analytics. I use Power BI, SQL, and Python to structure data, build reliable indicators, and support business decisions.",
     },
     deliver: {
-      title: "What I deliver",
+      title: "How I deliver value",
       bullets: [
         "Executive Power BI dashboards for KPIs and performance.",
-        "KPI-driven analyses aligned with business goals.",
-        "Analytics automation with SQL and Python.",
-        "Data modeling and transformations with DAX and Power Query.",
-        "Documentation and standardization for data consistency.",
+        "KPI-driven analysis aligned with business goals.",
+        "ETL and analytics automation with SQL and Python.",
+        "Analytical modeling with DAX and Power Query.",
+        "Documentation and standardization for consistent data.",
       ],
     },
     highlights: {
-      title: "Professional profile",
+      title: "Highlights",
       items: [
         "+39 certificates in Data, BI, AI, Cloud, and Security.",
-        "Analytical thinking and focus on actionable indicators.",
+        "Analytical thinking focused on actionable KPIs.",
         "Clear communication with stakeholders and technical teams.",
-        "Data-driven decision-making and information organization.",
+        "Data-driven decisions and information organization.",
         "Collaboration in agile, cross-functional teams.",
         "Commitment to data quality and governance.",
       ],
@@ -55,24 +57,17 @@ export const siteEn: SiteContent = {
       groups: [
         {
           title: "Data & BI",
-          items: [
-            "Power BI",
-            "DAX",
-            "Power Query",
-            "SQL",
-            "ETL",
-            "Dashboards",
-          ],
+          items: ["Power BI", "DAX", "Power Query", "SQL", "ETL", "Dashboards"],
         },
         {
-          title: "Analytics & Automation",
+          title: "Python & Analytics",
           items: [
             "Python",
             "Pandas",
             "Data Analytics",
-            "Automation",
-            "KPIs",
             "Data Visualization",
+            "KPIs",
+            "Automation",
           ],
         },
         {
@@ -80,14 +75,14 @@ export const siteEn: SiteContent = {
           items: ["JavaScript", "TypeScript", "React", "Next.js", "REST APIs"],
         },
         {
-          title: "Tools & Methods",
+          title: "Tools & Process",
           items: [
             "Git/GitHub",
             "Scrum",
             "Kanban",
-            "Agile environments",
             "Documentation",
             "Data governance",
+            "Best practices",
           ],
         },
       ],
@@ -95,11 +90,11 @@ export const siteEn: SiteContent = {
   },
   projects: {
     eyebrow: "Projects",
-    title: "Data and BI case studies for business impact",
+    title: "Case studies in data, BI, and automation",
     description:
-      "Projects connecting BI, automation, and data engineering to support business decisions and clear indicators.",
-    cardLabel: "Project",
-    highlightLabel: "Impact",
+      "Projects combining Power BI, SQL, Python, ETL, and data apps to deliver clear indicators and business decisions.",
+    cardLabel: "Case",
+    highlightLabel: "Highlights",
     detailsLabel: "View details",
     caseLabel: "Full case",
     viewAllLabel: "View all cases",
@@ -118,9 +113,9 @@ export const siteEn: SiteContent = {
   },
   projectsPage: {
     eyebrow: "Projects",
-    title: "Data projects and case studies",
+    title: "Projects and case studies",
     description:
-      "Full cases with context, data used, impact, technologies, and clear business value.",
+      "Complete cases with context, data used, impact, technologies, and clear business value.",
     filterLabel: "Filter by stack",
     allLabel: "All",
     caseLabel: "Open case",
@@ -144,15 +139,15 @@ export const siteEn: SiteContent = {
     backLabel: "Back to projects",
     ctaTitle: "Want to discuss this project?",
     ctaBody:
-      "I can walk through decisions, challenges, and next steps. If you want to chat, just reach out.",
+      "I can walk through decisions, challenges, and next steps. If you'd like to chat, reach out anytime.",
     ctaButton: "Get in touch",
   },
   contact: {
     eyebrow: "Contact",
-    title: "Let's talk?",
+    title: "Ready to connect?",
     description:
-      "I am open to Junior Data Analyst or BI opportunities. I deliver dashboards, automation, and KPI-driven analysis with Power BI, SQL, and Python. If you need someone with organized data work and analytical ownership, let's connect.",
-    ctaTitle: "Open to Data and BI opportunities",
+      "Open to Junior Data Analyst or BI opportunities. I deliver dashboards, automation, and KPI-driven analysis with Power BI, SQL, and Python.",
+    ctaTitle: "Available for Data and BI opportunities",
     ctaSubtitle: "LinkedIn and email replies are fast.",
     cards: {
       email: "Email",
@@ -165,14 +160,14 @@ export const siteEn: SiteContent = {
     eyebrow: "Certificates",
     title: "Certificates in Data, BI, AI, Cloud, and Security",
     description:
-      "Full local PDF collection from Alura, Assimov, and Ulife. Filter by provider and quickly find certifications in Power BI, SQL, Python, AI, and Cloud.",
+      "Local PDF collection from Alura, Assimov, and Ulife. Find certifications in Power BI, SQL, Python, AI, and Cloud.",
     ctaLabel: "View certificates",
   },
   demos: {
     eyebrow: "Demos",
     title: "Demos and repositories",
     description:
-      "Demos and repositories for quick evaluation of data, BI, and automation projects, with clear local run steps.",
+      "Demos and repositories for quick evaluation of data, BI, and automation projects with clear local run steps.",
     viewProjectsLabel: "View projects",
     fullCaseLabel: "Full case",
     openDemoLabel: "Open demo",

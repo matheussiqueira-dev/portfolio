@@ -224,7 +224,7 @@ export const projectsEn: Project[] = [
   },
   {
     slug: "nucleo-comercial-dados",
-    title: "Nucleo Comercial de Dados",
+    title: "Núcleo Comercial de Dados",
     tagline: "Dashboards and performance indicators for a commercial team.",
     role: "Data Analyst",
     stack: ["Power BI", "SQL", "Python", "DAX", "Power Query"],

@@ -13,6 +13,16 @@ const nextConfig: NextConfig = {
         destination: "/en/projects",
         permanent: true,
       },
+      {
+        source: "/hire",
+        destination: "/contrate",
+        permanent: true,
+      },
+      {
+        source: "/en/academico",
+        destination: "/en/academic",
+        permanent: true,
+      },
     ];
   },
 };
