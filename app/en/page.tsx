@@ -4,7 +4,6 @@ import Contact from "@/components/sections/Contact";
 import Hero from "@/components/sections/Hero";
 import Projects from "@/components/sections/Projects";
 import JsonLd from "@/components/seo/JsonLd";
-import { projectsEn } from "@/data/projects.en";
 import { siteEn } from "@/data/site.en";
 import { baseUrl, siteName } from "@/lib/seo";
 
@@ -68,7 +67,7 @@ export default function HomeEn() {
       <JsonLd data={homeJsonLd} />
       <Hero content={siteEn.hero} localePrefix="/en" />
       <About content={siteEn.about} />
-      <Projects content={siteEn.projects} projects={projectsEn} localePrefix="/en" />
+      <Projects />
       <Contact content={siteEn.contact} />
     </main>
   );

@@ -4,7 +4,6 @@ import Contact from "@/components/sections/Contact";
 import Hero from "@/components/sections/Hero";
 import Projects from "@/components/sections/Projects";
 import JsonLd from "@/components/seo/JsonLd";
-import { projects } from "@/data/projects";
 import { sitePt } from "@/data/site.pt";
 import { baseUrl, siteName } from "@/lib/seo";
 
@@ -68,7 +67,7 @@ export default function Home() {
       <JsonLd data={homeJsonLd} />
       <Hero content={sitePt.hero} />
       <About content={sitePt.about} />
-      <Projects content={sitePt.projects} projects={projects} />
+      <Projects />
       <Contact content={sitePt.contact} />
     </main>
   );

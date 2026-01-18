@@ -3,54 +3,36 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useMemo, useState } from "react";
 import { trackEvent } from "@/lib/analytics";
+import { projects } from "@/data/projects";
+import { projectsEn } from "@/data/projects.en";
+import { sitePt } from "@/data/site.pt";
+import { siteEn } from "@/data/site.en";
 import type { Project } from "@/data/projects.types";
-import type { SiteContent } from "@/data/site.types";
 
 const ProjectModal = dynamic(() => import("./ProjectModal"), {
   ssr: false,
   loading: () => null,
 });
 
-type Props = {
-  content: SiteContent["projects"];
-  projects: Project[];
-  localePrefix?: string;
-};
-
 const getCover = (project: Project) =>
-  project.screenshots.find((shot) => shot.src.includes("cover")) ??
+  project.screenshots.find((shot) => shot.src.includes("/cover.")) ??
   project.screenshots[0];
 
-const getHighlight = (project: Project) =>
-  project.highlights[0] ??
-  project.demonstrates[0] ??
-  project.features[0] ??
-  project.solution[0] ??
-  project.problem[0];
+const getHighlights = (project: Project) => {
+  const base = project.highlights.length > 0 ? project.highlights : project.demonstrates;
+  return base.slice(0, 3);
+};
 
-export default function Projects({
-  content,
-  projects,
-  localePrefix = "",
-}: Props) {
-  const projectsHref = localePrefix ? `${localePrefix}/projects` : "/projects";
+export default function Projects() {
+  const pathname = usePathname() ?? "/";
+  const isEn = pathname.startsWith("/en");
+  const content = isEn ? siteEn.projects : sitePt.projects;
+  const data = useMemo(() => (isEn ? projectsEn : projects), [isEn]);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const triggerRef = useRef<HTMLButtonElement | null>(null);
-
-  const handleOpen = (project: Project, target: HTMLButtonElement) => {
-    triggerRef.current = target;
-    setSelectedProject(project);
-  };
-
-  const handleClose = useCallback(() => {
-    setSelectedProject(null);
-    const trigger = triggerRef.current;
-    if (trigger) {
-      requestAnimationFrame(() => trigger.focus());
-    }
-  }, []);
+  const projectsHref = isEn ? "/en/projects" : "/projects";
 
   return (
     <section id="projects" className="scroll-mt-24 px-6 py-20 content-auto">
@@ -68,16 +50,12 @@ export default function Projects({
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
-          {projects.map((project) => {
+          {data.map((project) => {
             const cover = getCover(project);
-            const highlight = getHighlight(project);
-            const caseHref = localePrefix
-              ? `${localePrefix}/projects/${project.slug}`
+            const highlights = getHighlights(project);
+            const caseHref = isEn
+              ? `/en/projects/${project.slug}`
               : `/projects/${project.slug}`;
-            const trackCaseView = () =>
-              trackEvent("view_case", "engagement", project.slug);
-            const trackGithub = () =>
-              trackEvent("click_github", "outbound", project.slug);
 
             return (
               <article
@@ -109,41 +87,26 @@ export default function Projects({
                   {project.tagline}
                 </p>
 
-                {highlight ? (
-                  <div className="space-y-1">
+                {highlights.length > 0 ? (
+                  <div className="space-y-2">
                     <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
                       {content.highlightLabel}
                     </p>
-                    <p className="text-sm text-slate-300">{highlight}</p>
+                    <ul className="space-y-1 text-sm text-slate-300">
+                      {highlights.map((item) => (
+                        <li key={item} className="flex gap-2">
+                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 ) : null}
-
-                {project.demonstrates[0] ? (
-                  <div className="space-y-1">
-                    <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
-                      {content.modal.demonstratesTitle}
-                    </p>
-                    <p className="text-sm text-slate-300">
-                      {project.demonstrates[0]}
-                    </p>
-                  </div>
-                ) : null}
-
-                <ul className="flex flex-wrap gap-2 text-xs text-slate-200">
-                  {project.stack.map((tech) => (
-                    <li
-                      key={tech}
-                      className="rounded-full border border-white/10 px-3 py-1"
-                    >
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
 
                 <div className="flex flex-wrap items-center gap-3 pt-2">
                   <button
                     type="button"
-                    onClick={(event) => handleOpen(project, event.currentTarget)}
+                    onClick={() => setSelectedProject(project)}
                     className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                   >
                     {content.detailsLabel}
@@ -151,7 +114,9 @@ export default function Projects({
 
                   <Link
                     href={caseHref}
-                    onClick={trackCaseView}
+                    onClick={() =>
+                      trackEvent("view_case", "engagement", project.slug)
+                    }
                     className="text-xs text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
                   >
                     {content.caseLabel}
@@ -161,22 +126,13 @@ export default function Projects({
                     href={project.repoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={trackGithub}
+                    onClick={() =>
+                      trackEvent("click_github", "outbound", project.slug)
+                    }
                     className="text-xs text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
                   >
                     {content.modal.githubLabel}
                   </a>
-
-                  {project.demoUrl ? (
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
-                    >
-                      {content.modal.demoLabel}
-                    </a>
-                  ) : null}
                 </div>
               </article>
             );
@@ -196,9 +152,7 @@ export default function Projects({
       {selectedProject ? (
         <ProjectModal
           project={selectedProject}
-          labels={content}
-          localePrefix={localePrefix}
-          onClose={handleClose}
+          onClose={() => setSelectedProject(null)}
         />
       ) : null}
     </section>
