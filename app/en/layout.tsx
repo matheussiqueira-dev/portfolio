@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { baseUrl, siteName } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -48,5 +49,12 @@ export default function EnLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section lang="en-US">{children}</section>;
+  const shouldInjectSpeedInsights = process.env.VERCEL === "1";
+
+  return (
+    <section lang="en-US">
+      {children}
+      {shouldInjectSpeedInsights ? <SpeedInsights /> : null}
+    </section>
+  );
 }
