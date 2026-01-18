@@ -78,7 +78,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
+    apple: "/favicon.png",
   },
   openGraph: {
     title: `${siteName} | Analista de Dados Júnior | Power BI | SQL | Python | BI`,
