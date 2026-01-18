@@ -110,7 +110,7 @@ const structuredData = [
     "@id": personId,
     name: siteName,
     url: baseUrl,
-    image: `${baseUrl}/profile.jpg`,
+    image: `${baseUrl}/profile.webp`,
     jobTitle: "Analista de Dados Junior",
     description: siteDescription,
     worksFor: {

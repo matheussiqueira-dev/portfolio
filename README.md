@@ -56,6 +56,22 @@ Get-NetTCPConnection -LocalPort 3000,3001 |
 
 3) Se o lock persistir, feche o OneDrive momentaneamente e tente novamente.
 
+## Lighthouse (Core Web Vitals)
+
+Rodar localmente no PowerShell:
+
+```powershell
+npm run build; npm run start -- -p 3002
+```
+
+Em outro terminal:
+
+```powershell
+npx lighthouse http://localhost:3002/ --preset=mobile --only-categories=performance --output=json --output-path=REPORT.cwv.mobile.json --quiet
+npx lighthouse http://localhost:3002/ --preset=desktop --only-categories=performance --output=json --output-path=REPORT.cwv.desktop.json --quiet
+```
+
+
 ## Checklist de validacao (pre-deploy)
 - ✅ build ok
 - ✅ sitemap ok

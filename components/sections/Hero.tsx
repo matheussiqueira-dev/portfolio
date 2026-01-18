@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { TrackedLink } from "@/components/analytics/TrackedLink";
-import profileImage from "@/public/profile.jpg";
+import profileImage from "@/public/profile.webp";
 import type { SiteContent } from "@/data/site.types";
 
 type Props = {
@@ -70,7 +70,7 @@ export default function Hero({ content, localePrefix = "" }: Props) {
             alt="Matheus Siqueira"
             width={320}
             height={320}
-            sizes="(max-width: 768px) 140px, 320px"
+            sizes="(max-width: 768px) 160px, 320px"
             priority
             placeholder="blur"
             quality={70}

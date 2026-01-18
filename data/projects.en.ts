@@ -48,11 +48,11 @@ export const projectsEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/touchless-web-gesture-interface/cover.png",
+        src: "/projects/touchless-web-gesture-interface/cover.webp",
         alt: "Cover of Touchless Web Gesture Interface",
       },
       {
-        src: "/projects/touchless-web-gesture-interface/shot-1.png",
+        src: "/projects/touchless-web-gesture-interface/shot-1.webp",
         alt: "Main screen of Touchless Web Gesture Interface",
       },
     ],
@@ -103,11 +103,11 @@ export const projectsEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/chatbot-ia-api/cover.png",
+        src: "/projects/chatbot-ia-api/cover.webp",
         alt: "Cover of Chatbot IA API",
       },
       {
-        src: "/projects/chatbot-ia-api/shot-1.png",
+        src: "/projects/chatbot-ia-api/shot-1.webp",
         alt: "Conversation flow of Chatbot IA API",
       },
     ],
@@ -158,11 +158,11 @@ export const projectsEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/self-drive-car/cover.png",
+        src: "/projects/self-drive-car/cover.webp",
         alt: "Cover of Self-Drive Car",
       },
       {
-        src: "/projects/self-drive-car/shot-1.png",
+        src: "/projects/self-drive-car/shot-1.webp",
         alt: "Simulation of Self-Drive Car",
       },
     ],
@@ -213,11 +213,11 @@ export const projectsEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/library-api-advanced/cover.png",
+        src: "/projects/library-api-advanced/cover.webp",
         alt: "Cover of Library API Advanced",
       },
       {
-        src: "/projects/library-api-advanced/shot-1.png",
+        src: "/projects/library-api-advanced/shot-1.webp",
         alt: "Technical dashboard of Library API Advanced",
       },
     ],
@@ -268,11 +268,11 @@ export const projectsEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/nucleo-comercial-dados/cover.png",
+        src: "/projects/nucleo-comercial-dados/cover.webp",
         alt: "Cover of Nucleo Comercial de Dados",
       },
       {
-        src: "/projects/nucleo-comercial-dados/shot-1.png",
+        src: "/projects/nucleo-comercial-dados/shot-1.webp",
         alt: "Dashboard of Nucleo Comercial de Dados",
       },
     ],
