@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import About from "@/components/sections/About";
+import CertificatesPreview from "@/components/sections/CertificatesPreview";
 import Contact from "@/components/sections/Contact";
 import Hero from "@/components/sections/Hero";
 import Projects from "@/components/sections/Projects";
@@ -68,6 +69,7 @@ export default function HomeEn() {
       <Hero content={siteEn.hero} localePrefix="/en" />
       <About content={siteEn.about} />
       <Projects />
+      <CertificatesPreview content={siteEn.certificatesSection} localePrefix="/en" />
       <Contact content={siteEn.contact} />
     </main>
   );

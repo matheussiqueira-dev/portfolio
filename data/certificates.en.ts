@@ -14,7 +14,7 @@ export const certificatesPageEn: CertificatesPageContent = {
 export const certificatesEn: Certificate[] = [
   {
     "id": "banco-de-dados-e-sql",
-    "title": "Banco de dados e SQL",
+    "title": "Databases and SQL",
     "issuer": "Alura",
     "areaTags": [
       "SQL",
@@ -25,7 +25,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "bi-com-excel-conhecendo-o-power-query",
-    "title": "BI com Excel conhecendo o Power Query",
+    "title": "BI with Excel: Getting to know Power Query",
     "issuer": "Alura",
     "areaTags": [
       "Power Query",
@@ -37,7 +37,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "bi-com-excel-criando-bancos-de-dados-com-planilhas",
-    "title": "BI com Excel criando bancos de dados com planilhas",
+    "title": "BI with Excel: Building databases with spreadsheets",
     "issuer": "Alura",
     "areaTags": [
       "Business Intelligence",
@@ -48,7 +48,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "bi-com-excel-criando-dashboard-com-power-pivot",
-    "title": "BI com Excel criando Dashboard com Power Pivot",
+    "title": "BI with Excel: Building dashboards with Power Pivot",
     "issuer": "Alura",
     "areaTags": [
       "Business Intelligence",
@@ -58,7 +58,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "bi-com-excel-criando-um-dashboard-sem-complicacao",
-    "title": "BI com Excel criando um Dashboard sem complicacao",
+    "title": "BI with Excel: Building a dashboard without complications",
     "issuer": "Alura",
     "areaTags": [
       "Business Intelligence",
@@ -68,7 +68,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "bi-com-excel-trabalhando-com-tabelas-dinamicas-com-power-pivot",
-    "title": "BI com Excel trabalhando com tabelas dinamicas com Power Pivot",
+    "title": "BI with Excel: Working with pivot tables using Power Pivot",
     "issuer": "Alura",
     "areaTags": [
       "Business Intelligence",
@@ -78,7 +78,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "carreira-analise-de-dados-boas-vindas-e-primeiros-passos",
-    "title": "Carreira Analise de Dados Boas-vindas e primeiros passos",
+    "title": "Data Analysis Career: Welcome and first steps",
     "issuer": "Alura",
     "areaTags": [
       "Data Analytics",
@@ -88,7 +88,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "carreira-especialista-em-ia-boas-vindas-e-primeiros-passos",
-    "title": "Carreira Especialista em IA Boas-vindas e primeiros passos",
+    "title": "AI Specialist Career: Welcome and first steps",
     "issuer": "Alura",
     "areaTags": [
       "Machine Learning",
@@ -98,7 +98,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "comecando-em-programacao-carreira-e-primeiros-passos",
-    "title": "Comecando em Programacao carreira e primeiros passos",
+    "title": "Starting in Programming: Career and first steps",
     "issuer": "Alura",
     "areaTags": [
       "JavaScript"
@@ -107,7 +107,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "logica-de-programacao-mergulhe-em-programacao-com-javascript",
-    "title": "Logica de programacao mergulhe em programacao com JavaScript",
+    "title": "Programming logic: Dive into programming with JavaScript",
     "issuer": "Alura",
     "areaTags": [
       "JavaScript"
@@ -116,7 +116,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "mysql-conhecendo-a-ferramenta",
-    "title": "MySQL conhecendo a ferramenta",
+    "title": "MySQL: Getting to know the tool",
     "issuer": "Alura",
     "areaTags": [
       "SQL",
@@ -126,7 +126,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "power-bi-construindo-calculos-com-dax",
-    "title": "Power BI construindo calculos com DAX",
+    "title": "Power BI: Building calculations with DAX",
     "issuer": "Alura",
     "areaTags": [
       "Power BI",
@@ -137,7 +137,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "power-bi-desktop-construindo-meu-primeiro-dashboard",
-    "title": "Power BI Desktop construindo meu primeiro dashboard",
+    "title": "Power BI Desktop: Building my first dashboard",
     "issuer": "Alura",
     "areaTags": [
       "Power BI",
@@ -147,7 +147,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "power-bi-desktop-realizando-etl-no-power-query",
-    "title": "Power BI Desktop realizando ETL no Power Query",
+    "title": "Power BI Desktop: ETL with Power Query",
     "issuer": "Alura",
     "areaTags": [
       "Power BI",
@@ -158,7 +158,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "power-bi-modelagem-de-dados",
-    "title": "Power BI modelagem de dados",
+    "title": "Power BI: Data modeling",
     "issuer": "Alura",
     "areaTags": [
       "Power BI",
@@ -168,7 +168,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "power-bi-visualizando-e-analisando-dados",
-    "title": "Power BI visualizando e analisando dados",
+    "title": "Power BI: Visualizing and analyzing data",
     "issuer": "Alura",
     "areaTags": [
       "Power BI",
@@ -178,7 +178,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "praticando-excel-utilizando-formulas-matematicas",
-    "title": "Praticando Excel utilizando formulas matematicas",
+    "title": "Practicing Excel: Using math formulas",
     "issuer": "Alura",
     "areaTags": [
       "Excel",
@@ -188,7 +188,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "praticando-python-condicionais-if-elif-e-else",
-    "title": "Praticando Python condicionais if, elif e else",
+    "title": "Practicing Python: if, elif, and else conditionals",
     "issuer": "Alura",
     "areaTags": [
       "Python"
@@ -197,7 +197,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "ux-design-entenda-a-area-da-user-experience",
-    "title": "UX Design entenda a area da User Experience",
+    "title": "UX Design: Understanding the User Experience field",
     "issuer": "Alura",
     "areaTags": [
       "UX"
@@ -206,7 +206,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "aplicacoes-ia-comece-por-aqui",
-    "title": "Aplicacoes IA - Comece por aqui",
+    "title": "AI Applications - Start here",
     "issuer": "Assimov",
     "areaTags": [
       "Machine Learning",
@@ -216,7 +216,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "aprendendo-python-conceitos-basicos",
-    "title": "Aprendendo Python Conceitos Basicos",
+    "title": "Learning Python: Basic concepts",
     "issuer": "Assimov",
     "areaTags": [
       "Python"
@@ -225,7 +225,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "conceitos-de-engenharia-de-dados",
-    "title": "Conceitos de Engenharia de Dados",
+    "title": "Data Engineering Concepts",
     "issuer": "Assimov",
     "areaTags": [
       "Data Engineering",
@@ -235,7 +235,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "criando-seu-setup-para-programacao-python",
-    "title": "Criando seu Setup para Programacao Python",
+    "title": "Setting up your Python development environment",
     "issuer": "Assimov",
     "areaTags": [
       "Python"
@@ -244,7 +244,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "dashboards-com-dash",
-    "title": "Dashboards com Dash",
+    "title": "Dashboards with Dash",
     "issuer": "Assimov",
     "areaTags": [
       "Python",
@@ -255,7 +255,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "engenharia-de-prompts",
-    "title": "Engenharia de Prompts",
+    "title": "Prompt Engineering",
     "issuer": "Assimov",
     "areaTags": [
       "Prompt Engineering",
@@ -265,7 +265,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "fundamentos-de-ai-e-machine-learning",
-    "title": "Fundamentos de AI e Machine Learning",
+    "title": "AI and Machine Learning Fundamentals",
     "issuer": "Assimov",
     "areaTags": [
       "Machine Learning",
@@ -275,7 +275,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "introducao-a-logica-de-programacao",
-    "title": "Introducao a Logica de Programacao",
+    "title": "Introduction to Programming Logic",
     "issuer": "Assimov",
     "areaTags": [
       "JavaScript"
@@ -284,7 +284,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "por-dentro-das-llms-como-funcionam-modelos-como-o-chatgpt",
-    "title": "Por dentro das LLMs - como funcionam modelos como o ChatGPT",
+    "title": "Inside LLMs: How models like ChatGPT work",
     "issuer": "Assimov",
     "areaTags": [
       "LLMs",
@@ -294,7 +294,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "python-para-usuarios-de-excel",
-    "title": "Python para Usuarios de Excel",
+    "title": "Python for Excel users",
     "issuer": "Assimov",
     "areaTags": [
       "Python",
@@ -304,7 +304,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "edge-computing-e-internet-das-coisas",
-    "title": "EDGE COMPUTING E INTERNET DAS COISAS",
+    "title": "Edge Computing and Internet of Things",
     "issuer": "Ulife",
     "areaTags": [
       "Edge Computing",
@@ -314,7 +314,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "engenharia-preparacao-e-visualizacao-de-dados",
-    "title": "ENGENHARIA, PREPARACAO E VISUALIZACAO DE DADOS",
+    "title": "Data Engineering, Preparation, and Visualization",
     "issuer": "Ulife",
     "areaTags": [
       "Data Analytics",
@@ -325,7 +325,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "experiencia-do-usuario-e-ia",
-    "title": "EXPERIENCIA DO USUARIO E IA",
+    "title": "User Experience and AI",
     "issuer": "Ulife",
     "areaTags": [
       "UX",
@@ -335,7 +335,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "gerenciamento-e-governanca-de-servicos-na-nuvem",
-    "title": "GERENCIAMENTO E GOVERNANCA DE SERVICOS NA NUVEM",
+    "title": "Cloud Services Management and Governance",
     "issuer": "Ulife",
     "areaTags": [
       "Cloud Computing",
@@ -345,7 +345,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "gestao-do-conhecimento-e-inteligencia-competitiva",
-    "title": "GESTAO DO CONHECIMENTO E INTELIGENCIA COMPETITIVA",
+    "title": "Knowledge Management and Competitive Intelligence",
     "issuer": "Ulife",
     "areaTags": [
       "Business Intelligence",
@@ -355,7 +355,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "modelagem-de-software",
-    "title": "Modelagem de software",
+    "title": "Software Modeling",
     "issuer": "Ulife",
     "areaTags": [
       "Data Engineering"
@@ -364,7 +364,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "processamento-de-dados-massivos-e-modelos-de-aprendizado",
-    "title": "PROCESSAMENTO DE DADOS MASSIVOS E MODELOS DE APRENDIZADO",
+    "title": "Big Data Processing and Learning Models",
     "issuer": "Ulife",
     "areaTags": [
       "Machine Learning",
@@ -374,7 +374,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "programacao-de-solucoes-computacionais",
-    "title": "Programacao de solucoes computacionais",
+    "title": "Programming Computational Solutions",
     "issuer": "Ulife",
     "areaTags": [
       "Python"
@@ -383,7 +383,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "seguranca-da-informacao-para-cloud-e-edge-computing",
-    "title": "SEGURANCA DA INFORMACAO PARA CLOUD E EDGE COMPUTING",
+    "title": "Information Security for Cloud and Edge Computing",
     "issuer": "Ulife",
     "areaTags": [
       "Information Security",
@@ -394,7 +394,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "teoria-da-computacao-e-compiladores",
-    "title": "TEORIA DA COMPUTACAO E COMPILADORES",
+    "title": "Theory of Computation and Compilers",
     "issuer": "Ulife",
     "areaTags": [
       "Data Engineering"
@@ -402,4 +402,5 @@ export const certificatesEn: Certificate[] = [
     "pdfUrl": "/certificates/ulife/teoria-da-computacao-e-compiladores.pdf"
   }
 ];
+
 

@@ -105,6 +105,12 @@ export type SiteContent = {
       whatsapp: string;
     };
   };
+  certificatesSection: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    ctaLabel: string;
+  };
   demos: {
     eyebrow: string;
     title: string;

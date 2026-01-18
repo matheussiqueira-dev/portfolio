@@ -152,6 +152,13 @@ export const sitePt: SiteContent = {
       whatsapp: "WhatsApp",
     },
   },
+  certificatesSection: {
+    eyebrow: "Certificados",
+    title: "Certificados em Dados, BI, IA, Cloud e Seguranca",
+    description:
+      "Colecao completa com PDFs locais de Alura, Assimov e Ulife. Filtre por plataforma e encontre rapidamente certificacoes em Power BI, SQL, Python, IA e Cloud.",
+    ctaLabel: "Ver certificados",
+  },
   demos: {
     eyebrow: "Demos",
     title: "Demos e repositorios",
