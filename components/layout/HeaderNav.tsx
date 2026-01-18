@@ -16,6 +16,7 @@ const buildNavItems = (prefix: string, labels: typeof sitePt.nav) => {
     { href: `${anchorBase}about`, label: labels.about },
     { href: `${anchorBase}projects`, label: labels.projects },
     { href: `${anchorBase}contact`, label: labels.contact },
+    { href: `${pageBase}/certificates`, label: labels.certificates },
     { href: `${pageBase}/resume`, label: labels.resume },
   ];
 };

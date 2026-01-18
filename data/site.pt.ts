@@ -6,11 +6,12 @@ export const sitePt: SiteContent = {
     about: "Sobre",
     projects: "Projetos",
     contact: "Contato",
+    certificates: "Certificados",
     resume: "Curriculo",
   },
   hero: {
     eyebrow: "Analista de Dados | BI | Setor Publico",
-    title: "Analista de Dados & BI para decisao publica",
+    title: "Analista de Dados Junior | Power BI | SQL | Python | BI",
     subtitle:
       "Power BI, SQL, Python e automacao aplicados a dados publicos e gestao fiscal",
     description:
@@ -23,7 +24,7 @@ export const sitePt: SiteContent = {
   },
   about: {
     eyebrow: "Sobre",
-    title: "Analista de Dados e BI orientado a impacto em gestao publica",
+    title: "Analista de Dados Junior | Power BI | SQL | Python | BI",
     who: {
       title: "O que faco",
       body: "Atuo como Analista de Dados Junior com foco em Business Intelligence, dados publicos e apoio a tomada de decisao. Hoje trabalho com arrecadacao tributaria, dados fiscais e indicadores estrategicos na Secretaria Municipal da Fazenda, desenvolvendo visoes claras para gestores. Em paralelo, sigo em formacao em desenvolvimento web para fortalecer produtos de dados e sistemas analiticos.",
@@ -42,6 +43,7 @@ export const sitePt: SiteContent = {
       title: "Resultados",
       items: [
         "Reducao de retrabalho e tempo de consolidacao em rotinas recorrentes.",
+        "+39 certificados em Dados, BI, IA, Cloud e Seguranca.",
         "Dashboards executivos e operacionais para acompanhamento de arrecadacao.",
         "Automacoes que aumentam consistencia e rastreabilidade dos dados.",
         "Padronizacao de indicadores para decisoes gerenciais.",

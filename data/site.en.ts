@@ -6,6 +6,7 @@ export const siteEn: SiteContent = {
     about: "About",
     projects: "Projects",
     contact: "Contact",
+    certificates: "Certificates",
     resume: "Resume",
   },
   hero: {
@@ -42,6 +43,7 @@ export const siteEn: SiteContent = {
       title: "Results",
       items: [
         "Reduced rework and consolidation time in recurring routines.",
+        "+39 certificates in Data, BI, AI, Cloud, and Security.",
         "Executive and operational dashboards for revenue monitoring.",
         "Automations that improve consistency and traceability.",
         "Standardized indicators for managerial decisions.",

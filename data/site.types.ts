@@ -4,6 +4,7 @@ export type SiteContent = {
     about: string;
     projects: string;
     contact: string;
+    certificates: string;
     resume: string;
   };
   hero: {

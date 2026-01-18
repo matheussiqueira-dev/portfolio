@@ -44,6 +44,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.6,
     },
+    {
+      url: `${base}/certificates`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
+    {
+      url: `${base}/en/certificates`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
     ...projects.map((project) => ({
       url: `${base}/projects/${project.slug}`,
       lastModified: now,

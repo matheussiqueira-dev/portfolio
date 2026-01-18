@@ -70,7 +70,6 @@ export default function ProjectModal({ project, onClose }: Props) {
 
   const cover = getCover(project.screenshots);
   const gallery = project.screenshots.filter((shot) => shot !== cover);
-  const stackPreview = project.stack.slice(0, 6);
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -164,7 +163,7 @@ export default function ProjectModal({ project, onClose }: Props) {
           <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-200">
             {labels.roleLabel}: {project.role}
           </span>
-          {stackPreview.map((tech) => (
+          {project.stack.map((tech) => (
             <span
               key={tech}
               className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-200"
