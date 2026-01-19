@@ -1,67 +1,87 @@
 import type { Metadata } from "next";
-import Script from "next/script";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/layout/Header";
 import JsonLd from "@/components/seo/JsonLd";
-import { baseUrl, sameAsLinks, siteName } from "@/lib/seo";
+import { baseUrl, siteName, sameAsLinks } from "@/lib/seo";
 import "./globals.css";
 
 const geistSans = Geist({
   subsets: ["latin"],
   variable: "--font-geist-sans",
-  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-geist-mono",
-  display: "swap",
-  preload: false,
 });
 
+const siteTitle = `${siteName} | Analista de Dados Júnior | Power BI | SQL | Python | BI`;
 const siteDescription =
-  "Portfólio profissional de Analista de Dados Júnior com foco em Business Intelligence, Power BI, SQL e Python. Dashboards, ETL e automação de análises.";
-const siteKeywords = [
-  "Analista de Dados Júnior",
-  "Data Analyst",
-  "Data Analyst Jr",
-  "Business Intelligence",
-  "Power BI",
-  "SQL",
-  "DAX",
-  "Power Query",
-  "Python",
-  "ETL",
-  "Dashboards",
-  "KPIs",
-  "Data Analytics",
-  "Data Visualization",
-  "Brasil remoto",
-];
-const googleSiteVerification =
-  process.env.NEXT_PUBLIC_GSC_VERIFICATION ||
-  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
-const gaId =
-  process.env.NEXT_PUBLIC_GA_ID || process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-const gaTrackingId = gaId?.trim();
-const personId = `${baseUrl}/#person`;
-const websiteId = `${baseUrl}/#website`;
+  "Portfólio profissional de Matheus Siqueira — Analista de Dados Júnior com foco em Business Intelligence, Power BI, SQL, Python, dashboards, ETL e análise de dados.";
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${baseUrl}/#website`,
+  name: siteName,
+  url: baseUrl,
+  description: siteDescription,
+  inLanguage: ["pt-BR", "en-US"],
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${baseUrl}/#person`,
+  name: "Matheus Siqueira",
+  jobTitle: "Analista de Dados Júnior",
+  email: "matheussiqueirahub@gmail.com",
+  telephone: "+55 81 99920-3683",
+  url: baseUrl,
+  sameAs: sameAsLinks,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Recife",
+    addressRegion: "Pernambuco",
+    addressCountry: "BR",
+  },
+  knowsAbout: [
+    "Power BI",
+    "DAX",
+    "Power Query",
+    "SQL",
+    "Python",
+    "ETL",
+    "Business Intelligence",
+    "Data Analytics",
+    "Dashboards",
+    "Data Visualization",
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: `${siteName} | Analista de Dados Júnior | Power BI | SQL | Python | BI`,
+    default: siteTitle,
     template: `%s | ${siteName}`,
   },
   description: siteDescription,
-  keywords: siteKeywords,
-  authors: [{ name: siteName, url: baseUrl }],
-  creator: siteName,
-  publisher: siteName,
-  verification: {
-    google: googleSiteVerification || undefined,
-  },
+  keywords: [
+    "analista de dados júnior",
+    "junior data analyst",
+    "power bi",
+    "sql",
+    "python",
+    "business intelligence",
+    "bi",
+    "dax",
+    "power query",
+    "etl",
+    "dashboards",
+    "data analytics",
+    "data visualization",
+    "kpis",
+  ],
   alternates: {
     canonical: "/",
     languages: {
@@ -70,146 +90,55 @@ export const metadata: Metadata = {
       "x-default": "/",
     },
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-snippet": -1,
-      "max-image-preview": "large",
-      "max-video-preview": -1,
-    },
-  },
-  icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
-  },
   openGraph: {
-    title: `${siteName} | Analista de Dados Júnior | Power BI | SQL | Python | BI`,
+    title: siteTitle,
     description: siteDescription,
     url: "/",
     siteName,
     locale: "pt_BR",
+    alternateLocale: "en_US",
     type: "website",
     images: [
       {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Matheus Siqueira | Analista de Dados Júnior",
+        alt: `${siteName} — Analista de Dados Júnior`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} | Analista de Dados Júnior | Power BI | SQL | Python | BI`,
+    title: siteTitle,
     description: siteDescription,
     images: ["/og.png"],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
-
-const structuredData = [
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": personId,
-    name: siteName,
-    url: baseUrl,
-    image: `${baseUrl}/profile.webp`,
-    jobTitle: "Junior Data Analyst",
-    description: siteDescription,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Recife",
-      addressRegion: "PE",
-      addressCountry: "BR",
-    },
-    sameAs: sameAsLinks,
-    knowsAbout: [
-      "Data Analytics",
-      "Business Intelligence",
-      "Power BI",
-      "SQL",
-      "Python",
-      "Data Visualization",
-      "ETL",
-      "Dashboards",
-      "KPIs",
-    ],
-    alumniOf: [
-      {
-        "@type": "CollegeOrUniversity",
-        name: "UNIFG",
-      },
-      {
-        "@type": "EducationalOrganization",
-        name: "UNINASSAU",
-      },
-      {
-        "@type": "EducationalOrganization",
-        name: "Infinity School",
-      },
-      {
-        "@type": "CollegeOrUniversity",
-        name: "City College of San Francisco",
-      },
-    ],
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": websiteId,
-    name: siteName,
-    url: baseUrl,
-    inLanguage: ["pt-BR", "en-US"],
-    publisher: {
-      "@id": personId,
-    },
-  },
-];
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const shouldInjectSpeedInsights = process.env.VERCEL === "1";
-
   return (
     <html lang="pt-BR">
-      <head>
-        {gaTrackingId ? (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${gaTrackingId}', {
-                  page_path: window.location.pathname,
-                });
-              `}
-            </Script>
-          </>
-        ) : null}
-      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-[#0b0d10] text-slate-100 relative pt-16`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white pt-16`}
       >
-        <div className="pointer-events-none fixed inset-0 -z-10" aria-hidden="true">
-          <div className="absolute -top-32 left-0 h-48 w-48 rounded-full bg-emerald-500/10 blur-3xl md:-top-40 md:h-72 md:w-72" />
-          <div className="absolute top-6 right-0 h-56 w-56 rounded-full bg-sky-500/10 blur-3xl md:top-10 md:h-96 md:w-96" />
-          <div className="absolute bottom-0 left-1/3 h-56 w-56 rounded-full bg-white/5 blur-3xl md:h-80 md:w-80" />
-        </div>
+        <JsonLd data={[websiteJsonLd, personJsonLd]} />
         <Header />
-        <JsonLd data={structuredData} />
         {children}
-        {shouldInjectSpeedInsights ? <SpeedInsights /> : null}
       </body>
     </html>
   );

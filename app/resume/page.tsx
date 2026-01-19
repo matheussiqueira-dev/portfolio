@@ -1,25 +1,54 @@
 import type { Metadata } from "next";
 import JsonLd from "@/components/seo/JsonLd";
 import Resume from "@/components/sections/Resume";
-import { baseUrl, siteName } from "@/lib/seo";
+import { baseUrl, siteName, sameAsLinks } from "@/lib/seo";
 
-const resumeTitle =
-  "Analista de Dados Júnior | Power BI, SQL, Python | Currículo";
+const resumeTitle = "Curriculo | Analista de Dados Junior | Power BI | SQL | Python";
 const resumeDescription =
-  "Currículo de Analista de Dados Júnior com foco em Business Intelligence, Power BI, SQL e Python. Experiência em dashboards, ETL e análise de dados.";
+  "Curriculo de Matheus Siqueira - Analista de Dados Junior com experiencia em Business Intelligence, Power BI, SQL, Python, dashboards, ETL e analise de dados.";
 
 const resumeJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
+  "@id": `${baseUrl}/resume#profilepage`,
   name: resumeTitle,
   description: resumeDescription,
   url: `${baseUrl}/resume`,
   inLanguage: "pt-BR",
-  about: {
+  dateModified: new Date().toISOString().split("T")[0],
+  mainEntity: {
+    "@type": "Person",
     "@id": `${baseUrl}/#person`,
+    name: "Matheus Siqueira",
+    jobTitle: "Analista de Dados Junior",
+    email: "matheussiqueirahub@gmail.com",
+    telephone: "+55 81 99920-3683",
+    url: `${baseUrl}/resume`,
+    sameAs: sameAsLinks,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Recife",
+      addressRegion: "Pernambuco",
+      addressCountry: "BR",
+    },
+    knowsAbout: [
+      "Power BI",
+      "DAX",
+      "Power Query",
+      "SQL",
+      "Python",
+      "ETL",
+      "Business Intelligence",
+      "Data Analytics",
+      "Dashboards",
+      "Data Visualization",
+    ],
   },
   isPartOf: {
+    "@type": "WebSite",
     "@id": `${baseUrl}/#website`,
+    name: siteName,
+    url: baseUrl,
   },
 };
 
@@ -27,7 +56,7 @@ export const metadata: Metadata = {
   title: resumeTitle,
   description: resumeDescription,
   keywords: [
-    "analista de dados júnior",
+    "analista de dados junior",
     "data analyst",
     "business intelligence",
     "power bi",
@@ -39,11 +68,11 @@ export const metadata: Metadata = {
     "kpis",
     "data visualization",
     "data analytics",
-    "automação de processos",
-    "análise exploratória",
+    "automacao de processos",
+    "analise exploratoria",
     "modelagem de dados",
-    "relatórios executivos",
-    "metodologias ágeis",
+    "relatorios executivos",
+    "metodologias ageis",
     "scrum",
     "kanban",
   ],
@@ -67,7 +96,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Currículo profissional de Matheus Siqueira",
+        alt: "Curriculo de Matheus Siqueira",
       },
     ],
   },
