@@ -34,7 +34,7 @@ export default function ResumeEn() {
               href="https://www.linkedin.com/in/matheussiqueira-dev/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline w-fit"
+              className="underline w-fit text-[#70B5F9] hover:text-[#0A66C2] transition-colors"
             >
               LinkedIn
             </a>
@@ -42,7 +42,7 @@ export default function ResumeEn() {
               href="https://github.com/matheussiqueira-dev"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline w-fit"
+              className="underline w-fit text-slate-300 hover:text-white transition-colors"
             >
               GitHub
             </a>

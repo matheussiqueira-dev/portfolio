@@ -104,7 +104,7 @@ export default function ContratePage() {
               href="https://www.linkedin.com/in/matheussiqueira-dev/"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-emerald-400/40 px-6 py-3 text-sm text-emerald-200 transition hover:border-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
+              className="rounded-full border border-[#0A66C2]/60 bg-[#0A66C2]/20 px-6 py-3 text-sm text-[#70B5F9] transition hover:bg-[#0A66C2]/30 hover:border-[#0A66C2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/60"
             >
               LinkedIn
             </a>
@@ -206,7 +206,7 @@ export default function ContratePage() {
               href="https://www.linkedin.com/in/matheussiqueira-dev/"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-emerald-400/40 px-5 py-2 text-sm text-emerald-200 transition hover:border-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
+              className="rounded-full border border-[#0A66C2]/60 bg-[#0A66C2]/20 px-5 py-2 text-sm text-[#70B5F9] transition hover:bg-[#0A66C2]/30 hover:border-[#0A66C2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/60"
             >
               LinkedIn
             </a>

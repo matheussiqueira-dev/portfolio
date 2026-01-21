@@ -39,10 +39,10 @@ export default function Contact({ content }: Props) {
             href="https://www.linkedin.com/in/matheussiqueira-dev/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-sm text-slate-200 transition hover:border-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+            className="flex items-center justify-between rounded-2xl border border-[#0A66C2]/40 bg-[#0A66C2]/10 px-5 py-4 text-sm text-[#70B5F9] transition hover:border-[#0A66C2] hover:bg-[#0A66C2]/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/60"
           >
             <span>{content.cards.linkedin}</span>
-            <span className="text-slate-400">/matheussiqueira-dev</span>
+            <span className="text-[#70B5F9]/70">/matheussiqueira-dev</span>
           </a>
           <TrackedAnchor
             href="https://github.com/matheussiqueira-dev"
@@ -53,7 +53,7 @@ export default function Contact({ content }: Props) {
               category: "outbound",
               label: "github_profile",
             }}
-            className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-sm text-slate-200 transition hover:border-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+            className="flex items-center justify-between rounded-2xl border border-[#6e7681]/40 bg-[#24292f]/30 px-5 py-4 text-sm text-slate-100 transition hover:border-[#6e7681] hover:bg-[#24292f]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6e7681]/60"
           >
             <span>{content.cards.github}</span>
             <span className="text-slate-400">/matheussiqueira-dev</span>
