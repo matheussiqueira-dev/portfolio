@@ -7,7 +7,8 @@ const resumeTitle = "Resume | Junior Data Analyst | Power BI | SQL | Python";
 const resumeDescription =
   "Resume of Matheus Siqueira — Junior Data Analyst with experience in Business Intelligence, Power BI, SQL, Python, dashboards, ETL and data analysis.";
 
-const resumeJsonLd = {
+// ProfilePage JSON-LD with mainEntity (Person) - required for Google rich results
+const profilePageJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
   "@id": `${baseUrl}/en/resume#profilepage`,
@@ -39,9 +40,14 @@ const resumeJsonLd = {
       "Python",
       "ETL",
       "Business Intelligence",
-      "Data Analytics",
-      "Dashboards",
       "Data Visualization",
+      "Data Modeling",
+      "Dashboards",
+      "Git",
+      "Tableau",
+      "React",
+      "APIs",
+      "Statistics",
     ],
   },
   isPartOf: {
@@ -51,6 +57,29 @@ const resumeJsonLd = {
     url: baseUrl,
   },
 };
+
+// BreadcrumbList JSON-LD for navigation rich results
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: baseUrl,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Resume",
+      item: `${baseUrl}/en/resume`,
+    },
+  ],
+};
+
+// Combined JSON-LD array for multiple structured data types
+const resumeJsonLd = [profilePageJsonLd, breadcrumbJsonLd];
 
 export const metadata: Metadata = {
   title: resumeTitle,
