@@ -1,81 +1,58 @@
 import Image from "next/image";
-import { TrackedLink } from "@/components/analytics/TrackedLink";
-import profileImage from "@/public/profile.webp";
-import type { SiteContent } from "@/data/site.types";
+import Link from "next/link";
 
-type Props = {
-  content: SiteContent["hero"];
-  localePrefix?: string;
-};
-
-export default function Hero({ content, localePrefix = "" }: Props) {
-  const projectsHref = localePrefix ? `${localePrefix}#projects` : "/#projects";
-  const resumeHref = localePrefix ? `${localePrefix}/resume` : "/resume";
-  const contactHref = localePrefix ? `${localePrefix}#contact` : "/#contact";
-
+export default function Hero() {
   return (
-    <section id="home" className="scroll-mt-24 px-6 pt-28 pb-20">
-      <div className="max-w-6xl mx-auto grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-center">
-        <div className="flex flex-col gap-6 text-center lg:text-left">
-          <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
-            {content.eyebrow}
-          </p>
-          <h1 className="text-4xl md:text-5xl font-semibold leading-tight tracking-tight text-white">
-            {content.title}
+    <section
+      id="home"
+      className="min-h-screen flex items-center pt-24"
+    >
+      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        {/* Texto */}
+        <div className="flex flex-col gap-6">
+          <h1 className="text-4xl md:text-5xl font-bold">
+            Matheus Siqueira
           </h1>
-          <p className="text-lg md:text-xl text-slate-200 font-medium">
-            {content.subtitle}
+
+          <h2 className="text-xl text-gray-400">
+            Tecnologia, Desenvolvimento Web e Dados
+          </h2>
+
+          <p className="text-gray-300 max-w-xl">
+            Profissional de tecnologia em formação, com experiência prática em
+            análise de dados, infraestrutura e desenvolvimento de aplicações web.
+            Atuação focada em soluções reais, organização da informação e
+            sistemas escaláveis.
           </p>
-          <p className="text-base md:text-lg leading-relaxed text-slate-300">
-            {content.description}
-          </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center sm:items-stretch">
-            <TrackedLink
-              href={projectsHref}
-              className="px-6 py-3 rounded-full bg-white text-sm font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+          <div className="flex gap-4">
+            <Link
+              href="/resume"
+              className="px-6 py-3 bg-white text-black rounded hover:bg-gray-200 transition"
             >
-              {content.ctas.primary}
-            </TrackedLink>
+              Ver currículo
+            </Link>
 
-            <TrackedLink
-              href={resumeHref}
-              tracking={{
-                action: "view_resume",
-                category: "conversion",
-                label: "resume_page",
-              }}
-              className="px-6 py-3 rounded-full border border-white/20 text-sm font-medium text-white transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+            <a
+              href="https://wa.me/5581999203683"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 border border-gray-500 rounded hover:border-white transition"
             >
-              {content.ctas.secondary}
-            </TrackedLink>
-
-            <TrackedLink
-              href={contactHref}
-              tracking={{
-                action: "contact_cta",
-                category: "conversion",
-                label: "contact_section",
-              }}
-              className="text-sm font-medium text-slate-300 underline decoration-white/30 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
-            >
-              {content.ctas.tertiary}
-            </TrackedLink>
+              Entrar em contato
+            </a>
           </div>
         </div>
 
-        <div className="flex justify-center lg:justify-end">
+        {/* Foto */}
+        <div className="flex justify-center md:justify-end">
           <Image
-            src={profileImage}
-            alt="Matheus Siqueira"
+            src="/profile.jpg"
+            alt="Foto de Matheus Siqueira"
             width={320}
             height={320}
-            sizes="(max-width: 768px) 160px, 320px"
             priority
-            placeholder="blur"
-            quality={70}
-            fetchPriority="high"
-            className="rounded-2xl object-cover border border-white/10 shadow-xl"
+            className="rounded-2xl object-cover border border-white/10"
           />
         </div>
       </div>
