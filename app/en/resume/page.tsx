@@ -15,7 +15,7 @@ const resumeJsonLd = {
   description: resumeDescription,
   url: `${baseUrl}/en/resume`,
   inLanguage: "en-US",
-  dateModified: new Date().toISOString().split("T")[0],
+  dateModified: new Date().toISOString(),
   mainEntity: {
     "@type": "Person",
     "@id": `${baseUrl}/#person`,

@@ -1,11 +1,11 @@
+import { Resume } from "../../components/sections";
 import type { Metadata } from "next";
 import JsonLd from "@/components/seo/JsonLd";
-import Resume from "@/components/sections/Resume";
 import { baseUrl, siteName, sameAsLinks } from "@/lib/seo";
 
-const resumeTitle = "Curriculo | Analista de Dados Junior | Power BI | SQL | Python";
+const resumeTitle = "Currículo | Analista de Dados Júnior | Power BI | SQL | Python";
 const resumeDescription =
-  "Curriculo de Matheus Siqueira - Analista de Dados Junior com experiencia em Business Intelligence, Power BI, SQL, Python, dashboards, ETL e analise de dados.";
+  "Currículo de Matheus Siqueira — Analista de Dados Júnior com experiência em Business Intelligence, Power BI, SQL, Python, dashboards, ETL e análise de dados.";
 
 const resumeJsonLd = {
   "@context": "https://schema.org",
@@ -15,12 +15,12 @@ const resumeJsonLd = {
   description: resumeDescription,
   url: `${baseUrl}/resume`,
   inLanguage: "pt-BR",
-  dateModified: new Date().toISOString().split("T")[0],
+  dateModified: new Date().toISOString(),
   mainEntity: {
     "@type": "Person",
     "@id": `${baseUrl}/#person`,
     name: "Matheus Siqueira",
-    jobTitle: "Analista de Dados Junior",
+    jobTitle: "Analista de Dados Júnior",
     email: "matheussiqueirahub@gmail.com",
     telephone: "+55 81 99920-3683",
     url: `${baseUrl}/resume`,
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   title: resumeTitle,
   description: resumeDescription,
   keywords: [
-    "analista de dados junior",
+    "analista de dados júnior",
     "data analyst",
     "business intelligence",
     "power bi",
@@ -68,11 +68,11 @@ export const metadata: Metadata = {
     "kpis",
     "data visualization",
     "data analytics",
-    "automacao de processos",
-    "analise exploratoria",
+    "automação de processos",
+    "análise exploratória",
     "modelagem de dados",
-    "relatorios executivos",
-    "metodologias ageis",
+    "relatórios executivos",
+    "metodologias ágeis",
     "scrum",
     "kanban",
   ],
@@ -96,7 +96,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Curriculo de Matheus Siqueira",
+        alt: "Currículo de Matheus Siqueira",
       },
     ],
   },
