@@ -81,14 +81,14 @@ export default function MobileMenu({
 
       {open ? (
         <div
-          className="fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm"
+          className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm"
           onClick={() => setOpen(false)}
         >
           <div
             id={menuId}
             role="dialog"
             aria-modal="true"
-            className="absolute right-0 top-0 h-full w-72 bg-white px-6 py-8 shadow-2xl motion-safe:animate-fade-in"
+            className="absolute right-0 top-0 h-full w-72 border-l border-[color:var(--border)] bg-[color:var(--surface)] px-6 py-8 shadow-2xl motion-safe:animate-fade-in"
             onClick={(event) => event.stopPropagation()}
           >
             <nav

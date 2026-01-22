@@ -76,7 +76,7 @@ export default function LanguageSwitch() {
         }`}
         aria-current={!isEnglish ? "page" : undefined}
       >
-        <span className="flex h-5 w-5 items-center justify-center rounded-full border border-[color:var(--border)] bg-white shadow-sm">
+        <span className="flex h-5 w-5 items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] shadow-sm">
           <Image src="/flags/br.png" alt="Bandeira do Brasil" width={14} height={14} />
         </span>
         PT-BR
@@ -93,7 +93,7 @@ export default function LanguageSwitch() {
         }`}
         aria-current={isEnglish ? "page" : undefined}
       >
-        <span className="flex h-5 w-5 items-center justify-center rounded-full border border-[color:var(--border)] bg-white shadow-sm">
+        <span className="flex h-5 w-5 items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] shadow-sm">
           <Image src="/flags/us.png" alt="Bandeira dos Estados Unidos" width={14} height={14} />
         </span>
         EN-US

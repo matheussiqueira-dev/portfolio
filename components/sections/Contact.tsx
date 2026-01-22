@@ -37,7 +37,7 @@ export default function Contact({ content }: Props) {
             href="https://www.linkedin.com/in/matheussiqueira-dev/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between rounded-2xl border border-[#0A66C2]/40 bg-white px-5 py-4 text-sm text-[#0A66C2] shadow-sm transition hover:border-[#0A66C2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/40"
+            className="flex items-center justify-between rounded-2xl border border-[#0A66C2]/40 bg-[color:var(--surface)] px-5 py-4 text-sm text-[#0A66C2] shadow-sm transition hover:border-[#0A66C2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/40"
           >
             <span>{content.cards.linkedin}</span>
             <span className="text-[#0A66C2]/70">/matheussiqueira-dev</span>
@@ -51,7 +51,7 @@ export default function Contact({ content }: Props) {
               category: "outbound",
               label: "github_profile",
             }}
-            className="flex items-center justify-between rounded-2xl border border-[#111827]/20 bg-white px-5 py-4 text-sm text-[#111827] shadow-sm transition hover:border-[#111827]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111827]/30"
+            className="flex items-center justify-between rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] px-5 py-4 text-sm text-[color:var(--foreground)] shadow-sm transition hover:border-[color:var(--foreground)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
           >
             <span>{content.cards.github}</span>
             <span className="text-[color:var(--muted)]">/matheussiqueira-dev</span>
@@ -60,7 +60,7 @@ export default function Contact({ content }: Props) {
             href="https://wa.me/5581999203683"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between rounded-2xl border border-[color:var(--accent)]/40 bg-white px-5 py-4 text-sm text-[color:var(--accent)] shadow-sm transition hover:border-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+            className="flex items-center justify-between rounded-2xl border border-[color:var(--accent)]/40 bg-[color:var(--surface)] px-5 py-4 text-sm text-[color:var(--accent)] shadow-sm transition hover:border-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
           >
             <span>{content.cards.whatsapp}</span>
             <span className="text-[color:var(--accent)]">+55 81 99920-3683</span>

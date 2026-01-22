@@ -1,18 +1,27 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { Cormorant_Garamond, JetBrains_Mono, Manrope } from "next/font/google";
 import Script from "next/script";
 import Header from "@/components/layout/Header";
 import JsonLd from "@/components/seo/JsonLd";
+import VideoBackground from "@/components/ui/VideoBackground";
 import { baseUrl, siteName, sameAsLinks } from "@/lib/seo";
 import "./globals.css";
 
 // Google Tag Manager ID
 const GTM_ID = "GTM-WR93ZJ8C";
 
-const spaceGrotesk = Space_Grotesk({
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-manrope",
   display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-cormorant",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 const jetBrainsMono = JetBrains_Mono({
@@ -162,7 +171,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${spaceGrotesk.variable} ${jetBrainsMono.variable} min-h-screen antialiased`}
+        className={`${manrope.variable} ${cormorant.variable} ${jetBrainsMono.variable} min-h-screen antialiased`}
       >
         {/* Google Tag Manager - NoScript fallback */}
         <noscript>
@@ -177,16 +186,19 @@ export default function RootLayout({
         {/* Skip to main content link for accessibility */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded-lg focus:font-medium"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[color:var(--surface)] focus:text-[color:var(--foreground)] focus:rounded-lg focus:font-medium focus:border focus:border-[color:var(--border)]"
         >
           Pular para o conteúdo principal
         </a>
 
         <JsonLd data={[websiteJsonLd, personJsonLd]} />
-        <Header />
-        <main id="main-content" className="min-h-screen">
-          {children}
-        </main>
+        <VideoBackground />
+        <div className="app-shell">
+          <Header />
+          <main id="main-content" className="min-h-screen">
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );

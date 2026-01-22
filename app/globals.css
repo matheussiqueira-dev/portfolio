@@ -1,67 +1,78 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f6f5f2;
-  --foreground: #101418;
-  --foreground-strong: #0b0f13;
-  --muted: #5b6472;
-  --muted-strong: #3b424d;
-  --surface: #ffffff;
-  --surface-muted: #eef1f4;
-  --border: #dde2e8;
-  --accent: #0f766e;
-  --accent-strong: #0b5f58;
-  --accent-soft: #14b8a6;
-  --shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
-  --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.08);
+  --background: #0b0b0f;
+  --foreground: #f5f2ed;
+  --foreground-strong: #ffffff;
+  --muted: #b3b9c4;
+  --muted-strong: #d7dbe3;
+  --surface: #141821;
+  --surface-muted: #1b2130;
+  --border: #2a3142;
+  --accent: #d4b07a;
+  --accent-strong: #f1d29b;
+  --accent-soft: #b58a52;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.35);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-space-grotesk);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-cormorant);
   --font-mono: var(--font-jetbrains-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   position: relative;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+.font-display {
+  font-family: var(--font-cormorant), ui-serif, Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
 /* ============================================================================
-   DEVELOPER PORTFOLIO BACKGROUND PATTERN
-   Grid pattern com gradiente radial - estilo moderno de portfólio dev
+   DARK ELEGANT BACKGROUND
+   Vídeo + gradientes sutis para leitura
    ============================================================================ */
 
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -2;
+  z-index: -1;
   background-image:
     radial-gradient(
       60% 40% at 12% -10%,
-      rgba(15, 118, 110, 0.12),
+      rgba(212, 176, 122, 0.18),
       transparent 60%
     ),
     radial-gradient(
-      50% 45% at 88% 0%,
-      rgba(15, 23, 42, 0.06),
-      transparent 55%
+      45% 35% at 88% 0%,
+      rgba(66, 74, 90, 0.25),
+      transparent 60%
     ),
     linear-gradient(
       to right,
-      rgba(15, 23, 42, 0.04) 1px,
+      rgba(255, 255, 255, 0.03) 1px,
       transparent 1px
     ),
     linear-gradient(
       to bottom,
-      rgba(15, 23, 42, 0.04) 1px,
+      rgba(255, 255, 255, 0.03) 1px,
       transparent 1px
     );
-  background-size: 100% 100%, 100% 100%, 72px 72px, 72px 72px;
+  background-size: 100% 100%, 100% 100%, 96px 96px, 96px 96px;
   pointer-events: none;
 }
 
@@ -69,13 +80,13 @@ body::before {
 body::after {
   content: "";
   position: fixed;
-  bottom: -20%;
-  right: -10%;
-  width: 45%;
-  height: 45%;
+  bottom: -25%;
+  right: -15%;
+  width: 50%;
+  height: 50%;
   background: radial-gradient(
     ellipse at center,
-    rgba(15, 118, 110, 0.08) 0%,
+    rgba(212, 176, 122, 0.12) 0%,
     transparent 70%
   );
   z-index: -1;
@@ -90,9 +101,59 @@ body::after {
   }
 }
 
+.video-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #0b0b0f;
+}
+
+.app-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.video-bg__media {
+  position: absolute;
+  inset: -12%;
+  width: 124%;
+  height: 124%;
+  filter: blur(14px) brightness(0.55) saturate(0.85);
+  transform: scale(1.08);
+}
+
+.video-bg__media iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-bg__veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(8, 10, 14, 0.78) 0%, rgba(8, 10, 14, 0.6) 45%, rgba(8, 10, 14, 0.85) 100%),
+    radial-gradient(40% 35% at 20% 10%, rgba(212, 176, 122, 0.16), transparent 60%);
+}
+
+@media (max-width: 768px) {
+  .video-bg__media {
+    filter: blur(10px) brightness(0.5) saturate(0.8);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video-bg {
+    display: none;
+  }
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
+  color-scheme: dark;
 }
 
 /* Respeitar preferência de movimento reduzido */
@@ -172,6 +233,7 @@ html {
     padding: 0.6rem 1.5rem;
     font-size: 0.75rem;
     font-weight: 600;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
     transition: opacity 0.2s ease, transform 0.2s ease;
   }
 
