@@ -111,7 +111,7 @@ export default function ProjectModal({ project, onClose }: Props) {
 
   return (
     <div
-      className="fixed inset-0 z-[70] flex items-center justify-center bg-black/70 px-6 py-10 backdrop-blur-sm"
+      className="fixed inset-0 z-[70] flex items-start justify-center overflow-y-auto bg-black/70 px-6 py-10 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
@@ -122,7 +122,7 @@ export default function ProjectModal({ project, onClose }: Props) {
         aria-labelledby={titleId}
         aria-describedby={descId}
         tabIndex={-1}
-        className="w-full max-w-3xl rounded-2xl border border-white/10 bg-[#0b0d10] p-8 text-slate-100 shadow-2xl motion-safe:animate-fade-in"
+        className="w-full max-w-3xl rounded-2xl border border-white/10 bg-[#0b0d10] p-8 text-slate-100 shadow-2xl motion-safe:animate-fade-in my-auto"
         onClick={(event) => event.stopPropagation()}
       >
         <div className="flex items-start justify-between gap-6">
