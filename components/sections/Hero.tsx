@@ -6,7 +6,7 @@ type HeroProps = {
   localePrefix?: string;
 };
 
-export default function Hero({}: HeroProps) {
+export default function Hero(_props: HeroProps) {
   return (
     <section
       id="home"
