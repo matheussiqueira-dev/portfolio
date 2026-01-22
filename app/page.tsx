@@ -7,7 +7,7 @@ import { sitePt } from "@/data/site.pt";
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Hero content={sitePt.hero} />
+      <Hero />
       <About content={sitePt.about} />
       <Projects />
       <Contact content={sitePt.contact} />

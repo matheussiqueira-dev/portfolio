@@ -1,39 +1,33 @@
 import Image from "next/image";
 import Link from "next/link";
 
-type HeroProps = {
-  content?: unknown;
-  localePrefix?: string;
-};
-
-export default function Hero(_props: HeroProps) {
+export default function Hero() {
   return (
-    <section
-      id="home"
-      className="min-h-screen flex items-center pt-24"
-    >
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-        {/* Texto */}
+    <section id="home" className="pt-24">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2">
         <div className="flex flex-col gap-6">
-          <h1 className="text-4xl md:text-5xl font-bold">
+          <p className="text-sm font-medium text-white/60">
+            Desenvolvimento • Dados • Infra
+          </p>
+
+          <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
             Matheus Siqueira
           </h1>
 
-          <h2 className="text-xl text-gray-400">
+          <h2 className="text-lg text-white/70">
             Tecnologia, Desenvolvimento Web e Dados
           </h2>
 
-          <p className="text-gray-300 max-w-xl">
-            Profissional de tecnologia em formação, com experiência prática em
-            análise de dados, infraestrutura e desenvolvimento de aplicações web.
-            Atuação focada em soluções reais, organização da informação e
-            sistemas escaláveis.
+          <p className="max-w-xl text-white/70">
+            Profissional em transição para tecnologia, com experiência prática em análise de dados,
+            infraestrutura e desenvolvimento web. Foco em soluções reais, organização da informação
+            e sistemas escaláveis.
           </p>
 
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-3">
             <Link
               href="/resume"
-              className="px-6 py-3 bg-white text-black rounded hover:bg-gray-200 transition"
+              className="rounded-lg bg-white px-5 py-3 text-sm font-medium text-black hover:bg-white/90"
             >
               Ver currículo
             </Link>
@@ -42,23 +36,32 @@ export default function Hero(_props: HeroProps) {
               href="https://wa.me/5581999203683"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 border border-gray-500 rounded hover:border-white transition"
+              className="rounded-lg border border-white/20 px-5 py-3 text-sm font-medium text-white hover:border-white/40"
             >
               Entrar em contato
             </a>
+
+            <Link
+              href="/projects"
+              className="rounded-lg border border-white/10 px-5 py-3 text-sm font-medium text-white/80 hover:text-white"
+            >
+              Ver projetos
+            </Link>
           </div>
         </div>
 
-        {/* Foto */}
         <div className="flex justify-center md:justify-end">
-          <Image
-            src="/profile.jpg"
-            alt="Foto de Matheus Siqueira"
-            width={320}
-            height={320}
-            priority
-            className="rounded-2xl object-cover border border-white/10"
-          />
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-3xl bg-white/5 blur-2xl" />
+            <Image
+              src="/profile.jpg"
+              alt="Foto de Matheus Siqueira"
+              width={360}
+              height={360}
+              priority
+              className="relative rounded-2xl border border-white/10 object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>

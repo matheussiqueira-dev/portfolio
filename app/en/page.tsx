@@ -66,7 +66,7 @@ export default function HomeEn() {
   return (
     <main className="min-h-screen">
       <JsonLd data={homeJsonLd} />
-      <Hero content={siteEn.hero} localePrefix="/en" />
+      <Hero />
       <About content={siteEn.about} />
       <Projects />
       <CertificatesPreview content={siteEn.certificatesSection} localePrefix="/en" />
