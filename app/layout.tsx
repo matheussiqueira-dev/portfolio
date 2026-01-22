@@ -134,11 +134,11 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white pt-16`}
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-black text-white`}
       >
         <JsonLd data={[websiteJsonLd, personJsonLd]} />
         <Header />
-        {children}
+        <main className="min-h-screen">{children}</main>
       </body>
     </html>
   );
