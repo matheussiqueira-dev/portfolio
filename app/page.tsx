@@ -1,16 +1,10 @@
 import Hero from "@/components/sections/Hero";
-import Projects from "@/components/sections/Projects";
-import About from "@/components/sections/About";
-import Contact from "@/components/sections/Contact";
-import { sitePt } from "@/data/site.pt";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="min-h-screen">
+    <div className="pb-24">
       <Hero />
-      <About content={sitePt.about} />
-      <Projects />
-      <Contact content={sitePt.contact} />
-    </main>
+      {/* Depois a gente reencaixa Projects / About / Contact do seu jeito */}
+    </div>
   );
 }
