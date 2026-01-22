@@ -5,24 +5,25 @@ import { usePathname } from "next/navigation";
 
 export default function LanguageSwitch() {
   const pathname = usePathname();
+
   const isEnglish = pathname.startsWith("/en");
 
   return (
-    <div className="flex items-center gap-3 text-lg">
+    <div className="flex gap-2 text-sm">
       <Link
-        href="/"
-        title="Português (Brasil)"
-        className={!isEnglish ? "opacity-100" : "opacity-50 hover:opacity-100"}
+        href={isEnglish ? pathname.replace("/en", "") || "/" : pathname}
+        className={!isEnglish ? "font-bold" : "text-gray-400"}
       >
-        🇧🇷
+        PT
       </Link>
 
+      <span>|</span>
+
       <Link
-        href="/en"
-        title="English (US)"
-        className={isEnglish ? "opacity-100" : "opacity-50 hover:opacity-100"}
+        href={isEnglish ? pathname : `/en${pathname}`}
+        className={isEnglish ? "font-bold" : "text-gray-400"}
       >
-        🇺🇸
+        EN
       </Link>
     </div>
   );
