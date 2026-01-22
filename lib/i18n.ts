@@ -25,7 +25,7 @@ export const stripLocalePrefix = (pathname: string) => {
 };
 
 const splitHref = (href: string) => {
-  const [pathAndQuery, hash] = href.split("#");
+  const [pathAndQuery = "", hash] = href.split("#");
   const [path, query] = pathAndQuery.split("?");
   return {
     path: path || "/",
