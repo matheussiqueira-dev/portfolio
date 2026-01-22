@@ -1,7 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Hero() {
+type HeroProps = {
+  content?: unknown;
+  localePrefix?: string;
+};
+
+export default function Hero({}: HeroProps) {
   return (
     <section
       id="home"
