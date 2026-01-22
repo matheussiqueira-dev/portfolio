@@ -152,6 +152,12 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Preload critical resources */}
+        <link
+          rel="preload"
+          as="image"
+          href="/profile.jpg"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-black text-white`}
@@ -165,9 +171,20 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+
+        {/* Skip to main content link for accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded-lg focus:font-medium"
+        >
+          Pular para o conteúdo principal
+        </a>
+
         <JsonLd data={[websiteJsonLd, personJsonLd]} />
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main id="main-content" className="min-h-screen">
+          {children}
+        </main>
       </body>
     </html>
   );

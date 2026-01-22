@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import Image from "next/image";
+import ImageWithFallback from "@/components/ui/ImageWithFallback";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo, useState } from "react";
@@ -64,11 +64,12 @@ export default function Projects() {
               >
                 {cover ? (
                   <div className="relative aspect-[1200/630] w-full overflow-hidden rounded-xl border border-white/10">
-                    <Image
+                    <ImageWithFallback
                       src={cover.src}
                       alt={cover.alt}
                       fill
                       sizes="(max-width: 1024px) 100vw, 520px"
+                      quality={85}
                       className="object-cover"
                     />
                   </div>
