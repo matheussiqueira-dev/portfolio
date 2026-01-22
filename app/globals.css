@@ -249,13 +249,17 @@ html {
   }
 
   .btn-whatsapp {
+    background: var(--whatsapp);
     border-color: var(--whatsapp);
-    color: var(--whatsapp);
+    color: var(--background);
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease,
+      transform 0.2s ease;
   }
 
   .btn-whatsapp:hover {
+    background: #1fbb5b;
     border-color: var(--whatsapp);
-    color: var(--whatsapp);
+    color: var(--background);
   }
 
   .btn-ghost {

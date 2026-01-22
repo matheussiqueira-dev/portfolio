@@ -52,6 +52,11 @@ export const projectsEn: Project[] = [
         alt: "Cover of Touchless Web Gesture Interface",
       },
       {
+        src: "/touchless-web-gesture-interface.mp4",
+        alt: "Touchless Web Gesture Interface demo in action",
+        type: "video",
+      },
+      {
         src: "/projects/touchless-web-gesture-interface/shot-1.webp",
         alt: "Main screen of Touchless Web Gesture Interface",
       },
@@ -105,6 +110,11 @@ export const projectsEn: Project[] = [
       {
         src: "/projects/chatbot-ia-api/cover.webp",
         alt: "Cover of Chatbot IA API",
+      },
+      {
+        src: "/Chatbot.mp4",
+        alt: "Chatbot IA API demo",
+        type: "video",
       },
       {
         src: "/projects/chatbot-ia-api/shot-1.webp",
@@ -222,6 +232,10 @@ export const projectsEn: Project[] = [
         alt: "Cover of Library API Advanced",
       },
       {
+        src: "/library-api-advanced.png",
+        alt: "Additional screen of Library API Advanced",
+      },
+      {
         src: "/projects/library-api-advanced/shot-1.webp",
         alt: "Technical dashboard of Library API Advanced",
       },
@@ -279,6 +293,63 @@ export const projectsEn: Project[] = [
       {
         src: "/projects/nucleo-comercial-dados/shot-1.webp",
         alt: "Dashboard of Nucleo Comercial de Dados",
+      },
+    ],
+  },
+  {
+    slug: "face-emotions",
+    title: "Face-Emotions",
+    tagline: "Real-time facial emotion recognition.",
+    role: "Analyst/Developer",
+    stack: ["Python", "OpenCV", "TensorFlow", "Keras", "NumPy"],
+    repoUrl:
+      "https://github.com/matheussiqueira-dev/face-emotion-recognition-realtime",
+    problem: [
+      "Hard to capture engagement signals in real time.",
+      "Need to identify emotion patterns during interactions.",
+      "Fast processing required for webcam usage.",
+    ],
+    dataUsed: [
+      "Real-time webcam frames.",
+      "Face crops detected from the stream.",
+      "Emotion probabilities inferred by the model.",
+    ],
+    solution: [
+      "Face detection with OpenCV.",
+      "Emotion classification model in TensorFlow/Keras.",
+      "Real-time inference pipeline with on-screen overlay.",
+    ],
+    features: [
+      "Multi-face detection on screen.",
+      "Overlay with top emotion and confidence score.",
+      "Continuous execution with immediate visual feedback.",
+    ],
+    highlights: [
+      "Low-latency emotion recognition in real time.",
+      "Foundation for experience and attention analytics.",
+      "Clear pipeline for signal capture and visualization.",
+    ],
+    demonstrates: [
+      "Computer vision applied to behavioral signals.",
+      "ML inference over video streams.",
+      "Rapid prototyping focused on validation.",
+    ],
+    howToRun: [
+      "Prerequisites: Python 3.10+ and an enabled webcam.",
+      "Clone the repository and create a virtual environment.",
+      "Install the project dependencies.",
+      "Run the main script to start the camera.",
+      "See detected emotions in the overlay.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/placeholder.webp",
+        alt: "Cover of Face-Emotions",
+      },
+      {
+        src: "/Face-emotions.mp4",
+        alt: "Face-Emotions real-time demo",
+        type: "video",
       },
     ],
   },
