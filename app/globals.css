@@ -12,6 +12,7 @@
   --accent: #d4b07a;
   --accent-strong: #f1d29b;
   --accent-soft: #b58a52;
+  --whatsapp: #25d366;
   --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
   --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.35);
 }
@@ -245,6 +246,16 @@ html {
     border-color: var(--accent);
     color: var(--accent);
     transform: translateY(-1px);
+  }
+
+  .btn-whatsapp {
+    border-color: var(--whatsapp);
+    color: var(--whatsapp);
+  }
+
+  .btn-whatsapp:hover {
+    border-color: var(--whatsapp);
+    color: var(--whatsapp);
   }
 
   .btn-ghost {

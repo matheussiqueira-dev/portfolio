@@ -60,10 +60,10 @@ export default function Contact({ content }: Props) {
             href="https://wa.me/5581999203683"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between rounded-2xl border border-[color:var(--accent)]/40 bg-[color:var(--surface)] px-5 py-4 text-sm text-[color:var(--accent)] shadow-sm transition hover:border-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+            className="flex items-center justify-between rounded-2xl border border-[color:var(--whatsapp)]/40 bg-[color:var(--surface)] px-5 py-4 text-sm text-[color:var(--whatsapp)] shadow-sm transition hover:border-[color:var(--whatsapp)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--whatsapp)]/40"
           >
             <span>{content.cards.whatsapp}</span>
-            <span className="text-[color:var(--accent)]">+55 81 99920-3683</span>
+            <span className="text-[color:var(--whatsapp)]">+55 81 99920-3683</span>
           </a>
         </div>
       </div>

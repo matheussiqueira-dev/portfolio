@@ -50,7 +50,7 @@ export default function Resume() {
               href="https://wa.me/5581999203683"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline w-fit text-[color:var(--accent)] font-medium"
+              className="underline w-fit text-[color:var(--whatsapp)] font-medium"
             >
               WhatsApp: (81) 99920-3683
             </a>

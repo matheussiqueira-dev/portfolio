@@ -54,7 +54,7 @@ export default function Hero() {
                 category: "engagement",
                 label: "hero_cta",
               }}
-              className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+              className="btn-outline btn-whatsapp focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
               Entrar em contato
             </TrackedAnchor>
