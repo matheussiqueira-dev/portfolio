@@ -112,10 +112,7 @@ export default function MobileMenu({
                 {languageLabel}
               </p>
               <div className="mt-4 text-sm text-slate-200">
-                <LanguageSwitch
-                  direction="column"
-                  onNavigate={() => setOpen(false)}
-                />
+                <LanguageSwitch />
               </div>
             </div>
           </div>
