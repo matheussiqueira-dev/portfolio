@@ -5,24 +5,24 @@ import { sitePt } from "@/data/site.pt";
 // Lazy load below-the-fold sections for better performance
 const About = dynamic(() => import("@/components/sections/About"), {
   loading: () => (
-    <div className="px-6 py-20 content-auto">
-      <div className="max-w-6xl mx-auto h-96 animate-pulse bg-white/5 rounded-2xl" />
+    <div className="page-section content-auto">
+      <div className="section-inner h-96 animate-pulse rounded-2xl bg-[color:var(--surface-muted)]" />
     </div>
   ),
 });
 
 const Projects = dynamic(() => import("@/components/sections/Projects"), {
   loading: () => (
-    <div className="px-6 py-20 content-auto">
-      <div className="max-w-6xl mx-auto h-96 animate-pulse bg-white/5 rounded-2xl" />
+    <div className="page-section content-auto">
+      <div className="section-inner h-96 animate-pulse rounded-2xl bg-[color:var(--surface-muted)]" />
     </div>
   ),
 });
 
 const Contact = dynamic(() => import("@/components/sections/Contact"), {
   loading: () => (
-    <div className="px-6 py-20 content-auto">
-      <div className="max-w-6xl mx-auto h-64 animate-pulse bg-white/5 rounded-2xl" />
+    <div className="page-section content-auto">
+      <div className="section-inner h-64 animate-pulse rounded-2xl bg-[color:var(--surface-muted)]" />
     </div>
   ),
 });

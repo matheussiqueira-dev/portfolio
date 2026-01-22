@@ -23,9 +23,9 @@ export default function ProjectCard({
     : `/projects/${project.slug}`;
 
   return (
-    <article className="rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col gap-4 transition hover:-translate-y-1 hover:border-white/20">
+    <article className="card p-6 flex flex-col gap-4 transition hover:-translate-y-1 hover:shadow-xl">
       {cover ? (
-        <div className="relative aspect-[1200/630] w-full overflow-hidden rounded-xl border border-white/10">
+        <div className="relative aspect-[1200/630] w-full overflow-hidden rounded-xl border border-[color:var(--border)]">
           <Image
             src={cover.src}
             alt={cover.alt}
@@ -37,17 +37,14 @@ export default function ProjectCard({
       ) : null}
 
       <div className="space-y-2">
-        <h3 className="text-lg font-semibold text-white">{project.title}</h3>
-        <p className="text-sm text-slate-300">{project.tagline}</p>
-        <p className="text-xs text-slate-400">{project.features[0]}</p>
+        <h3 className="text-lg font-semibold text-[color:var(--foreground)]">{project.title}</h3>
+        <p className="text-sm text-[color:var(--muted)]">{project.tagline}</p>
+        <p className="text-xs text-[color:var(--muted)]">{project.features[0]}</p>
       </div>
 
-      <div className="flex flex-wrap gap-2 text-xs text-slate-200">
+      <div className="flex flex-wrap gap-2 text-xs text-[color:var(--muted)]">
         {project.stack.map((item) => (
-          <span
-            key={item}
-            className="rounded-full border border-white/10 px-3 py-1"
-          >
+          <span key={item} className="chip">
             {item}
           </span>
         ))}
@@ -56,7 +53,7 @@ export default function ProjectCard({
       <div className="flex flex-wrap gap-4">
         <Link
           href={caseHref}
-          className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+          className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
         >
           {caseLabel}
         </Link>
@@ -64,7 +61,7 @@ export default function ProjectCard({
           href={project.repoUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full border border-white/20 px-4 py-2 text-xs text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+          className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
         >
           GitHub
         </a>

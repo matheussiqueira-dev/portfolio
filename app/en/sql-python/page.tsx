@@ -43,23 +43,23 @@ export const metadata: Metadata = {
 
 export default function SqlPythonPage() {
   return (
-    <main className="min-h-screen px-6 py-24">
+    <main className="min-h-screen px-6 pt-28 pb-20">
       <div className="max-w-5xl mx-auto space-y-10">
         <header className="space-y-4">
-          <h1 className="text-4xl md:text-5xl font-semibold text-white">
+          <h1 className="text-4xl md:text-5xl font-semibold text-[color:var(--foreground)]">
             SQL and Python for ETL and analytics automation
           </h1>
-          <p className="text-base md:text-lg text-slate-300">
+          <p className="text-base md:text-lg text-[color:var(--muted)]">
             I use SQL and Python to prepare data, automate analytical workflows,
             and deliver reliable datasets for dashboards and KPIs.
           </p>
         </header>
 
         <section className="space-y-3">
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
             What I deliver with SQL and Python
           </h2>
-          <ul className="list-disc list-inside space-y-2 text-slate-300">
+          <ul className="list-disc list-inside space-y-2 text-[color:var(--muted)]">
             <li>ETL with extraction, transformation, and validation.</li>
             <li>Data modeling and KPI-ready structures.</li>
             <li>Automation of reports and analytical routines.</li>
@@ -68,26 +68,26 @@ export default function SqlPythonPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-2xl font-semibold text-white">Stack</h2>
-          <p className="text-slate-300">
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">Stack</h2>
+          <p className="text-[color:var(--muted)]">
             SQL · Python · Pandas · ETL · Data Modeling · Data Quality
           </p>
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
             Next steps
           </h2>
           <div className="flex flex-wrap gap-4">
             <Link
               href="/en/projects"
-              className="rounded-full border border-white/20 px-5 py-2 text-sm text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+              className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
               View projects
             </Link>
             <Link
               href="/en/resume"
-              className="rounded-full bg-white px-5 py-2 text-sm font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+              className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
               View resume
             </Link>

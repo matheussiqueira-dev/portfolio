@@ -139,7 +139,7 @@ export const metadata: Metadata = {
 
 export default function ResumePage() {
   return (
-    <main className="min-h-screen px-6 py-20">
+    <main className="min-h-screen px-6 pt-28 pb-20">
       <JsonLd data={resumeJsonLd} />
       <Resume />
     </main>

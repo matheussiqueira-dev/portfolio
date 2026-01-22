@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -65,30 +66,36 @@ export default function LanguageSwitch() {
   const enPath = getEnglishPath(pathname);
 
   return (
-    <div className="flex items-center gap-3 text-sm">
+    <div className="flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
       <Link
         href={ptPath}
-        className={`transition-colors ${
+        className={`flex items-center gap-2 transition-colors ${
           !isEnglish
-            ? "text-white font-medium"
-            : "text-slate-400 hover:text-white"
+            ? "text-[color:var(--foreground)] font-semibold"
+            : "text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
         }`}
         aria-current={!isEnglish ? "page" : undefined}
       >
+        <span className="flex h-5 w-5 items-center justify-center rounded-full border border-[color:var(--border)] bg-white shadow-sm">
+          <Image src="/flags/br.png" alt="Bandeira do Brasil" width={14} height={14} />
+        </span>
         PT-BR
       </Link>
 
-      <span className="text-slate-600">|</span>
+      <span className="text-[color:var(--border)]">|</span>
 
       <Link
         href={enPath}
-        className={`transition-colors ${
+        className={`flex items-center gap-2 transition-colors ${
           isEnglish
-            ? "text-white font-medium"
-            : "text-slate-400 hover:text-white"
+            ? "text-[color:var(--foreground)] font-semibold"
+            : "text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
         }`}
         aria-current={isEnglish ? "page" : undefined}
       >
+        <span className="flex h-5 w-5 items-center justify-center rounded-full border border-[color:var(--border)] bg-white shadow-sm">
+          <Image src="/flags/us.png" alt="Bandeira dos Estados Unidos" width={14} height={14} />
+        </span>
         EN-US
       </Link>
     </div>

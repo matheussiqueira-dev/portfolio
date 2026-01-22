@@ -57,22 +57,22 @@ export default function MobileMenu({
         aria-expanded={open}
         aria-controls={menuId}
         onClick={() => setOpen((prev) => !prev)}
-        className="inline-flex items-center justify-center rounded border border-white/15 px-3 py-2 text-sm text-white transition hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+        className="inline-flex items-center justify-center rounded border border-[color:var(--border)] px-3 py-2 text-sm text-[color:var(--foreground)] transition hover:border-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
       >
         <span className="sr-only">{toggleLabel}</span>
         <span className="relative block h-4 w-5">
           <span
-            className={`absolute left-0 top-0 h-0.5 w-full bg-white transition ${
+            className={`absolute left-0 top-0 h-0.5 w-full bg-[color:var(--foreground)] transition ${
               open ? "translate-y-1.5 rotate-45" : ""
             }`}
           />
           <span
-            className={`absolute left-0 top-1.5 h-0.5 w-full bg-white transition ${
+            className={`absolute left-0 top-1.5 h-0.5 w-full bg-[color:var(--foreground)] transition ${
               open ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`absolute left-0 top-3 h-0.5 w-full bg-white transition ${
+            className={`absolute left-0 top-3 h-0.5 w-full bg-[color:var(--foreground)] transition ${
               open ? "-translate-y-1.5 -rotate-45" : ""
             }`}
           />
@@ -81,18 +81,18 @@ export default function MobileMenu({
 
       {open ? (
         <div
-          className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm"
+          className="fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm"
           onClick={() => setOpen(false)}
         >
           <div
             id={menuId}
             role="dialog"
             aria-modal="true"
-            className="absolute right-0 top-0 h-full w-72 bg-[#0b0d10] px-6 py-8 shadow-xl motion-safe:animate-fade-in"
+            className="absolute right-0 top-0 h-full w-72 bg-white px-6 py-8 shadow-2xl motion-safe:animate-fade-in"
             onClick={(event) => event.stopPropagation()}
           >
             <nav
-              className="flex flex-col gap-4 text-base text-slate-100"
+              className="flex flex-col gap-4 text-base text-[color:var(--foreground)]"
               aria-label={menuLabel}
             >
               {navItems.map((item) => (
@@ -100,18 +100,18 @@ export default function MobileMenu({
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
+                  className="transition hover:text-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40 rounded"
                 >
                   {item.label}
                 </Link>
               ))}
             </nav>
 
-            <div className="mt-8 border-t border-white/10 pt-6">
-              <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
+            <div className="mt-8 border-t border-[color:var(--border)] pt-6">
+              <p className="text-xs uppercase tracking-[0.2em] text-[color:var(--muted)]">
                 {languageLabel}
               </p>
-              <div className="mt-4 text-sm text-slate-200">
+              <div className="mt-4 text-sm text-[color:var(--muted)]">
                 <LanguageSwitch />
               </div>
             </div>

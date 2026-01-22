@@ -108,37 +108,35 @@ export default function ProjectsPageEn({ searchParams }: PageProps) {
       : projectsEn;
 
   return (
-    <main className="min-h-screen px-6 py-24">
+    <main className="min-h-screen px-6 pt-28 pb-20">
       <JsonLd data={projectsPageJsonLd} />
       <div className="max-w-6xl mx-auto">
         <header className="mb-12 space-y-4">
-          <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
-            {siteEn.projectsPage.eyebrow}
-          </p>
-          <h1 className="text-4xl md:text-5xl font-semibold text-white">
+          <p className="eyebrow">{siteEn.projectsPage.eyebrow}</p>
+          <h1 className="text-4xl md:text-5xl font-semibold text-[color:var(--foreground)]">
             {siteEn.projectsPage.title}
           </h1>
-          <p className="text-base md:text-lg text-slate-300 max-w-3xl">
+          <p className="text-base md:text-lg text-[color:var(--muted)] max-w-3xl">
             {siteEn.projectsPage.description}
           </p>
           <Link
             href="/en/demos"
-            className="inline-flex w-fit text-sm text-emerald-200 underline decoration-emerald-400/50 underline-offset-4 transition hover:text-emerald-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
+            className="inline-flex w-fit text-sm text-[color:var(--accent)] underline decoration-[color:var(--accent-soft)]/60 underline-offset-4 transition hover:text-[color:var(--accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
           >
             {siteEn.projectsPage.demosLabel}
           </Link>
         </header>
 
-        <div className="mb-8 flex flex-wrap items-center gap-3 text-sm text-slate-300">
-          <span className="text-xs uppercase tracking-[0.2em] text-slate-500">
+        <div className="mb-8 flex flex-wrap items-center gap-3 text-sm text-[color:var(--muted)]">
+          <span className="text-xs uppercase tracking-[0.2em] text-[color:var(--muted)]">
             {siteEn.projectsPage.filterLabel}
           </span>
           <Link
             href="/en/projects"
-            className={`rounded-full border px-3 py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
+            className={`rounded-full border px-3 py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40 ${
               activeFilter === "all"
-                ? "border-white/30 text-white"
-                : "border-white/10 text-slate-300 hover:border-white/30"
+                ? "border-[color:var(--accent)]/50 text-[color:var(--foreground)]"
+                : "border-[color:var(--border)] text-[color:var(--muted)] hover:border-[color:var(--accent)]/50"
             }`}
           >
             {siteEn.projectsPage.allLabel}
@@ -147,10 +145,10 @@ export default function ProjectsPageEn({ searchParams }: PageProps) {
             <Link
               key={filter}
               href={`/en/projects?stack=${encodeURIComponent(filter)}`}
-              className={`rounded-full border px-3 py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
+              className={`rounded-full border px-3 py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40 ${
                 activeFilter === filter
-                  ? "border-white/30 text-white"
-                  : "border-white/10 text-slate-300 hover:border-white/30"
+                  ? "border-[color:var(--accent)]/50 text-[color:var(--foreground)]"
+                  : "border-[color:var(--border)] text-[color:var(--muted)] hover:border-[color:var(--accent)]/50"
               }`}
             >
               {filter}
@@ -162,49 +160,46 @@ export default function ProjectsPageEn({ searchParams }: PageProps) {
           {filteredProjects.map((project) => (
             <article
               key={project.slug}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col gap-5"
+              className="card p-6 flex flex-col gap-5"
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h2 className="text-xl font-semibold text-white">
+                  <h2 className="text-xl font-semibold text-[color:var(--foreground)]">
                     {project.title}
                   </h2>
-                  <p className="text-sm text-slate-300 mt-2">
+                  <p className="text-sm text-[color:var(--muted)] mt-2">
                     {project.tagline}
                   </p>
                 </div>
-                <span className="text-xs uppercase tracking-[0.3em] text-slate-400">
+                <span className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
                   {project.role}
                 </span>
               </div>
 
-              <p className="text-sm text-slate-400 leading-relaxed">
+              <p className="text-sm text-[color:var(--muted)] leading-relaxed">
                 {project.highlights[0] ??
                   project.features[0] ??
                   project.problem[0]}
               </p>
 
-              <div className="text-xs text-slate-400">
-                <span className="uppercase tracking-[0.2em] text-slate-500">
+              <div className="text-xs text-[color:var(--muted)]">
+                <span className="uppercase tracking-[0.2em] text-[color:var(--muted)]">
                   {siteEn.projectsPage.demonstratesLabel}
                 </span>
-                <p className="mt-2 text-slate-300">
+                <p className="mt-2 text-[color:var(--muted)]">
                   {project.demonstrates[0]}
                 </p>
               </div>
 
-              <ul className="flex flex-wrap gap-2 text-xs text-slate-200">
+              <ul className="flex flex-wrap gap-2 text-xs text-[color:var(--muted)]">
                 {project.stack.map((tech) => (
-                  <li
-                    key={tech}
-                    className="rounded-full border border-white/10 px-3 py-1"
-                  >
+                  <li key={tech} className="chip">
                     {tech}
                   </li>
                 ))}
               </ul>
 
-              <div className="flex flex-wrap gap-3 pt-2 text-xs text-slate-200">
+              <div className="flex flex-wrap gap-3 pt-2 text-xs text-[color:var(--muted)]">
                 <TrackedLink
                   href={`/en/projects/${project.slug}`}
                   tracking={{
@@ -212,7 +207,7 @@ export default function ProjectsPageEn({ searchParams }: PageProps) {
                     category: "engagement",
                     label: project.slug,
                   }}
-                  className="rounded-full border border-white/20 px-4 py-2 font-semibold text-white transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                  className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                 >
                   {siteEn.projectsPage.caseLabel}
                 </TrackedLink>
@@ -225,7 +220,7 @@ export default function ProjectsPageEn({ searchParams }: PageProps) {
                     category: "outbound",
                     label: project.slug,
                   }}
-                  className="rounded-full border border-white/10 px-4 py-2 transition hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                  className="rounded-full border border-[color:var(--border)] px-4 py-2 transition hover:border-[color:var(--accent)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                 >
                   {siteEn.projects.modal.githubLabel}
                 </TrackedAnchor>
@@ -234,12 +229,12 @@ export default function ProjectsPageEn({ searchParams }: PageProps) {
                     href={project.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full border border-emerald-400/40 px-4 py-2 text-emerald-200 transition hover:border-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
+                    className="rounded-full border border-[color:var(--accent)]/40 px-4 py-2 text-[color:var(--accent)] transition hover:border-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                   >
                     {siteEn.projects.modal.demoLabel}
                   </TrackedAnchor>
                 ) : (
-                  <span className="rounded-full border border-white/10 px-4 py-2 text-slate-400">
+                  <span className="rounded-full border border-[color:var(--border)] px-4 py-2 text-[color:var(--muted)]">
                     {siteEn.demos.demoSoonLabel}
                   </span>
                 )}

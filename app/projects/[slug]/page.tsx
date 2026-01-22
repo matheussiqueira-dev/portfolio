@@ -145,27 +145,27 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
   };
 
   return (
-    <main className="min-h-screen px-6 py-24">
+    <main className="min-h-screen px-6 pt-28 pb-20">
       <JsonLd data={[projectJsonLd, breadcrumbJsonLd]} />
       <div className="max-w-6xl mx-auto">
         <header className="space-y-6">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 text-sm text-slate-300 underline decoration-white/20 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+            className="inline-flex items-center gap-2 text-sm text-[color:var(--muted)] underline decoration-[color:var(--border)] underline-offset-4 transition hover:text-[color:var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
           >
             {sitePt.projectDetail.backLabel}
           </Link>
           <div className="space-y-3">
-            <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
+            <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
               {sitePt.projects.cardLabel}
             </p>
-            <h1 className="text-4xl md:text-5xl font-semibold text-white">
+            <h1 className="text-4xl md:text-5xl font-semibold text-[color:var(--foreground)]">
               {project.title}
             </h1>
-            <p className="text-lg text-slate-300 max-w-3xl">
+            <p className="text-lg text-[color:var(--muted)] max-w-3xl">
               {project.tagline}
             </p>
-            <p className="text-sm text-slate-400">
+            <p className="text-sm text-[color:var(--muted)]">
               {sitePt.projectDetail.roleLabel}: {project.role}
             </p>
           </div>
@@ -175,7 +175,7 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
               href={project.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-white/20 px-4 py-2 text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+              className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
               {sitePt.projects.modal.githubLabel}
             </a>
@@ -184,19 +184,19 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
                 href={project.demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-white px-4 py-2 font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
               >
                 {sitePt.projects.modal.demoLabel}
               </a>
             ) : (
-              <span className="rounded-full border border-white/10 px-4 py-2 text-slate-400">
+              <span className="rounded-full border border-[color:var(--border)] px-4 py-2 text-[color:var(--muted)]">
                 {sitePt.demos.demoSoonLabel}
               </span>
             )}
           </div>
 
           {cover ? (
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-3">
+            <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-3 shadow-sm">
               <Image
                 src={cover.src}
                 alt={cover.alt}
@@ -212,20 +212,20 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
 
         <div className="mt-14 grid gap-12">
           <section id="contexto" className="scroll-mt-20">
-            <h2 className="text-2xl font-semibold text-white mb-4">
+            <h2 className="text-2xl font-semibold text-[color:var(--foreground)] mb-4">
               {sitePt.projectDetail.contextTitle}
             </h2>
-            <p className="text-base text-slate-300">{project.tagline}</p>
+            <p className="text-base text-[color:var(--muted)]">{project.tagline}</p>
           </section>
 
           <section id="problema" className="scroll-mt-20">
-            <h2 className="text-2xl font-semibold text-white mb-4">
+            <h2 className="text-2xl font-semibold text-[color:var(--foreground)] mb-4">
               {sitePt.projectDetail.problemTitle}
             </h2>
-            <ul className="space-y-2 text-slate-300">
+            <ul className="space-y-2 text-[color:var(--muted)]">
               {project.problem.map((item) => (
                 <li key={item} className="flex gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[color:var(--accent)]" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -233,13 +233,13 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
           </section>
 
           <section id="dados" className="scroll-mt-20">
-            <h2 className="text-2xl font-semibold text-white mb-4">
+            <h2 className="text-2xl font-semibold text-[color:var(--foreground)] mb-4">
               {sitePt.projectDetail.dataTitle}
             </h2>
-            <ul className="space-y-2 text-slate-300">
+            <ul className="space-y-2 text-[color:var(--muted)]">
               {project.dataUsed.map((item) => (
                 <li key={item} className="flex gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-sky-400" />
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[color:var(--accent-soft)]" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -247,13 +247,13 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
           </section>
 
           <section id="solucao" className="scroll-mt-20">
-            <h2 className="text-2xl font-semibold text-white mb-4">
+            <h2 className="text-2xl font-semibold text-[color:var(--foreground)] mb-4">
               {sitePt.projectDetail.solutionTitle}
             </h2>
-            <ul className="space-y-2 text-slate-300">
+            <ul className="space-y-2 text-[color:var(--muted)]">
               {project.solution.map((item) => (
                 <li key={item} className="flex gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[color:var(--accent-soft)]" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -261,13 +261,13 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
           </section>
 
           <section id="funcionalidades" className="scroll-mt-20">
-            <h2 className="text-2xl font-semibold text-white mb-4">
+            <h2 className="text-2xl font-semibold text-[color:var(--foreground)] mb-4">
               {sitePt.projectDetail.featuresTitle}
             </h2>
-            <ul className="space-y-2 text-slate-300">
+            <ul className="space-y-2 text-[color:var(--muted)]">
               {project.features.map((item) => (
                 <li key={item} className="flex gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[color:var(--accent)]" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -275,13 +275,13 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
           </section>
 
           <section id="impacto" className="scroll-mt-20">
-            <h2 className="text-2xl font-semibold text-white mb-4">
+            <h2 className="text-2xl font-semibold text-[color:var(--foreground)] mb-4">
               {sitePt.projectDetail.impactTitle}
             </h2>
-            <ul className="space-y-2 text-slate-300">
+            <ul className="space-y-2 text-[color:var(--muted)]">
               {project.highlights.map((item) => (
                 <li key={item} className="flex gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-amber-400" />
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[color:var(--accent)]" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -289,15 +289,12 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
           </section>
 
           <section id="stack" className="scroll-mt-20">
-            <h2 className="text-2xl font-semibold text-white mb-4">
+            <h2 className="text-2xl font-semibold text-[color:var(--foreground)] mb-4">
               {sitePt.projectDetail.stackTitle}
             </h2>
             <div className="flex flex-wrap gap-2">
               {project.stack.map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-200"
-                >
+                <span key={tech} className="chip">
                   {tech}
                 </span>
               ))}
@@ -305,13 +302,13 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
           </section>
 
           <section id="demonstracao" className="scroll-mt-20">
-            <h2 className="text-2xl font-semibold text-white mb-4">
+            <h2 className="text-2xl font-semibold text-[color:var(--foreground)] mb-4">
               {sitePt.projectDetail.demonstratesTitle}
             </h2>
-            <ul className="space-y-2 text-slate-300">
+            <ul className="space-y-2 text-[color:var(--muted)]">
               {project.demonstrates.map((item) => (
                 <li key={item} className="flex gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[color:var(--accent-soft)]" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -319,10 +316,10 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
           </section>
 
           <section id="como-executar" className="scroll-mt-20">
-            <h2 className="text-2xl font-semibold text-white mb-4">
+            <h2 className="text-2xl font-semibold text-[color:var(--foreground)] mb-4">
               {sitePt.projectDetail.howToRunTitle}
             </h2>
-            <ol className="list-decimal list-inside space-y-2 text-slate-300">
+            <ol className="list-decimal list-inside space-y-2 text-[color:var(--muted)]">
               {project.howToRun.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -330,7 +327,7 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
           </section>
 
           <section id="links" className="scroll-mt-20">
-            <h2 className="text-2xl font-semibold text-white mb-4">
+            <h2 className="text-2xl font-semibold text-[color:var(--foreground)] mb-4">
               {sitePt.projectDetail.linksTitle}
             </h2>
             <div className="flex flex-wrap gap-3 text-sm">
@@ -338,7 +335,7 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
                 href={project.repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-white/20 px-4 py-2 text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
               >
                 {sitePt.projects.modal.githubLabel}
               </a>
@@ -347,12 +344,12 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
                   href={project.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-white px-4 py-2 font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                  className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                 >
                   {sitePt.projects.modal.demoLabel}
                 </a>
               ) : (
-                <span className="rounded-full border border-white/10 px-4 py-2 text-slate-400">
+                <span className="rounded-full border border-[color:var(--border)] px-4 py-2 text-[color:var(--muted)]">
                   {sitePt.demos.demoSoonLabel}
                 </span>
               )}
@@ -360,7 +357,7 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
           </section>
 
           <section id="capturas" className="scroll-mt-20">
-            <h2 className="text-2xl font-semibold text-white mb-4">
+            <h2 className="text-2xl font-semibold text-[color:var(--foreground)] mb-4">
               {sitePt.projectDetail.galleryTitle}
             </h2>
             <MediaGallery
@@ -372,16 +369,16 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
           </section>
         </div>
 
-        <div className="mt-16 rounded-3xl border border-white/10 bg-white/5 p-8 flex flex-col gap-4">
-          <h2 className="text-2xl font-semibold text-white">
+        <div className="mt-16 rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 flex flex-col gap-4 shadow-sm">
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
             {sitePt.projectDetail.ctaTitle}
           </h2>
-          <p className="text-slate-300 max-w-2xl">
+          <p className="text-[color:var(--muted)] max-w-2xl">
             {sitePt.projectDetail.ctaBody}
           </p>
           <Link
             href="/#contact"
-            className="w-fit rounded-full bg-white px-5 py-2 text-sm font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+            className="btn-primary w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
           >
             {sitePt.projectDetail.ctaButton}
           </Link>

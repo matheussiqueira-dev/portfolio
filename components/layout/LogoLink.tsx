@@ -11,7 +11,7 @@ export default function LogoLink() {
   return (
     <Link
       href={href}
-      className="font-semibold text-white tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
+      className="text-sm font-semibold tracking-[0.08em] uppercase text-[color:var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40 rounded"
     >
       Matheus Siqueira
     </Link>

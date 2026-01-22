@@ -1,28 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio - Matheus Siqueira
 
-## Getting Started
+Portfolio profissional com foco em Dados, BI e Desenvolvimento Web.
+Projeto em Next.js (App Router) com conteudo bilingue (PT/EN), projetos com estudos de caso,
+certificados locais e paginas otimizadas para SEO.
 
-First, run the development server:
+## Visao geral
+- Home com CTA para projetos, curriculo e contato.
+- Paginas de projetos com cases e galeria de midia.
+- Certificados com PDFs locais.
+- Curriculo completo em /resume e /en/resume.
+- SEO com JSON-LD, sitemap.xml e robots.txt.
+
+## Stack
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- Vercel Speed Insights
+
+## Estrutura do projeto
+- `app/` rotas e paginas (App Router)
+- `components/` UI e secao de conteudo
+- `data/` conteudo estatico (projetos, certificados, textos)
+- `lib/` utilitarios (i18n, analytics, SEO)
+- `public/` imagens, PDFs e midias
+
+## Como rodar
+Instalar dependencias:
+
+```bash
+npm install
+```
+
+Desenvolvimento:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build de producao:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Servidor de producao:
 
-## Environment Variables
+```bash
+npm run start
+```
 
-Set these in Vercel or your local `.env.local`:
+## Scripts
+- `npm run dev` inicia o dev server
+- `npm run build` build de producao
+- `npm run start` serve o build
+- `npm run lint` lint
+- `npm run format` formatacao
+- `npm run validate` lint + format + build
+- `npm run clean` limpa `.next` e caches
+
+## Variaveis de ambiente
+Defina em `.env.local` ou no Vercel:
 
 ```
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
@@ -31,33 +69,69 @@ NEXT_PUBLIC_GSC_VERIFICATION=your_value_here
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your_value_here
 ```
 
-## Windows (EPERM/OneDrive) — solucao definitiva
+## Conteudo
 
-Se voce estiver rodando o projeto dentro do OneDrive, e comum ver erros de
-`EPERM` ou `lock` ao apagar a pasta `.next`.
+### Projetos
+Os dados ficam em:
+- `data/projects.ts` (PT)
+- `data/projects.en.ts` (EN)
 
-Recomendado (melhor opcao):
-- Mova o repositorio para `C:\\dev\\portfolio` (fora do OneDrive).
-- Rode `npm install` e `npm run dev` normalmente.
+Midias devem ficar em `public/projects/<slug>/`.
 
-Se nao puder mover agora, use a mitigacao abaixo:
-1) Limpar caches antes de build/dev:
+Para adicionar um video:
+1. Coloque o arquivo em `public/projects/<slug>/demo.mp4`.
+2. No objeto do projeto, adicione um item em `screenshots`:
+
+```ts
+{
+  src: "/projects/<slug>/demo.mp4",
+  alt: "Demo do projeto <slug>",
+  type: "video",
+}
 ```
+
+### Certificados
+Dados:
+- `data/certificates.pt.ts`
+- `data/certificates.en.ts`
+
+PDFs:
+- `public/certificates/<provider>/arquivo.pdf`
+
+A pagina `/academico` tambem lista certificados a partir do filesystem.
+
+### SEO
+- Sitemap: `app/sitemap.ts`
+- Robots: `app/robots.ts`
+- JSON-LD: paginas em `app/*/page.tsx`
+- Base URL: `lib/seo.ts`
+
+## Deploy
+Deploy recomendado no Vercel, apontando para a branch `main`.
+O build usa `npm run build`.
+
+## Windows (EPERM/OneDrive)
+Se o projeto estiver dentro do OneDrive, pode haver erro de lock ao apagar `.next`.
+
+Recomendado:
+- Mova o repo para `C:\\dev\\portfolio` (fora do OneDrive).
+
+Mitigacao rapida:
+
+```bash
 npm run clean
 ```
 
-2) Encerrar processos presos nas portas 3000/3001:
-```
+Encerrar processos presos nas portas 3000/3001:
+
+```powershell
 Get-NetTCPConnection -LocalPort 3000,3001 |
   Select-Object -ExpandProperty OwningProcess |
   Sort-Object -Unique |
   ForEach-Object { Stop-Process -Id $_ -Force }
 ```
 
-3) Se o lock persistir, feche o OneDrive momentaneamente e tente novamente.
-
 ## Lighthouse (Core Web Vitals)
-
 Rodar localmente no PowerShell:
 
 ```powershell
@@ -70,26 +144,3 @@ Em outro terminal:
 npx lighthouse http://localhost:3002/ --preset=mobile --only-categories=performance --output=json --output-path=REPORT.cwv.mobile.json --quiet
 npx lighthouse http://localhost:3002/ --preset=desktop --only-categories=performance --output=json --output-path=REPORT.cwv.desktop.json --quiet
 ```
-
-
-## Checklist de validacao (pre-deploy)
-- ✅ build ok
-- ✅ sitemap ok
-- ✅ tags GA + verification ok (via env)
-- ✅ PT padrao / EN funcional
-- ✅ projects e cases funcionando
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

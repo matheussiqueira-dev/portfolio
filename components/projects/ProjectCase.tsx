@@ -17,18 +17,18 @@ export default function ProjectCase({ project, labels, localePrefix = "" }: Prop
       <div className="max-w-5xl mx-auto space-y-10">
         <Link
           href={backHref}
-          className="text-sm text-slate-300 underline decoration-white/30 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
+          className="text-sm text-[color:var(--muted)] underline decoration-[color:var(--border)] underline-offset-4 transition hover:text-[color:var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40 rounded"
         >
           {labels.backLabel}
         </Link>
 
         <header className="space-y-4">
-          <h1 className="text-3xl md:text-4xl font-semibold text-white">
+          <h1 className="text-3xl md:text-4xl font-semibold text-[color:var(--foreground)]">
             {project.title}
           </h1>
-          <p className="text-lg text-slate-300">{project.tagline}</p>
-          <div className="flex flex-wrap items-center gap-3 text-sm text-slate-300">
-            <span className="uppercase tracking-[0.2em] text-slate-500 text-xs">
+          <p className="text-lg text-[color:var(--muted)]">{project.tagline}</p>
+          <div className="flex flex-wrap items-center gap-3 text-sm text-[color:var(--muted)]">
+            <span className="uppercase tracking-[0.2em] text-[color:var(--muted)] text-xs">
               {labels.roleLabel}
             </span>
             <span>{project.role}</span>
@@ -38,7 +38,7 @@ export default function ProjectCase({ project, labels, localePrefix = "" }: Prop
               href={project.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-white/20 px-4 py-2 text-xs text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+              className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
               GitHub
             </a>
@@ -47,7 +47,7 @@ export default function ProjectCase({ project, labels, localePrefix = "" }: Prop
                 href={project.demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
               >
                 Demo
               </a>
@@ -56,13 +56,13 @@ export default function ProjectCase({ project, labels, localePrefix = "" }: Prop
         </header>
 
         <section className="space-y-3">
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
             {labels.contextTitle}
           </h2>
-          <ul className="space-y-2 text-sm text-slate-300">
+          <ul className="space-y-2 text-sm text-[color:var(--muted)]">
             {project.problem.map((item) => (
               <li key={item} className="flex gap-2">
-                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-amber-400" />
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[color:var(--accent)]" />
                 <span>{item}</span>
               </li>
             ))}
@@ -70,13 +70,13 @@ export default function ProjectCase({ project, labels, localePrefix = "" }: Prop
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
             {labels.solutionTitle}
           </h2>
-          <ul className="space-y-2 text-sm text-slate-300">
+          <ul className="space-y-2 text-sm text-[color:var(--muted)]">
             {project.solution.map((item) => (
               <li key={item} className="flex gap-2">
-                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[color:var(--accent-soft)]" />
                 <span>{item}</span>
               </li>
             ))}
@@ -84,13 +84,13 @@ export default function ProjectCase({ project, labels, localePrefix = "" }: Prop
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
             {labels.featuresTitle}
           </h2>
-          <ul className="space-y-2 text-sm text-slate-300">
+          <ul className="space-y-2 text-sm text-[color:var(--muted)]">
             {project.features.map((item) => (
               <li key={item} className="flex gap-2">
-                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-sky-400" />
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[color:var(--accent)]" />
                 <span>{item}</span>
               </li>
             ))}
@@ -98,15 +98,12 @@ export default function ProjectCase({ project, labels, localePrefix = "" }: Prop
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
             {labels.stackTitle}
           </h2>
           <div className="flex flex-wrap gap-2">
             {project.stack.map((item) => (
-              <span
-                key={item}
-                className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-200"
-              >
+              <span key={item} className="chip">
                 {item}
               </span>
             ))}
@@ -114,17 +111,17 @@ export default function ProjectCase({ project, labels, localePrefix = "" }: Prop
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
             {labels.galleryTitle}
           </h2>
           <MediaGallery items={project.screenshots} />
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
             {labels.howToRunTitle}
           </h2>
-          <ol className="space-y-2 text-sm text-slate-300 list-decimal list-inside">
+          <ol className="space-y-2 text-sm text-[color:var(--muted)] list-decimal list-inside">
             {project.howToRun.map((item) => (
               <li key={item}>{item}</li>
             ))}

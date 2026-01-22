@@ -20,22 +20,22 @@ export default function Error({
         <div className="min-h-screen flex items-center justify-center px-6 py-24">
             <div className="max-w-md w-full text-center space-y-6">
                 <div className="space-y-2">
-                    <h1 className="text-4xl font-bold text-white">
+                    <h1 className="text-4xl font-bold text-[color:var(--foreground)]">
                         Algo deu errado
                     </h1>
-                    <p className="text-white/70 text-lg">
+                    <p className="text-[color:var(--muted)] text-lg">
                         Ocorreu um erro inesperado
                     </p>
                 </div>
 
                 {process.env.NODE_ENV === 'development' && (
-                    <div className="p-4 bg-white/5 rounded-lg border border-white/10 text-left">
-                        <p className="text-xs text-white/50 mb-2">Detalhes do erro (dev only):</p>
-                        <p className="text-sm text-white/80 font-mono break-all">
+                    <div className="p-4 bg-[color:var(--surface)] rounded-lg border border-[color:var(--border)] text-left shadow-sm">
+                        <p className="text-xs text-[color:var(--muted)] mb-2">Detalhes do erro (dev only):</p>
+                        <p className="text-sm text-[color:var(--foreground)] font-mono break-all">
                             {error.message}
                         </p>
                         {error.digest && (
-                            <p className="text-xs text-white/40 mt-2">
+                            <p className="text-xs text-[color:var(--muted)] mt-2">
                                 Digest: {error.digest}
                             </p>
                         )}
@@ -45,14 +45,14 @@ export default function Error({
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <button
                         onClick={reset}
-                        className="px-6 py-3 bg-white text-black rounded-lg font-medium hover:bg-white/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                        className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                     >
                         Tentar novamente
                     </button>
 
                     <a
                         href="/"
-                        className="px-6 py-3 border border-white/20 text-white rounded-lg font-medium hover:border-white/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                        className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                     >
                         Voltar ao início
                     </a>

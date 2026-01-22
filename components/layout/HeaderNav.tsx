@@ -40,21 +40,21 @@ export default function HeaderNav() {
   return (
     <>
       <nav
-        className="hidden md:flex items-center gap-6 text-sm text-slate-300"
+        className="hidden md:flex items-center gap-6 text-sm text-[color:var(--muted)]"
         aria-label={navLabel}
       >
         {navItems.map((item) => (
           <Link
             key={item.href}
             href={item.href}
-            className="transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
+            className="transition hover:text-[color:var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40 rounded"
           >
             {item.label}
           </Link>
         ))}
       </nav>
 
-      <div className="hidden md:flex items-center gap-4 text-sm text-slate-200">
+      <div className="hidden md:flex items-center gap-4 text-sm text-[color:var(--muted)]">
         <LanguageSwitch />
       </div>
 

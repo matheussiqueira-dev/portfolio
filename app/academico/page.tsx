@@ -196,26 +196,26 @@ export default function AcademicoPage() {
   const certificateFiles = getCertificateFiles();
 
   return (
-    <main className="min-h-screen px-6 py-24">
+    <main className="min-h-screen px-6 pt-28 pb-20">
       <div className="max-w-6xl mx-auto space-y-16">
         <header className="space-y-4">
-          <h1 className="text-4xl md:text-5xl font-semibold text-white">
+          <h1 className="text-4xl md:text-5xl font-semibold text-[color:var(--foreground)]">
             Acadêmico
           </h1>
-          <h2 className="text-xl md:text-2xl font-semibold text-slate-200">
+          <h2 className="text-xl md:text-2xl font-semibold text-[color:var(--muted-strong)]">
             Formação, especializações, cursos e competências técnicas
           </h2>
-          <p className="text-base md:text-lg text-slate-300 max-w-4xl">
+          <p className="text-base md:text-lg text-[color:var(--muted)] max-w-4xl">
             Analista de Dados Júnior | Power BI | SQL | Python | BI | Business
             Intelligence | ETL | DAX | Power Query.
           </p>
         </header>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
             Formação Acadêmica
           </h2>
-          <ul className="list-disc list-inside space-y-2 text-slate-300">
+          <ul className="list-disc list-inside space-y-2 text-[color:var(--muted)]">
             {education.map((item) => (
               <li key={item}>{item}</li>
             ))}
@@ -223,14 +223,14 @@ export default function AcademicoPage() {
         </section>
 
         <section className="space-y-8">
-          <h2 className="text-2xl font-semibold text-white">Certificados</h2>
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">Certificados</h2>
           <div className="grid gap-6 md:grid-cols-3">
             {Object.entries(certificates).map(([issuer, items]) => (
               <div key={issuer} className="space-y-3">
-                <h3 className="text-sm uppercase tracking-[0.2em] text-slate-400">
+                <h3 className="text-sm uppercase tracking-[0.2em] text-[color:var(--muted)]">
                   {issuer}
                 </h3>
-                <ul className="list-disc list-inside space-y-1 text-slate-300">
+                <ul className="list-disc list-inside space-y-1 text-[color:var(--muted)]">
                   {items.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
@@ -241,17 +241,17 @@ export default function AcademicoPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-white">Skills</h2>
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">Skills</h2>
           <div className="grid gap-6 md:grid-cols-2">
             {skillGroups.map((group) => (
               <div
                 key={group.title}
-                className="rounded-2xl border border-white/10 bg-white/5 p-6 space-y-3"
+                className="card p-6 space-y-3"
               >
-                <h3 className="text-sm uppercase tracking-[0.2em] text-slate-400">
+                <h3 className="text-sm uppercase tracking-[0.2em] text-[color:var(--muted)]">
                   {group.title}
                 </h3>
-                <ul className="list-disc list-inside space-y-1 text-sm text-slate-300">
+                <ul className="list-disc list-inside space-y-1 text-sm text-[color:var(--muted)]">
                   {group.items.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
@@ -262,7 +262,7 @@ export default function AcademicoPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-white">Arquivos</h2>
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">Arquivos</h2>
           {certificateFiles.length > 0 ? (
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {certificateFiles.map((file) => (
@@ -271,7 +271,7 @@ export default function AcademicoPage() {
                   href={file.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200 transition hover:border-white/20 hover:bg-white/10"
+                  className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-3 text-sm text-[color:var(--foreground)] transition hover:border-[color:var(--accent)]/40"
                 >
                   {formatFileLabel(file.name)}
                 </a>
@@ -282,7 +282,7 @@ export default function AcademicoPage() {
               href={driveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-fit rounded-full border border-white/20 px-5 py-2 text-sm text-slate-200 transition hover:border-white/40"
+              className="btn-outline w-fit"
             >
               Ver pasta completa no Drive
             </a>

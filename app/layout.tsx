@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 import Header from "@/components/layout/Header";
 import JsonLd from "@/components/seo/JsonLd";
@@ -9,14 +9,16 @@ import "./globals.css";
 // Google Tag Manager ID
 const GTM_ID = "GTM-WR93ZJ8C";
 
-const geistSans = Geist({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  variable: "--font-space-grotesk",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
+const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-geist-mono",
+  variable: "--font-jetbrains-mono",
+  display: "swap",
 });
 
 const siteTitle = `${siteName} | Analista de Dados Júnior | Power BI | SQL | Python | BI`;
@@ -160,7 +162,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-black text-white`}
+        className={`${spaceGrotesk.variable} ${jetBrainsMono.variable} min-h-screen antialiased`}
       >
         {/* Google Tag Manager - NoScript fallback */}
         <noscript>

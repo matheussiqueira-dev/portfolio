@@ -71,16 +71,14 @@ export const metadata: Metadata = {
 
 export default function ContratePage() {
   return (
-    <main className="min-h-screen px-6 py-24">
+    <main className="min-h-screen px-6 pt-28 pb-20">
       <div className="max-w-6xl mx-auto space-y-16">
         <header className="space-y-4">
-          <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
-            Recrutadores e gestores de dados
-          </p>
-          <h1 className="text-4xl md:text-5xl font-semibold text-white">
+          <p className="eyebrow">Recrutadores e gestores de dados</p>
+          <h1 className="text-4xl md:text-5xl font-semibold text-[color:var(--foreground)]">
             Matheus Siqueira — Analista de Dados Júnior | Power BI | SQL | Python
           </h1>
-          <p className="text-lg text-slate-300 max-w-3xl">
+          <p className="text-lg text-[color:var(--muted)] max-w-3xl">
             Experiência em Business Intelligence, dashboards e automação de
             análises para decisões de negócio. Disponível para oportunidades no
             Brasil (remoto ou híbrido).
@@ -90,13 +88,13 @@ export default function ContratePage() {
               href="https://wa.me/5581999203683"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+              className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
               Entrar em contato
             </a>
             <a
               href="mailto:matheussiqueirahub@gmail.com"
-              className="rounded-full border border-white/20 px-6 py-3 text-sm text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+              className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
               Enviar e-mail
             </a>
@@ -104,7 +102,7 @@ export default function ContratePage() {
               href="https://www.linkedin.com/in/matheussiqueira-dev/"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-[#0A66C2]/60 bg-[#0A66C2]/20 px-6 py-3 text-sm text-[#70B5F9] transition hover:bg-[#0A66C2]/30 hover:border-[#0A66C2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/60"
+              className="rounded-full border border-[#0A66C2]/50 bg-white px-6 py-3 text-sm text-[#0A66C2] transition hover:border-[#0A66C2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/40"
             >
               LinkedIn
             </a>
@@ -112,25 +110,25 @@ export default function ContratePage() {
         </header>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
             Como eu gero valor
           </h2>
-          <ul className="list-disc list-inside space-y-2 text-slate-300">
+          <ul className="list-disc list-inside space-y-2 text-[color:var(--muted)]">
             {valueDelivery.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
         </section>
 
-        <section className="rounded-3xl border border-white/10 bg-white/5 p-8 space-y-6">
-          <h2 className="text-2xl font-semibold text-white">Stack na prática</h2>
+        <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 space-y-6 shadow-sm">
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">Stack na prática</h2>
           <div className="grid gap-6 md:grid-cols-3">
             {Object.entries(practicalStack).map(([title, items]) => (
               <div key={title} className="space-y-3">
-                <h3 className="text-sm uppercase tracking-[0.2em] text-slate-400">
+                <h3 className="text-sm uppercase tracking-[0.2em] text-[color:var(--muted)]">
                   {title}
                 </h3>
-                <ul className="list-disc list-inside text-sm text-slate-300 space-y-1">
+                <ul className="list-disc list-inside text-sm text-[color:var(--muted)] space-y-1">
                   {items.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
@@ -141,37 +139,34 @@ export default function ContratePage() {
         </section>
 
         <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
             Projetos que demonstram capacidade
           </h2>
           <div className="grid gap-6 md:grid-cols-2">
             {featuredProjects.map((project) => (
               <article
                 key={project.slug}
-                className="rounded-2xl border border-white/10 bg-white/5 p-6 space-y-4"
+                className="card p-6 space-y-4"
               >
                 <div>
-                  <h3 className="text-lg font-semibold text-white">
+                  <h3 className="text-lg font-semibold text-[color:var(--foreground)]">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-slate-300">{project.tagline}</p>
+                  <p className="text-sm text-[color:var(--muted)]">{project.tagline}</p>
                 </div>
-                <p className="text-sm text-slate-300">
+                <p className="text-sm text-[color:var(--muted)]">
                   {project.highlights[0] ?? project.problem[0]}
                 </p>
-                <div className="flex flex-wrap gap-2 text-xs text-slate-200">
+                <div className="flex flex-wrap gap-2 text-xs text-[color:var(--muted)]">
                   {project.stack.slice(0, 6).map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-full border border-white/10 px-3 py-1"
-                    >
+                    <span key={tech} className="chip">
                       {tech}
                     </span>
                   ))}
                 </div>
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="inline-flex w-fit text-sm text-emerald-200 underline decoration-emerald-400/50 underline-offset-4 transition hover:text-emerald-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
+                  className="inline-flex w-fit text-sm text-[color:var(--accent)] underline decoration-[color:var(--accent-soft)]/60 underline-offset-4 transition hover:text-[color:var(--accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                 >
                   Ver case completo
                 </Link>
@@ -180,11 +175,11 @@ export default function ContratePage() {
           </div>
         </section>
 
-        <section className="rounded-3xl border border-white/10 bg-white/5 p-8 space-y-4">
-          <h2 className="text-2xl font-semibold text-white">
+        <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 space-y-4 shadow-sm">
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
             Vamos conversar?
           </h2>
-          <p className="text-slate-300">
+          <p className="text-[color:var(--muted)]">
             Aberto a processos seletivos e entrevistas. Respondo rapidamente.
           </p>
           <div className="flex flex-wrap gap-3">
@@ -192,13 +187,13 @@ export default function ContratePage() {
               href="https://wa.me/5581999203683"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-white px-5 py-2 text-sm font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+              className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
               WhatsApp
             </a>
             <a
               href="mailto:matheussiqueirahub@gmail.com"
-              className="rounded-full border border-white/20 px-5 py-2 text-sm text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+              className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
               E-mail
             </a>
@@ -206,7 +201,7 @@ export default function ContratePage() {
               href="https://www.linkedin.com/in/matheussiqueira-dev/"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-[#0A66C2]/60 bg-[#0A66C2]/20 px-5 py-2 text-sm text-[#70B5F9] transition hover:bg-[#0A66C2]/30 hover:border-[#0A66C2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/60"
+              className="rounded-full border border-[#0A66C2]/50 bg-white px-5 py-2 text-sm text-[#0A66C2] transition hover:border-[#0A66C2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/40"
             >
               LinkedIn
             </a>

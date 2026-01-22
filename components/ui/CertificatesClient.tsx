@@ -50,17 +50,15 @@ export default function CertificatesClient({ content, certificates }: Props) {
     <div className="space-y-8">
       <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
-            {content.filterLabel}
-          </p>
+          <p className="eyebrow">{content.filterLabel}</p>
           <div className="flex flex-wrap gap-2">
             <button
               type="button"
               onClick={() => setActiveIssuer("all")}
-              className={`rounded-full border px-4 py-2 text-xs font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
+              className={`rounded-full border px-4 py-2 text-xs font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40 ${
                 activeIssuer === "all"
-                  ? "border-white/40 bg-white/10 text-white"
-                  : "border-white/10 text-slate-300 hover:border-white/30"
+                  ? "border-[color:var(--accent)]/50 bg-[color:var(--surface-muted)] text-[color:var(--foreground)]"
+                  : "border-[color:var(--border)] text-[color:var(--muted)] hover:border-[color:var(--accent)]/50"
               }`}
             >
               {content.allLabel}
@@ -70,10 +68,10 @@ export default function CertificatesClient({ content, certificates }: Props) {
                 key={issuer}
                 type="button"
                 onClick={() => setActiveIssuer(issuer)}
-                className={`rounded-full border px-4 py-2 text-xs font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
+                className={`rounded-full border px-4 py-2 text-xs font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40 ${
                   activeIssuer === issuer
-                    ? "border-white/40 bg-white/10 text-white"
-                    : "border-white/10 text-slate-300 hover:border-white/30"
+                    ? "border-[color:var(--accent)]/50 bg-[color:var(--surface-muted)] text-[color:var(--foreground)]"
+                    : "border-[color:var(--border)] text-[color:var(--muted)] hover:border-[color:var(--accent)]/50"
                 }`}
               >
                 {issuer}
@@ -91,34 +89,31 @@ export default function CertificatesClient({ content, certificates }: Props) {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder={content.searchPlaceholder}
-            className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200 placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+            className="w-full rounded-2xl border border-[color:var(--border)] bg-white px-4 py-3 text-sm text-[color:var(--foreground)] placeholder:text-[color:var(--muted)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             type="search"
           />
         </div>
       </div>
 
       {filtered.length === 0 ? (
-        <p className="text-sm text-slate-400">{content.emptyLabel}</p>
+        <p className="text-sm text-[color:var(--muted)]">{content.emptyLabel}</p>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((certificate) => (
             <article
               key={certificate.id}
-              className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-5"
+              className="flex flex-col gap-4 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-5 shadow-sm"
             >
               <div className="space-y-2">
-                <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
+                <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
                   {certificate.issuer}
                 </p>
-                <h3 className="text-base font-semibold text-white">
+                <h3 className="text-base font-semibold text-[color:var(--foreground)]">
                   {certificate.title}
                 </h3>
-                <div className="flex flex-wrap gap-2 text-xs text-slate-200">
+                <div className="flex flex-wrap gap-2 text-xs text-[color:var(--muted)]">
                   {certificate.areaTags.map((tag) => (
-                    <span
-                      key={`${certificate.id}-${tag}`}
-                      className="rounded-full border border-white/10 px-3 py-1"
-                    >
+                    <span key={`${certificate.id}-${tag}`} className="chip">
                       {tag}
                     </span>
                   ))}
@@ -130,7 +125,7 @@ export default function CertificatesClient({ content, certificates }: Props) {
                   href={certificate.pdfUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                  className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                   aria-label={`${content.openLabel}: ${certificate.title}`}
                 >
                   {content.openLabel}
@@ -140,7 +135,7 @@ export default function CertificatesClient({ content, certificates }: Props) {
                   target="_blank"
                   rel="noopener noreferrer"
                   download
-                  className="rounded-full border border-white/20 px-4 py-2 text-xs text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                  className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                   aria-label={`${content.downloadLabel}: ${certificate.title}`}
                 >
                   {content.downloadLabel}

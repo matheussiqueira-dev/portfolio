@@ -33,10 +33,10 @@ export default function MediaGallery({ items }: Props) {
         return (
           <figure
             key={item.src}
-            className="rounded-2xl border border-white/10 bg-white/5 p-4"
+            className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-4 shadow-sm"
           >
             <div
-              className={`relative w-full overflow-hidden rounded-xl border border-white/10 ${aspectClass}`}
+              className={`relative w-full overflow-hidden rounded-xl border border-[color:var(--border)] ${aspectClass}`}
             >
               {type === "video" ? (
                 <video
@@ -62,7 +62,7 @@ export default function MediaGallery({ items }: Props) {
                 />
               )}
             </div>
-            <figcaption className="mt-3 text-xs text-slate-400">
+            <figcaption className="mt-3 text-xs text-[color:var(--muted)]">
               {item.alt}
             </figcaption>
           </figure>

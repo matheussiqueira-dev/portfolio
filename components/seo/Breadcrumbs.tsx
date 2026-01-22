@@ -50,7 +50,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
 
             {/* Visual breadcrumbs for users */}
             <nav aria-label="Breadcrumb" className="mb-8">
-                <ol className="flex flex-wrap items-center gap-2 text-sm">
+                <ol className="flex flex-wrap items-center gap-2 text-sm text-[color:var(--muted)]">
                     {items.map((item, index) => {
                         const isLast = index === items.length - 1;
 
@@ -59,7 +59,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
                                 <li>
                                     {isLast ? (
                                         <span
-                                            className="text-white font-medium"
+                                            className="text-[color:var(--foreground)] font-medium"
                                             aria-current="page"
                                         >
                                             {item.name}
@@ -67,14 +67,14 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
                                     ) : (
                                         <a
                                             href={item.url}
-                                            className="text-white/60 hover:text-white transition-colors"
+                                            className="text-[color:var(--muted)] hover:text-[color:var(--foreground)] transition-colors"
                                         >
                                             {item.name}
                                         </a>
                                     )}
                                 </li>
                                 {!isLast && (
-                                    <li aria-hidden="true" className="text-white/40">
+                                    <li aria-hidden="true" className="text-[color:var(--border)]">
                                         /
                                     </li>
                                 )}

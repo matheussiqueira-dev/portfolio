@@ -7,42 +7,40 @@ type Props = {
 
 export default function Contact({ content }: Props) {
   return (
-    <section id="contact" className="scroll-mt-24 px-6 py-20 content-auto">
-      <div className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-start">
+    <section id="contact" className="page-section content-auto">
+      <div className="section-inner grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-start">
         <div className="space-y-4">
-          <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
-            {content.eyebrow}
-          </p>
-          <h2 className="text-3xl md:text-4xl font-semibold text-white">
+          <p className="eyebrow">{content.eyebrow}</p>
+          <h2 className="text-3xl md:text-4xl font-semibold text-[color:var(--foreground)]">
             {content.title}
           </h2>
-          <p className="text-base md:text-lg text-slate-300 leading-relaxed">
+          <p className="text-base md:text-lg text-[color:var(--muted)] leading-relaxed">
             {content.description}
           </p>
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-            <p className="text-sm font-semibold text-white">
+          <div className="card card-muted p-4">
+            <p className="text-sm font-semibold text-[color:var(--foreground)]">
               {content.ctaTitle}
             </p>
-            <p className="text-sm text-slate-400">{content.ctaSubtitle}</p>
+            <p className="text-sm text-[color:var(--muted)]">{content.ctaSubtitle}</p>
           </div>
         </div>
 
         <div className="flex flex-col gap-4">
           <a
             href="mailto:matheussiqueirahub@gmail.com"
-            className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-sm text-slate-200 transition hover:border-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+            className="flex items-center justify-between rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] px-5 py-4 text-sm text-[color:var(--foreground)] shadow-sm transition hover:border-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
           >
             <span>{content.cards.email}</span>
-            <span className="text-slate-400">matheussiqueirahub@gmail.com</span>
+            <span className="text-[color:var(--muted)]">matheussiqueirahub@gmail.com</span>
           </a>
           <a
             href="https://www.linkedin.com/in/matheussiqueira-dev/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between rounded-2xl border border-[#0A66C2]/40 bg-[#0A66C2]/10 px-5 py-4 text-sm text-[#70B5F9] transition hover:border-[#0A66C2] hover:bg-[#0A66C2]/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/60"
+            className="flex items-center justify-between rounded-2xl border border-[#0A66C2]/40 bg-white px-5 py-4 text-sm text-[#0A66C2] shadow-sm transition hover:border-[#0A66C2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/40"
           >
             <span>{content.cards.linkedin}</span>
-            <span className="text-[#70B5F9]/70">/matheussiqueira-dev</span>
+            <span className="text-[#0A66C2]/70">/matheussiqueira-dev</span>
           </a>
           <TrackedAnchor
             href="https://github.com/matheussiqueira-dev"
@@ -53,19 +51,19 @@ export default function Contact({ content }: Props) {
               category: "outbound",
               label: "github_profile",
             }}
-            className="flex items-center justify-between rounded-2xl border border-[#6e7681]/40 bg-[#24292f]/30 px-5 py-4 text-sm text-slate-100 transition hover:border-[#6e7681] hover:bg-[#24292f]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6e7681]/60"
+            className="flex items-center justify-between rounded-2xl border border-[#111827]/20 bg-white px-5 py-4 text-sm text-[#111827] shadow-sm transition hover:border-[#111827]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#111827]/30"
           >
             <span>{content.cards.github}</span>
-            <span className="text-slate-400">/matheussiqueira-dev</span>
+            <span className="text-[color:var(--muted)]">/matheussiqueira-dev</span>
           </TrackedAnchor>
           <a
             href="https://wa.me/5581999203683"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between rounded-2xl border border-emerald-400/40 bg-emerald-500/10 px-5 py-4 text-sm text-emerald-200 transition hover:border-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
+            className="flex items-center justify-between rounded-2xl border border-[color:var(--accent)]/40 bg-white px-5 py-4 text-sm text-[color:var(--accent)] shadow-sm transition hover:border-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
           >
             <span>{content.cards.whatsapp}</span>
-            <span className="text-emerald-300">+55 81 99920-3683</span>
+            <span className="text-[color:var(--accent)]">+55 81 99920-3683</span>
           </a>
         </div>
       </div>

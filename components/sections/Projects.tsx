@@ -36,16 +36,14 @@ export default function Projects() {
   const projectsHref = isEn ? "/en/projects" : "/projects";
 
   return (
-    <section id="projects" className="scroll-mt-24 px-6 py-20 content-auto">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="page-section content-auto">
+      <div className="section-inner">
         <div className="flex flex-col gap-4 mb-10">
-          <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
-            {content.eyebrow}
-          </p>
-          <h2 className="text-3xl md:text-4xl font-semibold text-white">
+          <p className="eyebrow">{content.eyebrow}</p>
+          <h2 className="text-3xl md:text-4xl font-semibold text-[color:var(--foreground)]">
             {content.title}
           </h2>
-          <p className="text-base text-slate-300 max-w-2xl">
+          <p className="text-base text-[color:var(--muted)] max-w-2xl">
             {content.description}
           </p>
         </div>
@@ -61,10 +59,10 @@ export default function Projects() {
             return (
               <article
                 key={project.slug}
-                className="rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col gap-4 transition hover:-translate-y-1 hover:border-white/20"
+                className="card p-6 flex flex-col gap-4 transition hover:-translate-y-1 hover:shadow-xl"
               >
                 {cover ? (
-                  <div className="relative aspect-[1200/630] w-full overflow-hidden rounded-xl border border-white/10">
+                  <div className="relative aspect-[1200/630] w-full overflow-hidden rounded-xl border border-[color:var(--border)]">
                     <ImageWithFallback
                       src={cover.src}
                       alt={cover.alt}
@@ -77,27 +75,27 @@ export default function Projects() {
                 ) : null}
 
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-lg font-semibold text-white">
+                  <h3 className="text-lg font-semibold text-[color:var(--foreground)]">
                     {project.title}
                   </h3>
-                  <span className="text-xs uppercase tracking-[0.3em] text-slate-400">
+                  <span className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
                     {content.cardLabel}
                   </span>
                 </div>
 
-                <p className="text-sm leading-relaxed text-slate-300">
+                <p className="text-sm leading-relaxed text-[color:var(--muted)]">
                   {project.tagline}
                 </p>
 
                 {highlights.length > 0 ? (
                   <div className="space-y-2">
-                    <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+                    <p className="text-xs uppercase tracking-[0.2em] text-[color:var(--muted)]">
                       {content.highlightLabel}
                     </p>
-                    <ul className="space-y-1 text-sm text-slate-300">
+                    <ul className="space-y-1 text-sm text-[color:var(--muted)]">
                       {highlights.map((item) => (
                         <li key={item} className="flex gap-2">
-                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[color:var(--accent-soft)]" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -109,7 +107,7 @@ export default function Projects() {
                   <button
                     type="button"
                     onClick={() => setSelectedProject(project)}
-                    className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                    className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                   >
                     {content.detailsLabel}
                   </button>
@@ -119,7 +117,7 @@ export default function Projects() {
                     onClick={() =>
                       trackEvent("view_case", "engagement", project.slug)
                     }
-                    className="text-xs text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
+                    className="text-xs text-[color:var(--muted)] underline decoration-[color:var(--border)] underline-offset-4 transition hover:text-[color:var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40 rounded"
                   >
                     {content.caseLabel}
                   </Link>
@@ -131,7 +129,7 @@ export default function Projects() {
                     onClick={() =>
                       trackEvent("click_github", "outbound", project.slug)
                     }
-                    className="text-xs text-slate-200 underline decoration-white/30 underline-offset-4 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 rounded"
+                    className="text-xs text-[color:var(--muted)] underline decoration-[color:var(--border)] underline-offset-4 transition hover:text-[color:var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40 rounded"
                   >
                     {content.modal.githubLabel}
                   </a>
@@ -144,7 +142,7 @@ export default function Projects() {
         <div className="mt-10">
           <Link
             href={projectsHref}
-            className="inline-flex items-center gap-2 text-sm text-emerald-200 underline decoration-emerald-400/50 underline-offset-4 transition hover:text-emerald-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60"
+            className="inline-flex items-center gap-2 text-sm text-[color:var(--accent)] underline decoration-[color:var(--accent-soft)]/60 underline-offset-4 transition hover:text-[color:var(--accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
           >
             {content.viewAllLabel}
           </Link>

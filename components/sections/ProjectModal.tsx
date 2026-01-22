@@ -65,43 +65,43 @@ export default function ProjectModal({ project, onClose }: Props) {
         id: "highlights",
         title: labels.highlightsTitle,
         items: project.highlights,
-        bulletClass: "bg-emerald-400",
+        bulletClass: "bg-[color:var(--accent-soft)]",
       },
       {
         id: "problem",
         title: labels.problemTitle,
         items: project.problem,
-        bulletClass: "bg-amber-400",
+        bulletClass: "bg-[color:var(--accent)]",
       },
       {
         id: "data",
         title: labels.dataTitle,
         items: project.dataUsed,
-        bulletClass: "bg-sky-400",
+        bulletClass: "bg-[color:var(--accent-soft)]",
       },
       {
         id: "solution",
         title: labels.solutionTitle,
         items: project.solution,
-        bulletClass: "bg-emerald-400",
+        bulletClass: "bg-[color:var(--accent-soft)]",
       },
       {
         id: "features",
         title: labels.featuresTitle,
         items: project.features,
-        bulletClass: "bg-sky-400",
+        bulletClass: "bg-[color:var(--accent)]",
       },
       {
         id: "demonstrates",
         title: labels.demonstratesTitle,
         items: project.demonstrates,
-        bulletClass: "bg-emerald-400",
+        bulletClass: "bg-[color:var(--accent-soft)]",
       },
       {
         id: "how-to-run",
         title: labels.howToRunTitle,
         items: project.howToRun,
-        bulletClass: "bg-amber-400",
+        bulletClass: "bg-[color:var(--accent)]",
       },
     ],
     [labels, project]
@@ -159,30 +159,31 @@ export default function ProjectModal({ project, onClose }: Props) {
 
   const modal = (
     <div
-      className="fixed inset-0 z-[70] flex items-start justify-center bg-black/70 p-4 sm:p-6 backdrop-blur-sm"
+      className="fixed inset-0 z-[70] bg-black/40 backdrop-blur-sm overflow-y-auto overscroll-contain"
+      style={{ WebkitOverflowScrolling: "touch" }}
       onClick={onClose}
     >
-      <div
-        ref={dialogRef}
-        id={dialogId}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby={titleId}
-        aria-describedby={descId}
-        tabIndex={-1}
-        style={{ WebkitOverflowScrolling: "touch" }}
-        className="w-full max-w-3xl max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain rounded-2xl border border-white/10 bg-[#0b0d10] p-6 text-slate-100 shadow-2xl motion-safe:animate-fade-in sm:max-h-[calc(100dvh-3rem)] sm:p-8"
-        onClick={(event) => event.stopPropagation()}
-      >
+      <div className="flex min-h-full items-start justify-center p-4 sm:p-6">
+        <div
+          ref={dialogRef}
+          id={dialogId}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={titleId}
+          aria-describedby={descId}
+          tabIndex={-1}
+          className="w-full max-w-3xl rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 text-[color:var(--foreground)] shadow-2xl motion-safe:animate-fade-in sm:p-8"
+          onClick={(event) => event.stopPropagation()}
+        >
         <div className="flex items-start justify-between gap-6">
           <div className="space-y-2">
-            <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
+            <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
               {labels.title}
             </p>
-            <h3 id={titleId} className="text-2xl font-semibold text-white">
+            <h3 id={titleId} className="text-2xl font-semibold text-[color:var(--foreground)]">
               {project.title}
             </h3>
-            <p id={descId} className="text-sm text-slate-300">
+            <p id={descId} className="text-sm text-[color:var(--muted)]">
               {project.tagline}
             </p>
           </div>
@@ -190,14 +191,14 @@ export default function ProjectModal({ project, onClose }: Props) {
             ref={closeButtonRef}
             type="button"
             onClick={onClose}
-            className="rounded-full border border-white/20 px-3 py-1 text-xs text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+            className="rounded-full border border-[color:var(--border)] px-3 py-1 text-xs text-[color:var(--muted)] transition hover:border-[color:var(--accent)] hover:text-[color:var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
           >
             {labels.closeLabel}
           </button>
         </div>
 
         {cover ? (
-          <div className="mt-6 relative aspect-[1200/630] w-full overflow-hidden rounded-xl border border-white/10">
+          <div className="mt-6 relative aspect-[1200/630] w-full overflow-hidden rounded-xl border border-[color:var(--border)]">
             <Image
               src={cover.src}
               alt={cover.alt}
@@ -209,13 +210,13 @@ export default function ProjectModal({ project, onClose }: Props) {
         ) : null}
 
         <div className="mt-6 flex flex-wrap gap-2">
-          <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-200">
+          <span className="rounded-full border border-[color:var(--border)] px-3 py-1 text-xs text-[color:var(--muted)]">
             {labels.roleLabel}: {project.role}
           </span>
           {project.stack.map((tech) => (
             <span
               key={tech}
-              className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-200"
+              className="rounded-full border border-[color:var(--border)] px-3 py-1 text-xs text-[color:var(--muted)]"
             >
               {tech}
             </span>
@@ -226,10 +227,10 @@ export default function ProjectModal({ project, onClose }: Props) {
           {sections.map((section) =>
             section.items.length > 0 ? (
               <section key={section.id}>
-                <h4 className="text-sm font-semibold text-white mb-3">
+                <h4 className="text-sm font-semibold text-[color:var(--foreground)] mb-3">
                   {section.title}
                 </h4>
-                <ul className="space-y-2 text-sm text-slate-300">
+                <ul className="space-y-2 text-sm text-[color:var(--muted)]">
                   {section.items.map((item) => (
                     <li key={item} className="flex gap-2">
                       <span
@@ -246,7 +247,7 @@ export default function ProjectModal({ project, onClose }: Props) {
 
         {gallery.length > 0 ? (
           <section className="mt-8 space-y-4">
-            <h4 className="text-sm font-semibold text-white">
+            <h4 className="text-sm font-semibold text-[color:var(--foreground)]">
               {labels.galleryTitle}
             </h4>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -256,7 +257,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                   return (
                     <div
                       key={media.src}
-                      className="aspect-video w-full overflow-hidden rounded-xl border border-white/10 bg-black/40"
+                      className="aspect-video w-full overflow-hidden rounded-xl border border-[color:var(--border)] bg-black/5"
                     >
                       <video
                         controls
@@ -273,7 +274,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                   return (
                     <div
                       key={media.src}
-                      className="aspect-video w-full overflow-hidden rounded-xl border border-white/10 bg-black/40"
+                      className="aspect-video w-full overflow-hidden rounded-xl border border-[color:var(--border)] bg-black/5"
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
@@ -290,7 +291,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                 return (
                   <div
                     key={media.src}
-                    className="relative aspect-video w-full overflow-hidden rounded-xl border border-white/10"
+                    className="relative aspect-video w-full overflow-hidden rounded-xl border border-[color:var(--border)]"
                   >
                     <Image
                       src={media.src}
@@ -310,7 +311,7 @@ export default function ProjectModal({ project, onClose }: Props) {
           <Link
             href={caseHref}
             onClick={() => trackEvent("view_case", "engagement", project.slug)}
-            className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+            className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
           >
             {labels.caseCta}
           </Link>
@@ -319,7 +320,7 @@ export default function ProjectModal({ project, onClose }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackEvent("click_github", "outbound", project.slug)}
-            className="rounded-full border border-white/20 px-4 py-2 text-xs text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+            className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
           >
             {labels.githubLabel}
           </a>
@@ -328,15 +329,16 @@ export default function ProjectModal({ project, onClose }: Props) {
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-white/20 px-4 py-2 text-xs text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+              className="rounded-full border border-[color:var(--accent)]/40 px-4 py-2 text-xs text-[color:var(--accent)] transition hover:border-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
               {labels.demoLabel}
             </a>
           ) : (
-            <span className="rounded-full border border-white/10 px-4 py-2 text-xs text-slate-400">
+            <span className="rounded-full border border-[color:var(--border)] px-4 py-2 text-xs text-[color:var(--muted)]">
               {labels.demoSoon}
             </span>
           )}
+        </div>
         </div>
       </div>
     </div>

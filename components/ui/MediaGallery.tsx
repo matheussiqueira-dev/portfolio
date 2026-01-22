@@ -60,7 +60,7 @@ export default function MediaGallery({
         return (
           <figure
             key={item.src}
-            className="rounded-2xl border border-white/10 bg-white/5 p-3"
+            className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-3 shadow-sm"
           >
             {type === "video" ? (
               <video
@@ -98,7 +98,7 @@ export default function MediaGallery({
               />
             )}
             {item.caption ? (
-              <figcaption className="mt-3 text-xs text-slate-400">
+              <figcaption className="mt-3 text-xs text-[color:var(--muted)]">
                 {item.caption}
               </figcaption>
             ) : null}

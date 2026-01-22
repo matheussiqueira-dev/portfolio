@@ -44,13 +44,13 @@ export const metadata: Metadata = {
 
 export default function PowerBiPage() {
   return (
-    <main className="min-h-screen px-6 py-24">
+    <main className="min-h-screen px-6 pt-28 pb-20">
       <div className="max-w-5xl mx-auto space-y-10">
         <header className="space-y-4">
-          <h1 className="text-4xl md:text-5xl font-semibold text-white">
+          <h1 className="text-4xl md:text-5xl font-semibold text-[color:var(--foreground)]">
             Power BI para dashboards e KPIs
           </h1>
-          <p className="text-base md:text-lg text-slate-300">
+          <p className="text-base md:text-lg text-[color:var(--muted)]">
             Experiência com Power BI, DAX e Power Query para transformar dados
             em dashboards executivos, com foco em indicadores e visualização
             clara.
@@ -58,10 +58,10 @@ export default function PowerBiPage() {
         </header>
 
         <section className="space-y-3">
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
             Como eu aplico Power BI
           </h2>
-          <ul className="list-disc list-inside space-y-2 text-slate-300">
+          <ul className="list-disc list-inside space-y-2 text-[color:var(--muted)]">
             <li>Modelagem de dados para relatórios consistentes.</li>
             <li>DAX para métricas e KPIs confiáveis.</li>
             <li>Power Query para ETL e transformação de dados.</li>
@@ -70,28 +70,28 @@ export default function PowerBiPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
             Tecnologias complementares
           </h2>
-          <p className="text-slate-300">
+          <p className="text-[color:var(--muted)]">
             SQL · Python · ETL · Data Modeling · Data Visualization
           </p>
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
             Ver projetos e currículo
           </h2>
           <div className="flex flex-wrap gap-4">
             <Link
               href="/projects"
-              className="rounded-full border border-white/20 px-5 py-2 text-sm text-slate-200 transition hover:border-white/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+              className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
               Ver projetos
             </Link>
             <Link
               href="/resume"
-              className="rounded-full bg-white px-5 py-2 text-sm font-semibold text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+              className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
               Ver currículo
             </Link>

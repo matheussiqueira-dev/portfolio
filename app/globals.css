@@ -1,21 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0b0d10;
-  --foreground: #e2e8f0;
+  --background: #f6f5f2;
+  --foreground: #101418;
+  --foreground-strong: #0b0f13;
+  --muted: #5b6472;
+  --muted-strong: #3b424d;
+  --surface: #ffffff;
+  --surface-muted: #eef1f4;
+  --border: #dde2e8;
+  --accent: #0f766e;
+  --accent-strong: #0b5f58;
+  --accent-soft: #14b8a6;
+  --shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+  --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.08);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
   position: relative;
 }
 
@@ -29,25 +40,28 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background-image: 
-    /* Gradiente radial central para destaque */
+  background-image:
     radial-gradient(
-      ellipse 80% 50% at 50% -20%,
-      rgba(120, 119, 198, 0.15),
-      transparent
+      60% 40% at 12% -10%,
+      rgba(15, 118, 110, 0.12),
+      transparent 60%
     ),
-    /* Grid pattern sutil */
+    radial-gradient(
+      50% 45% at 88% 0%,
+      rgba(15, 23, 42, 0.06),
+      transparent 55%
+    ),
     linear-gradient(
       to right,
-      rgba(255, 255, 255, 0.02) 1px,
+      rgba(15, 23, 42, 0.04) 1px,
       transparent 1px
     ),
     linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 0.02) 1px,
+      rgba(15, 23, 42, 0.04) 1px,
       transparent 1px
     );
-  background-size: 100% 100%, 60px 60px, 60px 60px;
+  background-size: 100% 100%, 100% 100%, 72px 72px, 72px 72px;
   pointer-events: none;
 }
 
@@ -55,15 +69,13 @@ body::before {
 body::after {
   content: "";
   position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 400px;
+  bottom: -20%;
+  right: -10%;
+  width: 45%;
+  height: 45%;
   background: radial-gradient(
-    ellipse at center top,
-    rgba(99, 102, 241, 0.08) 0%,
-    rgba(139, 92, 246, 0.04) 30%,
+    ellipse at center,
+    rgba(15, 118, 110, 0.08) 0%,
     transparent 70%
   );
   z-index: -1;
@@ -80,7 +92,7 @@ body::after {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 96px;
 }
 
 /* Respeitar preferência de movimento reduzido */
@@ -116,6 +128,89 @@ html {
   }
 }
 
+@layer components {
+  .page-section {
+    padding: 5.5rem 1.5rem;
+    scroll-margin-top: 6rem;
+  }
+
+  .section-inner {
+    max-width: 72rem;
+    margin: 0 auto;
+  }
+
+  .eyebrow {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--muted);
+  }
+
+  .card {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .card-muted {
+    background: var(--surface-muted);
+  }
+
+  .chip {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.7rem;
+    color: var(--muted);
+  }
+
+  .btn-primary {
+    background: var(--foreground);
+    color: var(--background);
+    border-radius: 999px;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    border: 1px solid var(--foreground);
+    color: var(--foreground);
+    border-radius: 999px;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    color: var(--muted);
+    border-radius: 999px;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .btn-ghost:hover {
+    color: var(--foreground);
+    transform: translateY(-1px);
+  }
+}
+
 @layer utilities {
   .animate-fade-up {
     animation: fade-up 0.7s ease forwards;
@@ -128,6 +223,18 @@ html {
   .content-auto {
     content-visibility: auto;
     contain-intrinsic-size: 1px 800px;
+  }
+
+  .surface {
+    background: var(--surface);
+  }
+
+  .surface-muted {
+    background: var(--surface-muted);
+  }
+
+  .border-soft {
+    border-color: var(--border);
   }
   
   /* Screen-reader only utility */
