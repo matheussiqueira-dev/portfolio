@@ -1,3 +1,5 @@
+"use client";
+
 import { resumeEn } from "@/data/resume.en";
 import PrintButton from "../ui/PrintButton";
 import LanguageSwitch from "../ui/LanguageSwitch";
