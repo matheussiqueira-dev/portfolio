@@ -58,7 +58,7 @@ function getEnglishPath(pathname: string): string {
 }
 
 export default function LanguageSwitch() {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "/";
   const isEnglish = pathname.startsWith("/en");
 
   const ptPath = getPortuguesePath(pathname);

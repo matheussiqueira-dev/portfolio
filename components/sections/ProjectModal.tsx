@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useId, useMemo, useRef } from "react";
+import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
 import { trackEvent } from "@/lib/analytics";
 import { sitePt } from "@/data/site.pt";
@@ -58,6 +59,53 @@ export default function ProjectModal({ project, onClose }: Props) {
       demoSoon: isEn ? "Demo: coming soon" : "Demo: em breve",
     };
   }, [isEn]);
+  const sections = useMemo(
+    () => [
+      {
+        id: "highlights",
+        title: labels.highlightsTitle,
+        items: project.highlights,
+        bulletClass: "bg-emerald-400",
+      },
+      {
+        id: "problem",
+        title: labels.problemTitle,
+        items: project.problem,
+        bulletClass: "bg-amber-400",
+      },
+      {
+        id: "data",
+        title: labels.dataTitle,
+        items: project.dataUsed,
+        bulletClass: "bg-sky-400",
+      },
+      {
+        id: "solution",
+        title: labels.solutionTitle,
+        items: project.solution,
+        bulletClass: "bg-emerald-400",
+      },
+      {
+        id: "features",
+        title: labels.featuresTitle,
+        items: project.features,
+        bulletClass: "bg-sky-400",
+      },
+      {
+        id: "demonstrates",
+        title: labels.demonstratesTitle,
+        items: project.demonstrates,
+        bulletClass: "bg-emerald-400",
+      },
+      {
+        id: "how-to-run",
+        title: labels.howToRunTitle,
+        items: project.howToRun,
+        bulletClass: "bg-amber-400",
+      },
+    ],
+    [labels, project]
+  );
 
   const titleId = useId();
   const descId = useId();
@@ -109,9 +157,9 @@ export default function ProjectModal({ project, onClose }: Props) {
     };
   }, [onClose]);
 
-  return (
+  const modal = (
     <div
-      className="fixed inset-0 z-[70] flex items-start justify-center overflow-y-auto overscroll-contain bg-black/70 p-6 backdrop-blur-sm"
+      className="fixed inset-0 z-[70] flex items-start justify-center bg-black/70 p-4 sm:p-6 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
@@ -122,7 +170,8 @@ export default function ProjectModal({ project, onClose }: Props) {
         aria-labelledby={titleId}
         aria-describedby={descId}
         tabIndex={-1}
-        className="my-10 w-full max-w-3xl rounded-2xl border border-white/10 bg-[#0b0d10] p-8 text-slate-100 shadow-2xl motion-safe:animate-fade-in"
+        style={{ WebkitOverflowScrolling: "touch" }}
+        className="w-full max-w-3xl max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain rounded-2xl border border-white/10 bg-[#0b0d10] p-6 text-slate-100 shadow-2xl motion-safe:animate-fade-in sm:max-h-[calc(100dvh-3rem)] sm:p-8"
         onClick={(event) => event.stopPropagation()}
       >
         <div className="flex items-start justify-between gap-6">
@@ -174,103 +223,25 @@ export default function ProjectModal({ project, onClose }: Props) {
         </div>
 
         <div className="mt-6 space-y-6">
-          <section>
-            <h4 className="text-sm font-semibold text-white mb-3">
-              {labels.highlightsTitle}
-            </h4>
-            <ul className="space-y-2 text-sm text-slate-300">
-              {project.highlights.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section>
-            <h4 className="text-sm font-semibold text-white mb-3">
-              {labels.problemTitle}
-            </h4>
-            <ul className="space-y-2 text-sm text-slate-300">
-              {project.problem.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-amber-400" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section>
-            <h4 className="text-sm font-semibold text-white mb-3">
-              {labels.dataTitle}
-            </h4>
-            <ul className="space-y-2 text-sm text-slate-300">
-              {project.dataUsed.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-sky-400" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section>
-            <h4 className="text-sm font-semibold text-white mb-3">
-              {labels.solutionTitle}
-            </h4>
-            <ul className="space-y-2 text-sm text-slate-300">
-              {project.solution.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section>
-            <h4 className="text-sm font-semibold text-white mb-3">
-              {labels.featuresTitle}
-            </h4>
-            <ul className="space-y-2 text-sm text-slate-300">
-              {project.features.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-sky-400" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section>
-            <h4 className="text-sm font-semibold text-white mb-3">
-              {labels.demonstratesTitle}
-            </h4>
-            <ul className="space-y-2 text-sm text-slate-300">
-              {project.demonstrates.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section>
-            <h4 className="text-sm font-semibold text-white mb-3">
-              {labels.howToRunTitle}
-            </h4>
-            <ul className="space-y-2 text-sm text-slate-300">
-              {project.howToRun.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-amber-400" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
+          {sections.map((section) =>
+            section.items.length > 0 ? (
+              <section key={section.id}>
+                <h4 className="text-sm font-semibold text-white mb-3">
+                  {section.title}
+                </h4>
+                <ul className="space-y-2 text-sm text-slate-300">
+                  {section.items.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span
+                        className={`mt-2 h-1.5 w-1.5 rounded-full ${section.bulletClass}`}
+                      />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ) : null
+          )}
         </div>
 
         {gallery.length > 0 ? (
@@ -370,4 +341,10 @@ export default function ProjectModal({ project, onClose }: Props) {
       </div>
     </div>
   );
+
+  if (typeof document === "undefined") {
+    return null;
+  }
+
+  return createPortal(modal, document.body);
 }

@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import ImageWithFallback from "@/components/ui/ImageWithFallback";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { trackEvent } from "@/lib/analytics";
 import { projects } from "@/data/projects";
 import { projectsEn } from "@/data/projects.en";
@@ -32,6 +32,7 @@ export default function Projects() {
   const content = isEn ? siteEn.projects : sitePt.projects;
   const data = useMemo(() => (isEn ? projectsEn : projects), [isEn]);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const handleClose = useCallback(() => setSelectedProject(null), []);
   const projectsHref = isEn ? "/en/projects" : "/projects";
 
   return (
@@ -153,7 +154,7 @@ export default function Projects() {
       {selectedProject ? (
         <ProjectModal
           project={selectedProject}
-          onClose={() => setSelectedProject(null)}
+          onClose={handleClose}
         />
       ) : null}
     </section>
