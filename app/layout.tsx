@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, JetBrains_Mono, Manrope } from "next/font/google";
+import { JetBrains_Mono, Roboto } from "next/font/google";
 import Script from "next/script";
 import Header from "@/components/layout/Header";
 import JsonLd from "@/components/seo/JsonLd";
@@ -10,18 +10,11 @@ import "./globals.css";
 // Google Tag Manager ID
 const GTM_ID = "GTM-WR93ZJ8C";
 
-const manrope = Manrope({
+const roboto = Roboto({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-roboto",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  variable: "--font-cormorant",
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "700"],
 });
 
 const jetBrainsMono = JetBrains_Mono({
@@ -171,7 +164,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${manrope.variable} ${cormorant.variable} ${jetBrainsMono.variable} min-h-screen antialiased`}
+        className={`${roboto.variable} ${jetBrainsMono.variable} min-h-screen antialiased`}
       >
         {/* Google Tag Manager - NoScript fallback */}
         <noscript>
