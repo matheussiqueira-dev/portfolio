@@ -162,7 +162,7 @@ export const projects: Project[] = [
         alt: "Capa do projeto Self-Drive Car",
       },
       {
-        src: "/Selfcar-drive.mp4",
+        src: "/projects/self-drive-car/demo.mp4",
         alt: "Demonstração do simulador Self-Drive Car em ação",
         type: "video",
       },

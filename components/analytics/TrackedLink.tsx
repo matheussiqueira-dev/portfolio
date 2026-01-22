@@ -13,6 +13,7 @@ type Tracking = {
 type TrackedLinkProps = {
   href: string;
   className?: string;
+  ariaLabel?: string;
   children: ReactNode;
   tracking?: Tracking;
 };
@@ -20,6 +21,7 @@ type TrackedLinkProps = {
 type TrackedAnchorProps = {
   href: string;
   className?: string;
+  ariaLabel?: string;
   children: ReactNode;
   tracking?: Tracking;
   target?: string;
@@ -37,6 +39,7 @@ const handleTrack = (tracking?: Tracking) => {
 export function TrackedLink({
   href,
   className,
+  ariaLabel,
   children,
   tracking,
 }: TrackedLinkProps) {
@@ -44,6 +47,7 @@ export function TrackedLink({
     <Link
       href={href}
       className={className}
+      aria-label={ariaLabel}
       onClick={() => handleTrack(tracking)}
     >
       {children}
@@ -54,6 +58,7 @@ export function TrackedLink({
 export function TrackedAnchor({
   href,
   className,
+  ariaLabel,
   children,
   tracking,
   target,
@@ -65,6 +70,7 @@ export function TrackedAnchor({
       target={target}
       rel={rel}
       className={className}
+      aria-label={ariaLabel}
       onClick={() => handleTrack(tracking)}
     >
       {children}

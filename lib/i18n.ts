@@ -25,12 +25,14 @@ export const stripLocalePrefix = (pathname: string) => {
 };
 
 const splitHref = (href: string) => {
-  const [pathAndQuery = "", hash] = href.split("#");
-  const [path, query] = pathAndQuery.split("?");
+  const [pathAndQuery, hash] = href.split("#");
+  const safePathAndQuery = pathAndQuery ?? "";
+  const safeHash = hash ?? "";
+  const [path, query] = safePathAndQuery.split("?");
   return {
     path: path || "/",
     query: query ? `?${query}` : "",
-    hash: hash ? `#${hash}` : "",
+    hash: safeHash ? `#${safeHash}` : "",
   };
 };
 

@@ -1,6 +1,5 @@
-import Link from "next/link";
 import ImageWithFallback from "@/components/ui/ImageWithFallback";
-import { trackEvent } from "@/lib/analytics";
+import { TrackedAnchor, TrackedLink } from "@/components/analytics/TrackedLink";
 
 export default function Hero() {
   return (
@@ -34,34 +33,46 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-3">
-            <Link
+            <TrackedLink
               href="/resume"
-              onClick={() => trackEvent('view_resume', 'navigation', 'hero_cta')}
-              aria-label="Ver currículo completo de Matheus Siqueira"
+              ariaLabel="Ver currículo completo de Matheus Siqueira"
+              tracking={{
+                action: "view_resume",
+                category: "navigation",
+                label: "hero_cta",
+              }}
               className="rounded-lg bg-white px-5 py-3 text-sm font-medium text-black hover:bg-white/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
             >
               Ver currículo
-            </Link>
+            </TrackedLink>
 
-            <a
+            <TrackedAnchor
               href="https://wa.me/5581999203683"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackEvent('contact_whatsapp', 'engagement', 'hero_cta')}
-              aria-label="Entrar em contato via WhatsApp com Matheus Siqueira"
+              ariaLabel="Entrar em contato via WhatsApp com Matheus Siqueira"
+              tracking={{
+                action: "contact_whatsapp",
+                category: "engagement",
+                label: "hero_cta",
+              }}
               className="rounded-lg border border-white/20 px-5 py-3 text-sm font-medium text-white hover:border-white/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
             >
               Entrar em contato
-            </a>
+            </TrackedAnchor>
 
-            <Link
+            <TrackedLink
               href="/projects"
-              onClick={() => trackEvent('view_projects', 'navigation', 'hero_cta')}
-              aria-label="Ver todos os projetos de Matheus Siqueira"
+              ariaLabel="Ver todos os projetos de Matheus Siqueira"
+              tracking={{
+                action: "view_projects",
+                category: "navigation",
+                label: "hero_cta",
+              }}
               className="rounded-lg border border-white/10 px-5 py-3 text-sm font-medium text-white/80 hover:text-white hover:border-white/20 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
             >
               Ver projetos
-            </Link>
+            </TrackedLink>
           </div>
         </div>
 
