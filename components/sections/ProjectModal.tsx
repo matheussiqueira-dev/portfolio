@@ -117,7 +117,13 @@ export default function ProjectModal({ project, onClose }: Props) {
     : `/projects/${project.slug}`;
 
   const cover = getCover(project.screenshots);
-  const gallery = project.screenshots.filter((shot) => shot !== cover);
+  const gallery = useMemo(
+    () =>
+      project.screenshots
+        .filter((shot) => shot !== cover)
+        .map((media) => ({ ...media, mediaType: inferMediaType(media) })),
+    [project.screenshots, cover],
+  );
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -252,8 +258,7 @@ export default function ProjectModal({ project, onClose }: Props) {
             </h4>
             <div className="grid gap-4 sm:grid-cols-2">
               {gallery.map((media) => {
-                const mediaType = inferMediaType(media);
-                if (mediaType === "video") {
+                if (media.mediaType === "video") {
                   return (
                     <div
                       key={media.src}
@@ -270,7 +275,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                   );
                 }
 
-                if (mediaType === "gif") {
+                if (media.mediaType === "gif") {
                   return (
                     <div
                       key={media.src}
