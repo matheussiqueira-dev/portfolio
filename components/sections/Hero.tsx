@@ -60,7 +60,7 @@ export default function Hero() {
             </TrackedAnchor>
 
             <TrackedLink
-              href="/projects"
+              href="/projetos"
               ariaLabel="Ver todos os projetos de Matheus Siqueira"
               tracking={{
                 action: "view_projects",

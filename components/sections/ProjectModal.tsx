@@ -114,7 +114,7 @@ export default function ProjectModal({ project, onClose }: Props) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const caseHref = isEn
     ? `/en/projects/${project.slug}`
-    : `/projects/${project.slug}`;
+    : `/projetos/${project.slug}`;
 
   const cover = getCover(project.screenshots);
   const gallery = project.screenshots.filter((shot) => shot !== cover);

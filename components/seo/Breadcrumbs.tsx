@@ -22,8 +22,8 @@ interface BreadcrumbsProps {
  * <Breadcrumbs 
  *   items={[
  *     { name: 'Home', url: '/' },
- *     { name: 'Projetos', url: '/projects' },
- *     { name: 'Power BI Dashboard', url: '/projects/power-bi' }
+ *     { name: 'Projetos', url: '/projetos' },
+ *     { name: 'Power BI Dashboard', url: '/projetos/power-bi' }
  *   ]}
  * />
  * ```

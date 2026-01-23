@@ -20,7 +20,7 @@ export default function ProjectCard({
   const cover = getCover(project);
   const caseHref = localePrefix
     ? `${localePrefix}/projects/${project.slug}`
-    : `/projects/${project.slug}`;
+    : `/projetos/${project.slug}`;
 
   return (
     <article className="card p-6 flex flex-col gap-4 transition hover:-translate-y-1 hover:shadow-xl">

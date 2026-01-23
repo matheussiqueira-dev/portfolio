@@ -86,6 +86,7 @@ export type SiteContent = {
     impactTitle: string;
     stackTitle: string;
     demonstratesTitle: string;
+    conclusionTitle: string;
     galleryTitle: string;
     howToRunTitle: string;
     linksTitle: string;

@@ -81,7 +81,7 @@ export default function SqlPythonPage() {
           </h2>
           <div className="flex flex-wrap gap-4">
             <Link
-              href="/projects"
+              href="/projetos"
               className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
               Ver projetos

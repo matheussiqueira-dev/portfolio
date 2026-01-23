@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function ProjectCase({ project, labels, localePrefix = "" }: Props) {
-  const backHref = localePrefix ? `${localePrefix}/projects` : "/projects";
+  const backHref = localePrefix ? `${localePrefix}/projects` : "/projetos";
 
   return (
     <main className="min-h-screen px-6 pt-28 pb-20">

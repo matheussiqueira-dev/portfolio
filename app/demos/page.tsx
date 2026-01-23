@@ -72,7 +72,7 @@ export default function DemosPage() {
             {sitePt.demos.description}
           </p>
           <Link
-            href="/projects"
+            href="/projetos"
             className="inline-flex w-fit text-sm text-[color:var(--accent)] underline decoration-[color:var(--accent-soft)]/60 underline-offset-4 transition hover:text-[color:var(--accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
           >
             {sitePt.demos.viewProjectsLabel}
@@ -105,7 +105,7 @@ export default function DemosPage() {
               </div>
               <div className="flex flex-wrap gap-3 text-xs text-[color:var(--muted)]">
                 <Link
-                  href={`/projects/${project.slug}`}
+                  href={`/projetos/${project.slug}`}
                   className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                 >
                   {sitePt.demos.fullCaseLabel}

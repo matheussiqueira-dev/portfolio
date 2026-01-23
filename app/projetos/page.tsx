@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { TrackedAnchor, TrackedLink } from "@/components/analytics/TrackedLink";
 import JsonLd from "@/components/seo/JsonLd";
-import { projectsEn } from "@/data/projects.en";
-import { siteEn } from "@/data/site.en";
+import { projects } from "@/data/projects";
+import { sitePt } from "@/data/site.pt";
 import { baseUrl, siteName } from "@/lib/seo";
 
-const pageTitle = "Data, BI, and Automation Projects";
+const pageTitle = "Projetos de Dados, BI e Desenvolvimento";
 const pageDescription =
-  "Projects and case studies in data, BI, Big Data, and automation with Power BI, SQL, and Python, focused on data organization, dashboards, and business decisions.";
+  "Portfólio de projetos em análise de dados, Business Intelligence, Big Data, automação, data science e desenvolvimento full stack. Cases com dashboards, ETL, APIs e visualização de dados.";
 
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
@@ -17,14 +17,14 @@ const breadcrumbJsonLd = {
     {
       "@type": "ListItem",
       position: 1,
-      name: "Home",
-      item: `${baseUrl}/en`,
+      name: "Início",
+      item: `${baseUrl}/`,
     },
     {
       "@type": "ListItem",
       position: 2,
-      name: siteEn.projectsPage.title,
-      item: `${baseUrl}/en/projects`,
+      name: sitePt.projectsPage.title,
+      item: `${baseUrl}/projetos`,
     },
   ],
 };
@@ -34,9 +34,9 @@ const projectsPageJsonLd = [
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: pageTitle,
-    url: `${baseUrl}/en/projects`,
+    url: `${baseUrl}/projetos`,
     description: pageDescription,
-    inLanguage: "en-US",
+    inLanguage: "pt-BR",
     isPartOf: {
       "@type": "WebSite",
       name: siteName,
@@ -46,12 +46,12 @@ const projectsPageJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Featured projects",
-    itemListElement: projectsEn.map((project, index) => ({
+    name: "Projetos em destaque",
+    itemListElement: projects.map((project, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: project.title,
-      url: `${baseUrl}/en/projects/${project.slug}`,
+      url: `${baseUrl}/projetos/${project.slug}`,
     })),
   },
   breadcrumbJsonLd,
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   alternates: {
-    canonical: "/en/projects",
+    canonical: "/projetos",
     languages: {
       "pt-BR": "/projetos",
       "en-US": "/en/projects",
@@ -77,8 +77,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: pageTitle,
     description: pageDescription,
-    url: "/en/projects",
-    locale: "en_US",
+    url: "/projetos",
+    locale: "pt_BR",
     type: "website",
     siteName,
     images: [
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Projects by Matheus Siqueira",
+        alt: "Projetos de Matheus Siqueira",
       },
     ],
   },
@@ -98,53 +98,53 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ProjectsPageEn({ searchParams }: PageProps) {
-  const filters = siteEn.projectsPage.filters;
+export default function ProjectsPage({ searchParams }: PageProps) {
+  const filters = sitePt.projectsPage.filters;
   const requested = searchParams?.stack;
   const activeFilter = filters.includes(requested ?? "") ? requested : "all";
   const filteredProjects =
     activeFilter && activeFilter !== "all"
-      ? projectsEn.filter((project) => project.stack.includes(activeFilter))
-      : projectsEn;
+      ? projects.filter((project) => project.stack.includes(activeFilter))
+      : projects;
 
   return (
     <main className="min-h-screen px-6 pt-28 pb-20">
       <JsonLd data={projectsPageJsonLd} />
       <div className="max-w-6xl mx-auto">
         <header className="mb-12 space-y-4">
-          <p className="eyebrow">{siteEn.projectsPage.eyebrow}</p>
+          <p className="eyebrow">{sitePt.projectsPage.eyebrow}</p>
           <h1 className="text-4xl md:text-5xl font-semibold text-[color:var(--foreground)]">
-            {siteEn.projectsPage.title}
+            {sitePt.projectsPage.title}
           </h1>
           <p className="text-base md:text-lg text-[color:var(--muted)] max-w-3xl">
-            {siteEn.projectsPage.description}
+            {sitePt.projectsPage.description}
           </p>
           <Link
-            href="/en/demos"
+            href="/demos"
             className="inline-flex w-fit text-sm text-[color:var(--accent)] underline decoration-[color:var(--accent-soft)]/60 underline-offset-4 transition hover:text-[color:var(--accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
           >
-            {siteEn.projectsPage.demosLabel}
+            {sitePt.projectsPage.demosLabel}
           </Link>
         </header>
 
         <div className="mb-8 flex flex-wrap items-center gap-3 text-sm text-[color:var(--muted)]">
           <span className="text-xs uppercase tracking-[0.2em] text-[color:var(--muted)]">
-            {siteEn.projectsPage.filterLabel}
+            {sitePt.projectsPage.filterLabel}
           </span>
           <Link
-            href="/en/projects"
+            href="/projetos"
             className={`rounded-full border px-3 py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40 ${
               activeFilter === "all"
                 ? "border-[color:var(--accent)]/50 text-[color:var(--foreground)]"
                 : "border-[color:var(--border)] text-[color:var(--muted)] hover:border-[color:var(--accent)]/50"
             }`}
           >
-            {siteEn.projectsPage.allLabel}
+            {sitePt.projectsPage.allLabel}
           </Link>
           {filters.map((filter) => (
             <Link
               key={filter}
-              href={`/en/projects?stack=${encodeURIComponent(filter)}`}
+              href={`/projetos?stack=${encodeURIComponent(filter)}`}
               className={`rounded-full border px-3 py-1 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40 ${
                 activeFilter === filter
                   ? "border-[color:var(--accent)]/50 text-[color:var(--foreground)]"
@@ -184,7 +184,7 @@ export default function ProjectsPageEn({ searchParams }: PageProps) {
 
               <div className="text-xs text-[color:var(--muted)]">
                 <span className="uppercase tracking-[0.2em] text-[color:var(--muted)]">
-                  {siteEn.projectsPage.demonstratesLabel}
+                  {sitePt.projectsPage.demonstratesLabel}
                 </span>
                 <p className="mt-2 text-[color:var(--muted)]">
                   {project.demonstrates[0]}
@@ -201,7 +201,7 @@ export default function ProjectsPageEn({ searchParams }: PageProps) {
 
               <div className="flex flex-wrap gap-3 pt-2 text-xs text-[color:var(--muted)]">
                 <TrackedLink
-                  href={`/en/projects/${project.slug}`}
+                  href={`/projetos/${project.slug}`}
                   tracking={{
                     action: "view_case",
                     category: "engagement",
@@ -209,7 +209,7 @@ export default function ProjectsPageEn({ searchParams }: PageProps) {
                   }}
                   className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                 >
-                  {siteEn.projectsPage.caseLabel}
+                  {sitePt.projectsPage.caseLabel}
                 </TrackedLink>
                 <TrackedAnchor
                   href={project.repoUrl}
@@ -222,7 +222,7 @@ export default function ProjectsPageEn({ searchParams }: PageProps) {
                   }}
                   className="rounded-full border border-[color:var(--border)] px-4 py-2 transition hover:border-[color:var(--accent)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                 >
-                  {siteEn.projects.modal.githubLabel}
+                  {sitePt.projects.modal.githubLabel}
                 </TrackedAnchor>
                 {project.demoUrl ? (
                   <TrackedAnchor
@@ -231,11 +231,11 @@ export default function ProjectsPageEn({ searchParams }: PageProps) {
                     rel="noopener noreferrer"
                     className="rounded-full border border-[color:var(--accent)]/40 px-4 py-2 text-[color:var(--accent)] transition hover:border-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                   >
-                    {siteEn.projects.modal.demoLabel}
+                    {sitePt.projects.modal.demoLabel}
                   </TrackedAnchor>
                 ) : (
                   <span className="rounded-full border border-[color:var(--border)] px-4 py-2 text-[color:var(--muted)]">
-                    {siteEn.demos.demoSoonLabel}
+                    {sitePt.demos.demoSoonLabel}
                   </span>
                 )}
               </div>

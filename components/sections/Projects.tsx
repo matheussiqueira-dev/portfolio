@@ -33,7 +33,7 @@ export default function Projects() {
   const data = useMemo(() => (isEn ? projectsEn : projects), [isEn]);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const handleClose = useCallback(() => setSelectedProject(null), []);
-  const projectsHref = isEn ? "/en/projects" : "/projects";
+  const projectsHref = isEn ? "/en/projects" : "/projetos";
 
   return (
     <section id="projects" className="page-section content-auto">
@@ -54,7 +54,7 @@ export default function Projects() {
             const highlights = getHighlights(project);
             const caseHref = isEn
               ? `/en/projects/${project.slug}`
-              : `/projects/${project.slug}`;
+              : `/projetos/${project.slug}`;
 
             return (
               <article
@@ -69,6 +69,7 @@ export default function Projects() {
                       fill
                       sizes="(max-width: 1024px) 100vw, 520px"
                       quality={85}
+                      fallbackSrc="/projects/placeholder.webp"
                       className="object-cover"
                     />
                   </div>

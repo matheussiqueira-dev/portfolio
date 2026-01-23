@@ -165,7 +165,7 @@ export default function ContratePage() {
                   ))}
                 </div>
                 <Link
-                  href={`/projects/${project.slug}`}
+                  href={`/projetos/${project.slug}`}
                   className="inline-flex w-fit text-sm text-[color:var(--accent)] underline decoration-[color:var(--accent-soft)]/60 underline-offset-4 transition hover:text-[color:var(--accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                 >
                   Ver case completo

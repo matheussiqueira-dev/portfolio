@@ -143,13 +143,13 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/projetos",
-        destination: "/projects",
+        source: "/projects",
+        destination: "/projetos",
         permanent: true,
       },
       {
-        source: "/projetos/:slug",
-        destination: "/projects/:slug",
+        source: "/projects/:slug",
+        destination: "/projetos/:slug",
         permanent: true,
       },
       // Hire/Contrate redirects
