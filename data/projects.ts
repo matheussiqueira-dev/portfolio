@@ -479,6 +479,110 @@ export const projects: Project[] = [
         "Projeto de visão computacional com Python, OpenCV e TensorFlow para reconhecer emoções faciais em tempo real e apoiar análises de experiência.",
     },
   },
+  {
+    slug: "sistema-analise-emocoes-ia",
+    title: "Sistema de Análise de Emoções com Inteligência Artificial",
+    headline:
+      "Sistema de Análise de Emoções com Inteligência Artificial | Data Science e Full Stack",
+    tagline:
+      "Sistema full stack de análise de emoções faciais com IA, APIs REST e visualização de dados.",
+    role: "Analista/Desenvolvedor",
+    stack: [
+      "Python",
+      "Pandas",
+      "Machine Learning",
+      "MLOps",
+      "API REST",
+      "Node.js",
+      "React.js",
+      "JavaScript",
+      "TypeScript",
+      "HTML5",
+      "CSS",
+      "Dash",
+      "SQL",
+      "MongoDB",
+      "Git",
+      "GitHub",
+      "ETL",
+      "Data Warehouse",
+      "Power BI",
+      "Power Query",
+      "DAX",
+      "Estatística",
+      "Análise de Dados",
+    ],
+    repoUrl: "https://github.com/matheussiqueira-dev/sistema-analise-emocoes-ia",
+    context:
+      "A interpretação de emoções humanas em ambientes digitais é um desafio recorrente em aplicações modernas de UX, comportamento humano e tomada de decisão baseada em dados. Métodos manuais são subjetivos, pouco escaláveis e incapazes de processar grandes volumes de informação em tempo real, exigindo uma solução automatizada com boa performance.",
+    problem: [
+      "Análises manuais são subjetivas, inconsistentes e com baixa escala.",
+      "Processamento em tempo real exige performance e baixa latência.",
+      "Grandes volumes de imagens e vídeo dificultam a operação manual.",
+      "Ausência de métricas estruturadas limita BI e tomada de decisão.",
+    ],
+    dataUsed: [
+      "Imagens e vídeos com faces para classificação de emoções.",
+      "Frames em tempo real com timestamps de inferência.",
+      "Probabilidades de emoções e métricas de desempenho do modelo.",
+      "Logs de API e dados estruturados para dashboards e BI.",
+    ],
+    solution: [
+      "Pipeline de coleta, tratamento e padronização de dados com Python e Pandas.",
+      "Modelo de machine learning para classificação de emoções com avaliação de métricas.",
+      "API REST em Python/Node.js integrada a bancos SQL e NoSQL com segurança.",
+      "Frontend com React.js e Dash para visualização analítica e usabilidade.",
+    ],
+    features: [
+      "Identificação de emoções a partir de imagens e vídeo.",
+      "Processamento de dados em tempo real com baixa latência.",
+      "Dashboards analíticos com KPIs e visualizações claras.",
+      "Interface web intuitiva, responsiva e orientada à decisão.",
+      "Dados estruturados para análises futuras e Data Warehouse.",
+    ],
+    highlights: [
+      "Automação da análise de emoções com redução de esforço manual.",
+      "Processamento eficiente em escala com pipeline otimizado.",
+      "Visualizações claras para suporte à análise e tomada de decisão.",
+      "Arquitetura modular preparada para expansão e SaaS.",
+    ],
+    demonstrates: [
+      "Integração full stack com APIs REST e bancos SQL/NoSQL.",
+      "Data science aplicada com estatística, ML e avaliação de métricas.",
+      "ETL, Data Warehouse e BI para indicadores confiáveis.",
+      "Boas práticas iniciais de MLOps, versionamento e segurança.",
+    ],
+    techSummary:
+      "Python, Pandas, machine learning e MLOps integrados a API REST, bancos SQL/NoSQL, React e Dash para um sistema completo de análise emocional orientado a dados.",
+    conclusion: [
+      "Integrei ciência de dados, IA e desenvolvimento full stack em um fluxo escalável.",
+      "Estruturei pipelines de dados e visualizações para decisão baseada em métricas.",
+      "Consolidei práticas de performance, segurança e evolução do produto.",
+    ],
+    howToRun: [
+      "Pré-requisitos: Python 3.10+, Node 18+ e bancos SQL/NoSQL configurados.",
+      "Clone o repositório e configure o ambiente Python e Node.js.",
+      "Execute o pipeline de ETL e prepare os datasets para treino.",
+      "Suba a API REST e o serviço de inferência do modelo.",
+      "Inicie o front-end e acesse os dashboards analíticos.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/sistema-analise-emocoes-ia/cover.svg",
+        alt: "Capa do projeto Sistema de Análise de Emoções com Inteligência Artificial",
+      },
+      {
+        src: "/projects/sistema-analise-emocoes-ia/shot-1.svg",
+        alt: "Dashboard analítico do Sistema de Análise de Emoções com IA",
+      },
+    ],
+    seo: {
+      title:
+        "Sistema de Análise de Emoções com Inteligência Artificial | Data Science e Full Stack",
+      description:
+        "Projeto de análise de emoções com inteligência artificial, utilizando Python, machine learning, APIs REST, visualização de dados e desenvolvimento full stack orientado à análise e tomada de decisão.",
+    },
+  },
 ];
 
 export const projectSlugs = projects.map((project) => project.slug);
