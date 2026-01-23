@@ -64,7 +64,7 @@ export const projects: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/touchless-web-gesture-interface/cover.webp",
+        src: "/projects/touchless-web-gesture-interface/cover.svg",
         alt: "Capa do projeto Touchless Web Gesture Interface",
       },
       {
@@ -145,7 +145,7 @@ export const projects: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/chatbot-ia-api/cover.webp",
+        src: "/projects/chatbot-ia-api/cover.svg",
         alt: "Capa do projeto Chatbot IA API",
       },
       {
@@ -226,7 +226,7 @@ export const projects: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/self-drive-car/cover.webp",
+        src: "/projects/self-drive-car/cover.svg",
         alt: "Capa do projeto Self-Drive Car",
       },
       {
@@ -307,7 +307,7 @@ export const projects: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/library-api-advanced/cover.webp",
+        src: "/projects/library-api-advanced/cover.svg",
         alt: "Capa do projeto Library API Advanced",
       },
       {
@@ -387,7 +387,7 @@ export const projects: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/nucleo-comercial-dados/cover.webp",
+        src: "/projects/nucleo-comercial-dados/cover.svg",
         alt: "Capa do projeto Núcleo Comercial de Dados",
       },
       {
