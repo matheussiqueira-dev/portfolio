@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 /**
  * Global error boundary for the application
  * Catches and displays errors in a user-friendly way
@@ -50,12 +52,12 @@ export default function Error({
                         Tentar novamente
                     </button>
 
-                    <a
+                    <Link
                         href="/"
                         className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                     >
                         Voltar ao início
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>

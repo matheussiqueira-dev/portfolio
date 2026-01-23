@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { projects } from "@/data/projects";
-import { baseUrl, siteName } from "@/lib/seo";
+import { siteName } from "@/lib/seo";
 
 const pageTitle =
   "Contrate | Matheus Siqueira | Analista de Dados Júnior | Power BI | SQL | Python";

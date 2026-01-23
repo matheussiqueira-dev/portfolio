@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { projectsEn } from "@/data/projects.en";
-import { baseUrl, siteName } from "@/lib/seo";
+import { siteName } from "@/lib/seo";
 
 const pageTitle = "Junior Data Analyst for Hire | Power BI, SQL, Python";
 const pageDescription =
