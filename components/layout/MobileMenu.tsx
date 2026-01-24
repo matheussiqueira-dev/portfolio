@@ -100,7 +100,7 @@ export default function MobileMenu({
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="transition hover:text-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40 rounded"
+                  className="block rounded-md border border-[color:var(--border)] bg-[color:var(--surface-muted)] px-4 py-2 transition hover:text-[color:var(--accent)] hover:bg-[color:var(--surface)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                 >
                   {item.label}
                 </Link>
