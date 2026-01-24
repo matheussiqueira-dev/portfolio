@@ -142,6 +142,9 @@ export default function MobileMenu({
 
       const first = focusables[0];
       const last = focusables[focusables.length - 1];
+      if (!first || !last) {
+        return;
+      }
       const activeElement = document.activeElement as HTMLElement | null;
 
       if (!activeElement || !panel.contains(activeElement)) {
