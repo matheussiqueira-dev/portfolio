@@ -42,11 +42,11 @@ export default function SqlPythonPage() {
       <div className="max-w-5xl mx-auto space-y-10">
         <header className="space-y-4">
           <h1 className="text-4xl md:text-5xl font-semibold text-[color:var(--foreground)]">
-            SQL and Python for ETL and analytics automation
+            SQL and Python for pipelines, automation, and integrations
           </h1>
           <p className="text-base md:text-lg text-[color:var(--muted)]">
-            I use SQL and Python to prepare data, automate analytical workflows,
-            and deliver reliable datasets for dashboards and KPIs.
+            I use SQL and Python to prepare data, automate workflows, and
+            integrate systems, delivering reliable datasets for dashboards and KPIs.
           </p>
         </header>
 
@@ -57,7 +57,7 @@ export default function SqlPythonPage() {
           <ul className="list-disc list-inside space-y-2 text-[color:var(--muted)]">
             <li>ETL with extraction, transformation, and validation.</li>
             <li>Data modeling and KPI-ready structures.</li>
-            <li>Automation of reports and analytical routines.</li>
+            <li>Automation of processes and analytical routines.</li>
             <li>Integration of multiple data sources.</li>
           </ul>
         </section>

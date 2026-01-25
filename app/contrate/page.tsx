@@ -6,14 +6,14 @@ import { buildAlternates, siteName } from "@/lib/seo";
 const pageTitle =
   "Contrate | Matheus Siqueira | Desenvolvedor Full Stack | Dados & IA";
 const pageDescription =
-  "Desenvolvedor Full Stack com base em dados, IA e engenharia de software. APIs, front-end, automação e analytics.";
+  "Desenvolvedor Full Stack com base em dados, IA e engenharia de software. Produtos web, APIs e automação orientados a resultado.";
 
 const valueDelivery = [
-  "Aplicações web completas com front-end e back-end integrados.",
-  "APIs REST seguras com autenticação, logs e integrações.",
+  "Aplicações web completas com foco em UX, performance e SEO.",
+  "APIs REST com autenticação, logs e integrações externas.",
   "Pipelines de dados e automações com Python e SQL.",
   "Dashboards e métricas para orientar decisões de produto.",
-  "Versionamento, documentação e qualidade de engenharia.",
+  "Documentação e versionamento para escalar com segurança.",
 ];
 
 const practicalStack = {
@@ -80,9 +80,9 @@ export default function ContratePage() {
             Matheus Siqueira — Desenvolvedor Full Stack | Dados • IA • Software
           </h1>
           <p className="text-lg text-[color:var(--muted)] max-w-3xl">
-            Experiência em desenvolvimento de software, APIs e dados para
-            decisões de negócio. Disponível para oportunidades no Brasil (remoto
-            ou híbrido).
+            Perfil técnico com base em dados e engenharia de software. Entrego
+            aplicações web e APIs orientadas a resultados. Disponível para
+            oportunidades no Brasil (remoto ou híbrido).
           </p>
           <div className="flex flex-wrap gap-4">
             <a

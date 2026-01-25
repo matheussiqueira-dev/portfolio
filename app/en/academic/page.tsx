@@ -197,11 +197,10 @@ export default function AcademicPage() {
             Academic
           </h1>
           <h2 className="text-xl md:text-2xl font-semibold text-[color:var(--muted-strong)]">
-            Education, certifications, and technical skills
+            Education and specializations in software engineering and data
           </h2>
           <p className="text-base md:text-lg text-[color:var(--muted)] max-w-4xl">
-            Full Stack Developer | Data | AI | Cloud | Security | APIs | Backend |
-            Frontend.
+            Full Stack Developer with a Computer Science, Cloud, Security, and AI foundation.
           </p>
         </header>
 

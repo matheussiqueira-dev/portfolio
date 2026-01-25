@@ -5,7 +5,7 @@ import { buildAlternates, siteName } from "@/lib/seo";
 const pageTitle =
   "Desenvolvedor Full Stack | Dados & IA | Matheus Siqueira";
 const pageDescription =
-  "Desenvolvedor Full Stack com base em dados, BI e automação. React/Next.js, Node.js, Python e SQL para produtos de ponta a ponta.";
+  "Desenvolvedor Full Stack com base em dados, BI e automação. React/Next.js, Node.js, Python e SQL para produtos end-to-end.";
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -62,7 +62,7 @@ export default function DataAnalystJuniorPage() {
           </h2>
           <ul className="list-disc list-inside space-y-2 text-[color:var(--muted)]">
             <li>Transformo requisitos em soluções end-to-end (frontend + backend).</li>
-            <li>Estruturo dados e métricas para decisões.</li>
+            <li>Estruturo dados e métricas para decisões de produto.</li>
             <li>Automatizo integrações e pipelines com Python e SQL.</li>
             <li>Entrego dashboards quando necessário para visibilidade.</li>
           </ul>

@@ -90,6 +90,7 @@ export const metadata: Metadata = {
     "next.js",
     "node.js",
     "typescript",
+    "mongodb",
     "python",
     "sql",
     "apis",

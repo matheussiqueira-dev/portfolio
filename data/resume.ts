@@ -1,15 +1,15 @@
 export const resume = {
   name: "Matheus Siqueira",
   headline:
-    "Desenvolvedor Full Stack com base em dados e IA, construindo aplicações web, APIs e produtos de dados com React/Next.js, Node.js, Python e SQL.",
+    "Desenvolvedor Full Stack com base em dados e IA, construindo aplicações web, APIs e automações com React/Next.js, Node.js, Python e SQL.",
   summary:
-    "Desenvolvedor Full Stack e estudante de Ciência da Computação, com pós-graduações em Cloud, Segurança e IA. Experiência em BI e automação no setor público, trabalhando com grandes volumes, ETL e indicadores. Aplico essa base para desenvolver produtos end-to-end, integrando frontend, backend, APIs e analytics, com foco em qualidade, performance e impacto.",
+    "Desenvolvedor Full Stack e estudante de Ciência da Computação, com pós-graduações em Cloud, Segurança e IA. Experiência em BI e automação no setor público, trabalhando com grandes volumes, ETL e indicadores. Aplico essa base para desenvolver produtos end-to-end, integrando frontend, backend e dados, com foco em qualidade, performance e impacto.",
   coreSkills: [
-    "React, Next.js e TypeScript para front-end",
-    "Node.js e APIs REST com autenticação e integrações",
+    "React/Next.js e TypeScript para aplicações web",
+    "Node.js, MongoDB e APIs REST com autenticação e integrações",
     "Python e SQL para automação, ETL e dados",
-    "Cloud Computing, segurança e boas práticas",
-    "Dashboards e métricas para produto (Power BI, KPIs)",
+    "Cloud computing, segurança e boas práticas",
+    "Dashboards e métricas de produto (Power BI, KPIs)",
     "Git/GitHub e colaboração ágil (Scrum/Kanban)",
   ],
   experience: [

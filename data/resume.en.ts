@@ -1,12 +1,12 @@
 export const resumeEn = {
   name: "Matheus Siqueira",
   headline:
-    "Full Stack Developer with a data and AI foundation, building web apps, APIs, and data products with React/Next.js, Node.js, Python, and SQL.",
+    "Full Stack Developer with a data and AI foundation, building web apps, APIs, and automation with React/Next.js, Node.js, Python, and SQL.",
   summary:
-    "Full Stack Developer and Computer Science student with postgraduate studies in Cloud, Security, and AI. Hands-on experience in BI and automation in the public sector, working with large datasets, ETL, and indicators. I now apply that foundation to build end-to-end products integrating frontend, backend, APIs, and analytics, focused on quality, performance, and impact.",
+    "Full Stack Developer and Computer Science student with postgraduate studies in Cloud, Security, and AI. Hands-on experience in BI and automation in the public sector, working with large datasets, ETL, and indicators. I apply that foundation to build end-to-end products integrating frontend, backend, and data, focused on quality, performance, and impact.",
   coreSkills: [
-    "React, Next.js, and TypeScript for front-end",
-    "Node.js and REST APIs with auth and integrations",
+    "React/Next.js and TypeScript for web applications",
+    "Node.js, MongoDB, and REST APIs with auth and integrations",
     "Python and SQL for automation, ETL, and data",
     "Cloud computing, security, and best practices",
     "Dashboards and product metrics (Power BI, KPIs)",

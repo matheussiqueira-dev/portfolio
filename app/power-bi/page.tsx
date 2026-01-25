@@ -46,9 +46,8 @@ export default function PowerBiPage() {
             Power BI para dashboards e KPIs
           </h1>
           <p className="text-base md:text-lg text-[color:var(--muted)]">
-            Experiência com Power BI, DAX e Power Query para transformar dados
-            em dashboards executivos, com foco em indicadores e visualização
-            clara.
+            Uso Power BI para transformar dados em indicadores confiáveis e
+            visão executiva, conectando métricas a decisões de produto.
           </p>
         </header>
 

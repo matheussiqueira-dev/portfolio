@@ -14,81 +14,92 @@ export const sitePt: SiteContent = {
   },
   hero: {
     eyebrow: "Desenvolvedor Full Stack • Dados • IA • APIs",
-    title: "Matheus Siqueira",
-    subtitle: "Desenvolvedor Full Stack com base forte em dados, IA e engenharia de software.",
+    title: "Matheus Siqueira — Desenvolvedor Full Stack",
+    subtitle:
+      "Construo produtos web completos com base sólida em dados e engenharia de software.",
     description:
-      "Crio aplicações web completas, APIs e produtos de dados que conectam backend, frontend e analytics. Experiência com React/Next.js, Node.js/TypeScript, Python, SQL e cloud, com foco em performance, segurança e impacto.",
+      "Combino backend, frontend e analytics para entregar aplicações escaláveis. Experiência prática com automação, ETL e dashboards no setor público, usando React/Next.js, Node.js, Python, SQL e cloud.",
     ctas: {
       primary: "Ver projetos",
       secondary: "Ver currículo",
-      tertiary: "Entrar em contato",
+      tertiary: "Falar comigo",
     },
   },
   about: {
     eyebrow: "Sobre",
-    title: "Perfil full stack com visão de produto e base em dados",
+    title: "Software + dados para resolver problemas reais",
     who: {
       title: "Quem sou",
-      body: "Sou desenvolvedor full stack em formação em Ciência da Computação, com pós-graduações em Cloud & Edge Computing, Segurança da Informação e IA. Atuei como estagiário em Análise de Dados na Secretaria da Fazenda de Pernambuco, trabalhando com grandes volumes, automação e indicadores. Hoje uso essa base para construir software de ponta a ponta.",
+      body:
+        "Desenvolvedor Full Stack em formação em Ciência da Computação, com pós-graduações em Cloud & Edge, Segurança da Informação e IA. Atuei como estagiário em Análise de Dados na Secretaria da Fazenda de Pernambuco, lidando com grandes volumes, automação e indicadores. Hoje aplico essa base para construir sistemas end-to-end com foco em performance, segurança e impacto.",
     },
     deliver: {
-      title: "Como gero valor",
+      title: "Como eu gero valor",
       bullets: [
-        "Aplicações web completas em React/Next.js, com UX e performance.",
-        "APIs REST seguras e bem documentadas com Node.js e Python.",
-        "Pipelines de dados, ETL e automações com SQL e Python.",
-        "Dashboards e métricas para tomada de decisão.",
-        "Boas práticas de versionamento, qualidade e documentação.",
+        "Traduzo requisitos em soluções completas: UI, API e dados.",
+        "APIs REST com autenticação, logs e integrações.",
+        "Pipelines de dados e automação para reduzir trabalho manual.",
+        "Dashboards e métricas para visibilidade de produto.",
+        "Documentação e versionamento para times ágeis.",
       ],
     },
     highlights: {
       title: "Destaques",
       items: [
-        "Estágio em Análise de Dados na Secretaria da Fazenda de Pernambuco.",
-        "Pós-graduações em Cloud & Edge, Segurança da Informação e IA.",
+        "Experiência com dados públicos e fiscais em grande escala.",
+        "Projetos full stack com front-end, back-end e dados.",
+        "Pós-graduações em Cloud, Segurança e IA.",
         "Técnico em Programação Full Stack A.I.",
-        "+39 certificados em Dados, IA, Cloud e Segurança.",
-        "Inglês C1 e comunicação com times técnicos e de negócio.",
-        "Projetos full stack com APIs, front-end e dados.",
+        "Inglês C1 e comunicação clara com stakeholders.",
+        "Foco em qualidade, performance e entrega contínua.",
       ],
     },
     stack: {
       title: "Stack principal",
       groups: [
         {
-          title: "Frontend",
-          items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS"],
-        },
-        {
-          title: "Backend & APIs",
+          title: "Frontend (experiência do usuário)",
           items: [
-            "Node.js",
-            "APIs REST",
-            "FastAPI",
-            "Autenticação",
-            "Integrações",
+            "React",
+            "Next.js (SSR/SEO)",
+            "TypeScript",
+            "Design Systems",
+            "Acessibilidade",
+            "Web Performance",
           ],
         },
         {
-          title: "Dados & IA",
+          title: "Backend & APIs (escala e integração)",
+          items: [
+            "Node.js",
+            "FastAPI",
+            "APIs REST",
+            "Autenticação",
+            "MongoDB",
+            "Integrações",
+            "Testes",
+          ],
+        },
+        {
+          title: "Dados & IA (decisão e automação)",
           items: [
             "Python",
             "SQL",
             "ETL",
+            "Modelagem de dados",
             "Power BI",
-            "Data Modeling",
-            "Machine Learning",
+            "ML (fundamentos)",
           ],
         },
         {
-          title: "Cloud & Processos",
+          title: "Cloud & Processo (confiabilidade)",
           items: [
             "Cloud Computing",
             "Oracle Cloud",
             "Segurança",
             "Git/GitHub",
-            "Scrum",
-            "Kanban",
+            "CI/CD",
+            "Scrum/Kanban",
           ],
         },
       ],
@@ -96,9 +107,9 @@ export const sitePt: SiteContent = {
   },
   projects: {
     eyebrow: "Projetos",
-    title: "Cases em desenvolvimento full stack, dados e IA",
+    title: "Projetos full stack, dados e IA",
     description:
-      "Projetos que combinam engenharia de software, APIs, automação e dados, com foco em produto, performance e tomada de decisão.",
+      "Cases que unem engenharia de software, APIs, automação e dados, com foco em produto, performance e decisões bem informadas.",
     cardLabel: "Case",
     highlightLabel: "Destaques",
     detailsLabel: "Ver detalhes",
@@ -121,7 +132,7 @@ export const sitePt: SiteContent = {
     eyebrow: "Projetos",
     title: "Projetos e estudos de caso",
     description:
-      "Cases completos com contexto, arquitetura, resultados e tecnologias em desenvolvimento full stack, dados e IA.",
+      "Cases completos com contexto, decisões técnicas, arquitetura e resultados em desenvolvimento full stack, dados e IA.",
     filterLabel: "Filtrar por stack",
     allLabel: "Todos",
     caseLabel: "Abrir case",
@@ -151,9 +162,9 @@ export const sitePt: SiteContent = {
   },
   contact: {
     eyebrow: "Contato",
-    title: "Pronto para conversar?",
+    title: "Vamos conversar sobre seu produto?",
     description:
-      "Aberto a oportunidades como Desenvolvedor Full Stack / Software Engineer com base em dados e IA. Entrego aplicações completas, APIs, automação e analytics.",
+      "Aberto a oportunidades como Desenvolvedor Full Stack / Software Engineer. Posso apoiar aplicações web, APIs e dados do MVP à escala.",
     ctaTitle: "Disponível para oportunidades em Engenharia de Software",
     ctaSubtitle: "LinkedIn e e-mail respondidos rapidamente.",
     cards: {
@@ -165,9 +176,9 @@ export const sitePt: SiteContent = {
   },
   certificatesSection: {
     eyebrow: "Certificados",
-    title: "Certificados em engenharia de software, dados, IA, cloud e segurança",
+    title: "Certificados em engenharia de software, dados, cloud e segurança",
     description:
-      "Coleção com PDFs locais de Alura, Assimov e Ulife. Encontre certificações em desenvolvimento, dados, IA, cloud e segurança.",
+      "Coleção com PDFs locais de Alura, Assimov e Ulife. Certificações em desenvolvimento, dados, IA, cloud e segurança.",
     ctaLabel: "Ver certificados",
   },
   demos: {

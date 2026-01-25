@@ -5,14 +5,14 @@ import { buildAlternates, siteName } from "@/lib/seo";
 
 const pageTitle = "Full Stack Developer for Hire | Data & AI";
 const pageDescription =
-  "Full Stack Developer with a data and AI foundation. Web apps, APIs, automation, and analytics. Open to remote or hybrid opportunities.";
+  "Full Stack Developer with a data and AI foundation. Web products, APIs, automation, and analytics. Open to remote or hybrid opportunities.";
 
 const valueDelivery = [
-  "End-to-end web apps with integrated frontend and backend.",
-  "Secure REST APIs with auth, logging, and integrations.",
+  "End-to-end web apps focused on UX, performance, and SEO.",
+  "REST APIs with authentication, logging, and integrations.",
   "Data pipelines and automation with Python and SQL.",
   "Dashboards and metrics to guide product decisions.",
-  "Versioning, documentation, and engineering quality.",
+  "Documentation and versioning to scale safely.",
 ];
 
 const practicalStack = {
@@ -79,8 +79,9 @@ export default function HirePage() {
             Matheus Siqueira — Full Stack Developer | Data • AI • Software
           </h1>
           <p className="text-lg text-[color:var(--muted)] max-w-3xl">
-            Experience in software development, APIs, and data for business
-            decisions. Open to remote or hybrid roles.
+            Technical profile with a data and software engineering foundation.
+            I build web apps and APIs focused on outcomes. Open to remote or
+            hybrid roles.
           </p>
           <div className="flex flex-wrap gap-4">
             <a

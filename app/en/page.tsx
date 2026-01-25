@@ -10,7 +10,7 @@ import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 
 const homeTitle = "Matheus Siqueira | Full Stack Developer | Data & AI";
 const homeDescription =
-  "Full Stack Developer and Computer Science student with hands-on experience in data, automation, and software engineering. Builds web apps, APIs, and analytics with React/Next.js, Node.js, Python, and SQL.";
+  "Full Stack Developer and Computer Science student with a data and AI foundation. Builds web apps, APIs, and analytics with React/Next.js, Node.js, Python, and SQL.";
 
 const homeJsonLd = {
   "@context": "https://schema.org",

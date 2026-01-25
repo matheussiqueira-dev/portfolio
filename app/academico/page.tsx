@@ -198,11 +198,11 @@ export default function AcademicoPage() {
             Acadêmico
           </h1>
           <h2 className="text-xl md:text-2xl font-semibold text-[color:var(--muted-strong)]">
-            Formação, especializações, cursos e competências técnicas
+            Formação e especializações em engenharia de software e dados
           </h2>
           <p className="text-base md:text-lg text-[color:var(--muted)] max-w-4xl">
-            Desenvolvedor Full Stack | Dados | IA | Cloud | Segurança | APIs |
-            Backend | Frontend.
+            Desenvolvedor Full Stack com base em Ciência da Computação, Cloud,
+            Segurança e IA.
           </p>
         </header>
 

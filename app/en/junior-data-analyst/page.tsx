@@ -59,7 +59,7 @@ export default function JuniorDataAnalystPage() {
           <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">How I work</h2>
           <ul className="list-disc list-inside space-y-2 text-[color:var(--muted)]">
             <li>Turn requirements into end-to-end solutions (frontend + backend).</li>
-            <li>Structure data and metrics for decisions.</li>
+            <li>Structure data and metrics for product decisions.</li>
             <li>Automate integrations and pipelines with Python and SQL.</li>
             <li>Deliver dashboards when visibility is needed.</li>
           </ul>

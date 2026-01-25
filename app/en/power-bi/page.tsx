@@ -45,8 +45,8 @@ export default function PowerBiPage() {
             Power BI dashboards for KPIs and decision support
           </h1>
           <p className="text-base md:text-lg text-[color:var(--muted)]">
-            Hands-on experience with Power BI, DAX, and Power Query to build
-            executive dashboards and clear data visualizations.
+            I use Power BI to turn data into reliable indicators and executive
+            views that connect metrics to product decisions.
           </p>
         </header>
 
