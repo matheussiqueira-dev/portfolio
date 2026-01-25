@@ -5,7 +5,7 @@ import {
   certificatesEn,
   certificatesPageEn,
 } from "@/data/certificates.en";
-import { baseUrl, siteName } from "@/lib/seo";
+import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 
 const certificatesTitle = certificatesPageEn.title;
 const certificatesMetaTitle =
@@ -36,12 +36,7 @@ export const metadata: Metadata = {
   title: certificatesMetaTitle,
   description: certificatesDescription,
   alternates: {
-    canonical: "/en/certificates",
-    languages: {
-      "pt-BR": "/certificates",
-      "en-US": "/en/certificates",
-      "x-default": "/certificates",
-    },
+    ...buildAlternates({ pt: "/certificates", en: "/en/certificates", canonical: "/en/certificates" }),
   },
   openGraph: {
     title: certificatesMetaTitle,

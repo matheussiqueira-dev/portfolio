@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { siteName } from "@/lib/seo";
+import { buildAlternates, siteName } from "@/lib/seo";
 
 const pageTitle = "Power BI | Junior Data Analyst | Matheus Siqueira";
 const pageDescription =
@@ -10,12 +10,7 @@ export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   alternates: {
-    canonical: "/en/power-bi",
-    languages: {
-      "pt-BR": "/power-bi",
-      "en-US": "/en/power-bi",
-      "x-default": "/power-bi",
-    },
+    ...buildAlternates({ pt: "/power-bi", en: "/en/power-bi", canonical: "/en/power-bi" }),
   },
   openGraph: {
     title: pageTitle,

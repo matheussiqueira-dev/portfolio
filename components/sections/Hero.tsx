@@ -1,7 +1,21 @@
 import ImageWithFallback from "@/components/ui/ImageWithFallback";
 import { TrackedAnchor, TrackedLink } from "@/components/analytics/TrackedLink";
+import type { SiteContent } from "@/data/site.types";
 
-export default function Hero() {
+type Props = {
+  content: SiteContent["hero"];
+  localePrefix?: "/en";
+};
+
+export default function Hero({ content, localePrefix }: Props) {
+  const isEn = localePrefix === "/en";
+  const projectsHref = isEn ? "/en/projects" : "/projetos";
+  const resumeHref = isEn ? "/en/resume" : "/resume";
+  const contactHref = isEn ? "/en#contact" : "/#contact";
+  const imageAlt = isEn
+    ? "Profile photo of Matheus Siqueira, Junior Data Analyst"
+    : "Foto de perfil de Matheus Siqueira, Analista de Dados Júnior";
+
   return (
     <section
       id="home"
@@ -11,29 +25,27 @@ export default function Hero() {
     >
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2">
         <div className="flex flex-col gap-6">
-          <p className="eyebrow">Desenvolvimento • Dados • Infra</p>
+          <p className="eyebrow">{content.eyebrow}</p>
 
           <h1
             id="hero-heading"
             className="text-4xl font-semibold tracking-tight text-[color:var(--foreground)] md:text-5xl lg:text-6xl"
           >
-            Matheus Siqueira
+            {content.title}
           </h1>
 
           <h2 className="text-lg text-[color:var(--muted-strong)] md:text-xl">
-            Tecnologia, Desenvolvimento Web e Dados
+            {content.subtitle}
           </h2>
 
           <p className="max-w-xl text-[color:var(--muted)] leading-relaxed">
-            Profissional em transição para tecnologia, com experiência prática em análise de dados,
-            infraestrutura e desenvolvimento web. Foco em soluções reais, organização da informação
-            e sistemas escaláveis.
+            {content.description}
           </p>
 
           <div className="flex flex-wrap gap-3">
             <TrackedLink
-              href="/resume"
-              ariaLabel="Ver currículo completo de Matheus Siqueira"
+              href={resumeHref}
+              ariaLabel={content.ctas.secondary}
               tracking={{
                 action: "view_resume",
                 category: "navigation",
@@ -41,14 +53,14 @@ export default function Hero() {
               }}
               className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
-              Ver currículo
+              {content.ctas.secondary}
             </TrackedLink>
 
             <TrackedAnchor
               href="https://wa.me/5581999203683"
               target="_blank"
               rel="noopener noreferrer"
-              ariaLabel="Entrar em contato via WhatsApp com Matheus Siqueira"
+              ariaLabel={content.ctas.tertiary}
               tracking={{
                 action: "contact_whatsapp",
                 category: "engagement",
@@ -56,12 +68,12 @@ export default function Hero() {
               }}
               className="btn-outline btn-whatsapp focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
-              Entrar em contato
+              {content.ctas.tertiary}
             </TrackedAnchor>
 
             <TrackedLink
-              href="/projetos"
-              ariaLabel="Ver todos os projetos de Matheus Siqueira"
+              href={projectsHref}
+              ariaLabel={content.ctas.primary}
               tracking={{
                 action: "view_projects",
                 category: "navigation",
@@ -69,7 +81,7 @@ export default function Hero() {
               }}
               className="btn-ghost focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
-              Ver projetos
+              {content.ctas.primary}
             </TrackedLink>
           </div>
         </div>
@@ -79,7 +91,7 @@ export default function Hero() {
             <div className="absolute -inset-4 rounded-3xl bg-[color:var(--surface-muted)] blur-2xl" />
             <ImageWithFallback
               src="/profile.jpg"
-              alt="Foto de perfil de Matheus Siqueira, Analista de Dados Júnior"
+              alt={imageAlt}
               width={360}
               height={360}
               quality={90}

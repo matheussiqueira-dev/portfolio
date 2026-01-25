@@ -7,10 +7,11 @@ import MediaGallery from "@/components/ui/MediaGallery";
 import { getProjectBySlugEn, projectSlugsEn } from "@/data/projects.en";
 import type { Project } from "@/data/projects.types";
 import { siteEn } from "@/data/site.en";
-import { baseUrl, siteName } from "@/lib/seo";
+import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 
 const architectureLabel = "Architecture and technical decisions";
 const takeawaysLabel = "Key takeaways and best practices";
+const overviewLabel = "Project overview";
 
 type PageProps = {
   params: {
@@ -63,12 +64,11 @@ export function generateMetadata({ params }: PageProps): Metadata {
     title: metaTitle,
     description,
     alternates: {
-      canonical: `/en/projects/${project.slug}`,
-      languages: {
-        "pt-BR": `/projetos/${project.slug}`,
-        "en-US": `/en/projects/${project.slug}`,
-        "x-default": `/projetos/${project.slug}`,
-      },
+      ...buildAlternates({
+        pt: `/projetos/${project.slug}`,
+        en: `/en/projects/${project.slug}`,
+        canonical: `/en/projects/${project.slug}`,
+      }),
     },
     openGraph: {
       title: metaTitle,
@@ -221,6 +221,22 @@ export default function ProjectCaseStudyPageEn({ params }: PageProps) {
         </header>
 
         <div className="mt-14 grid gap-12">
+          {project.longDescription?.length ? (
+            <section id="overview" className="scroll-mt-20 space-y-4">
+              <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
+                {overviewLabel}
+              </h2>
+              {project.longDescription.map((paragraph, index) => (
+                <p
+                  key={`${project.slug}-overview-${index}`}
+                  className="text-base text-[color:var(--muted)] max-w-4xl"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </section>
+          ) : null}
+
           <section id="context" className="scroll-mt-20 space-y-4">
             <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
               {siteEn.projectDetail.contextTitle}

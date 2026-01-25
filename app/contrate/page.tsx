@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { projects } from "@/data/projects";
-import { siteName } from "@/lib/seo";
+import { buildAlternates, siteName } from "@/lib/seo";
 
 const pageTitle =
   "Contrate | Matheus Siqueira | Analista de Dados Júnior | Power BI | SQL | Python";
@@ -38,12 +38,7 @@ export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   alternates: {
-    canonical: "/contrate",
-    languages: {
-      "pt-BR": "/contrate",
-      "en-US": "/en/hire",
-      "x-default": "/contrate",
-    },
+    ...buildAlternates({ pt: "/contrate", en: "/en/hire", canonical: "/contrate" }),
   },
   openGraph: {
     title: pageTitle,

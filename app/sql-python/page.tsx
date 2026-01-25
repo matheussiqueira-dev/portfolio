@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { siteName } from "@/lib/seo";
+import { buildAlternates, siteName } from "@/lib/seo";
 
 const pageTitle =
   "SQL e Python | Analista de Dados Júnior | Matheus Siqueira";
@@ -11,12 +11,7 @@ export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   alternates: {
-    canonical: "/sql-python",
-    languages: {
-      "pt-BR": "/sql-python",
-      "en-US": "/en/sql-python",
-      "x-default": "/sql-python",
-    },
+    ...buildAlternates({ pt: "/sql-python", en: "/en/sql-python", canonical: "/sql-python" }),
   },
   openGraph: {
     title: pageTitle,

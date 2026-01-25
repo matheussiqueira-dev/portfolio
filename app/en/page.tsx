@@ -6,7 +6,7 @@ import Hero from "@/components/sections/Hero";
 import Projects from "@/components/sections/Projects";
 import JsonLd from "@/components/seo/JsonLd";
 import { siteEn } from "@/data/site.en";
-import { baseUrl, siteName } from "@/lib/seo";
+import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 
 const homeTitle =
   "Matheus Siqueira | Junior Data Analyst | Power BI | SQL | Python | BI";
@@ -31,12 +31,7 @@ export const metadata: Metadata = {
   title: homeTitle,
   description: homeDescription,
   alternates: {
-    canonical: "/en",
-    languages: {
-      "pt-BR": "/",
-      "en-US": "/en",
-      "x-default": "/",
-    },
+    ...buildAlternates({ pt: "/", en: "/en", canonical: "/en" }),
   },
   openGraph: {
     title: homeTitle,
@@ -66,7 +61,7 @@ export default function HomeEn() {
   return (
     <main className="min-h-screen">
       <JsonLd data={homeJsonLd} />
-      <Hero />
+      <Hero content={siteEn.hero} localePrefix="/en" />
       <About content={siteEn.about} />
       <Projects />
       <CertificatesPreview content={siteEn.certificatesSection} localePrefix="/en" />

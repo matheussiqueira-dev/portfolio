@@ -4,7 +4,7 @@ import Script from "next/script";
 import Header from "@/components/layout/Header";
 import JsonLd from "@/components/seo/JsonLd";
 import VideoBackground from "@/components/ui/VideoBackground";
-import { baseUrl, siteName, sameAsLinks } from "@/lib/seo";
+import { baseUrl, buildAlternates, siteName, sameAsLinks } from "@/lib/seo";
 import "./globals.css";
 
 // Google Tag Manager ID
@@ -91,12 +91,10 @@ export const metadata: Metadata = {
     "kpis",
   ],
   alternates: {
-    canonical: "/",
-    languages: {
-      "pt-BR": "/",
-      "en-US": "/en",
-      "x-default": "/",
-    },
+    ...buildAlternates({ pt: "/", en: "/en", canonical: "/" }),
+  },
+  icons: {
+    icon: [{ url: "/favicon.ico", sizes: "any" }],
   },
   openGraph: {
     title: siteTitle,
@@ -162,6 +160,7 @@ export default function RootLayout({
           as="image"
           href="/profile.jpg"
         />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
         className={`${roboto.variable} ${jetBrainsMono.variable} min-h-screen antialiased`}

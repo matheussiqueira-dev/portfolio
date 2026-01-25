@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { projectsEn } from "@/data/projects.en";
-import { siteName } from "@/lib/seo";
+import { buildAlternates, siteName } from "@/lib/seo";
 
 const pageTitle = "Junior Data Analyst for Hire | Power BI, SQL, Python";
 const pageDescription =
@@ -37,12 +37,7 @@ export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   alternates: {
-    canonical: "/en/hire",
-    languages: {
-      "pt-BR": "/contrate",
-      "en-US": "/en/hire",
-      "x-default": "/contrate",
-    },
+    ...buildAlternates({ pt: "/contrate", en: "/en/hire", canonical: "/en/hire" }),
   },
   openGraph: {
     title: pageTitle,

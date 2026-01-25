@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { siteName } from "@/lib/seo";
+import { buildAlternates, siteName } from "@/lib/seo";
 
 const pageTitle =
   "Junior Data Analyst | Power BI, SQL, Python | Matheus Siqueira";
@@ -11,12 +11,11 @@ export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   alternates: {
-    canonical: "/en/junior-data-analyst",
-    languages: {
-      "pt-BR": "/data-analyst-junior",
-      "en-US": "/en/junior-data-analyst",
-      "x-default": "/data-analyst-junior",
-    },
+    ...buildAlternates({
+      pt: "/data-analyst-junior",
+      en: "/en/junior-data-analyst",
+      canonical: "/en/junior-data-analyst",
+    }),
   },
   openGraph: {
     title: pageTitle,

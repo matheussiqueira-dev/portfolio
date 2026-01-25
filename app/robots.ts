@@ -9,6 +9,15 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        disallow: [
+          "/_next/",
+          "/*favicon*",
+          "/*.woff",
+          "/*.woff2",
+          "/*.ttf",
+          "/*.otf",
+          "/*.map",
+        ],
       },
     ],
     host: base,

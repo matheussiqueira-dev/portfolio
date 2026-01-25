@@ -1,4 +1,4 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 type PageProps = {
   params: {
@@ -7,5 +7,5 @@ type PageProps = {
 };
 
 export default function ProjectRedirectPage({ params }: PageProps) {
-  redirect(`/projetos/${params.slug}`);
+  permanentRedirect(`/projetos/${params.slug}`);
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import JsonLd from "@/components/seo/JsonLd";
 import ResumeEn from "@/components/sections/ResumeEn";
-import { baseUrl, siteName, sameAsLinks } from "@/lib/seo";
+import { baseUrl, buildAlternates, siteName, sameAsLinks } from "@/lib/seo";
 
 const resumeTitle = "Resume | Junior Data Analyst | Power BI | SQL | Python";
 const resumeDescription =
@@ -106,12 +106,7 @@ export const metadata: Metadata = {
     "kanban",
   ],
   alternates: {
-    canonical: "/en/resume",
-    languages: {
-      "pt-BR": "/resume",
-      "en-US": "/en/resume",
-      "x-default": "/resume",
-    },
+    ...buildAlternates({ pt: "/resume", en: "/en/resume", canonical: "/en/resume" }),
   },
   openGraph: {
     title: resumeTitle,

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import fs from "node:fs";
 import path from "node:path";
-import { siteName } from "@/lib/seo";
+import { buildAlternates, siteName } from "@/lib/seo";
 
 const pageTitle = "Academic | Matheus Siqueira";
 const pageDescription =
@@ -160,12 +160,7 @@ export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   alternates: {
-    canonical: "/en/academic",
-    languages: {
-      "pt-BR": "/academico",
-      "en-US": "/en/academic",
-      "x-default": "/academico",
-    },
+    ...buildAlternates({ pt: "/academico", en: "/en/academic", canonical: "/en/academic" }),
   },
   openGraph: {
     title: pageTitle,

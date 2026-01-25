@@ -4,7 +4,7 @@ import { TrackedAnchor, TrackedLink } from "@/components/analytics/TrackedLink";
 import JsonLd from "@/components/seo/JsonLd";
 import { projects } from "@/data/projects";
 import { sitePt } from "@/data/site.pt";
-import { baseUrl, siteName } from "@/lib/seo";
+import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 
 const pageTitle = "Projetos de Dados, BI e Desenvolvimento";
 const pageDescription =
@@ -67,12 +67,7 @@ export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   alternates: {
-    canonical: "/projetos",
-    languages: {
-      "pt-BR": "/projetos",
-      "en-US": "/en/projects",
-      "x-default": "/projetos",
-    },
+    ...buildAlternates({ pt: "/projetos", en: "/en/projects", canonical: "/projetos" }),
   },
   openGraph: {
     title: pageTitle,

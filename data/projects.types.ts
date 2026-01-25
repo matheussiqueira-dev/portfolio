@@ -23,6 +23,7 @@ export type Project = {
   techSummary: string;
   conclusion: string[];
   howToRun: string[];
+  longDescription?: string[];
   screenshots: ProjectMedia[];
   seo?: {
     title: string;

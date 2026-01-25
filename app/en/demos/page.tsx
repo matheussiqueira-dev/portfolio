@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd from "@/components/seo/JsonLd";
 import { projectsEn } from "@/data/projects.en";
 import { siteEn } from "@/data/site.en";
-import { baseUrl, siteName } from "@/lib/seo";
+import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 
 const pageTitle = "Demos | Matheus Siqueira";
 const pageDescription =
@@ -27,12 +27,7 @@ export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   alternates: {
-    canonical: "/en/demos",
-    languages: {
-      "pt-BR": "/demos",
-      "en-US": "/en/demos",
-      "x-default": "/demos",
-    },
+    ...buildAlternates({ pt: "/demos", en: "/en/demos", canonical: "/en/demos" }),
   },
   openGraph: {
     title: pageTitle,

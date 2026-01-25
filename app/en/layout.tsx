@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { baseUrl, siteName } from "@/lib/seo";
+import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -11,12 +11,7 @@ export const metadata: Metadata = {
   description:
     "Professional portfolio of a Junior Data Analyst focused on Business Intelligence, Power BI, SQL, and Python. Dashboards, analytics automation, and data projects.",
   alternates: {
-    canonical: "/en",
-    languages: {
-      "pt-BR": "/",
-      "en-US": "/en",
-      "x-default": "/",
-    },
+    ...buildAlternates({ pt: "/", en: "/en", canonical: "/en" }),
   },
   openGraph: {
     title: `${siteName} | Junior Data Analyst | Power BI | SQL | Python | BI`,

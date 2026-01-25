@@ -176,11 +176,6 @@ const nextConfig: NextConfig = {
       },
       // Old profile/root redirects
       {
-        source: "/matheussiqueira-dev",
-        destination: "/",
-        permanent: true,
-      },
-      {
         source: "/profile",
         destination: "/resume",
         permanent: true,
