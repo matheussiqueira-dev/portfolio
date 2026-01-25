@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { buildAlternates, siteName } from "@/lib/seo";
 
-const pageTitle = "Power BI | Junior Data Analyst | Matheus Siqueira";
+const pageTitle = "Power BI | Full Stack Developer | Matheus Siqueira";
 const pageDescription =
   "Power BI dashboards focused on KPIs, data modeling, and visualization. DAX, Power Query, and ETL for reliable analytics.";
 

@@ -15,7 +15,7 @@ export default function Resume() {
               {resume.name}
             </h1>
             <p className="text-base font-semibold text-[color:var(--muted-strong)] md:text-lg print:text-slate-700">
-              Analista de Dados Júnior | Power BI | SQL | Python | Business Intelligence
+              Desenvolvedor Full Stack | Dados • IA • Software
             </p>
             <p className="text-sm text-[color:var(--muted)] print:text-slate-700">
               {resume.headline}

@@ -3,9 +3,9 @@ import JsonLd from "@/components/seo/JsonLd";
 import ResumeEn from "@/components/sections/ResumeEn";
 import { baseUrl, buildAlternates, siteName, sameAsLinks } from "@/lib/seo";
 
-const resumeTitle = "Resume | Junior Data Analyst | Power BI | SQL | Python";
+const resumeTitle = "Resume | Full Stack Developer | Matheus Siqueira";
 const resumeDescription =
-  "Resume of Matheus Siqueira — Junior Data Analyst with experience in Business Intelligence, Power BI, SQL, Python, dashboards, ETL and data analysis.";
+  "Resume of Matheus Siqueira — Full Stack Developer with a data and AI foundation. Web apps, APIs, automation, and analytics.";
 
 // ProfilePage JSON-LD with mainEntity (Person) - required for Google rich results
 const profilePageJsonLd = {
@@ -21,7 +21,7 @@ const profilePageJsonLd = {
     "@type": "Person",
     "@id": `${baseUrl}/#person`,
     name: "Matheus Siqueira",
-    jobTitle: "Junior Data Analyst",
+    jobTitle: "Full Stack Developer",
     email: "matheussiqueirahub@gmail.com",
     telephone: "+55 81 99920-3683",
     url: `${baseUrl}/en/resume`,
@@ -33,21 +33,19 @@ const profilePageJsonLd = {
       addressCountry: "BR",
     },
     knowsAbout: [
-      "Power BI",
-      "DAX",
-      "Power Query",
-      "SQL",
-      "Python",
-      "ETL",
-      "Business Intelligence",
-      "Data Visualization",
-      "Data Modeling",
-      "Dashboards",
-      "Git",
-      "Tableau",
+      "Full Stack Development",
+      "Software Engineering",
       "React",
-      "APIs",
-      "Statistics",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "REST APIs",
+      "Python",
+      "SQL",
+      "Cloud Computing",
+      "Machine Learning",
+      "Business Intelligence",
+      "Data Engineering",
     ],
   },
   isPartOf: {
@@ -85,25 +83,22 @@ export const metadata: Metadata = {
   title: resumeTitle,
   description: resumeDescription,
   keywords: [
-    "junior data analyst",
-    "data analyst",
-    "business intelligence",
-    "power bi",
-    "sql",
+    "full stack developer",
+    "software engineer",
+    "full stack",
+    "react",
+    "next.js",
+    "node.js",
+    "typescript",
     "python",
-    "dax",
-    "etl",
-    "dashboards",
-    "kpis",
-    "data visualization",
-    "data analytics",
-    "process automation",
-    "exploratory analysis",
-    "data modeling",
-    "executive reports",
-    "agile methods",
-    "scrum",
-    "kanban",
+    "sql",
+    "apis",
+    "cloud computing",
+    "machine learning",
+    "data engineering",
+    "business intelligence",
+    "data",
+    "ai",
   ],
   alternates: {
     ...buildAlternates({ pt: "/resume", en: "/en/resume", canonical: "/en/resume" }),

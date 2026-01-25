@@ -4,22 +4,28 @@ import { projects } from "@/data/projects";
 import { buildAlternates, siteName } from "@/lib/seo";
 
 const pageTitle =
-  "Contrate | Matheus Siqueira | Analista de Dados Júnior | Power BI | SQL | Python";
+  "Contrate | Matheus Siqueira | Desenvolvedor Full Stack | Dados & IA";
 const pageDescription =
-  "Analista de Dados Júnior com foco em Business Intelligence, Power BI, SQL e Python. Disponível para oportunidades no Brasil (remoto ou híbrido).";
+  "Desenvolvedor Full Stack com base em dados, IA e engenharia de software. APIs, front-end, automação e analytics.";
 
 const valueDelivery = [
-  "Dashboards orientados a KPIs com Power BI para leitura executiva.",
-  "Modelagem de dados e definição de indicadores confiáveis.",
-  "ETL e automação de rotinas analíticas com SQL e Python.",
-  "Análises exploratórias para identificar padrões e tendências.",
-  "Documentação e padronização para consistência das análises.",
+  "Aplicações web completas com front-end e back-end integrados.",
+  "APIs REST seguras com autenticação, logs e integrações.",
+  "Pipelines de dados e automações com Python e SQL.",
+  "Dashboards e métricas para orientar decisões de produto.",
+  "Versionamento, documentação e qualidade de engenharia.",
 ];
 
 const practicalStack = {
-  "BI & Analytics": ["Power BI", "DAX", "Power Query", "Dashboards", "KPIs"],
-  "Dados & ETL": ["SQL", "Python", "Pandas", "ETL", "Data Modeling"],
-  "Versão & Colaboração": ["Git/GitHub", "Scrum", "Kanban", "Documentação"],
+  Frontend: ["React", "Next.js", "TypeScript", "UX", "Acessibilidade"],
+  "Backend & APIs": [
+    "Node.js",
+    "APIs REST",
+    "FastAPI",
+    "Autenticação",
+    "Integrações",
+  ],
+  "Data & Cloud": ["Python", "SQL", "ETL", "Power BI", "Cloud Computing"],
 };
 
 const featuredSlugs = [
@@ -52,7 +58,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Contrate Matheus Siqueira — Analista de Dados Júnior",
+        alt: "Contrate Matheus Siqueira — Desenvolvedor Full Stack",
       },
     ],
   },
@@ -69,14 +75,14 @@ export default function ContratePage() {
     <main className="min-h-screen px-6 pt-28 pb-20">
       <div className="max-w-6xl mx-auto space-y-16">
         <header className="space-y-4">
-          <p className="eyebrow">Recrutadores e gestores de dados</p>
+          <p className="eyebrow">Recrutadores e líderes de tecnologia</p>
           <h1 className="text-4xl md:text-5xl font-semibold text-[color:var(--foreground)]">
-            Matheus Siqueira — Analista de Dados Júnior | Power BI | SQL | Python
+            Matheus Siqueira — Desenvolvedor Full Stack | Dados • IA • Software
           </h1>
           <p className="text-lg text-[color:var(--muted)] max-w-3xl">
-            Experiência em Business Intelligence, dashboards e automação de
-            análises para decisões de negócio. Disponível para oportunidades no
-            Brasil (remoto ou híbrido).
+            Experiência em desenvolvimento de software, APIs e dados para
+            decisões de negócio. Disponível para oportunidades no Brasil (remoto
+            ou híbrido).
           </p>
           <div className="flex flex-wrap gap-4">
             <a

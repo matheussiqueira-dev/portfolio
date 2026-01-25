@@ -8,10 +8,9 @@ import JsonLd from "@/components/seo/JsonLd";
 import { siteEn } from "@/data/site.en";
 import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 
-const homeTitle =
-  "Matheus Siqueira | Junior Data Analyst | Power BI | SQL | Python | BI";
+const homeTitle = "Matheus Siqueira | Full Stack Developer | Data & AI";
 const homeDescription =
-  "Computer Science student with hands-on experience in Business Intelligence, data analysis, process automation, and strategic dashboards. Skilled in Power BI, SQL, and Python to transform data into actionable insights.";
+  "Full Stack Developer and Computer Science student with hands-on experience in data, automation, and software engineering. Builds web apps, APIs, and analytics with React/Next.js, Node.js, Python, and SQL.";
 
 const homeJsonLd = {
   "@context": "https://schema.org",
@@ -45,7 +44,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Matheus Siqueira | Junior Data Analyst",
+        alt: "Matheus Siqueira | Full Stack Developer",
       },
     ],
   },

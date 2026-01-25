@@ -17,7 +17,7 @@ export default function ResumeEn() {
               {resumeEn.name}
             </h1>
             <p className="text-base font-semibold text-[color:var(--muted-strong)] md:text-lg print:text-slate-700">
-              Junior Data Analyst | Power BI | SQL | Python | Business Intelligence
+              Full Stack Developer | Data • AI • Software
             </p>
             <p className="text-sm text-[color:var(--muted)] print:text-slate-700">
               {resumeEn.headline}

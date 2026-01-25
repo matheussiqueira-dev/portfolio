@@ -1,16 +1,16 @@
 export const resume = {
   name: "Matheus Siqueira",
   headline:
-    "Analista de Dados Júnior com experiência prática em Business Intelligence, análise de dados, automação de processos e visualização estratégica, utilizando Power BI, SQL, Python, DAX e ETL para apoiar decisões orientadas por dados.",
+    "Desenvolvedor Full Stack com base em dados e IA, construindo aplicações web, APIs e produtos de dados com React/Next.js, Node.js, Python e SQL.",
   summary:
-    "Analista de Dados Júnior (Data Analyst) com foco em Business Intelligence e Data Analytics. Experiência com Power BI, SQL, Python, DAX e ETL para criar dashboards, KPIs e relatórios executivos com Data Visualization clara. Atuação em análise exploratória, modelagem de dados e automação de processos, colaborando com times em metodologias ágeis (Scrum e Kanban).",
+    "Desenvolvedor Full Stack e estudante de Ciência da Computação, com pós-graduações em Cloud, Segurança e IA. Experiência em BI e automação no setor público, trabalhando com grandes volumes, ETL e indicadores. Aplico essa base para desenvolver produtos end-to-end, integrando frontend, backend, APIs e analytics, com foco em qualidade, performance e impacto.",
   coreSkills: [
-    "Power BI (DAX, Power Query) e Dashboards",
-    "SQL, Modelagem de Dados e ETL",
-    "Python para automação de processos e Data Analytics",
-    "KPIs, Relatórios Executivos e Data Visualization",
-    "Análise Exploratória e Qualidade de Dados",
-    "Metodologias ágeis: Scrum e Kanban",
+    "React, Next.js e TypeScript para front-end",
+    "Node.js e APIs REST com autenticação e integrações",
+    "Python e SQL para automação, ETL e dados",
+    "Cloud Computing, segurança e boas práticas",
+    "Dashboards e métricas para produto (Power BI, KPIs)",
+    "Git/GitHub e colaboração ágil (Scrum/Kanban)",
   ],
   experience: [
     {
@@ -122,7 +122,7 @@ export const resume = {
   contact: {
     title: "Contato",
     description:
-      "Aberto a oportunidades como Analista de Dados Júnior / Data Analyst ou Business Intelligence.",
+      "Aberto a oportunidades como Desenvolvedor Full Stack / Software Engineer com base em dados e IA.",
     links: [
       {
         label: "Email",

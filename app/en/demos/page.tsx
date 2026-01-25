@@ -7,7 +7,7 @@ import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 
 const pageTitle = "Demos | Matheus Siqueira";
 const pageDescription =
-  "Demos and repositories for data, BI, and automation projects, focused on real cases, fast technical validation, and objective recruiter and hiring manager review.";
+  "Demos and repositories for full stack, API, and data projects, focused on real cases, fast technical validation, and objective recruiter and hiring manager review.";
 
 const demosJsonLd = {
   "@context": "https://schema.org",

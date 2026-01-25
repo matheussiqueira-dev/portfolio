@@ -3,9 +3,9 @@ import Link from "next/link";
 import { buildAlternates, siteName } from "@/lib/seo";
 
 const pageTitle =
-  "Analista de Dados Júnior | Power BI, SQL, Python | Matheus Siqueira";
+  "Desenvolvedor Full Stack | Dados & IA | Matheus Siqueira";
 const pageDescription =
-  "Analista de Dados Júnior com foco em Business Intelligence, Power BI, SQL e Python. Dashboards, ETL e automação de análises.";
+  "Desenvolvedor Full Stack com base em dados, BI e automação. React/Next.js, Node.js, Python e SQL para produtos de ponta a ponta.";
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Analista de Dados Júnior | Matheus Siqueira",
+        alt: "Desenvolvedor Full Stack | Matheus Siqueira",
       },
     ],
   },
@@ -47,11 +47,11 @@ export default function DataAnalystJuniorPage() {
       <div className="max-w-5xl mx-auto space-y-10">
         <header className="space-y-4">
           <h1 className="text-4xl md:text-5xl font-semibold text-[color:var(--foreground)]">
-            Analista de Dados Júnior | Power BI | SQL | Python | Business Intelligence
+            Desenvolvedor Full Stack | Dados • IA • Software
           </h1>
           <p className="text-base md:text-lg text-[color:var(--muted)]">
-            Perfil focado em Business Intelligence, dashboards e automação de
-            análises com Power BI, SQL, DAX e Python. Disponível para vagas no
+            Perfil full stack com base em dados, APIs e automação usando
+            React/Next.js, Node.js, SQL e Python. Disponível para vagas no
             Brasil (remoto ou híbrido).
           </p>
         </header>
@@ -61,17 +61,17 @@ export default function DataAnalystJuniorPage() {
             Como eu trabalho
           </h2>
           <ul className="list-disc list-inside space-y-2 text-[color:var(--muted)]">
-            <li>Transformo dados em KPIs claros e acionáveis.</li>
-            <li>Estruturo modelos analíticos com SQL e DAX.</li>
-            <li>Automatizo ETL e rotinas de qualidade com Python.</li>
-            <li>Comunico resultados em dashboards executivos.</li>
+            <li>Transformo requisitos em soluções end-to-end (frontend + backend).</li>
+            <li>Estruturo dados e métricas para decisões.</li>
+            <li>Automatizo integrações e pipelines com Python e SQL.</li>
+            <li>Entrego dashboards quando necessário para visibilidade.</li>
           </ul>
         </section>
 
         <section className="space-y-3">
           <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">Stack principal</h2>
           <p className="text-[color:var(--muted)]">
-            Power BI · SQL · Python · DAX · Power Query · ETL · Dashboards · KPIs
+            React · Next.js · Node.js · TypeScript · Python · SQL · Power BI · APIs
           </p>
         </section>
 

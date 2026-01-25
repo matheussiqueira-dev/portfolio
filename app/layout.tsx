@@ -23,9 +23,9 @@ const jetBrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const siteTitle = `${siteName} | Analista de Dados Júnior | Power BI | SQL | Python | BI`;
+const siteTitle = `${siteName} | Desenvolvedor Full Stack | Dados, IA e Software`;
 const siteDescription =
-  "Portfólio profissional de Matheus Siqueira — Analista de Dados Júnior com foco em Business Intelligence, Power BI, SQL, Python, dashboards, ETL e análise de dados.";
+  "Portfólio profissional de Matheus Siqueira — Desenvolvedor Full Stack com base em dados, IA e engenharia de software. APIs, front-end, automação e analytics.";
 
 const websiteJsonLd = {
   "@context": "https://schema.org",
@@ -42,11 +42,13 @@ const personJsonLd = {
   "@type": "Person",
   "@id": `${baseUrl}/#person`,
   name: "Matheus Siqueira",
-  jobTitle: "Analista de Dados Júnior",
+  jobTitle: "Desenvolvedor Full Stack",
   email: "matheussiqueirahub@gmail.com",
   telephone: "+55 81 99920-3683",
   url: baseUrl,
+  image: `${baseUrl}/profile.jpg`,
   sameAs: sameAsLinks,
+  inLanguage: ["pt-BR", "en-US"],
   address: {
     "@type": "PostalAddress",
     addressLocality: "Recife",
@@ -54,16 +56,52 @@ const personJsonLd = {
     addressCountry: "BR",
   },
   knowsAbout: [
-    "Power BI",
-    "DAX",
-    "Power Query",
-    "SQL",
+    "Full Stack Development",
+    "Software Engineering",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    "REST APIs",
     "Python",
-    "ETL",
+    "SQL",
+    "Cloud Computing",
+    "Machine Learning",
     "Business Intelligence",
-    "Data Analytics",
-    "Dashboards",
-    "Data Visualization",
+    "Data Engineering",
+  ],
+};
+
+const softwareDeveloperJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareDeveloper",
+  "@id": `${baseUrl}/#software-developer`,
+  name: "Matheus Siqueira",
+  jobTitle: "Desenvolvedor Full Stack",
+  url: baseUrl,
+  image: `${baseUrl}/profile.jpg`,
+  sameAs: sameAsLinks,
+  inLanguage: ["pt-BR", "en-US"],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Recife",
+    addressRegion: "Pernambuco",
+    addressCountry: "BR",
+  },
+  knowsAbout: [
+    "Full Stack Development",
+    "Software Engineering",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    "REST APIs",
+    "Python",
+    "SQL",
+    "Cloud Computing",
+    "Machine Learning",
+    "Business Intelligence",
+    "Data Engineering",
   ],
 };
 
@@ -75,20 +113,23 @@ export const metadata: Metadata = {
   },
   description: siteDescription,
   keywords: [
-    "analista de dados júnior",
-    "junior data analyst",
-    "power bi",
-    "sql",
+    "desenvolvedor full stack",
+    "full stack developer",
+    "engenheiro de software",
+    "software engineer",
+    "react",
+    "next.js",
+    "node.js",
+    "typescript",
     "python",
+    "sql",
+    "apis",
+    "cloud computing",
+    "machine learning",
+    "data engineering",
     "business intelligence",
-    "bi",
-    "dax",
-    "power query",
-    "etl",
-    "dashboards",
-    "data analytics",
-    "data visualization",
-    "kpis",
+    "dados",
+    "ia",
   ],
   alternates: {
     ...buildAlternates({ pt: "/", en: "/en", canonical: "/" }),
@@ -106,10 +147,11 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
+        // Replace with your social sharing image (1200x630).
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: `${siteName} — Analista de Dados Júnior`,
+        alt: `${siteName} — Desenvolvedor Full Stack`,
       },
     ],
   },
@@ -117,6 +159,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteTitle,
     description: siteDescription,
+    // Replace with your social sharing image (1200x630).
     images: ["/og.png"],
   },
   robots: {
@@ -183,7 +226,7 @@ export default function RootLayout({
           Pular para o conteúdo principal
         </a>
 
-        <JsonLd data={[websiteJsonLd, personJsonLd]} />
+        <JsonLd data={[websiteJsonLd, personJsonLd, softwareDeveloperJsonLd]} />
         <VideoBackground />
         <div className="app-shell">
           <Header />

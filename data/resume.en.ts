@@ -1,16 +1,16 @@
 export const resumeEn = {
   name: "Matheus Siqueira",
   headline:
-    "Junior Data Analyst with hands-on experience in Business Intelligence, data analysis, process automation, and strategic visualization using Power BI, SQL, Python, DAX, and ETL to support data-driven decisions.",
+    "Full Stack Developer with a data and AI foundation, building web apps, APIs, and data products with React/Next.js, Node.js, Python, and SQL.",
   summary:
-    "Junior Data Analyst focused on Business Intelligence and Data Analytics. Experience with Power BI, SQL, Python, DAX, and ETL to create dashboards, KPIs, and executive reports with clear Data Visualization. Work includes exploratory analysis, data modeling, and process automation, collaborating with teams using agile methodologies (Scrum and Kanban).",
+    "Full Stack Developer and Computer Science student with postgraduate studies in Cloud, Security, and AI. Hands-on experience in BI and automation in the public sector, working with large datasets, ETL, and indicators. I now apply that foundation to build end-to-end products integrating frontend, backend, APIs, and analytics, focused on quality, performance, and impact.",
   coreSkills: [
-    "Power BI (DAX, Power Query) and Dashboards",
-    "SQL, Data Modeling, and ETL",
-    "Python for process automation and Data Analytics",
-    "KPIs, Executive Reports, and Data Visualization",
-    "Exploratory Analysis and Data Quality",
-    "Agile methodologies: Scrum and Kanban",
+    "React, Next.js, and TypeScript for front-end",
+    "Node.js and REST APIs with auth and integrations",
+    "Python and SQL for automation, ETL, and data",
+    "Cloud computing, security, and best practices",
+    "Dashboards and product metrics (Power BI, KPIs)",
+    "Git/GitHub and agile collaboration (Scrum/Kanban)",
   ],
   experience: [
     {
@@ -122,7 +122,7 @@ export const resumeEn = {
   contact: {
     title: "Contact",
     description:
-      "Open to opportunities as Junior Data Analyst / Data Analyst or Business Intelligence.",
+      "Open to Full Stack Developer / Software Engineer opportunities with a data and AI foundation.",
     links: [
       {
         label: "Email",

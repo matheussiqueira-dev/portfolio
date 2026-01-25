@@ -5,7 +5,7 @@ import { buildAlternates, siteName } from "@/lib/seo";
 
 const pageTitle = "Acadêmico | Matheus Siqueira";
 const pageDescription =
-  "Formação, especializações, certificados e skills de Matheus Siqueira — Analista de Dados Júnior | Power BI | SQL | Python | BI.";
+  "Formação, especializações, certificados e skills de Matheus Siqueira — Desenvolvedor Full Stack com base em dados, IA, cloud e segurança.";
 
 const education = [
   "Ciência da Computação (UNIFG) em andamento (3º período 2025–2029)",
@@ -201,8 +201,8 @@ export default function AcademicoPage() {
             Formação, especializações, cursos e competências técnicas
           </h2>
           <p className="text-base md:text-lg text-[color:var(--muted)] max-w-4xl">
-            Analista de Dados Júnior | Power BI | SQL | Python | BI | Business
-            Intelligence | ETL | DAX | Power Query.
+            Desenvolvedor Full Stack | Dados | IA | Cloud | Segurança | APIs |
+            Backend | Frontend.
           </p>
         </header>
 

@@ -6,9 +6,9 @@ import { projects } from "@/data/projects";
 import { sitePt } from "@/data/site.pt";
 import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 
-const pageTitle = "Projetos de Dados, BI e Desenvolvimento";
+const pageTitle = "Projetos Full Stack, Dados e IA";
 const pageDescription =
-  "Portfólio de projetos em análise de dados, Business Intelligence, Big Data, automação, data science e desenvolvimento full stack. Cases com dashboards, ETL, APIs e visualização de dados.";
+  "Portfólio de projetos em desenvolvimento full stack, dados e IA. Cases com APIs, automação, dashboards e visualização para decisões de produto.";
 
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",

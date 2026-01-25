@@ -3,22 +3,28 @@ import Link from "next/link";
 import { projectsEn } from "@/data/projects.en";
 import { buildAlternates, siteName } from "@/lib/seo";
 
-const pageTitle = "Junior Data Analyst for Hire | Power BI, SQL, Python";
+const pageTitle = "Full Stack Developer for Hire | Data & AI";
 const pageDescription =
-  "Junior Data Analyst focused on Business Intelligence, Power BI, SQL, and Python. Open to remote or hybrid opportunities.";
+  "Full Stack Developer with a data and AI foundation. Web apps, APIs, automation, and analytics. Open to remote or hybrid opportunities.";
 
 const valueDelivery = [
-  "KPI-focused dashboards with Power BI for executive visibility.",
-  "Data modeling and reliable indicator definitions.",
-  "ETL and analytics automation with SQL and Python.",
-  "Exploratory analysis to identify patterns and trends.",
-  "Clear reporting with documented analysis workflows.",
+  "End-to-end web apps with integrated frontend and backend.",
+  "Secure REST APIs with auth, logging, and integrations.",
+  "Data pipelines and automation with Python and SQL.",
+  "Dashboards and metrics to guide product decisions.",
+  "Versioning, documentation, and engineering quality.",
 ];
 
 const practicalStack = {
-  "BI & Analytics": ["Power BI", "DAX", "Power Query", "Dashboards", "KPIs"],
-  "Data & ETL": ["SQL", "Python", "Pandas", "ETL", "Data Modeling"],
-  "Versioning & Collaboration": ["Git/GitHub", "Scrum", "Kanban", "Documentation"],
+  Frontend: ["React", "Next.js", "TypeScript", "UX", "Accessibility"],
+  "Backend & APIs": [
+    "Node.js",
+    "REST APIs",
+    "FastAPI",
+    "Authentication",
+    "Integrations",
+  ],
+  "Data & Cloud": ["Python", "SQL", "ETL", "Power BI", "Cloud Computing"],
 };
 
 const featuredSlugs = [
@@ -51,7 +57,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Hire Matheus Siqueira — Junior Data Analyst",
+        alt: "Hire Matheus Siqueira — Full Stack Developer",
       },
     ],
   },
@@ -68,13 +74,13 @@ export default function HirePage() {
     <main className="min-h-screen px-6 pt-28 pb-20">
       <div className="max-w-6xl mx-auto space-y-16">
         <header className="space-y-4">
-          <p className="eyebrow">Recruiters and data leads</p>
+          <p className="eyebrow">Recruiters and tech leads</p>
           <h1 className="text-4xl md:text-5xl font-semibold text-[color:var(--foreground)]">
-            Matheus Siqueira — Junior Data Analyst | Power BI | SQL | Python
+            Matheus Siqueira — Full Stack Developer | Data • AI • Software
           </h1>
           <p className="text-lg text-[color:var(--muted)] max-w-3xl">
-            Experience in Business Intelligence, dashboards, and analytics
-            automation for business decisions. Open to remote or hybrid roles.
+            Experience in software development, APIs, and data for business
+            decisions. Open to remote or hybrid roles.
           </p>
           <div className="flex flex-wrap gap-4">
             <a

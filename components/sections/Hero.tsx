@@ -13,8 +13,8 @@ export default function Hero({ content, localePrefix }: Props) {
   const resumeHref = isEn ? "/en/resume" : "/resume";
   const contactHref = isEn ? "/en#contact" : "/#contact";
   const imageAlt = isEn
-    ? "Profile photo of Matheus Siqueira, Junior Data Analyst"
-    : "Foto de perfil de Matheus Siqueira, Analista de Dados Júnior";
+    ? "Profile photo of Matheus Siqueira, Full Stack Developer"
+    : "Foto de perfil de Matheus Siqueira, Desenvolvedor Full Stack";
 
   return (
     <section

@@ -3,9 +3,9 @@ import Link from "next/link";
 import { buildAlternates, siteName } from "@/lib/seo";
 
 const pageTitle =
-  "SQL e Python | Analista de Dados Júnior | Matheus Siqueira";
+  "SQL e Python | Desenvolvedor Full Stack | Matheus Siqueira";
 const pageDescription =
-  "SQL e Python para ETL, automação e análise de dados. Modelagem, qualidade e indicadores para dashboards confiáveis.";
+  "SQL e Python para ETL, automação e integrações em produtos full stack. Modelagem, qualidade e indicadores para dados confiáveis.";
 
 export const metadata: Metadata = {
   title: pageTitle,

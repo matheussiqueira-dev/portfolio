@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { buildAlternates, siteName } from "@/lib/seo";
 
-const pageTitle = "SQL and Python | Junior Data Analyst | Matheus Siqueira";
+const pageTitle = "SQL and Python | Full Stack Developer | Matheus Siqueira";
 const pageDescription =
-  "SQL and Python for ETL, automation, and data analysis. Modeling, quality checks, and KPI-ready data pipelines.";
+  "SQL and Python for ETL, automation, and integrations in full stack products. Modeling, quality checks, and KPI-ready data pipelines.";
 
 export const metadata: Metadata = {
   title: pageTitle,

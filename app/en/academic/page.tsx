@@ -5,7 +5,7 @@ import { buildAlternates, siteName } from "@/lib/seo";
 
 const pageTitle = "Academic | Matheus Siqueira";
 const pageDescription =
-  "Education, certifications and skills — Junior Data Analyst | Power BI | SQL | Python | BI.";
+  "Education, certifications, and skills — Full Stack Developer with a data, AI, cloud, and security foundation.";
 
 const education = [
   "Computer Science (UNIFG) in progress (3rd semester 2025–2029)",
@@ -200,8 +200,8 @@ export default function AcademicPage() {
             Education, certifications, and technical skills
           </h2>
           <p className="text-base md:text-lg text-[color:var(--muted)] max-w-4xl">
-            Junior Data Analyst | Power BI | SQL | Python | BI | Business
-            Intelligence | ETL | DAX | Power Query.
+            Full Stack Developer | Data | AI | Cloud | Security | APIs | Backend |
+            Frontend.
           </p>
         </header>
 

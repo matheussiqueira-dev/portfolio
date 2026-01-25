@@ -9,7 +9,7 @@ import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 
 const certificatesTitle = certificatesPageEn.title;
 const certificatesMetaTitle =
-  "Certificates | Junior Data Analyst | Power BI | SQL | Python | BI";
+  "Certificates | Full Stack Developer | Data & AI";
 const certificatesDescription = certificatesPageEn.description;
 
 const certificatesJsonLd = {

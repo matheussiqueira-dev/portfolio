@@ -13,76 +13,82 @@ export const siteEn: SiteContent = {
     resume: "Resume",
   },
   hero: {
-    eyebrow: "Junior Data Analyst • BI • Power BI • SQL • Python",
+    eyebrow: "Full Stack Developer • Data • AI • APIs",
     title: "Matheus Siqueira",
-    subtitle: "Junior Data Analyst focused on BI, automation, and dashboards.",
+    subtitle: "Full Stack Developer with a strong foundation in data, AI, and software engineering.",
     description:
-      "Junior Data Analyst with experience in Business Intelligence, data analysis, and automation. I work with Power BI, SQL, DAX, Power Query, and Python for ETL, data organization, and executive dashboards. Open to remote or hybrid roles.",
+      "I build end-to-end web apps, APIs, and data products that connect backend, frontend, and analytics. Experience with React/Next.js, Node.js/TypeScript, Python, SQL, and cloud, focused on performance, security, and impact.",
     ctas: {
-      primary: "View data projects",
+      primary: "View projects",
       secondary: "View resume",
       tertiary: "Get in touch",
     },
   },
   about: {
     eyebrow: "About",
-    title: "Profile focused on BI, automation, and data visualization",
+    title: "Full stack profile with a product mindset and data foundation",
     who: {
       title: "Who I am",
-      body: "Junior Data Analyst studying Computer Science, focused on Business Intelligence and Data Analytics. I use Power BI, SQL, and Python to structure data, build reliable indicators, and support business decisions.",
+      body: "Full stack developer studying Computer Science, with postgraduate studies in Cloud & Edge, Information Security, and AI. I worked as a Data Analyst intern at the Treasury Department of Pernambuco, dealing with large datasets, automation, and indicators. I now apply that foundation to build software end-to-end.",
     },
     deliver: {
       title: "How I deliver value",
       bullets: [
-        "Executive Power BI dashboards for KPIs and performance.",
-        "KPI-driven analysis aligned with business goals.",
-        "ETL and analytics automation with SQL and Python.",
-        "Analytical modeling with DAX and Power Query.",
-        "Documentation and standardization for consistent data.",
+        "End-to-end web apps in React/Next.js with UX and performance in mind.",
+        "Secure, well-documented REST APIs with Node.js and Python.",
+        "Data pipelines, ETL, and automation with SQL and Python.",
+        "Dashboards and metrics to guide decision-making.",
+        "Versioning, quality, and clear documentation.",
       ],
     },
     highlights: {
       title: "Highlights",
       items: [
-        "+39 certificates in Data, BI, AI, Cloud, and Security.",
-        "Analytical thinking focused on actionable KPIs.",
-        "Clear communication with stakeholders and technical teams.",
-        "Data-driven decisions and information organization.",
-        "Collaboration in agile, cross-functional teams.",
-        "Commitment to data quality and governance.",
+        "Data Analyst internship at the Pernambuco Treasury Department.",
+        "Postgraduate studies in Cloud & Edge, Information Security, and AI.",
+        "Full Stack A.I. Programming Technician.",
+        "+39 certificates in Data, AI, Cloud, and Security.",
+        "C1 English and clear communication with technical and business teams.",
+        "Full stack projects with APIs, front-end, and data.",
       ],
     },
     stack: {
       title: "Core stack",
       groups: [
         {
-          title: "Data & BI",
-          items: ["Power BI", "DAX", "Power Query", "SQL", "ETL", "Dashboards"],
+          title: "Frontend",
+          items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS"],
         },
         {
-          title: "Python & Analytics",
+          title: "Backend & APIs",
           items: [
-            "Python",
-            "Pandas",
-            "Data Analytics",
-            "Data Visualization",
-            "KPIs",
-            "Automation",
+            "Node.js",
+            "REST APIs",
+            "FastAPI",
+            "Authentication",
+            "Integrations",
           ],
         },
         {
-          title: "Web & Integrations",
-          items: ["JavaScript", "TypeScript", "React", "Next.js", "REST APIs"],
+          title: "Data & AI",
+          items: [
+            "Python",
+            "SQL",
+            "ETL",
+            "Power BI",
+            "Data Modeling",
+            "Machine Learning",
+          ],
         },
         {
-          title: "Tools & Process",
+          title: "Cloud & Process",
           items: [
+            "Cloud Computing",
+            "Oracle Cloud",
+            "Security",
             "Git/GitHub",
             "Scrum",
             "Kanban",
-            "Documentation",
-            "Data governance",
-            "Best practices",
           ],
         },
       ],
@@ -90,9 +96,9 @@ export const siteEn: SiteContent = {
   },
   projects: {
     eyebrow: "Projects",
-    title: "Case studies in data, BI, and software development",
+    title: "Case studies in full stack, data, and AI",
     description:
-      "Projects combining data analysis, BI, automation, APIs, and data apps, with Git versioning and a focus on data visualization and decision-making.",
+      "Projects that combine software engineering, APIs, automation, and data, focused on product, performance, and decision-making.",
     cardLabel: "Case",
     highlightLabel: "Highlights",
     detailsLabel: "View details",
@@ -115,7 +121,7 @@ export const siteEn: SiteContent = {
     eyebrow: "Projects",
     title: "Projects and case studies",
     description:
-      "Complete cases with context, data used, architecture, results, and technologies across BI, data science, Big Data, automation, and full stack development.",
+      "Complete cases with context, architecture, results, and technologies across full stack, data, and AI.",
     filterLabel: "Filter by stack",
     allLabel: "All",
     caseLabel: "Open case",
@@ -147,8 +153,8 @@ export const siteEn: SiteContent = {
     eyebrow: "Contact",
     title: "Ready to connect?",
     description:
-      "Open to Junior Data Analyst or BI opportunities. I deliver dashboards, automation, and KPI-driven analysis with Power BI, SQL, and Python.",
-    ctaTitle: "Available for Data and BI opportunities",
+      "Open to Full Stack Developer / Software Engineer opportunities with a data and AI foundation. I deliver end-to-end apps, APIs, automation, and analytics.",
+    ctaTitle: "Available for Software Engineering opportunities",
     ctaSubtitle: "LinkedIn and email replies are fast.",
     cards: {
       email: "Email",
@@ -159,16 +165,16 @@ export const siteEn: SiteContent = {
   },
   certificatesSection: {
     eyebrow: "Certificates",
-    title: "Certificates in Data, BI, AI, Cloud, and Security",
+    title: "Certificates in software engineering, data, AI, cloud, and security",
     description:
-      "Local PDF collection from Alura, Assimov, and Ulife. Find certifications in Power BI, SQL, Python, AI, and Cloud.",
+      "Local PDF collection from Alura, Assimov, and Ulife. Find certifications in development, data, AI, cloud, and security.",
     ctaLabel: "View certificates",
   },
   demos: {
     eyebrow: "Demos",
     title: "Demos and repositories",
     description:
-      "Demos and repositories for quick evaluation of data, BI, and automation projects with clear local run steps.",
+      "Demos and repositories for quick evaluation of full stack projects, APIs, and data apps with clear local run steps.",
     viewProjectsLabel: "View projects",
     fullCaseLabel: "Full case",
     openDemoLabel: "Open demo",
@@ -178,7 +184,7 @@ export const siteEn: SiteContent = {
     publishItems: [
       "Web (Next.js/React): Vercel with automatic GitHub deploy.",
       "Vanilla front-end (HTML/JS): GitHub Pages or Vercel.",
-      "FastAPI API: Render or Fly with /docs enabled.",
+      "APIs (Node/FastAPI): Render or Fly with /docs enabled.",
     ],
   },
   language: {

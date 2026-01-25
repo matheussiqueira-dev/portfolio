@@ -13,76 +13,82 @@ export const sitePt: SiteContent = {
     resume: "Currículo",
   },
   hero: {
-    eyebrow: "Analista de Dados Júnior • BI • Power BI • SQL • Python",
+    eyebrow: "Desenvolvedor Full Stack • Dados • IA • APIs",
     title: "Matheus Siqueira",
-    subtitle: "Analista de Dados Júnior focado em BI, automação e dashboards.",
+    subtitle: "Desenvolvedor Full Stack com base forte em dados, IA e engenharia de software.",
     description:
-      "Analista de Dados Júnior com experiência em Business Intelligence, análise de dados e automação. Trabalho com Power BI, SQL, DAX, Power Query e Python para ETL, organização de dados e dashboards executivos. Aberto a oportunidades no Brasil (remoto ou híbrido).",
+      "Crio aplicações web completas, APIs e produtos de dados que conectam backend, frontend e analytics. Experiência com React/Next.js, Node.js/TypeScript, Python, SQL e cloud, com foco em performance, segurança e impacto.",
     ctas: {
-      primary: "Ver projetos de dados",
+      primary: "Ver projetos",
       secondary: "Ver currículo",
       tertiary: "Entrar em contato",
     },
   },
   about: {
     eyebrow: "Sobre",
-    title: "Perfil orientado a BI, automação e visualização de dados",
+    title: "Perfil full stack com visão de produto e base em dados",
     who: {
       title: "Quem sou",
-      body: "Analista de Dados Júnior em formação em Ciência da Computação, com foco em Business Intelligence e Data Analytics. Atuo com Power BI, SQL e Python para estruturar dados, criar indicadores confiáveis e apoiar decisões de negócio.",
+      body: "Sou desenvolvedor full stack em formação em Ciência da Computação, com pós-graduações em Cloud & Edge Computing, Segurança da Informação e IA. Atuei como estagiário em Análise de Dados na Secretaria da Fazenda de Pernambuco, trabalhando com grandes volumes, automação e indicadores. Hoje uso essa base para construir software de ponta a ponta.",
     },
     deliver: {
       title: "Como gero valor",
       bullets: [
-        "Dashboards executivos em Power BI para KPIs e performance.",
-        "Análises orientadas a indicadores e metas de negócio.",
-        "ETL e automação de rotinas analíticas com SQL e Python.",
-        "Modelagem analítica com DAX e Power Query.",
-        "Documentação e padronização para consistência dos dados.",
+        "Aplicações web completas em React/Next.js, com UX e performance.",
+        "APIs REST seguras e bem documentadas com Node.js e Python.",
+        "Pipelines de dados, ETL e automações com SQL e Python.",
+        "Dashboards e métricas para tomada de decisão.",
+        "Boas práticas de versionamento, qualidade e documentação.",
       ],
     },
     highlights: {
       title: "Destaques",
       items: [
-        "+39 certificados em Dados, BI, IA, Cloud e Segurança.",
-        "Pensamento analítico com foco em KPIs acionáveis.",
-        "Comunicação clara com stakeholders e times técnicos.",
-        "Decisões orientadas por dados e organização da informação.",
-        "Colaboração em times ágeis e multidisciplinares.",
-        "Compromisso com qualidade e governança de dados.",
+        "Estágio em Análise de Dados na Secretaria da Fazenda de Pernambuco.",
+        "Pós-graduações em Cloud & Edge, Segurança da Informação e IA.",
+        "Técnico em Programação Full Stack A.I.",
+        "+39 certificados em Dados, IA, Cloud e Segurança.",
+        "Inglês C1 e comunicação com times técnicos e de negócio.",
+        "Projetos full stack com APIs, front-end e dados.",
       ],
     },
     stack: {
       title: "Stack principal",
       groups: [
         {
-          title: "Data & BI",
-          items: ["Power BI", "DAX", "Power Query", "SQL", "ETL", "Dashboards"],
+          title: "Frontend",
+          items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS"],
         },
         {
-          title: "Python & Analytics",
+          title: "Backend & APIs",
           items: [
-            "Python",
-            "Pandas",
-            "Data Analytics",
-            "Data Visualization",
-            "KPIs",
-            "Automação",
+            "Node.js",
+            "APIs REST",
+            "FastAPI",
+            "Autenticação",
+            "Integrações",
           ],
         },
         {
-          title: "Web & Integrações",
-          items: ["JavaScript", "TypeScript", "React", "Next.js", "APIs REST"],
+          title: "Dados & IA",
+          items: [
+            "Python",
+            "SQL",
+            "ETL",
+            "Power BI",
+            "Data Modeling",
+            "Machine Learning",
+          ],
         },
         {
-          title: "Ferramentas & Processos",
+          title: "Cloud & Processos",
           items: [
+            "Cloud Computing",
+            "Oracle Cloud",
+            "Segurança",
             "Git/GitHub",
             "Scrum",
             "Kanban",
-            "Documentação",
-            "Governança de Dados",
-            "Boas práticas",
           ],
         },
       ],
@@ -90,9 +96,9 @@ export const sitePt: SiteContent = {
   },
   projects: {
     eyebrow: "Projetos",
-    title: "Case studies em dados, BI e desenvolvimento de software",
+    title: "Cases em desenvolvimento full stack, dados e IA",
     description:
-      "Projetos que combinam análise de dados, BI, automação, APIs e data apps, com versionamento em Git e foco em visualização de dados e tomada de decisão.",
+      "Projetos que combinam engenharia de software, APIs, automação e dados, com foco em produto, performance e tomada de decisão.",
     cardLabel: "Case",
     highlightLabel: "Destaques",
     detailsLabel: "Ver detalhes",
@@ -115,7 +121,7 @@ export const sitePt: SiteContent = {
     eyebrow: "Projetos",
     title: "Projetos e estudos de caso",
     description:
-      "Cases completos com contexto, dados utilizados, arquitetura, resultados e tecnologias em BI, data science, Big Data, automação e desenvolvimento full stack.",
+      "Cases completos com contexto, arquitetura, resultados e tecnologias em desenvolvimento full stack, dados e IA.",
     filterLabel: "Filtrar por stack",
     allLabel: "Todos",
     caseLabel: "Abrir case",
@@ -147,8 +153,8 @@ export const sitePt: SiteContent = {
     eyebrow: "Contato",
     title: "Pronto para conversar?",
     description:
-      "Aberto a oportunidades como Analista de Dados Júnior ou BI. Entrego dashboards, automação e análises orientadas a KPIs com Power BI, SQL e Python.",
-    ctaTitle: "Disponível para oportunidades em Dados e BI",
+      "Aberto a oportunidades como Desenvolvedor Full Stack / Software Engineer com base em dados e IA. Entrego aplicações completas, APIs, automação e analytics.",
+    ctaTitle: "Disponível para oportunidades em Engenharia de Software",
     ctaSubtitle: "LinkedIn e e-mail respondidos rapidamente.",
     cards: {
       email: "Email",
@@ -159,16 +165,16 @@ export const sitePt: SiteContent = {
   },
   certificatesSection: {
     eyebrow: "Certificados",
-    title: "Certificados em Dados, BI, IA, Cloud e Segurança",
+    title: "Certificados em engenharia de software, dados, IA, cloud e segurança",
     description:
-      "Coleção com PDFs locais de Alura, Assimov e Ulife. Encontre certificações em Power BI, SQL, Python, IA e Cloud.",
+      "Coleção com PDFs locais de Alura, Assimov e Ulife. Encontre certificações em desenvolvimento, dados, IA, cloud e segurança.",
     ctaLabel: "Ver certificados",
   },
   demos: {
     eyebrow: "Demos",
     title: "Demos e repositórios",
     description:
-      "Demos e repositórios para avaliação rápida de projetos de dados, BI e automação, com instruções claras para rodar localmente.",
+      "Demos e repositórios para avaliação rápida de projetos full stack, APIs e data apps, com instruções claras para rodar localmente.",
     viewProjectsLabel: "Ver projetos",
     fullCaseLabel: "Case completo",
     openDemoLabel: "Abrir demo",
@@ -178,7 +184,7 @@ export const sitePt: SiteContent = {
     publishItems: [
       "Web (Next.js/React): Vercel com deploy automático do GitHub.",
       "Front-end puro (HTML/JS): GitHub Pages ou Vercel.",
-      "API FastAPI: Render ou Fly com /docs habilitado.",
+      "APIs (Node/FastAPI): Render ou Fly com /docs habilitado.",
     ],
   },
   language: {

@@ -5,36 +5,38 @@ import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: `${siteName} | Junior Data Analyst | Power BI | SQL | Python | BI`,
+    default: `${siteName} | Full Stack Developer | Data & AI`,
     template: `%s | ${siteName}`,
   },
   description:
-    "Professional portfolio of a Junior Data Analyst focused on Business Intelligence, Power BI, SQL, and Python. Dashboards, analytics automation, and data projects.",
+    "Professional portfolio of Matheus Siqueira — Full Stack Developer with a data and AI foundation. Web apps, APIs, automation, and analytics.",
   alternates: {
     ...buildAlternates({ pt: "/", en: "/en", canonical: "/en" }),
   },
   openGraph: {
-    title: `${siteName} | Junior Data Analyst | Power BI | SQL | Python | BI`,
+    title: `${siteName} | Full Stack Developer | Data & AI`,
     description:
-      "Professional portfolio of a Junior Data Analyst focused on Business Intelligence, Power BI, SQL, and Python. Dashboards, analytics automation, and data projects.",
+      "Professional portfolio of Matheus Siqueira — Full Stack Developer with a data and AI foundation. Web apps, APIs, automation, and analytics.",
     url: "/en",
     locale: "en_US",
     type: "website",
     siteName,
     images: [
       {
+        // Replace with your social sharing image (1200x630).
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Matheus Siqueira | Junior Data Analyst",
+        alt: "Matheus Siqueira | Full Stack Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} | Junior Data Analyst | Power BI | SQL | Python | BI`,
+    title: `${siteName} | Full Stack Developer | Data & AI`,
     description:
-      "Professional portfolio of a Junior Data Analyst focused on Business Intelligence, Power BI, SQL, and Python. Dashboards, analytics automation, and data projects.",
+      "Professional portfolio of Matheus Siqueira — Full Stack Developer with a data and AI foundation. Web apps, APIs, automation, and analytics.",
+    // Replace with your social sharing image (1200x630).
     images: ["/og.png"],
   },
 };

@@ -6,9 +6,9 @@ import { projectsEn } from "@/data/projects.en";
 import { siteEn } from "@/data/site.en";
 import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 
-const pageTitle = "Data, BI, and Automation Projects";
+const pageTitle = "Full Stack, Data, and AI Projects";
 const pageDescription =
-  "Projects and case studies in data, BI, Big Data, and automation with Power BI, SQL, and Python, focused on data organization, dashboards, and business decisions.";
+  "Projects and case studies across full stack development, data, and AI, including APIs, automation, dashboards, and product analytics.";
 
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { buildAlternates, siteName } from "@/lib/seo";
 
 const pageTitle =
-  "Power BI | Analista de Dados Júnior | Matheus Siqueira";
+  "Power BI | Desenvolvedor Full Stack | Matheus Siqueira";
 const pageDescription =
   "Dashboards em Power BI com foco em KPIs, modelagem e visualização. DAX, Power Query e ETL para análises confiáveis.";
 
