@@ -3,11 +3,16 @@ import { NextRequest, NextResponse } from "next/server";
 const CANONICAL_HOST = "www.matheussiqueira.dev";
 const VERCEL_PREVIEW_SUFFIX = ".vercel.app";
 
+const getHeaderValue = (value: string | null) =>
+  value ? value.split(",")[0].trim() : "";
+
 export function middleware(request: NextRequest) {
-  const host = request.headers.get("host");
-  if (!host) {
+  const forwardedHost = getHeaderValue(request.headers.get("x-forwarded-host"));
+  const rawHost = forwardedHost || getHeaderValue(request.headers.get("host"));
+  if (!rawHost) {
     return NextResponse.next();
   }
+  const host = rawHost.split(":")[0].toLowerCase();
 
   const isLocal =
     host.startsWith("localhost") ||
@@ -21,7 +26,9 @@ export function middleware(request: NextRequest) {
   }
 
   const url = request.nextUrl.clone();
-  const needsHttps = url.protocol !== "https";
+  const forwardedProto = getHeaderValue(request.headers.get("x-forwarded-proto"));
+  const scheme = forwardedProto || url.protocol.replace(":", "");
+  const needsHttps = scheme !== "https";
   const needsCanonicalHost = host !== CANONICAL_HOST;
 
   if (needsHttps || needsCanonicalHost) {
