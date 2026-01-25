@@ -14,9 +14,8 @@ export const sitePt: SiteContent = {
   },
   hero: {
     eyebrow: "Desenvolvedor Full Stack • Dados • IA • APIs",
-    title: "Matheus Siqueira — Desenvolvedor Full Stack",
-    subtitle:
-      "Construo produtos web completos com base sólida em dados e engenharia de software.",
+    title: "Matheus Siqueira",
+    subtitle: "Desenvolvedor Full Stack",
     description:
       "Combino backend, frontend e analytics para entregar aplicações escaláveis. Experiência prática com automação, ETL e dashboards no setor público, usando React/Next.js, Node.js, Python, SQL e cloud.",
     ctas: {
@@ -27,11 +26,11 @@ export const sitePt: SiteContent = {
   },
   about: {
     eyebrow: "Sobre",
-    title: "Software + dados para resolver problemas reais",
+    title: "Desenvolvedor Full Stack com foco em dados e IA",
     who: {
       title: "Quem sou",
       body:
-        "Desenvolvedor Full Stack em formação em Ciência da Computação, com pós-graduações em Cloud & Edge, Segurança da Informação e IA. Atuei como estagiário em Análise de Dados na Secretaria da Fazenda de Pernambuco, lidando com grandes volumes, automação e indicadores. Hoje aplico essa base para construir sistemas end-to-end com foco em performance, segurança e impacto.",
+        "Desenvolvedor Full Stack em formação em Ciência da Computação, com pós-graduações em Cloud & Edge, Segurança da Informação e IA. Atuei como estagiário em Análise de Dados na Secretaria Municipal Da Fazenda, lidando com grandes volumes, automação e indicadores. Hoje aplico essa base para construir sistemas end-to-end com foco em performance, segurança e impacto.",
     },
     deliver: {
       title: "Como eu gero valor",
