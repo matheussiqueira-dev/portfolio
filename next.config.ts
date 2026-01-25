@@ -115,6 +115,12 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      // GSC fixes: tracked legacy paths
+      {
+        source: "/matheussiqueira-dev",
+        destination: "/",
+        permanent: true,
+      },
       // Resume redirects
       {
         source: "/resume/en",
@@ -140,6 +146,11 @@ const nextConfig: NextConfig = {
       {
         source: "/projects/en",
         destination: "/en/projects",
+        permanent: true,
+      },
+      {
+        source: "/projects/self-drive-car",
+        destination: "/projetos/self-drive-car",
         permanent: true,
       },
       {
