@@ -13,9 +13,9 @@ export const siteEn: SiteContent = {
     resume: "Resume",
   },
   hero: {
-    eyebrow: "Junior Data Analyst | Power BI | SQL | Python | BI",
-    title: "Junior Data Analyst | Power BI | SQL | Python | Business Intelligence",
-    subtitle: "I turn data into clear insights to support business decisions.",
+    eyebrow: "Junior Data Analyst • BI • Power BI • SQL • Python",
+    title: "Matheus Siqueira",
+    subtitle: "Junior Data Analyst focused on BI, automation, and dashboards.",
     description:
       "Junior Data Analyst with experience in Business Intelligence, data analysis, and automation. I work with Power BI, SQL, DAX, Power Query, and Python for ETL, data organization, and executive dashboards. Open to remote or hybrid roles.",
     ctas: {

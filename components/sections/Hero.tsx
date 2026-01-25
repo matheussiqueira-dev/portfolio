@@ -29,7 +29,7 @@ export default function Hero({ content, localePrefix }: Props) {
 
           <h1
             id="hero-heading"
-            className="text-4xl font-semibold tracking-tight text-[color:var(--foreground)] md:text-5xl lg:text-6xl"
+            className="text-3xl font-semibold tracking-tight text-[color:var(--foreground)] md:text-4xl lg:text-5xl"
           >
             {content.title}
           </h1>

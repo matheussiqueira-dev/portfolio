@@ -13,9 +13,9 @@ export const sitePt: SiteContent = {
     resume: "Currículo",
   },
   hero: {
-    eyebrow: "Analista de Dados Júnior | Power BI | SQL | Python | BI",
-    title: "Analista de Dados Júnior | Power BI | SQL | Python | Business Intelligence",
-    subtitle: "Transformo dados em insights claros para apoiar decisões de negócio.",
+    eyebrow: "Analista de Dados Júnior • BI • Power BI • SQL • Python",
+    title: "Matheus Siqueira",
+    subtitle: "Analista de Dados Júnior focado em BI, automação e dashboards.",
     description:
       "Analista de Dados Júnior com experiência em Business Intelligence, análise de dados e automação. Trabalho com Power BI, SQL, DAX, Power Query e Python para ETL, organização de dados e dashboards executivos. Aberto a oportunidades no Brasil (remoto ou híbrido).",
     ctas: {
