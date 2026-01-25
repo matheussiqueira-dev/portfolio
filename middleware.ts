@@ -4,7 +4,7 @@ const CANONICAL_HOST = "www.matheussiqueira.dev";
 const VERCEL_PREVIEW_SUFFIX = ".vercel.app";
 
 const getHeaderValue = (value: string | null) =>
-  value ? value.split(",")[0].trim() : "";
+  value?.split(",")?.[0]?.trim() ?? "";
 
 export function middleware(request: NextRequest) {
   const forwardedHost = getHeaderValue(request.headers.get("x-forwarded-host"));
