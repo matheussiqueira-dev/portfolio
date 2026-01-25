@@ -26,11 +26,9 @@ export function middleware(request: NextRequest) {
   }
 
   const url = request.nextUrl.clone();
-  const forwardedProto = getHeaderValue(request.headers.get("x-forwarded-proto"));
-  const needsHttps = forwardedProto ? forwardedProto !== "https" : false;
   const needsCanonicalHost = host !== CANONICAL_HOST;
 
-  if (needsHttps || needsCanonicalHost) {
+  if (needsCanonicalHost) {
     url.protocol = "https";
     url.hostname = CANONICAL_HOST;
     return NextResponse.redirect(url, 308);
