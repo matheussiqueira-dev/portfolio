@@ -40,10 +40,10 @@ export default function About({ content }: Props) {
             </ul>
           </div>
 
-          <div className="card card-muted p-4 sm:p-5">
-            <div className="relative w-full overflow-hidden rounded-2xl border border-[color:var(--border)] bg-black/50 aspect-[5/4] sm:aspect-[4/3] lg:aspect-[3/2]">
+          <div className="card card-muted w-full max-w-sm p-3 sm:p-4">
+            <div className="relative w-full overflow-hidden rounded-2xl border border-[color:var(--border)] bg-black/60 aspect-video">
               <AutoplayVideo
-                className="h-full w-full object-cover saturate-50 brightness-90 contrast-105"
+                className="h-full w-full object-contain"
                 src="/xadrez.mp4"
                 ariaHidden
               />
