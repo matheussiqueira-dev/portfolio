@@ -30,7 +30,7 @@ export const sitePt: SiteContent = {
     who: {
       title: "Quem sou",
       body:
-        "Desenvolvedor Full Stack em formação em Ciência da Computação, com pós-graduações em Cloud & Edge, Segurança da Informação e IA. Atuei como estagiário em Análise de Dados na Secretaria Municipal Da Fazenda, lidando com grandes volumes, automação e indicadores. Hoje aplico essa base para construir sistemas end-to-end com foco em performance, segurança e impacto.",
+        "Atuo de forma integrada entre backend, frontend e analytics, desenvolvendo aplicações escaláveis e data-driven. Possuo experiência prática em automação, ETL e visualização de dados no setor público, utilizando React/Next.js, Node.js, Python, SQL e cloud computing.",
     },
     deliver: {
       title: "Como eu gero valor",
