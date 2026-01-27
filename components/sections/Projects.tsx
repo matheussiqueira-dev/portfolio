@@ -36,7 +36,7 @@ export default function Projects() {
   const projectsHref = isEn ? "/en/projects" : "/projetos";
 
   return (
-    <section id="projects" className="page-section content-auto pt-12 lg:pt-16">
+    <section id="projects" className="page-section content-auto">
       <div className="section-inner">
         <div className="flex flex-col gap-4 mb-10">
           <p className="eyebrow">{content.eyebrow}</p>

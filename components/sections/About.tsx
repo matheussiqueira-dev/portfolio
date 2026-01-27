@@ -1,4 +1,3 @@
-import AutoplayVideo from "@/components/ui/AutoplayVideo";
 import type { SiteContent } from "@/data/site.types";
 
 type Props = {
@@ -7,7 +6,7 @@ type Props = {
 
 export default function About({ content }: Props) {
   return (
-    <section id="about" className="page-section content-auto pb-12 lg:pb-16">
+    <section id="about" className="page-section content-auto">
       <div className="section-inner grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="space-y-6">
           <div className="space-y-3">
@@ -40,16 +39,6 @@ export default function About({ content }: Props) {
             </ul>
           </div>
 
-          <div className="card card-muted w-full max-w-sm p-3 sm:p-4">
-            <div className="relative w-full overflow-hidden rounded-2xl border border-[color:var(--border)] bg-black/60 aspect-video">
-              <AutoplayVideo
-                className="h-full w-full object-contain"
-                src="/xadrez.mp4"
-                ariaHidden
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-black/60 via-black/20 to-black/70" />
-            </div>
-          </div>
         </div>
 
         <div className="space-y-6">
@@ -93,7 +82,6 @@ export default function About({ content }: Props) {
           </div>
         </div>
       </div>
-
     </section>
   );
 }
