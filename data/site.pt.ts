@@ -54,10 +54,10 @@ export const sitePt: SiteContent = {
       ],
     },
     stack: {
-      title: "Stack principal",
+      title: "Stack Principal",
       groups: [
         {
-          title: "Frontend (experiência do usuário)",
+          title: "Frontend",
           items: [
             "React",
             "Next.js (SSR/SEO)",
@@ -68,7 +68,7 @@ export const sitePt: SiteContent = {
           ],
         },
         {
-          title: "Backend & APIs (escala e integração)",
+          title: "Backend & APIs",
           items: [
             "Node.js",
             "FastAPI",
@@ -80,7 +80,7 @@ export const sitePt: SiteContent = {
           ],
         },
         {
-          title: "Dados & IA (decisão e automação)",
+          title: "Dados & IA",
           items: [
             "Python",
             "SQL",
@@ -91,7 +91,7 @@ export const sitePt: SiteContent = {
           ],
         },
         {
-          title: "Cloud & Processo (confiabilidade)",
+          title: "Cloud & Processo",
           items: [
             "Cloud Computing",
             "Oracle Cloud",

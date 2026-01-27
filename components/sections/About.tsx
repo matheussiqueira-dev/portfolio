@@ -81,6 +81,25 @@ export default function About({ content }: Props) {
           </div>
         </div>
       </div>
+
+      <div className="mt-10">
+        <div className="mx-auto w-full max-w-4xl">
+          <div className="card p-4 sm:p-5">
+            <div className="relative w-full overflow-hidden rounded-2xl border border-[color:var(--border)] bg-black/40 aspect-[4/3] sm:aspect-video">
+              <video
+                className="h-full w-full object-contain"
+                src="/xadrez.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-hidden="true"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
