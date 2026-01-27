@@ -1,3 +1,4 @@
+import AutoplayVideo from "@/components/ui/AutoplayVideo";
 import type { SiteContent } from "@/data/site.types";
 
 type Props = {
@@ -6,7 +7,7 @@ type Props = {
 
 export default function About({ content }: Props) {
   return (
-    <section id="about" className="page-section content-auto">
+    <section id="about" className="page-section content-auto pb-12 lg:pb-16">
       <div className="section-inner grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="space-y-6">
           <div className="space-y-3">
@@ -37,6 +38,17 @@ export default function About({ content }: Props) {
                 </li>
               ))}
             </ul>
+          </div>
+
+          <div className="card card-muted p-4 sm:p-5">
+            <div className="relative w-full overflow-hidden rounded-2xl border border-[color:var(--border)] bg-black/50 aspect-[5/4] sm:aspect-[4/3] lg:aspect-[3/2]">
+              <AutoplayVideo
+                className="h-full w-full object-cover saturate-50 brightness-90 contrast-105"
+                src="/xadrez.mp4"
+                ariaHidden
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-black/60 via-black/20 to-black/70" />
+            </div>
           </div>
         </div>
 
@@ -82,24 +94,6 @@ export default function About({ content }: Props) {
         </div>
       </div>
 
-      <div className="mt-10">
-        <div className="mx-auto w-full max-w-4xl">
-          <div className="card p-4 sm:p-5">
-            <div className="relative w-full overflow-hidden rounded-2xl border border-[color:var(--border)] bg-black/40 aspect-[4/3] sm:aspect-video">
-              <video
-                className="h-full w-full object-contain"
-                src="/xadrez.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                aria-hidden="true"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   );
 }
