@@ -42,6 +42,27 @@ export const sitePt: SiteContent = {
         "Documentação e versionamento para times ágeis.",
       ],
     },
+    snapshot: {
+      title: "Resumo",
+      items: [
+        {
+          value: "Full stack",
+          label: "UI, APIs e dados",
+        },
+        {
+          value: "ETL & automação",
+          label: "Eficiência operacional",
+        },
+        {
+          value: "Dashboards & BI",
+          label: "Decisões baseadas em dados",
+        },
+        {
+          value: "Setor público",
+          label: "Dados fiscais em escala",
+        },
+      ],
+    },
     highlights: {
       title: "Destaques",
       items: [

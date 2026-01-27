@@ -32,6 +32,13 @@ export type SiteContent = {
       title: string;
       bullets: string[];
     };
+    snapshot: {
+      title: string;
+      items: {
+        value: string;
+        label: string;
+      }[];
+    };
     highlights: {
       title: string;
       items: string[];

@@ -43,6 +43,27 @@ export const siteEn: SiteContent = {
         "Documentation and versioning for agile teams.",
       ],
     },
+    snapshot: {
+      title: "Snapshot",
+      items: [
+        {
+          value: "Full stack",
+          label: "UI · API · Data",
+        },
+        {
+          value: "ETL & automation",
+          label: "Operational efficiency",
+        },
+        {
+          value: "Dashboards",
+          label: "Data-driven decisions",
+        },
+        {
+          value: "Public sector",
+          label: "Large-scale data",
+        },
+      ],
+    },
     highlights: {
       title: "Highlights",
       items: [

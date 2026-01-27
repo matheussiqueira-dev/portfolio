@@ -39,6 +39,27 @@ export default function About({ content }: Props) {
             </ul>
           </div>
 
+          <div className="space-y-3">
+            <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
+              {content.snapshot.title}
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {content.snapshot.items.map((item) => (
+                <div
+                  key={`${item.value}-${item.label}`}
+                  className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)]/80 p-4 shadow-sm"
+                >
+                  <p className="text-sm font-semibold text-[color:var(--foreground)]">
+                    {item.value}
+                  </p>
+                  <p className="mt-1 text-[0.7rem] uppercase tracking-[0.25em] text-[color:var(--muted)]">
+                    {item.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
 
         <div className="space-y-6">
