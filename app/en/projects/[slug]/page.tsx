@@ -238,7 +238,7 @@ export default function ProjectCaseStudyPageEn({ params }: PageProps) {
             )}
           </div>
 
-          {showCover ? (
+          {showCover && cover ? (
             <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-3 shadow-sm">
               <Image
                 src={cover.src}
