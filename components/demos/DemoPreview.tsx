@@ -42,6 +42,18 @@ export function DemoPreview({
   const demoDetailPath =
     locale === "en" ? `/en/demos/${projectSlug}` : `/demos/${projectSlug}`;
 
+  const previewImage = fallbackMedia ? (
+    <div className="relative w-full overflow-hidden rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] aspect-video">
+      <Image
+        src={fallbackMedia.src}
+        alt={fallbackMedia.alt}
+        fill
+        sizes="(max-width: 768px) 100vw, 520px"
+        className="object-cover"
+      />
+    </div>
+  ) : null;
+
   if (!demo) {
     if (previewImage) {
       return (
@@ -60,18 +72,6 @@ export function DemoPreview({
       </div>
     );
   }
-
-  const previewImage = fallbackMedia ? (
-    <div className="relative w-full overflow-hidden rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] aspect-video">
-      <Image
-        src={fallbackMedia.src}
-        alt={fallbackMedia.alt}
-        fill
-        sizes="(max-width: 768px) 100vw, 520px"
-        className="object-cover"
-      />
-    </div>
-  ) : null;
 
   if (demo.kind === "video") {
     const poster = demo.poster ?? fallbackMedia?.src;
