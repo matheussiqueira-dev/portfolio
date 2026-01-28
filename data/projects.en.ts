@@ -752,6 +752,11 @@ export const projectsEn: Project[] = [
         type: "video",
       },
     ],
+    seo: {
+      title: "Driver Monitoring System | Attention and fatigue monitoring",
+      description:
+        "Driver monitoring system using computer vision to detect attention and fatigue in real time with Python, OpenCV, and MediaPipe.",
+    },
   },
   {
     slug: "subway-surf",

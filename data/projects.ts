@@ -752,6 +752,11 @@ export const projects: Project[] = [
         type: "video",
       },
     ],
+    seo: {
+      title: "Driver Monitoring System | Monitoramento de atenção e fadiga",
+      description:
+        "Sistema de monitoramento do motorista com visão computacional para detectar atenção e fadiga em tempo real usando Python, OpenCV e MediaPipe.",
+    },
   },
   {
     slug: "subway-surf",
