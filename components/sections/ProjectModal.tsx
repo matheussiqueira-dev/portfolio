@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useId, useMemo, useRef } from "react";
 import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
@@ -112,9 +111,6 @@ export default function ProjectModal({ project, onClose }: Props) {
   const dialogId = useId();
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
-  const caseHref = isEn
-    ? `/en/projects/${project.slug}`
-    : `/projetos/${project.slug}`;
 
   const cover = getCover(project.screenshots);
   const gallery = project.screenshots.filter((shot) => shot !== cover);
@@ -308,13 +304,15 @@ export default function ProjectModal({ project, onClose }: Props) {
         ) : null}
 
         <div className="mt-8 flex flex-wrap gap-4">
-          <Link
-            href={caseHref}
+          <a
+            href={project.repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => trackEvent("view_case", "engagement", project.slug)}
             className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
           >
             {labels.caseCta}
-          </Link>
+          </a>
           <a
             href={project.repoUrl}
             target="_blank"
