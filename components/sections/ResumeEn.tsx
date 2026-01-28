@@ -65,7 +65,7 @@ export default function ResumeEn() {
         </div>
       </header>
 
-      <div className="grid-prose">
+      <div className="grid gap-8 md:grid-cols-[2fr_1fr]">
         <div className="space-y-8">
           <section className="card rounded-3xl p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
             <h2 className="text-xl font-semibold text-[color:var(--foreground)] print:text-black">

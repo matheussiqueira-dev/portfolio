@@ -23,7 +23,7 @@ export default function ProjectCard({
     : `/projetos/${project.slug}`;
 
   return (
-    <article className="card hover-lift p-6 flex flex-col gap-4">
+    <article className="card p-6 flex flex-col gap-4 transition hover:-translate-y-1 hover:shadow-xl">
       {cover ? (
         <div className="relative aspect-[1200/630] w-full overflow-hidden rounded-xl border border-[color:var(--border)]">
           <Image
@@ -37,7 +37,7 @@ export default function ProjectCard({
       ) : null}
 
       <div className="space-y-2">
-        <h3 className="heading-4">{project.title}</h3>
+        <h3 className="text-lg font-semibold text-[color:var(--foreground)]">{project.title}</h3>
         <p className="text-sm text-[color:var(--muted)]">{project.tagline}</p>
         <p className="text-xs text-[color:var(--muted)]">{project.features[0]}</p>
       </div>

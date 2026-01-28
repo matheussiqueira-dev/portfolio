@@ -19,26 +19,26 @@ export default function Hero({ content, localePrefix }: Props) {
   return (
     <section
       id="home"
-      className="page-section page-hero"
+      className="pt-28 pb-10"
       role="region"
       aria-labelledby="hero-heading"
     >
-      <div className="section-inner grid-hero">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2">
         <div className="flex flex-col gap-6">
           <p className="eyebrow">{content.eyebrow}</p>
 
           <h1
             id="hero-heading"
-            className="heading-display"
+            className="text-3xl font-semibold tracking-tight text-[color:var(--foreground)] md:text-4xl lg:text-5xl"
           >
             {content.title}
           </h1>
 
-          <h2 className="text-lead">
+          <h2 className="text-lg text-[color:var(--muted-strong)] md:text-xl">
             {content.subtitle}
           </h2>
 
-          <p className="max-w-xl text-body text-[color:var(--muted)]">
+          <p className="max-w-xl text-[color:var(--muted)] leading-relaxed">
             {content.description}
           </p>
 
@@ -88,7 +88,7 @@ export default function Hero({ content, localePrefix }: Props) {
 
         <div className="flex justify-center md:justify-end">
           <div className="relative">
-            <div className="absolute -inset-4 rounded-[var(--radius-xl)] bg-[color:var(--surface-strong)] opacity-70 blur-2xl" />
+            <div className="absolute -inset-4 rounded-3xl bg-[color:var(--surface-muted)] blur-2xl" />
             <ImageWithFallback
               src="/profile.jpg"
               alt={imageAlt}
@@ -96,7 +96,7 @@ export default function Hero({ content, localePrefix }: Props) {
               height={360}
               quality={90}
               priority
-              className="relative rounded-[var(--radius-lg)] border border-[color:var(--border)] object-cover shadow-xl"
+              className="relative rounded-2xl border border-[color:var(--border)] object-cover shadow-xl"
             />
           </div>
         </div>

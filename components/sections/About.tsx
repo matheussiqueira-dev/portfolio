@@ -11,7 +11,7 @@ export default function About({ content }: Props) {
         <div className="space-y-6">
           <div className="space-y-3">
             <p className="eyebrow">{content.eyebrow}</p>
-            <h2 className="heading-2">
+            <h2 className="text-3xl md:text-4xl font-semibold text-[color:var(--foreground)]">
               {content.title}
             </h2>
           </div>

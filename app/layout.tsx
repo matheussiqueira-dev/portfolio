@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Unbounded } from "next/font/google";
+import { JetBrains_Mono, Roboto } from "next/font/google";
 import Script from "next/script";
 import Header from "@/components/layout/Header";
 import JsonLd from "@/components/seo/JsonLd";
@@ -10,18 +10,11 @@ import "./globals.css";
 // Google Tag Manager ID
 const GTM_ID = "GTM-WR93ZJ8C";
 
-const inter = Inter({
+const roboto = Roboto({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-roboto",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const unbounded = Unbounded({
-  subsets: ["latin"],
-  variable: "--font-unbounded",
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "700"],
 });
 
 const jetBrainsMono = JetBrains_Mono({
@@ -216,7 +209,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
-        className={`${inter.variable} ${unbounded.variable} ${jetBrainsMono.variable} min-h-screen antialiased`}
+        className={`${roboto.variable} ${jetBrainsMono.variable} min-h-screen antialiased`}
       >
         {/* Google Tag Manager - NoScript fallback */}
         <noscript>
