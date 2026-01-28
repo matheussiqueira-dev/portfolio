@@ -83,7 +83,7 @@ export const trackEvent = (
   }
 
   try {
-    window.gtag("event", action, {
+    window.gtag?.("event", action, {
       event_category: category,
       event_label: label,
       value,
@@ -112,7 +112,7 @@ export const trackPageView = (url: string) => {
   }
 
   try {
-    window.gtag("event", "page_view", {
+    window.gtag?.("event", "page_view", {
       page_path: url,
       event_category: ANALYTICS_CATEGORIES.NAVIGATION,
     });
