@@ -8,6 +8,43 @@ const pageTitle =
 const pageDescription =
   "Desenvolvedor Full Stack com base em dados, IA e engenharia de software. Produtos web, APIs e automação orientados a resultado.";
 
+const stackHighlights = [
+  { label: "Full Stack", icon: "stack" },
+  { label: "Dados", icon: "data" },
+  { label: "IA", icon: "ai" },
+  { label: "Software", icon: "software" },
+] as const;
+
+const stackIcons = {
+  stack: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M9 7L5 12l4 5" />
+      <path d="M15 7l4 5-4 5" />
+    </svg>
+  ),
+  data: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <ellipse cx="12" cy="5" rx="7" ry="3" />
+      <path d="M5 5v6c0 1.7 3.1 3 7 3s7-1.3 7-3V5" />
+      <path d="M5 11v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" />
+    </svg>
+  ),
+  ai: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2l1.8 4.6L19 8l-5.2 1.8L12 14l-1.8-4.2L5 8l5.2-1.4L12 2z" />
+      <path d="M6 16l1 2.5L9.5 20" />
+      <path d="M18 16l-1 2.5L14.5 20" />
+    </svg>
+  ),
+  software: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M3 7l9-4 9 4-9 4-9-4z" />
+      <path d="M3 7v10l9 4 9-4V7" />
+      <path d="M12 11v10" />
+    </svg>
+  ),
+} as const;
+
 const valueDelivery = [
   "Aplicações web completas com foco em UX, performance e SEO.",
   "APIs REST com autenticação, logs e integrações externas.",
@@ -72,19 +109,40 @@ export const metadata: Metadata = {
 
 export default function ContratePage() {
   return (
-    <main className="min-h-screen px-6 pt-28 pb-20">
+    <main className="hire-hero min-h-screen px-6 pt-28 pb-20">
       <div className="max-w-6xl mx-auto space-y-16">
-        <header className="space-y-4">
+        <header className="space-y-6 md:space-y-7">
           <p className="eyebrow">Recrutadores e líderes de tecnologia</p>
-          <h1 className="text-4xl md:text-5xl font-semibold text-[color:var(--foreground)]">
-            Matheus Siqueira — Desenvolvedor Full Stack | Dados • IA • Software
+          {/* Título em duas linhas para hierarquia visual clara */}
+          <h1 className="hero-title">
+            <span className="hero-title__name">Matheus Siqueira</span>
+            <span className="hero-title__role">Desenvolvedor Full Stack</span>
           </h1>
-          <p className="text-lg text-[color:var(--muted)] max-w-3xl">
-            Perfil técnico com base em dados e engenharia de software. Entrego
-            aplicações web e APIs orientadas a resultados. Disponível para
-            oportunidades no Brasil (remoto ou híbrido).
+          {/* Stacks em chips com ícones para leitura rápida */}
+          <ul className="hero-stack justify-start" aria-label="Stacks em destaque">
+            {stackHighlights.map((stack) => (
+              <li key={stack.label} className="hero-stack__item">
+                <span className="hero-stack__icon" aria-hidden="true">
+                  {stackIcons[stack.icon]}
+                </span>
+                <span>{stack.label}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="hero-description max-w-3xl mx-0 text-left">
+            Perfil técnico com base em{" "}
+            <span className="text-[color:var(--muted-strong)] font-medium">
+              dados
+            </span>{" "}
+            e{" "}
+            <span className="text-[color:var(--muted-strong)] font-medium">
+              engenharia de software
+            </span>
+            . Entrego aplicações web e APIs orientadas a resultados. Disponível
+            para oportunidades no Brasil (remoto ou híbrido).
           </p>
-          <div className="flex flex-wrap gap-4">
+          {/* CTAs com espaçamento e altura uniformes */}
+          <div className="hero-actions justify-start gap-4">
             <a
               href="https://wa.me/5581999203683"
               target="_blank"
@@ -103,7 +161,7 @@ export default function ContratePage() {
               href="https://www.linkedin.com/in/matheussiqueira-dev/"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-[#0A66C2]/50 bg-[color:var(--surface)] px-6 py-3 text-sm text-[#0A66C2] transition hover:border-[#0A66C2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/40"
+              className="btn-outline btn-linkedin focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/40"
             >
               LinkedIn
             </a>
@@ -202,7 +260,7 @@ export default function ContratePage() {
               href="https://www.linkedin.com/in/matheussiqueira-dev/"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-[#0A66C2]/50 bg-[color:var(--surface)] px-5 py-2 text-sm text-[#0A66C2] transition hover:border-[#0A66C2] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/40"
+              className="btn-outline btn-linkedin focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/40"
             >
               LinkedIn
             </a>

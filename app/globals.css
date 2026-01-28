@@ -298,6 +298,13 @@ html {
     opacity: 0.85;
   }
 
+  /* Ajuste local para hero da página de contratação */
+  .hire-hero .hero-title__name {
+    font-size: clamp(2.6rem, 5.6vw, 4.6rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
   .hero-stack {
     display: flex;
     flex-wrap: wrap;
@@ -416,6 +423,18 @@ html {
   .btn-outline:hover {
     border-color: var(--accent);
     color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  .btn-linkedin {
+    border-color: rgba(10, 102, 194, 0.6);
+    color: #0a66c2;
+    background: var(--surface);
+  }
+
+  .btn-linkedin:hover {
+    border-color: #0a66c2;
+    color: #0a66c2;
     transform: translateY(-1px);
   }
 
