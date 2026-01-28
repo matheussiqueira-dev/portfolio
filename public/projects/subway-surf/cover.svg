@@ -2,13 +2,13 @@
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0f172a" />
-      <stop offset="100%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#1f2937" />
     </linearGradient>
     <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#22c55e" />
+      <stop offset="0%" stop-color="#22d3ee" />
       <stop offset="100%" stop-color="#38bdf8" />
     </linearGradient>
-    <radialGradient id="glow" cx="75%" cy="20%" r="60%">
+    <radialGradient id="glow" cx="75%" cy="15%" r="60%">
       <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.35" />
       <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
     </radialGradient>
@@ -18,10 +18,11 @@
   <rect width="1200" height="630" fill="url(#glow)" />
 
   <g opacity="0.25" stroke="#94a3b8" stroke-width="1" fill="none">
-    <circle cx="160" cy="140" r="60" />
-    <circle cx="1040" cy="500" r="80" />
-    <path d="M260 130C330 170 360 230 340 300" />
-    <path d="M860 470C810 430 800 360 820 300" />
+    <circle cx="140" cy="130" r="70" />
+    <circle cx="1040" cy="520" r="90" />
+    <circle cx="980" cy="140" r="40" />
+    <path d="M260 120C330 160 360 220 340 300" />
+    <path d="M880 460C820 420 800 360 820 290" />
   </g>
 
   <rect x="70" y="70" width="1060" height="490" rx="32" fill="#0f172a" fill-opacity="0.35" stroke="#334155" />

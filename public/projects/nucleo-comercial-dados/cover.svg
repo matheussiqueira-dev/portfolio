@@ -39,43 +39,4 @@
   <text x="140" y="340" fill="#cbd5f5" font-size="20" font-family="Roboto, Arial, sans-serif">
     Power BI | SQL | Python
   </text>
-
-  <g transform="translate(140 380)">
-    <rect width="300" height="140" rx="16" fill="#1e293b" fill-opacity="0.6" stroke="#334155" />
-    <text x="24" y="46" fill="#e2e8f0" font-size="20" font-family="Roboto, Arial, sans-serif" font-weight="600">
-      ETL and Modeling
-    </text>
-    <text x="24" y="78" fill="#94a3b8" font-size="16" font-family="Roboto, Arial, sans-serif">
-      Data Warehouse
-    </text>
-    <text x="24" y="106" fill="#94a3b8" font-size="16" font-family="Roboto, Arial, sans-serif">
-      DAX metrics
-    </text>
-  </g>
-
-  <g transform="translate(470 380)">
-    <rect width="300" height="140" rx="16" fill="#1e293b" fill-opacity="0.6" stroke="#334155" />
-    <text x="24" y="46" fill="#e2e8f0" font-size="20" font-family="Roboto, Arial, sans-serif" font-weight="600">
-      Executive KPIs
-    </text>
-    <text x="24" y="78" fill="#94a3b8" font-size="16" font-family="Roboto, Arial, sans-serif">
-      Dashboards
-    </text>
-    <text x="24" y="106" fill="#94a3b8" font-size="16" font-family="Roboto, Arial, sans-serif">
-      Commercial trends
-    </text>
-  </g>
-
-  <g transform="translate(800 380)">
-    <rect width="300" height="140" rx="16" fill="#1e293b" fill-opacity="0.6" stroke="#334155" />
-    <text x="24" y="46" fill="#e2e8f0" font-size="20" font-family="Roboto, Arial, sans-serif" font-weight="600">
-      Data Governance
-    </text>
-    <text x="24" y="78" fill="#94a3b8" font-size="16" font-family="Roboto, Arial, sans-serif">
-      Metric consistency
-    </text>
-    <text x="24" y="106" fill="#94a3b8" font-size="16" font-family="Roboto, Arial, sans-serif">
-      Automated refresh
-    </text>
-  </g>
 </svg>

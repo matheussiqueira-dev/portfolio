@@ -43,6 +43,17 @@ export function DemoPreview({
     locale === "en" ? `/en/demos/${projectSlug}` : `/demos/${projectSlug}`;
 
   if (!demo) {
+    if (previewImage) {
+      return (
+        <div className="space-y-2">
+          {previewImage}
+          <p className="text-xs text-[color:var(--muted)]">
+            {labels.comingSoon}
+          </p>
+        </div>
+      );
+    }
+
     return (
       <div className="flex items-center justify-center rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] py-12 text-sm text-[color:var(--muted)]">
         <p>{labels.comingSoon}</p>

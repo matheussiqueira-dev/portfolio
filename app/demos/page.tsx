@@ -3,7 +3,7 @@ import Link from "next/link";
 import { DemoPreview } from "@/components/demos/DemoPreview";
 import JsonLd from "@/components/seo/JsonLd";
 import { projects } from "@/data/projects";
-import type { Project } from "@/data/projects.types";
+import type { DemoExperience, Project } from "@/data/projects.types";
 import { sitePt } from "@/data/site.pt";
 import { buildInternalDemoPath } from "@/lib/demos";
 import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
@@ -29,6 +29,13 @@ const demosJsonLd = {
 const getCover = (project: Project) =>
   project.screenshots.find((shot) => shot.src.includes("/cover.")) ??
   project.screenshots[0];
+
+const demoPreviewOverrides: Record<string, DemoExperience> = {
+  "chatbot-ia-api": {
+    kind: "video",
+    src: "/Chatbot.mp4",
+  },
+};
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -84,11 +91,19 @@ export default function DemosPage() {
         <div className="grid gap-6 md:grid-cols-2">
           {projects.map((project) => {
             const cover = getCover(project);
-            const fallbackMedia = cover
-              ? { src: cover.src, alt: cover.alt }
+            const libraryThumbnail =
+              project.slug === "library-api-advanced"
+                ? project.screenshots.find((shot) =>
+                    shot.src.includes("library-api-advanced.png")
+                  )
+                : undefined;
+            const previewCover = libraryThumbnail ?? cover;
+            const fallbackMedia = previewCover
+              ? { src: previewCover.src, alt: previewCover.alt }
               : undefined;
             const demoDetailPath = `/demos/${project.slug}`;
             const demo = project.demo;
+            const previewDemo = demoPreviewOverrides[project.slug] ?? demo;
             const externalDemoUrl =
               demo?.kind === "external" ? demo.url : project.demoUrl;
             const internalDemoPath = buildInternalDemoPath({
@@ -171,7 +186,7 @@ export default function DemosPage() {
                   aria-label="Preview da demo"
                 >
                   <DemoPreview
-                    demo={project.demo}
+                    demo={previewDemo}
                     fallbackMedia={fallbackMedia}
                     locale="pt"
                     projectSlug={project.slug}
