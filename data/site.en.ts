@@ -13,12 +13,17 @@ export const siteEn: SiteContent = {
     resume: "Resume",
   },
   hero: {
-    eyebrow: "Full Stack Developer • Data • AI • APIs",
-    title: "Matheus Siqueira — Full Stack Developer",
-    subtitle:
-      "I build end-to-end web products with a strong foundation in data and software engineering.",
+    eyebrow: "Portfolio",
+    title: "Matheus Siqueira",
+    subtitle: "Full Stack Developer",
     description:
-      "I connect backend, frontend, and analytics to deliver scalable applications. Hands-on experience with automation, ETL, and dashboards in the public sector, using React/Next.js, Node.js, Python, SQL, and cloud.",
+      "I build end-to-end web products with a strong foundation in data and software engineering. I connect backend, frontend, and analytics to deliver scalable applications. Hands-on experience with automation, ETL, and dashboards in the public sector, using React/Next.js, Node.js, Python, SQL, and cloud.",
+    stackHighlights: [
+      { label: "Full Stack", icon: "stack" },
+      { label: "Data", icon: "data" },
+      { label: "AI", icon: "ai" },
+      { label: "Software", icon: "software" },
+    ],
     ctas: {
       primary: "View projects",
       secondary: "View resume",

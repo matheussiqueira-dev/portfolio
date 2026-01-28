@@ -13,11 +13,17 @@ export const sitePt: SiteContent = {
     resume: "Currículo",
   },
   hero: {
-    eyebrow: "Desenvolvedor Full Stack • Dados • IA • APIs",
+    eyebrow: "Portfólio profissional",
     title: "Matheus Siqueira",
     subtitle: "Desenvolvedor Full Stack",
     description:
       "Combino backend, frontend e analytics para entregar aplicações escaláveis. Experiência prática com automação, ETL e dashboards no setor público, usando React/Next.js, Node.js, Python, SQL e cloud.",
+    stackHighlights: [
+      { label: "Full Stack", icon: "stack" },
+      { label: "Dados", icon: "data" },
+      { label: "IA", icon: "ai" },
+      { label: "Software", icon: "software" },
+    ],
     ctas: {
       primary: "Ver projetos",
       secondary: "Ver currículo",

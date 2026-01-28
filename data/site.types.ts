@@ -15,6 +15,10 @@ export type SiteContent = {
     title: string;
     subtitle: string;
     description: string;
+    stackHighlights: {
+      label: string;
+      icon: "stack" | "data" | "ai" | "software";
+    }[];
     ctas: {
       primary: string;
       secondary: string;
