@@ -215,6 +215,8 @@ export const siteEn: SiteContent = {
     viewProjectsLabel: "View projects",
     fullCaseLabel: "Full case",
     openDemoLabel: "Open demo",
+    openInteractiveLabel: "Open interactive demo",
+    watchVideoLabel: "Watch video",
     demoSoonLabel: "Demo soon",
     howToRunLabel: "How to run locally",
     publishTitle: "How I publish demos",

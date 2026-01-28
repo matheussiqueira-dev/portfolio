@@ -41,7 +41,6 @@ export default function Hero({ content, localePrefix }: Props) {
   const isEn = localePrefix === "/en";
   const projectsHref = isEn ? "/en/projects" : "/projetos";
   const resumeHref = isEn ? "/en/resume" : "/resume";
-  const contactHref = isEn ? "/en#contact" : "/#contact";
   const imageAlt = isEn
     ? "Profile photo of Matheus Siqueira, Full Stack Developer"
     : "Foto de perfil de Matheus Siqueira, Desenvolvedor Full Stack";

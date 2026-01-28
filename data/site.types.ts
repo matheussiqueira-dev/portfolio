@@ -133,6 +133,8 @@ export type SiteContent = {
     viewProjectsLabel: string;
     fullCaseLabel: string;
     openDemoLabel: string;
+    openInteractiveLabel: string;
+    watchVideoLabel: string;
     demoSoonLabel: string;
     howToRunLabel: string;
     publishTitle: string;

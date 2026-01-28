@@ -4,6 +4,31 @@ export type ProjectMedia = {
   type?: "image" | "gif" | "video";
 };
 
+export type DemoExperience =
+  | {
+      kind: "external";
+      url: string;
+      label?: string;
+    }
+  | {
+      kind: "video";
+      src: string;
+      poster?: string;
+      caption?: string;
+    }
+  | {
+      kind: "embed";
+      url: string;
+      title: string;
+      sandbox?: string;
+    }
+  | {
+      kind: "internal";
+      path: string;
+      title?: string;
+      description?: string;
+    };
+
 export type Project = {
   slug: string;
   title: string;
@@ -13,6 +38,7 @@ export type Project = {
   stack: string[];
   repoUrl: string;
   demoUrl?: string;
+  demo?: DemoExperience;
   context: string;
   problem: string[];
   dataUsed: string[];

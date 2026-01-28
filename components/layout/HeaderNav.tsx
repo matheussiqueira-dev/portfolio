@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { sitePt } from "@/data/site.pt";
@@ -11,7 +11,18 @@ import { buildNavItems, getActiveNavId } from "./navigation";
 
 export default function HeaderNav() {
   const pathname = usePathname() ?? "/";
-  const [hash, setHash] = useState("");
+  const hash = useSyncExternalStore(
+    (callback) => {
+      window.addEventListener("hashchange", callback);
+      window.addEventListener("popstate", callback);
+      return () => {
+        window.removeEventListener("hashchange", callback);
+        window.removeEventListener("popstate", callback);
+      };
+    },
+    () => window.location.hash,
+    () => ""
+  );
   const isEn = pathname.startsWith("/en");
   const content = isEn ? siteEn : sitePt;
   const navItems = buildNavItems(isEn, content.nav);
@@ -20,18 +31,6 @@ export default function HeaderNav() {
   const menuLabel = isEn ? "Main menu" : "Menu principal";
   const toggleLabel = isEn ? "Toggle menu" : "Abrir menu";
   const closeLabel = isEn ? "Close menu" : "Fechar menu";
-
-  useEffect(() => {
-    const updateHash = () => setHash(window.location.hash);
-    updateHash();
-    window.addEventListener("hashchange", updateHash);
-
-    return () => window.removeEventListener("hashchange", updateHash);
-  }, []);
-
-  useEffect(() => {
-    setHash(window.location.hash);
-  }, [pathname]);
 
   return (
     <>

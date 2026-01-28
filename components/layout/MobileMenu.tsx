@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import LanguageSwitch from "@/components/ui/LanguageSwitch";
 import type { NavItem } from "./navigation";
@@ -37,24 +37,33 @@ export default function MobileMenu({
 }: Props) {
   const [open, setOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const closeTimeoutRef = useRef<number | null>(null);
   const menuId = useId();
   const triggerRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const wasOpenRef = useRef(false);
 
-  useEffect(() => {
-    if (open) {
-      setIsVisible(true);
-      return;
+  const clearCloseTimeout = useCallback(() => {
+    if (closeTimeoutRef.current !== null) {
+      window.clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
     }
+  }, []);
 
-    if (!isVisible) {
-      return;
-    }
+  const openMenu = useCallback(() => {
+    clearCloseTimeout();
+    setIsVisible(true);
+    setOpen(true);
+  }, [clearCloseTimeout]);
 
-    const timeoutId = window.setTimeout(() => setIsVisible(false), TRANSITION_MS);
-    return () => window.clearTimeout(timeoutId);
-  }, [open, isVisible]);
+  const closeMenu = useCallback(() => {
+    setOpen(false);
+    clearCloseTimeout();
+    closeTimeoutRef.current = window.setTimeout(() => {
+      setIsVisible(false);
+      closeTimeoutRef.current = null;
+    }, TRANSITION_MS);
+  }, [clearCloseTimeout]);
 
   useEffect(() => {
     if (!open) {
@@ -121,7 +130,7 @@ export default function MobileMenu({
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         event.preventDefault();
-        setOpen(false);
+        closeMenu();
         return;
       }
 
@@ -166,10 +175,16 @@ export default function MobileMenu({
 
     document.addEventListener("keydown", onKeyDown);
     return () => document.removeEventListener("keydown", onKeyDown);
-  }, [open]);
+  }, [closeMenu, open]);
 
-  const handleToggle = () => setOpen((prev) => !prev);
-  const handleClose = () => setOpen(false);
+  const handleToggle = () => {
+    if (open) {
+      closeMenu();
+      return;
+    }
+    openMenu();
+  };
+  const handleClose = () => closeMenu();
 
   return (
     <div className="md:hidden">

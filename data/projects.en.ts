@@ -10,6 +10,12 @@ export const projectsEn: Project[] = [
     stack: ["Python", "FastAPI", "OpenCV", "MediaPipe", "React"],
     repoUrl:
       "https://github.com/matheussiqueira-dev/touchless-web-gesture-interface",
+    demo: {
+      kind: "video",
+      src: "/touchless-web-gesture-interface.mp4",
+      poster: "/projects/touchless-web-gesture-interface/cover.svg",
+      caption: "Quick walkthrough of the touchless interface in action.",
+    },
     context:
       "In touch-restricted environments (labs, control rooms, industrial ops), teams needed to navigate BI dashboards without mouse or keyboard while keeping low latency and high command accuracy.",
     problem: [
@@ -97,6 +103,13 @@ export const projectsEn: Project[] = [
     role: "Analyst/Developer",
     stack: ["Python", "FastAPI", "PostgreSQL", "Redis"],
     repoUrl: "https://github.com/matheussiqueira-dev/chatbot-ia-api",
+    demo: {
+      kind: "internal",
+      path: "/demos/chatbot-ia-api",
+      title: "Open interactive demo",
+      description:
+        "Lightweight playground to simulate requests and view mock responses.",
+    },
     context:
       "Support operations needed consistent answers and reliable data for quality analysis, reducing response time for recurring requests.",
     problem: [
@@ -184,6 +197,12 @@ export const projectsEn: Project[] = [
     role: "Analyst/Developer",
     stack: ["Python", "OpenCV", "TensorFlow", "NumPy"],
     repoUrl: "https://github.com/matheussiqueira-dev/self-drive-car",
+    demo: {
+      kind: "video",
+      src: "/projects/self-drive-car/demo.mp4",
+      poster: "/projects/self-drive-car/cover.svg",
+      caption: "Autonomous driving simulator running in real time.",
+    },
     context:
       "Data science project to train and validate autonomous driving models in a safe environment, focused on computer vision and real-time decisions.",
     problem: [
@@ -422,6 +441,12 @@ export const projectsEn: Project[] = [
     stack: ["Python", "OpenCV", "TensorFlow", "Keras", "NumPy"],
     repoUrl:
       "https://github.com/matheussiqueira-dev/face-emotion-recognition-realtime",
+    demo: {
+      kind: "video",
+      src: "/Face-emotions.mp4",
+      poster: "/projects/face-emotions/cover.svg",
+      caption: "Real-time emotion recognition from webcam frames.",
+    },
     context:
       "Computer vision project to identify emotions and engagement patterns during interactions, supporting user experience analysis.",
     problem: [

@@ -10,6 +10,12 @@ export const projects: Project[] = [
     stack: ["Python", "FastAPI", "OpenCV", "MediaPipe", "React"],
     repoUrl:
       "https://github.com/matheussiqueira-dev/touchless-web-gesture-interface",
+    demo: {
+      kind: "video",
+      src: "/touchless-web-gesture-interface.mp4",
+      poster: "/projects/touchless-web-gesture-interface/cover.svg",
+      caption: "Demonstração rápida da interface touchless em uso.",
+    },
     context:
       "Em ambientes com restrição de toque (laboratórios, salas de controle e operações industriais), era necessário navegar dashboards de BI e sistemas analíticos sem mouse ou teclado, mantendo baixa latência e alta precisão de comandos.",
     problem: [
@@ -97,6 +103,13 @@ export const projects: Project[] = [
     role: "Analista/Desenvolvedor",
     stack: ["Python", "FastAPI", "PostgreSQL", "Redis"],
     repoUrl: "https://github.com/matheussiqueira-dev/chatbot-ia-api",
+    demo: {
+      kind: "internal",
+      path: "/demos/chatbot-ia-api",
+      title: "Abrir demo interativa",
+      description:
+        "Playground simples para simular requests e visualizar respostas mock.",
+    },
     context:
       "Operações de atendimento precisavam padronizar respostas e gerar dados confiáveis para análise de qualidade, reduzindo o tempo de resposta em demandas recorrentes.",
     problem: [
@@ -184,6 +197,12 @@ export const projects: Project[] = [
     role: "Analista/Desenvolvedor",
     stack: ["Python", "OpenCV", "TensorFlow", "NumPy"],
     repoUrl: "https://github.com/matheussiqueira-dev/self-drive-car",
+    demo: {
+      kind: "video",
+      src: "/projects/self-drive-car/demo.mp4",
+      poster: "/projects/self-drive-car/cover.svg",
+      caption: "Simulador de direção autônoma em execução.",
+    },
     context:
       "Projeto de data science para treinar e validar modelos de condução autônoma em ambiente seguro, com foco em visão computacional e decisões em tempo real.",
     problem: [
@@ -422,6 +441,12 @@ export const projects: Project[] = [
     stack: ["Python", "OpenCV", "TensorFlow", "Keras", "NumPy"],
     repoUrl:
       "https://github.com/matheussiqueira-dev/face-emotion-recognition-realtime",
+    demo: {
+      kind: "video",
+      src: "/Face-emotions.mp4",
+      poster: "/projects/face-emotions/cover.svg",
+      caption: "Reconhecimento de emoções em tempo real via webcam.",
+    },
     context:
       "Projeto de visão computacional para identificar emoções e padrões de engajamento durante interações, apoiando análises de experiência do usuário.",
     problem: [

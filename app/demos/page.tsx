@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { DemoPreview } from "@/components/demos/DemoPreview";
 import JsonLd from "@/components/seo/JsonLd";
 import { projects } from "@/data/projects";
+import type { Project } from "@/data/projects.types";
 import { sitePt } from "@/data/site.pt";
 import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 
@@ -22,6 +24,10 @@ const demosJsonLd = {
     url: baseUrl,
   },
 };
+
+const getCover = (project: Project) =>
+  project.screenshots.find((shot) => shot.src.includes("/cover.")) ??
+  project.screenshots[0];
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -75,61 +81,128 @@ export default function DemosPage() {
         </header>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {projects.map((project) => (
-            <article
-              key={project.slug}
-              className="card p-6 flex flex-col gap-4"
-            >
-              <div>
-                <h2 className="text-xl font-semibold text-[color:var(--foreground)]">
-                  {project.title}
-                </h2>
-                <p className="text-sm text-[color:var(--muted)] mt-2">
-                  {project.tagline}
-                </p>
-              </div>
-              <div className="rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-4">
-                <p className="text-xs uppercase tracking-[0.2em] text-[color:var(--muted)]">
-                  {sitePt.demos.howToRunLabel}
-                </p>
-                <ol className="mt-3 list-decimal list-inside space-y-1 text-xs text-[color:var(--muted)]">
-                  {project.howToRun.slice(0, 3).map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ol>
-              </div>
-              <div className="flex flex-wrap gap-3 text-xs text-[color:var(--muted)]">
+          {projects.map((project) => {
+            const cover = getCover(project);
+            const fallbackMedia = cover
+              ? { src: cover.src, alt: cover.alt }
+              : undefined;
+            const demoDetailPath = `/demos/${project.slug}`;
+            const demo = project.demo;
+            const externalDemoUrl =
+              demo?.kind === "external" ? demo.url : project.demoUrl;
+            const primaryCta =
+              demo?.kind === "internal" ? (
                 <Link
-                  href={`/projetos/${project.slug}`}
-                  className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+                  href={demo.path ?? demoDetailPath}
+                  className="rounded-full border border-[color:var(--accent)]/40 px-4 py-2 text-[color:var(--accent)] transition hover:border-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                 >
-                  {sitePt.demos.fullCaseLabel}
+                  {sitePt.demos.openInteractiveLabel}
                 </Link>
+              ) : demo?.kind === "video" ? (
+                <Link
+                  href={demoDetailPath}
+                  className="rounded-full border border-[color:var(--accent)]/40 px-4 py-2 text-[color:var(--accent)] transition hover:border-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+                >
+                  {sitePt.demos.watchVideoLabel}
+                </Link>
+              ) : demo?.kind === "embed" ? (
+                <Link
+                  href={demoDetailPath}
+                  className="rounded-full border border-[color:var(--accent)]/40 px-4 py-2 text-[color:var(--accent)] transition hover:border-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+                >
+                  {sitePt.demos.openDemoLabel}
+                </Link>
+              ) : demo?.kind === "external" && demo.url ? (
                 <a
-                  href={project.repoUrl}
+                  href={demo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-[color:var(--accent)]/40 px-4 py-2 text-[color:var(--accent)] transition hover:border-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+                >
+                  {demo.label ?? sitePt.demos.openDemoLabel}
+                </a>
+              ) : externalDemoUrl ? (
+                <a
+                  href={externalDemoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-[color:var(--accent)]/40 px-4 py-2 text-[color:var(--accent)] transition hover:border-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+                >
+                  {sitePt.demos.openDemoLabel}
+                </a>
+              ) : (
+                <span className="rounded-full border border-[color:var(--border)] px-4 py-2 text-[color:var(--muted)]">
+                  {sitePt.demos.demoSoonLabel}
+                </span>
+              );
+            const secondaryExternalCta =
+              project.demoUrl && demo && demo.kind !== "external" ? (
+                <a
+                  href={project.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-full border border-[color:var(--border)] px-4 py-2 transition hover:border-[color:var(--accent)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                 >
-                  {sitePt.projects.modal.githubLabel}
+                  {sitePt.demos.openDemoLabel}
                 </a>
-                {project.demoUrl ? (
+              ) : null;
+
+            return (
+              <article
+                key={project.slug}
+                className="card p-6 flex flex-col gap-4"
+              >
+                <div>
+                  <h2 className="text-xl font-semibold text-[color:var(--foreground)]">
+                    {project.title}
+                  </h2>
+                  <p className="text-sm text-[color:var(--muted)] mt-2">
+                    {project.tagline}
+                  </p>
+                </div>
+                <div
+                  className="rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-4"
+                  aria-label="Preview da demo"
+                >
+                  <DemoPreview
+                    demo={project.demo}
+                    fallbackMedia={fallbackMedia}
+                    locale="pt"
+                    projectSlug={project.slug}
+                    projectTitle={project.title}
+                  />
+                </div>
+                <div className="rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-4">
+                  <p className="text-xs uppercase tracking-[0.2em] text-[color:var(--muted)]">
+                    {sitePt.demos.howToRunLabel}
+                  </p>
+                  <ol className="mt-3 list-decimal list-inside space-y-1 text-xs text-[color:var(--muted)]">
+                    {project.howToRun.slice(0, 3).map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ol>
+                </div>
+                <div className="flex flex-wrap gap-3 text-xs text-[color:var(--muted)]">
+                  <Link
+                    href={`/projetos/${project.slug}`}
+                    className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+                  >
+                    {sitePt.demos.fullCaseLabel}
+                  </Link>
                   <a
-                    href={project.demoUrl}
+                    href={project.repoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full border border-[color:var(--accent)]/40 px-4 py-2 text-[color:var(--accent)] transition hover:border-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+                    className="rounded-full border border-[color:var(--border)] px-4 py-2 transition hover:border-[color:var(--accent)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                   >
-                    {sitePt.demos.openDemoLabel}
+                    {sitePt.projects.modal.githubLabel}
                   </a>
-                ) : (
-                  <span className="rounded-full border border-[color:var(--border)] px-4 py-2 text-[color:var(--muted)]">
-                    {sitePt.demos.demoSoonLabel}
-                  </span>
-                )}
-              </div>
-            </article>
-          ))}
+                  {primaryCta}
+                  {secondaryExternalCta}
+                </div>
+              </article>
+            );
+          })}
         </div>
 
         <section className="mt-12 rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 shadow-sm">
