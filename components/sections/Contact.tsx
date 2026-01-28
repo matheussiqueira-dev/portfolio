@@ -8,13 +8,13 @@ type Props = {
 export default function Contact({ content }: Props) {
   return (
     <section id="contact" className="page-section content-auto">
-      <div className="section-inner grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-start">
+      <div className="section-inner grid-prose items-start">
         <div className="space-y-4">
           <p className="eyebrow">{content.eyebrow}</p>
-          <h2 className="text-3xl md:text-4xl font-semibold text-[color:var(--foreground)]">
+          <h2 className="heading-2">
             {content.title}
           </h2>
-          <p className="text-base md:text-lg text-[color:var(--muted)] leading-relaxed">
+          <p className="text-lead">
             {content.description}
           </p>
           <div className="card card-muted p-4">

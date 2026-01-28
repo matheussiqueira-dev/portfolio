@@ -40,15 +40,15 @@ export default function Projects() {
       <div className="section-inner">
         <div className="flex flex-col gap-4 mb-10">
           <p className="eyebrow">{content.eyebrow}</p>
-          <h2 className="text-3xl md:text-4xl font-semibold text-[color:var(--foreground)]">
+          <h2 className="heading-2">
             {content.title}
           </h2>
-          <p className="text-base text-[color:var(--muted)] max-w-2xl">
+          <p className="text-body text-[color:var(--muted)] max-w-2xl">
             {content.description}
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid-projects">
           {data.map((project) => {
             const cover = getCover(project);
             const highlights = getHighlights(project);
@@ -59,7 +59,7 @@ export default function Projects() {
             return (
               <article
                 key={project.slug}
-                className="card p-6 flex flex-col gap-4 transition hover:-translate-y-1 hover:shadow-xl"
+                className="card hover-lift p-6 flex flex-col gap-4"
               >
                 {cover ? (
                   <div className="relative aspect-[1200/630] w-full overflow-hidden rounded-xl border border-[color:var(--border)]">
@@ -76,7 +76,7 @@ export default function Projects() {
                 ) : null}
 
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-lg font-semibold text-[color:var(--foreground)]">
+                  <h3 className="heading-4">
                     {project.title}
                   </h3>
                   <span className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
