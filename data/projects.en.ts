@@ -517,6 +517,241 @@ export const projectsEn: Project[] = [
     },
   },
   {
+    slug: "driver-monitoring-system",
+    title: "Driver Monitoring System",
+    headline: "Driver Monitoring System | Attention and fatigue monitoring",
+    tagline:
+      "Driver monitoring system using computer vision to detect attention and fatigue.",
+    role: "Analyst/Developer",
+    stack: ["Python", "OpenCV", "MediaPipe", "TensorFlow"],
+    repoUrl: "https://github.com/matheussiqueira-dev/Driver-Monitoring-System",
+    demo: {
+      kind: "video",
+      src: "/Driver Monitoring System.mp4",
+      poster: "/projects/driver-monitoring-system/cover.svg",
+      caption: "Attention and fatigue detection with computer vision.",
+    },
+    context:
+      "Vehicle safety applications require real-time detection of driver fatigue and distraction to reduce risks on long trips.",
+    problem: [
+      "Monitor attention and drowsiness with low latency.",
+      "Detect facial cues under varying lighting conditions.",
+      "Reduce false positives during natural movements.",
+      "Deliver clear alerts without interrupting driving.",
+    ],
+    dataUsed: [
+      "Front camera video frames.",
+      "Facial landmarks and eye openness metrics.",
+      "Yawning events and eye-closure duration.",
+      "Attention scores and alert logs.",
+    ],
+    solution: [
+      "Computer vision pipeline with face detection and landmarks.",
+      "EAR (Eye Aspect Ratio) and fatigue signal analysis.",
+      "Threshold and time-window logic to reduce noise.",
+      "Visual alert layer for immediate feedback.",
+    ],
+    features: [
+      "Continuous attention and drowsiness detection.",
+      "Blink, yawn, and eye-closure metrics.",
+      "Configurable real-time alerts.",
+      "Simple UI for validation and tests.",
+    ],
+    highlights: [
+      "Real-time monitoring with low latency.",
+      "Consistent fatigue signal detection.",
+      "Reusable base for automotive prototypes.",
+      "Clear pipeline for future model upgrades.",
+    ],
+    demonstrates: [
+      "Computer vision applied to automotive safety.",
+      "Facial signal processing on video streams.",
+      "Alert and threshold modeling.",
+      "Rapid validation-focused prototyping.",
+    ],
+    techSummary:
+      "Python with OpenCV and MediaPipe for facial tracking, plus TensorFlow support for visual signal analysis.",
+    conclusion: [
+      "Built a low-latency visual pipeline.",
+      "Applied facial metrics to detect fatigue.",
+      "Created a base ready for future model evolution.",
+    ],
+    howToRun: [
+      "Prerequisites: Python 3.10+ and a webcam.",
+      "Clone the repository and create a virtual environment.",
+      "Install dependencies listed in requirements.txt.",
+      "Run the main script to start detection.",
+      "Validate alerts in real time via the UI.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/driver-monitoring-system/cover.svg",
+        alt: "Cover of Driver Monitoring System",
+      },
+      {
+        src: "/Driver Monitoring System.mp4",
+        alt: "Driver Monitoring System demo",
+        type: "video",
+      },
+    ],
+  },
+  {
+    slug: "subway-surf",
+    title: "Subway Surf",
+    headline: "Subway Surf | 2D game in HTML5 Canvas",
+    tagline:
+      "Game inspired by Subway Surfers built to practice game logic and development.",
+    role: "Developer",
+    stack: ["JavaScript", "HTML5", "Canvas", "CSS"],
+    repoUrl: "https://github.com/matheussiqueira-dev/Subway-Surf",
+    demo: {
+      kind: "video",
+      src: "/Subway Surf.mp4",
+      poster: "/projects/subway-surf/cover.svg",
+      caption: "Gameplay from the Subway Surfers-inspired prototype.",
+    },
+    context:
+      "Project created to practice game loop, collision, and character control in a 2D environment.",
+    problem: [
+      "Build a smooth browser-based game loop.",
+      "Handle collisions and obstacles in real time.",
+      "Scale difficulty without breaking gameplay.",
+      "Organize code for new levels and assets.",
+    ],
+    dataUsed: [
+      "Keyboard input for movement.",
+      "Game state (speed, score, collisions).",
+      "Obstacle spawn timers.",
+      "Sprite positions on screen.",
+    ],
+    solution: [
+      "Canvas rendering with a continuous update loop.",
+      "Simple collision system and obstacle reset.",
+      "Gradual speed increase for challenge.",
+      "Modular structure for game logic and UI.",
+    ],
+    features: [
+      "Smooth character movement.",
+      "Dynamic obstacles with collision detection.",
+      "Real-time score tracking.",
+      "Base ready for new levels and skins.",
+    ],
+    highlights: [
+      "Responsive gameplay with solid performance.",
+      "Consistent controls and collisions.",
+      "Clear structure for project evolution.",
+      "Hands-on game design practice.",
+    ],
+    demonstrates: [
+      "Game loop and Canvas rendering.",
+      "Collision logic and state handling.",
+      "Modular front-end structure.",
+      "Rapid 2D game prototyping.",
+    ],
+    techSummary:
+      "JavaScript and HTML5 Canvas for rendering, with CSS for layout and HUD.",
+    conclusion: [
+      "Consolidated JS game loop fundamentals.",
+      "Implemented real-time collision and scoring.",
+      "Built an extensible base for future mechanics.",
+    ],
+    howToRun: [
+      "Clone the repository.",
+      "Open index.html in a browser.",
+      "Use the keyboard to control the character.",
+      "Track the score and avoid obstacles.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/subway-surf/cover.svg",
+        alt: "Cover of Subway Surf",
+      },
+      {
+        src: "/Subway Surf.mp4",
+        alt: "Subway Surf gameplay demo",
+        type: "video",
+      },
+    ],
+  },
+  {
+    slug: "gestor-de-notas",
+    title: "Gestor de Notas",
+    headline: "Gestor de Notas | Notes management app",
+    tagline:
+      "Notes management app to create, edit, and organize information quickly.",
+    role: "Developer",
+    stack: ["JavaScript", "HTML5", "CSS", "LocalStorage"],
+    repoUrl: "https://github.com/matheussiqueira-dev/Gestor_de_Notas",
+    demo: {
+      kind: "video",
+      src: "/Gestor de Notas.mp4",
+      poster: "/projects/gestor-de-notas/cover.svg",
+      caption: "Note creation and organization flow.",
+    },
+    context:
+      "The goal was to build a lightweight way to record and organize personal notes without relying on external tools.",
+    problem: [
+      "Organize notes quickly and clearly.",
+      "Allow edits without losing history.",
+      "Ensure local persistence without a backend.",
+      "Keep a simple and direct interface.",
+    ],
+    dataUsed: [
+      "Note text and local categories.",
+      "Creation and update timestamps.",
+      "Priority status and visual organization.",
+      "Browser-persisted state.",
+    ],
+    solution: [
+      "Simple web UI with notes CRUD.",
+      "LocalStorage persistence for offline use.",
+      "Organization by tags and dates.",
+      "Visual feedback for user actions.",
+    ],
+    features: [
+      "Create, edit, and delete notes.",
+      "Fast keyword search.",
+      "Local persistence in the browser.",
+      "Responsive layout for desktop and mobile.",
+    ],
+    highlights: [
+      "Direct, low-friction flow.",
+      "Offline persistence without a backend.",
+      "Base ready for authentication later.",
+      "Lean and maintainable code.",
+    ],
+    demonstrates: [
+      "Front-end CRUD fundamentals.",
+      "Local data persistence.",
+      "UI organization focused on productivity.",
+      "Solid JavaScript basics.",
+    ],
+    techSummary:
+      "Pure JavaScript web app with HTML and CSS, using LocalStorage for persistence.",
+    conclusion: [
+      "Implemented a simple, functional CRUD flow.",
+      "Ensured local persistence without an API.",
+      "Built a lightweight foundation for future upgrades.",
+    ],
+    howToRun: [
+      "Clone the repository.",
+      "Open index.html in a browser.",
+      "Create and organize notes.",
+      "Changes are saved locally.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/gestor-de-notas/cover.svg",
+        alt: "Cover of Gestor de Notas",
+      },
+      {
+        src: "/Gestor de Notas.mp4",
+        alt: "Gestor de Notas demo",
+        type: "video",
+      },
+    ],
+  },
+  {
     slug: "sistema-analise-emocoes-ia",
     title: "AI Emotion Analysis System",
     headline: "Emotion Analysis System with AI | Data Science and Full Stack",

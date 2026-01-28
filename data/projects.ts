@@ -517,6 +517,241 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "driver-monitoring-system",
+    title: "Driver Monitoring System",
+    headline: "Driver Monitoring System | Monitoramento de atenção e fadiga",
+    tagline:
+      "Sistema de monitoramento do motorista utilizando visão computacional para atenção e fadiga.",
+    role: "Analista/Desenvolvedor",
+    stack: ["Python", "OpenCV", "MediaPipe", "TensorFlow"],
+    repoUrl: "https://github.com/matheussiqueira-dev/Driver-Monitoring-System",
+    demo: {
+      kind: "video",
+      src: "/Driver Monitoring System.mp4",
+      poster: "/projects/driver-monitoring-system/cover.svg",
+      caption: "Detecção de atenção e fadiga com visão computacional.",
+    },
+    context:
+      "Aplicações de segurança veicular precisam identificar sinais de fadiga e distração do motorista em tempo real para reduzir riscos em trajetos longos.",
+    problem: [
+      "Monitorar atenção e sonolência com baixa latência.",
+      "Detectar sinais faciais mesmo com variações de iluminação.",
+      "Minimizar falsos positivos durante movimentos naturais.",
+      "Gerar alertas claros sem interromper a condução.",
+    ],
+    dataUsed: [
+      "Frames de vídeo da câmera frontal.",
+      "Landmarks faciais e métricas de abertura ocular.",
+      "Eventos de bocejo e tempo de fechamento dos olhos.",
+      "Scores de atenção e registros de alerta.",
+    ],
+    solution: [
+      "Pipeline de visão computacional com detecção facial e landmarks.",
+      "Cálculo de EAR (Eye Aspect Ratio) e sinais de fadiga.",
+      "Lógica de thresholds e janelas de tempo para reduzir ruído.",
+      "Camada de alertas visuais para feedback imediato.",
+    ],
+    features: [
+      "Detecção contínua de atenção e sonolência.",
+      "Métricas de piscar, bocejo e tempo de olhos fechados.",
+      "Alertas configuráveis em tempo real.",
+      "Interface simples para validação e testes.",
+    ],
+    highlights: [
+      "Monitoramento em tempo real com baixa latência.",
+      "Sinais de fadiga detectados com consistência.",
+      "Base reutilizável para protótipos automotivos.",
+      "Pipeline claro para evolução de modelos.",
+    ],
+    demonstrates: [
+      "Visão computacional aplicada a segurança veicular.",
+      "Tratamento de sinais faciais em streaming de vídeo.",
+      "Modelagem de alertas e thresholds.",
+      "Prototipação orientada a validação rápida.",
+    ],
+    techSummary:
+      "Python com OpenCV e MediaPipe para rastreamento facial, além de TensorFlow para suporte à análise de sinais visuais.",
+    conclusion: [
+      "Estruturei um pipeline visual com foco em latência.",
+      "Apliquei métricas faciais para detectar fadiga.",
+      "Criei uma base pronta para evolução do modelo.",
+    ],
+    howToRun: [
+      "Pré-requisitos: Python 3.10+ e webcam habilitada.",
+      "Clone o repositório e crie um ambiente virtual.",
+      "Instale as dependências listadas no requirements.txt.",
+      "Execute o script principal para iniciar a detecção.",
+      "Valide os alertas em tempo real pela interface.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/driver-monitoring-system/cover.svg",
+        alt: "Capa do projeto Driver Monitoring System",
+      },
+      {
+        src: "/Driver Monitoring System.mp4",
+        alt: "Demonstração do Driver Monitoring System",
+        type: "video",
+      },
+    ],
+  },
+  {
+    slug: "subway-surf",
+    title: "Subway Surf",
+    headline: "Subway Surf | Jogo 2D em HTML5 Canvas",
+    tagline:
+      "Jogo inspirado no Subway Surfers para estudo de lógica e desenvolvimento de games.",
+    role: "Desenvolvedor",
+    stack: ["JavaScript", "HTML5", "Canvas", "CSS"],
+    repoUrl: "https://github.com/matheussiqueira-dev/Subway-Surf",
+    demo: {
+      kind: "video",
+      src: "/Subway Surf.mp4",
+      poster: "/projects/subway-surf/cover.svg",
+      caption: "Gameplay do protótipo inspirado no Subway Surfers.",
+    },
+    context:
+      "Projeto criado para praticar game loop, colisão e controle de personagens em um ambiente 2D.",
+    problem: [
+      "Estruturar um game loop fluido no navegador.",
+      "Implementar colisões e obstáculos em tempo real.",
+      "Criar progressão de dificuldade sem travar a jogabilidade.",
+      "Organizar o código para facilitar novas fases e assets.",
+    ],
+    dataUsed: [
+      "Entrada do teclado para movimentação.",
+      "Estados de jogo (velocidade, pontuação, colisões).",
+      "Timers para spawn de obstáculos.",
+      "Sprites e posições em tela.",
+    ],
+    solution: [
+      "Renderização em Canvas com loop de atualização contínuo.",
+      "Sistema simples de colisão e reset de obstáculos.",
+      "Incremento gradual de velocidade para desafio.",
+      "Arquitetura modular para lógica de jogo e UI.",
+    ],
+    features: [
+      "Movimentação fluida do personagem.",
+      "Obstáculos dinâmicos com colisão.",
+      "Pontuação em tempo real.",
+      "Base pronta para novos níveis e skins.",
+    ],
+    highlights: [
+      "Jogo responsivo com boa performance em navegador.",
+      "Controle e colisão consistentes.",
+      "Estrutura clara para evolução do projeto.",
+      "Aprendizado prático de game design básico.",
+    ],
+    demonstrates: [
+      "Game loop e renderização em Canvas.",
+      "Lógica de colisão e estados do jogo.",
+      "Organização modular de código front-end.",
+      "Prototipação rápida de jogos 2D.",
+    ],
+    techSummary:
+      "JavaScript e HTML5 Canvas para renderização, com CSS para layout e HUD.",
+    conclusion: [
+      "Consolidei fundamentos de game loop em JS.",
+      "Implementei colisões e pontuação em tempo real.",
+      "Criei uma base extensível para futuras mecânicas.",
+    ],
+    howToRun: [
+      "Clone o repositório.",
+      "Abra o arquivo index.html no navegador.",
+      "Use o teclado para controlar o personagem.",
+      "Acompanhe a pontuação e evite obstáculos.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/subway-surf/cover.svg",
+        alt: "Capa do projeto Subway Surf",
+      },
+      {
+        src: "/Subway Surf.mp4",
+        alt: "Gameplay do Subway Surf",
+        type: "video",
+      },
+    ],
+  },
+  {
+    slug: "gestor-de-notas",
+    title: "Gestor de Notas",
+    headline: "Gestor de Notas | Aplicação para organização pessoal",
+    tagline:
+      "Aplicação para gerenciamento de notas, com criação, edição e organização simples.",
+    role: "Desenvolvedor",
+    stack: ["JavaScript", "HTML5", "CSS", "LocalStorage"],
+    repoUrl: "https://github.com/matheussiqueira-dev/Gestor_de_Notas",
+    demo: {
+      kind: "video",
+      src: "/Gestor de Notas.mp4",
+      poster: "/projects/gestor-de-notas/cover.svg",
+      caption: "Fluxo de criação e organização de notas.",
+    },
+    context:
+      "A necessidade era criar uma solução leve para registrar e organizar informações pessoais sem depender de ferramentas externas.",
+    problem: [
+      "Organizar notas de forma rápida e clara.",
+      "Permitir edição sem perder histórico.",
+      "Garantir persistência local sem backend.",
+      "Manter uma interface simples e direta.",
+    ],
+    dataUsed: [
+      "Texto das notas e categorias locais.",
+      "Datas de criação e atualização.",
+      "Status de prioridade e organização visual.",
+      "Estado persistido no navegador.",
+    ],
+    solution: [
+      "Interface web simples com CRUD de notas.",
+      "Persistência via LocalStorage para uso offline.",
+      "Organização por tags e datas.",
+      "Feedback visual para ações do usuário.",
+    ],
+    features: [
+      "Criação, edição e exclusão de notas.",
+      "Busca rápida por palavras-chave.",
+      "Persistência local no navegador.",
+      "Layout responsivo para desktop e mobile.",
+    ],
+    highlights: [
+      "Fluxo de uso direto e sem fricção.",
+      "Persistência offline sem backend.",
+      "Base pronta para evoluir com autenticação.",
+      "Código enxuto e fácil de manter.",
+    ],
+    demonstrates: [
+      "CRUD em front-end puro.",
+      "Persistência local de dados.",
+      "Organização de UI com foco em produtividade.",
+      "Boas práticas de JavaScript básico.",
+    ],
+    techSummary:
+      "Aplicação web em JavaScript puro com HTML e CSS, usando LocalStorage para persistência.",
+    conclusion: [
+      "Implementei um CRUD simples e funcional.",
+      "Garanti persistência local sem depender de API.",
+      "Construí uma base leve para evolução futura.",
+    ],
+    howToRun: [
+      "Clone o repositório.",
+      "Abra o arquivo index.html no navegador.",
+      "Crie e organize suas notas.",
+      "As alterações ficam salvas localmente.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/gestor-de-notas/cover.svg",
+        alt: "Capa do projeto Gestor de Notas",
+      },
+      {
+        src: "/Gestor de Notas.mp4",
+        alt: "Demonstração do Gestor de Notas",
+        type: "video",
+      },
+    ],
+  },
+  {
     slug: "sistema-analise-emocoes-ia",
     title: "Sistema de Análise de Emoções com Inteligência Artificial",
     headline:
