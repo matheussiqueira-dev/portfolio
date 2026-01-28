@@ -50,6 +50,10 @@ REPORT.cwv.*.json
 REPORT.*.json
 *.lighthouse*.json
 
+# Local demo scripts
+create-demos.ps1
+create-demos-fixed.ps1
+
 
 # Sentry Config File
 .env.sentry-build-plugin
