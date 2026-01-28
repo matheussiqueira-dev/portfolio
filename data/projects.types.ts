@@ -4,6 +4,34 @@ export type ProjectMedia = {
   type?: "image" | "gif" | "video";
 };
 
+export type ProjectIntroSection = {
+  title: string;
+  paragraphs?: string[];
+  items?: string[];
+  subSections?: {
+    title: string;
+    items: string[];
+  }[];
+  footer?: string[];
+  link?: {
+    label: string;
+    href: string;
+  };
+};
+
+export type ProjectIntroVideo = {
+  src: string;
+  poster?: string;
+  caption?: string;
+};
+
+export type ProjectIntro = {
+  title: string;
+  paragraphs: string[];
+  sections: ProjectIntroSection[];
+  video?: ProjectIntroVideo;
+};
+
 export type DemoExperience =
   | {
       kind: "external";
@@ -50,6 +78,7 @@ export type Project = {
   conclusion: string[];
   howToRun: string[];
   longDescription?: string[];
+  intro?: ProjectIntro;
   screenshots: ProjectMedia[];
   seo?: {
     title: string;

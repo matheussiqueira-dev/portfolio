@@ -16,6 +16,164 @@ export const projectsEn: Project[] = [
       poster: "/projects/touchless-web-gesture-interface/cover.svg",
       caption: "Quick walkthrough of the touchless interface in action.",
     },
+    intro: {
+      title: "Touchless Web Gesture Interface - Real-time Gesture Control for the Web",
+      paragraphs: [
+        "Touchless Web Gesture Interface is an innovative web application that lets users interact with digital interfaces without touching the mouse or keyboard, using only hand gestures captured by the webcam, directly in the browser.",
+        "This project was built with a focus on innovation, user experience, and practical computer vision, exploring how modern technologies can transform the way people interact with web systems.",
+        "More than a proof of concept, it showcases real skills in modern frontend development, application architecture, real-time video processing, and integration of advanced computer vision libraries.",
+      ],
+      sections: [
+        {
+          title: "What is Touchless Web Gesture Interface?",
+          paragraphs: [
+            "Touchless Web Gesture Interface is a gesture-controlled web interface where the user's hand movements are recognized in real time and converted into actions inside the application.",
+            "The solution uses computer vision in the browser, eliminating the need for additional hardware or external software. All you need is a webcam and a modern browser.",
+            "The main goal is to show how the web can be used as a platform for advanced interactive solutions, applicable in areas such as:",
+          ],
+          items: [
+            "Accessible interfaces",
+            "Immersive experiences",
+            "Touchless systems",
+            "Prototypes for innovative digital products",
+          ],
+        },
+        {
+          title: "Key Features",
+          paragraphs: [
+            "The application offers a set of features that demonstrate both technical mastery and a strong focus on usability:",
+          ],
+          items: [
+            "Real-time hand tracking using MediaPipe Hands",
+            "Natural gesture recognition, such as pinch and continuous motion",
+            "Hand-controlled virtual cursor, simulating traditional interactions",
+            "Interaction with visual elements without any physical contact",
+            "Smooth and responsive updates, even with real-time processing",
+          ],
+          footer: [
+            "These features show the feasibility of touchless interfaces in modern web environments while maintaining solid performance and user experience.",
+          ],
+        },
+        {
+          title: "Technologies Used in the Project",
+          paragraphs: [
+            "This project was built using a modern stack widely adopted in the industry:",
+          ],
+          subSections: [
+            {
+              title: "Frontend and Architecture",
+              items: [
+                "React for building reactive, component-based interfaces",
+                "TypeScript for strong typing, organization, and scalability",
+                "Vite as a modern bundler with fast load times and efficient DX",
+              ],
+            },
+            {
+              title: "Computer Vision",
+              items: [
+                "Google MediaPipe Hands for hand detection and tracking",
+                "Video processing directly in the browser",
+                "Conversion of hand landmarks into interactive actions",
+              ],
+            },
+            {
+              title: "Style and Interface",
+              items: [
+                "Modern CSS with a focus on responsiveness",
+                "Clean and intuitive interface",
+                "Experimental UX concepts exploring new interaction patterns",
+              ],
+            },
+          ],
+          footer: [
+            "This technology mix reflects real-world practices and demonstrates the ability to work on complex, high-performance projects.",
+          ],
+        },
+        {
+          title: "Why is this project relevant?",
+          paragraphs: [
+            "Touchless Web Gesture Interface goes beyond a simple technical experiment.",
+          ],
+          subSections: [
+            {
+              title: "It demonstrates core competencies such as:",
+              items: [
+                "Advanced web development",
+                "Motion and interaction data analysis",
+                "Integration between frontend and real-time processing",
+                "Building innovative, user-centered solutions",
+              ],
+            },
+            {
+              title: "Projects like this are especially relevant when:",
+              items: [
+                "Accessibility is a priority",
+                "Touchless interfaces are desired",
+                "User experience needs to go beyond the conventional",
+              ],
+            },
+          ],
+          footer: [
+            "It also highlights the ability to research, implement, and adapt emerging technologies to solve real problems.",
+          ],
+        },
+        {
+          title: "Architecture and Code Organization",
+          paragraphs: [
+            "The codebase was structured following good development practices:",
+          ],
+          items: [
+            "Clear separation of responsibilities",
+            "Reusable components",
+            "Strong typing with TypeScript",
+            "Ease of maintenance and project evolution",
+          ],
+          footer: [
+            "This organization supports scalability and makes the project easier to understand for other developers, which is essential in collaborative and professional environments.",
+          ],
+        },
+        {
+          title: "Practical Applications of Touchless Web Gesture Interface",
+          paragraphs: [
+            "This type of solution can be applied in several contexts, such as:",
+          ],
+          items: [
+            "Gesture-controlled interactive dashboards",
+            "Corporate environments and touchless presentations",
+            "Educational and demo experiences",
+            "Prototypes for innovative digital products",
+            "Accessible interfaces for people with reduced mobility",
+          ],
+          footer: [
+            "All of this reinforces the application's potential in the technology, data, and web development ecosystem.",
+          ],
+        },
+        {
+          title: "Source Code and Demo",
+          paragraphs: [
+            "The full source code is available on GitHub, allowing a detailed review of the implementation, architecture, and technical decisions made during development.",
+          ],
+          footer: ["Repository:"],
+          link: {
+            label: "github.com/matheussiqueira-dev/touchless-web-gesture-interface",
+            href: "https://github.com/matheussiqueira-dev/touchless-web-gesture-interface",
+          },
+        },
+        {
+          title: "Conclusion",
+          paragraphs: [
+            "Touchless Web Gesture Interface is a project that brings together modern technology, creativity, and practical application, showing how the web can go beyond traditional interactions.",
+            "It represents an innovative approach to web development, reinforcing skills in React, TypeScript, computer vision, frontend architecture, and user experience - all highly valued competencies in today's tech market.",
+            "If you are looking for real examples of innovation applied to the web, this project is a clear demonstration of the potential of touchless interfaces in the browser.",
+          ],
+        },
+      ],
+      video: {
+        src: "/touchless-web-gesture-interface.mp4",
+        poster: "/projects/touchless-web-gesture-interface/cover.svg",
+        caption: "Touchless Web Gesture Interface demo in action.",
+      },
+    },
     context:
       "In touch-restricted environments (labs, control rooms, industrial ops), teams needed to navigate BI dashboards without mouse or keyboard while keeping low latency and high command accuracy.",
     problem: [

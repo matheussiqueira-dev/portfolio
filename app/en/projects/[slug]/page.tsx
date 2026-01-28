@@ -103,11 +103,15 @@ export default function ProjectCaseStudyPageEn({ params }: PageProps) {
   }
 
   const title = project.headline ?? project.title;
+  const intro = project.intro;
   const cover =
     project.screenshots.find((shot) => shot.src.includes("/cover.")) ??
     project.screenshots[0];
+  const showCover = Boolean(cover) && !intro?.video;
   const galleryItems = cover
-    ? project.screenshots.filter((shot) => shot.src !== cover.src)
+    ? showCover
+      ? project.screenshots.filter((shot) => shot.src !== cover.src)
+      : project.screenshots
     : project.screenshots;
   const imageUrl = cover?.src ? `${baseUrl}${cover.src}` : `${baseUrl}/og.png`;
   const description = buildMetaDescription(project);
@@ -153,6 +157,35 @@ export default function ProjectCaseStudyPageEn({ params }: PageProps) {
       },
     ],
   };
+  const contactLinks = [
+    {
+      label: siteEn.contact.cards.email,
+      href: "mailto:matheussiqueirahub@gmail.com",
+      className:
+        "btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40",
+    },
+    {
+      label: siteEn.contact.cards.linkedin,
+      href: "https://www.linkedin.com/in/matheussiqueira-dev/",
+      className:
+        "btn-outline btn-linkedin focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/40",
+      external: true,
+    },
+    {
+      label: siteEn.contact.cards.github,
+      href: "https://github.com/matheussiqueira-dev",
+      className:
+        "btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40",
+      external: true,
+    },
+    {
+      label: siteEn.contact.cards.whatsapp,
+      href: "https://wa.me/5581999203683",
+      className:
+        "btn-whatsapp focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--whatsapp)]/40",
+      external: true,
+    },
+  ];
 
   return (
     <main className="min-h-screen px-6 pt-28 pb-20">
@@ -205,7 +238,7 @@ export default function ProjectCaseStudyPageEn({ params }: PageProps) {
             )}
           </div>
 
-          {cover ? (
+          {showCover ? (
             <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-3 shadow-sm">
               <Image
                 src={cover.src}
@@ -219,6 +252,132 @@ export default function ProjectCaseStudyPageEn({ params }: PageProps) {
             </div>
           ) : null}
         </header>
+
+        {intro ? (
+          <section className="mt-12 grid gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+            <div className="order-2 lg:order-1 space-y-8">
+              <div className="space-y-4">
+                <h2 className="text-2xl md:text-3xl font-semibold text-[color:var(--foreground)]">
+                  {intro.title}
+                </h2>
+                {intro.paragraphs.map((paragraph, index) => (
+                  <p
+                    key={`intro-paragraph-${index}`}
+                    className="text-base text-[color:var(--muted)] leading-relaxed"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+
+              {intro.sections.map((section) => (
+                <div key={section.title} className="space-y-4">
+                  <h3 className="text-xl font-semibold text-[color:var(--foreground)]">
+                    {section.title}
+                  </h3>
+                  {section.paragraphs?.map((paragraph, index) => (
+                    <p
+                      key={`${section.title}-paragraph-${index}`}
+                      className="text-base text-[color:var(--muted)] leading-relaxed"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                  {section.items ? (
+                    <ul className="space-y-2 text-[color:var(--muted)]">
+                      {section.items.map((item) => (
+                        <li key={item} className="flex gap-2">
+                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[color:var(--accent)]" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                  {section.subSections?.length ? (
+                    <div className="grid gap-5 md:grid-cols-2">
+                      {section.subSections.map((subSection) => (
+                        <div key={subSection.title} className="space-y-2">
+                          <p className="text-sm font-semibold text-[color:var(--foreground)]">
+                            {subSection.title}
+                          </p>
+                          <ul className="space-y-2 text-[color:var(--muted)]">
+                            {subSection.items.map((item) => (
+                              <li key={item} className="flex gap-2">
+                                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[color:var(--accent-soft)]" />
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
+                  {section.footer?.map((paragraph, index) => (
+                    <p
+                      key={`${section.title}-footer-${index}`}
+                      className="text-base text-[color:var(--muted)] leading-relaxed"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                  {section.link ? (
+                    <div className="flex flex-wrap gap-3 text-sm">
+                      <a
+                        href={section.link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+                      >
+                        {section.link.label}
+                      </a>
+                    </div>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+
+            <div className="order-1 lg:order-2 space-y-6">
+              {intro.video ? (
+                <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-3 shadow-sm">
+                  <video
+                    controls
+                    playsInline
+                    preload="metadata"
+                    poster={intro.video.poster ?? cover?.src}
+                    className="w-full rounded-2xl object-cover"
+                  >
+                    <source src={intro.video.src} type="video/mp4" />
+                    {siteEn.media.videoFallback}
+                  </video>
+                  {intro.video.caption ? (
+                    <p className="mt-3 text-xs text-[color:var(--muted)]">
+                      {intro.video.caption}
+                    </p>
+                  ) : null}
+                </div>
+              ) : null}
+
+              <div className="space-y-3">
+                <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
+                  {siteEn.contact.eyebrow}
+                </p>
+                <div className="flex flex-wrap gap-3 text-sm">
+                  {contactLinks.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noopener noreferrer" : undefined}
+                      className={link.className}
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         <div className="mt-14 grid gap-12">
           {project.longDescription?.length ? (
