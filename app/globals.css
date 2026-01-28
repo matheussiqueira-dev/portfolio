@@ -15,6 +15,8 @@
   --whatsapp: #25d366;
   --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
   --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.35);
+  --cursor-x: 50vw;
+  --cursor-y: 20vh;
 }
 
 @theme inline {
@@ -128,6 +130,38 @@ body::after {
     radial-gradient(40% 35% at 20% 10%, rgba(212, 176, 122, 0.16), transparent 60%);
 }
 
+.cursor-glow {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.cursor-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      520px circle at var(--cursor-x) var(--cursor-y),
+      rgba(212, 176, 122, 0.16),
+      transparent 62%
+    );
+}
+
+.cursor-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      280px circle at var(--cursor-x) var(--cursor-y),
+      rgba(241, 210, 155, 0.12),
+      transparent 60%
+    );
+}
+
 @media (max-width: 768px) {
   .video-bg__media {
     filter: blur(10px) brightness(0.5) saturate(0.8);
@@ -136,6 +170,16 @@ body::after {
 
 @media (prefers-reduced-motion: reduce) {
   .video-bg {
+    display: none;
+  }
+
+  .cursor-glow {
+    display: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .cursor-glow {
     display: none;
   }
 }

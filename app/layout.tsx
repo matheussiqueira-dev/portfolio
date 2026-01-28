@@ -3,6 +3,7 @@ import { JetBrains_Mono, Roboto } from "next/font/google";
 import Script from "next/script";
 import Header from "@/components/layout/Header";
 import JsonLd from "@/components/seo/JsonLd";
+import CursorGlow from "@/components/ui/CursorGlow";
 import VideoBackground from "@/components/ui/VideoBackground";
 import { baseUrl, buildAlternates, siteName, sameAsLinks } from "@/lib/seo";
 import "./globals.css";
@@ -231,6 +232,7 @@ export default function RootLayout({
 
         <JsonLd data={[websiteJsonLd, personJsonLd, softwareDeveloperJsonLd]} />
         <VideoBackground />
+        <CursorGlow />
         <div className="app-shell">
           <Header />
           <main id="main-content" className="min-h-screen">
