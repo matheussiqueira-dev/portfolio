@@ -601,7 +601,7 @@ export const projectsEn: Project[] = [
     repoUrl: "https://github.com/matheussiqueira-dev/Driver-Monitoring-System",
     demo: {
       kind: "video",
-      src: "/Driver Monitoring System.mp4",
+      src: "/driver-monitoring-system.mp4",
       poster: "/projects/driver-monitoring-system/cover.svg",
       caption: "Attention and fatigue detection with computer vision.",
     },
@@ -663,7 +663,7 @@ export const projectsEn: Project[] = [
         alt: "Cover of Driver Monitoring System",
       },
       {
-        src: "/Driver Monitoring System.mp4",
+        src: "/driver-monitoring-system.mp4",
         alt: "Driver Monitoring System demo",
         type: "video",
       },

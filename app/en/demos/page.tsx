@@ -26,9 +26,23 @@ const demosJsonLd = {
   },
 };
 
-const getCover = (project: Project) =>
-  project.screenshots.find((shot) => shot.src.includes("/cover.")) ??
-  project.screenshots[0];
+const isVideoMedia = (shot: Project["screenshots"][number]) =>
+  shot.type === "video" || shot.src.endsWith(".mp4");
+
+const getCover = (project: Project) => {
+  const cover = project.screenshots.find((shot) =>
+    shot.src.includes("/cover.")
+  );
+  if (cover) return cover;
+
+  const firstImage = project.screenshots.find((shot) => !isVideoMedia(shot));
+  if (firstImage) return firstImage;
+
+  const demoPoster =
+    project.demo && "poster" in project.demo ? project.demo.poster : undefined;
+
+  return demoPoster ? { src: demoPoster, alt: project.title } : undefined;
+};
 
 const demoPreviewOverrides: Record<string, DemoExperience> = {
   "chatbot-ia-api": {
@@ -171,7 +185,7 @@ export default function DemosPageEn() {
             return (
               <article
                 key={project.slug}
-                className="card p-6 flex flex-col gap-4"
+                className="card p-6 flex h-full flex-col gap-4"
               >
                 <div>
                   <h2 className="text-xl font-semibold text-[color:var(--foreground)]">
@@ -203,13 +217,15 @@ export default function DemosPageEn() {
                     ))}
                   </ol>
                 </div>
-                <div className="flex flex-wrap gap-3 text-xs text-[color:var(--muted)]">
-                  <Link
-                    href={`/en/projects/${project.slug}`}
+                <div className="mt-auto flex flex-wrap gap-3 text-xs text-[color:var(--muted)]">
+                  <a
+                    href={project.repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                   >
                     {siteEn.demos.fullCaseLabel}
-                  </Link>
+                  </a>
                   <a
                     href={project.repoUrl}
                     target="_blank"

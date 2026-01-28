@@ -27,9 +27,23 @@ const interactiveFallbackCopy = {
     "Esta demo interativa ainda está em preparação. Enquanto isso, veja o case e o repositório.",
 };
 
-const getCover = (project: Project) =>
-  project.screenshots.find((shot) => shot.src.includes("/cover.")) ??
-  project.screenshots[0];
+const isVideoMedia = (shot: Project["screenshots"][number]) =>
+  shot.type === "video" || shot.src.endsWith(".mp4");
+
+const getCover = (project: Project) => {
+  const cover = project.screenshots.find((shot) =>
+    shot.src.includes("/cover.")
+  );
+  if (cover) return cover;
+
+  const firstImage = project.screenshots.find((shot) => !isVideoMedia(shot));
+  if (firstImage) return firstImage;
+
+  const demoPoster =
+    project.demo && "poster" in project.demo ? project.demo.poster : undefined;
+
+  return demoPoster ? { src: demoPoster, alt: project.title } : undefined;
+};
 
 const getFallbackVideo = (project: Project) =>
   project.screenshots.find(
@@ -127,12 +141,14 @@ const DemoFallbackPanel = ({
       <p className="text-sm text-[color:var(--muted)]">{description}</p>
     </div>
     <div className="mt-6 flex flex-wrap gap-3 text-sm">
-      <Link
-        href={`/projetos/${project.slug}`}
+      <a
+        href={project.repoUrl}
+        target="_blank"
+        rel="noopener noreferrer"
         className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
       >
         {sitePt.demos.fullCaseLabel}
-      </Link>
+      </a>
       <a
         href={project.repoUrl}
         target="_blank"
@@ -153,16 +169,18 @@ const DemoVideo = ({
   cover?: ProjectMedia;
 }) => (
   <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 shadow-sm">
-    <video
-      controls
-      playsInline
-      preload="metadata"
-      poster={demo.poster ?? cover?.src}
-      className="w-full rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)]"
-    >
-      <source src={demo.src} />
-      {sitePt.media.videoFallback}
-    </video>
+    <div className="relative w-full overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] aspect-video">
+      <video
+        controls
+        playsInline
+        preload="metadata"
+        poster={demo.poster ?? cover?.src}
+        className="absolute inset-0 h-full w-full object-cover"
+      >
+        <source src={demo.src} />
+        {sitePt.media.videoFallback}
+      </video>
+    </div>
     {demo.caption ? (
       <p className="mt-3 text-sm text-[color:var(--muted)]">{demo.caption}</p>
     ) : null}
@@ -214,12 +232,14 @@ export default function DemoDetailPage({ params }: PageProps) {
             </p>
           </div>
           <div className="flex flex-wrap gap-3 text-sm">
-            <Link
-              href={`/projetos/${project.slug}`}
+            <a
+              href={project.repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
               {sitePt.demos.fullCaseLabel}
-            </Link>
+            </a>
             <a
               href={project.repoUrl}
               target="_blank"

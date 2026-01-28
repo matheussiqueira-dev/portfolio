@@ -78,17 +78,19 @@ export function DemoPreview({
 
     return (
       <div className="space-y-2">
-        <video
-          controls
-          playsInline
-          preload="metadata"
-          poster={poster}
-          className="w-full rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)]"
-          aria-label={`${projectTitle} demo`}
-        >
-          <source src={demo.src} />
-          {labels.videoFallback}
-        </video>
+        <div className="relative w-full overflow-hidden rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] aspect-video">
+          <video
+            controls
+            playsInline
+            preload="metadata"
+            poster={poster}
+            className="absolute inset-0 h-full w-full object-cover"
+            aria-label={`${projectTitle} demo`}
+          >
+            <source src={demo.src} />
+            {labels.videoFallback}
+          </video>
+        </div>
         {demo.caption ? (
           <p className="text-xs text-[color:var(--muted)]">{demo.caption}</p>
         ) : null}

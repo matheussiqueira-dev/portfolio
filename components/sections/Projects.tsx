@@ -17,9 +17,23 @@ const ProjectModal = dynamic(() => import("./ProjectModal"), {
   loading: () => null,
 });
 
-const getCover = (project: Project) =>
-  project.screenshots.find((shot) => shot.src.includes("/cover.")) ??
-  project.screenshots[0];
+const isVideoMedia = (shot: Project["screenshots"][number]) =>
+  shot.type === "video" || shot.src.endsWith(".mp4");
+
+const getCover = (project: Project) => {
+  const cover = project.screenshots.find((shot) =>
+    shot.src.includes("/cover.")
+  );
+  if (cover) return cover;
+
+  const firstImage = project.screenshots.find((shot) => !isVideoMedia(shot));
+  if (firstImage) return firstImage;
+
+  const demoPoster =
+    project.demo && "poster" in project.demo ? project.demo.poster : undefined;
+
+  return demoPoster ? { src: demoPoster, alt: project.title } : undefined;
+};
 
 const getHighlights = (project: Project) => {
   const base = project.highlights.length > 0 ? project.highlights : project.demonstrates;
@@ -59,7 +73,7 @@ export default function Projects() {
             return (
               <article
                 key={project.slug}
-                className="card p-6 flex flex-col gap-4 transition hover:-translate-y-1 hover:shadow-xl"
+                className="card p-6 flex h-full flex-col gap-4 transition hover:-translate-y-1 hover:shadow-xl"
               >
                 {cover ? (
                   <div className="relative aspect-[1200/630] w-full overflow-hidden rounded-xl border border-[color:var(--border)]">
@@ -104,7 +118,7 @@ export default function Projects() {
                   </div>
                 ) : null}
 
-                <div className="flex flex-wrap items-center gap-3 pt-2">
+                <div className="mt-auto flex flex-wrap items-center gap-3 pt-2">
                   <button
                     type="button"
                     onClick={() => setSelectedProject(project)}
