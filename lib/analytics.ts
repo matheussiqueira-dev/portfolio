@@ -78,12 +78,12 @@ export const trackEvent = (
   label?: string,
   value?: number
 ) => {
-  if (!isAnalyticsAvailable()) {
+  if (typeof window === "undefined" || typeof window.gtag !== "function") {
     return;
   }
 
   try {
-    window.gtag?.("event", action, {
+    window.gtag("event", action, {
       event_category: category,
       event_label: label,
       value,
@@ -107,12 +107,12 @@ export const trackEvent = (
  * ```
  */
 export const trackPageView = (url: string) => {
-  if (!isAnalyticsAvailable()) {
+  if (typeof window === "undefined" || typeof window.gtag !== "function") {
     return;
   }
 
   try {
-    window.gtag?.("event", "page_view", {
+    window.gtag("event", "page_view", {
       page_path: url,
       event_category: ANALYTICS_CATEGORIES.NAVIGATION,
     });
