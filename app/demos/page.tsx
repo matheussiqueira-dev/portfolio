@@ -5,6 +5,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import { projects } from "@/data/projects";
 import type { Project } from "@/data/projects.types";
 import { sitePt } from "@/data/site.pt";
+import { buildInternalDemoPath } from "@/lib/demos";
 import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 
 const pageTitle = "Demos | Matheus Siqueira";
@@ -90,10 +91,15 @@ export default function DemosPage() {
             const demo = project.demo;
             const externalDemoUrl =
               demo?.kind === "external" ? demo.url : project.demoUrl;
+            const internalDemoPath = buildInternalDemoPath({
+              locale: "pt",
+              projectSlug: project.slug,
+              demoPath: demo?.kind === "internal" ? demo.path : undefined,
+            });
             const primaryCta =
               demo?.kind === "internal" ? (
                 <Link
-                  href={demo.path ?? demoDetailPath}
+                  href={internalDemoPath}
                   className="rounded-full border border-[color:var(--accent)]/40 px-4 py-2 text-[color:var(--accent)] transition hover:border-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                 >
                   {sitePt.demos.openInteractiveLabel}

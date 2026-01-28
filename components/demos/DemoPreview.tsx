@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { DemoExperience } from "@/data/projects.types";
+import { buildInternalDemoPath } from "@/lib/demos";
 
 type DemoPreviewProps = {
   demo?: DemoExperience;
@@ -8,21 +9,6 @@ type DemoPreviewProps = {
   locale: "pt" | "en";
   projectSlug: string;
   projectTitle: string;
-};
-
-const getLocalizedPath = (path: string, locale: "pt" | "en") => {
-  if (locale === "en") {
-    if (path.startsWith("/en/")) {
-      return path;
-    }
-    return path.startsWith("/") ? `/en${path}` : `/en/${path}`;
-  }
-
-  if (path.startsWith("/en/")) {
-    return path.replace(/^\/en/, "");
-  }
-
-  return path.startsWith("/") ? path : `/${path}`;
 };
 
 export function DemoPreview({
@@ -100,7 +86,11 @@ export function DemoPreview({
   }
 
   if (demo.kind === "internal") {
-    const path = getLocalizedPath(demo.path ?? demoDetailPath, locale);
+    const path = buildInternalDemoPath({
+      locale,
+      projectSlug,
+      demoPath: demo.path ?? demoDetailPath,
+    });
 
     return (
       <div className="space-y-3">
