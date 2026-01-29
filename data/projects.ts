@@ -945,6 +945,12 @@ export const projects: Project[] = [
     stack: ["Python", "OpenCV", "MediaPipe"],
     repoUrl:
       "https://github.com/matheussiqueira-dev/hand-gesture-recognition-realtime",
+    demo: {
+      kind: "video",
+      src: "/hand-gesture-recognition-realtime.mp4",
+      poster: "/projects/hand-gesture-recognition-realtime/cover.svg",
+      caption: "Demonstração do reconhecimento de gestos em tempo real.",
+    },
     intro: {
       title:
         "Sistema de Reconhecimento de Gestos de Mão em Tempo Real",
@@ -1080,6 +1086,11 @@ export const projects: Project[] = [
       {
         src: "/projects/hand-gesture-recognition-realtime/cover.svg",
         alt: "Capa do projeto de reconhecimento de gestos de mão",
+      },
+      {
+        src: "/hand-gesture-recognition-realtime.mp4",
+        alt: "Demonstração do reconhecimento de gestos em tempo real",
+        type: "video",
       },
     ],
     seo: {
