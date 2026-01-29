@@ -68,7 +68,7 @@ const featuredSlugs = [
   "touchless-web-gesture-interface",
   "chatbot-ia-api",
   "library-api-advanced",
-  "nucleo-comercial-dados",
+  "driver-monitoring-system",
   "self-drive-car",
 ];
 
