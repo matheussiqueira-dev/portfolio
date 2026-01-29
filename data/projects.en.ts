@@ -932,6 +932,160 @@ export const projectsEn: Project[] = [
         "Emotion analysis project using AI with Python, machine learning, REST APIs, data visualization, and full stack development for decision support.",
     },
   },
+  {
+    slug: "hand-gesture-recognition-realtime",
+    title: "Real-Time Hand Gesture Recognition",
+    headline:
+      "Gesture Recognition | Computer Vision with Python and MediaPipe",
+    tagline:
+      "Real-time computer vision system to detect hands and count fingers using webcam.",
+    role: "Developer",
+    stack: ["Python", "OpenCV", "MediaPipe"],
+    repoUrl:
+      "https://github.com/matheussiqueira-dev/hand-gesture-recognition-realtime",
+    intro: {
+      title: "Real-Time Hand Gesture Recognition System",
+      paragraphs: [
+        "This project implements a real-time computer vision system to detect hands and count fingers using the computer's webcam.",
+        "Built with Python, OpenCV, and MediaPipe, the system can detect hands, extract landmarks, and identify how many fingers are raised (0 to 5) with high accuracy.",
+        "More than a proof of concept, this project demonstrates skills in computer vision, real-time video processing, and machine learning library integration.",
+      ],
+      sections: [
+        {
+          title: "How Does It Work?",
+          paragraphs: [
+            "The system follows a well-defined processing flow to detect and analyze hand gestures:",
+          ],
+          items: [
+            "Video Capture: OpenCV captures continuous frames from the webcam.",
+            "Preprocessing: Image mirroring and BGR to RGB conversion.",
+            "Detection: MediaPipe model processes the image and returns 21 landmarks per hand.",
+            "Finger Counting: Heuristics based on vertical (fingers) and horizontal (thumb) position.",
+          ],
+        },
+        {
+          title: "Finger Counting Logic",
+          paragraphs: [
+            "The counting uses a heuristic approach based on landmark coordinates:",
+          ],
+          items: [
+            "4 Main Fingers: Checks the fingertip height relative to the middle joint.",
+            "Thumb: Checks the horizontal position of the tip relative to the base joint.",
+            "Left/right hand detection to adjust thumb logic.",
+          ],
+        },
+        {
+          title: "Technologies Used",
+          paragraphs: [
+            "The project was built with a stack focused on computer vision:",
+          ],
+          subSections: [
+            {
+              title: "Video Processing",
+              items: [
+                "OpenCV for frame capture and manipulation",
+                "Real-time processing with low latency",
+                "Landmark rendering and visual feedback",
+              ],
+            },
+            {
+              title: "Machine Learning",
+              items: [
+                "MediaPipe Hands for hand detection and tracking",
+                "Pre-trained model with 21 landmarks per hand",
+                "Support for detecting up to 2 hands simultaneously",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Possible Future Improvements",
+          paragraphs: [
+            "The project was structured to allow evolution and new features:",
+          ],
+          items: [
+            "Specific gesture recognition (peace, rock, closed fist, etc.)",
+            "PC control using pyautogui (volume, mouse, shortcuts)",
+            "GUI with Streamlit or PyQt",
+            "Refined counting for multiple hands simultaneously",
+          ],
+        },
+        {
+          title: "Source Code",
+          paragraphs: [
+            "The complete source code is available on GitHub, allowing detailed analysis of the implementation and technical decisions.",
+          ],
+          footer: ["👉 Repository:"],
+          link: {
+            label: "github.com/matheussiqueira-dev/hand-gesture-recognition-realtime",
+            href: "https://github.com/matheussiqueira-dev/hand-gesture-recognition-realtime",
+          },
+        },
+      ],
+    },
+    context:
+      "Educational and portfolio project to demonstrate skills in computer vision and real-time video processing using Python.",
+    problem: [
+      "Need to detect hand gestures without specialized hardware.",
+      "Accurate finger counting for natural interface applications.",
+      "Real-time processing with low latency.",
+    ],
+    dataUsed: [
+      "Real-time video frames from webcam.",
+      "21 hand landmarks detected by MediaPipe.",
+      "Normalized X, Y coordinates for gesture analysis.",
+    ],
+    solution: [
+      "Computer vision pipeline with OpenCV for video capture.",
+      "Integration with MediaPipe Hands for landmark detection.",
+      "Finger counting heuristics based on landmark positions.",
+      "Real-time visual feedback with hand skeleton drawing.",
+    ],
+    features: [
+      "Real-time hand detection via webcam.",
+      "Accurate counting of raised fingers (0 to 5).",
+      "Support for detecting up to 2 hands simultaneously.",
+      "Image mirroring for natural interaction.",
+      "Hand skeleton (landmarks) visualization.",
+    ],
+    highlights: [
+      "High accuracy in finger counting.",
+      "Low latency for real-time processing.",
+      "Clean and well-documented code.",
+      "Solid foundation for natural interface projects.",
+    ],
+    demonstrates: [
+      "Computer vision with OpenCV and MediaPipe.",
+      "Real-time video processing with Python.",
+      "Heuristics for gesture analysis.",
+      "Interactive application development.",
+    ],
+    techSummary:
+      "Python with OpenCV for video capture and MediaPipe for landmark detection, with finger counting heuristics and real-time visual feedback.",
+    conclusion: [
+      "Functional project demonstrating applied computer vision.",
+      "Extensible base for PC control and natural interfaces.",
+      "Developed for educational and portfolio purposes.",
+    ],
+    howToRun: [
+      "Prerequisites: Python 3.7+, functional webcam.",
+      "Install dependencies: pip install opencv-python mediapipe",
+      "Run: python hand_gestures.py",
+      "Press 'q' to close the program.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/hand-gesture-recognition-realtime/cover.svg",
+        alt: "Hand gesture recognition project cover",
+      },
+    ],
+    seo: {
+      title:
+        "Real-Time Hand Gesture Recognition | Python, OpenCV and MediaPipe",
+      description:
+        "Real-time computer vision system to detect hands and count fingers using Python, OpenCV, and MediaPipe. Educational project with high accuracy.",
+    },
+  },
 ];
 
 export const projectSlugsEn = projectsEn.map((project) => project.slug);

@@ -934,6 +934,161 @@ export const projects: Project[] = [
         "Projeto de análise de emoções com inteligência artificial, utilizando Python, machine learning, APIs REST, visualização de dados e desenvolvimento full stack orientado à análise e tomada de decisão.",
     },
   },
+  {
+    slug: "hand-gesture-recognition-realtime",
+    title: "Reconhecimento de Gestos de Mão em Tempo Real",
+    headline:
+      "Reconhecimento de Gestos | Visão Computacional com Python e MediaPipe",
+    tagline:
+      "Sistema de visão computacional em tempo real para detectar mãos e contar dedos usando webcam.",
+    role: "Desenvolvedor",
+    stack: ["Python", "OpenCV", "MediaPipe"],
+    repoUrl:
+      "https://github.com/matheussiqueira-dev/hand-gesture-recognition-realtime",
+    intro: {
+      title:
+        "Sistema de Reconhecimento de Gestos de Mão em Tempo Real",
+      paragraphs: [
+        "Este projeto implementa um sistema de visão computacional em tempo real para detectar mãos e contar dedos usando a webcam do computador.",
+        "Desenvolvido com Python, OpenCV e MediaPipe, o sistema é capaz de detectar a mão, extrair landmarks e identificar quantos dedos estão levantados (0 a 5) com alta precisão.",
+        "Mais do que uma prova de conceito, este projeto demonstra habilidades em visão computacional, processamento de vídeo em tempo real e integração de bibliotecas de machine learning.",
+      ],
+      sections: [
+        {
+          title: "Como Funciona?",
+          paragraphs: [
+            "O sistema segue um fluxo de processamento bem definido para detectar e analisar os gestos das mãos:",
+          ],
+          items: [
+            "Captura de Vídeo: O OpenCV captura frames contínuos da webcam.",
+            "Pré-processamento: Espelhamento da imagem e conversão de BGR para RGB.",
+            "Detecção: O modelo MediaPipe processa a imagem e retorna 21 pontos (landmarks) por mão.",
+            "Contagem de Dedos: Heurística baseada na posição vertical (dedos) e horizontal (polegar).",
+          ],
+        },
+        {
+          title: "Lógica de Contagem de Dedos",
+          paragraphs: [
+            "A contagem utiliza uma abordagem heurística baseada nas coordenadas dos landmarks:",
+          ],
+          items: [
+            "4 Dedos Principais: Verifica a altura da ponta do dedo em relação à articulação do meio.",
+            "Polegar: Verifica a posição horizontal da ponta em relação à articulação base.",
+            "Detecção de mão esquerda/direita para ajustar a lógica do polegar.",
+          ],
+        },
+        {
+          title: "Tecnologias Utilizadas",
+          paragraphs: [
+            "O projeto foi construído com uma stack focada em visão computacional:",
+          ],
+          subSections: [
+            {
+              title: "Processamento de Vídeo",
+              items: [
+                "OpenCV para captura e manipulação de frames",
+                "Processamento em tempo real com baixa latência",
+                "Renderização de landmarks e feedback visual",
+              ],
+            },
+            {
+              title: "Machine Learning",
+              items: [
+                "MediaPipe Hands para detecção e rastreamento de mãos",
+                "Modelo pré-treinado com 21 landmarks por mão",
+                "Suporte para detecção de até 2 mãos simultaneamente",
+              ],
+            },
+          ],
+        },
+        {
+          title: "Possíveis Melhorias Futuras",
+          paragraphs: [
+            "O projeto foi estruturado para permitir evolução e novas funcionalidades:",
+          ],
+          items: [
+            "Reconhecimento de gestos específicos (paz, rock, soco fechado, etc.)",
+            "Controle do PC usando pyautogui (volume, mouse, atalhos)",
+            "Interface gráfica com Streamlit ou PyQt",
+            "Contagem refinada para múltiplas mãos simultaneamente",
+          ],
+        },
+        {
+          title: "Código Fonte",
+          paragraphs: [
+            "O código-fonte completo está disponível no GitHub, permitindo análise detalhada da implementação e decisões técnicas.",
+          ],
+          footer: ["👉 Repositório:"],
+          link: {
+            label: "github.com/matheussiqueira-dev/hand-gesture-recognition-realtime",
+            href: "https://github.com/matheussiqueira-dev/hand-gesture-recognition-realtime",
+          },
+        },
+      ],
+    },
+    context:
+      "Projeto educacional e de portfólio para demonstrar habilidades em visão computacional e processamento de vídeo em tempo real usando Python.",
+    problem: [
+      "Necessidade de detectar gestos de mão sem hardware especializado.",
+      "Contagem de dedos precisa para aplicações de interface natural.",
+      "Processamento em tempo real com baixa latência.",
+    ],
+    dataUsed: [
+      "Frames de vídeo da webcam em tempo real.",
+      "21 landmarks da mão detectados pelo MediaPipe.",
+      "Coordenadas X, Y normalizadas para análise de gestos.",
+    ],
+    solution: [
+      "Pipeline de visão computacional com OpenCV para captura de vídeo.",
+      "Integração com MediaPipe Hands para detecção de landmarks.",
+      "Heurística de contagem de dedos baseada em posição dos landmarks.",
+      "Feedback visual em tempo real com desenho do esqueleto da mão.",
+    ],
+    features: [
+      "Detecção de mãos em tempo real via webcam.",
+      "Contagem precisa de dedos levantados (0 a 5).",
+      "Suporte para detecção de até 2 mãos simultaneamente.",
+      "Espelhamento de imagem para interação natural.",
+      "Visualização do esqueleto (landmarks) da mão.",
+    ],
+    highlights: [
+      "Alta precisão na contagem de dedos.",
+      "Baixa latência para processamento em tempo real.",
+      "Código limpo e bem documentado.",
+      "Base sólida para projetos de interface natural.",
+    ],
+    demonstrates: [
+      "Visão computacional com OpenCV e MediaPipe.",
+      "Processamento de vídeo em tempo real com Python.",
+      "Heurísticas para análise de gestos.",
+      "Desenvolvimento de aplicações interativas.",
+    ],
+    techSummary:
+      "Python com OpenCV para captura de vídeo e MediaPipe para detecção de landmarks, com heurística de contagem de dedos e feedback visual em tempo real.",
+    conclusion: [
+      "Projeto funcional demonstrando visão computacional aplicada.",
+      "Base extensível para controle de PC e interfaces naturais.",
+      "Desenvolvido para fins educacionais e portfólio.",
+    ],
+    howToRun: [
+      "Pré-requisitos: Python 3.7+, webcam funcional.",
+      "Instale as dependências: pip install opencv-python mediapipe",
+      "Execute: python hand_gestures.py",
+      "Pressione 'q' para fechar o programa.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/hand-gesture-recognition-realtime/cover.svg",
+        alt: "Capa do projeto de reconhecimento de gestos de mão",
+      },
+    ],
+    seo: {
+      title:
+        "Reconhecimento de Gestos de Mão em Tempo Real | Python, OpenCV e MediaPipe",
+      description:
+        "Sistema de visão computacional em tempo real para detectar mãos e contar dedos usando Python, OpenCV e MediaPipe. Projeto educacional com alta precisão.",
+    },
+  },
 ];
 
 export const projectSlugs = projects.map((project) => project.slug);
