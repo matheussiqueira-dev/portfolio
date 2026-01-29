@@ -200,7 +200,7 @@ export function isNonEmptyString(
  */
 export function getFileExtension(path: string): string {
   const match = path.match(/\.([^.]+)$/);
-  return match ? match[1].toLowerCase() : "";
+  return match?.[1]?.toLowerCase() ?? "";
 }
 
 /**
