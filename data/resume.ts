@@ -1,56 +1,76 @@
 export const resume = {
   name: "Matheus Siqueira",
   headline:
-    "Desenvolvedor Full Stack com base em dados e IA, construindo aplicações web, APIs e automações com React/Next.js, Node.js, Python e SQL.",
+    "Analista de Dados e Profissional de Tecnologia com sólida experiência no setor público e privado.",
   summary:
-    "Desenvolvedor Full Stack e estudante de Ciência da Computação, com pós-graduações em Cloud, Segurança e IA. Experiência em BI e automação no setor público, trabalhando com grandes volumes, ETL e indicadores. Aplico essa base para desenvolver produtos end-to-end, integrando frontend, backend e dados, com foco em qualidade, performance e impacto.",
+    "Analista de Dados e Profissional de Tecnologia com sólida experiência no setor público e privado, atuando com Business Intelligence, Análise de Dados, Power BI, SQL, Python, Trade Marketing, Gestão Orçamentária e Infraestrutura de TI Nível 2. Forte atuação em monitoramento de KPIs, controle de verbas, análise de impacto financeiro, conformidade legal e apoio à decisão estratégica. Perfil analítico, orientado a resultados, eficiência operacional e decisão baseada em dados (data-driven), com histórico comprovado de redução de custos, melhoria de processos e suporte direto à alta gestão.",
   coreSkills: [
-    "React/Next.js e TypeScript para aplicações web",
-    "Node.js, MongoDB e APIs REST com autenticação e integrações",
-    "Python e SQL para automação, ETL e dados",
-    "Cloud computing, segurança e boas práticas",
-    "Dashboards e métricas de produto (Power BI, KPIs)",
-    "Git/GitHub e colaboração ágil (Scrum/Kanban)",
+    "Business Intelligence e Power BI",
+    "SQL, Python e ETL",
+    "Análise de Dados e KPIs",
+    "Trade Marketing e Gestão Orçamentária",
+    "Infraestrutura de TI Nível 2",
+    "Conformidade legal e apoio à decisão estratégica",
   ],
   experience: [
     {
-      company: "Secretaria Municipal da Fazenda",
+      company: "Secretaria de Educação de Jaboatão dos Guararapes",
       location: "Jaboatão dos Guararapes",
-      role: "Estagiário em Análise de Dados",
-      period: "2025 - Atual",
+      role: "Suporte de Infraestrutura de TI – Nível 2",
+      period: "Fev/2026 - Atual",
       highlights: [
-        "Desenvolvi dashboards estratégicos em Power BI para acompanhamento de KPIs.",
-        "Modelei dados com SQL, DAX e Power Query para padronizar indicadores.",
-        "Automatizei rotinas de ETL com Python, reduzindo retrabalho e tempo operacional.",
-        "Integrei múltiplas bases e validei consistência dos dados.",
-        "Realizei análise exploratória para identificar tendências e anomalias.",
-        "Produzi relatórios executivos e documentação de processos.",
-        "Colaborei com times multidisciplinares em ambiente ágil.",
+        "Suporte técnico Nível 2 a usuários finais, reduzindo tempo de indisponibilidade de sistemas.",
+        "Manutenção corretiva e preventiva de equipamentos, aumentando a vida útil do parque tecnológico.",
+        "Atuação em redes LAN, cabeamento estruturado e troubleshooting, garantindo conectividade estável.",
+        "Atendimento, análise e resolução de chamados técnicos com foco em SLA.",
+        "Desenvolvimento de sistemas internos e automações, otimizando o controle de chamados.",
+        "Organização de inventário e documentação técnica, aumentando governança de TI.",
       ],
     },
     {
-      company: "Prefeitura Municipal do Jaboatão dos Guararapes",
+      company: "Secretaria da Fazenda de Jaboatão dos Guararapes",
+      location: "Jaboatão dos Guararapes",
+      role: "Estagiário em Análise de Dados",
+      period: "Jan/2025 - Jan/2026",
+      highlights: [
+        "Desenvolvimento de dashboards no Power BI para acompanhamento da arrecadação municipal.",
+        "Criação de pipelines ETL com SQL, Power Query e Python, integrando múltiplas bases públicas.",
+        "Modelagem de dados e criação de indicadores gerenciais com DAX.",
+        "Automação de relatórios, reduzindo retrabalho operacional e tempo de entrega.",
+        "Análise de dados para identificação de tendências, inconsistências e anomalias fiscais.",
+        "Apoio direto à gestão na tomada de decisão baseada em dados.",
+      ],
+    },
+    {
+      company: "Prefeitura Municipal de Jaboatão dos Guararapes",
       location: "Jaboatão dos Guararapes",
       role: "Analista de Cargos e Salários",
-      period: "2017 - 2019",
+      period: "Nov/2017 - Jun/2019",
       highlights: [
-        "Analisei e padronizei dados funcionais e orçamentários.",
-        "Modelei faixas salariais com base em dados e benchmarks.",
-        "Produzi estudos de impacto financeiro e KPIs de pessoal.",
-        "Apoiei decisões executivas com análises e conformidade legal.",
-        "Comuniquei insights para lideranças e stakeholders.",
+        "Monitoramento contínuo da verba de gastos com contratação de pessoal, garantindo equilíbrio orçamentário.",
+        "Análise de impacto financeiro para aumento de piso salarial, simulando cenários e custos futuros.",
+        "Implementação de reajustes salariais em conformidade com limites legais.",
+        "Estudos de viabilidade financeira para abertura de concursos públicos.",
+        "Alinhamento direto com o Jurídico para garantir conformidade legal.",
+        "Comunicação e negociação direta com sindicatos.",
+        "Garantia de conformidade com normas do TCE (Tribunal de Contas do Estado).",
+        "Produção de análises utilizadas pela alta gestão e Secretaria Executiva.",
       ],
     },
     {
       company: "Grupo Moura",
       location: "Pernambuco",
-      role: "Assistente Comercial",
-      period: "2014 - 2017",
+      role: "Assistente Comercial | Trade Marketing & BI",
+      period: "Jan/2014 - Mar/2017",
       highlights: [
-        "Analisei dados de vendas, pedidos e clientes.",
-        "Produzi relatórios gerenciais e KPIs comerciais.",
-        "Apoiei a estratégia comercial com análises de desempenho.",
-        "Garanti organização e integridade de dados operacionais.",
+        "Criação de relatórios gerenciais e analíticos para acompanhamento de performance.",
+        "Monitoramento contínuo de KPIs comerciais, apoiando decisões estratégicas.",
+        "Desenvolvimento de dashboards intuitivos, facilitando o atingimento de metas de vendas.",
+        "Responsável pelo Trade Marketing, apoiando campanhas e ações promocionais.",
+        "Planejamento e organização de eventos de lançamento de produtos, desde escolha do local até execução.",
+        "Controle e gestão de estoque de material publicitário (banners, brindes, materiais promocionais).",
+        "Monitoramento e controle da verba de marketing, garantindo uso eficiente dos recursos.",
+        "Apoio direto às áreas de vendas, marketing e liderança comercial.",
       ],
     },
   ],
@@ -62,7 +82,7 @@ export const resume = {
           {
             course: "Ciência da Computação",
             institution: "UNIFG",
-            period: "Em andamento (2025 - 2029)",
+            period: "Em andamento (3/10)",
           },
           {
             course: "Graduação em Marketing",
@@ -75,7 +95,7 @@ export const resume = {
         title: "Pós-graduações",
         items: [
           {
-            course: "Cloud & Edge Computing",
+            course: "Inteligência Artificial e Ciência de Dados",
             institution: "UNIFG",
             period: "2025",
           },
@@ -85,7 +105,7 @@ export const resume = {
             period: "2025",
           },
           {
-            course: "Inteligência Artificial e Ciência de Dados",
+            course: "Cloud & Edge Computing",
             institution: "UNIFG",
             period: "2025",
           },
@@ -95,7 +115,7 @@ export const resume = {
         title: "Formações Complementares",
         items: [
           {
-            course: "Técnico em Programação Full Stack A.I.",
+            course: "Técnico em Programação Full Stack AI",
             institution: "Infinity School",
             period: "2023 - 2025",
           },
@@ -122,7 +142,7 @@ export const resume = {
   contact: {
     title: "Contato",
     description:
-      "Aberto a oportunidades como Desenvolvedor Full Stack / Software Engineer com base em dados e IA.",
+      "Aberto a oportunidades como Analista de Dados, Profissional de BI ou Infraestrutura de TI.",
     links: [
       {
         label: "Email",
