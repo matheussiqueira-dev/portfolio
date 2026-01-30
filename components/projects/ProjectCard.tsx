@@ -1,6 +1,7 @@
-import Image from "next/image";
+import SafeImage from "@/src/components/demo/SafeImage";
 import Link from "next/link";
 import type { Project } from "@/data/projects.types";
+import { getProjectById } from "@/src/data/projects";
 
 type Props = {
   project: Project;
@@ -29,7 +30,11 @@ export default function ProjectCard({
   caseLabel,
   localePrefix = "",
 }: Props) {
-  const cover = getCover(project);
+  const registryProject = getProjectById(project.slug);
+  const registryCover = registryProject?.coverImage
+    ? { src: registryProject.coverImage, alt: project.title }
+    : undefined;
+  const cover = registryCover ?? getCover(project);
   const caseHref = localePrefix
     ? `${localePrefix}/projects/${project.slug}`
     : `/projetos/${project.slug}`;
@@ -38,7 +43,7 @@ export default function ProjectCard({
     <article className="card card-hover flex h-full flex-col gap-5">
       {cover ? (
         <div className="card-media relative aspect-[1200/630] w-full">
-          <Image
+          <SafeImage
             src={cover.src}
             alt={cover.alt}
             fill

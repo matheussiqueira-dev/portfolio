@@ -61,6 +61,16 @@ portfolio/
 │   ├── projects.en.ts     # Projetos (EN)
 │   ├── certificates.pt.ts # Certificados (PT)
 │   └── certificates.en.ts # Certificados (EN)
+├── src/                   # Registry e demos interativas
+│   ├── components/        # DemoShell e componentes de demo
+│   │   ├── demo/           # DemoShell, DemoLauncher, SafeImage
+│   │   └── projects/       # Card e grid baseados no registry
+│   ├── data/              # Registry único de projetos
+│   │   └── projects.ts
+│   └── demos/             # Demos inline (client-only)
+│       ├── registry.ts
+│       ├── chatbot-ia-api/
+│       └── library-api-advanced/
 ├── lib/                   # Utilitários
 │   ├── analytics.ts       # Google Analytics helpers
 │   ├── constants.ts       # Constantes globais
@@ -154,6 +164,7 @@ NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your_value_here
 Os projetos são definidos em arquivos TypeScript estáticos:
 - `data/projects.ts` (Português)
 - `data/projects.en.ts` (Inglês)
+- `src/data/projects.ts` (registry único para demos e rotas /projects)
 
 #### Adicionar Novo Projeto
 
@@ -188,6 +199,61 @@ Os projetos são definidos em arquivos TypeScript estáticos:
 3. **Tipos disponíveis**:
    - `type: "image"` - Para imagens estáticas
    - `type: "video"` - Para vídeos (mp4, webm)
+
+### Demos interativas (DemoShell)
+
+As demos executáveis usam o registry em `src/data/projects.ts` e o `DemoShell`.
+Elas só carregam após clique no botão **Executar Demo**, mantendo performance.
+
+#### 1) Adicionar projeto no registry
+
+Edite `src/data/projects.ts` e adicione um item seguindo o formato:
+
+```ts
+{
+  id: "meu-projeto",
+  title: "Meu Projeto",
+  shortDescription: "Resumo rápido do projeto.",
+  tags: ["React", "Node.js"],
+  coverImage: "/images/projects/meu-projeto.webp",
+  links: { repo: "https://github.com/..." },
+  demo: { mode: "video", videoUrl: "/projects/meu-projeto/demo.mp4" }
+}
+```
+
+#### 2) Demo inline (client-only)
+
+1. Crie a demo em `src/demos/<id>/index.tsx` como Client Component.
+2. Registre a importação em `src/demos/registry.ts`.
+3. Configure no registry:
+
+```ts
+demo: { mode: "inline", inlineId: "meu-projeto" }
+```
+
+#### 3) Demo iframe
+
+Para projetos já publicados em um deploy:
+
+```ts
+demo: { mode: "iframe", iframeUrl: "https://..." }
+```
+
+O iframe é sandboxed por padrão (scripts + same-origin + forms + popups).
+
+#### 4) Demo em vídeo
+
+```ts
+demo: { mode: "video", videoUrl: "/projects/meu-projeto/demo.mp4" }
+```
+
+Suporta MP4 local e URLs do YouTube (embed).
+
+#### Boas práticas
+
+- Demos inline devem ser leves e rodar apenas no client (lazy-loaded).
+- Sempre use `SafeImage` para capas de projeto (fallback automático).
+- Não carregue demos na Home; só após clique.
 
 ### Certificados
 

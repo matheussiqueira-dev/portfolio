@@ -1,13 +1,14 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import ImageWithFallback from "@/components/ui/ImageWithFallback";
+import SafeImage from "@/src/components/demo/SafeImage";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useMemo, useState } from "react";
 import { trackEvent } from "@/lib/analytics";
 import { projects, projectOrder } from "@/data/projects";
 import { projectsEn, projectOrderEn } from "@/data/projects.en";
+import { projects as registryProjects } from "@/src/data/projects";
 import { sitePt } from "@/data/site.pt";
 import { siteEn } from "@/data/site.en";
 import type { Project } from "@/data/projects.types";
@@ -49,6 +50,10 @@ export default function Projects() {
     () => new Set((isEn ? projectOrderEn : projectOrder).slice(0, 3)),
     [isEn]
   );
+  const registryMap = useMemo(
+    () => new Map(registryProjects.map((item) => [item.id, item])),
+    []
+  );
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const handleClose = useCallback(() => setSelectedProject(null), []);
   const projectsHref = isEn ? "/en/projects" : "/projetos";
@@ -68,7 +73,11 @@ export default function Projects() {
 
         <div className="grid gap-6 lg:grid-cols-2">
           {data.map((project) => {
-            const cover = getCover(project);
+            const registryProject = registryMap.get(project.slug);
+            const registryCover = registryProject?.coverImage
+              ? { src: registryProject.coverImage, alt: project.title }
+              : undefined;
+            const cover = registryCover ?? getCover(project);
             const highlights = getHighlights(project);
             const caseHref = isEn
               ? `/en/projects/${project.slug}`
@@ -87,13 +96,12 @@ export default function Projects() {
                 ) : null}
                 {cover ? (
                   <div className="card-media relative aspect-[1200/630] w-full">
-                    <ImageWithFallback
+                    <SafeImage
                       src={cover.src}
                       alt={cover.alt}
                       fill
                       sizes="(max-width: 1024px) 100vw, 520px"
                       quality={85}
-                      fallbackSrc="/projects/placeholder.webp"
                       className="object-cover"
                     />
                   </div>

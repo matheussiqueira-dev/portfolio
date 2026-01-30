@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import JsonLd from "@/components/seo/JsonLd";
 import MediaGallery from "@/components/ui/MediaGallery";
+import SafeImage from "@/src/components/demo/SafeImage";
+import DemoLauncher from "@/src/components/demo/DemoLauncher";
+import { getProjectById } from "@/src/data/projects";
 import { getProjectBySlug, projectSlugs } from "@/data/projects";
 import type { Project } from "@/data/projects.types";
 import { sitePt } from "@/data/site.pt";
@@ -101,6 +103,8 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
   if (!project) {
     notFound();
   }
+
+  const demoProject = getProjectById(project.slug);
 
   const title = project.headline ?? project.title;
   const intro = project.intro;
@@ -214,6 +218,13 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
           </div>
 
           <div className="flex flex-wrap gap-3 text-sm">
+            {demoProject ? (
+              <DemoLauncher
+                project={demoProject}
+                label="Executar Demo"
+                className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+              />
+            ) : null}
             <a
               href={project.repoUrl}
               target="_blank"
@@ -240,7 +251,7 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
 
           {showCover && cover ? (
             <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-3 shadow-sm">
-              <Image
+              <SafeImage
                 src={cover.src}
                 alt={cover.alt}
                 width={1200}

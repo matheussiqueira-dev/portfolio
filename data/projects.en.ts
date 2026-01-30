@@ -726,7 +726,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/Flappy-Bird.mp4",
-      poster: "/projects/flappy-bird/cover.svg",
+      poster: "/images/projects/flappy-bird-gestos.webp",
       caption: "Gameplay of Flappy Bird using webcam-based gestures.",
     },
     context:
@@ -783,7 +783,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/flappy-bird/cover.svg",
+        src: "/images/projects/flappy-bird-gestos.webp",
         alt: "Cover of the gesture-controlled Flappy Bird",
       },
       {
