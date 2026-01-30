@@ -37,6 +37,32 @@ const stackIcons = {
   ),
 } as const;
 
+const ctaIcons = {
+  resume: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" />
+      <path d="M14 3v5h5" />
+      <path d="M9 13h6" />
+      <path d="M9 17h6" />
+    </svg>
+  ),
+  chat: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 8h12a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H9l-5 3v-3H6a3 3 0 0 1-3-3v-5a3 3 0 0 1 3-3z" />
+      <path d="M8 12h8" />
+      <path d="M8 15h5" />
+    </svg>
+  ),
+  projects: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="3" y="3" width="8" height="8" rx="2" />
+      <rect x="13" y="3" width="8" height="8" rx="2" />
+      <rect x="3" y="13" width="8" height="8" rx="2" />
+      <rect x="13" y="13" width="8" height="8" rx="2" />
+    </svg>
+  ),
+} as const;
+
 export default function Hero({ content, localePrefix }: Props) {
   const isEn = localePrefix === "/en";
   const projectsHref = isEn ? "/en/projects" : "/projetos";
@@ -108,7 +134,10 @@ export default function Hero({ content, localePrefix }: Props) {
               }}
               className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
-              {content.ctas.secondary}
+              <span className="btn-icon" aria-hidden="true">
+                {ctaIcons.resume}
+              </span>
+              <span>{content.ctas.secondary}</span>
             </TrackedLink>
 
             <TrackedAnchor
@@ -123,7 +152,10 @@ export default function Hero({ content, localePrefix }: Props) {
               }}
               className="btn-outline btn-whatsapp focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
-              {content.ctas.tertiary}
+              <span className="btn-icon" aria-hidden="true">
+                {ctaIcons.chat}
+              </span>
+              <span>{content.ctas.tertiary}</span>
             </TrackedAnchor>
 
             <TrackedLink
@@ -136,7 +168,10 @@ export default function Hero({ content, localePrefix }: Props) {
               }}
               className="btn-ghost focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
-              {content.ctas.primary}
+              <span className="btn-icon" aria-hidden="true">
+                {ctaIcons.projects}
+              </span>
+              <span>{content.ctas.primary}</span>
             </TrackedLink>
           </div>
         </div>

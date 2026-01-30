@@ -482,7 +482,8 @@ html {
   .hero-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    align-items: center;
+    gap: 0.85rem;
     justify-content: center;
   }
 
@@ -518,35 +519,52 @@ html {
   }
 
   .btn-primary {
-    background: var(--foreground);
-    color: var(--background);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+    color: #1b140a;
+    border: 1px solid rgba(241, 210, 155, 0.65);
     border-radius: 999px;
-    padding: 0.6rem 1.5rem;
+    padding: 0.7rem 1.6rem;
     font-size: 0.75rem;
     font-weight: 600;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    box-shadow:
+      0 12px 28px rgba(212, 176, 122, 0.2),
+      0 10px 30px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
   }
 
   .btn-primary:hover {
-    opacity: 0.9;
     transform: translateY(-1px);
+    filter: brightness(0.98);
+    box-shadow:
+      0 16px 36px rgba(212, 176, 122, 0.28),
+      0 14px 32px rgba(0, 0, 0, 0.4);
   }
 
   .btn-outline {
-    border: 1px solid var(--foreground);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(212, 176, 122, 0.4);
     color: var(--foreground);
+    background: linear-gradient(160deg, rgba(20, 24, 33, 0.9), rgba(15, 18, 26, 0.6));
     border-radius: 999px;
-    padding: 0.6rem 1.5rem;
+    padding: 0.7rem 1.6rem;
     font-size: 0.75rem;
     font-weight: 600;
-    transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .btn-outline:hover {
     border-color: var(--accent);
     color: var(--accent);
     transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
   }
 
   .btn-linkedin {
@@ -576,17 +594,39 @@ html {
   }
 
   .btn-ghost {
-    color: var(--muted);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--muted-strong);
+    background: rgba(20, 24, 33, 0.45);
+    border: 1px solid rgba(42, 49, 66, 0.9);
     border-radius: 999px;
-    padding: 0.6rem 1.5rem;
+    padding: 0.7rem 1.6rem;
     font-size: 0.75rem;
-    font-weight: 500;
-    transition: color 0.2s ease, transform 0.2s ease;
+    font-weight: 600;
+    transition: color 0.2s ease, transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
   }
 
   .btn-ghost:hover {
     color: var(--foreground);
     transform: translateY(-1px);
+    border-color: rgba(212, 176, 122, 0.5);
+    background: rgba(20, 24, 33, 0.7);
+  }
+
+  .btn-icon {
+    display: inline-flex;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .btn-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    fill: none;
   }
 }
 
