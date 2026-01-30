@@ -2,6 +2,123 @@ import type { Project } from "./projects.types";
 
 const projectList: Project[] = [
   {
+    slug: "business-decision-simulator",
+    title: "Business Decision Simulator",
+    headline:
+      "Business Decision Simulator | Cenários, risco e impacto financeiro",
+    tagline:
+      "Simulador interativo para comparar estratégias e medir impacto financeiro com Monte Carlo e análise de sensibilidade.",
+    role: "Analista/Desenvolvedor",
+    stack: ["Python", "Streamlit", "Pandas", "NumPy", "Plotly"],
+    repoUrl:
+      "https://github.com/matheussiqueira-dev/Simulacao-Estrategica-de-Decisao-Empresarial.git",
+    demo: {
+      kind: "video",
+      src: "/Simulação Estratégica de Decisão Empresarial.mp4",
+      poster: "/projects/business-decision-simulator/cover.svg",
+      caption: "Cenários lado a lado, risco e KPIs em tempo real.",
+    },
+    intro: {
+      title: "Simulador Estratégico de Decisão Empresarial",
+      paragraphs: [
+        "Ferramenta interativa para testar estratégias de negócio e visualizar impacto em receita, margem e caixa.",
+        "Permite comparar cenários em tempo real, incluindo incerteza com simulações de Monte Carlo e gráficos de sensibilidade.",
+      ],
+      sections: [
+        {
+          title: "O que o vídeo demonstra",
+          items: [
+            "Ajuste rápido de alavancas (preço, volume, CAC, churn, capacidade).",
+            "Comparação lado a lado de cenários base, otimista e conservador.",
+            "Análise de risco com distribuição de resultados e intervalos de confiança.",
+          ],
+        },
+        {
+          title: "Uso típico",
+          items: [
+            "Planejamento de mercado e lançamento de produtos.",
+            "Avaliação de investimentos e payback.",
+            "Revisão de metas trimestrais com diretoria.",
+          ],
+        },
+      ],
+      video: {
+        src: "/Simulação Estratégica de Decisão Empresarial.mp4",
+        poster: "/projects/business-decision-simulator/cover.svg",
+        caption: "Tour pelas telas de cenários, risco e KPIs.",
+      },
+    },
+    context:
+      "Gestores precisavam comparar decisões estratégicas sem depender de planilhas desconexas, entendendo impacto financeiro e riscos em minutos.",
+    problem: [
+      "Dificuldade em comparar múltiplos cenários com incerteza.",
+      "Falta de visualizações claras para comunicar riscos ao board.",
+      "Dependência de planilhas complexas e pouco auditáveis.",
+      "Pouca agilidade para testar hipóteses e trade-offs de negócio.",
+    ],
+    dataUsed: [
+      "Premissas de preço, volume, CAC, churn, custo variável e fixo.",
+      "Curvas de demanda e elasticidade por segmento.",
+      "Distribuições de risco para receitas e custos (Monte Carlo).",
+      "KPIs financeiros: margem, payback, ROI e fluxo de caixa projetado.",
+    ],
+    solution: [
+      "Modelo financeiro parametrizado com simulação Monte Carlo para incerteza.",
+      "Painel Streamlit com controles interativos e comparação de cenários.",
+      "Visualizações Plotly (tornado, waterfall, violin) para sensibilidade e risco.",
+      "Exportação de cenários e parâmetros para CSV/PDF compartilhável.",
+    ],
+    features: [
+      "Cenários base, otimista e conservador lado a lado.",
+      "Simulação estocástica com milhares de execuções e intervalos de confiança.",
+      "Gráficos de sensibilidade para identificar variáveis críticas.",
+      "Download de premissas e resultados para reprodutibilidade.",
+    ],
+    highlights: [
+      "Decisão orientada a dados sem depender de macros ou planilhas frágeis.",
+      "Exploração rápida de hipóteses com feedback visual imediato.",
+      "Comunicação clara de risco para diretoria e investidores.",
+      "Base pronta para conectar a BI ou data warehouse.",
+    ],
+    demonstrates: [
+      "Modelagem financeira e simulação Monte Carlo em Python.",
+      "Design de UX orientado a negócio no Streamlit.",
+      "Visualizações avançadas com Plotly para sensibilidade e risco.",
+      "Boas práticas de caching e parametrização de cenários.",
+    ],
+    techSummary:
+      "Python com Streamlit, Pandas, NumPy e Plotly para um simulador financeiro interativo com Monte Carlo e análise de sensibilidade.",
+    conclusion: [
+      "Entreguei um simulador que responde em tempo real a mudanças de premissa.",
+      "Reduzi dependência de planilhas, centralizando lógica e visualização.",
+      "Deixei ganchos para integração com pipelines de dados corporativos.",
+    ],
+    howToRun: [
+      "Pré-requisitos: Python 3.10+.",
+      "Clone o repositório e crie um ambiente virtual.",
+      "Instale dependências: pip install -r requirements.txt.",
+      "Execute: streamlit run app.py.",
+      "Ajuste premissas no painel e exporte cenários conforme necessário.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/business-decision-simulator/cover.svg",
+        alt: "Capa do Business Decision Simulator",
+      },
+      {
+        src: "/Simulação Estratégica de Decisão Empresarial.mp4",
+        alt: "Demonstração do Business Decision Simulator",
+        type: "video",
+      },
+    ],
+    seo: {
+      title:
+        "Business Decision Simulator | Cenários financeiros com Monte Carlo",
+      description:
+        "Simulador interativo em Python/Streamlit para comparar estratégias, rodar Monte Carlo e comunicar risco e impacto financeiro.",
+    },
+  },
+  {
     slug: "touchless-web-gesture-interface",
     title: "Touchless Web Gesture Interface",
     headline: "Touchless Web Gesture Interface | Visão computacional para dashboards",
@@ -1123,6 +1240,7 @@ const projectList: Project[] = [
 ];
 
 export const projectOrder = [
+  "business-decision-simulator",
   "detector-de-stress",
   "touchless-web-gesture-interface",
   "driver-monitoring-system",

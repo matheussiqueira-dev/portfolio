@@ -185,18 +185,14 @@ export default function DemosPageEn() {
             return (
               <article
                 key={project.slug}
-                className="card p-6 flex h-full flex-col gap-4"
+                className="card card-hover flex h-full flex-col gap-5"
               >
-                <div>
-                  <h2 className="text-xl font-semibold text-[color:var(--foreground)]">
-                    {project.title}
-                  </h2>
-                  <p className="text-sm text-[color:var(--muted)] mt-2">
-                    {project.tagline}
-                  </p>
+                <div className="card-header">
+                  <h2 className="card-title">{project.title}</h2>
+                  <p className="card-subtitle">{project.tagline}</p>
                 </div>
                 <div
-                  className="rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-4"
+                  className="panel"
                   aria-label="Demo preview"
                 >
                   <DemoPreview
@@ -207,8 +203,8 @@ export default function DemosPageEn() {
                     projectTitle={project.title}
                   />
                 </div>
-                <div className="rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-4">
-                  <p className="text-xs uppercase tracking-[0.2em] text-[color:var(--muted)]">
+                <div className="panel">
+                  <p className="card-meta text-center">
                     {siteEn.demos.howToRunLabel}
                   </p>
                   <ol className="mt-3 list-decimal list-inside space-y-1 text-xs text-[color:var(--muted)]">
@@ -242,8 +238,8 @@ export default function DemosPageEn() {
           })}
         </div>
 
-        <section className="mt-12 rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 shadow-sm">
-          <h2 className="text-2xl font-semibold text-[color:var(--foreground)] mb-4">
+        <section className="mt-12 card card-lg">
+          <h2 className="card-title text-2xl mb-4">
             {siteEn.demos.publishTitle}
           </h2>
           <ul className="space-y-3 text-sm text-[color:var(--muted)]">

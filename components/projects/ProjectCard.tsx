@@ -35,9 +35,9 @@ export default function ProjectCard({
     : `/projetos/${project.slug}`;
 
   return (
-    <article className="card p-6 flex h-full flex-col gap-4 transition hover:-translate-y-1 hover:shadow-xl">
+    <article className="card card-hover flex h-full flex-col gap-5">
       {cover ? (
-        <div className="relative aspect-[1200/630] w-full overflow-hidden rounded-xl border border-[color:var(--border)]">
+        <div className="card-media relative aspect-[1200/630] w-full">
           <Image
             src={cover.src}
             alt={cover.alt}
@@ -48,10 +48,12 @@ export default function ProjectCard({
         </div>
       ) : null}
 
-      <div className="space-y-2">
-        <h3 className="text-lg font-semibold text-[color:var(--foreground)]">{project.title}</h3>
-        <p className="text-sm text-[color:var(--muted)]">{project.tagline}</p>
-        <p className="text-xs text-[color:var(--muted)]">{project.features[0]}</p>
+      <div className="card-header">
+        <h3 className="card-title">{project.title}</h3>
+        <p className="card-subtitle">{project.tagline}</p>
+        <p className="text-xs text-[color:var(--muted)] text-center">
+          {project.features[0]}
+        </p>
       </div>
 
       <div className="flex flex-wrap gap-2 text-xs text-[color:var(--muted)]">

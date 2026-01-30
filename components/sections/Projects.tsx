@@ -78,15 +78,15 @@ export default function Projects() {
             return (
               <article
                 key={project.slug}
-                className="card relative p-6 flex h-full flex-col gap-4 transition hover:-translate-y-1 hover:shadow-xl"
+                className="card card-hover relative flex h-full flex-col gap-5"
               >
                 {isFeatured ? (
-                  <span className="absolute right-4 top-4 rounded-full bg-[color:var(--accent)]/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-[color:var(--accent-strong)]">
+                  <span className="card-badge rounded-full bg-[color:var(--accent)]/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-[color:var(--accent-strong)]">
                     {content.featuredLabel}
                   </span>
                 ) : null}
                 {cover ? (
-                  <div className="relative aspect-[1200/630] w-full overflow-hidden rounded-xl border border-[color:var(--border)]">
+                  <div className="card-media relative aspect-[1200/630] w-full">
                     <ImageWithFallback
                       src={cover.src}
                       alt={cover.alt}
@@ -99,22 +99,15 @@ export default function Projects() {
                   </div>
                 ) : null}
 
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-lg font-semibold text-[color:var(--foreground)]">
-                    {project.title}
-                  </h3>
-                  <span className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
-                    {content.cardLabel}
-                  </span>
+                <div className="card-header">
+                  <span className="card-kicker">{content.cardLabel}</span>
+                  <h3 className="card-title">{project.title}</h3>
+                  <p className="card-subtitle">{project.tagline}</p>
                 </div>
 
-                <p className="text-sm leading-relaxed text-[color:var(--muted)]">
-                  {project.tagline}
-                </p>
-
                 {highlights.length > 0 ? (
-                  <div className="space-y-2">
-                    <p className="text-xs uppercase tracking-[0.2em] text-[color:var(--muted)]">
+                  <div className="space-y-2 text-left">
+                    <p className="card-meta text-center">
                       {content.highlightLabel}
                     </p>
                     <ul className="space-y-1 text-sm text-[color:var(--muted)]">

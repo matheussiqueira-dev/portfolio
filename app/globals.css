@@ -242,14 +242,137 @@ html {
   }
 
   .card {
-    border: 1px solid var(--border);
-    background: var(--surface);
-    border-radius: 1.5rem;
-    box-shadow: var(--shadow-soft);
+    --card-padding: 1.5rem;
+    --card-radius: 1.5rem;
+    --card-bg: var(--surface);
+    --card-border: var(--border);
+    --card-shadow: var(--shadow-soft);
+    position: relative;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
+    padding: var(--card-padding);
+    box-shadow: var(--card-shadow);
   }
 
   .card-muted {
+    --card-bg: var(--surface-muted);
+  }
+
+  .card-lg {
+    --card-padding: clamp(1.75rem, 2.5vw, 2.5rem);
+    --card-radius: 1.75rem;
+  }
+
+  .card-compact {
+    --card-padding: 1.1rem;
+    --card-radius: 1.25rem;
+  }
+
+  .card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212, 176, 122, 0.35);
+    box-shadow: var(--shadow);
+  }
+
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    text-align: center;
+  }
+
+  .card-kicker {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  .card-title {
+    font-size: clamp(1.05rem, 1.4vw, 1.35rem);
+    font-weight: 600;
+    color: var(--foreground);
+    text-align: center;
+  }
+
+  .card-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 32rem;
+    text-align: center;
+  }
+
+  .card-meta {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  .card-media {
+    border-radius: 1rem;
+    border: 1px solid var(--border);
     background: var(--surface-muted);
+    overflow: hidden;
+  }
+
+  .card-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+    backdrop-filter: blur(8px);
+  }
+
+  .panel {
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    background: var(--surface-muted);
+    padding: 1rem;
+  }
+
+  .card-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .card-link:hover {
+    transform: translateY(-2px);
+    border-color: rgba(212, 176, 122, 0.45);
+    box-shadow: var(--shadow);
+  }
+
+  .card-link--linkedin {
+    color: #0a66c2;
+    border-color: rgba(10, 102, 194, 0.55);
+  }
+
+  .card-link--linkedin:hover {
+    border-color: #0a66c2;
+  }
+
+  .card-link--whatsapp {
+    background: var(--whatsapp);
+    border-color: var(--whatsapp);
+    color: var(--background);
+  }
+
+  .card-link--whatsapp:hover {
+    border-color: var(--whatsapp);
+    filter: brightness(0.95);
   }
 
   .chip {

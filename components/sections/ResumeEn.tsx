@@ -7,7 +7,7 @@ import LanguageSwitch from "../ui/LanguageSwitch";
 export default function ResumeEn() {
   return (
     <div className="max-w-5xl mx-auto space-y-10 text-[color:var(--foreground)] print:text-black print:space-y-6">
-      <header className="card rounded-3xl p-8 md:p-10 print:border-none print:bg-transparent print:p-0">
+      <header className="card card-lg rounded-3xl print:border-none print:bg-transparent print:p-0">
         <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
           <div className="space-y-3">
             <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] print:text-slate-600">
@@ -67,8 +67,8 @@ export default function ResumeEn() {
 
       <div className="grid gap-8 md:grid-cols-[2fr_1fr]">
         <div className="space-y-8">
-          <section className="card rounded-3xl p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
-            <h2 className="text-xl font-semibold text-[color:var(--foreground)] print:text-black">
+          <section className="card rounded-3xl space-y-4 print:border-none print:bg-transparent print:p-0">
+            <h2 className="card-title text-xl print:text-black">
               Professional Summary
             </h2>
             <p className="text-[color:var(--muted)] print:text-slate-700">
@@ -76,8 +76,8 @@ export default function ResumeEn() {
             </p>
           </section>
 
-          <section className="card rounded-3xl p-6 space-y-6 print:border-none print:bg-transparent print:p-0">
-            <h2 className="text-xl font-semibold text-[color:var(--foreground)] print:text-black">
+          <section className="card rounded-3xl space-y-6 print:border-none print:bg-transparent print:p-0">
+            <h2 className="card-title text-xl print:text-black">
               Professional Experience
             </h2>
             {resumeEn.experience.map((item) => (
@@ -105,8 +105,8 @@ export default function ResumeEn() {
         </div>
 
         <aside className="space-y-8">
-          <section className="card rounded-3xl p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
-            <h2 className="text-xl font-semibold text-[color:var(--foreground)] print:text-black">
+          <section className="card rounded-3xl space-y-4 print:border-none print:bg-transparent print:p-0">
+            <h2 className="card-title text-xl print:text-black">
               Core Skills
             </h2>
             <ul className="list-disc list-inside space-y-2 text-sm text-[color:var(--muted)] print:text-slate-700">
@@ -116,8 +116,8 @@ export default function ResumeEn() {
             </ul>
           </section>
 
-          <section className="card rounded-3xl p-6 space-y-6 print:border-none print:bg-transparent print:p-0">
-            <h2 className="text-xl font-semibold text-[color:var(--foreground)] print:text-black">
+          <section className="card rounded-3xl space-y-6 print:border-none print:bg-transparent print:p-0">
+            <h2 className="card-title text-xl print:text-black">
               Education
             </h2>
             {resumeEn.education.groups.map((group) => (
@@ -141,8 +141,8 @@ export default function ResumeEn() {
             ))}
           </section>
 
-          <section className="card rounded-3xl p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
-            <h2 className="text-xl font-semibold text-[color:var(--foreground)] print:text-black">
+          <section className="card rounded-3xl space-y-4 print:border-none print:bg-transparent print:p-0">
+            <h2 className="card-title text-xl print:text-black">
               Certifications
             </h2>
             <ul className="list-disc list-inside space-y-2 text-sm text-[color:var(--muted)] print:text-slate-700">
@@ -152,8 +152,8 @@ export default function ResumeEn() {
             </ul>
           </section>
 
-          <section className="card rounded-3xl p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
-            <h2 className="text-xl font-semibold text-[color:var(--foreground)] print:text-black">
+          <section className="card rounded-3xl space-y-4 print:border-none print:bg-transparent print:p-0">
+            <h2 className="card-title text-xl print:text-black">
               Languages
             </h2>
             <ul className="list-disc list-inside space-y-2 text-sm text-[color:var(--muted)] print:text-slate-700">
@@ -163,8 +163,8 @@ export default function ResumeEn() {
             </ul>
           </section>
 
-          <section className="card rounded-3xl p-6 space-y-4 print:border-none print:bg-transparent print:p-0">
-            <h2 className="text-xl font-semibold text-[color:var(--foreground)] print:text-black">
+          <section className="card rounded-3xl space-y-4 print:border-none print:bg-transparent print:p-0">
+            <h2 className="card-title text-xl print:text-black">
               {resumeEn.contact.title}
             </h2>
             <p className="text-sm text-[color:var(--muted)] print:text-slate-700">
@@ -179,7 +179,7 @@ export default function ResumeEn() {
                     href={link.href}
                     target={isExternal ? "_blank" : undefined}
                     rel={isExternal ? "noopener noreferrer" : undefined}
-                    className="flex flex-col gap-1 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-3 text-[color:var(--foreground)] transition hover:border-[color:var(--accent)]/40 print:border-slate-300 print:bg-transparent print:text-slate-700"
+                    className="card card-compact flex flex-col gap-1 text-[color:var(--foreground)] transition hover:border-[color:var(--accent)]/40 print:border-slate-300 print:bg-transparent print:text-slate-700"
                   >
                     <span className="text-xs uppercase tracking-[0.2em] text-[color:var(--muted)] print:text-slate-600">
                       {link.label}

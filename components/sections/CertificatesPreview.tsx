@@ -15,13 +15,13 @@ export default function CertificatesPreview({
   return (
     <section className="page-section content-auto">
       <div className="section-inner">
-        <div className="card rounded-3xl p-8 md:p-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div className="space-y-3">
+        <div className="card card-lg flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div className="card-header">
             <p className="eyebrow">{content.eyebrow}</p>
-            <h2 className="text-2xl md:text-3xl font-semibold text-[color:var(--foreground)]">
+            <h2 className="card-title text-2xl md:text-3xl">
               {content.title}
             </h2>
-            <p className="text-sm md:text-base text-[color:var(--muted)] max-w-2xl">
+            <p className="card-subtitle text-sm md:text-base max-w-2xl">
               {content.description}
             </p>
           </div>

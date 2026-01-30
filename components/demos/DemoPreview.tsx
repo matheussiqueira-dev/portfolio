@@ -43,7 +43,7 @@ export function DemoPreview({
     locale === "en" ? `/en/demos/${projectSlug}` : `/demos/${projectSlug}`;
 
   const previewImage = fallbackMedia ? (
-    <div className="relative w-full overflow-hidden rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] aspect-video">
+    <div className="card-media relative w-full aspect-video">
       <Image
         src={fallbackMedia.src}
         alt={fallbackMedia.alt}
@@ -67,7 +67,7 @@ export function DemoPreview({
     }
 
     return (
-      <div className="flex items-center justify-center rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] py-12 text-sm text-[color:var(--muted)]">
+      <div className="panel flex items-center justify-center py-12 text-sm text-[color:var(--muted)]">
         <p>{labels.comingSoon}</p>
       </div>
     );
@@ -78,7 +78,7 @@ export function DemoPreview({
 
     return (
       <div className="space-y-2">
-        <div className="relative w-full overflow-hidden rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] aspect-video">
+        <div className="card-media relative w-full aspect-video">
           <video
             controls
             playsInline

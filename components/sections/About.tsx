@@ -16,10 +16,8 @@ export default function About({ content }: Props) {
             </h2>
           </div>
 
-          <div className="card card-muted p-5 space-y-2">
-            <p className="text-sm font-semibold text-[color:var(--foreground)]">
-              {content.who.title}
-            </p>
+          <div className="card card-muted card-compact space-y-2">
+            <p className="card-title">{content.who.title}</p>
             <p className="text-sm text-[color:var(--muted)] leading-relaxed">
               {content.who.body}
             </p>
@@ -47,14 +45,10 @@ export default function About({ content }: Props) {
               {content.snapshot.items.map((item) => (
                 <div
                   key={`${item.value}-${item.label}`}
-                  className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)]/80 p-4 shadow-sm"
+                  className="card card-compact"
                 >
-                  <p className="text-sm font-semibold text-[color:var(--foreground)]">
-                    {item.value}
-                  </p>
-                  <p className="mt-1 text-[0.7rem] uppercase tracking-[0.25em] text-[color:var(--muted)]">
-                    {item.label}
-                  </p>
+                  <p className="card-title">{item.value}</p>
+                  <p className="card-meta mt-1 text-center">{item.label}</p>
                 </div>
               ))}
             </div>
@@ -63,10 +57,8 @@ export default function About({ content }: Props) {
         </div>
 
         <div className="space-y-6">
-          <div className="card p-5 space-y-3">
-            <p className="text-sm font-semibold text-[color:var(--foreground)]">
-              {content.highlights.title}
-            </p>
+          <div className="card card-compact space-y-3">
+            <p className="card-title">{content.highlights.title}</p>
             <ul className="space-y-2 text-sm text-[color:var(--muted)]">
               {content.highlights.items.map((item) => (
                 <li key={item} className="flex gap-2">
@@ -77,15 +69,13 @@ export default function About({ content }: Props) {
             </ul>
           </div>
 
-          <div className="card card-muted p-5 space-y-4">
-            <p className="text-sm font-semibold text-[color:var(--foreground)]">
-              {content.stack.title}
-            </p>
+          <div className="card card-muted card-compact space-y-4">
+            <p className="card-title">{content.stack.title}</p>
             <div className="grid gap-4 sm:grid-cols-2">
               {content.stack.groups.map((group) => (
                 <div
                   key={group.title}
-                  className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-4 space-y-3"
+                  className="panel space-y-3"
                 >
                   <p className="text-xs uppercase tracking-[0.2em] text-[color:var(--muted)]">
                     {group.title}

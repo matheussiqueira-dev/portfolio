@@ -178,8 +178,8 @@ export default function HirePage() {
           </ul>
         </section>
 
-        <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 space-y-6 shadow-sm">
-          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
+        <section className="card card-lg space-y-6">
+          <h2 className="card-title text-2xl">
             Stack in practice
           </h2>
           <div className="grid gap-6 md:grid-cols-3">
@@ -206,15 +206,13 @@ export default function HirePage() {
             {featuredProjects.map((project) => (
               <article
                 key={project.slug}
-                className="card p-6 space-y-4"
+                className="card card-hover space-y-4"
               >
-                <div>
-                  <h3 className="text-lg font-semibold text-[color:var(--foreground)]">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-[color:var(--muted)]">{project.tagline}</p>
+                <div className="card-header">
+                  <h3 className="card-title">{project.title}</h3>
+                  <p className="card-subtitle">{project.tagline}</p>
                 </div>
-                <p className="text-sm text-[color:var(--muted)]">
+                <p className="text-sm text-[color:var(--muted)] text-left">
                   {project.highlights[0] ?? project.problem[0]}
                 </p>
                 <div className="flex flex-wrap gap-2 text-xs text-[color:var(--muted)]">
@@ -235,8 +233,8 @@ export default function HirePage() {
           </div>
         </section>
 
-        <section className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-8 space-y-4 shadow-sm">
-          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
+        <section className="card card-lg space-y-4">
+          <h2 className="card-title text-2xl">
             Let&apos;s talk
           </h2>
           <p className="text-[color:var(--muted)]">

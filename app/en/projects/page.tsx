@@ -158,35 +158,27 @@ export default function ProjectsPageEn({ searchParams }: PageProps) {
             return (
               <article
                 key={project.slug}
-                className="card relative p-6 flex flex-col gap-5"
+                className="card card-hover relative flex flex-col gap-5"
               >
                 {isFeatured ? (
-                  <span className="absolute right-4 top-4 rounded-full bg-[color:var(--accent)]/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-[color:var(--accent-strong)]">
+                  <span className="card-badge rounded-full bg-[color:var(--accent)]/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-[color:var(--accent-strong)]">
                     {siteEn.projects.featuredLabel}
                   </span>
                 ) : null}
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h2 className="text-xl font-semibold text-[color:var(--foreground)]">
-                      {project.title}
-                    </h2>
-                    <p className="text-sm text-[color:var(--muted)] mt-2">
-                      {project.tagline}
-                    </p>
-                  </div>
-                  <span className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
-                    {project.role}
-                  </span>
+                <div className="card-header">
+                  <span className="card-kicker">{project.role}</span>
+                  <h2 className="card-title">{project.title}</h2>
+                  <p className="card-subtitle">{project.tagline}</p>
                 </div>
 
-                <p className="text-sm text-[color:var(--muted)] leading-relaxed">
+                <p className="text-sm text-[color:var(--muted)] leading-relaxed text-left">
                   {project.highlights[0] ??
                     project.features[0] ??
                     project.problem[0]}
                 </p>
 
-                <div className="text-xs text-[color:var(--muted)]">
-                  <span className="uppercase tracking-[0.2em] text-[color:var(--muted)]">
+                <div className="text-xs text-[color:var(--muted)] text-left">
+                  <span className="card-meta block text-center">
                     {siteEn.projectsPage.demonstratesLabel}
                   </span>
                   <p className="mt-2 text-[color:var(--muted)]">

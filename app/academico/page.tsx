@@ -241,9 +241,9 @@ export default function AcademicoPage() {
             {skillGroups.map((group) => (
               <div
                 key={group.title}
-                className="card p-6 space-y-3"
+                className="card space-y-3"
               >
-                <h3 className="text-sm uppercase tracking-[0.2em] text-[color:var(--muted)]">
+                <h3 className="card-kicker text-center">
                   {group.title}
                 </h3>
                 <ul className="list-disc list-inside space-y-1 text-sm text-[color:var(--muted)]">
@@ -266,7 +266,7 @@ export default function AcademicoPage() {
                   href={file.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-3 text-sm text-[color:var(--foreground)] transition hover:border-[color:var(--accent)]/40"
+                  className="card card-compact card-link text-sm text-[color:var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                 >
                   {formatFileLabel(file.name)}
                 </a>
