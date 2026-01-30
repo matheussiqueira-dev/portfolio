@@ -58,7 +58,7 @@ export default function ProjectsPage() {
           </Link>
         </header>
 
-        <ProjectGrid projects={projects} />
+        <ProjectGrid items={projects} />
       </div>
     </main>
   );

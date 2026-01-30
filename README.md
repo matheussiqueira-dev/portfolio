@@ -216,10 +216,14 @@ Edite `src/data/projects.ts` e adicione um item seguindo o formato:
   shortDescription: "Resumo rápido do projeto.",
   tags: ["React", "Node.js"],
   coverImage: "/images/projects/meu-projeto.webp",
+  isInteractive: true,
   links: { repo: "https://github.com/..." },
   demo: { mode: "video", videoUrl: "/projects/meu-projeto/demo.mp4" }
 }
 ```
+
+Use `isInteractive` para habilitar o selo **Interativo** e garantir o botão **Executar Demo**
+(obrigatório para os 8 projetos interativos).
 
 #### 2) Demo inline (client-only)
 
@@ -236,6 +240,7 @@ demo: { mode: "inline", inlineId: "meu-projeto" }
 Para projetos já publicados em um deploy:
 
 ```ts
+links: { live: "https://..." },
 demo: { mode: "iframe", iframeUrl: "https://..." }
 ```
 
@@ -253,6 +258,8 @@ Suporta MP4 local e URLs do YouTube (embed).
 
 - Demos inline devem ser leves e rodar apenas no client (lazy-loaded).
 - Sempre use `SafeImage` para capas de projeto (fallback automático).
+- Capas devem existir em `public/projects/<slug>/` ou `public/images/projects/`.
+- O fallback padrão está em `/projects/placeholder.webp`.
 - Não carregue demos na Home; só após clique.
 
 ### Certificados

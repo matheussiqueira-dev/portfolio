@@ -1,11 +1,9 @@
 export default function Loading() {
   return (
-    <div className="min-h-screen px-6 pt-28 pb-20">
-      <div className="max-w-5xl mx-auto">
-        <div className="card card-lg text-sm text-[color:var(--muted)]">
-          Carregando detalhes do projeto…
-        </div>
+    <main className="mx-auto max-w-5xl px-4 py-10">
+      <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+        <p className="text-sm opacity-80">Carregando projeto…</p>
       </div>
-    </div>
+    </main>
   );
 }

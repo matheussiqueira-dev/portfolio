@@ -1,9 +1,19 @@
 export type DemoAspectRatio = "16:9" | "4:3" | "1:1";
 
+export type InlineDemoId =
+  | "detector-de-stress"
+  | "chatbot-ia-api"
+  | "library-api-advanced"
+  | "driver-monitoring-system"
+  | "touchless-web-gesture-interface"
+  | "self-drive-car"
+  | "flappy-bird-com-gestos"
+  | "reconhecimento-de-gestos-mao-tempo-real";
+
 export type ProjectDemo =
   | {
       mode: "inline";
-      inlineId: string;
+      inlineId: InlineDemoId;
       aspectRatio?: DemoAspectRatio;
       minHeight?: number;
     }
@@ -31,6 +41,7 @@ export type Project = {
   techStack?: string[];
   links?: { repo?: string; live?: string };
   demo: ProjectDemo;
+  isInteractive?: boolean;
 };
 
 const defaultAspect: DemoAspectRatio = "16:9";
@@ -62,6 +73,7 @@ export const projects: Project[] = [
     tags: ["Python", "FastAPI", "OpenCV", "MediaPipe", "React"],
     techStack: ["Python", "FastAPI", "OpenCV", "MediaPipe", "React"],
     coverImage: "/projects/touchless-web-gesture-interface/cover.svg",
+    isInteractive: true,
     links: {
       repo: "https://github.com/matheussiqueira-dev/touchless-web-gesture-interface",
     },
@@ -80,6 +92,7 @@ export const projects: Project[] = [
     tags: ["Python", "FastAPI", "PostgreSQL", "Redis"],
     techStack: ["Python", "FastAPI", "PostgreSQL", "Redis"],
     coverImage: "/projects/chatbot-ia-api/cover.svg",
+    isInteractive: true,
     links: {
       repo: "https://github.com/matheussiqueira-dev/chatbot-ia-api",
     },
@@ -98,6 +111,7 @@ export const projects: Project[] = [
     tags: ["Python", "OpenCV", "TensorFlow", "NumPy"],
     techStack: ["Python", "OpenCV", "TensorFlow", "NumPy"],
     coverImage: "/projects/self-drive-car/cover.svg",
+    isInteractive: true,
     links: {
       repo: "https://github.com/matheussiqueira-dev/self-drive-car",
     },
@@ -116,6 +130,7 @@ export const projects: Project[] = [
     tags: ["Node.js", "TypeScript", "PostgreSQL", "Fastify"],
     techStack: ["Node.js", "TypeScript", "PostgreSQL", "Fastify"],
     coverImage: "/projects/library-api-advanced/cover.svg",
+    isInteractive: true,
     links: {
       repo: "https://github.com/matheussiqueira-dev/library-api-advanced",
     },
@@ -134,6 +149,7 @@ export const projects: Project[] = [
     tags: ["Python", "OpenCV", "MediaPipe", "TensorFlow"],
     techStack: ["Python", "OpenCV", "MediaPipe", "TensorFlow"],
     coverImage: "/projects/driver-monitoring-system/cover.svg",
+    isInteractive: true,
     links: {
       repo: "https://github.com/matheussiqueira-dev/Driver-Monitoring-System",
     },
@@ -152,6 +168,7 @@ export const projects: Project[] = [
     tags: ["Python", "Pygame", "OpenCV", "MediaPipe", "NumPy"],
     techStack: ["Python", "Pygame", "OpenCV", "MediaPipe", "NumPy"],
     coverImage: "/images/projects/flappy-bird-gestos.webp",
+    isInteractive: true,
     links: {
       repo: "https://github.com/matheussiqueira-dev/Flappy-Bird",
     },
@@ -206,6 +223,7 @@ export const projects: Project[] = [
     tags: ["Python", "OpenCV", "MediaPipe"],
     techStack: ["Python", "OpenCV", "MediaPipe"],
     coverImage: "/projects/hand-gesture-recognition-realtime/cover.svg",
+    isInteractive: true,
     links: {
       repo: "https://github.com/matheussiqueira-dev/hand-gesture-recognition-realtime",
     },
@@ -238,6 +256,7 @@ export const projects: Project[] = [
       "Machine Learning",
     ],
     coverImage: "/projects/detector-de-stress/cover.svg",
+    isInteractive: true,
     links: {
       repo: "https://github.com/matheussiqueira-dev/Detector-de-Stress",
     },
@@ -259,3 +278,7 @@ export const getProjectByRepo = (repoUrl?: string) =>
   projects.find((project) => project.links?.repo === repoUrl);
 
 export const hasExecutableDemo = (project: Project) => project.demo.mode !== "none";
+
+export const interactiveProjectIds = new Set(
+  projects.filter((project) => project.isInteractive).map((project) => project.id)
+);

@@ -1,285 +1,158 @@
 "use client";
 
-import { createPortal } from "react-dom";
 import { useEffect, useMemo, useRef, useState } from "react";
-import type { Project, ProjectDemo } from "@/src/data/projects";
-import InlineDemo from "@/src/components/demo/InlineDemo";
-import IframeDemo from "@/src/components/demo/IframeDemo";
-import VideoDemo from "@/src/components/demo/VideoDemo";
+import type { Project } from "@/data/projects";
+import { IframeDemo } from "./IframeDemo";
+import { InlineDemo } from "./InlineDemo";
+import { VideoDemo } from "./VideoDemo";
 
-const iconStyles = "h-4 w-4";
-
-const icons = {
-  back: (
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-      className={iconStyles}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-    >
-      <path d="M15 18l-6-6 6-6" />
-    </svg>
-  ),
-  refresh: (
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-      className={iconStyles}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-    >
-      <path d="M3 12a9 9 0 0 1 15-6.7L21 8" />
-      <path d="M21 4v4h-4" />
-      <path d="M21 12a9 9 0 0 1-15 6.7L3 16" />
-      <path d="M3 20v-4h4" />
-    </svg>
-  ),
-  external: (
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-      className={iconStyles}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-    >
-      <path d="M14 3h7v7" />
-      <path d="M10 14L21 3" />
-      <path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5" />
-    </svg>
-  ),
-  fullscreen: (
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-      className={iconStyles}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-    >
-      <path d="M9 3H5a2 2 0 0 0-2 2v4" />
-      <path d="M15 3h4a2 2 0 0 1 2 2v4" />
-      <path d="M9 21H5a2 2 0 0 1-2-2v-4" />
-      <path d="M15 21h4a2 2 0 0 0 2-2v-4" />
-    </svg>
-  ),
-};
-
-type DemoShellProps = {
+type Props = {
   project: Project;
   onClose: () => void;
 };
 
-type DemoStatus = "loading" | "ready" | "error";
+type DemoAspect = "16:9" | "4:3" | "1:1";
 
-const resolveExternalUrl = (demo: ProjectDemo, project: Project) => {
-  if (project.links?.live) {
-    return project.links.live;
-  }
-  if (demo.mode === "iframe") {
-    return demo.iframeUrl;
-  }
-  return null;
-};
+function aspectToPadding(aspect: DemoAspect) {
+  if (aspect === "4:3") return "75%";
+  if (aspect === "1:1") return "100%";
+  return "56.25%";
+}
 
-export default function DemoShell({ project, onClose }: DemoShellProps) {
-  const overlayRef = useRef<HTMLDivElement>(null);
-  const panelRef = useRef<HTMLDivElement>(null);
-  const closeButtonRef = useRef<HTMLButtonElement>(null);
-  const previousFocusRef = useRef<HTMLElement | null>(null);
-  const [status, setStatus] = useState<DemoStatus>("loading");
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [instanceKey, setInstanceKey] = useState(0);
-  const demo = project.demo;
+export function DemoShell({ project, onClose }: Props) {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [resetKey, setResetKey] = useState(0);
 
-  const externalUrl = useMemo(() => resolveExternalUrl(demo, project), [demo, project]);
+  const aspect =
+    "aspectRatio" in project.demo && project.demo.aspectRatio
+      ? project.demo.aspectRatio
+      : "16:9";
+  const minHeight =
+    "minHeight" in project.demo && project.demo.minHeight
+      ? project.demo.minHeight
+      : 520;
 
-  useEffect(() => {
-    previousFocusRef.current = document.activeElement as HTMLElement | null;
-    document.body.style.overflow = "hidden";
-    closeButtonRef.current?.focus();
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        event.preventDefault();
-        onClose();
-      }
-    };
-
-    document.addEventListener("keydown", onKeyDown);
-
-    return () => {
-      document.body.style.overflow = "";
-      document.removeEventListener("keydown", onKeyDown);
-      previousFocusRef.current?.focus();
-    };
-  }, [onClose]);
+  const openInNewTabUrl = useMemo(() => {
+    if (project.demo.mode === "iframe") return project.demo.iframeUrl;
+    return project.links?.live;
+  }, [project.demo, project.links?.live]);
 
   useEffect(() => {
-    setErrorMessage(null);
-    if (demo.mode === "inline" || demo.mode === "none") {
-      setStatus("ready");
+    containerRef.current?.focus();
+  }, []);
+
+  async function toggleFullscreen() {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const doc = document as Document & { fullscreenElement?: Element | null };
+
+    if (!doc.fullscreenElement) {
+      await el.requestFullscreen?.();
     } else {
-      setStatus("loading");
+      await document.exitFullscreen?.();
     }
-  }, [demo.mode, instanceKey]);
-
-  const handleError = (message: string) => {
-    setStatus("error");
-    setErrorMessage(message);
-  };
-
-  const handleReady = () => {
-    setStatus("ready");
-  };
-
-  const handleRestart = () => {
-    setInstanceKey((prev) => prev + 1);
-  };
-
-  const handleFullscreen = async () => {
-    const element = panelRef.current;
-    if (!element) return;
-
-    if (document.fullscreenElement) {
-      await document.exitFullscreen();
-      return;
-    }
-
-    if (element.requestFullscreen) {
-      await element.requestFullscreen();
-    }
-  };
-
-  const renderDemo = () => {
-    if (status === "error") {
-      return (
-        <div className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-6 text-sm text-[color:var(--muted)]">
-          <p className="text-[color:var(--foreground)] font-semibold mb-2">Demo indisponível</p>
-          <p>{errorMessage ?? "Não foi possível iniciar a demo."}</p>
-        </div>
-      );
-    }
-
-    if (demo.mode === "inline") {
-      return (
-        <InlineDemo inlineId={demo.inlineId} onError={handleError} />
-      );
-    }
-
-    if (demo.mode === "iframe") {
-      return (
-        <IframeDemo
-          url={demo.iframeUrl}
-          title={`Demo ${project.title}`}
-          aspectRatio={demo.aspectRatio}
-          minHeight={demo.minHeight}
-          onReady={handleReady}
-          onError={handleError}
-        />
-      );
-    }
-
-    if (demo.mode === "video") {
-      return (
-        <VideoDemo
-          url={demo.videoUrl}
-          title={`Demo ${project.title}`}
-          aspectRatio={demo.aspectRatio}
-          minHeight={demo.minHeight}
-          onReady={handleReady}
-          onError={handleError}
-        />
-      );
-    }
-
-    return (
-      <div className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-6 text-sm text-[color:var(--muted)]">
-        Esta demo não está disponível.
-      </div>
-    );
-  };
-
-  if (typeof document === "undefined") {
-    return null;
   }
 
-  return createPortal(
+  return (
     <div
-      ref={overlayRef}
-      className="fixed inset-0 z-[80] bg-black/55 backdrop-blur-sm"
-      onClick={onClose}
-      role="presentation"
+      ref={containerRef}
+      tabIndex={-1}
+      className="fixed inset-0 z-50 bg-black/70 p-3 backdrop-blur sm:p-6"
+      role="dialog"
+      aria-modal="true"
+      aria-label={`Demo: ${project.title}`}
     >
-      <div className="flex min-h-full items-start justify-center p-4 sm:p-6">
-        <div
-          ref={panelRef}
-          role="dialog"
-          aria-modal="true"
-          aria-label={`Demo ${project.title}`}
-          className="w-full max-w-5xl rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-5 text-[color:var(--foreground)] shadow-2xl"
-          onClick={(event) => event.stopPropagation()}
-        >
-          <header className="flex flex-wrap items-center justify-between gap-3 border-b border-[color:var(--border)] pb-4">
-            <div className="space-y-1">
-              <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">Demo interativa</p>
-              <h3 className="text-lg font-semibold text-[color:var(--foreground)]">{project.title}</h3>
-              <p className="text-sm text-[color:var(--muted)]">{project.shortDescription}</p>
-            </div>
-            <div className="flex flex-wrap items-center gap-2">
-              <button
-                ref={closeButtonRef}
-                type="button"
-                onClick={onClose}
-                className="btn-ghost flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
-              >
-                {icons.back}
-                Voltar
-              </button>
-              <button
-                type="button"
-                onClick={handleRestart}
-                className="btn-outline flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
-              >
-                {icons.refresh}
-                Reiniciar
-              </button>
-              <button
-                type="button"
-                onClick={handleFullscreen}
-                className="btn-outline flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
-              >
-                {icons.fullscreen}
-                Fullscreen
-              </button>
-              {externalUrl ? (
-                <a
-                  href={externalUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
-                >
-                  {icons.external}
-                  Abrir em nova aba
-                </a>
-              ) : null}
-            </div>
-          </header>
+      <div className="mx-auto flex h-full max-w-6xl flex-col overflow-hidden rounded-xl border border-white/10 bg-zinc-950">
+        <div className="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3">
+          <div className="min-w-0">
+            <div className="truncate text-sm font-medium">{project.title}</div>
+            <div className="truncate text-xs opacity-70">Modo demo</div>
+          </div>
 
-          <div className="mt-5 space-y-4" key={instanceKey}>
-            {status === "loading" ? (
-              <div className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-4 text-sm text-[color:var(--muted)]">
-                Preparando demo…
-              </div>
+          <div className="flex flex-wrap items-center gap-2">
+            {openInNewTabUrl ? (
+              <a
+                href={openInNewTabUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-md border border-white/10 px-3 py-1.5 text-xs hover:bg-white/5"
+              >
+                Abrir em nova aba
+              </a>
             ) : null}
-            {renderDemo()}
+
+            <button
+              onClick={() => setResetKey((key) => key + 1)}
+              className="rounded-md border border-white/10 px-3 py-1.5 text-xs hover:bg-white/5"
+              type="button"
+            >
+              Reiniciar
+            </button>
+
+            <button
+              onClick={toggleFullscreen}
+              className="rounded-md border border-white/10 px-3 py-1.5 text-xs hover:bg-white/5"
+              type="button"
+            >
+              Fullscreen
+            </button>
+
+            <button
+              onClick={onClose}
+              className="rounded-md border border-white/10 px-3 py-1.5 text-xs hover:bg-white/5"
+              type="button"
+            >
+              Voltar
+            </button>
+          </div>
+        </div>
+
+        <div className="flex-1 overflow-auto p-4">
+          <div className="mx-auto w-full" style={{ minHeight }}>
+            <div
+              className="relative w-full overflow-hidden rounded-lg border border-white/10"
+              style={{ paddingTop: aspectToPadding(aspect) }}
+            >
+              <div className="absolute inset-0" key={resetKey}>
+                {project.demo.mode === "iframe" && (
+                  <IframeDemo
+                    url={project.demo.iframeUrl}
+                    title={project.title}
+                    className="h-full"
+                  />
+                )}
+
+                {project.demo.mode === "inline" && (
+                  <div className="h-full w-full">
+                    <InlineDemo inlineId={project.demo.inlineId} />
+                  </div>
+                )}
+
+                {project.demo.mode === "video" && (
+                  <VideoDemo
+                    videoUrl={project.demo.videoUrl}
+                    title={project.title}
+                    className="h-full"
+                  />
+                )}
+
+                {project.demo.mode === "none" && (
+                  <div className="grid h-full w-full place-items-center bg-white/5">
+                    <div className="text-sm opacity-80">Sem demo disponivel.</div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <p className="mt-3 text-xs opacity-70">
+              Se algo nao carregar, tente "Reiniciar" ou "Abrir em nova aba".
+            </p>
           </div>
         </div>
       </div>
-    </div>,
-    document.body
+    </div>
   );
 }
+
+export default DemoShell;

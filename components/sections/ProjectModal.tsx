@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import SafeImage from "@/src/components/demo/SafeImage";
 import { useEffect, useId, useMemo, useRef } from "react";
 import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
@@ -196,7 +197,7 @@ export default function ProjectModal({ project, onClose }: Props) {
 
         {cover ? (
           <div className="mt-6 relative aspect-[1200/630] w-full overflow-hidden rounded-xl border border-[color:var(--border)]">
-            <Image
+            <SafeImage
               src={cover.src}
               alt={cover.alt}
               fill

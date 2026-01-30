@@ -1,29 +1,32 @@
 "use client";
 
 import Image, { type ImageProps } from "next/image";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
-export type SafeImageProps = ImageProps & {
+type SafeImageProps = Omit<ImageProps, "src"> & {
+  src?: string;
   fallbackSrc?: string;
 };
 
-export default function SafeImage({
+export function SafeImage({
   src,
-  fallbackSrc = "/projects/placeholder.webp",
+  fallbackSrc = "/images/projects/placeholder.png",
   alt,
-  onError,
   ...rest
 }: SafeImageProps) {
-  const [currentSrc, setCurrentSrc] = useState<ImageProps["src"]>(src);
-  const [hasError, setHasError] = useState(false);
+  const initial = useMemo(() => src || fallbackSrc, [src, fallbackSrc]);
+  const [currentSrc, setCurrentSrc] = useState(initial);
 
-  const handleError = (event: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    if (!hasError) {
-      setHasError(true);
-      setCurrentSrc(fallbackSrc);
-    }
-    onError?.(event);
-  };
-
-  return <Image {...rest} src={currentSrc} alt={alt} onError={handleError} />;
+  return (
+    <Image
+      {...rest}
+      src={currentSrc}
+      alt={alt}
+      onError={() => {
+        if (currentSrc !== fallbackSrc) setCurrentSrc(fallbackSrc);
+      }}
+    />
+  );
 }
+
+export default SafeImage;

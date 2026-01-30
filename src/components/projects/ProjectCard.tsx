@@ -1,57 +1,54 @@
 import Link from "next/link";
-import SafeImage from "@/src/components/demo/SafeImage";
-import type { Project } from "@/src/data/projects";
+import type { Project } from "@/data/projects";
+import { SafeImage } from "@/components/demo/SafeImage";
 
-type ProjectCardProps = {
-  project: Project;
-};
-
-export default function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="card card-hover flex h-full flex-col gap-5">
-      {project.coverImage ? (
-        <div className="card-media relative aspect-[1200/630] w-full">
-          <SafeImage
-            src={project.coverImage}
-            alt={`Capa do projeto ${project.title}`}
-            fill
-            sizes="(max-width: 1024px) 100vw, 520px"
-            className="object-cover"
-          />
+    <div className="overflow-hidden rounded-xl border border-white/10 bg-white/5">
+      <div className="relative aspect-[16/9] w-full">
+        <SafeImage
+          src={project.coverImage}
+          alt={project.title}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
+      </div>
+
+      <div className="space-y-2 p-4">
+        <div className="flex items-center justify-between gap-2">
+          <h3 className="truncate text-sm font-semibold">{project.title}</h3>
+          {project.isInteractive ? (
+            <span className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[11px]">
+              Interativo
+            </span>
+          ) : null}
         </div>
-      ) : null}
 
-      <div className="card-header">
-        <h3 className="card-title">{project.title}</h3>
-        <p className="card-subtitle">{project.shortDescription}</p>
-      </div>
+        <p className="text-sm opacity-80">{project.shortDescription}</p>
 
-      <div className="flex flex-wrap gap-2 text-xs text-[color:var(--muted)]">
-        {project.tags.map((tag) => (
-          <span key={tag} className="chip">
-            {tag}
-          </span>
-        ))}
-      </div>
+        <div className="flex flex-wrap gap-2">
+          {project.tags.slice(0, 4).map((t) => (
+            <span
+              key={t}
+              className="rounded-md border border-white/10 px-2 py-0.5 text-[11px] opacity-80"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
 
-      <div className="mt-auto flex flex-wrap gap-3 text-sm">
-        <Link
-          href={`/projects/${project.id}`}
-          className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
-        >
-          Ver detalhes
-        </Link>
-        {project.links?.repo ? (
-          <a
-            href={project.links.repo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-ghost focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+        <div className="flex items-center gap-2 pt-2">
+          <Link
+            href={`/projects/${project.id}`}
+            className="rounded-md border border-white/10 px-3 py-2 text-sm hover:bg-white/5"
           >
-            GitHub
-          </a>
-        ) : null}
+            Ver detalhes
+          </Link>
+        </div>
       </div>
-    </article>
+    </div>
   );
 }
+
+export default ProjectCard;

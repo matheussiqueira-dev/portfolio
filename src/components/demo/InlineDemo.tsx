@@ -1,77 +1,34 @@
 "use client";
 
-import React, { useMemo } from "react";
 import dynamic from "next/dynamic";
-import { getDemoImport } from "@/src/demos/registry";
+import type { InlineDemoId } from "@/data/projects";
+import { demoImports } from "@/demos/registry";
 
-type InlineDemoProps = {
-  inlineId: string;
-  onError?: (message: string) => void;
+type Props = {
+  inlineId: InlineDemoId;
 };
 
-type ErrorBoundaryProps = {
-  onError?: (message: string) => void;
-  children: React.ReactNode;
-};
+export function InlineDemo({ inlineId }: Props) {
+  const importer = demoImports[inlineId];
 
-type ErrorBoundaryState = {
-  hasError: boolean;
-};
-
-class DemoErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
-  state: ErrorBoundaryState = { hasError: false };
-
-  static getDerivedStateFromError() {
-    return { hasError: true };
-  }
-
-  componentDidCatch(error: Error) {
-    this.props.onError?.(error.message);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return (
-        <div className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-6 text-sm text-[color:var(--muted)]">
-          Não foi possível carregar a demo interativa. Tente novamente.
-        </div>
-      );
-    }
-    return this.props.children;
-  }
-}
-
-const InlineLoading = () => (
-  <div className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-6 text-sm text-[color:var(--muted)]">
-    Carregando demo interativa…
-  </div>
-);
-
-export default function InlineDemo({ inlineId, onError }: InlineDemoProps) {
-  const demoImport = getDemoImport(inlineId);
-
-  const DemoComponent = useMemo(() => {
-    if (!demoImport) {
-      return null;
-    }
-    return dynamic(demoImport, {
-      ssr: false,
-      loading: InlineLoading,
-    });
-  }, [demoImport]);
-
-  if (!DemoComponent) {
-    onError?.("Demo inline não encontrada.");
+  if (!importer) {
     return (
-      <div className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-6 text-sm text-[color:var(--muted)]">
-        Esta demo interativa não está disponível no momento.
+      <div className="rounded-lg border border-white/10 bg-white/5 p-4">
+        <p className="text-sm opacity-80">Demo inline nao registrada.</p>
       </div>
     );
   }
 
-  return (
-    <DemoErrorBoundary onError={onError}>
-      <DemoComponent />
-    </DemoErrorBoundary>
-  );
+  const Demo = dynamic(importer as any, {
+    ssr: false,
+    loading: () => (
+      <div className="grid h-full w-full place-items-center rounded-lg border border-white/10 bg-white/5">
+        <div className="text-sm opacity-80">Carregando demo...</div>
+      </div>
+    ),
+  });
+
+  return <Demo />;
 }
+
+export default InlineDemo;

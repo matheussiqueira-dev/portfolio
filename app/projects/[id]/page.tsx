@@ -1,160 +1,104 @@
-import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import DemoLauncher from "@/src/components/demo/DemoLauncher";
-import SafeImage from "@/src/components/demo/SafeImage";
-import { getProjectById, projectIds } from "@/src/data/projects";
-import { buildAlternates, siteName } from "@/lib/seo";
+import type { Metadata } from "next";
+import { getProjectById, interactiveProjectIds } from "@/data/projects";
+import { SafeImage } from "@/components/demo/SafeImage";
+import { DemoLauncher } from "@/components/demo/DemoLauncher";
 
-const pageTitle = "Projects";
+type PageProps = { params: Promise<{ id: string }> };
 
-type PageProps = {
-  params: {
-    id: string;
-  };
-};
-
-export function generateStaticParams() {
-  return projectIds.map((id) => ({ id }));
-}
-
-export function generateMetadata({ params }: PageProps): Metadata {
-  const project = getProjectById(params.id);
-
-  if (!project) {
-    return {
-      title: "Project not found",
-      description: "Project not found.",
-    };
-  }
-
-  const description = project.shortDescription;
-  const title = `${project.title} | ${pageTitle}`;
-  const cover = project.coverImage ?? "/og.png";
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { id } = await params;
+  const project = getProjectById(id);
+  if (!project) return { title: "Projeto não encontrado" };
 
   return {
-    title,
-    description,
-    alternates: {
-      ...buildAlternates({
-        pt: `/projetos/${project.id}`,
-        en: `/projects/${project.id}`,
-        canonical: `/projects/${project.id}`,
-      }),
-    },
-    openGraph: {
-      title,
-      description,
-      url: `/projects/${project.id}`,
-      locale: "pt_BR",
-      type: "article",
-      siteName,
-      images: [
-        {
-          url: cover,
-          width: 1200,
-          height: 630,
-          alt: project.title,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [cover],
-    },
+    title: `${project.title} | Portfolio`,
+    description: project.shortDescription,
   };
 }
 
-export default function ProjectDetailPage({ params }: PageProps) {
-  const project = getProjectById(params.id);
+export default async function ProjectPage({ params }: PageProps) {
+  const { id } = await params;
+  const project = getProjectById(id);
+  if (!project) notFound();
 
-  if (!project) {
-    notFound();
-  }
+  const required = interactiveProjectIds.has(project.id);
 
   return (
-    <main className="min-h-screen px-6 pt-28 pb-20">
-      <div className="max-w-5xl mx-auto space-y-10">
-        <header className="space-y-4">
-          <Link
-            href="/projetos"
-            className="inline-flex items-center gap-2 text-sm text-[color:var(--muted)] underline decoration-[color:var(--border)] underline-offset-4 transition hover:text-[color:var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
-          >
-            Voltar para projetos
-          </Link>
-          <h1 className="text-4xl md:text-5xl font-semibold text-[color:var(--foreground)]">
-            {project.title}
-          </h1>
-          <p className="text-base md:text-lg text-[color:var(--muted)]">
-            {project.shortDescription}
+    <main className="mx-auto max-w-5xl px-4 py-10">
+      <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+        <div className="space-y-4">
+          <h1 className="text-2xl font-semibold">{project.title}</h1>
+          <p className="opacity-80">
+            {project.longDescription ?? project.shortDescription}
           </p>
-          <div className="flex flex-wrap gap-2 text-xs text-[color:var(--muted)]">
-            {project.tags.map((tag) => (
-              <span key={tag} className="chip">
-                {tag}
+
+          <div className="flex flex-wrap gap-2">
+            {project.tags.map((t) => (
+              <span
+                key={t}
+                className="rounded-md border border-white/10 px-2 py-0.5 text-[11px] opacity-80"
+              >
+                {t}
               </span>
             ))}
           </div>
-          <div className="flex flex-wrap gap-3 text-sm">
-            <DemoLauncher
-              project={project}
-              label="Executar Demo"
-              className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
-            />
+
+          <div className="flex flex-wrap gap-2 pt-2">
             {project.links?.repo ? (
               <a
+                className="underline"
                 href={project.links.repo}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+                rel="noreferrer"
               >
-                GitHub
+                Código
               </a>
             ) : null}
             {project.links?.live ? (
               <a
+                className="underline"
                 href={project.links.live}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+                rel="noreferrer"
               >
-                Demo online
+                Live
               </a>
             ) : null}
           </div>
 
-          {project.coverImage ? (
-            <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-3 shadow-sm">
-              <SafeImage
-                src={project.coverImage}
-                alt={`Capa do projeto ${project.title}`}
-                width={1200}
-                height={630}
-                sizes="(max-width: 768px) 100vw, 960px"
-                className="w-full rounded-2xl object-cover"
-              />
+          <section className="pt-4">
+            <h2 className="mb-2 text-lg font-semibold">Demo</h2>
+            <div className="flex items-center gap-3">
+              <DemoLauncher project={project} required={required} />
+              {required && project.demo.mode === "none" ? (
+                <span className="text-xs text-red-400">
+                  (Config inválida: projeto obrigatório sem demo. Ajuste o
+                  registry.)
+                </span>
+              ) : null}
             </div>
-          ) : null}
-        </header>
-
-        {project.longDescription ? (
-          <section className="card space-y-4">
-            <h2 className="card-title text-2xl">Visão geral</h2>
-            <p className="text-sm text-[color:var(--muted)] leading-relaxed">
-              {project.longDescription}
-            </p>
           </section>
-        ) : null}
+        </div>
 
-        <section className="card card-lg space-y-4">
-          <h2 className="card-title text-2xl">Modo Demo</h2>
-          <p className="text-sm text-[color:var(--muted)]">
-            Clique em “Executar Demo” para abrir o ambiente interativo dentro do
-            portfólio. A demo é carregada sob demanda para preservar performance.
-          </p>
-        </section>
+        <aside className="space-y-3">
+          <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-white/10 bg-white/5">
+            <SafeImage
+              src={project.coverImage}
+              alt={project.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 40vw"
+            />
+          </div>
+
+          <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+            <div className="text-sm font-medium">Stack</div>
+            <div className="mt-2 text-sm opacity-80">
+              {project.techStack?.length ? project.techStack.join(" • ") : "—"}
+            </div>
+          </div>
+        </aside>
       </div>
     </main>
   );

@@ -219,11 +219,7 @@ export default function ProjectCaseStudyPageEn({ params }: PageProps) {
 
           <div className="flex flex-wrap gap-3 text-sm">
             {demoProject ? (
-              <DemoLauncher
-                project={demoProject}
-                label="Run Demo"
-                className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
-              />
+              <DemoLauncher project={demoProject} required={demoProject.isInteractive} />
             ) : null}
             <a
               href={project.repoUrl}

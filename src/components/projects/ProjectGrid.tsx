@@ -1,16 +1,14 @@
-import type { Project } from "@/src/data/projects";
-import ProjectCard from "@/src/components/projects/ProjectCard";
+import type { Project } from "@/data/projects";
+import { ProjectCard } from "./ProjectCard";
 
-type ProjectGridProps = {
-  projects: Project[];
-};
-
-export default function ProjectGrid({ projects }: ProjectGridProps) {
+export function ProjectGrid({ items }: { items: Project[] }) {
   return (
-    <div className="grid gap-6 md:grid-cols-2">
-      {projects.map((project) => (
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {items.map((project) => (
         <ProjectCard key={project.id} project={project} />
       ))}
     </div>
   );
 }
+
+export default ProjectGrid;

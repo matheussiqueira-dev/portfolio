@@ -1,6 +1,6 @@
-import type { Project } from "./projects.types";
+import type { Project as ProjectCase } from "./projects.types";
 
-const projectList: Project[] = [
+const projectList: ProjectCase[] = [
   {
     slug: "business-decision-simulator",
     title: "Business Decision Simulator",
@@ -1268,3 +1268,7 @@ export const projectSlugs = projects.map((project) => project.slug);
 
 export const getProjectBySlug = (slug: string) =>
   projects.find((project) => project.slug === slug);
+
+export type InlineDemoId = import("../src/data/projects").InlineDemoId;
+export type Project = import("../src/data/projects").Project;
+export { getProjectById, interactiveProjectIds } from "../src/data/projects";

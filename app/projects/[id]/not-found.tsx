@@ -2,21 +2,14 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <main className="min-h-screen px-6 pt-28 pb-20">
-      <div className="max-w-3xl mx-auto space-y-4">
-        <h1 className="text-3xl font-semibold text-[color:var(--foreground)]">
-          Projeto não encontrado
-        </h1>
-        <p className="text-[color:var(--muted)]">
-          Não encontramos este projeto no portfólio. Verifique o link ou volte para a lista.
-        </p>
-        <Link
-          href="/projetos"
-          className="btn-outline w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
-        >
-          Voltar para projetos
-        </Link>
-      </div>
+    <main className="mx-auto max-w-3xl px-4 py-16">
+      <h1 className="text-xl font-semibold">Projeto não encontrado</h1>
+      <p className="mt-2 opacity-80">
+        Verifique o link ou volte para a lista de projetos.
+      </p>
+      <Link className="mt-6 inline-block underline" href="/">
+        Voltar
+      </Link>
     </main>
   );
 }

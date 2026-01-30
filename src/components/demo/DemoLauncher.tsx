@@ -1,55 +1,44 @@
 "use client";
 
-import { useRef, useState } from "react";
-import type { Project } from "@/src/data/projects";
-import DemoShell from "@/src/components/demo/DemoShell";
+import { useEffect, useRef, useState } from "react";
+import type { Project } from "@/data/projects";
+import { DemoShell } from "./DemoShell";
 
-const playIcon = (
-  <svg
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-    className="h-4 w-4"
-    fill="currentColor"
-  >
-    <path d="M8 5l11 7-11 7V5z" />
-  </svg>
-);
-
-type DemoLauncherProps = {
+type Props = {
   project: Project;
-  label?: string;
-  className?: string;
+  required?: boolean;
 };
 
-export default function DemoLauncher({
-  project,
-  label = "Executar Demo",
-  className,
-}: DemoLauncherProps) {
+export function DemoLauncher({ project, required }: Props) {
   const [open, setOpen] = useState(false);
-  const triggerRef = useRef<HTMLButtonElement>(null);
+  const btnRef = useRef<HTMLButtonElement | null>(null);
 
-  if (project.demo.mode === "none") {
-    return null;
+  const canRun =
+    project.demo.mode !== "none" || Boolean(project.links?.live);
+
+  useEffect(() => {
+    if (!open) btnRef.current?.focus();
+  }, [open]);
+
+  if (required && project.demo.mode === "none") {
+    console.warn(`Projeto obrigatorio sem demo configurada: ${project.id}`);
   }
 
   return (
     <>
       <button
-        ref={triggerRef}
-        type="button"
+        ref={btnRef}
+        disabled={!canRun}
         onClick={() => setOpen(true)}
-        className={className ?? "btn-primary"}
+        className="rounded-md border border-white/10 px-3 py-2 text-sm hover:bg-white/5 disabled:cursor-not-allowed disabled:opacity-50"
+        type="button"
       >
-        {playIcon}
-        {label}
+        Executar Demo
       </button>
-      {open ? (
-        <DemoShell
-          project={project}
-          onClose={() => setOpen(false)}
-        />
-      ) : null}
+
+      {open && <DemoShell project={project} onClose={() => setOpen(false)} />}
     </>
   );
 }
+
+export default DemoLauncher;
