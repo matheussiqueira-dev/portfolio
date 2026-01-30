@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "business-decision-simulator",
+    "title": "Business Decision Simulator",
+    "tagline": "Simulador interativo para comparar estratégias e medir impacto financeiro com Monte Carlo e análise de sensibilidade.",
+    "repo": "https://github.com/matheussiqueira-dev/Simulacao-Estrategica-de-Decisao-Empresarial.git",
+    "stack": "Python, Streamlit, Pandas, NumPy, Plotly",
+    "context": null
+  },
+  {
+    "slug": "touchless-web-gesture-interface",
+    "title": "Touchless Web Gesture Interface",
+    "tagline": "Interface web touchless com visão computacional para navegar dashboards e data apps.",
+    "repo": "https://github.com/matheussiqueira-dev/touchless-web-gesture-interface",
+    "stack": "Python, FastAPI, OpenCV, MediaPipe, React",
+    "context": null
+  },
+  {
+    "slug": "chatbot-ia-api",
+    "title": "Chatbot IA API",
+    "tagline": "API de chatbot com contexto, logs e dados para automação de suporte.",
+    "repo": "https://github.com/matheussiqueira-dev/chatbot-ia-api",
+    "stack": "Python, FastAPI, PostgreSQL, Redis",
+    "context": null
+  },
+  {
+    "slug": "self-drive-car",
+    "title": "Self-Drive Car",
+    "tagline": "Simulador de direção autônoma com visão computacional e ML.",
+    "repo": "https://github.com/matheussiqueira-dev/self-drive-car",
+    "stack": "Python, OpenCV, TensorFlow, NumPy",
+    "context": null
+  },
+  {
+    "slug": "library-api-advanced",
+    "title": "Library API Advanced",
+    "tagline": "API de biblioteca com autenticação, regras de empréstimo e auditoria.",
+    "repo": "https://github.com/matheussiqueira-dev/library-api-advanced",
+    "stack": "Node.js, TypeScript, PostgreSQL, Fastify",
+    "context": null
+  },
+  {
+    "slug": "driver-monitoring-system",
+    "title": "Driver Monitoring System",
+    "tagline": "Sistema de monitoramento do motorista utilizando visão computacional para atenção e fadiga.",
+    "repo": "https://github.com/matheussiqueira-dev/Driver-Monitoring-System",
+    "stack": "Python, OpenCV, MediaPipe, TensorFlow",
+    "context": null
+  },
+  {
+    "slug": "flappy-bird-gesture-control",
+    "title": "Flappy Bird com Gestos",
+    "tagline": "Versão do Flappy Bird controlada pela webcam, combinando MediaPipe Hands, OpenCV e Pygame.",
+    "repo": "https://github.com/matheussiqueira-dev/Flappy-Bird",
+    "stack": "Python, Pygame, OpenCV, MediaPipe, NumPy",
+    "context": null
+  },
+  {
+    "slug": "subway-surf",
+    "title": "Subway Surf",
+    "tagline": "Jogo inspirado no Subway Surfers para estudo de lógica e desenvolvimento de games.",
+    "repo": "https://github.com/matheussiqueira-dev/Subway-Surf",
+    "stack": "JavaScript, HTML5, Canvas, CSS",
+    "context": null
+  },
+  {
+    "slug": "gestor-de-notas",
+    "title": "Gestor de Notas",
+    "tagline": "Aplicação para gerenciamento de notas, com criação, edição e organização simples.",
+    "repo": "https://github.com/matheussiqueira-dev/Gestor_de_Notas",
+    "stack": "JavaScript, HTML5, CSS, LocalStorage",
+    "context": null
+  },
+  {
+    "slug": "hand-gesture-recognition-realtime",
+    "title": "Reconhecimento de Gestos de Mão em Tempo Real",
+    "tagline": "Sistema de visão computacional em tempo real para detectar mãos e contar dedos usando webcam.",
+    "repo": "https://github.com/matheussiqueira-dev/hand-gesture-recognition-realtime",
+    "stack": "Python, OpenCV, MediaPipe",
+    "context": null
+  },
+  {
+    "slug": "detector-de-stress",
+    "title": "Detector de Stress",
+    "tagline": "Pipeline modular que estima o nível de stress apenas com webcam, HUD, REST/WS e dashboard.",
+    "repo": "https://github.com/matheussiqueira-dev/Detector-de-Stress",
+    "stack": "Python, OpenCV, MediaPipe, Streamlit, WebSockets, Machine Learning",
+    "context": null
+  }
+]

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useSyncExternalStore } from "react";
 
 /**
  * Common breakpoints used in the application
@@ -39,43 +39,39 @@ export const BREAKPOINTS = {
  * ```
  */
 export function useMediaQuery(query: string): boolean {
-  const [matches, setMatches] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const subscribe = useCallback(
+    (callback: () => void) => {
+      if (typeof window === "undefined") {
+        return () => {};
+      }
 
-  useEffect(() => {
-    setMounted(true);
-    
+      const mediaQuery = window.matchMedia(query);
+      const listener = () => callback();
+
+      // Modern browsers
+      if (mediaQuery.addEventListener) {
+        mediaQuery.addEventListener("change", listener);
+        return () => mediaQuery.removeEventListener("change", listener);
+      }
+
+      // Legacy browsers
+      mediaQuery.addListener(listener);
+      return () => mediaQuery.removeListener(listener);
+    },
+    [query]
+  );
+
+  const getSnapshot = useCallback(() => {
     if (typeof window === "undefined") {
-      return;
+      return false;
     }
 
-    const mediaQuery = window.matchMedia(query);
-    
-    // Set initial value
-    setMatches(mediaQuery.matches);
-
-    // Define listener
-    const listener = (event: MediaQueryListEvent) => {
-      setMatches(event.matches);
-    };
-
-    // Modern browsers
-    if (mediaQuery.addEventListener) {
-      mediaQuery.addEventListener("change", listener);
-      return () => mediaQuery.removeEventListener("change", listener);
-    }
-    
-    // Legacy browsers - addListener/removeListener are deprecated but needed for older browsers
-    mediaQuery.addListener(listener);
-    return () => mediaQuery.removeListener(listener);
+    return window.matchMedia(query).matches;
   }, [query]);
 
-  // Return false during SSR to avoid hydration mismatch
-  if (!mounted) {
-    return false;
-  }
+  const getServerSnapshot = useCallback(() => false, []);
 
-  return matches;
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 }
 
 /**
