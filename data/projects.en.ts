@@ -1,6 +1,6 @@
 import type { Project } from "./projects.types";
 
-export const projectsEn: Project[] = [
+const projectListEn: Project[] = [
   {
     slug: "touchless-web-gesture-interface",
     title: "Touchless Web Gesture Interface",
@@ -599,6 +599,90 @@ export const projectsEn: Project[] = [
     },
   },
   {
+    slug: "flappy-bird-gesture-control",
+    title: "Flappy Bird with Gestures",
+    headline: "Flappy Bird | Gesture control with MediaPipe and Pygame",
+    tagline:
+      "Flappy Bird variant controlled by webcam, combining MediaPipe Hands, OpenCV, and Pygame.",
+    role: "Developer",
+    stack: ["Python", "Pygame", "OpenCV", "MediaPipe", "NumPy"],
+    repoUrl: "https://github.com/matheussiqueira-dev/Flappy-Bird",
+    demo: {
+      kind: "video",
+      src: "/Flappy-Bird.mp4",
+      poster: "/projects/flappy-bird/cover.svg",
+      caption: "Gameplay of Flappy Bird using webcam-based gestures.",
+    },
+    context:
+      "Project built to explore hands-free gameplay by mapping hand gestures to the classic Flappy Bird controls.",
+    problem: [
+      "Enable playing without keyboard or mouse, only with gestures.",
+      "Detect the hand reliably in real time with a regular webcam.",
+      "Keep the physics and flow of the original Flappy Bird intact.",
+      "Expose tuning for sensitivity and debug to use in demos.",
+    ],
+    dataUsed: [
+      "Webcam frames captured with OpenCV.",
+      "21 hand landmarks detected by MediaPipe.",
+      "Hand state (open/closed) and height in the frame.",
+      "Score, speed, and pipe spacing values.",
+    ],
+    solution: [
+      "OpenCV + MediaPipe pipeline to track the hand and smooth landmarks with a temporal filter.",
+      "Gesture mapping in discrete (open/close) and continuous (hand height) modes to control the bird.",
+      "Pygame game loop with simple physics, collision checks, and HUD for FPS/confidence.",
+      "Centralized config.py to tweak gravity, jump force, and sensitivity.",
+    ],
+    features: [
+      "Two gesture control modes (discrete and continuous).",
+      "Score and high score with fast restart.",
+      "Live mode switching plus shortcuts for debug, pause, and reset.",
+      "Optional camera preview with landmarks for calibration.",
+    ],
+    highlights: [
+      "Hands-free experience using only the webcam.",
+      "Smooth movement thanks to temporal smoothing on landmarks.",
+      "Modular architecture separating tracking, mapping, and game logic.",
+      "Didactic code ready for demos, workshops, and experiments.",
+    ],
+    demonstrates: [
+      "Applied computer vision for gameplay.",
+      "Real-time OpenCV + MediaPipe + Pygame integration.",
+      "Gesture mapping into discrete and continuous commands.",
+      "Organizing a 2D Python game with clarity.",
+    ],
+    techSummary:
+      "Python pipeline using OpenCV for capture, MediaPipe Hands for detection, and Pygame to render Flappy Bird controlled by gestures.",
+    conclusion: [
+      "Validated gesture control without dedicated hardware.",
+      "Kept classic Flappy Bird mechanics with responsive feel.",
+      "Left the project configurable for new gestures, themes, and physics tuning.",
+    ],
+    howToRun: [
+      "Prerequisites: Python 3.8+ and a functional webcam.",
+      "Clone the repository and create a virtual environment.",
+      "Install dependencies: pip install -r requirements.txt",
+      "Run: python main.py",
+      "Use M to switch control mode and D to enable debug.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/flappy-bird/cover.svg",
+        alt: "Cover of the gesture-controlled Flappy Bird",
+      },
+      {
+        src: "/Flappy-Bird.mp4",
+        alt: "Demo of Flappy Bird controlled by gestures",
+        type: "video",
+      },
+    ],
+    seo: {
+      title: "Flappy Bird with Gesture Control | MediaPipe, OpenCV, and Pygame",
+      description:
+        "Webcam-controlled Flappy Bird using MediaPipe Hands, OpenCV, and Pygame, with discrete and continuous gesture modes.",
+    },
+  },
+  {
     slug: "subway-surf",
     title: "Subway Surf",
     headline: "Subway Surf | 2D game in HTML5 Canvas",
@@ -919,7 +1003,146 @@ export const projectsEn: Project[] = [
         "Real-time computer vision system to detect hands and count fingers using Python, OpenCV, and MediaPipe. Educational project with high accuracy.",
     },
   },
+  {
+    slug: "detector-de-stress",
+    title: "Stress Detector",
+    headline: "Stress Detector | Real-time physiological score via webcam",
+    tagline:
+      "Modular pipeline that estimates stress level from a webcam with HUD, REST/WS broadcasting and dashboard.",
+    role: "Developer/Architect",
+    stack: ["Python", "OpenCV", "MediaPipe", "Streamlit", "WebSockets", "Machine Learning"],
+    repoUrl: "https://github.com/matheussiqueira-dev/Detector-de-Stress",
+    demo: {
+      kind: "video",
+      src: "/Detector de Stress.mp4",
+      poster: "/projects/detector-de-stress/cover.svg",
+      caption: "HUD, baseline and broadcasting in real time.",
+    },
+    intro: {
+      title: "StressCam: continuous stress estimation with computer vision",
+      paragraphs: [
+        "Continuous loop pipeline to estimate physiological stress without dedicated sensors, using only a webcam and light normalization.",
+        "Delivers smoothed score, trend and interpretable messages via OpenCV HUD, REST /score and a 5 Hz WebSocket feed.",
+      ],
+      sections: [
+        {
+          title: "How it works",
+          items: [
+            "Optional light equalization and mirroring before processing.",
+            "Face detection with MediaPipe plus EAR, facial tension and pupil area extraction.",
+            "Temporal buffers + EMA to smooth noise and build a person-specific baseline.",
+          ],
+        },
+        {
+          title: "Data delivery",
+          items: [
+            "HUD with 30s rolling history, alerts and Portuguese guidance.",
+            "Optional REST/WS server to plug into external dashboards.",
+            "Streamlit dashboard for quick score visualization and tuning.",
+          ],
+        },
+      ],
+      video: {
+        src: "/Detector de Stress.mp4",
+        poster: "/projects/detector-de-stress/cover.svg",
+        caption: "Watch the video demo: score, trend and alerts in real time.",
+      },
+    },
+    context:
+      "Monitor stress signals without biometric sensors, keeping cost low and enabling easy dashboard integration or product proofs of concept.",
+    problem: [
+      "Provide a continuous stress score using only a webcam, no wearables.",
+      "Reduce lighting noise and head movement in real time.",
+      "Calibrate a personal baseline without manual intervention.",
+      "Expose the score through APIs for dashboards and integrations.",
+    ],
+    dataUsed: [
+      "Normalized webcam frames (optional mirroring and light equalization).",
+      "Facial landmarks (MediaPipe) for EAR, geometric tension and pupil area.",
+      "Temporal buffers with EMA to smooth score and trend.",
+      "HUD events (messages, low-light/centering warnings).",
+    ],
+    solution: [
+      "Video capture with OpenCV and CLAHE light equalization.",
+      "EAR, facial tension and pupil extraction; vectorization via pack_features.",
+      "Person-level baseline plus light regression (SGD/RandomForest) with 0-1 clipping.",
+      "Score streaming: OpenCV HUD + REST (/score) + 5 Hz WebSocket + Streamlit dashboard.",
+    ],
+    features: [
+      "Demo mode with high sensitivity and auto-tuned graphs.",
+      "Guided baseline with HUD prompts during the first seconds.",
+      "Quick shortcuts: save frames, toggle demo mode, quit with 'q'.",
+      "Optional REST/WS server to expose score and trend in real time.",
+    ],
+    highlights: [
+      "Calibratable, low-latency computer-vision pipeline.",
+      "Multi-channel delivery (HUD, REST, WebSocket, dashboard).",
+      "Temporal feature engineering to reduce noise and false positives.",
+      "Ready to connect to dashboards or wellness analytics.",
+    ],
+    demonstrates: [
+      "Streaming computer vision with MediaPipe + OpenCV.",
+      "Feature engineering and temporal smoothing with EMA and sliding buffers.",
+      "Real-time APIs via http.server and websockets for data products.",
+      "Continuous monitoring UX with interpretable HUD and demo mode.",
+    ],
+    techSummary:
+      "Python with OpenCV and MediaPipe for facial tracking, light regression (SGD/RandomForest) with personalized baseline, streaming via http.server + websockets and a Streamlit dashboard.",
+    conclusion: [
+      "Built a full, calibratable and observable pipeline for real-time stress scoring.",
+      "Added multi-channel delivery (HUD, REST, WS) to simplify dashboards and POCs.",
+      "Left clear hooks for model evolution, new features and metrics.",
+    ],
+    howToRun: [
+      "Use Python 3.10 when possible.",
+      "Setup: py -3.10 -m venv .venv && .venv\\Scripts\\activate.",
+      "Install deps: pip install -r requirements.txt.",
+      "Run: python -m stresscam.app (q to quit, d for demo mode).",
+      "Optional dashboard: streamlit run stresscam/streamlit_app.py.",
+      "For external API: enable the server and call GET /score or ws://localhost:8765/.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/detector-de-stress/cover.svg",
+        alt: "Stress Detector cover",
+      },
+      {
+        src: "/Detector de Stress.mp4",
+        alt: "Stress Detector video demo",
+        type: "video",
+      },
+    ],
+    seo: {
+      title: "Stress Detector | Real-time score via webcam",
+      description:
+        "MediaPipe + OpenCV pipeline estimating physiological stress with personalized baseline, HUD, REST/WS and a Streamlit dashboard.",
+    },
+  },
 ];
+
+export const projectOrderEn = [
+  "detector-de-stress",
+  "touchless-web-gesture-interface",
+  "driver-monitoring-system",
+  "chatbot-ia-api",
+  "self-drive-car",
+  "library-api-advanced",
+  "flappy-bird-gesture-control",
+  "hand-gesture-recognition-realtime",
+  "subway-surf",
+  "gestor-de-notas",
+];
+
+const sortByPriority = <T extends { slug: string }>(items: T[]) => {
+  const order = new Map(projectOrderEn.map((slug, index) => [slug, index]));
+  return [...items].sort((a, b) => {
+    const aIndex = order.get(a.slug) ?? order.size;
+    const bIndex = order.get(b.slug) ?? order.size;
+    return aIndex - bIndex;
+  });
+};
+
+export const projectsEn = sortByPriority(projectListEn);
 
 export const projectSlugsEn = projectsEn.map((project) => project.slug);
 

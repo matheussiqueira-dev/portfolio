@@ -56,6 +56,7 @@ export default function ProjectModal({ project, onClose }: Props) {
       roleLabel: isEn ? "Role" : "Papel",
       galleryTitle: isEn ? "Media" : "Mídia",
       demoSoon: isEn ? "Demo: coming soon" : "Demo: em breve",
+      videoLabel: isEn ? "Watch the video demo" : "Veja a demonstração em vídeo",
     };
   }, [isEn]);
   const sections = useMemo(
@@ -253,15 +254,22 @@ export default function ProjectModal({ project, onClose }: Props) {
                   return (
                     <div
                       key={media.src}
-                      className="aspect-video w-full overflow-hidden rounded-xl border border-[color:var(--border)] bg-black/5"
+                      className="w-full overflow-hidden rounded-xl border border-[color:var(--border)] bg-black/5 p-3"
                     >
-                      <video
-                        controls
-                        preload="metadata"
-                        className="h-full w-full object-cover"
-                      >
-                        <source src={media.src} />
-                      </video>
+                      <div className="space-y-2">
+                        <p className="text-[10px] uppercase tracking-[0.24em] text-[color:var(--accent-strong)]">
+                          {labels.videoLabel}
+                        </p>
+                        <div className="aspect-video w-full overflow-hidden rounded-lg">
+                          <video
+                            controls
+                            preload="metadata"
+                            className="h-full w-full object-cover"
+                          >
+                            <source src={media.src} />
+                          </video>
+                        </div>
+                      </div>
                     </div>
                   );
                 }

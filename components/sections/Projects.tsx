@@ -6,8 +6,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useMemo, useState } from "react";
 import { trackEvent } from "@/lib/analytics";
-import { projects } from "@/data/projects";
-import { projectsEn } from "@/data/projects.en";
+import { projects, projectOrder } from "@/data/projects";
+import { projectsEn, projectOrderEn } from "@/data/projects.en";
 import { sitePt } from "@/data/site.pt";
 import { siteEn } from "@/data/site.en";
 import type { Project } from "@/data/projects.types";
@@ -45,6 +45,10 @@ export default function Projects() {
   const isEn = pathname.startsWith("/en");
   const content = isEn ? siteEn.projects : sitePt.projects;
   const data = useMemo(() => (isEn ? projectsEn : projects), [isEn]);
+  const featured = useMemo(
+    () => new Set((isEn ? projectOrderEn : projectOrder).slice(0, 3)),
+    [isEn]
+  );
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const handleClose = useCallback(() => setSelectedProject(null), []);
   const projectsHref = isEn ? "/en/projects" : "/projetos";
@@ -69,12 +73,18 @@ export default function Projects() {
             const caseHref = isEn
               ? `/en/projects/${project.slug}`
               : `/projetos/${project.slug}`;
+            const isFeatured = featured.has(project.slug);
 
             return (
               <article
                 key={project.slug}
-                className="card p-6 flex h-full flex-col gap-4 transition hover:-translate-y-1 hover:shadow-xl"
+                className="card relative p-6 flex h-full flex-col gap-4 transition hover:-translate-y-1 hover:shadow-xl"
               >
+                {isFeatured ? (
+                  <span className="absolute right-4 top-4 rounded-full bg-[color:var(--accent)]/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-[color:var(--accent-strong)]">
+                    {content.featuredLabel}
+                  </span>
+                ) : null}
                 {cover ? (
                   <div className="relative aspect-[1200/630] w-full overflow-hidden rounded-xl border border-[color:var(--border)]">
                     <ImageWithFallback
@@ -132,7 +142,7 @@ export default function Projects() {
                     onClick={() =>
                       trackEvent("view_case", "engagement", project.slug)
                     }
-                    className="text-xs text-[color:var(--muted)] underline decoration-[color:var(--border)] underline-offset-4 transition hover:text-[color:var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40 rounded"
+                    className="btn-ghost focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                   >
                     {content.caseLabel}
                   </Link>
@@ -144,7 +154,7 @@ export default function Projects() {
                     onClick={() =>
                       trackEvent("click_github", "outbound", project.slug)
                     }
-                    className="text-xs text-[color:var(--muted)] underline decoration-[color:var(--border)] underline-offset-4 transition hover:text-[color:var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40 rounded"
+                    className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                   >
                     {content.modal.githubLabel}
                   </a>

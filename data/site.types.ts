@@ -64,6 +64,7 @@ export type SiteContent = {
     detailsLabel: string;
     caseLabel: string;
     viewAllLabel: string;
+    featuredLabel: string;
     modal: {
       title: string;
       closeLabel: string;
@@ -145,5 +146,6 @@ export type SiteContent = {
   };
   media: {
     videoFallback: string;
+    videoDemoLabel: string;
   };
 };

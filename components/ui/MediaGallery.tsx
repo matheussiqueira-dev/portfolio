@@ -14,6 +14,7 @@ type Props = {
   fallbackSrc?: string;
   fallbackAlt?: string;
   videoFallbackText?: string;
+  videoLabel?: string;
 };
 
 const inferType = (src: string): MediaItem["type"] => {
@@ -32,6 +33,7 @@ export default function MediaGallery({
   fallbackSrc,
   fallbackAlt,
   videoFallbackText,
+  videoLabel,
 }: Props) {
   const fallbackText =
     videoFallbackText ?? "Seu navegador não suporta vídeo HTML5.";
@@ -63,16 +65,23 @@ export default function MediaGallery({
             className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-3 shadow-sm"
           >
             {type === "video" ? (
-              <video
-                controls
-                playsInline
-                preload="metadata"
-                poster={fallbackSrc}
-                className="w-full rounded-xl object-cover"
-              >
-                <source src={item.src} type="video/mp4" />
-                {fallbackText}
-              </video>
+              <div className="space-y-2">
+                {videoLabel ? (
+                  <p className="text-xs uppercase tracking-[0.24em] text-[color:var(--accent-strong)]">
+                    {videoLabel}
+                  </p>
+                ) : null}
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster={fallbackSrc}
+                  className="w-full rounded-xl object-cover"
+                >
+                  <source src={item.src} type="video/mp4" />
+                  {fallbackText}
+                </video>
+              </div>
             ) : type === "gif" ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img

@@ -141,6 +141,7 @@ export const siteEn: SiteContent = {
     detailsLabel: "View details",
     caseLabel: "Full case",
     viewAllLabel: "View all cases",
+    featuredLabel: "Featured",
     modal: {
       title: "Project details",
       closeLabel: "Close",
@@ -231,5 +232,6 @@ export const siteEn: SiteContent = {
   },
   media: {
     videoFallback: "Your browser does not support HTML5 video.",
+    videoDemoLabel: "Watch the video demo",
   },
 };

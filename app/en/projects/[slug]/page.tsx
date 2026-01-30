@@ -339,6 +339,9 @@ export default function ProjectCaseStudyPageEn({ params }: PageProps) {
             <div className="order-1 lg:order-2 space-y-6">
               {intro.video ? (
                 <div className="rounded-3xl border border-[color:var(--border)] bg-[color:var(--surface)] p-3 shadow-sm">
+                  <p className="mb-3 text-xs uppercase tracking-[0.24em] text-[color:var(--accent-strong)]">
+                    {siteEn.media.videoDemoLabel}
+                  </p>
                   <video
                     controls
                     playsInline
@@ -579,6 +582,7 @@ export default function ProjectCaseStudyPageEn({ params }: PageProps) {
               fallbackSrc={cover?.src}
               fallbackAlt={cover?.alt ?? `Screenshot of ${project.title}`}
               videoFallbackText={siteEn.media.videoFallback}
+              videoLabel={siteEn.media.videoDemoLabel}
             />
           </section>
         </div>

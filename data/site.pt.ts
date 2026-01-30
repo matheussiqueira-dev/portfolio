@@ -141,6 +141,7 @@ export const sitePt: SiteContent = {
     detailsLabel: "Ver detalhes",
     caseLabel: "Case completo",
     viewAllLabel: "Ver todos os cases",
+    featuredLabel: "Destaque",
     modal: {
       title: "Detalhes do projeto",
       closeLabel: "Fechar",
@@ -231,5 +232,6 @@ export const sitePt: SiteContent = {
   },
   media: {
     videoFallback: "Seu navegador não suporta vídeo HTML5.",
+    videoDemoLabel: "Veja a demonstração em vídeo",
   },
 };

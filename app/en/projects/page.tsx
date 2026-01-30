@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { TrackedAnchor, TrackedLink } from "@/components/analytics/TrackedLink";
 import JsonLd from "@/components/seo/JsonLd";
-import { projectsEn } from "@/data/projects.en";
+import { projectsEn, projectOrderEn } from "@/data/projects.en";
 import { siteEn } from "@/data/site.en";
 import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 
@@ -101,6 +101,7 @@ export default function ProjectsPageEn({ searchParams }: PageProps) {
     activeFilter && activeFilter !== "all"
       ? projectsEn.filter((project) => project.stack.includes(activeFilter))
       : projectsEn;
+  const featured = new Set(projectOrderEn.slice(0, 3));
 
   return (
     <main className="min-h-screen px-6 pt-28 pb-20">
@@ -152,90 +153,98 @@ export default function ProjectsPageEn({ searchParams }: PageProps) {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {filteredProjects.map((project) => (
-            <article
-              key={project.slug}
-              className="card p-6 flex flex-col gap-5"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h2 className="text-xl font-semibold text-[color:var(--foreground)]">
-                    {project.title}
-                  </h2>
-                  <p className="text-sm text-[color:var(--muted)] mt-2">
-                    {project.tagline}
+          {filteredProjects.map((project) => {
+            const isFeatured = featured.has(project.slug);
+            return (
+              <article
+                key={project.slug}
+                className="card relative p-6 flex flex-col gap-5"
+              >
+                {isFeatured ? (
+                  <span className="absolute right-4 top-4 rounded-full bg-[color:var(--accent)]/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-[color:var(--accent-strong)]">
+                    {siteEn.projects.featuredLabel}
+                  </span>
+                ) : null}
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h2 className="text-xl font-semibold text-[color:var(--foreground)]">
+                      {project.title}
+                    </h2>
+                    <p className="text-sm text-[color:var(--muted)] mt-2">
+                      {project.tagline}
+                    </p>
+                  </div>
+                  <span className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
+                    {project.role}
+                  </span>
+                </div>
+
+                <p className="text-sm text-[color:var(--muted)] leading-relaxed">
+                  {project.highlights[0] ??
+                    project.features[0] ??
+                    project.problem[0]}
+                </p>
+
+                <div className="text-xs text-[color:var(--muted)]">
+                  <span className="uppercase tracking-[0.2em] text-[color:var(--muted)]">
+                    {siteEn.projectsPage.demonstratesLabel}
+                  </span>
+                  <p className="mt-2 text-[color:var(--muted)]">
+                    {project.demonstrates[0]}
                   </p>
                 </div>
-                <span className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
-                  {project.role}
-                </span>
-              </div>
 
-              <p className="text-sm text-[color:var(--muted)] leading-relaxed">
-                {project.highlights[0] ??
-                  project.features[0] ??
-                  project.problem[0]}
-              </p>
+                <ul className="flex flex-wrap gap-2 text-xs text-[color:var(--muted)]">
+                  {project.stack.map((tech) => (
+                    <li key={tech} className="chip">
+                      {tech}
+                    </li>
+                  ))}
+                </ul>
 
-              <div className="text-xs text-[color:var(--muted)]">
-                <span className="uppercase tracking-[0.2em] text-[color:var(--muted)]">
-                  {siteEn.projectsPage.demonstratesLabel}
-                </span>
-                <p className="mt-2 text-[color:var(--muted)]">
-                  {project.demonstrates[0]}
-                </p>
-              </div>
-
-              <ul className="flex flex-wrap gap-2 text-xs text-[color:var(--muted)]">
-                {project.stack.map((tech) => (
-                  <li key={tech} className="chip">
-                    {tech}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="flex flex-wrap gap-3 pt-2 text-xs text-[color:var(--muted)]">
-                <TrackedLink
-                  href={`/en/projects/${project.slug}`}
-                  tracking={{
-                    action: "view_case",
-                    category: "engagement",
-                    label: project.slug,
-                  }}
-                  className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
-                >
-                  {siteEn.projectsPage.caseLabel}
-                </TrackedLink>
-                <TrackedAnchor
-                  href={project.repoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  tracking={{
-                    action: "click_github",
-                    category: "outbound",
-                    label: project.slug,
-                  }}
-                  className="rounded-full border border-[color:var(--border)] px-4 py-2 transition hover:border-[color:var(--accent)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
-                >
-                  {siteEn.projects.modal.githubLabel}
-                </TrackedAnchor>
-                {project.demoUrl ? (
+                <div className="flex flex-wrap gap-3 pt-2 text-xs text-[color:var(--muted)]">
+                  <TrackedLink
+                    href={`/en/projects/${project.slug}`}
+                    tracking={{
+                      action: "view_case",
+                      category: "engagement",
+                      label: project.slug,
+                    }}
+                    className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+                  >
+                    {siteEn.projectsPage.caseLabel}
+                  </TrackedLink>
                   <TrackedAnchor
-                    href={project.demoUrl}
+                    href={project.repoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full border border-[color:var(--accent)]/40 px-4 py-2 text-[color:var(--accent)] transition hover:border-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+                    tracking={{
+                      action: "click_github",
+                      category: "outbound",
+                      label: project.slug,
+                    }}
+                    className="rounded-full border border-[color:var(--border)] px-4 py-2 transition hover:border-[color:var(--accent)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                   >
-                    {siteEn.projects.modal.demoLabel}
+                    {siteEn.projects.modal.githubLabel}
                   </TrackedAnchor>
-                ) : (
-                  <span className="rounded-full border border-[color:var(--border)] px-4 py-2 text-[color:var(--muted)]">
-                    {siteEn.demos.demoSoonLabel}
-                  </span>
-                )}
-              </div>
-            </article>
-          ))}
+                  {project.demoUrl ? (
+                    <TrackedAnchor
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-full border border-[color:var(--accent)]/40 px-4 py-2 text-[color:var(--accent)] transition hover:border-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+                    >
+                      {siteEn.projects.modal.demoLabel}
+                    </TrackedAnchor>
+                  ) : (
+                    <span className="rounded-full border border-[color:var(--border)] px-4 py-2 text-[color:var(--muted)]">
+                      {siteEn.demos.demoSoonLabel}
+                    </span>
+                  )}
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </main>
