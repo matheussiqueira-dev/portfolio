@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { DemoAspectRatio } from "@/src/data/projects";
 
 type Props = {
@@ -31,11 +31,6 @@ export function IframeDemo({
   const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
   const ratio = ratioMap[aspectRatio];
-
-  useEffect(() => {
-    setLoaded(false);
-    setFailed(false);
-  }, [url]);
 
   return (
     <div

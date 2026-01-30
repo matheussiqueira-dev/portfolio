@@ -3,7 +3,7 @@ import type { InlineDemoId } from "@/data/projects";
 
 export const demoImports: Record<
   InlineDemoId,
-  () => Promise<{ default: React.ComponentType<any> }>
+  () => Promise<{ default: React.ComponentType<Record<string, never>> }>
 > = {
   "detector-de-stress": () => import("./detector-de-stress"),
   "chatbot-ia-api": () => import("./chatbot-ia-api"),

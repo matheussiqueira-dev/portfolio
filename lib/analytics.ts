@@ -43,7 +43,7 @@ export type AnalyticsCategory =
  * Check if analytics is available and properly configured
  * @returns True if gtag is available, false otherwise
  */
-const isAnalyticsAvailable = (): boolean => {
+const _isAnalyticsAvailable = (): boolean => {
   if (typeof window === "undefined") {
     return false;
   }

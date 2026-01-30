@@ -8,7 +8,6 @@ import {
   getLocaleFromPath,
   stripLocalePrefix,
   localizeHref,
-  type Locale,
 } from "@/lib/i18n";
 
 describe("i18n Utils", () => {

@@ -146,7 +146,8 @@ export function DemoShell({ project, onClose }: Props) {
             </div>
 
             <p className="mt-3 text-xs opacity-70">
-              Se algo nao carregar, tente "Reiniciar" ou "Abrir em nova aba".
+              Se algo nao carregar, tente &quot;Reiniciar&quot; ou &quot;Abrir em nova
+              aba&quot;.
             </p>
           </div>
         </div>
