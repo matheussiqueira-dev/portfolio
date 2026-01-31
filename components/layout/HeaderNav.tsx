@@ -35,34 +35,38 @@ export default function HeaderNav() {
 
   return (
     <>
-      <nav
-        className="hidden md:flex items-center gap-6 text-sm text-[color:var(--muted)]"
-        aria-label={navLabel}
-      >
-        {navItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            aria-current={
-              activeId === item.id ? (item.type === "page" ? "page" : "location") : undefined
-            }
-            className={`relative rounded transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40 ${
-              activeId === item.id
-                ? "text-[color:var(--foreground)]"
-                : "text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
-            }`}
-          >
-            {item.label}
-            {activeId === item.id ? (
-              <span className="pointer-events-none absolute -bottom-2 left-0 h-0.5 w-full rounded-full bg-[color:var(--accent)]" />
-            ) : null}
-          </Link>
-        ))}
-      </nav>
+      <div className="hidden md:flex items-center gap-6">
+        <nav
+          className="flex items-center gap-8 text-sm text-[color:var(--muted)]"
+          aria-label={navLabel}
+        >
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              aria-current={
+                activeId === item.id ? (item.type === "page" ? "page" : "location") : undefined
+              }
+              className={`relative rounded transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40 ${
+                activeId === item.id
+                  ? "text-[color:var(--foreground)]"
+                  : "text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
+              }`}
+            >
+              {item.label}
+              {activeId === item.id ? (
+                <span className="pointer-events-none absolute -bottom-2 left-0 h-0.5 w-full rounded-full bg-[color:var(--accent)]" />
+              ) : null}
+            </Link>
+          ))}
+        </nav>
 
-      <div className="hidden md:flex items-center gap-4 text-sm text-[color:var(--muted)]">
-        <LanguageSwitch />
-        <ThemeToggle />
+        <span className="h-6 w-px bg-[color:var(--border)]/70" aria-hidden="true" />
+
+        <div className="flex items-center gap-4 text-sm text-[color:var(--muted)]">
+          <LanguageSwitch />
+          <ThemeToggle />
+        </div>
       </div>
 
       <MobileMenu

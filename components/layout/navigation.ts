@@ -25,7 +25,6 @@ const NAV_CONFIG: NavConfigItem[] = [
     ptHref: "/#projects",
     enHref: "/en#projects",
   },
-  { id: "demos", labelKey: "demos", type: "page", ptHref: "/demos", enHref: "/en/demos" },
   {
     id: "resume",
     labelKey: "resume",
