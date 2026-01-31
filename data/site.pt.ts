@@ -13,16 +13,16 @@ export const sitePt: SiteContent = {
     resume: "Currículo",
   },
   hero: {
-    eyebrow: "Portfólio profissional",
+    eyebrow: "Analista de Dados • Business Intelligence • Power BI",
     title: "Matheus Siqueira",
-    subtitle: "Desenvolvedor Full Stack | Soluções Web, Dados e Cloud",
+    subtitle: "Analista de Dados | BI | Power BI, SQL e Python",
     description:
-      "Combino backend, frontend e analytics para entregar aplicações escaláveis. Atuação prática com automação, ETL e dashboards usando React/Next.js, Node.js, Python, SQL e cloud.",
+      "Analista de Dados focado em Business Intelligence, Data Analytics e visualização de dados. Transformo dados fiscais, públicos e organizacionais em decisões claras com Power BI, SQL, DAX, Power Query e automações em Python.",
     stackHighlights: [
-      { label: "Full Stack", icon: "stack" },
-      { label: "Dados", icon: "data" },
-      { label: "IA", icon: "ai" },
-      { label: "Software", icon: "software" },
+      { label: "Data Analytics", icon: "stack" },
+      { label: "Business Intelligence", icon: "data" },
+      { label: "Power BI & KPIs", icon: "ai" },
+      { label: "SQL & Python", icon: "software" },
     ],
     ctas: {
       primary: "Ver projetos",
@@ -32,56 +32,67 @@ export const sitePt: SiteContent = {
   },
   about: {
     eyebrow: "Sobre",
-    title: "Soluções full stack orientadas a dados e produto",
-    who: {
-      title: "Perfil",
+    title: "Dados, BI e tecnologia aplicados à tomada de decisão",
+    summary: {
+      title: "Sobre",
       body:
-        "Atuo na interseção entre dados e desenvolvimento web, conectando modelagem, automação e visualização para entregar produtos claros e confiáveis. Base sólida em Ciência da Computação e experiência prática com BI, SQL e Python.",
+        "Atuo em análise de dados e Business Intelligence, com experiência no setor público e privado. Trabalhei como Assistente Comercial no Grupo Moura, Analista de Cargos e Salários na Prefeitura de Jaboatão dos Guararapes e, atualmente, Estagiário em Análise de Dados na Secretaria da Fazenda de Jaboatão dos Guararapes. Minha atuação é orientada a KPIs, eficiência operacional e decisão baseada em dados.",
+    },
+    who: {
+      title: "Quem sou",
+      body:
+        "Sou Analista de Dados com perfil híbrido (dados + desenvolvimento). Bacharelando em Ciência da Computação, com pós-graduações em Inteligência Artificial e Ciência de Dados, Segurança da Informação e Cloud & Edge Computing, técnico em Programação Full Stack AI e graduação em Marketing. Trabalho com mentalidade analítica, rigor técnico e comunicação clara para traduzir necessidades de negócio em soluções de dados confiáveis.",
+    },
+    complexData: {
+      title: "Experiência com dados complexos em larga escala",
+      body:
+        "Experiência com Business Intelligence aplicado à gestão pública, dashboards estratégicos em Power BI e análise de grandes volumes de dados fiscais. Atuo com dados públicos e organizacionais em múltiplas fontes, estruturando ETL/ELT, automações em Python e BI estratégico para apoiar a tomada de decisão.",
     },
     differential: {
-      title: "Experiência com dados complexos em larga escala",
+      title: "Diferencial",
       description:
-        "Atuação prática com grandes volumes de dados, sistemas analíticos e automações confiáveis, com foco em performance, qualidade e clareza técnica.",
+        "Perfil end-to-end que conecta modelagem, automação, APIs e visualização para entregar inteligência de negócio com clareza e impacto.",
     },
     deliver: {
-      title: "O que entrego",
+      title: "O que faço",
       bullets: [
-        "Dashboards estratégicos em Power BI com KPIs, DAX e Power Query.",
-        "Modelagem e tratamento de dados com SQL, ETL/ELT e automações em Python.",
-        "APIs REST e integrações para conectar dados a produtos digitais.",
-        "Pipelines e validações para confiabilidade, rastreabilidade e performance.",
-        "Comunicação clara com times de negócio e tecnologia para decisões rápidas.",
+        "Análise de Dados e Data Analytics.",
+        "Business Intelligence com Power BI, DAX e Power Query.",
+        "Modelagem de dados, SQL e construção de KPIs.",
+        "ETL / ELT e automações em Python (Pandas, NumPy).",
+        "Visualização de dados e storytelling analítico.",
+        "APIs REST e integrações com Flask.",
       ],
     },
     snapshot: {
       title: "Resumo",
       items: [
         {
-          value: "Dados & BI",
-          label: "Power BI, DAX, KPIs",
+          value: "BI e Analytics",
+          label: "Power BI, KPIs, DAX",
         },
         {
-          value: "Engenharia",
-          label: "ETL/ELT, SQL, Python",
+          value: "Dados",
+          label: "SQL, ETL/ELT, Python",
         },
         {
-          value: "Full Stack",
-          label: "Frontend + APIs",
+          value: "Automação",
+          label: "Pipelines e eficiência",
         },
         {
-          value: "Qualidade",
-          label: "Performance e confiabilidade",
+          value: "Decisão",
+          label: "Dados públicos e fiscais",
         },
       ],
     },
     highlights: {
-      title: "Destaques",
+      title: "Diferencial",
       items: [
-        "Perfil híbrido com visão de dados e engenharia de software.",
-        "Experiência prática em BI, automação e integração de sistemas.",
-        "Certificações em Cloud, Segurança e IA.",
-        "Comunicação clara com times técnicos e de negócio.",
-        "Foco em impacto real, qualidade e previsibilidade de entrega.",
+        "Perfil híbrido (dados + desenvolvimento) com visão end-to-end.",
+        "Experiência em dados fiscais, públicos e organizacionais.",
+        "Capacidade de integrar BI, automação e APIs em soluções completas.",
+        "Comunicação clara com stakeholders técnicos e não técnicos.",
+        "Atuação no setor público e privado com foco em impacto.",
       ],
     },
     stack: {
@@ -97,6 +108,7 @@ export const sitePt: SiteContent = {
             "Modelagem de Dados",
             "KPIs",
             "ETL/ELT",
+            "Visualização de dados",
           ],
         },
         {
@@ -138,6 +150,10 @@ export const sitePt: SiteContent = {
   executiveSummary: {
     eyebrow: "Resumo executivo",
     title: "Resumo executivo",
+    paragraphs: [
+      "Analista de Dados e BI com foco em Business Intelligence, Power BI, SQL e Python. Atuo em Data Analytics, KPIs, ETL/ELT e visualização de dados para apoiar tomada de decisão.",
+      "Experiência com dados fiscais, públicos e organizacionais, integrando modelagem, automação e BI estratégico para gerar insights confiáveis e acionáveis.",
+    ],
     cards: [
       {
         icon: "education",
@@ -179,10 +195,10 @@ export const sitePt: SiteContent = {
     eyebrow: "Stack principal",
     title: "Stack principal",
     items: [
-      { label: "React", level: 5 },
-      { label: "Next.js", level: 5 },
+      { label: "Power BI", level: 5 },
+      { label: "SQL", level: 5 },
       { label: "Python", level: 4 },
-      { label: "SQL", level: 4 },
+      { label: "DAX", level: 4 },
     ],
   },
   projects: {
@@ -243,11 +259,12 @@ export const sitePt: SiteContent = {
   },
   contact: {
     eyebrow: "Contato",
-    title: "Vamos conversar sobre seu produto?",
+    title: "Vamos conversar sobre dados e BI?",
     description:
-      "Aberto a oportunidades como Desenvolvedor Full Stack / Software Engineer. Posso apoiar aplicações web, APIs e dados do MVP à escala.",
-    ctaTitle: "Disponível para oportunidades em Engenharia de Software",
-    ctaSubtitle: "LinkedIn e e-mail respondidos rapidamente.",
+      "Aberto a oportunidades em Análise de Dados, Business Intelligence e Data Analytics. Atuo com Power BI, SQL e Python para gerar decisões mais rápidas e confiáveis.",
+    ctaTitle:
+      "Resumo profissional: analista de dados com foco em BI, KPIs e automação.",
+    ctaSubtitle: "Conecte-se no LinkedIn ou envie um e-mail para conversar.",
     cards: {
       email: "Email",
       linkedin: "LinkedIn",

@@ -73,6 +73,23 @@ export default function ExecutiveSummary({ content }: Props) {
           </h2>
         </div>
 
+        <div className="grid gap-4 md:grid-cols-2">
+          {content.paragraphs.map((paragraph, index) => (
+            <p
+              key={paragraph}
+              className="text-base text-[color:var(--muted)] leading-relaxed"
+              data-reveal
+              style={
+                {
+                  "--reveal-delay": `${index * 70}ms`,
+                } as CSSProperties
+              }
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
+
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {content.cards.map((card, index) => (
             <div

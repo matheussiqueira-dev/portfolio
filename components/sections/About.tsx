@@ -172,14 +172,14 @@ export default function About({ content }: Props) {
           </h2>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-6">
             <div className="card card-muted card-compact space-y-3" data-reveal>
               <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
-                {content.who.title}
+                {content.summary.title}
               </p>
               <p className="text-sm text-[color:var(--muted)] leading-relaxed">
-                {highlightText(content.who.body)}
+                {highlightText(content.summary.body)}
               </p>
             </div>
 
@@ -190,10 +190,10 @@ export default function About({ content }: Props) {
                 style={{ "--reveal-delay": "60ms" } as CSSProperties}
               >
                 <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
-                  {content.differential.title}
+                  {content.who.title}
                 </p>
                 <p className="text-sm text-[color:var(--muted)] leading-relaxed">
-                  {highlightText(content.differential.description)}
+                  {highlightText(content.who.body)}
                 </p>
               </div>
 
@@ -203,17 +203,26 @@ export default function About({ content }: Props) {
                 style={{ "--reveal-delay": "120ms" } as CSSProperties}
               >
                 <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
-                  {content.deliver.title}
+                  {content.complexData.title}
                 </p>
-                <ul className="space-y-2 text-sm text-[color:var(--muted)]">
-                  {content.deliver.bullets.map((item) => (
-                    <li key={item} className="flex gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[color:var(--accent-soft)]" />
-                      <span>{highlightText(item)}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-sm text-[color:var(--muted)] leading-relaxed">
+                  {highlightText(content.complexData.body)}
+                </p>
               </div>
+            </div>
+
+            <div className="card card-compact space-y-3" data-reveal>
+              <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
+                {content.deliver.title}
+              </p>
+              <ul className="space-y-2 text-sm text-[color:var(--muted)]">
+                {content.deliver.bullets.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[color:var(--accent-soft)]" />
+                    <span>{highlightText(item)}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
@@ -279,6 +288,9 @@ export default function About({ content }: Props) {
           <div className="card card-compact space-y-4 h-full" data-reveal>
             <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
               {content.highlights.title}
+            </p>
+            <p className="text-sm text-[color:var(--muted)] leading-relaxed">
+              {highlightText(content.differential.description)}
             </p>
             <ul className="space-y-2 text-sm text-[color:var(--muted)]">
               {content.highlights.items.map((item) => (

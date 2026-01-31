@@ -28,7 +28,15 @@ export type SiteContent = {
   about: {
     eyebrow: string;
     title: string;
+    summary: {
+      title: string;
+      body: string;
+    };
     who: {
+      title: string;
+      body: string;
+    };
+    complexData: {
       title: string;
       body: string;
     };
@@ -63,6 +71,7 @@ export type SiteContent = {
   executiveSummary: {
     eyebrow: string;
     title: string;
+    paragraphs: string[];
     cards: {
       icon: "education" | "projects" | "certifications";
       title: string;
