@@ -270,7 +270,7 @@ const projectList: ProjectCase[] = [
           paragraphs: [
             "O código-fonte completo está disponível no GitHub, permitindo análise detalhada da implementação, arquitetura e decisões técnicas tomadas durante o desenvolvimento.",
           ],
-          footer: ["👉 Repositório:"],
+          footer: ["Repositório:"],
           link: {
             label: "github.com/matheussiqueira-dev/touchless-web-gesture-interface",
             href: "https://github.com/matheussiqueira-dev/touchless-web-gesture-interface",
@@ -1046,7 +1046,7 @@ const projectList: ProjectCase[] = [
           paragraphs: [
             "O código-fonte completo está disponível no GitHub, permitindo análise detalhada da implementação e decisões técnicas.",
           ],
-          footer: ["👉 Repositório:"],
+          footer: ["Repositório:"],
           link: {
             label: "github.com/matheussiqueira-dev/hand-gesture-recognition-realtime",
             href: "https://github.com/matheussiqueira-dev/hand-gesture-recognition-realtime",

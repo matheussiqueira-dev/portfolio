@@ -132,7 +132,7 @@ export default function Hero({ content, localePrefix }: Props) {
                 category: "navigation",
                 label: "hero_cta",
               }}
-              className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+              className="btn-primary cta-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
               <span className="btn-icon" aria-hidden="true">
                 {ctaIcons.resume}

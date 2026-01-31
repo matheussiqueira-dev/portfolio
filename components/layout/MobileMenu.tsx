@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import LanguageSwitch from "@/components/ui/LanguageSwitch";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 import type { NavItem } from "./navigation";
 
 type Props = {
@@ -282,6 +283,9 @@ export default function MobileMenu({
                 </p>
                 <div className="mt-3 text-sm text-[color:var(--muted)]">
                   <LanguageSwitch />
+                </div>
+                <div className="mt-4">
+                  <ThemeToggle />
                 </div>
               </div>
             </div>

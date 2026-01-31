@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import type { SiteContent } from "@/data/site.types";
 
 type Props = {
@@ -23,7 +24,7 @@ export default function Stack({ content }: Props) {
   return (
     <section id="stack" className="page-section content-auto">
       <div className="section-inner space-y-8">
-        <div className="space-y-3">
+        <div className="space-y-3" data-reveal>
           <p className="eyebrow">{content.eyebrow}</p>
           <h2 className="text-3xl md:text-4xl font-semibold text-[color:var(--foreground)]">
             {content.title}
@@ -31,10 +32,16 @@ export default function Stack({ content }: Props) {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
-          {content.items.map((item) => (
+          {content.items.map((item, index) => (
             <div
               key={item.label}
               className="card card-compact flex items-center justify-between gap-4"
+              data-reveal
+              style={
+                {
+                  "--reveal-delay": `${index * 80}ms`,
+                } as CSSProperties
+              }
             >
               <span className="text-sm font-semibold text-[color:var(--foreground)]">
                 {item.label}

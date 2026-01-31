@@ -4,7 +4,8 @@ import dynamic from "next/dynamic";
 import SafeImage from "@/src/components/demo/SafeImage";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import type { CSSProperties } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { trackEvent } from "@/lib/analytics";
 import { projects, projectOrder } from "@/data/projects";
 import { projectsEn, projectOrderEn } from "@/data/projects.en";
@@ -144,9 +145,54 @@ export default function Projects() {
     []
   );
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const handleClose = useCallback(() => setSelectedProject(null), []);
+  const [loadingSlug, setLoadingSlug] = useState<string | null>(null);
+  const loadingTimeoutRef = useRef<number | null>(null);
+  const handleClose = useCallback(() => {
+    setSelectedProject(null);
+    setLoadingSlug(null);
+    if (loadingTimeoutRef.current !== null) {
+      window.clearTimeout(loadingTimeoutRef.current);
+      loadingTimeoutRef.current = null;
+    }
+  }, []);
   const [starsByRepo, setStarsByRepo] = useState<Record<string, number>>({});
   const projectsHref = isEn ? "/en/projects" : "/projetos";
+
+  useEffect(() => {
+    return () => {
+      if (loadingTimeoutRef.current !== null) {
+        window.clearTimeout(loadingTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const openProject = useCallback((project: Project) => {
+    setSelectedProject(project);
+    setLoadingSlug(project.slug);
+    if (loadingTimeoutRef.current !== null) {
+      window.clearTimeout(loadingTimeoutRef.current);
+    }
+    loadingTimeoutRef.current = window.setTimeout(() => {
+      setLoadingSlug(null);
+      loadingTimeoutRef.current = null;
+    }, 450);
+  }, []);
+
+  const isInteractiveTarget = (
+    target: EventTarget | null,
+    currentTarget?: HTMLElement
+  ) => {
+    if (!(target instanceof HTMLElement)) {
+      return false;
+    }
+    const interactive = target.closest(
+      "a, button, input, textarea, select, [data-interactive]"
+    );
+    if (!interactive) {
+      return false;
+    }
+    return interactive !== currentTarget;
+  };
 
   useEffect(() => {
     let isActive = true;
@@ -183,7 +229,7 @@ export default function Projects() {
   return (
     <section id="projects" className="page-section content-auto">
       <div className="section-inner">
-        <div className="flex flex-col gap-4 mb-10">
+        <div className="flex flex-col gap-4 mb-10" data-reveal>
           <p className="eyebrow">{content.eyebrow}</p>
           <h2 className="text-3xl md:text-4xl font-semibold text-[color:var(--foreground)]">
             {content.title}
@@ -194,7 +240,7 @@ export default function Projects() {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
-          {data.map((project) => {
+          {data.map((project, index) => {
             const registryProject = registryMap.get(project.slug);
             const registryCover = registryProject?.coverImage
               ? { src: registryProject.coverImage, alt: project.title }
@@ -207,11 +253,39 @@ export default function Projects() {
               : `/projetos/${project.slug}`;
             const isFeatured = featured.has(project.slug);
             const stars = starsByRepo[project.repoUrl];
+            const isOpen = selectedProject?.slug === project.slug;
+            const isLoading = loadingSlug === project.slug;
+            const openLabel = isEn ? "Open project details" : "Abrir detalhes do projeto";
 
             return (
               <article
                 key={project.slug}
                 className="card card-hover relative flex h-full flex-col gap-5 group"
+                data-reveal
+                style={
+                  {
+                    "--reveal-delay": `${index * 70}ms`,
+                  } as CSSProperties
+                }
+                role="button"
+                tabIndex={0}
+                aria-haspopup="dialog"
+                aria-label={openLabel}
+                onClick={(event) => {
+                  if (
+                    event.defaultPrevented ||
+                    isInteractiveTarget(event.target, event.currentTarget)
+                  ) {
+                    return;
+                  }
+                  openProject(project);
+                }}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    openProject(project);
+                  }
+                }}
               >
                 {isFeatured ? (
                   <span className="card-badge rounded-full bg-[color:var(--accent)]/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-[color:var(--accent-strong)]">
@@ -236,14 +310,14 @@ export default function Projects() {
                   </div>
                 ) : null}
 
-                <div className="card-header">
-                  <span className="card-kicker">{content.cardLabel}</span>
-                  <h3 className="card-title">{project.title}</h3>
-                  <p className="card-subtitle">{project.tagline}</p>
+                <div className="card-header text-left items-start">
+                  <span className="card-kicker text-left">{content.cardLabel}</span>
+                  <h3 className="card-title text-left">{project.title}</h3>
+                  <p className="card-subtitle text-left">{project.tagline}</p>
                 </div>
 
                 {badges.length > 0 ? (
-                  <div className="flex flex-wrap justify-center gap-2 text-[10px] uppercase tracking-[0.18em] text-[color:var(--muted)]">
+                  <div className="flex flex-wrap justify-start gap-2 text-[10px] uppercase tracking-[0.18em] text-[color:var(--muted)]">
                     {badges.map((badge) => (
                       <span key={badge} className="chip">
                         {badge}
@@ -254,7 +328,7 @@ export default function Projects() {
 
                 {highlights.length > 0 ? (
                   <div className="space-y-2 text-left">
-                    <p className="card-meta text-center">
+                    <p className="card-meta text-left">
                       {content.highlightLabel}
                     </p>
                     <ul className="space-y-1 text-sm text-[color:var(--muted)]">
@@ -271,7 +345,11 @@ export default function Projects() {
                 <div className="mt-auto flex flex-wrap items-center gap-3 pt-2">
                   <button
                     type="button"
-                    onClick={() => setSelectedProject(project)}
+                    onClick={() => openProject(project)}
+                    data-state={
+                      isLoading ? "loading" : isOpen ? "success" : "idle"
+                    }
+                    aria-busy={isLoading}
                     className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                   >
                     {content.detailsLabel}

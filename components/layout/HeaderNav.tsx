@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { sitePt } from "@/data/site.pt";
 import { siteEn } from "@/data/site.en";
 import LanguageSwitch from "@/components/ui/LanguageSwitch";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 import MobileMenu from "./MobileMenu";
 import { buildNavItems, getActiveNavId } from "./navigation";
 
@@ -61,6 +62,7 @@ export default function HeaderNav() {
 
       <div className="hidden md:flex items-center gap-4 text-sm text-[color:var(--muted)]">
         <LanguageSwitch />
+        <ThemeToggle />
       </div>
 
       <MobileMenu

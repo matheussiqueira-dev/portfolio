@@ -55,6 +55,7 @@ export type SiteContent = {
       title: string;
       groups: {
         title: string;
+        icon: "data" | "languages" | "database" | "backend" | "frontend" | "tools";
         items: string[];
       }[];
     };
@@ -63,7 +64,7 @@ export type SiteContent = {
     eyebrow: string;
     title: string;
     cards: {
-      icon: string;
+      icon: "education" | "projects" | "certifications";
       title: string;
     }[];
   };
@@ -71,7 +72,7 @@ export type SiteContent = {
     eyebrow: string;
     title: string;
     items: {
-      icon: string;
+      icon: "projects" | "github" | "experience" | "data";
       label: string;
     }[];
   };

@@ -1,6 +1,6 @@
 "use client";
 
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import Link from "next/link";
 import { trackEvent } from "@/lib/analytics";
 
@@ -26,6 +26,8 @@ type TrackedAnchorProps = {
   tracking?: Tracking;
   target?: string;
   rel?: string;
+  style?: CSSProperties;
+  "data-reveal"?: boolean;
 };
 
 const handleTrack = (tracking?: Tracking) => {
@@ -63,6 +65,8 @@ export function TrackedAnchor({
   tracking,
   target,
   rel,
+  style,
+  "data-reveal": dataReveal,
 }: TrackedAnchorProps) {
   return (
     <a
@@ -71,6 +75,8 @@ export function TrackedAnchor({
       rel={rel}
       className={className}
       aria-label={ariaLabel}
+      style={style}
+      data-reveal={dataReveal}
       onClick={() => handleTrack(tracking)}
     >
       {children}

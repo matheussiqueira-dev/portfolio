@@ -1043,7 +1043,7 @@ const projectListEn: Project[] = [
           paragraphs: [
             "The complete source code is available on GitHub, allowing detailed analysis of the implementation and technical decisions.",
           ],
-          footer: ["👉 Repository:"],
+          footer: ["Repository:"],
           link: {
             label: "github.com/matheussiqueira-dev/hand-gesture-recognition-realtime",
             href: "https://github.com/matheussiqueira-dev/hand-gesture-recognition-realtime",

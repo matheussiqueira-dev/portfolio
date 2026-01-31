@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/seo/JsonLd";
 import CursorGlow from "@/components/ui/CursorGlow";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 import VideoBackground from "@/components/ui/VideoBackground";
 import { baseUrl, buildAlternates, siteName, sameAsLinks } from "@/lib/seo";
 import "./globals.css";
@@ -181,8 +182,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" data-theme="dark" suppressHydrationWarning>
       <head>
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var stored = localStorage.getItem('theme');
+                  var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  var theme = stored || (prefersDark ? 'dark' : 'light');
+                  document.documentElement.dataset.theme = theme;
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         {/* Google Tag Manager - Script */}
         <Script
           id="gtm-script"
@@ -229,6 +246,7 @@ export default function RootLayout({
         <JsonLd data={[websiteJsonLd, personJsonLd, softwareDeveloperJsonLd]} />
         <VideoBackground />
         <CursorGlow />
+        <ScrollReveal />
         <div className="app-shell">
           <Header />
           <main id="main-content" className="min-h-screen">
