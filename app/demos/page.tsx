@@ -102,7 +102,7 @@ export default function DemosPage() {
           </Link>
         </header>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 projects-grid">
           {projects.map((project) => {
             const cover = getCover(project);
             const libraryThumbnail =
@@ -185,11 +185,11 @@ export default function DemosPage() {
             return (
               <article
                 key={project.slug}
-                className="card card-hover flex h-full flex-col gap-5"
+                className="card card-hover project-card flex h-full flex-col gap-5"
               >
-                <div className="card-header">
-                  <h2 className="card-title">{project.title}</h2>
-                  <p className="card-subtitle">{project.tagline}</p>
+                <div className="card-header items-start text-left">
+                  <h2 className="card-title text-left">{project.title}</h2>
+                  <p className="card-subtitle text-left">{project.tagline}</p>
                 </div>
                 <div
                   className="panel"
@@ -204,7 +204,7 @@ export default function DemosPage() {
                   />
                 </div>
                 <div className="panel">
-                  <p className="card-meta text-center">
+                  <p className="card-meta text-left">
                     {sitePt.demos.howToRunLabel}
                   </p>
                   <ol className="mt-3 list-decimal list-inside space-y-1 text-xs text-[color:var(--muted)]">

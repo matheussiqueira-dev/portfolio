@@ -148,8 +148,8 @@ export const siteEn: SiteContent = {
     },
   },
   executiveSummary: {
-    eyebrow: "Executive summary",
-    title: "Executive summary",
+    eyebrow: "Overview",
+    title: "Strategic summary",
     paragraphs: [
       "Data Analyst and BI professional focused on Business Intelligence, Power BI, SQL, and Python. I work with Data Analytics, KPIs, ETL/ELT, and data visualization to support decision-making.",
       "Experience with fiscal, public, and organizational data, integrating modeling, automation, and strategic BI to deliver reliable, actionable insights.",

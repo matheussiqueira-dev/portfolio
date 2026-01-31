@@ -389,6 +389,18 @@ html[data-theme="light"] {
     overflow: hidden;
   }
 
+  .projects-grid {
+    grid-auto-rows: 1fr;
+  }
+
+  .project-card {
+    align-self: stretch;
+  }
+
+  .project-card__media {
+    aspect-ratio: 16 / 9;
+  }
+
   .card-badge {
     position: absolute;
     top: 1rem;

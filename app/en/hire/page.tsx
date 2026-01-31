@@ -202,15 +202,15 @@ export default function HirePage() {
           <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">
             Projects that prove capability
           </h2>
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 projects-grid">
             {featuredProjects.map((project) => (
               <article
                 key={project.slug}
-                className="card card-hover space-y-4"
+                className="card card-hover project-card flex h-full flex-col gap-4"
               >
-                <div className="card-header">
-                  <h3 className="card-title">{project.title}</h3>
-                  <p className="card-subtitle">{project.tagline}</p>
+                <div className="card-header items-start text-left">
+                  <h3 className="card-title text-left">{project.title}</h3>
+                  <p className="card-subtitle text-left">{project.tagline}</p>
                 </div>
                 <p className="text-sm text-[color:var(--muted)] text-left">
                   {project.highlights[0] ?? project.problem[0]}
@@ -224,7 +224,7 @@ export default function HirePage() {
                 </div>
                 <Link
                   href={`/en/projects/${project.slug}`}
-                  className="inline-flex w-fit text-sm text-[color:var(--accent)] underline decoration-[color:var(--accent-soft)]/60 underline-offset-4 transition hover:text-[color:var(--accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+                  className="mt-auto inline-flex w-fit text-sm text-[color:var(--accent)] underline decoration-[color:var(--accent-soft)]/60 underline-offset-4 transition hover:text-[color:var(--accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                 >
                   View full case
                 </Link>

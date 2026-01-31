@@ -148,8 +148,8 @@ export const sitePt: SiteContent = {
     },
   },
   executiveSummary: {
-    eyebrow: "Resumo executivo",
-    title: "Resumo executivo",
+    eyebrow: "Visão geral",
+    title: "Síntese estratégica",
     paragraphs: [
       "Analista de Dados e BI com foco em Business Intelligence, Power BI, SQL e Python. Atuo em Data Analytics, KPIs, ETL/ELT e visualização de dados para apoiar tomada de decisão.",
       "Experiência com dados fiscais, públicos e organizacionais, integrando modelagem, automação e BI estratégico para gerar insights confiáveis e acionáveis.",

@@ -239,7 +239,7 @@ export default function Projects() {
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-6 lg:grid-cols-2 projects-grid">
           {data.map((project, index) => {
             const registryProject = registryMap.get(project.slug);
             const registryCover = registryProject?.coverImage
@@ -260,7 +260,7 @@ export default function Projects() {
             return (
               <article
                 key={project.slug}
-                className="card card-hover relative flex h-full flex-col gap-5 group"
+                className="card card-hover project-card relative flex h-full flex-col gap-5 group"
                 data-reveal
                 style={
                   {
@@ -293,7 +293,7 @@ export default function Projects() {
                   </span>
                 ) : null}
                 {cover ? (
-                  <div className="card-media relative aspect-[4/3] w-full">
+                  <div className="card-media project-card__media relative w-full">
                     <SafeImage
                       src={cover.src}
                       alt={cover.alt}

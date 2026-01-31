@@ -4,7 +4,7 @@ import { SafeImage } from "@/components/demo/SafeImage";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-white/10 bg-white/5">
+    <div className="project-card flex h-full flex-col overflow-hidden rounded-xl border border-white/10 bg-white/5">
       <div className="relative aspect-[16/9] w-full">
         <SafeImage
           src={project.coverImage}
@@ -15,7 +15,7 @@ export function ProjectCard({ project }: { project: Project }) {
         />
       </div>
 
-      <div className="space-y-2 p-4">
+      <div className="flex h-full flex-col gap-2 p-4">
         <div className="flex items-center justify-between gap-2">
           <h3 className="truncate text-sm font-semibold">{project.title}</h3>
           {project.isInteractive ? (
@@ -38,7 +38,7 @@ export function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
 
-        <div className="flex items-center gap-2 pt-2">
+        <div className="mt-auto flex items-center gap-2 pt-2">
           <Link
             href={`/projects/${project.id}`}
             className="rounded-md border border-white/10 px-3 py-2 text-sm hover:bg-white/5"

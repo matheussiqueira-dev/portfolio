@@ -152,23 +152,23 @@ export default function ProjectsPage({ searchParams }: PageProps) {
           ))}
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 projects-grid">
           {filteredProjects.map((project) => {
             const isFeatured = featured.has(project.slug);
             return (
               <article
                 key={project.slug}
-                className="card card-hover relative flex flex-col gap-5"
+                className="card card-hover project-card relative flex h-full flex-col gap-5"
               >
                 {isFeatured ? (
                   <span className="card-badge rounded-full bg-[color:var(--accent)]/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-[color:var(--accent-strong)]">
                     {sitePt.projects.featuredLabel}
                   </span>
                 ) : null}
-                <div className="card-header">
-                  <span className="card-kicker">{project.role}</span>
-                  <h2 className="card-title">{project.title}</h2>
-                  <p className="card-subtitle">{project.tagline}</p>
+                <div className="card-header items-start text-left">
+                  <span className="card-kicker text-left">{project.role}</span>
+                  <h2 className="card-title text-left">{project.title}</h2>
+                  <p className="card-subtitle text-left">{project.tagline}</p>
                 </div>
 
                 <p className="text-sm text-[color:var(--muted)] leading-relaxed text-left">
@@ -178,7 +178,7 @@ export default function ProjectsPage({ searchParams }: PageProps) {
                 </p>
 
                 <div className="text-xs text-[color:var(--muted)] text-left">
-                  <span className="card-meta block text-center">
+                  <span className="card-meta block text-left">
                     {sitePt.projectsPage.demonstratesLabel}
                   </span>
                   <p className="mt-2 text-[color:var(--muted)]">
@@ -194,7 +194,7 @@ export default function ProjectsPage({ searchParams }: PageProps) {
                   ))}
                 </ul>
 
-                <div className="flex flex-wrap gap-3 pt-2 text-xs text-[color:var(--muted)]">
+                <div className="mt-auto flex flex-wrap gap-3 pt-2 text-xs text-[color:var(--muted)]">
                   <TrackedLink
                     href={`/projetos/${project.slug}`}
                     tracking={{
