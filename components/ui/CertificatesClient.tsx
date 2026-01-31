@@ -12,7 +12,7 @@ type Props = {
   certificates: Certificate[];
 };
 
-const issuers: CertificateIssuer[] = ["Alura", "Assimov", "Ulife"];
+const issuers: CertificateIssuer[] = ["Alura", "Assimov", "Ulife", "Infinity School"];
 
 const matchesQuery = (certificate: Certificate, query: string) => {
   const search = query.trim().toLowerCase();
@@ -20,10 +20,22 @@ const matchesQuery = (certificate: Certificate, query: string) => {
     return true;
   }
 
+  const details = certificate.details
+    ? [
+        certificate.details.summaryLabel,
+        ...certificate.details.modules.flatMap((module) => [
+          module.title,
+          module.subtitle ?? "",
+          module.description,
+        ]),
+      ]
+    : [];
+
   const haystack = [
     certificate.title,
     certificate.issuer,
     ...certificate.areaTags,
+    ...details,
   ]
     .join(" ")
     .toLowerCase();
@@ -119,6 +131,31 @@ export default function CertificatesClient({ content, certificates }: Props) {
                   ))}
                 </div>
               </div>
+
+              {certificate.details ? (
+                <details className="panel">
+                  <summary className="cursor-pointer text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--muted)]">
+                    {certificate.details.summaryLabel}
+                  </summary>
+                  <div className="mt-4 space-y-4 text-sm text-[color:var(--muted)]">
+                    {certificate.details.modules.map((module) => (
+                      <div key={`${certificate.id}-${module.title}`} className="space-y-1">
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--muted)]">
+                          {module.title}
+                        </p>
+                        {module.subtitle ? (
+                          <p className="text-xs text-[color:var(--muted-strong)]">
+                            {module.subtitle}
+                          </p>
+                        ) : null}
+                        <p className="leading-relaxed text-[color:var(--muted)]">
+                          {module.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </details>
+              ) : null}
 
               <div className="mt-auto flex flex-wrap gap-3">
                 <a

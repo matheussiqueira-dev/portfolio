@@ -1,4 +1,15 @@
-export type CertificateIssuer = "Alura" | "Assimov" | "Ulife";
+export type CertificateIssuer = "Alura" | "Assimov" | "Ulife" | "Infinity School";
+
+export type CertificateModule = {
+  title: string;
+  subtitle?: string;
+  description: string;
+};
+
+export type CertificateDetails = {
+  summaryLabel: string;
+  modules: CertificateModule[];
+};
 
 export type Certificate = {
   id: string;
@@ -7,6 +18,7 @@ export type Certificate = {
   areaTags: string[];
   pdfUrl: string;
   language?: "pt" | "en";
+  details?: CertificateDetails;
 };
 
 export type CertificatesPageContent = {

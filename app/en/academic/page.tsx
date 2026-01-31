@@ -52,6 +52,10 @@ const certificates = {
     "Por dentro das LLMs – como funcionam modelos como o ChatGPT",
     "Python para Usuários de Excel",
   ],
+  "Infinity School": [
+    "FullStack AI Programming (Technical Program)",
+    "FullStack AI Design (Technical Program)",
+  ],
   Ulife: [
     "EDGE COMPUTING E INTERNET DAS COISAS",
     "ENGENHARIA, PREPARAÇÃO E VISUALIZAÇÃO DE DADOS",

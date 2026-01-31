@@ -115,6 +115,43 @@ export const certificatesEn: Certificate[] = [
     "pdfUrl": "/certificates/alura/logica-de-programacao-mergulhe-em-programacao-com-javascript.pdf"
   },
   {
+    "id": "pensamento-computacional-fundamentos-da-computacao-e-logica-de-programacao",
+    "title": "Computational thinking: Fundamentals of computing and programming logic",
+    "issuer": "Alura",
+    "areaTags": [
+      "Programming Logic"
+    ],
+    "pdfUrl": "/certificates/alura/pensamento-computacional-fundamentos-da-computacao-e-logica-de-programacao.pdf"
+  },
+  {
+    "id": "java-criando-a-sua-primeira-aplicacao",
+    "title": "Java: Creating your first application",
+    "issuer": "Alura",
+    "areaTags": [
+      "Java"
+    ],
+    "pdfUrl": "/certificates/alura/java-criando-a-sua-primeira-aplicacao.pdf"
+  },
+  {
+    "id": "java-aplicando-a-orientacao-a-objetos",
+    "title": "Java: Applying object-oriented programming",
+    "issuer": "Alura",
+    "areaTags": [
+      "Java",
+      "Object-Oriented Programming"
+    ],
+    "pdfUrl": "/certificates/alura/java-aplicando-a-orientacao-a-objetos.pdf"
+  },
+  {
+    "id": "java-trabalhando-com-listas-e-colecoes-de-dados",
+    "title": "Java: Working with lists and data collections",
+    "issuer": "Alura",
+    "areaTags": [
+      "Java"
+    ],
+    "pdfUrl": "/certificates/alura/java-trabalhando-com-listas-e-colecoes-de-dados.pdf"
+  },
+  {
     "id": "mysql-conhecendo-a-ferramenta",
     "title": "MySQL: Getting to know the tool",
     "issuer": "Alura",
@@ -400,6 +437,101 @@ export const certificatesEn: Certificate[] = [
       "Data Engineering"
     ],
     "pdfUrl": "/certificates/ulife/teoria-da-computacao-e-compiladores.pdf"
+  },
+  {
+    "id": "programacao-fullstack-ai",
+    "title": "FullStack AI Programming (Technical Program)",
+    "issuer": "Infinity School",
+    "areaTags": [
+      "Full Stack",
+      "AI",
+      "Programming Logic",
+      "Python",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "pdfUrl": "/certificates/infinity-school/programacao-fullstack-ai.pdf",
+    "details": {
+      "summaryLabel": "Course modules",
+      "modules": [
+        {
+          "title": "Introduction to Programming",
+          "subtitle": "Programming Logic",
+          "description": "The foundation of programming is strong logic. In this module, new logic concepts are applied with AI."
+        },
+        {
+          "title": "Software Creation with AI",
+          "subtitle": "Python with AI",
+          "description": "The most widely used language today with impressive power. It creates artificial intelligence and is also great for backend and frontend applications."
+        },
+        {
+          "title": "Website Creation",
+          "subtitle": "HTML/CSS",
+          "description": "Learn essential tools for creating websites and other applications. Boost your potential with AI tools to craft impressive layouts and generate code."
+        },
+        {
+          "title": "Apps and Games Creation",
+          "subtitle": "JavaScript",
+          "description": "One of the most employable and versatile languages. It's fundamental for the app and web market. With AI, you go beyond the average programmer and achieve impressive results."
+        },
+        {
+          "title": "Final Project",
+          "description": "Build an outstanding portfolio at the end of the course with a key project to help you enter the job market."
+        }
+      ]
+    }
+  },
+  {
+    "id": "design-fullstack-ai",
+    "title": "FullStack AI Design (Technical Program)",
+    "issuer": "Infinity School",
+    "areaTags": [
+      "Full Stack",
+      "AI",
+      "Photoshop",
+      "Illustrator",
+      "Figma",
+      "Premiere",
+      "After Effects",
+      "UI Design"
+    ],
+    "pdfUrl": "/certificates/infinity-school/design-fullstack-ai.pdf",
+    "details": {
+      "summaryLabel": "Course modules",
+      "modules": [
+        {
+          "title": "Editing with Photoshop",
+          "subtitle": "Hands-on classes with Adobe Photoshop",
+          "description": "Develop practical and theoretical skills to create visual communication content, art direction, graphic design, advertising, and digital marketing. Explore digital photography, image editing, layout creation, advertising fundamentals, typography, color selection, iconography, and the creative process for online campaigns."
+        },
+        {
+          "title": "Artwork with Illustrator",
+          "subtitle": "Hands-on classes with Adobe Illustrator",
+          "description": "Apply concepts and techniques for graphic and editorial production, including flyers, stationery, posters, billboards, prints, packaging, leaflets, catalogs, magazines, newspapers, and other materials."
+        },
+        {
+          "title": "Creation with AI",
+          "subtitle": "AI image and video generation",
+          "description": "A practical and creative approach to using AI to create images from prompts, integrating essential design concepts such as composition, color, and aesthetics. With a focus on direct application, students learn to generate high-quality images."
+        },
+        {
+          "title": "Video editing",
+          "subtitle": "Hands-on classes with Adobe Premiere",
+          "description": "Learn about cuts, continuity, transitions, and special effects. Understand the editing process adapted to different narratives and develop the ability to craft emotional and impactful stories."
+        },
+        {
+          "title": "Video finishing",
+          "subtitle": "Classes with Adobe After Effects",
+          "description": "Create impressive effects for your videos. Learn text animations, logos, cinematic visual effects, and more. Transform your productions with techniques that add a professional, captivating touch."
+        },
+        {
+          "title": "Creative interfaces (UI Design)",
+          "subtitle": "Hands-on classes with Figma",
+          "description": "Create interactive interfaces and functional prototypes for apps, websites, and systems. Learn to use Atomic Design, build style guides, and craft solutions for varied projects. Apply typography, colors, grids, and component creation for LO-FI and HI-FI prototypes. Master usability testing and gather feedback from real users."
+        }
+      ]
+    }
   }
 ];
 

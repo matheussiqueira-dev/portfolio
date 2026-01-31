@@ -115,6 +115,43 @@ export const certificatesPt: Certificate[] = [
     "pdfUrl": "/certificates/alura/logica-de-programacao-mergulhe-em-programacao-com-javascript.pdf"
   },
   {
+    "id": "pensamento-computacional-fundamentos-da-computacao-e-logica-de-programacao",
+    "title": "Pensamento computacional fundamentos da computação e lógica de programação",
+    "issuer": "Alura",
+    "areaTags": [
+      "Programming Logic"
+    ],
+    "pdfUrl": "/certificates/alura/pensamento-computacional-fundamentos-da-computacao-e-logica-de-programacao.pdf"
+  },
+  {
+    "id": "java-criando-a-sua-primeira-aplicacao",
+    "title": "Java criando a sua primeira aplicação",
+    "issuer": "Alura",
+    "areaTags": [
+      "Java"
+    ],
+    "pdfUrl": "/certificates/alura/java-criando-a-sua-primeira-aplicacao.pdf"
+  },
+  {
+    "id": "java-aplicando-a-orientacao-a-objetos",
+    "title": "Java aplicando a Orientação a Objetos",
+    "issuer": "Alura",
+    "areaTags": [
+      "Java",
+      "Object-Oriented Programming"
+    ],
+    "pdfUrl": "/certificates/alura/java-aplicando-a-orientacao-a-objetos.pdf"
+  },
+  {
+    "id": "java-trabalhando-com-listas-e-colecoes-de-dados",
+    "title": "Java trabalhando com listas e coleções de dados",
+    "issuer": "Alura",
+    "areaTags": [
+      "Java"
+    ],
+    "pdfUrl": "/certificates/alura/java-trabalhando-com-listas-e-colecoes-de-dados.pdf"
+  },
+  {
     "id": "mysql-conhecendo-a-ferramenta",
     "title": "MySQL conhecendo a ferramenta",
     "issuer": "Alura",
@@ -400,6 +437,101 @@ export const certificatesPt: Certificate[] = [
       "Data Engineering"
     ],
     "pdfUrl": "/certificates/ulife/teoria-da-computacao-e-compiladores.pdf"
+  },
+  {
+    "id": "programacao-fullstack-ai",
+    "title": "Programação FullStack AI (Curso Técnico)",
+    "issuer": "Infinity School",
+    "areaTags": [
+      "Full Stack",
+      "AI",
+      "Programming Logic",
+      "Python",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "pdfUrl": "/certificates/infinity-school/programacao-fullstack-ai.pdf",
+    "details": {
+      "summaryLabel": "Módulos do curso",
+      "modules": [
+        {
+          "title": "Introdução a Programação",
+          "subtitle": "Lógica da Programação",
+          "description": "A base da programação é o bom aprendizado da lógica. Neste módulo, são aplicados novos conceitos de lógica com IA."
+        },
+        {
+          "title": "Criação de Software com IA",
+          "subtitle": "Python com IA",
+          "description": "A linguagem mais utilizada atualmente e com grande poder. É a linguagem que cria a inteligência artificial e também é ótima para aplicações em backend e frontend."
+        },
+        {
+          "title": "Criação de Sites",
+          "subtitle": "HTML/CSS",
+          "description": "Aprenda ferramentas essenciais para criação de sites e outras aplicações. Turbine seu potencial com ferramentas de IA para criar layouts impressionantes e gerar código."
+        },
+        {
+          "title": "Criação de Aplicativos e Games",
+          "subtitle": "JavaScript",
+          "description": "Uma das linguagens com alta empregabilidade e versatilidade. É fundamental para o mercado de aplicativos e web. Com IA, você vai além do programador comum e chega a resultados impressionantes."
+        },
+        {
+          "title": "Projeto Final",
+          "description": "Crie um portfólio incrível no final do curso, com um projeto essencial para conquistar o mercado de trabalho."
+        }
+      ]
+    }
+  },
+  {
+    "id": "design-fullstack-ai",
+    "title": "Design FullStack AI (Curso Técnico)",
+    "issuer": "Infinity School",
+    "areaTags": [
+      "Full Stack",
+      "AI",
+      "Photoshop",
+      "Illustrator",
+      "Figma",
+      "Premiere",
+      "After Effects",
+      "UI Design"
+    ],
+    "pdfUrl": "/certificates/infinity-school/design-fullstack-ai.pdf",
+    "details": {
+      "summaryLabel": "Módulos do curso",
+      "modules": [
+        {
+          "title": "Edição com Photoshop",
+          "subtitle": "Aulas práticas com Adobe Photoshop",
+          "description": "Adquira habilidades práticas e teóricas para desenvolver conteúdo em comunicação visual, direção de arte, design gráfico, publicidade e marketing digital. Explore fotografia digital, edição de imagens, criação de layouts, fundamentos publicitários, tipografia, escolha de cores, iconografia e o processo criativo para campanhas online."
+        },
+        {
+          "title": "Arte com Illustrator",
+          "subtitle": "Aulas práticas com Adobe Illustrator",
+          "description": "Aprenda a aplicar conceitos e técnicas na criação de conteúdos para produção gráfica e editorial, incluindo flyers, papelaria, cartazes, outdoors, estampas, embalagens, panfletos, catálogos, revistas, jornais e outros materiais."
+        },
+        {
+          "title": "Criação com IA",
+          "subtitle": "Geração de imagem e vídeo com IA",
+          "description": "Abordagem prática e criativa para o uso de IA na criação de imagens a partir de prompts, integrando conceitos essenciais de design como composição, cores e estética. Com foco na aplicação direta, os alunos aprendem a gerar imagens de alta qualidade."
+        },
+        {
+          "title": "Editando vídeos",
+          "subtitle": "Aulas práticas com Adobe Premiere",
+          "description": "Descubra a arte da edição ao aprender cortes, continuidade, transições e efeitos especiais. Entenda o processo de edição adaptado a várias narrativas e desenvolva a habilidade de criar histórias emocionantes e impactantes."
+        },
+        {
+          "title": "Finalização de vídeos",
+          "subtitle": "Aulas com Adobe After Effects",
+          "description": "Crie efeitos impressionantes para seus vídeos. Aprenda animações de texto, logotipos, efeitos visuais para cinema e muito mais. Transforme suas produções com técnicas que dão um toque profissional e cativante aos projetos."
+        },
+        {
+          "title": "Interface criativa (UI Design)",
+          "subtitle": "Aulas práticas com Figma",
+          "description": "Aprenda a criar interfaces interativas e protótipos funcionais para apps, sites e sistemas. Entenda como usar o Atomic Design, criar style guides e desenvolver soluções para variados projetos. Aplique tipografia, cores, grids e criação de componentes para protótipos LO-FI e HI-FI. Domine testes de usabilidade e coleta de feedbacks de usuários reais."
+        }
+      ]
+    }
   }
 ];
 
