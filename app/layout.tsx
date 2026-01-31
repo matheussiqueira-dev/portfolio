@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { JetBrains_Mono, Roboto } from "next/font/google";
 import Script from "next/script";
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/seo/JsonLd";
 import CursorGlow from "@/components/ui/CursorGlow";
 import VideoBackground from "@/components/ui/VideoBackground";
@@ -24,9 +25,9 @@ const jetBrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const siteTitle = `${siteName} | Desenvolvedor Full Stack | Dados, IA e Software`;
+const siteTitle = `${siteName} | Desenvolvedor Full Stack | React, Python, Dados e Cloud`;
 const siteDescription =
-  "Portfólio profissional de Matheus Siqueira — Desenvolvedor Full Stack com base em dados, IA e engenharia de software. APIs, front-end, automação e analytics.";
+  "Portfólio profissional de desenvolvedor full stack focado em aplicações web, engenharia de dados, BI e soluções escaláveis em cloud.";
 
 const websiteJsonLd = {
   "@context": "https://schema.org",
@@ -44,6 +45,7 @@ const personJsonLd = {
   "@id": `${baseUrl}/#person`,
   name: "Matheus Siqueira",
   jobTitle: "Desenvolvedor Full Stack",
+  description: "Desenvolvedor full stack focado em aplicações web, dados e cloud",
   email: "matheussiqueirahub@gmail.com",
   telephone: "+55 81 99920-3683",
   url: baseUrl,
@@ -72,6 +74,7 @@ const personJsonLd = {
     "Business Intelligence",
     "Data Engineering",
   ],
+  skills: ["React", "Next.js", "Node.js", "Python", "SQL", "Power BI", "Cloud"],
 };
 
 const softwareDeveloperJsonLd = {
@@ -80,6 +83,7 @@ const softwareDeveloperJsonLd = {
   "@id": `${baseUrl}/#software-developer`,
   name: "Matheus Siqueira",
   jobTitle: "Desenvolvedor Full Stack",
+  description: "Desenvolvedor full stack focado em aplicações web, dados e cloud",
   url: baseUrl,
   image: `${baseUrl}/profile.jpg`,
   sameAs: sameAsLinks,
@@ -116,24 +120,16 @@ export const metadata: Metadata = {
   },
   description: siteDescription,
   keywords: [
-    "desenvolvedor full stack",
     "full stack developer",
-    "engenheiro de software",
-    "software engineer",
     "react",
     "next.js",
-    "node.js",
-    "typescript",
-    "mongodb",
     "python",
+    "node.js",
     "sql",
-    "apis",
-    "cloud computing",
-    "machine learning",
+    "power bi",
     "data engineering",
-    "business intelligence",
-    "dados",
-    "ia",
+    "cloud computing",
+    "web applications",
   ],
   alternates: {
     ...buildAlternates({ pt: "/", en: "/en", canonical: "/" }),
@@ -238,6 +234,7 @@ export default function RootLayout({
           <main id="main-content" className="min-h-screen">
             {children}
           </main>
+          <Footer />
         </div>
       </body>
     </html>

@@ -12,15 +12,15 @@ export const metadata: Metadata = {
   description: pageDescription,
   alternates: {
     ...buildAlternates({
-      pt: "/data-analyst-junior",
-      en: "/en/junior-data-analyst",
-      canonical: "/en/junior-data-analyst",
+      pt: "/data-analyst",
+      en: "/en/data-analyst",
+      canonical: "/en/data-analyst",
     }),
   },
   openGraph: {
     title: pageTitle,
     description: pageDescription,
-    url: "/en/junior-data-analyst",
+    url: "/en/data-analyst",
     locale: "en_US",
     type: "website",
     siteName,
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function JuniorDataAnalystPage() {
+export default function DataAnalystPage() {
   return (
     <main className="min-h-screen px-6 pt-28 pb-20">
       <div className="max-w-5xl mx-auto space-y-10">

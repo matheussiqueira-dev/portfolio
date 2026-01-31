@@ -32,6 +32,10 @@ export type SiteContent = {
       title: string;
       body: string;
     };
+    differential: {
+      title: string;
+      description: string;
+    };
     deliver: {
       title: string;
       bullets: string[];
@@ -54,6 +58,30 @@ export type SiteContent = {
         items: string[];
       }[];
     };
+  };
+  executiveSummary: {
+    eyebrow: string;
+    title: string;
+    cards: {
+      icon: string;
+      title: string;
+    }[];
+  };
+  metrics: {
+    eyebrow: string;
+    title: string;
+    items: {
+      icon: string;
+      label: string;
+    }[];
+  };
+  primaryStack: {
+    eyebrow: string;
+    title: string;
+    items: {
+      label: string;
+      level: number;
+    }[];
   };
   projects: {
     eyebrow: string;

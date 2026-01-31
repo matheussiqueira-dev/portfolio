@@ -15,9 +15,9 @@ export const sitePt: SiteContent = {
   hero: {
     eyebrow: "Portfólio profissional",
     title: "Matheus Siqueira",
-    subtitle: "Desenvolvedor Full Stack",
+    subtitle: "Desenvolvedor Full Stack | Soluções Web, Dados e Cloud",
     description:
-      "Combino backend, frontend e analytics para entregar aplicações escaláveis. Experiência prática com automação, ETL e dashboards no setor público, usando React/Next.js, Node.js, Python, SQL e cloud.",
+      "Combino backend, frontend e analytics para entregar aplicações escaláveis. Atuação prática com automação, ETL e dashboards usando React/Next.js, Node.js, Python, SQL e cloud.",
     stackHighlights: [
       { label: "Full Stack", icon: "stack" },
       { label: "Dados", icon: "data" },
@@ -32,20 +32,25 @@ export const sitePt: SiteContent = {
   },
   about: {
     eyebrow: "Sobre",
-    title: "Desenvolvedor Full Stack com foco em dados e IA",
+    title: "Desenvolvedor full stack focado em aplicações web, dados e cloud",
     who: {
       title: "Quem sou",
       body:
-        "Atuo de forma integrada entre backend, frontend e analytics, desenvolvendo aplicações escaláveis e data-driven. Possuo experiência prática em automação, ETL e visualização de dados no setor público, utilizando React/Next.js, Node.js, Python, SQL e cloud computing.",
+        "Sou desenvolvedor full stack com foco em construir aplicações web robustas, escaláveis e orientadas a dados.",
+    },
+    differential: {
+      title: "💼 Experiência com dados complexos em larga escala",
+      description:
+        "Atuação prática com grandes volumes de dados, sistemas analíticos e processamento de informações críticas, com foco em performance e confiabilidade.",
     },
     deliver: {
-      title: "Como eu gero valor",
+      title: "O que faço",
       bullets: [
-        "Traduzo requisitos em soluções completas: UI, API e dados.",
-        "APIs REST com autenticação, logs e integrações.",
-        "Pipelines de dados e automação para reduzir trabalho manual.",
-        "Dashboards e métricas para visibilidade de produto.",
-        "Documentação e versionamento para times ágeis.",
+        "Desenvolvo soluções completas envolvendo frontend moderno, APIs seguras, processamento de dados e visualização analítica.",
+        "Traduzo requisitos em fluxos claros de produto e engenharia.",
+        "Automatizo integrações e pipelines para reduzir trabalho manual.",
+        "Métricas, dashboards e observabilidade para apoiar decisão.",
+        "Documentação e versionamento consistentes para times ágeis.",
       ],
     },
     snapshot: {
@@ -64,17 +69,16 @@ export const sitePt: SiteContent = {
           label: "Decisões baseadas em dados",
         },
         {
-          value: "Setor público",
-          label: "Dados fiscais em escala",
+          value: "Dados complexos",
+          label: "Escala e confiabilidade",
         },
       ],
     },
     highlights: {
-      title: "Destaques",
+      title: "Diferencial",
       items: [
-        "Experiência com dados públicos e fiscais em grande escala.",
         "Projetos full stack com front-end, back-end e dados.",
-        "Pós-graduações em Cloud, Segurança e IA.",
+        "Certificações em Cloud, Segurança e IA.",
         "Técnico em Programação Full Stack A.I.",
         "Inglês C1 e comunicação clara com stakeholders.",
         "Foco em qualidade, performance e entrega contínua.",
@@ -130,6 +134,56 @@ export const sitePt: SiteContent = {
         },
       ],
     },
+  },
+  executiveSummary: {
+    eyebrow: "Resumo executivo",
+    title: "Resumo executivo",
+    cards: [
+      {
+        icon: "🎓",
+        title: "Formação em Ciência da Computação",
+      },
+      {
+        icon: "📊",
+        title: "11+ Projetos Full Stack Entregues",
+      },
+      {
+        icon: "☁️",
+        title: "Certificações em Cloud, Segurança e IA",
+      },
+    ],
+  },
+  metrics: {
+    eyebrow: "Métricas",
+    title: "Credibilidade em números",
+    items: [
+      {
+        icon: "📁",
+        label: "11+ Projetos Concluídos",
+      },
+      {
+        icon: "🔗",
+        label: "Atividade consistente no GitHub",
+      },
+      {
+        icon: "⏱️",
+        label: "Experiência prática em desenvolvimento",
+      },
+      {
+        icon: "📊",
+        label: "Projetos orientados a dados e decisão",
+      },
+    ],
+  },
+  primaryStack: {
+    eyebrow: "Stack principal",
+    title: "Stack principal",
+    items: [
+      { label: "React", level: 5 },
+      { label: "Next.js", level: 5 },
+      { label: "Python", level: 4 },
+      { label: "SQL", level: 4 },
+    ],
   },
   projects: {
     eyebrow: "Projetos",

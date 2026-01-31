@@ -15,9 +15,9 @@ export const siteEn: SiteContent = {
   hero: {
     eyebrow: "Portfolio",
     title: "Matheus Siqueira",
-    subtitle: "Full Stack Developer",
+    subtitle: "Full Stack Developer | Web, Data & Cloud Solutions",
     description:
-      "I build end-to-end web products with a strong foundation in data and software engineering. I connect backend, frontend, and analytics to deliver scalable applications. Hands-on experience with automation, ETL, and dashboards in the public sector, using React/Next.js, Node.js, Python, SQL, and cloud.",
+      "I build end-to-end web products connecting backend, frontend, and analytics. Hands-on with automation, ETL, and dashboards using React/Next.js, Node.js, Python, SQL, and cloud.",
     stackHighlights: [
       { label: "Full Stack", icon: "stack" },
       { label: "Data", icon: "data" },
@@ -32,20 +32,25 @@ export const siteEn: SiteContent = {
   },
   about: {
     eyebrow: "About",
-    title: "Software + data to solve real problems",
+    title: "Full stack solutions focused on web, data, and cloud",
     who: {
       title: "Who I am",
       body:
-        "Full Stack Developer studying Computer Science, with postgraduate studies in Cloud & Edge, Information Security, and AI. I worked as a Data Analyst intern at the Pernambuco Treasury Department, handling large datasets, automation, and indicators. I now apply that foundation to build end-to-end systems focused on performance, security, and impact.",
+        "I’m a full stack developer focused on building robust, scalable, data-driven web applications.",
+    },
+    differential: {
+      title: "💼 Experience with large-scale complex data",
+      description:
+        "Hands-on work with large data volumes, analytical systems, and critical information processing, focused on performance and reliability.",
     },
     deliver: {
-      title: "How I deliver value",
+      title: "What I do",
       bullets: [
-        "Translate requirements into complete solutions: UI, API, and data.",
-        "Secure REST APIs with authentication, logs, and integrations.",
-        "Data pipelines and automation to reduce manual work.",
-        "Dashboards and metrics for product visibility.",
-        "Documentation and versioning for agile teams.",
+        "I build end-to-end solutions with modern frontend, secure APIs, data processing, and analytical visualization.",
+        "Translate requirements into clear product and engineering flows.",
+        "Automate integrations and pipelines to reduce manual work.",
+        "Metrics, dashboards, and observability for decision support.",
+        "Documentation and versioning that support agile teams.",
       ],
     },
     snapshot: {
@@ -64,17 +69,16 @@ export const siteEn: SiteContent = {
           label: "Data-driven decisions",
         },
         {
-          value: "Public sector",
-          label: "Large-scale data",
+          value: "Complex data",
+          label: "Scale and reliability",
         },
       ],
     },
     highlights: {
-      title: "Highlights",
+      title: "Differentiator",
       items: [
-        "Experience with large-scale public and fiscal data.",
         "Full stack projects with frontend, backend, and data.",
-        "Postgraduate studies in Cloud, Security, and AI.",
+        "Certifications in Cloud, Security, and AI.",
         "Full Stack A.I. Programming Technician.",
         "C1 English and clear communication with stakeholders.",
         "Focus on quality, performance, and continuous delivery.",
@@ -130,6 +134,56 @@ export const siteEn: SiteContent = {
         },
       ],
     },
+  },
+  executiveSummary: {
+    eyebrow: "Executive summary",
+    title: "Executive summary",
+    cards: [
+      {
+        icon: "🎓",
+        title: "Computer Science background",
+      },
+      {
+        icon: "📊",
+        title: "11+ Full Stack Projects Delivered",
+      },
+      {
+        icon: "☁️",
+        title: "Certifications in Cloud, Security, and AI",
+      },
+    ],
+  },
+  metrics: {
+    eyebrow: "Metrics",
+    title: "Credibility at a glance",
+    items: [
+      {
+        icon: "📁",
+        label: "11+ Projects Completed",
+      },
+      {
+        icon: "🔗",
+        label: "Consistent GitHub activity",
+      },
+      {
+        icon: "⏱️",
+        label: "Hands-on development experience",
+      },
+      {
+        icon: "📊",
+        label: "Data-driven, decision-focused projects",
+      },
+    ],
+  },
+  primaryStack: {
+    eyebrow: "Core stack",
+    title: "Core stack",
+    items: [
+      { label: "React", level: 5 },
+      { label: "Next.js", level: 5 },
+      { label: "Python", level: 4 },
+      { label: "SQL", level: 4 },
+    ],
   },
   projects: {
     eyebrow: "Projects",

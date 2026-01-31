@@ -81,13 +81,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-      url: `${base}/data-analyst-junior`,
+      url: `${base}/data-analyst`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.6,
     },
     {
-      url: `${base}/en/junior-data-analyst`,
+      url: `${base}/en/data-analyst`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.6,

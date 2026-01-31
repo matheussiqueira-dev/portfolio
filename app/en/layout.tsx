@@ -5,18 +5,18 @@ import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: `${siteName} | Full Stack Developer | Data & AI`,
+    default: `${siteName} | Full Stack Developer | React, Python, Data & Cloud`,
     template: `%s | ${siteName}`,
   },
   description:
-    "Professional portfolio of Matheus Siqueira — Full Stack Developer with a data and AI foundation. Web apps, APIs, automation, and analytics.",
+    "Professional full stack developer portfolio focused on web applications, data engineering, BI, and scalable cloud solutions.",
   alternates: {
     ...buildAlternates({ pt: "/", en: "/en", canonical: "/en" }),
   },
   openGraph: {
-    title: `${siteName} | Full Stack Developer | Data & AI`,
+    title: `${siteName} | Full Stack Developer | React, Python, Data & Cloud`,
     description:
-      "Professional portfolio of Matheus Siqueira — Full Stack Developer with a data and AI foundation. Web apps, APIs, automation, and analytics.",
+      "Professional full stack developer portfolio focused on web applications, data engineering, BI, and scalable cloud solutions.",
     url: "/en",
     locale: "en_US",
     type: "website",
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} | Full Stack Developer | Data & AI`,
+    title: `${siteName} | Full Stack Developer | React, Python, Data & Cloud`,
     description:
-      "Professional portfolio of Matheus Siqueira — Full Stack Developer with a data and AI foundation. Web apps, APIs, automation, and analytics.",
+      "Professional full stack developer portfolio focused on web applications, data engineering, BI, and scalable cloud solutions.",
     // Replace with your social sharing image (1200x630).
     images: ["/og.png"],
   },

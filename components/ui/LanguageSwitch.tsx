@@ -11,7 +11,7 @@ import { usePathname } from "next/navigation";
 const PT_TO_EN_MAP: Record<string, string> = {
   "/academico": "/en/academic",
   "/contrate": "/en/hire",
-  "/data-analyst-junior": "/en/junior-data-analyst",
+  "/data-analyst": "/en/data-analyst",
 };
 
 /**

@@ -23,6 +23,13 @@ export default function About({ content }: Props) {
             </p>
           </div>
 
+          <div className="card card-muted card-compact space-y-2">
+            <p className="card-title">{content.differential.title}</p>
+            <p className="text-sm text-[color:var(--muted)] leading-relaxed">
+              {content.differential.description}
+            </p>
+          </div>
+
           <div className="space-y-3">
             <p className="text-sm font-semibold text-[color:var(--foreground)]">
               {content.deliver.title}
