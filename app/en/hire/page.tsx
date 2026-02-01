@@ -53,15 +53,21 @@ const valueDelivery = [
 ];
 
 const practicalStack = {
-  Frontend: ["React", "Next.js", "TypeScript", "UX", "Accessibility"],
-  "Backend & APIs": [
-    "Node.js",
-    "REST APIs",
-    "FastAPI",
-    "Authentication",
-    "Integrations",
+  "Software Engineering & Architecture": [
+    "Full stack work with React/Next.js on the front end and REST APIs with Node.js and FastAPI.",
+    "Systems architecture and service integration with Python and Java, including authentication and integrations.",
+    "JavaScript and TypeScript with a UX and accessibility focus for reliable interfaces.",
   ],
-  "Data & Cloud": ["Python", "SQL", "ETL", "Power BI", "Cloud Computing"],
+  "Data, Analytics & BI": [
+    "Data engineering and analytics to support KPIs, governance, and decisions.",
+    "ETL/ELT, SQL analytics, and Python analytics (Pandas/NumPy) for pipelines.",
+    "Power BI, DAX, Power Query, and Tableau for executive-ready reporting.",
+  ],
+  "Infrastructure, Cloud & Delivery": [
+    "IT and network infrastructure with a focus on operational reliability.",
+    "Azure and Oracle Cloud with information security, automation, and shell scripts.",
+    "UX, web design, and Figma aligned with clear communication and agile methods (Scrum/Kanban/OKRs).",
+  ],
 };
 
 const featuredSlugs = [
@@ -75,6 +81,29 @@ const featuredSlugs = [
 const featuredProjects = featuredSlugs
   .map((slug) => projectsEn.find((project) => project.slug === slug))
   .filter((project): project is NonNullable<typeof project> => Boolean(project));
+
+const howWeWorkSteps = [
+  {
+    title: "Initial contact",
+    description:
+      "You share the role, project, or partnership context.",
+  },
+  {
+    title: "Technical conversation",
+    description:
+      "We align stack, context, scope, and challenges.",
+  },
+  {
+    title: "Terms alignment",
+    description:
+      "We define the engagement model, availability, and next steps.",
+  },
+  {
+    title: "Execution kickoff",
+    description:
+      "We start with clear communication and a steady cadence.",
+  },
+];
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -137,8 +166,12 @@ export default function HirePage() {
             <span className="text-[color:var(--muted-strong)] font-medium">
               software engineering
             </span>{" "}
-            foundation. I build web apps and APIs focused on outcomes. Open to
-            remote or hybrid roles.
+            foundation. I build web apps and APIs focused on outcomes, working
+            with remote or hybrid teams.
+            <span className="mt-3 block text-sm text-[color:var(--muted)]">
+              🟢 Available for new projects | 📍 Brazil (UTC-3) | ⏱️ Reply within
+              24h
+            </span>
           </p>
           {/* Consistent CTAs */}
           <div className="hero-actions justify-start gap-4">
@@ -196,6 +229,27 @@ export default function HirePage() {
               </div>
             ))}
           </div>
+        </section>
+
+        <section className="card card-lg space-y-6">
+          <h2 className="card-title text-2xl">How we work</h2>
+          <ol className="space-y-4">
+            {howWeWorkSteps.map((step, index) => (
+              <li key={step.title} className="flex gap-4">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[color:var(--border)] text-sm font-semibold text-[color:var(--foreground)]">
+                  {index + 1}
+                </span>
+                <div className="space-y-1">
+                  <p className="text-sm font-semibold text-[color:var(--foreground)]">
+                    {step.title}
+                  </p>
+                  <p className="text-sm text-[color:var(--muted)]">
+                    {step.description}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </section>
 
         <section className="space-y-6">

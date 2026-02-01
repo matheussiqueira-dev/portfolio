@@ -54,15 +54,21 @@ const valueDelivery = [
 ];
 
 const practicalStack = {
-  Frontend: ["React", "Next.js", "TypeScript", "UX", "Acessibilidade"],
-  "Backend & APIs": [
-    "Node.js",
-    "APIs REST",
-    "FastAPI",
-    "Autenticação",
-    "Integrações",
+  "Engenharia de Software & Arquitetura": [
+    "Full stack com React/Next.js no front e backend/APIs REST com Node.js e FastAPI.",
+    "Arquitetura de sistemas e integração de serviços com Python e Java, incluindo autenticação e integrações.",
+    "JavaScript e TypeScript com foco em UX e acessibilidade para interfaces confiáveis.",
   ],
-  "Data & Cloud": ["Python", "SQL", "ETL", "Power BI", "Cloud Computing"],
+  "Dados, Analytics & BI": [
+    "Engenharia e análise de dados para KPIs, governança e decisões orientadas a métricas.",
+    "ETL/ELT, SQL analytics e Python analytics (Pandas/NumPy) para pipelines e automações.",
+    "Power BI, DAX, Power Query e Tableau para visualização e leitura executiva.",
+  ],
+  "Infraestrutura, Cloud & Entrega": [
+    "Infraestrutura de TI e redes com foco em sustentação e confiabilidade.",
+    "Azure e Oracle Cloud com segurança da informação, automação e shell script.",
+    "UX, web design e Figma aliados a comunicação clara e métodos ágeis (Scrum/Kanban/OKRs).",
+  ],
 };
 
 const featuredSlugs = [
@@ -76,6 +82,29 @@ const featuredSlugs = [
 const featuredProjects = featuredSlugs
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is NonNullable<typeof project> => Boolean(project));
+
+const howWeWorkSteps = [
+  {
+    title: "Contato Inicial",
+    description:
+      "Você envia a mensagem descrevendo a vaga, projeto ou parceria.",
+  },
+  {
+    title: "Conversa Técnica",
+    description:
+      "Alinhamos stack, contexto, escopo e desafios.",
+  },
+  {
+    title: "Alinhamento de Termos",
+    description:
+      "Definimos modelo de trabalho, disponibilidade e próximos passos.",
+  },
+  {
+    title: "Início da Execução",
+    description:
+      "Começamos com comunicação clara e acompanhamento contínuo.",
+  },
+];
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -138,8 +167,12 @@ export default function ContratePage() {
             <span className="text-[color:var(--muted-strong)] font-medium">
               engenharia de software
             </span>
-            . Entrego aplicações web e APIs orientadas a resultados. Disponível
-            para oportunidades no Brasil (remoto ou híbrido).
+            . Entrego aplicações web e APIs orientadas a resultados, em
+            colaboração remota ou híbrida.
+            <span className="mt-3 block text-sm text-[color:var(--muted)]">
+              🟢 Disponível para novos projetos | 📍 Brasil (UTC-3) | ⏱️ Respondo
+              em até 24h
+            </span>
           </p>
           {/* CTAs com espaçamento e altura uniformes */}
           <div className="hero-actions justify-start gap-4">
@@ -195,6 +228,27 @@ export default function ContratePage() {
               </div>
             ))}
           </div>
+        </section>
+
+        <section className="card card-lg space-y-6">
+          <h2 className="card-title text-2xl">Como Funcionamos</h2>
+          <ol className="space-y-4">
+            {howWeWorkSteps.map((step, index) => (
+              <li key={step.title} className="flex gap-4">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[color:var(--border)] text-sm font-semibold text-[color:var(--foreground)]">
+                  {index + 1}
+                </span>
+                <div className="space-y-1">
+                  <p className="text-sm font-semibold text-[color:var(--foreground)]">
+                    {step.title}
+                  </p>
+                  <p className="text-sm text-[color:var(--muted)]">
+                    {step.description}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </section>
 
         <section className="space-y-6">
