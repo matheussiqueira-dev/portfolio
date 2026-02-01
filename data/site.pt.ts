@@ -15,7 +15,7 @@ export const sitePt: SiteContent = {
   hero: {
     eyebrow: "Analista de Dados • Business Intelligence • Power BI",
     title: "Matheus Siqueira",
-    subtitle: "Analista de Dados | BI | Power BI, SQL e Python",
+    subtitle: "Desenvolvedor FullStack | Analista de Dados | Infraestrutura",
     description:
       "Analista de Dados focado em Business Intelligence, Data Analytics e visualização de dados. Transformo dados fiscais, públicos e organizacionais em decisões claras com Power BI, SQL, DAX, Power Query e automações em Python.",
     stackHighlights: [
@@ -114,7 +114,17 @@ export const sitePt: SiteContent = {
         {
           title: "Linguagens",
           icon: "languages",
-          items: ["Python", "SQL", "Pandas", "NumPy"],
+          items: [
+            "Python",
+            "SQL",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Java",
+            "DAX",
+            "Pandas",
+            "NumPy",
+          ],
         },
         {
           title: "Bancos de Dados",
