@@ -10,8 +10,8 @@ import VideoBackground from "@/components/ui/VideoBackground";
 import { baseUrl, buildAlternates, siteName, sameAsLinks } from "@/lib/seo";
 import "./globals.css";
 
-// Google Tag Manager ID
-const GTM_ID = "GTM-WR93ZJ8C";
+// Google tag (gtag.js) ID
+const GOOGLE_TAG_ID = "G-D128T68SL3";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -184,6 +184,25 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" data-theme="dark" suppressHydrationWarning>
       <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          id="google-tag-script"
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG_ID}`}
+          strategy="beforeInteractive"
+        />
+        <Script
+          id="google-tag-config"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GOOGLE_TAG_ID}');
+            `,
+          }}
+        />
         <Script
           id="theme-init"
           strategy="beforeInteractive"
@@ -200,20 +219,6 @@ export default function RootLayout({
             `,
           }}
         />
-        {/* Google Tag Manager - Script */}
-        <Script
-          id="gtm-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','${GTM_ID}');
-            `,
-          }}
-        />
         {/* Preload critical resources */}
         <link
           rel="preload"
@@ -225,16 +230,6 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${jetBrainsMono.variable} min-h-screen antialiased`}
       >
-        {/* Google Tag Manager - NoScript fallback */}
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
-
         {/* Skip to main content link for accessibility */}
         <a
           href="#main-content"

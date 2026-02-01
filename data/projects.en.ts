@@ -118,6 +118,122 @@ const projectListEn: Project[] = [
     },
   },
   {
+    slug: "dashboard-vendas-power-bi",
+    title: "Sales Dashboard - Power BI",
+    headline:
+      "Sales Dashboard | Power BI with KPIs, targets and regional insights",
+    tagline:
+      "Power BI dashboard to track sales performance, targets, and product mix with dynamic filters.",
+    role: "Data Analyst",
+    stack: ["Power BI", "DAX", "Power Query", "Excel"],
+    repoUrl:
+      "https://github.com/matheussiqueira-dev/Dashboard-de-Vendas---Power-BI.git",
+    demoUrl: "/projects/dashboard-vendas-power-bi/dashboard.pdf",
+    demo: {
+      kind: "video",
+      src: "/projects/dashboard-vendas-power-bi/demo.mp4",
+      poster: "/projects/dashboard-vendas-power-bi/cover.webp",
+      caption: "Dashboard overview and main filters.",
+    },
+    intro: {
+      title: "Sales Dashboard in Power BI",
+      paragraphs: [
+        "Dashboard focused on tracking revenue, volume, average ticket, and targets by period, channel, and region.",
+        "Combines data modeling, DAX measures, and decision-focused visuals.",
+      ],
+      sections: [
+        {
+          title: "What the dashboard delivers",
+          items: [
+            "Sales KPIs with variance vs. target and previous period.",
+            "Breakdowns by region, channel, and product line.",
+            "Product and customer rankings with dynamic filters.",
+          ],
+        },
+        {
+          title: "Supporting material",
+          footer: ["PDF with dashboard overview and main screens."],
+          link: {
+            label: "Open dashboard PDF",
+            href: "/projects/dashboard-vendas-power-bi/dashboard.pdf",
+          },
+        },
+      ],
+      video: {
+        src: "/projects/dashboard-vendas-power-bi/demo.mp4",
+        poster: "/projects/dashboard-vendas-power-bi/cover.webp",
+        caption: "KPIs, filters, and quick performance reading.",
+      },
+    },
+    context:
+      "The commercial team needed a single view of sales KPIs with fast filters for regions, channels, and products.",
+    problem: [
+      "Sales data spread across spreadsheets with inconsistent metrics.",
+      "Hard to track targets and period-over-period variations.",
+      "Low visibility into product mix and channel performance.",
+      "High time spent preparing executive reports.",
+    ],
+    dataUsed: [
+      "Orders and sales line items.",
+      "Calendar dimension for seasonal analysis.",
+      "Commercial targets by period and region.",
+      "Product, channel, and location dimensions.",
+    ],
+    solution: [
+      "Star schema with sales fact and product, channel, region, and calendar dimensions.",
+      "Data cleansing and shaping in Power Query.",
+      "DAX measures for KPIs, variances, and contribution analysis.",
+      "Pages for executive overview and operational detail.",
+    ],
+    features: [
+      "Revenue, volume, average ticket, and margin KPIs.",
+      "Regional, channel, and product views with interactive filters.",
+      "Rankings and share-of-total indicators.",
+      "Target vs. actual tracking by period.",
+    ],
+    highlights: [
+      "Executive-ready dashboard for weekly reviews.",
+      "Reduced time to consolidate reporting.",
+      "Scalable structure for new dimensions and targets.",
+      "Fast performance reading focused on decision-making.",
+    ],
+    demonstrates: [
+      "Data modeling in Power BI.",
+      "DAX measures for KPIs and variance analysis.",
+      "Decision-oriented dashboard design.",
+      "Data preparation with Power Query.",
+    ],
+    techSummary:
+      "Power BI with Power Query for ETL and DAX for commercial KPIs and indicators.",
+    conclusion: [
+      "Delivered a sales dashboard with clear KPIs and intuitive filters.",
+      "Improved target tracking and seasonal trend analysis.",
+      "Prepared a base for growth with new data sources.",
+    ],
+    howToRun: [
+      "Clone the repository.",
+      "Open Dashboard.pbit in Power BI Desktop.",
+      "Point the data source to Sample data.xlsx.",
+      "Refresh and use the dashboard filters.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/dashboard-vendas-power-bi/cover.webp",
+        alt: "Sales Dashboard cover",
+      },
+      {
+        src: "/projects/dashboard-vendas-power-bi/demo.mp4",
+        alt: "Sales Dashboard demo video",
+        type: "video",
+      },
+    ],
+    seo: {
+      title: "Sales Dashboard | Power BI with KPIs and targets",
+      description:
+        "Power BI dashboard to monitor sales, targets, product mix, and regional performance with KPIs and dynamic filters.",
+    },
+  },
+  {
     slug: "touchless-web-gesture-interface",
     title: "Touchless Web Gesture Interface",
     headline: "Touchless Web Gesture Interface | Computer vision for dashboards",
@@ -1238,6 +1354,7 @@ const projectListEn: Project[] = [
 
 export const projectOrderEn = [
   "business-decision-simulator",
+  "dashboard-vendas-power-bi",
   "detector-de-stress",
   "touchless-web-gesture-interface",
   "driver-monitoring-system",

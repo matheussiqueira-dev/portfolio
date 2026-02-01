@@ -66,6 +66,24 @@ export const projects: Project[] = [
     },
   },
   {
+    id: "dashboard-vendas-power-bi",
+    title: "Dashboard de Vendas - Power B.I.",
+    shortDescription:
+      "Dashboard em Power BI para acompanhar vendas, metas e mix de produtos com filtros dinâmicos.",
+    tags: ["Power BI", "DAX", "Power Query", "Excel"],
+    techStack: ["Power BI", "DAX", "Power Query", "Excel"],
+    coverImage: "/projects/dashboard-vendas-power-bi/cover.webp",
+    links: {
+      repo: "https://github.com/matheussiqueira-dev/Dashboard-de-Vendas---Power-BI.git",
+    },
+    demo: {
+      mode: "video",
+      videoUrl: "/projects/dashboard-vendas-power-bi/demo.mp4",
+      aspectRatio: defaultAspect,
+      minHeight: 420,
+    },
+  },
+  {
     id: "touchless-web-gesture-interface",
     title: "Touchless Web Gesture Interface",
     shortDescription:

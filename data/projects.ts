@@ -119,6 +119,122 @@ const projectList: ProjectCase[] = [
     },
   },
   {
+    slug: "dashboard-vendas-power-bi",
+    title: "Dashboard de Vendas - Power B.I.",
+    headline:
+      "Dashboard de Vendas | Power BI com KPIs, metas e análises por região",
+    tagline:
+      "Dashboard em Power BI para acompanhar desempenho de vendas, metas e mix de produtos com filtros dinâmicos.",
+    role: "Analista de Dados",
+    stack: ["Power BI", "DAX", "Power Query", "Excel"],
+    repoUrl:
+      "https://github.com/matheussiqueira-dev/Dashboard-de-Vendas---Power-BI.git",
+    demoUrl: "/projects/dashboard-vendas-power-bi/dashboard.pdf",
+    demo: {
+      kind: "video",
+      src: "/projects/dashboard-vendas-power-bi/demo.mp4",
+      poster: "/projects/dashboard-vendas-power-bi/cover.webp",
+      caption: "Visão geral do dashboard e filtros principais.",
+    },
+    intro: {
+      title: "Dashboard de Vendas em Power BI",
+      paragraphs: [
+        "Dashboard focado em monitorar receita, volume, ticket médio e metas por período, canal e região.",
+        "Combina modelagem de dados, medidas DAX e visualizações orientadas à tomada de decisão.",
+      ],
+      sections: [
+        {
+          title: "O que o dashboard entrega",
+          items: [
+            "KPIs de vendas com variação vs. meta e período anterior.",
+            "Análise por região, canal e linha de produto.",
+            "Ranking de produtos e clientes com filtros dinâmicos.",
+          ],
+        },
+        {
+          title: "Material de apoio",
+          footer: ["PDF com visão geral do dashboard e principais telas."],
+          link: {
+            label: "Abrir PDF do dashboard",
+            href: "/projects/dashboard-vendas-power-bi/dashboard.pdf",
+          },
+        },
+      ],
+      video: {
+        src: "/projects/dashboard-vendas-power-bi/demo.mp4",
+        poster: "/projects/dashboard-vendas-power-bi/cover.webp",
+        caption: "KPIs, filtros e leitura rápida de desempenho.",
+      },
+    },
+    context:
+      "A operação comercial precisava consolidar indicadores de vendas em uma visão única, com filtros rápidos para regiões, canais e produtos.",
+    problem: [
+      "Dados dispersos em planilhas e pouca padronização de métricas.",
+      "Dificuldade em acompanhar metas e variações por período.",
+      "Baixa visibilidade do mix de produtos e canais com melhor desempenho.",
+      "Tempo alto para preparar relatórios executivos.",
+    ],
+    dataUsed: [
+      "Base de pedidos e itens de venda.",
+      "Calendário para análises sazonais.",
+      "Metas comerciais por período e região.",
+      "Dimensões de produto, canal e localidade.",
+    ],
+    solution: [
+      "Modelagem em estrela com fato de vendas e dimensões de produto, canal, região e calendário.",
+      "Tratamento e limpeza de dados no Power Query.",
+      "Medidas DAX para KPIs, variações e participação no total.",
+      "Páginas com visão executiva e detalhamento operacional.",
+    ],
+    features: [
+      "KPIs de receita, volume, ticket médio e margem.",
+      "Visão por região, canal e produto com filtros interativos.",
+      "Rankings e contribuições percentuais.",
+      "Indicadores de meta vs. realizado por período.",
+    ],
+    highlights: [
+      "Visão executiva pronta para reuniões semanais.",
+      "Redução de tempo de consolidação de relatórios.",
+      "Estrutura escalável para novas dimensões e metas.",
+      "Leitura rápida de performance com foco em decisão.",
+    ],
+    demonstrates: [
+      "Modelagem de dados no Power BI.",
+      "Criação de medidas DAX para KPIs e variações.",
+      "Design de dashboards orientado à decisão.",
+      "Tratamento de dados com Power Query.",
+    ],
+    techSummary:
+      "Power BI com Power Query para ETL e DAX para métricas e indicadores comerciais.",
+    conclusion: [
+      "Entreguei um painel de vendas com KPIs claros e filtros intuitivos.",
+      "Facilitei o acompanhamento de metas e tendências sazonais.",
+      "Deixei a base pronta para evolução com novas fontes de dados.",
+    ],
+    howToRun: [
+      "Clone o repositório.",
+      "Abra o arquivo Dashboard.pbit no Power BI Desktop.",
+      "Aponte a fonte para o arquivo Sample data.xlsx.",
+      "Atualize os dados e utilize os filtros do painel.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/dashboard-vendas-power-bi/cover.webp",
+        alt: "Capa do Dashboard de Vendas - Power B.I.",
+      },
+      {
+        src: "/projects/dashboard-vendas-power-bi/demo.mp4",
+        alt: "Demonstração do Dashboard de Vendas",
+        type: "video",
+      },
+    ],
+    seo: {
+      title: "Dashboard de Vendas | Power BI com KPIs e metas",
+      description:
+        "Dashboard em Power BI para monitorar vendas, metas, mix de produtos e desempenho por região, com KPIs e filtros dinâmicos.",
+    },
+  },
+  {
     slug: "touchless-web-gesture-interface",
     title: "Touchless Web Gesture Interface",
     headline: "Touchless Web Gesture Interface | Visão computacional para dashboards",
@@ -1241,6 +1357,7 @@ const projectList: ProjectCase[] = [
 
 export const projectOrder = [
   "business-decision-simulator",
+  "dashboard-vendas-power-bi",
   "detector-de-stress",
   "touchless-web-gesture-interface",
   "driver-monitoring-system",
