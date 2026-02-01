@@ -13,11 +13,11 @@ export const siteEn: SiteContent = {
     resume: "Resume",
   },
   hero: {
-    eyebrow: "Data Analyst • Business Intelligence • Power BI",
+    eyebrow: "Data Analyst • Business Intelligence • Power BI • Infrastructure",
     title: "Matheus Siqueira",
-    subtitle: "Data Analyst | BI | Power BI, SQL & Python",
+    subtitle: "Full Stack Developer | Data, BI, and Operational Architecture",
     description:
-      "Data Analyst focused on Business Intelligence, Data Analytics, and data visualization. I turn fiscal, public, and organizational data into clear decisions using Power BI, SQL, DAX, Power Query, and Python automation.",
+      "I turn fiscal, public, and organizational data into clear, sustainable decisions, connecting Power BI, SQL, DAX, Power Query, and Python automation to data architecture and infrastructure. I work with a technical-leadership mindset and senior-level, end-to-end execution to deliver measurable business impact.",
     stackHighlights: [
       { label: "Data Analytics", icon: "stack" },
       { label: "Business Intelligence", icon: "data" },
@@ -32,36 +32,36 @@ export const siteEn: SiteContent = {
   },
   about: {
     eyebrow: "About",
-    title: "Data, BI, and technology applied to decision-making",
+    title: "Data, BI, infrastructure, and technology applied to decision-making",
     summary: {
-      title: "About",
+      title: "About / Introduction",
       body:
         "I work in data analysis and Business Intelligence with experience in both public and private sectors. I worked as a Commercial Assistant at Grupo Moura, as a Compensation Analyst at the Jaboatão dos Guararapes City Hall, and I am currently a Data Analysis Intern at the Jaboatão dos Guararapes Treasury Department. My work is focused on KPIs, operational efficiency, and data-driven decision-making.",
     },
     who: {
       title: "Who I am",
       body:
-        "I’m a Data Analyst with a hybrid profile (data + development). I’m pursuing a BSc in Computer Science and hold postgraduate studies in Artificial Intelligence and Data Science, Information Security, and Cloud & Edge Computing, plus a Full Stack AI technical program and a degree in Marketing. I work with analytical mindset, technical rigor, and clear communication to translate business needs into reliable data solutions.",
+        "I’m a Data Analyst with a hybrid profile (data + development + infrastructure). I’m a Computer Science undergraduate and hold postgraduate studies in Artificial Intelligence and Data Science, Information Security, and Cloud & Edge Computing, plus a Full Stack AI technical program and a degree in Marketing. I work with analytical mindset, technical rigor, and clear communication to translate business needs into reliable data solutions.",
     },
     complexData: {
       title: "Experience with large-scale complex data",
       body:
-        "Experience with Business Intelligence for public management, strategic Power BI dashboards, and large-scale fiscal data analysis. I handle public and organizational data from multiple sources, structuring ETL/ELT, Python automation, and strategic BI to support decision-making.",
+        "Experience with Business Intelligence for public management, strategic Power BI dashboards, and large-scale fiscal data analysis. I handle public and organizational data from multiple sources, structuring ETL/ELT, Python automation, and data governance to support decisions and operations.",
     },
     differential: {
       title: "Differentiator",
       description:
-        "End-to-end profile connecting modeling, automation, APIs, and visualization to deliver business intelligence with clarity and impact.",
+        "End-to-end profile connecting modeling, automation, APIs, visualization, and infrastructure to deliver business intelligence with clarity and impact.",
     },
     deliver: {
       title: "What I do",
       bullets: [
-        "Data Analysis and Data Analytics.",
-        "Business Intelligence with Power BI, DAX, and Power Query.",
-        "Data modeling, SQL, and KPI development.",
-        "ETL / ELT and Python automation (Pandas, NumPy).",
-        "Data visualization and analytical storytelling.",
-        "REST APIs and Flask integrations.",
+        "Data analysis and data analytics to guide KPIs and decisions.",
+        "Business Intelligence with Power BI, DAX, and Power Query for executive dashboards.",
+        "Data modeling and SQL analytics to build reliable KPIs.",
+        "ETL/ELT and Python automation (Pandas, NumPy) for operational efficiency.",
+        "Data visualization and analytical storytelling for different audiences.",
+        "REST APIs and Flask integrations to orchestrate data flows.",
       ],
     },
     snapshot: {
@@ -69,99 +69,130 @@ export const siteEn: SiteContent = {
       items: [
         {
           value: "BI & Analytics",
-          label: "Power BI, KPIs, DAX",
+          label: "Power BI, KPIs, decisions",
         },
         {
           value: "Data",
-          label: "SQL, ETL/ELT, Python",
+          label: "SQL analytics, ETL/ELT, Python",
         },
         {
           value: "Automation",
           label: "Pipelines and efficiency",
         },
         {
-          value: "Decisions",
-          label: "Public and fiscal data",
+          value: "Infrastructure",
+          label: "Network, IT, operational support, and architecture",
         },
       ],
     },
     highlights: {
-      title: "Differentiator",
+      title: "Professional Differentiators",
       items: [
-        "Hybrid profile (data + development) with end-to-end ownership.",
-        "Experience with fiscal, public, and organizational data.",
-        "Ability to integrate BI, automation, and APIs into complete solutions.",
+        "Hybrid profile (data + development + infrastructure) with end-to-end ownership.",
+        "Experience with fiscal, public, and organizational data focused on decisions.",
+        "Ability to integrate BI, automation, APIs, and operational architecture into complete solutions.",
         "Clear communication with technical and non-technical stakeholders.",
         "Public and private sector background with impact focus.",
       ],
     },
     stack: {
-      title: "Stacks",
+      title: "Stack & Capabilities",
       groups: [
         {
-          title: "Data & BI",
+          title: "Data & Analytics",
           icon: "data",
           items: [
-            "Power BI",
-            "DAX",
-            "Power Query",
-            "Data Modeling",
-            "KPIs",
-            "ETL/ELT",
-            "Data Visualization",
+            "Data Engineering and Data Warehouse for reliable foundations.",
+            "Data Analysis and Statistical Analysis to explain variation.",
+            "Business Intelligence and Data Science applied to decisions.",
+            "Big Data and Data Governance focused on quality.",
+            "Data Visualization for executive communication.",
+            "KPIs and OKR methodology for measurable goals.",
+            "Data-driven decision-making with traceability.",
           ],
         },
         {
-          title: "Languages",
-          icon: "languages",
-          items: ["Python", "SQL", "Pandas", "NumPy"],
+          title: "Tools & Technologies",
+          icon: "tools",
+          items: [
+            "Power BI with DAX and Power Query for dashboards.",
+            "SQL Analytics for exploration and modeling.",
+            "Python Analytics with Pandas and NumPy.",
+            "Tableau and SQL Server Reporting Services for reporting.",
+            "ETL/ELT and data processing for integration.",
+          ],
         },
         {
-          title: "Databases",
-          icon: "database",
-          items: ["MySQL", "PostgreSQL"],
-        },
-        {
-          title: "Backend",
+          title: "Development & Architecture",
           icon: "backend",
-          items: ["Python", "Flask", "REST APIs"],
+          items: [
+            "Python, Java, and Node.js for services and integrations.",
+            "Back-end and REST APIs with performance focus.",
+            "Systems Architecture and Data Architecture for scalability.",
+            "Full Stack Development with end-to-end responsibility.",
+            "Programming logic, algorithms, and data structures.",
+          ],
         },
         {
-          title: "Frontend",
+          title: "Frontend & UX",
           icon: "frontend",
           items: [
-            "JavaScript",
-            "TypeScript",
-            "React",
-            "Next.js",
-            "HTML",
-            "CSS",
-            "Tailwind",
+            "React.js and AngularJS for data interfaces.",
+            "JavaScript and TypeScript for web applications.",
+            "HTML5 and CSS for responsive foundations.",
+            "UX Design and Web Design focused on usability.",
+            "Figma for prototyping and alignment.",
           ],
         },
         {
-          title: "Tools",
+          title: "Infrastructure, Cloud & Security",
+          icon: "database",
+          items: [
+            "IT Infrastructure and Network Infrastructure for operational support.",
+            "Azure and Oracle Cloud across cloud computing scenarios.",
+            "Information Security in cloud and edge environments.",
+            "Shell scripting and infrastructure automation.",
+            "IoT for operational integration.",
+          ],
+        },
+        {
+          title: "DevOps, Management & Methods",
           icon: "tools",
-          items: ["Git", "GitHub", "CI/CD", "Vercel", "Agile Methods"],
+          items: [
+            "Git and GitHub for collaborative versioning.",
+            "Azure DevOps and CI/CD for reliable releases.",
+            "Scrum, Kanban, and agile methods for delivery flow.",
+            "Process automation for operational efficiency.",
+          ],
+        },
+        {
+          title: "Soft Skills & Languages",
+          icon: "languages",
+          items: [
+            "Technical communication with technical and non-technical stakeholders.",
+            "Strong analytical capability applied to complex problems.",
+            "Ownership and systems thinking from business to execution.",
+            "English C1 for global collaboration.",
+          ],
         },
       ],
     },
   },
   executiveSummary: {
-    eyebrow: "Overview",
-    title: "Strategic summary",
+    eyebrow: "Experience & Specialties",
+    title: "Decision, architecture, and execution in data",
     paragraphs: [
-      "Data Analyst and BI professional focused on Business Intelligence, Power BI, SQL, and Python. I work with Data Analytics, KPIs, ETL/ELT, and data visualization to support decision-making.",
-      "Experience with fiscal, public, and organizational data, integrating modeling, automation, and strategic BI to deliver reliable, actionable insights.",
+      "Data Analyst and BI professional with end-to-end work across data engineering, BI, and automation, turning requests into measurable decisions and outcomes with Power BI, SQL, DAX, and Python.",
+      "Experience with fiscal, public, and organizational data, integrating modeling, governance, infrastructure, and strategic BI to support operations and accelerate decisions.",
     ],
     cards: [
       {
         icon: "education",
-        title: "Computer Science background",
+        title: "Computer Science undergraduate",
       },
       {
         icon: "projects",
-        title: "11+ Full Stack Projects Delivered",
+        title: "14+ Full Stack Projects Delivered",
       },
       {
         icon: "certifications",
@@ -175,7 +206,7 @@ export const siteEn: SiteContent = {
     items: [
       {
         icon: "projects",
-        label: "11+ Projects Completed",
+        label: "14+ Projects Completed",
       },
       {
         icon: "github",
@@ -187,7 +218,7 @@ export const siteEn: SiteContent = {
       },
       {
         icon: "data",
-        label: "Data-driven, decision-focused projects",
+        label: "Data-, architecture-, and decision-focused projects",
       },
     ],
   },
@@ -195,17 +226,17 @@ export const siteEn: SiteContent = {
     eyebrow: "Core stack",
     title: "Core stack",
     items: [
-      { label: "Power BI", level: 5 },
-      { label: "SQL", level: 5 },
-      { label: "Python", level: 4 },
-      { label: "DAX", level: 4 },
+      { label: "Power BI (dashboards and KPIs)", level: 5 },
+      { label: "SQL (modeling and analytics)", level: 5 },
+      { label: "Python (automation and data)", level: 4 },
+      { label: "DAX (measures and performance)", level: 4 },
     ],
   },
   projects: {
     eyebrow: "Projects",
     title: "Full stack, data, and AI projects",
     description:
-      "Case studies combining software engineering, APIs, automation, and data, focused on product, performance, and informed decisions.",
+      "Case studies combining software engineering, APIs, automation, and data, focused on product, architecture, performance, and informed decisions.",
     cardLabel: "Case",
     highlightLabel: "Highlights",
     detailsLabel: "View details",
@@ -259,11 +290,11 @@ export const siteEn: SiteContent = {
   },
   contact: {
     eyebrow: "Contact",
-    title: "Let’s talk about data and BI",
+    title: "Let’s talk about data, BI, and architecture",
     description:
-      "Open to Data Analyst, Business Intelligence, and Data Analytics opportunities. I use Power BI, SQL, and Python to drive faster, more reliable decisions.",
+      "Open to Data Analyst, Business Intelligence, and Data Analytics opportunities, with experience across engineering, infrastructure, and execution. I use Power BI, SQL, and Python to drive faster, more reliable decisions.",
     ctaTitle:
-      "Professional summary: data analyst focused on BI, KPIs, and automation.",
+      "Professional summary: data analyst focused on BI, KPIs, automation, and operational architecture.",
     ctaSubtitle: "Connect on LinkedIn or send an email to start a conversation.",
     cards: {
       email: "Email",
