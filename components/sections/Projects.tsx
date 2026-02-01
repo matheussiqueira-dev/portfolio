@@ -248,9 +248,6 @@ export default function Projects() {
             const cover = registryCover ?? getCover(project);
             const highlights = getHighlights(project);
             const badges = getProjectBadges(project);
-            const caseHref = isEn
-              ? `/en/projects/${project.slug}`
-              : `/projetos/${project.slug}`;
             const isFeatured = featured.has(project.slug);
             const stars = starsByRepo[project.repoUrl];
             const isOpen = selectedProject?.slug === project.slug;
@@ -355,15 +352,17 @@ export default function Projects() {
                     {content.detailsLabel}
                   </button>
 
-                  <Link
-                    href={caseHref}
+                  <a
+                    href={project.repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() =>
-                      trackEvent("view_case", "engagement", project.slug)
+                      trackEvent("click_github", "outbound", project.slug)
                     }
                     className="btn-ghost focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                   >
                     {content.caseLabel}
-                  </Link>
+                  </a>
 
                   <a
                     href={project.repoUrl}
