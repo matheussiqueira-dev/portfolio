@@ -84,6 +84,24 @@ export const projects: Project[] = [
     },
   },
   {
+    id: "deteccao-de-anomalias-operacionais",
+    title: "Detecção de Anomalias Operacionais",
+    shortDescription:
+      "Sistema para detectar anomalias em métricas operacionais com alertas em tempo real e painel interativo.",
+    tags: ["Python", "FastAPI", "Isolation Forest", "TimescaleDB", "React", "D3"],
+    techStack: ["Python", "FastAPI", "Isolation Forest", "TimescaleDB", "React", "D3"],
+    coverImage: "/projects/deteccao-de-anomalias-operacionais/cover.webp",
+    links: {
+      repo: "https://github.com/matheussiqueira-dev/Deteccao-de-Anomalias-Operacionais.git",
+    },
+    demo: {
+      mode: "video",
+      videoUrl: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
+      aspectRatio: defaultAspect,
+      minHeight: 420,
+    },
+  },
+  {
     id: "touchless-web-gesture-interface",
     title: "Touchless Web Gesture Interface",
     shortDescription:

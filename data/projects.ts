@@ -235,6 +235,121 @@ const projectList: ProjectCase[] = [
     },
   },
   {
+    slug: "deteccao-de-anomalias-operacionais",
+    title: "Detecção de Anomalias Operacionais",
+    headline:
+      "Detecção de Anomalias | Radar operacional em tempo real",
+    tagline:
+      "Sistema para identificar desvios operacionais com alertas em tempo real e painel interativo.",
+    role: "Analista/Desenvolvedor",
+    stack: ["Python", "FastAPI", "Isolation Forest", "TimescaleDB", "React", "D3"],
+    repoUrl:
+      "https://github.com/matheussiqueira-dev/Deteccao-de-Anomalias-Operacionais.git",
+    demo: {
+      kind: "video",
+      src: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
+      poster: "/projects/deteccao-de-anomalias-operacionais/cover.webp",
+      caption: "Radar com alertas de anomalia e histórico de métricas.",
+    },
+    intro: {
+      title: "Operational Anomaly Radar (MVP)",
+      paragraphs: [
+        "Plataforma de monitoramento operacional com detecção automática de anomalias em séries temporais.",
+        "Combina ingestão via API/WS, modelos de detecção e dashboard interativo para priorizar eventos críticos.",
+      ],
+      sections: [
+        {
+          title: "O que o sistema entrega",
+          items: [
+            "Alertas em tempo real para métricas fora do padrão.",
+            "Histórico de séries temporais com filtros por fonte e métrica.",
+            "Painel interativo com visualização e investigação rápida.",
+          ],
+        },
+        {
+          title: "Arquitetura resumida",
+          items: [
+            "FastAPI com rotas REST/WS para ingestão e alertas.",
+            "TimescaleDB para armazenamento de séries temporais.",
+            "Frontend React + D3 para radar e timeline.",
+          ],
+        },
+      ],
+      video: {
+        src: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
+        poster: "/projects/deteccao-de-anomalias-operacionais/cover.webp",
+        caption: "Detecção automática, alertas e investigação em um só painel.",
+      },
+    },
+    context:
+      "Times operacionais precisavam detectar desvios rapidamente, sem depender de varredura manual de dashboards.",
+    problem: [
+      "Alertas demoravam a ser percebidos em picos ou quedas abruptas.",
+      "Métricas críticas estavam dispersas em diferentes visões.",
+      "Baixa rastreabilidade dos eventos anômalos no tempo.",
+      "Re-treinamento manual dos modelos dificultava a operação.",
+    ],
+    dataUsed: [
+      "Séries temporais de métricas operacionais.",
+      "Eventos de ingestão via API e WebSocket.",
+      "Metadados de origem, tags e unidade.",
+      "Histórico para treino de modelos de detecção.",
+    ],
+    solution: [
+      "API FastAPI com endpoints de ingestão, histórico e alertas WS.",
+      "Detecção com Isolation Forest e estratégia híbrida (opcional).",
+      "TimescaleDB para retenção eficiente de séries temporais.",
+      "Frontend React + D3 para radar e análise exploratória.",
+    ],
+    features: [
+      "Alertas em tempo real via WebSocket.",
+      "Dashboard com filtros por fonte, métrica e período.",
+      "Endpoint /train para re-treinamento sob demanda.",
+      "Health checks e métricas para observabilidade.",
+    ],
+    highlights: [
+      "Redução do tempo de identificação de incidentes.",
+      "Arquitetura em camadas com separação de domínio e serviços.",
+      "Pronto para integração com Kafka e pipelines externos.",
+      "Base extensível para novos modelos e métricas.",
+    ],
+    demonstrates: [
+      "Detecção de anomalias em séries temporais.",
+      "APIs REST/WS para dados em tempo real.",
+      "Modelagem de dados temporais com TimescaleDB.",
+      "Visualização avançada com React e D3.",
+    ],
+    techSummary:
+      "FastAPI + Isolation Forest com TimescaleDB e dashboard React/D3 para monitoramento operacional em tempo real.",
+    conclusion: [
+      "Entreguei uma base sólida para alerta e investigação de anomalias.",
+      "Integrei ingestão em tempo real com detecção automática.",
+      "Preparei o sistema para evolução com observabilidade e novos modelos.",
+    ],
+    howToRun: [
+      "Clone o repositório.",
+      "Copie backend/.env.example para backend/.env.",
+      "Execute: docker compose up --build.",
+      "Acesse o frontend e o backend em http://localhost:3000 e http://localhost:8000.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/deteccao-de-anomalias-operacionais/cover.webp",
+        alt: "Capa do projeto Detecção de Anomalias Operacionais",
+      },
+      {
+        src: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
+        alt: "Demonstração da Detecção de Anomalias Operacionais",
+        type: "video",
+      },
+    ],
+    seo: {
+      title: "Detecção de Anomalias | Monitoramento operacional em tempo real",
+      description:
+        "Plataforma com FastAPI, TimescaleDB e React/D3 para detectar anomalias em métricas operacionais e emitir alertas em tempo real.",
+    },
+  },
+  {
     slug: "touchless-web-gesture-interface",
     title: "Touchless Web Gesture Interface",
     headline: "Touchless Web Gesture Interface | Visão computacional para dashboards",
@@ -1441,6 +1556,7 @@ const projectList: ProjectCase[] = [
 export const projectOrder = [
   "business-decision-simulator",
   "dashboard-vendas-power-bi",
+  "deteccao-de-anomalias-operacionais",
   "detector-de-stress",
   "touchless-web-gesture-interface",
   "driver-monitoring-system",
