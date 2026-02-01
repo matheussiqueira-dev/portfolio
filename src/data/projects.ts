@@ -283,7 +283,7 @@ export const projects: Project[] = [
     },
     demo: {
       mode: "video",
-      videoUrl: "/hand-gesture-recognition-realtime.mp4",
+      videoUrl: "/Hands Gesture.mp4",
       aspectRatio: defaultAspect,
       minHeight: 420,
     },

@@ -1286,7 +1286,7 @@ const projectListEn: Project[] = [
       "https://github.com/matheussiqueira-dev/hand-gesture-recognition-realtime",
     demo: {
       kind: "video",
-      src: "/hand-gesture-recognition-realtime.mp4",
+      src: "/Hands Gesture.mp4",
       poster: "/projects/hand-gesture-recognition-realtime/cover.svg",
       caption: "Real-time gesture recognition demonstration.",
     },
@@ -1426,7 +1426,12 @@ const projectListEn: Project[] = [
         alt: "Hand gesture recognition project cover",
       },
       {
-        src: "/hand-gesture-recognition-realtime.mp4",
+        src: "/Hands Gesture.gif",
+        alt: "Real-time gesture recognition GIF demo",
+        type: "gif",
+      },
+      {
+        src: "/Hands Gesture.mp4",
         alt: "Real-time gesture recognition demonstration",
         type: "video",
       },
