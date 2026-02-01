@@ -9,6 +9,9 @@ export default function Footer() {
 
   const title = isEn ? "Let’s connect" : "Vamos conversar";
   const location = isEn ? "Brazil | Remote" : "Brasil | Remoto";
+  const credit = isEn
+    ? "Site developed by Matheus Siqueira."
+    : "Site desenvolvido por Matheus Siqueira.";
 
   return (
     <footer className="border-t border-[color:var(--border)] py-10">
@@ -18,6 +21,7 @@ export default function Footer() {
             {title}
           </p>
           <p className="text-sm text-[color:var(--muted)]">{location}</p>
+          <p className="text-xs text-[color:var(--muted)]">{credit}</p>
         </div>
 
         <div className="flex flex-wrap gap-3">
