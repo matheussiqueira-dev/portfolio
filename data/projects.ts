@@ -133,7 +133,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/projects/dashboard-vendas-power-bi/demo.mp4",
-      poster: "/projects/dashboard-vendas-power-bi/cover.webp",
+      poster: "/projects/dashboard-vendas-power-bi/cover.svg",
       caption: "Visão geral do dashboard e filtros principais.",
     },
     intro: {
@@ -162,7 +162,7 @@ const projectList: ProjectCase[] = [
       ],
       video: {
         src: "/projects/dashboard-vendas-power-bi/demo.mp4",
-        poster: "/projects/dashboard-vendas-power-bi/cover.webp",
+        poster: "/projects/dashboard-vendas-power-bi/cover.svg",
         caption: "KPIs, filtros e leitura rápida de desempenho.",
       },
     },
@@ -219,7 +219,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/dashboard-vendas-power-bi/cover.webp",
+        src: "/projects/dashboard-vendas-power-bi/cover.svg",
         alt: "Capa do Dashboard de Vendas - Power B.I.",
       },
       {
@@ -1121,7 +1121,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/projects/dino-chrome/demo.mp4",
-      poster: "/projects/dino-chrome/cover.webp",
+      poster: "/projects/dino-chrome/cover.svg",
       caption: "Gameplay do clone do Dino do Chrome.",
     },
     context:
@@ -1177,7 +1177,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/dino-chrome/cover.webp",
+        src: "/projects/dino-chrome/cover.svg",
         alt: "Capa do projeto Dino Chrome",
       },
       {

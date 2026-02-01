@@ -72,7 +72,7 @@ export const projects: Project[] = [
       "Dashboard em Power BI para acompanhar vendas, metas e mix de produtos com filtros dinâmicos.",
     tags: ["Power BI", "DAX", "Power Query", "Excel"],
     techStack: ["Power BI", "DAX", "Power Query", "Excel"],
-    coverImage: "/projects/dashboard-vendas-power-bi/cover.webp",
+    coverImage: "/projects/dashboard-vendas-power-bi/cover.svg",
     links: {
       repo: "https://github.com/matheussiqueira-dev/Dashboard-de-Vendas---Power-BI.git",
     },
@@ -240,7 +240,7 @@ export const projects: Project[] = [
       "Clone do jogo do Chrome para treinar lógica de colisão, pontuação e progressão.",
     tags: ["JavaScript", "HTML5", "Canvas", "CSS"],
     techStack: ["JavaScript", "HTML5", "Canvas", "CSS"],
-    coverImage: "/projects/dino-chrome/cover.webp",
+    coverImage: "/projects/dino-chrome/cover.svg",
     links: {
       repo: "https://github.com/matheussiqueira-dev/Dino-Chrome.git",
     },

@@ -132,7 +132,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/projects/dashboard-vendas-power-bi/demo.mp4",
-      poster: "/projects/dashboard-vendas-power-bi/cover.webp",
+      poster: "/projects/dashboard-vendas-power-bi/cover.svg",
       caption: "Dashboard overview and main filters.",
     },
     intro: {
@@ -161,7 +161,7 @@ const projectListEn: Project[] = [
       ],
       video: {
         src: "/projects/dashboard-vendas-power-bi/demo.mp4",
-        poster: "/projects/dashboard-vendas-power-bi/cover.webp",
+        poster: "/projects/dashboard-vendas-power-bi/cover.svg",
         caption: "KPIs, filters, and quick performance reading.",
       },
     },
@@ -218,7 +218,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/dashboard-vendas-power-bi/cover.webp",
+        src: "/projects/dashboard-vendas-power-bi/cover.svg",
         alt: "Sales Dashboard cover",
       },
       {
@@ -1119,7 +1119,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/projects/dino-chrome/demo.mp4",
-      poster: "/projects/dino-chrome/cover.webp",
+      poster: "/projects/dino-chrome/cover.svg",
       caption: "Gameplay of the Chrome Dino clone.",
     },
     context:
@@ -1175,7 +1175,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/dino-chrome/cover.webp",
+        src: "/projects/dino-chrome/cover.svg",
         alt: "Cover of Dino Chrome",
       },
       {
