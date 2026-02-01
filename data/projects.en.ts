@@ -247,7 +247,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
-      poster: "/projects/deteccao-de-anomalias-operacionais/cover.webp",
+      poster: "/projects/deteccao-de-anomalias-operacionais/cover.svg",
       caption: "Radar with anomaly alerts and metric history.",
     },
     intro: {
@@ -276,7 +276,7 @@ const projectListEn: Project[] = [
       ],
       video: {
         src: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
-        poster: "/projects/deteccao-de-anomalias-operacionais/cover.webp",
+        poster: "/projects/deteccao-de-anomalias-operacionais/cover.svg",
         caption: "Automatic detection, alerts, and investigation in one view.",
       },
     },
@@ -333,7 +333,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/deteccao-de-anomalias-operacionais/cover.webp",
+        src: "/projects/deteccao-de-anomalias-operacionais/cover.svg",
         alt: "Operational Anomaly Detection cover",
       },
       {

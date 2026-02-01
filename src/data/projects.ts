@@ -90,7 +90,7 @@ export const projects: Project[] = [
       "Sistema para detectar anomalias em métricas operacionais com alertas em tempo real e painel interativo.",
     tags: ["Python", "FastAPI", "Isolation Forest", "TimescaleDB", "React", "D3"],
     techStack: ["Python", "FastAPI", "Isolation Forest", "TimescaleDB", "React", "D3"],
-    coverImage: "/projects/deteccao-de-anomalias-operacionais/cover.webp",
+    coverImage: "/projects/deteccao-de-anomalias-operacionais/cover.svg",
     links: {
       repo: "https://github.com/matheussiqueira-dev/Deteccao-de-Anomalias-Operacionais.git",
     },

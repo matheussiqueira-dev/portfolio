@@ -248,7 +248,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
-      poster: "/projects/deteccao-de-anomalias-operacionais/cover.webp",
+      poster: "/projects/deteccao-de-anomalias-operacionais/cover.svg",
       caption: "Radar com alertas de anomalia e histórico de métricas.",
     },
     intro: {
@@ -277,7 +277,7 @@ const projectList: ProjectCase[] = [
       ],
       video: {
         src: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
-        poster: "/projects/deteccao-de-anomalias-operacionais/cover.webp",
+        poster: "/projects/deteccao-de-anomalias-operacionais/cover.svg",
         caption: "Detecção automática, alertas e investigação em um só painel.",
       },
     },
@@ -334,7 +334,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/deteccao-de-anomalias-operacionais/cover.webp",
+        src: "/projects/deteccao-de-anomalias-operacionais/cover.svg",
         alt: "Capa do projeto Detecção de Anomalias Operacionais",
       },
       {
