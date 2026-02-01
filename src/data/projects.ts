@@ -216,6 +216,24 @@ export const projects: Project[] = [
     },
   },
   {
+    id: "dino-chrome",
+    title: "Dino Chrome",
+    shortDescription:
+      "Clone do jogo do Chrome para treinar lógica de colisão, pontuação e progressão.",
+    tags: ["JavaScript", "HTML5", "Canvas", "CSS"],
+    techStack: ["JavaScript", "HTML5", "Canvas", "CSS"],
+    coverImage: "/projects/dino-chrome/cover.webp",
+    links: {
+      repo: "https://github.com/matheussiqueira-dev/Dino-Chrome.git",
+    },
+    demo: {
+      mode: "video",
+      videoUrl: "/projects/dino-chrome/demo.mp4",
+      aspectRatio: defaultAspect,
+      minHeight: 420,
+    },
+  },
+  {
     id: "gestor-de-notas",
     title: "Gestor de Notas",
     shortDescription:

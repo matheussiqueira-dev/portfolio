@@ -993,6 +993,89 @@ const projectListEn: Project[] = [
     ],
   },
   {
+    slug: "dino-chrome",
+    title: "Dino Chrome",
+    headline: "Dino Chrome | 2D game in HTML5 Canvas",
+    tagline:
+      "Clone of the Chrome Dino game to practice collision, scoring, and progression.",
+    role: "Developer",
+    stack: ["JavaScript", "HTML5", "Canvas", "CSS"],
+    repoUrl: "https://github.com/matheussiqueira-dev/Dino-Chrome.git",
+    demo: {
+      kind: "video",
+      src: "/projects/dino-chrome/demo.mp4",
+      poster: "/projects/dino-chrome/cover.webp",
+      caption: "Gameplay of the Chrome Dino clone.",
+    },
+    context:
+      "Project created to practice game loop, collision, and character control in a simple 2D runner.",
+    problem: [
+      "Build a stable browser-based game loop.",
+      "Detect collisions between the dino and obstacles in real time.",
+      "Scale difficulty without breaking gameplay.",
+      "Organize game states for quick restarts.",
+    ],
+    dataUsed: [
+      "Keyboard input for jump and movement.",
+      "Game state (speed, score, collisions).",
+      "Timers for obstacle spawn and reset.",
+      "Sprites and on-screen positions.",
+    ],
+    solution: [
+      "Canvas rendering with a continuous loop.",
+      "Simple collision system and obstacle reset.",
+      "Gradual speed increase for challenge.",
+      "Separation between game logic and UI.",
+    ],
+    features: [
+      "Responsive jump controls.",
+      "Dynamic obstacles with progressive difficulty.",
+      "Real-time scoring.",
+      "Quick restart flow.",
+    ],
+    highlights: [
+      "Lightweight and responsive browser gameplay.",
+      "Consistent collision logic.",
+      "Clear base for evolving mechanics and assets.",
+      "Faithful recreation of the classic Dino experience.",
+    ],
+    demonstrates: [
+      "Game loop and Canvas rendering.",
+      "Collision logic and game state handling.",
+      "Modular front-end structure.",
+      "Rapid 2D game prototyping.",
+    ],
+    techSummary:
+      "JavaScript and HTML5 Canvas for rendering and logic, with CSS for layout.",
+    conclusion: [
+      "Consolidated JS game loop fundamentals.",
+      "Implemented collisions and real-time scoring.",
+      "Left a solid base for future levels.",
+    ],
+    howToRun: [
+      "Clone the repository.",
+      "Open index.html in a browser.",
+      "Use the keyboard to control the character.",
+      "Track the score and avoid obstacles.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/dino-chrome/cover.webp",
+        alt: "Cover of Dino Chrome",
+      },
+      {
+        src: "/projects/dino-chrome/demo.mp4",
+        alt: "Dino Chrome gameplay demo",
+        type: "video",
+      },
+    ],
+    seo: {
+      title: "Dino Chrome | Chrome Dino clone in Canvas",
+      description:
+        "Chrome Dino clone built with JavaScript and HTML5 Canvas featuring game loop, collision, and real-time scoring.",
+    },
+  },
+  {
     slug: "gestor-de-notas",
     title: "Gestor de Notas",
     headline: "Gestor de Notas | Notes management app",
@@ -1364,6 +1447,7 @@ export const projectOrderEn = [
   "flappy-bird-gesture-control",
   "hand-gesture-recognition-realtime",
   "subway-surf",
+  "dino-chrome",
   "gestor-de-notas",
 ];
 
