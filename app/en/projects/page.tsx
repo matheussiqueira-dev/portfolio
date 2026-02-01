@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { TrackedAnchor, TrackedLink } from "@/components/analytics/TrackedLink";
+import { TrackedAnchor } from "@/components/analytics/TrackedLink";
 import JsonLd from "@/components/seo/JsonLd";
 import { projectsEn, projectOrderEn } from "@/data/projects.en";
 import { siteEn } from "@/data/site.en";
@@ -195,8 +195,10 @@ export default function ProjectsPageEn({ searchParams }: PageProps) {
                 </ul>
 
                 <div className="mt-auto flex flex-wrap gap-3 pt-2 text-xs text-[color:var(--muted)]">
-                  <TrackedLink
-                    href={`/en/projects/${project.slug}`}
+                  <TrackedAnchor
+                    href={project.repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     tracking={{
                       action: "view_case",
                       category: "engagement",
@@ -205,7 +207,7 @@ export default function ProjectsPageEn({ searchParams }: PageProps) {
                     className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                   >
                     {siteEn.projectsPage.caseLabel}
-                  </TrackedLink>
+                  </TrackedAnchor>
                   <TrackedAnchor
                     href={project.repoUrl}
                     target="_blank"
