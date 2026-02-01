@@ -337,6 +337,11 @@ const projectListEn: Project[] = [
         alt: "Operational Anomaly Detection cover",
       },
       {
+        src: "/projects/deteccao-de-anomalias-operacionais/demo.gif",
+        alt: "Operational Anomaly Detection GIF demo",
+        type: "gif",
+      },
+      {
         src: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
         alt: "Operational Anomaly Detection demo video",
         type: "video",

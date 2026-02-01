@@ -338,6 +338,11 @@ const projectList: ProjectCase[] = [
         alt: "Capa do projeto Detecção de Anomalias Operacionais",
       },
       {
+        src: "/projects/deteccao-de-anomalias-operacionais/demo.gif",
+        alt: "Demo em GIF da Detecção de Anomalias Operacionais",
+        type: "gif",
+      },
+      {
         src: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
         alt: "Demonstração da Detecção de Anomalias Operacionais",
         type: "video",
