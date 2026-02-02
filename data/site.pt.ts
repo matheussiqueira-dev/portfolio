@@ -234,7 +234,7 @@ export const sitePt: SiteContent = {
   },
   projects: {
     eyebrow: "Projetos",
-    title: "Projetos full stack, dados e IA",
+    title: "Projetos FullStack, Análise de Dados e IA",
     description:
       "Cases que unem engenharia de software, APIs, automação e dados, com foco em produto, arquitetura, performance e decisões bem informadas.",
     cardLabel: "Case",

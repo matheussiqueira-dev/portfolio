@@ -66,6 +66,24 @@ export const projects: Project[] = [
     },
   },
   {
+    id: "deteccao-de-anomalias-operacionais",
+    title: "Detecção de Anomalias Operacionais",
+    shortDescription:
+      "Sistema para detectar anomalias em métricas operacionais com alertas em tempo real e painel interativo.",
+    tags: ["Python", "FastAPI", "Isolation Forest", "TimescaleDB", "React", "D3"],
+    techStack: ["Python", "FastAPI", "Isolation Forest", "TimescaleDB", "React", "D3"],
+    coverImage: "/projects/deteccao-de-anomalias-operacionais/cover.svg",
+    links: {
+      repo: "https://github.com/matheussiqueira-dev/Deteccao-de-Anomalias-Operacionais.git",
+    },
+    demo: {
+      mode: "video",
+      videoUrl: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
+      aspectRatio: defaultAspect,
+      minHeight: 420,
+    },
+  },
+  {
     id: "dashboard-vendas-power-bi",
     title: "Dashboard de Vendas - Power B.I.",
     shortDescription:
@@ -84,19 +102,34 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "deteccao-de-anomalias-operacionais",
-    title: "Detecção de Anomalias Operacionais",
+    id: "detector-de-stress",
+    title: "Detector de Stress",
     shortDescription:
-      "Sistema para detectar anomalias em métricas operacionais com alertas em tempo real e painel interativo.",
-    tags: ["Python", "FastAPI", "Isolation Forest", "TimescaleDB", "React", "D3"],
-    techStack: ["Python", "FastAPI", "Isolation Forest", "TimescaleDB", "React", "D3"],
-    coverImage: "/projects/deteccao-de-anomalias-operacionais/cover.svg",
+      "Pipeline modular que estima o nível de stress apenas com webcam, HUD, REST/WS e dashboard.",
+    tags: [
+      "Python",
+      "OpenCV",
+      "MediaPipe",
+      "Streamlit",
+      "WebSockets",
+      "Machine Learning",
+    ],
+    techStack: [
+      "Python",
+      "OpenCV",
+      "MediaPipe",
+      "Streamlit",
+      "WebSockets",
+      "Machine Learning",
+    ],
+    coverImage: "/projects/detector-de-stress/cover.svg",
+    isInteractive: true,
     links: {
-      repo: "https://github.com/matheussiqueira-dev/Deteccao-de-Anomalias-Operacionais.git",
+      repo: "https://github.com/matheussiqueira-dev/Detector-de-Stress",
     },
     demo: {
       mode: "video",
-      videoUrl: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
+      videoUrl: "/Detector de Stress.mp4",
       aspectRatio: defaultAspect,
       minHeight: 420,
     },
@@ -121,20 +154,20 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "chatbot-ia-api",
-    title: "Chatbot IA API",
+    id: "driver-monitoring-system",
+    title: "Driver Monitoring System",
     shortDescription:
-      "API de chatbot com contexto, logs e dados para automação de suporte.",
-    tags: ["Python", "FastAPI", "PostgreSQL", "Redis"],
-    techStack: ["Python", "FastAPI", "PostgreSQL", "Redis"],
-    coverImage: "/projects/chatbot-ia-api/cover.svg",
+      "Sistema de monitoramento do motorista utilizando visão computacional para atenção e fadiga.",
+    tags: ["Python", "OpenCV", "MediaPipe", "TensorFlow"],
+    techStack: ["Python", "OpenCV", "MediaPipe", "TensorFlow"],
+    coverImage: "/projects/driver-monitoring-system/cover.svg",
     isInteractive: true,
     links: {
-      repo: "https://github.com/matheussiqueira-dev/chatbot-ia-api",
+      repo: "https://github.com/matheussiqueira-dev/Driver-Monitoring-System",
     },
     demo: {
-      mode: "inline",
-      inlineId: "chatbot-ia-api",
+      mode: "video",
+      videoUrl: "/driver-monitoring-system.mp4",
       aspectRatio: defaultAspect,
       minHeight: 420,
     },
@@ -159,6 +192,25 @@ export const projects: Project[] = [
     },
   },
   {
+    id: "chatbot-ia-api",
+    title: "Chatbot IA API",
+    shortDescription:
+      "API de chatbot com contexto, logs e dados para automação de suporte.",
+    tags: ["Python", "FastAPI", "PostgreSQL", "Redis"],
+    techStack: ["Python", "FastAPI", "PostgreSQL", "Redis"],
+    coverImage: "/projects/chatbot-ia-api/cover.svg",
+    isInteractive: true,
+    links: {
+      repo: "https://github.com/matheussiqueira-dev/chatbot-ia-api",
+    },
+    demo: {
+      mode: "inline",
+      inlineId: "chatbot-ia-api",
+      aspectRatio: defaultAspect,
+      minHeight: 420,
+    },
+  },
+  {
     id: "library-api-advanced",
     title: "Library API Advanced",
     shortDescription:
@@ -178,20 +230,20 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "driver-monitoring-system",
-    title: "Driver Monitoring System",
+    id: "hand-gesture-recognition-realtime",
+    title: "Reconhecimento de Gestos de Mão em Tempo Real",
     shortDescription:
-      "Sistema de monitoramento do motorista utilizando visão computacional para atenção e fadiga.",
-    tags: ["Python", "OpenCV", "MediaPipe", "TensorFlow"],
-    techStack: ["Python", "OpenCV", "MediaPipe", "TensorFlow"],
-    coverImage: "/projects/driver-monitoring-system/cover.svg",
+      "Sistema de visão computacional em tempo real para detectar mãos e contar dedos usando webcam.",
+    tags: ["Python", "OpenCV", "MediaPipe"],
+    techStack: ["Python", "OpenCV", "MediaPipe"],
+    coverImage: "/projects/hand-gesture-recognition-realtime/cover.svg",
     isInteractive: true,
     links: {
-      repo: "https://github.com/matheussiqueira-dev/Driver-Monitoring-System",
+      repo: "https://github.com/matheussiqueira-dev/hand-gesture-recognition-realtime",
     },
     demo: {
       mode: "video",
-      videoUrl: "/driver-monitoring-system.mp4",
+      videoUrl: "/Hands Gesture.mp4",
       aspectRatio: defaultAspect,
       minHeight: 420,
     },
@@ -265,58 +317,6 @@ export const projects: Project[] = [
     demo: {
       mode: "video",
       videoUrl: "/Gestor de Notas.mp4",
-      aspectRatio: defaultAspect,
-      minHeight: 420,
-    },
-  },
-  {
-    id: "hand-gesture-recognition-realtime",
-    title: "Reconhecimento de Gestos de Mão em Tempo Real",
-    shortDescription:
-      "Sistema de visão computacional em tempo real para detectar mãos e contar dedos usando webcam.",
-    tags: ["Python", "OpenCV", "MediaPipe"],
-    techStack: ["Python", "OpenCV", "MediaPipe"],
-    coverImage: "/projects/hand-gesture-recognition-realtime/cover.svg",
-    isInteractive: true,
-    links: {
-      repo: "https://github.com/matheussiqueira-dev/hand-gesture-recognition-realtime",
-    },
-    demo: {
-      mode: "video",
-      videoUrl: "/Hands Gesture.mp4",
-      aspectRatio: defaultAspect,
-      minHeight: 420,
-    },
-  },
-  {
-    id: "detector-de-stress",
-    title: "Detector de Stress",
-    shortDescription:
-      "Pipeline modular que estima o nível de stress apenas com webcam, HUD, REST/WS e dashboard.",
-    tags: [
-      "Python",
-      "OpenCV",
-      "MediaPipe",
-      "Streamlit",
-      "WebSockets",
-      "Machine Learning",
-    ],
-    techStack: [
-      "Python",
-      "OpenCV",
-      "MediaPipe",
-      "Streamlit",
-      "WebSockets",
-      "Machine Learning",
-    ],
-    coverImage: "/projects/detector-de-stress/cover.svg",
-    isInteractive: true,
-    links: {
-      repo: "https://github.com/matheussiqueira-dev/Detector-de-Stress",
-    },
-    demo: {
-      mode: "video",
-      videoUrl: "/Detector de Stress.mp4",
       aspectRatio: defaultAspect,
       minHeight: 420,
     },

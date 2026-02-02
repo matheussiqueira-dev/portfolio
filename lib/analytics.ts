@@ -17,9 +17,18 @@ type Gtag = (
   params?: GtagEventParams
 ) => void;
 
+type DataLayerEvent = {
+  event: string;
+  event_category?: string;
+  event_label?: string;
+  value?: number;
+  page_path?: string;
+};
+
 declare global {
   interface Window {
     gtag?: Gtag;
+    dataLayer?: DataLayerEvent[];
   }
 }
 
@@ -41,16 +50,21 @@ export type AnalyticsCategory =
 
 /**
  * Check if analytics is available and properly configured
- * @returns True if gtag is available, false otherwise
+ * @returns True if gtag or dataLayer is available, false otherwise
  */
 const _isAnalyticsAvailable = (): boolean => {
   if (typeof window === "undefined") {
     return false;
   }
 
-  if (typeof window.gtag !== "function") {
+  const hasGtag = typeof window.gtag === "function";
+  const hasDataLayer = Array.isArray(window.dataLayer);
+
+  if (!hasGtag && !hasDataLayer) {
     if (process.env.NODE_ENV === "development") {
-      console.warn("Google Analytics not loaded. Event tracking disabled.");
+      console.warn(
+        "Analytics not loaded (gtag or dataLayer). Event tracking disabled."
+      );
     }
     return false;
   }
@@ -78,16 +92,28 @@ export const trackEvent = (
   label?: string,
   value?: number
 ) => {
-  if (typeof window === "undefined" || typeof window.gtag !== "function") {
+  if (!_isAnalyticsAvailable()) {
     return;
   }
 
   try {
-    window.gtag("event", action, {
-      event_category: category,
-      event_label: label,
-      value,
-    });
+    if (typeof window.gtag === "function") {
+      window.gtag("event", action, {
+        event_category: category,
+        event_label: label,
+        value,
+      });
+      return;
+    }
+
+    if (Array.isArray(window.dataLayer)) {
+      window.dataLayer.push({
+        event: action,
+        event_category: category,
+        event_label: label,
+        value,
+      });
+    }
   } catch (error) {
     if (process.env.NODE_ENV === "development") {
       console.error("Failed to track event:", error);
@@ -107,15 +133,26 @@ export const trackEvent = (
  * ```
  */
 export const trackPageView = (url: string) => {
-  if (typeof window === "undefined" || typeof window.gtag !== "function") {
+  if (!_isAnalyticsAvailable()) {
     return;
   }
 
   try {
-    window.gtag("event", "page_view", {
-      page_path: url,
-      event_category: ANALYTICS_CATEGORIES.NAVIGATION,
-    });
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "page_view", {
+        page_path: url,
+        event_category: ANALYTICS_CATEGORIES.NAVIGATION,
+      });
+      return;
+    }
+
+    if (Array.isArray(window.dataLayer)) {
+      window.dataLayer.push({
+        event: "page_view",
+        page_path: url,
+        event_category: ANALYTICS_CATEGORIES.NAVIGATION,
+      });
+    }
   } catch (error) {
     if (process.env.NODE_ENV === "development") {
       console.error("Failed to track page view:", error);
