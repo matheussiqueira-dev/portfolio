@@ -55,19 +55,16 @@ const valueDelivery = [
 
 const practicalStack = {
   "Engenharia de Software & Arquitetura": [
-    "Full stack com React/Next.js no front e backend/APIs REST com Node.js e FastAPI.",
-    "Arquitetura de sistemas e integração de serviços com Python e Java, incluindo autenticação e integrações.",
-    "JavaScript e TypeScript com foco em UX e acessibilidade para interfaces confiáveis.",
+    "Desenvolvimento full stack com React/Next.js no front, Node.js/FastAPI no backend e JavaScript/TypeScript em APIs REST orientadas a produto.",
+    "Arquitetura e integração de serviços com Python e Java, incluindo autenticação, logs e padrões de confiabilidade.",
   ],
   "Dados, Analytics & BI": [
-    "Engenharia e análise de dados para KPIs, governança e decisões orientadas a métricas.",
-    "ETL/ELT, SQL analytics e Python analytics (Pandas/NumPy) para pipelines e automações.",
-    "Power BI, DAX, Power Query e Tableau para visualização e leitura executiva.",
+    "Engenharia e análise de dados para KPIs e governança, com ETL/ELT, SQL analytics e Python (Pandas/NumPy).",
+    "BI e visualização executiva com Power BI (DAX, Power Query) e Tableau, conectando métricas à decisão.",
   ],
   "Infraestrutura, Cloud & Entrega": [
-    "Infraestrutura de TI e redes com foco em sustentação e confiabilidade.",
-    "Azure e Oracle Cloud com segurança da informação, automação e shell script.",
-    "UX, web design e Figma aliados a comunicação clara e métodos ágeis (Scrum/Kanban/OKRs).",
+    "Infraestrutura e redes com foco em sustentação, segurança da informação e automação via shell script.",
+    "Azure e Oracle Cloud com práticas de entrega, alinhando UX/Web Design e Figma a comunicação e métodos ágeis (Scrum/Kanban/OKRs).",
   ],
 };
 
@@ -159,7 +156,7 @@ export default function ContratePage() {
             ))}
           </ul>
           <p className="hero-description max-w-3xl mx-0 text-left">
-            Perfil técnico com base em{" "}
+            Perfil técnico orientado por{" "}
             <span className="text-[color:var(--muted-strong)] font-medium">
               dados
             </span>{" "}
@@ -167,8 +164,8 @@ export default function ContratePage() {
             <span className="text-[color:var(--muted-strong)] font-medium">
               engenharia de software
             </span>
-            . Entrego aplicações web e APIs orientadas a resultados, em
-            colaboração remota ou híbrida.
+            . Entrego aplicações web e APIs com foco em resultados, com visão
+            de produto e execução em colaboração remota ou híbrida.
             <span className="mt-3 block text-sm text-[color:var(--muted)]">
               🟢 Disponível para novos projetos | 📍 Brasil (UTC-3) | ⏱️ Respondo
               em até 24h
@@ -291,7 +288,8 @@ export default function ContratePage() {
             Vamos conversar?
           </h2>
           <p className="text-[color:var(--muted)]">
-            Aberto a processos seletivos e entrevistas. Respondo rapidamente.
+            Aberto a conversas sobre vagas, projetos ou parcerias. Contato direto
+            e processo claro desde o primeiro passo.
           </p>
           <div className="flex flex-wrap gap-3">
             <a

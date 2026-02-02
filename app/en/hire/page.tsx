@@ -54,19 +54,16 @@ const valueDelivery = [
 
 const practicalStack = {
   "Software Engineering & Architecture": [
-    "Full stack work with React/Next.js on the front end and REST APIs with Node.js and FastAPI.",
-    "Systems architecture and service integration with Python and Java, including authentication and integrations.",
-    "JavaScript and TypeScript with a UX and accessibility focus for reliable interfaces.",
+    "Full stack delivery with React/Next.js on the frontend, Node.js/FastAPI on the backend, and JavaScript/TypeScript across product-oriented REST APIs.",
+    "Architecture and service integration with Python and Java, including authentication, logging, and reliability patterns.",
   ],
   "Data, Analytics & BI": [
-    "Data engineering and analytics to support KPIs, governance, and decisions.",
-    "ETL/ELT, SQL analytics, and Python analytics (Pandas/NumPy) for pipelines.",
-    "Power BI, DAX, Power Query, and Tableau for executive-ready reporting.",
+    "Data engineering and analytics for KPIs and governance, using ETL/ELT, SQL analytics, and Python (Pandas/NumPy).",
+    "BI and executive visualization with Power BI (DAX, Power Query) and Tableau, connecting metrics to decisions.",
   ],
   "Infrastructure, Cloud & Delivery": [
-    "IT and network infrastructure with a focus on operational reliability.",
-    "Azure and Oracle Cloud with information security, automation, and shell scripts.",
-    "UX, web design, and Figma aligned with clear communication and agile methods (Scrum/Kanban/OKRs).",
+    "Infrastructure and networks focused on reliability, information security, and automation via shell scripts.",
+    "Azure and Oracle Cloud with delivery practices, aligning UX/Web Design and Figma with communication and agile methods (Scrum/Kanban/OKRs).",
   ],
 };
 
@@ -84,24 +81,24 @@ const featuredProjects = featuredSlugs
 
 const howWeWorkSteps = [
   {
-    title: "Initial contact",
+    title: "Initial Contact",
     description:
-      "You share the role, project, or partnership context.",
+      "You reach out describing the role, project, or opportunity.",
   },
   {
-    title: "Technical conversation",
+    title: "Technical Conversation",
     description:
-      "We align stack, context, scope, and challenges.",
+      "We align on stack, context, scope, and challenges.",
   },
   {
-    title: "Terms alignment",
+    title: "Terms Alignment",
     description:
-      "We define the engagement model, availability, and next steps.",
+      "We define availability, work model, and next steps.",
   },
   {
-    title: "Execution kickoff",
+    title: "Execution Kickoff",
     description:
-      "We start with clear communication and a steady cadence.",
+      "Work starts with clear communication and structure.",
   },
 ];
 
@@ -166,8 +163,8 @@ export default function HirePage() {
             <span className="text-[color:var(--muted-strong)] font-medium">
               software engineering
             </span>{" "}
-            foundation. I build web apps and APIs focused on outcomes, working
-            with remote or hybrid teams.
+            foundation. I build web apps and APIs focused on outcomes, with
+            product-minded execution in remote or hybrid collaboration.
             <span className="mt-3 block text-sm text-[color:var(--muted)]">
               🟢 Available for new projects | 📍 Brazil (UTC-3) | ⏱️ Reply within
               24h
@@ -232,7 +229,7 @@ export default function HirePage() {
         </section>
 
         <section className="card card-lg space-y-6">
-          <h2 className="card-title text-2xl">How we work</h2>
+          <h2 className="card-title text-2xl">How We Work</h2>
           <ol className="space-y-4">
             {howWeWorkSteps.map((step, index) => (
               <li key={step.title} className="flex gap-4">
@@ -292,7 +289,8 @@ export default function HirePage() {
             Let&apos;s talk
           </h2>
           <p className="text-[color:var(--muted)]">
-            Available for interviews and selection processes. Fast response time.
+            Open to roles, projects, or partnerships. Direct contact and a clear
+            process from the first step.
           </p>
           <div className="flex flex-wrap gap-3">
             <a
