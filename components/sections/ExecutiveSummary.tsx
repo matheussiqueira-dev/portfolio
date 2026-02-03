@@ -73,7 +73,7 @@ export default function ExecutiveSummary({ content }: Props) {
           </div>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+        <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
           <div className="grid gap-4 sm:grid-cols-2">
             {content.paragraphs.map((paragraph, index) => (
               <p

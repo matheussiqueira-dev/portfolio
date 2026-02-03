@@ -57,3 +57,6 @@ create-demos-fixed.ps1
 
 # Sentry Config File
 .env.sentry-build-plugin
+
+.vercel
+.env*.local

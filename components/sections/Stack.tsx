@@ -31,11 +31,11 @@ export default function Stack({ content }: Props) {
           </div>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 justify-items-center">
           {content.items.map((item, index) => (
             <div
               key={item.label}
-              className="card card-compact flex items-center justify-between gap-4"
+              className="card card-compact flex w-full max-w-xs items-center justify-between gap-4"
               data-reveal
               style={
                 {
