@@ -12,12 +12,12 @@ type Props = {
 export default function Certificates({ content, certificates }: Props) {
   return (
     <section className="page-section content-auto">
-      <div className="section-inner space-y-10">
-        <header className="space-y-4">
-          <h1 className="text-3xl md:text-4xl font-semibold text-[color:var(--foreground)]">
-            {content.title}
-          </h1>
-          <p className="text-base text-[color:var(--muted)] max-w-3xl">
+      <div className="section-inner">
+        <header className="section-heading">
+          <div className="section-heading__text">
+            <h1 className="section-title">{content.title}</h1>
+          </div>
+          <p className="section-description max-w-3xl">
             {content.description}
           </p>
         </header>

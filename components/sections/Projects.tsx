@@ -229,17 +229,15 @@ export default function Projects() {
   return (
     <section id="projects" className="page-section content-auto">
       <div className="section-inner">
-        <div className="flex flex-col gap-4 mb-10" data-reveal>
-          <p className="eyebrow">{content.eyebrow}</p>
-          <h2 className="text-3xl md:text-4xl font-semibold text-[color:var(--foreground)]">
-            {content.title}
-          </h2>
-          <p className="text-base text-[color:var(--muted)] max-w-2xl">
-            {content.description}
-          </p>
+        <div className="section-heading" data-reveal>
+          <div className="section-heading__text">
+            <p className="eyebrow">{content.eyebrow}</p>
+            <h2 className="section-title">{content.title}</h2>
+          </div>
+          <p className="section-description">{content.description}</p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-2 projects-grid">
+        <div className="grid gap-5 lg:grid-cols-2 projects-grid">
           {data.map((project, index) => {
             const registryProject = registryMap.get(project.slug);
             const registryCover = registryProject?.coverImage
@@ -257,7 +255,7 @@ export default function Projects() {
             return (
               <article
                 key={project.slug}
-                className="card card-hover project-card relative flex h-full flex-col gap-5 group"
+                className="card card-hover project-card relative flex h-full flex-col gap-4 group"
                 data-reveal
                 style={
                   {
@@ -395,7 +393,7 @@ export default function Projects() {
           })}
         </div>
 
-        <div className="mt-10">
+        <div className="mt-8">
           <Link
             href={projectsHref}
             className="inline-flex items-center gap-2 text-sm text-[color:var(--accent)] underline decoration-[color:var(--accent-soft)]/60 underline-offset-4 transition hover:text-[color:var(--accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"

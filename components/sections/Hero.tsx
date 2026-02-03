@@ -79,8 +79,8 @@ export default function Hero({ content, localePrefix }: Props) {
       role="region"
       aria-labelledby="hero-heading"
     >
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-[1.1fr_0.9fr]">
-        <div className="flex flex-col gap-6 text-center md:text-left">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 md:grid-cols-[1.05fr_0.95fr]">
+        <div className="flex flex-col gap-5 text-center md:text-left">
           {/* Eyebrow mais curto para abrir espaço para o título principal */}
           <p className="eyebrow animate-fade-up" style={{ animationDelay: "60ms" }}>
             {content.eyebrow}

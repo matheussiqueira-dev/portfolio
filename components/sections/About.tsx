@@ -164,16 +164,16 @@ const stackIcons: Record<StackIconKey, ReactNode> = {
 export default function About({ content }: Props) {
   return (
     <section id="about" className="page-section content-auto">
-      <div className="section-inner space-y-10">
-        <div className="space-y-3" data-reveal>
-          <p className="eyebrow">{content.eyebrow}</p>
-          <h2 className="text-3xl md:text-4xl font-semibold text-[color:var(--foreground)]">
-            {content.title}
-          </h2>
+      <div className="section-inner">
+        <div className="section-heading" data-reveal>
+          <div className="section-heading__text">
+            <p className="eyebrow">{content.eyebrow}</p>
+            <h2 className="section-title">{content.title}</h2>
+          </div>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="space-y-6">
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="space-y-4">
             <div className="card card-muted card-compact space-y-3" data-reveal>
               <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
                 {content.summary.title}
@@ -183,7 +183,7 @@ export default function About({ content }: Props) {
               </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-3 sm:grid-cols-2">
               <div
                 className="card card-compact space-y-2 h-full"
                 data-reveal
@@ -215,7 +215,7 @@ export default function About({ content }: Props) {
               <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
                 {content.deliver.title}
               </p>
-              <ul className="space-y-2 text-sm text-[color:var(--muted)]">
+              <ul className="grid gap-2 text-sm text-[color:var(--muted)] sm:grid-cols-2">
                 {content.deliver.bullets.map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[color:var(--accent-soft)]" />
@@ -226,9 +226,9 @@ export default function About({ content }: Props) {
             </div>
           </div>
 
-          <div className="card card-muted card-compact space-y-5 h-full" data-reveal>
+          <div className="card card-muted card-compact space-y-4 h-full" data-reveal>
             <p className="card-title text-left">{content.stack.title}</p>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-3 sm:grid-cols-2">
               {content.stack.groups.map((group, index) => (
                 <div
                   key={group.title}
@@ -261,12 +261,12 @@ export default function About({ content }: Props) {
           </div>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2">
-          <div className="card card-compact space-y-4 h-full" data-reveal>
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <div className="card card-compact space-y-3 h-full" data-reveal>
             <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
               {content.snapshot.title}
             </p>
-            <div className="grid gap-3 sm:grid-cols-2">
+            <div className="grid gap-2 sm:grid-cols-2">
               {content.snapshot.items.map((item, index) => (
                 <div
                   key={`${item.value}-${item.label}`}
@@ -285,7 +285,7 @@ export default function About({ content }: Props) {
             </div>
           </div>
 
-          <div className="card card-compact space-y-4 h-full" data-reveal>
+          <div className="card card-compact space-y-3 h-full" data-reveal>
             <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
               {content.highlights.title}
             </p>

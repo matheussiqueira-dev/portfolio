@@ -23,15 +23,15 @@ const Star = ({ filled }: { filled: boolean }) => (
 export default function Stack({ content }: Props) {
   return (
     <section id="stack" className="page-section content-auto">
-      <div className="section-inner space-y-8">
-        <div className="space-y-3" data-reveal>
-          <p className="eyebrow">{content.eyebrow}</p>
-          <h2 className="text-3xl md:text-4xl font-semibold text-[color:var(--foreground)]">
-            {content.title}
-          </h2>
+      <div className="section-inner">
+        <div className="section-heading" data-reveal>
+          <div className="section-heading__text">
+            <p className="eyebrow">{content.eyebrow}</p>
+            <h2 className="section-title">{content.title}</h2>
+          </div>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {content.items.map((item, index) => (
             <div
               key={item.label}
