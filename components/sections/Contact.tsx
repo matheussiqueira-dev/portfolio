@@ -19,7 +19,7 @@ export default function Contact({ content }: Props) {
 
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] items-start">
           <div className="space-y-4" data-reveal>
-            <p className="section-description md:text-lg">
+            <p className="section-description md:text-lg text-left max-w-none">
               {content.description}
             </p>
             <div className="card card-muted card-compact">

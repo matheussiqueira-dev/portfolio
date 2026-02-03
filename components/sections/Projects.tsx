@@ -229,10 +229,10 @@ export default function Projects() {
   return (
     <section id="projects" className="page-section content-auto">
       <div className="section-inner">
-        <div className="flex flex-col gap-3 md:items-end md:text-right" data-reveal>
-          <p className="eyebrow self-start md:self-end">{content.eyebrow}</p>
+        <div className="flex flex-col gap-3 items-start text-left" data-reveal>
+          <p className="eyebrow">{content.eyebrow}</p>
           <h2 className="section-title md:whitespace-nowrap">{content.title}</h2>
-          <p className="section-description md:max-w-2xl">{content.description}</p>
+          <p className="section-description max-w-3xl">{content.description}</p>
         </div>
 
         <div className="grid gap-5 lg:grid-cols-2 projects-grid">
