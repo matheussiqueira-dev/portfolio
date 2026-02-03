@@ -361,7 +361,7 @@ const projectListEn: Project[] = [
     role: "Analyst/Developer",
     stack: ["Python", "FastAPI", "OpenCV", "MediaPipe", "React"],
     repoUrl:
-      "https://github.com/matheussiqueira-dev/touchless-web-gesture-interface",
+      "https://github.com/matheussiqueira-dev/Interface-Web-de-Gestos-Sem-Contato.git",
     demo: {
       kind: "video",
       src: "/touchless-web-gesture-interface.mp4",
@@ -507,8 +507,8 @@ const projectListEn: Project[] = [
           ],
           footer: ["Repository:"],
           link: {
-            label: "github.com/matheussiqueira-dev/touchless-web-gesture-interface",
-            href: "https://github.com/matheussiqueira-dev/touchless-web-gesture-interface",
+            label: "github.com/matheussiqueira-dev/Interface-Web-de-Gestos-Sem-Contato.git",
+            href: "https://github.com/matheussiqueira-dev/Interface-Web-de-Gestos-Sem-Contato.git",
           },
         },
         {

@@ -356,13 +356,13 @@ const projectList: ProjectCase[] = [
   },
   {
     slug: "touchless-web-gesture-interface",
-    title: "Touchless Web Gesture Interface",
-    headline: "Touchless Web Gesture Interface | Visão computacional para dashboards",
+    title: "Interface Web de Gestos Sem Contato",
+    headline: "Interface Web de Gestos Sem Contato | Visão computacional para dashboards",
     tagline: "Interface web touchless com visão computacional para navegar dashboards e data apps.",
     role: "Analista/Desenvolvedor",
     stack: ["Python", "FastAPI", "OpenCV", "MediaPipe", "React"],
     repoUrl:
-      "https://github.com/matheussiqueira-dev/touchless-web-gesture-interface",
+      "https://github.com/matheussiqueira-dev/Interface-Web-de-Gestos-Sem-Contato.git",
     demo: {
       kind: "video",
       src: "/touchless-web-gesture-interface.mp4",
@@ -370,17 +370,17 @@ const projectList: ProjectCase[] = [
       caption: "Demonstração rápida da interface touchless em uso.",
     },
     intro: {
-      title: "Touchless Web Gesture Interface – Controle Web por Gestos em Tempo Real",
+      title: "Interface Web de Gestos Sem Contato – Controle Web por Gestos em Tempo Real",
       paragraphs: [
-        "A Touchless Web Gesture Interface é uma aplicação web inovadora que permite interagir com interfaces digitais sem tocar no mouse ou no teclado, utilizando apenas gestos das mãos capturados pela webcam, diretamente no navegador.",
+        "A Interface Web de Gestos Sem Contato é uma aplicação web inovadora que permite interagir com interfaces digitais sem tocar no mouse ou no teclado, utilizando apenas gestos das mãos capturados pela webcam, diretamente no navegador.",
         "Este projeto foi desenvolvido com foco em inovação, experiência do usuário e aplicação prática de visão computacional, explorando como tecnologias modernas podem transformar a forma como pessoas interagem com sistemas web.",
         "Mais do que uma prova de conceito, este projeto demonstra habilidades reais em desenvolvimento frontend moderno, arquitetura de aplicações, processamento de vídeo em tempo real e integração de bibliotecas avançadas de visão computacional.",
       ],
       sections: [
         {
-          title: "O que é o Touchless Web Gesture Interface?",
+          title: "O que é a Interface Web de Gestos Sem Contato?",
           paragraphs: [
-            "O Touchless Web Gesture Interface é uma interface web controlada por gestos, onde os movimentos da mão do usuário são reconhecidos em tempo real e convertidos em ações dentro da aplicação.",
+            "A Interface Web de Gestos Sem Contato é uma interface web controlada por gestos, onde os movimentos da mão do usuário são reconhecidos em tempo real e convertidos em ações dentro da aplicação.",
             "A solução utiliza Computer Vision no browser, eliminando a necessidade de hardware adicional ou softwares externos. Basta uma webcam e um navegador moderno.",
             "O objetivo principal do projeto é mostrar como a web pode ser usada como plataforma para soluções interativas avançadas, aplicáveis em áreas como:",
           ],
@@ -445,7 +445,7 @@ const projectList: ProjectCase[] = [
         {
           title: "Por que este projeto é relevante?",
           paragraphs: [
-            "O Touchless Web Gesture Interface vai além de um simples experimento técnico.",
+            "A Interface Web de Gestos Sem Contato vai além de um simples experimento técnico.",
           ],
           subSections: [
             {
@@ -486,7 +486,7 @@ const projectList: ProjectCase[] = [
           ],
         },
         {
-          title: "Aplicações Práticas do Touchless Web Gesture Interface",
+          title: "Aplicações Práticas da Interface Web de Gestos Sem Contato",
           paragraphs: [
             "Este tipo de solução pode ser aplicada em diversos contextos, como:",
           ],
@@ -508,14 +508,14 @@ const projectList: ProjectCase[] = [
           ],
           footer: ["Repositório:"],
           link: {
-            label: "github.com/matheussiqueira-dev/touchless-web-gesture-interface",
-            href: "https://github.com/matheussiqueira-dev/touchless-web-gesture-interface",
+            label: "github.com/matheussiqueira-dev/Interface-Web-de-Gestos-Sem-Contato.git",
+            href: "https://github.com/matheussiqueira-dev/Interface-Web-de-Gestos-Sem-Contato.git",
           },
         },
         {
           title: "Conclusão",
           paragraphs: [
-            "O Touchless Web Gesture Interface é um projeto que une tecnologia moderna, criatividade e aplicação prática, mostrando como a web pode ir além das interações tradicionais.",
+            "A Interface Web de Gestos Sem Contato é um projeto que une tecnologia moderna, criatividade e aplicação prática, mostrando como a web pode ir além das interações tradicionais.",
             "Ele representa uma abordagem inovadora para desenvolvimento web, reforçando habilidades em React, TypeScript, visão computacional, arquitetura frontend e experiência do usuário — competências altamente valorizadas no mercado de tecnologia atual.",
             "Se você busca exemplos reais de inovação aplicada à web, este projeto é uma demonstração clara do potencial de interfaces touchless no navegador.",
           ],
@@ -524,7 +524,7 @@ const projectList: ProjectCase[] = [
       video: {
         src: "/touchless-web-gesture-interface.mp4",
         poster: "/projects/touchless-web-gesture-interface/cover.svg",
-        caption: "Demonstração do Touchless Web Gesture Interface em uso.",
+        caption: "Demonstração da Interface Web de Gestos Sem Contato em uso.",
       },
     },
     context:
@@ -588,20 +588,20 @@ const projectList: ProjectCase[] = [
     screenshots: [
       {
         src: "/projects/touchless-web-gesture-interface/cover.svg",
-        alt: "Capa do projeto Touchless Web Gesture Interface",
+        alt: "Capa do projeto Interface Web de Gestos Sem Contato",
       },
       {
         src: "/touchless-web-gesture-interface.mp4",
-        alt: "Demonstração do Touchless Web Gesture Interface em uso",
+        alt: "Demonstração da Interface Web de Gestos Sem Contato em uso",
         type: "video",
       },
       {
         src: "/projects/touchless-web-gesture-interface/shot-1.webp",
-        alt: "Tela principal do projeto Touchless Web Gesture Interface",
+        alt: "Tela principal do projeto Interface Web de Gestos Sem Contato",
       },
     ],
     seo: {
-      title: "Touchless Web Gesture Interface | Interface sem toque para dashboards",
+      title: "Interface Web de Gestos Sem Contato | Interface sem toque para dashboards",
       description:
         "Case de visão computacional com Python, OpenCV, MediaPipe e FastAPI para controlar dashboards por gestos, integrando front-end React e API REST com baixa latência.",
     },

@@ -136,7 +136,7 @@ export const projects: Project[] = [
   },
   {
     id: "touchless-web-gesture-interface",
-    title: "Touchless Web Gesture Interface",
+    title: "Interface Web de Gestos Sem Contato",
     shortDescription:
       "Interface web touchless com visão computacional para navegar dashboards e data apps.",
     tags: ["Python", "FastAPI", "OpenCV", "MediaPipe", "React"],
@@ -144,7 +144,7 @@ export const projects: Project[] = [
     coverImage: "/projects/touchless-web-gesture-interface/cover.svg",
     isInteractive: true,
     links: {
-      repo: "https://github.com/matheussiqueira-dev/touchless-web-gesture-interface",
+      repo: "https://github.com/matheussiqueira-dev/Interface-Web-de-Gestos-Sem-Contato.git",
     },
     demo: {
       mode: "video",
