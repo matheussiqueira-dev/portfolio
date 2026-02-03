@@ -286,6 +286,87 @@ export const projects: Project[] = [
     },
   },
   {
+    id: "slingshot",
+    title: "Slingshot",
+    shortDescription:
+      "Bubble shooter em canvas com mira por toque/mouse, ricochete e dicas táticas.",
+    tags: ["JavaScript", "HTML5", "Canvas", "CSS", "Hammer.js"],
+    techStack: ["JavaScript", "HTML5", "Canvas", "CSS", "Hammer.js"],
+    coverImage: "/projects/slingshot/cover.svg",
+    links: {
+      repo: "https://github.com/matheussiqueira-dev/Slingshot.git",
+    },
+    demo: {
+      mode: "video",
+      videoUrl: "/projects/slingshot/demo.mp4",
+      aspectRatio: defaultAspect,
+      minHeight: 420,
+    },
+  },
+  {
+    id: "fruit-ninja",
+    title: "Fruit Ninja",
+    shortDescription:
+      "Corte por gestos com rastreamento de mão em tempo real usando a câmera.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "MediaPipe Tasks Vision",
+      "HTML5 Canvas",
+      "Tailwind CSS",
+    ],
+    techStack: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "MediaPipe Tasks Vision",
+      "HTML5 Canvas",
+      "Tailwind CSS",
+    ],
+    coverImage: "/projects/fruit-ninja/cover.svg",
+    links: {
+      repo: "https://github.com/matheussiqueira-dev/Clone-Fruit-Ninja.git",
+    },
+    demo: {
+      mode: "none",
+    },
+  },
+  {
+    id: "neon-runner-cyber-hand",
+    title: "Neon Runner: Cyber Hand",
+    shortDescription:
+      "Infinite runner cyberpunk controlado por gestos com visualização da mão em tempo real.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Three.js",
+      "@react-three/fiber",
+      "Zustand",
+      "MediaPipe Tasks Vision",
+    ],
+    techStack: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Three.js",
+      "@react-three/fiber",
+      "Zustand",
+      "MediaPipe Tasks Vision",
+    ],
+    coverImage: "/projects/neon-runner-cyber-hand/cover.svg",
+    links: {
+      repo: "https://github.com/matheussiqueira-dev/Neon-Runner-Cyber-Hand.git",
+    },
+    demo: {
+      mode: "video",
+      videoUrl: "/projects/neon-runner-cyber-hand/demo.mp4",
+      aspectRatio: defaultAspect,
+      minHeight: 420,
+    },
+  },
+  {
     id: "dino-chrome",
     title: "Dino Chrome",
     shortDescription:

@@ -1113,6 +1113,278 @@ const projectListEn: Project[] = [
     ],
   },
   {
+    slug: "slingshot",
+    title: "Slingshot",
+    headline: "Slingshot | Bubble shooter with ricochet and tactical hints",
+    tagline:
+      "Canvas bubble shooter with touch/mouse aiming, wall ricochet, and local shot suggestions.",
+    role: "Developer",
+    stack: ["JavaScript", "HTML5", "Canvas", "CSS", "Hammer.js"],
+    repoUrl: "https://github.com/matheussiqueira-dev/Slingshot.git",
+    demo: {
+      kind: "video",
+      src: "/projects/slingshot/demo.mp4",
+      poster: "/projects/slingshot/cover.svg",
+      caption: "Touch aim, ricochet shots, and real-time tactical hints.",
+    },
+    context:
+      "The goal was to build a lightweight browser bubble shooter with smooth controls on desktop and mobile.",
+    problem: [
+      "Deliver precise aiming for mouse and touch.",
+      "Enable advanced shots with wall ricochet.",
+      "Suggest strategic shots without relying on a backend.",
+      "Keep Canvas performance stable.",
+    ],
+    dataUsed: [
+      "Mouse and touch input for aim and firing.",
+      "Hex grid and bubble colors for cluster detection.",
+      "Collision and wall reflection calculations.",
+      "Local high score stored in the browser.",
+    ],
+    solution: [
+      "HTML5 Canvas render loop with continuous updates.",
+      "Responsive aiming system for mouse and touch via Hammer.js.",
+      "Local calculation of shot hints based on visible clusters.",
+      "High-score persistence via local storage.",
+    ],
+    features: [
+      "Smooth aim with touch or mouse control.",
+      "Side-wall ricochet for advanced shots.",
+      "Locally computed tactical hints.",
+      "Hex clusters with consistent color system.",
+      "High score saved in the browser.",
+      "Responsive, minimalist interface.",
+    ],
+    highlights: [
+      "Instant gameplay without installation or backend.",
+      "Strategic suggestions in real time.",
+      "Solid base for levels, power-ups, and new modes.",
+      "Consistent experience across desktop and mobile.",
+    ],
+    demonstrates: [
+      "Game loop and simple physics in HTML5 Canvas.",
+      "Touch gesture support with Hammer.js.",
+      "Cluster logic and ricochet for a bubble shooter.",
+      "Responsive UI with performance focus.",
+    ],
+    techSummary:
+      "JavaScript game on HTML5 Canvas with Hammer.js for gestures and CSS for responsive UI.",
+    conclusion: [
+      "Delivered a smooth bubble shooter with local tactical hints.",
+      "Implemented touch/mouse controls with consistent ricochet.",
+      "Left a base ready for new levels and mechanics.",
+    ],
+    howToRun: [
+      "Clone the repository.",
+      "Open index.html in a browser.",
+      "Optional: serve with python -m http.server 8000.",
+      "Open http://localhost:8000 and play.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/slingshot/cover.svg",
+        alt: "Slingshot cover",
+      },
+      {
+        src: "/projects/slingshot/demo.gif",
+        alt: "Slingshot demo GIF",
+        type: "gif",
+      },
+      {
+        src: "/projects/slingshot/demo.mp4",
+        alt: "Slingshot gameplay demo",
+        type: "video",
+      },
+    ],
+    seo: {
+      title: "Slingshot | Bubble shooter with touch aim and ricochet",
+      description:
+        "HTML5 Canvas bubble shooter with touch/mouse aiming, wall ricochet, and locally computed tactical shot hints.",
+    },
+  },
+  {
+    slug: "fruit-ninja",
+    title: "Fruit Ninja",
+    headline: "Fruit Ninja | Gesture slicing with real-time hand tracking",
+    tagline:
+      "Gesture slicing experience using real-time hand tracking through the camera.",
+    role: "Developer",
+    stack: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "MediaPipe Tasks Vision",
+      "HTML5 Canvas",
+      "Tailwind CSS",
+    ],
+    repoUrl: "https://github.com/matheussiqueira-dev/Clone-Fruit-Ninja.git",
+    context:
+      "The goal was to build a browser Fruit Ninja with gesture control and consistent performance across frame rates.",
+    problem: [
+      "Ensure smooth hand tracking without sending data to servers.",
+      "Keep physics and collisions consistent at variable FPS.",
+      "Balance visual effects with Canvas performance.",
+      "Provide performance feedback without distracting the player.",
+    ],
+    dataUsed: [
+      "Camera frames for hand detection.",
+      "Index fingertip landmarks for the virtual blade.",
+      "Delta time to normalize physics and collisions.",
+      "Score, combos, and bomb events.",
+      "Sensei messages based on performance.",
+    ],
+    solution: [
+      "Local hand tracking with MediaPipe Tasks Vision in the browser.",
+      "Delta-time game loop for stable physics.",
+      "Optimized Canvas rendering with controlled particles and trails.",
+      "HUD with contextual sensei feedback.",
+    ],
+    features: [
+      "Gesture slicing using the index finger as the blade.",
+      "Score and combos with bomb penalties.",
+      "Real-time sensei messages.",
+      "Local processing with no data upload.",
+      "Optimized loop with reduced work outside the active state.",
+    ],
+    highlights: [
+      "Smooth experience even at different FPS.",
+      "Low-latency gesture control.",
+      "Clean visuals with balanced effects.",
+      "Base ready for new modes and challenges.",
+    ],
+    demonstrates: [
+      "Computer vision integration in web apps.",
+      "React + Canvas for real-time gameplay.",
+      "Loop optimization and delta-time physics.",
+      "Game feedback and HUD design.",
+    ],
+    techSummary:
+      "React + TypeScript + Vite with MediaPipe Tasks Vision and HTML5 Canvas for real-time gesture slicing gameplay.",
+    conclusion: [
+      "Delivered a playable clone with stable hand tracking.",
+      "Kept performance consistent with delta time and optimized loop.",
+      "Left a base ready for levels and new mechanics.",
+    ],
+    howToRun: [
+      "Clone the repository.",
+      "Install dependencies: npm install.",
+      "Start the dev server: npm run dev.",
+      "Open the browser and allow camera access.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/fruit-ninja/cover.svg",
+        alt: "Fruit Ninja cover",
+      },
+    ],
+    seo: {
+      title: "Fruit Ninja | Gesture slicing with MediaPipe in the browser",
+      description:
+        "Fruit Ninja clone built with React and TypeScript, using MediaPipe Tasks Vision for hand tracking and HTML5 Canvas gameplay.",
+    },
+  },
+  {
+    slug: "neon-runner-cyber-hand",
+    title: "Neon Runner: Cyber Hand",
+    headline: "Neon Runner | Cyberpunk infinite runner with gesture control",
+    tagline:
+      "Cyberpunk infinite runner with real-time hand visualization and neon atmosphere.",
+    role: "Developer",
+    stack: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Three.js",
+      "@react-three/fiber",
+      "Zustand",
+      "MediaPipe Tasks Vision",
+    ],
+    repoUrl:
+      "https://github.com/matheussiqueira-dev/Neon-Runner-Cyber-Hand.git",
+    demo: {
+      kind: "video",
+      src: "/projects/neon-runner-cyber-hand/demo.mp4",
+      poster: "/projects/neon-runner-cyber-hand/cover.svg",
+      caption: "Neon runner with gesture control and cyber hand overlay.",
+    },
+    context:
+      "Author project to build a gesture-controlled 3D runner with fast response and a neon aesthetic.",
+    problem: [
+      "Translate gestures (jump, slide, left/right) into reliable commands.",
+      "Render a 3D scene with lighting and post-effects without performance loss.",
+      "Visualize the hand as a cybernetic skeleton in real time.",
+      "Keep the HUD readable and responsive across screen sizes.",
+    ],
+    dataUsed: [
+      "Camera frames and MediaPipe Tasks Vision landmarks.",
+      "Hand position for gesture detection and movement.",
+      "Game state (speed, obstacles, collisions).",
+      "HUD events and gameplay feedback.",
+    ],
+    solution: [
+      "Local hand detection with MediaPipe Tasks Vision in the browser.",
+      "Gesture service mapping jump, slide, and lateral movement.",
+      "3D scene with Three.js + R3F and stylized lighting.",
+      "Zustand for global state and reactive HUD.",
+    ],
+    features: [
+      "Gesture controls (jump, slide, left/right).",
+      "Real-time cyber hand skeleton visualization.",
+      "3D scene with neon lighting and post-effects.",
+      "Responsive HUD overlay.",
+      "Local processing with no data upload.",
+    ],
+    highlights: [
+      "Immersive cyberpunk feel.",
+      "Low-latency gesture control.",
+      "Modular architecture with dedicated services and store.",
+      "Base ready for new levels and challenges.",
+    ],
+    demonstrates: [
+      "MediaPipe + React integration for real-time control.",
+      "Three.js with R3F for web games.",
+      "State management with Zustand.",
+      "Gesture interaction and HUD design.",
+    ],
+    techSummary:
+      "React + TypeScript + Vite with Three.js/R3F, Zustand, and MediaPipe Tasks Vision for a gesture-controlled 3D runner.",
+    conclusion: [
+      "Delivered a playable cyberpunk runner with gesture control.",
+      "Kept stylized 3D visuals with stable performance.",
+      "Built an extensible base for new mechanics.",
+    ],
+    howToRun: [
+      "Prerequisites: Node.js 18+.",
+      "Clone the repository.",
+      "Install dependencies: npm install.",
+      "Optional: set APP_API_KEY in .env.local.",
+      "Download the model and place it in public/models/hand_landmarker.task.",
+      "Run: npm run dev.",
+      "Open the browser and allow camera access.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/neon-runner-cyber-hand/cover.svg",
+        alt: "Neon Runner: Cyber Hand cover",
+      },
+      {
+        src: "/projects/neon-runner-cyber-hand/demo.gif",
+        alt: "Neon Runner: Cyber Hand demo",
+        type: "gif",
+      },
+      {
+        src: "/projects/neon-runner-cyber-hand/demo.mp4",
+        alt: "Neon Runner: Cyber Hand gameplay",
+        type: "video",
+      },
+    ],
+    seo: {
+      title: "Neon Runner | 3D runner with gesture control",
+      description:
+        "Cyberpunk infinite runner built with React and Three.js using MediaPipe Tasks Vision for hand tracking and a responsive HUD.",
+    },
+  },
+  {
     slug: "dino-chrome",
     title: "Dino Chrome",
     headline: "Dino Chrome | 2D game in HTML5 Canvas",
@@ -1573,6 +1845,9 @@ export const projectOrderEn = [
   "hand-gesture-recognition-realtime",
   "flappy-bird-gesture-control",
   "subway-surf",
+  "slingshot",
+  "fruit-ninja",
+  "neon-runner-cyber-hand",
   "dino-chrome",
   "gestor-de-notas",
 ];
