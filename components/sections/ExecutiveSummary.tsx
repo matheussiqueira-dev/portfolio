@@ -69,7 +69,7 @@ export default function ExecutiveSummary({ content }: Props) {
         <div className="section-heading" data-reveal>
           <div className="section-heading__text">
             <p className="eyebrow">{content.eyebrow}</p>
-            <h2 className="section-title">{content.title}</h2>
+            <h2 className="section-title lg:whitespace-nowrap">{content.title}</h2>
           </div>
         </div>
 
