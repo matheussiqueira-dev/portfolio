@@ -1555,7 +1555,7 @@ const projectListEn: Project[] = [
     role: "Developer",
     stack: ["Python", "OpenCV", "MediaPipe"],
     repoUrl:
-      "https://github.com/matheussiqueira-dev/hand-gesture-recognition-realtime",
+      "https://github.com/matheussiqueira-dev/Reconhecimento-de-Gestos-de-Mao",
     demo: {
       kind: "video",
       src: "/Hands Gesture.mp4",
@@ -1636,8 +1636,8 @@ const projectListEn: Project[] = [
           ],
           footer: ["Repository:"],
           link: {
-            label: "github.com/matheussiqueira-dev/hand-gesture-recognition-realtime",
-            href: "https://github.com/matheussiqueira-dev/hand-gesture-recognition-realtime",
+            label: "github.com/matheussiqueira-dev/Reconhecimento-de-Gestos-de-Mao",
+            href: "https://github.com/matheussiqueira-dev/Reconhecimento-de-Gestos-de-Mao",
           },
         },
       ],

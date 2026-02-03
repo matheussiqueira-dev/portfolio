@@ -239,7 +239,7 @@ export const projects: Project[] = [
     coverImage: "/projects/hand-gesture-recognition-realtime/cover.svg",
     isInteractive: true,
     links: {
-      repo: "https://github.com/matheussiqueira-dev/hand-gesture-recognition-realtime",
+      repo: "https://github.com/matheussiqueira-dev/Reconhecimento-de-Gestos-de-Mao",
     },
     demo: {
       mode: "video",
