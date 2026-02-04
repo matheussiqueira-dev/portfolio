@@ -32,7 +32,7 @@ export const sitePt: SiteContent = {
   },
   about: {
     eyebrow: "Sobre",
-    title: "Dados, BI, infraestrutura e tecnologia aplicados à tomada de decisão",
+    title: "Infraestrutura | Analista de Dados Júnior | Power BI | SQL | Python | React.Js",
     summary: {
       title: "Sobre / Apresentação",
       body:
