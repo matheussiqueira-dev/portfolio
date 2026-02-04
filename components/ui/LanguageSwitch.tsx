@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
+import { useSyncExternalStore } from "react";
 
 /**
  * Mapeamento de rotas PT -> EN
@@ -12,6 +13,8 @@ const PT_TO_EN_MAP: Record<string, string> = {
   "/academico": "/en/academic",
   "/contrate": "/en/hire",
   "/data-analyst": "/en/data-analyst",
+  "/projetos": "/en/projects",
+  "/resume": "/en/resume",
 };
 
 /**
@@ -21,6 +24,20 @@ const EN_TO_PT_MAP: Record<string, string> = Object.fromEntries(
   Object.entries(PT_TO_EN_MAP).map(([pt, en]) => [en, pt])
 );
 
+const PT_DYNAMIC = [
+  {
+    pattern: /^\/projetos(\/.*)?$/,
+    to: (match: RegExpMatchArray) => `/en/projects${match[1] ?? ""}`,
+  },
+];
+
+const EN_DYNAMIC = [
+  {
+    pattern: /^\/en\/projects(\/.*)?$/,
+    to: (match: RegExpMatchArray) => `/projetos${match[1] ?? ""}`,
+  },
+];
+
 /**
  * Converte uma rota EN para PT
  */
@@ -28,6 +45,13 @@ function getPortuguesePath(pathname: string): string {
   // Verifica mapeamento especial primeiro
   if (EN_TO_PT_MAP[pathname]) {
     return EN_TO_PT_MAP[pathname];
+  }
+
+  for (const route of EN_DYNAMIC) {
+    const match = pathname.match(route.pattern);
+    if (match) {
+      return route.to(match);
+    }
   }
 
   // Se não começa com /en, já é PT
@@ -49,6 +73,13 @@ function getEnglishPath(pathname: string): string {
     return PT_TO_EN_MAP[pathname];
   }
 
+  for (const route of PT_DYNAMIC) {
+    const match = pathname.match(route.pattern);
+    if (match) {
+      return route.to(match);
+    }
+  }
+
   // Se já começa com /en, já é EN
   if (pathname.startsWith("/en")) {
     return pathname;
@@ -60,10 +91,26 @@ function getEnglishPath(pathname: string): string {
 
 export default function LanguageSwitch() {
   const pathname = usePathname() ?? "/";
+  const searchParams = useSearchParams();
+  const hash = useSyncExternalStore(
+    (callback) => {
+      window.addEventListener("hashchange", callback);
+      window.addEventListener("popstate", callback);
+      return () => {
+        window.removeEventListener("hashchange", callback);
+        window.removeEventListener("popstate", callback);
+      };
+    },
+    () => window.location.hash,
+    () => ""
+  );
   const isEnglish = pathname.startsWith("/en");
 
-  const ptPath = getPortuguesePath(pathname);
-  const enPath = getEnglishPath(pathname);
+  const query = searchParams?.toString();
+  const suffix = `${query ? `?${query}` : ""}${hash}`;
+
+  const ptPath = `${getPortuguesePath(pathname)}${suffix}`;
+  const enPath = `${getEnglishPath(pathname)}${suffix}`;
 
   return (
     <div className="flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
