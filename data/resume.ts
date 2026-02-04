@@ -145,7 +145,7 @@ export const resume = {
       "Aberto a oportunidades como Analista de Dados, Profissional de BI ou Infraestrutura de TI.",
     links: [
       {
-        label: "Email",
+        label: "E-mail",
         href: "mailto:matheussiqueirahub@gmail.com",
         value: "matheussiqueirahub@gmail.com",
       },

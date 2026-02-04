@@ -12,6 +12,7 @@ export default function Footer() {
   const credit = isEn
     ? "Site developed by Matheus Siqueira."
     : "Site desenvolvido por Matheus Siqueira.";
+  const emailLabel = isEn ? "Email" : "E-mail";
 
   return (
     <footer className="border-t border-[color:var(--border)] py-10">
@@ -27,11 +28,11 @@ export default function Footer() {
         <div className="flex flex-wrap gap-3">
           <TrackedAnchor
             href="mailto:matheussiqueirahub@gmail.com"
-            ariaLabel="Email"
+            ariaLabel={emailLabel}
             tracking={{ action: "footer_email", category: "engagement" }}
             className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
           >
-            Email
+            {emailLabel}
           </TrackedAnchor>
 
           <TrackedAnchor

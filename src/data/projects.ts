@@ -85,7 +85,7 @@ export const projects: Project[] = [
   },
   {
     id: "dashboard-vendas-power-bi",
-    title: "Dashboard de Vendas - Power B.I.",
+    title: "Dashboard de Vendas - Power BI",
     shortDescription:
       "Dashboard em Power BI para acompanhar vendas, metas e mix de produtos com filtros dinâmicos.",
     tags: ["Power BI", "DAX", "Power Query", "Excel"],
@@ -269,7 +269,7 @@ export const projects: Project[] = [
   },
   {
     id: "subway-surf",
-    title: "Subway Sufers",
+    title: "Subway Surfers",
     shortDescription:
       "Jogo inspirado no Subway Surfers para estudo de lógica e desenvolvimento de games.",
     tags: ["JavaScript", "HTML5", "Canvas", "CSS"],

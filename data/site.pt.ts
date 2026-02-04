@@ -38,7 +38,7 @@ export const sitePt: SiteContent = {
   },
   about: {
     eyebrow: "Sobre",
-    title: "Infraestrutura | Analista de Dados Júnior | Power BI | SQL | Python | React.Js",
+    title: "Infraestrutura | Analista de Dados Júnior | Power BI | SQL | Python | React.js",
     summary: {
       title: "Sobre / Apresentação",
       body:
@@ -335,7 +335,7 @@ export const sitePt: SiteContent = {
   },
   projects: {
     eyebrow: "Projetos",
-    title: "Projetos FullStack, Análise de Dados e IA",
+    title: "Projetos Full Stack, Análise de Dados e IA",
     description:
       "Cases que unem engenharia de software, APIs, automação e dados, com foco em produto, arquitetura, performance e decisões bem informadas.",
     cardLabel: "Case",
@@ -408,7 +408,7 @@ export const sitePt: SiteContent = {
     copyLabel: "Copiar",
     copiedLabel: "Copiado",
     cards: {
-      email: "Email",
+      email: "E-mail",
       linkedin: "LinkedIn",
       github: "GitHub",
       whatsapp: "WhatsApp",
@@ -427,7 +427,7 @@ export const sitePt: SiteContent = {
           placeholder: "Nome da organização",
         },
         email: {
-          label: "Email para retorno",
+          label: "E-mail para retorno",
           placeholder: "voce@empresa.com",
         },
         projectType: {

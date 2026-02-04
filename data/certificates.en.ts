@@ -440,7 +440,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "programacao-fullstack-ai",
-    "title": "FullStack AI Programming (Technical Program)",
+    "title": "Full Stack AI Programming (Technical Program)",
     "issuer": "Infinity School",
     "areaTags": [
       "Full Stack",
@@ -484,7 +484,7 @@ export const certificatesEn: Certificate[] = [
   },
   {
     "id": "design-fullstack-ai",
-    "title": "FullStack AI Design (Technical Program)",
+    "title": "Full Stack AI Design (Technical Program)",
     "issuer": "Infinity School",
     "areaTags": [
       "Full Stack",

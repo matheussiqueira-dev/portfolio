@@ -1036,8 +1036,8 @@ const projectListEn: Project[] = [
   },
   {
     slug: "subway-surf",
-    title: "Subway Sufers",
-    headline: "Subway Sufers | 2D game in HTML5 Canvas",
+    title: "Subway Surfers",
+    headline: "Subway Surfers | 2D game in HTML5 Canvas",
     tagline:
       "Game inspired by Subway Surfers built to practice game logic and development.",
     role: "Developer",
@@ -1103,11 +1103,11 @@ const projectListEn: Project[] = [
     screenshots: [
       {
         src: "/Thmbnail/Thumbnail - English/Subway Surfers.png",
-        alt: "Cover of Subway Sufers",
+        alt: "Cover of Subway Surfers",
       },
       {
         src: "/Subway Surf.mp4",
-        alt: "Subway Sufers gameplay demo",
+        alt: "Subway Surfers gameplay demo",
         type: "video",
       },
     ],

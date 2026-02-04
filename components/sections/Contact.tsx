@@ -32,11 +32,11 @@ export default function Contact({ content }: Props) {
               <div className="contact-cta__actions">
                 <TrackedAnchor
                   href="mailto:matheussiqueirahub@gmail.com"
-                  ariaLabel="Email"
+                  ariaLabel={content.cards.email}
                   tracking={{ action: "contact_email", category: "engagement" }}
                   className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                 >
-                  Email
+                  {content.cards.email}
                 </TrackedAnchor>
                 <TrackedAnchor
                   href="https://wa.me/5581999203683"

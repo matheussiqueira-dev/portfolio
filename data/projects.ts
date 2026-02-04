@@ -120,7 +120,7 @@ const projectList: ProjectCase[] = [
   },
   {
     slug: "dashboard-vendas-power-bi",
-    title: "Dashboard de Vendas - Power B.I.",
+    title: "Dashboard de Vendas - Power BI",
     headline:
       "Dashboard de Vendas | Power BI com KPIs, metas e anÃ¡lises por regiÃ£o",
     tagline:
@@ -220,7 +220,7 @@ const projectList: ProjectCase[] = [
     screenshots: [
       {
         src: "/Thmbnail/Thumbnail - Portugues/Dashboard de Vendas - Power B.I..png",
-        alt: "Capa do Dashboard de Vendas - Power B.I.",
+        alt: "Capa do Dashboard de Vendas - Power BI",
       },
       {
         src: "/projects/dashboard-vendas-power-bi/demo.mp4",
@@ -1038,8 +1038,8 @@ const projectList: ProjectCase[] = [
   },
   {
     slug: "subway-surf",
-    title: "Subway Sufers",
-    headline: "Subway Sufers | Jogo 2D em HTML5 Canvas",
+    title: "Subway Surfers",
+    headline: "Subway Surfers | Jogo 2D em HTML5 Canvas",
     tagline:
       "Jogo inspirado no Subway Surfers para estudo de lÃ³gica e desenvolvimento de games.",
     role: "Desenvolvedor",
@@ -1105,11 +1105,11 @@ const projectList: ProjectCase[] = [
     screenshots: [
       {
         src: "/Thmbnail/Thumbnail - Portugues/Subway Surfers.png",
-        alt: "Capa do projeto Subway Sufers",
+        alt: "Capa do projeto Subway Surfers",
       },
       {
         src: "/Subway Surf.mp4",
-        alt: "Gameplay do Subway Sufers",
+        alt: "Gameplay do Subway Surfers",
         type: "video",
       },
     ],

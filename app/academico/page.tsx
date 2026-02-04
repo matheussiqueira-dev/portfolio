@@ -12,7 +12,7 @@ const education = [
   "Pós: Cloud & Edge Computing (UNIFG, 2025)",
   "Pós: Segurança da Informação (UNIFG, 2025)",
   "Pós: IA e Ciência de Dados (UNIFG, 2025)",
-  "Técnico: Programação FullStack A.I. (Infinity School, 2023–2025)",
+  "Técnico: Programação Full Stack AI (Infinity School, 2023–2025)",
   "MBA: Mídias Digitais, Performance e Analytics (UNINASSAU, 2023–2024)",
   "Graduação: Marketing (UNIFG, 2015–2017)",
   "ESL C1 (City College of San Francisco, 2019–2020)",
