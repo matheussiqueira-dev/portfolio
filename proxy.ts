@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 const CANONICAL_HOST = "www.matheussiqueira.dev";
 const VERCEL_PREVIEW_SUFFIX = ".vercel.app";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const host = request.nextUrl.hostname.toLowerCase();
 
   const isLocal =
