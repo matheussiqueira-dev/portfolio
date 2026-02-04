@@ -1273,7 +1273,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/fruit-ninja/cover.png",
+        src: "/projects/fruit-ninja/cover.svg",
         alt: "Fruit Ninja cover",
       },
     ],

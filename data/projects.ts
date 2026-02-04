@@ -1275,7 +1275,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/fruit-ninja/cover.png",
+        src: "/projects/fruit-ninja/cover.svg",
         alt: "Capa do projeto Fruit Ninja",
       },
     ],

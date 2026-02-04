@@ -324,7 +324,7 @@ export const projects: Project[] = [
       "HTML5 Canvas",
       "Tailwind CSS",
     ],
-    coverImage: "/projects/fruit-ninja/cover.png",
+    coverImage: "/projects/fruit-ninja/cover.svg",
     links: {
       repo: "https://github.com/matheussiqueira-dev/Clone-Fruit-Ninja.git",
     },

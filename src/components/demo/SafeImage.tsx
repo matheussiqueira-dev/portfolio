@@ -16,12 +16,14 @@ export function SafeImage({
 }: SafeImageProps) {
   const initial = useMemo(() => src || fallbackSrc, [src, fallbackSrc]);
   const [currentSrc, setCurrentSrc] = useState(initial);
+  const isSvg = typeof currentSrc === "string" && currentSrc.endsWith(".svg");
 
   return (
     <Image
       {...rest}
       src={currentSrc}
       alt={alt}
+      unoptimized={isSvg}
       onError={() => {
         if (currentSrc !== fallbackSrc) setCurrentSrc(fallbackSrc);
       }}
