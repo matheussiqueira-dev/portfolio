@@ -54,7 +54,7 @@ export const projects: Project[] = [
       "Simulador interativo para comparar estratégias e medir impacto financeiro com Monte Carlo e análise de sensibilidade.",
     tags: ["Python", "Streamlit", "Pandas", "NumPy", "Plotly"],
     techStack: ["Python", "Streamlit", "Pandas", "NumPy", "Plotly"],
-    coverImage: "/projects/business-decision-simulator/cover.png",
+    coverImage: "/Thmbnail/Thumbnail - English/Business Decision Simulator.png",
     links: {
       repo: "https://github.com/matheussiqueira-dev/Simulacao-Estrategica-de-Decisao-Empresarial.git",
     },
@@ -72,7 +72,7 @@ export const projects: Project[] = [
       "Sistema para detectar anomalias em métricas operacionais com alertas em tempo real e painel interativo.",
     tags: ["Python", "FastAPI", "Isolation Forest", "TimescaleDB", "React", "D3"],
     techStack: ["Python", "FastAPI", "Isolation Forest", "TimescaleDB", "React", "D3"],
-    coverImage: "/projects/deteccao-de-anomalias-operacionais/cover.png",
+    coverImage: "/Thmbnail/Thumbnail - English/Operational Anomaly Detection.png",
     links: {
       repo: "https://github.com/matheussiqueira-dev/Deteccao-de-Anomalias-Operacionais.git",
     },
@@ -90,7 +90,7 @@ export const projects: Project[] = [
       "Dashboard em Power BI para acompanhar vendas, metas e mix de produtos com filtros dinâmicos.",
     tags: ["Power BI", "DAX", "Power Query", "Excel"],
     techStack: ["Power BI", "DAX", "Power Query", "Excel"],
-    coverImage: "/projects/dashboard-vendas-power-bi/cover.png",
+    coverImage: "/Thmbnail/Thumbnail - English/Sales Dashboard - Power BI.png",
     links: {
       repo: "https://github.com/matheussiqueira-dev/Dashboard-de-Vendas---Power-BI.git",
     },
@@ -122,7 +122,7 @@ export const projects: Project[] = [
       "WebSockets",
       "Machine Learning",
     ],
-    coverImage: "/projects/detector-de-stress/cover.png",
+    coverImage: "/Thmbnail/Thumbnail - English/Stress Detector.png",
     isInteractive: true,
     links: {
       repo: "https://github.com/matheussiqueira-dev/Detector-de-Stress",
@@ -141,7 +141,7 @@ export const projects: Project[] = [
       "Interface web touchless com visão computacional para navegar dashboards e data apps.",
     tags: ["Python", "FastAPI", "OpenCV", "MediaPipe", "React"],
     techStack: ["Python", "FastAPI", "OpenCV", "MediaPipe", "React"],
-    coverImage: "/projects/touchless-web-gesture-interface/cover.png",
+    coverImage: "/Thmbnail/Thumbnail - English/Touchless Web Gesture Interface.png",
     isInteractive: true,
     links: {
       repo: "https://github.com/matheussiqueira-dev/Interface-Web-de-Gestos-Sem-Contato.git",
@@ -160,7 +160,7 @@ export const projects: Project[] = [
       "Sistema de monitoramento do motorista utilizando visão computacional para atenção e fadiga.",
     tags: ["Python", "OpenCV", "MediaPipe", "TensorFlow"],
     techStack: ["Python", "OpenCV", "MediaPipe", "TensorFlow"],
-    coverImage: "/projects/driver-monitoring-system/cover.png",
+    coverImage: "/Thmbnail/Thumbnail - English/Driver Monitoring System.png",
     isInteractive: true,
     links: {
       repo: "https://github.com/matheussiqueira-dev/Driver-Monitoring-System",
@@ -179,7 +179,7 @@ export const projects: Project[] = [
       "Simulador de direção autônoma com visão computacional e ML.",
     tags: ["Python", "OpenCV", "TensorFlow", "NumPy"],
     techStack: ["Python", "OpenCV", "TensorFlow", "NumPy"],
-    coverImage: "/projects/self-drive-car/cover.png",
+    coverImage: "/Thmbnail/Thumbnail - English/Self-Drive Car.png",
     isInteractive: true,
     links: {
       repo: "https://github.com/matheussiqueira-dev/self-drive-car",
@@ -198,7 +198,7 @@ export const projects: Project[] = [
       "API de chatbot com contexto, logs e dados para automação de suporte.",
     tags: ["Python", "FastAPI", "PostgreSQL", "Redis"],
     techStack: ["Python", "FastAPI", "PostgreSQL", "Redis"],
-    coverImage: "/projects/chatbot-ia-api/cover.png",
+    coverImage: "/Thmbnail/Thumbnail - English/Chatbot IA API.png",
     isInteractive: true,
     links: {
       repo: "https://github.com/matheussiqueira-dev/chatbot-ia-api",
@@ -217,7 +217,7 @@ export const projects: Project[] = [
       "API de biblioteca com autenticação, regras de empréstimo e auditoria.",
     tags: ["Node.js", "TypeScript", "PostgreSQL", "Fastify"],
     techStack: ["Node.js", "TypeScript", "PostgreSQL", "Fastify"],
-    coverImage: "/projects/library-api-advanced/cover.png",
+    coverImage: "/Thmbnail/Thumbnail - English/Library API Advanced.png",
     isInteractive: true,
     links: {
       repo: "https://github.com/matheussiqueira-dev/library-api-advanced",
@@ -236,7 +236,7 @@ export const projects: Project[] = [
       "Sistema de visão computacional em tempo real para detectar mãos e contar dedos usando webcam.",
     tags: ["Python", "OpenCV", "MediaPipe"],
     techStack: ["Python", "OpenCV", "MediaPipe"],
-    coverImage: "/projects/hand-gesture-recognition-realtime/cover.png",
+    coverImage: "/Thmbnail/Thumbnail - English/Real-Time Hand Gesture Recognition.png",
     isInteractive: true,
     links: {
       repo: "https://github.com/matheussiqueira-dev/Reconhecimento-de-Gestos-de-Mao",
@@ -255,7 +255,7 @@ export const projects: Project[] = [
       "Versão do Flappy Bird controlada pela webcam, combinando MediaPipe Hands, OpenCV e Pygame.",
     tags: ["Python", "Pygame", "OpenCV", "MediaPipe", "NumPy"],
     techStack: ["Python", "Pygame", "OpenCV", "MediaPipe", "NumPy"],
-    coverImage: "/projects/flappy-bird/cover.png",
+    coverImage: "/Thmbnail/Thumbnail - English/Flappy Bird.png",
     isInteractive: true,
     links: {
       repo: "https://github.com/matheussiqueira-dev/Flappy-Bird",
@@ -269,12 +269,12 @@ export const projects: Project[] = [
   },
   {
     id: "subway-surf",
-    title: "Subway Surf",
+    title: "Subway Sufers",
     shortDescription:
       "Jogo inspirado no Subway Surfers para estudo de lógica e desenvolvimento de games.",
     tags: ["JavaScript", "HTML5", "Canvas", "CSS"],
     techStack: ["JavaScript", "HTML5", "Canvas", "CSS"],
-    coverImage: "/projects/subway-surf/cover.png",
+    coverImage: "/Thmbnail/Thumbnail - English/Subway Surfers.png",
     links: {
       repo: "https://github.com/matheussiqueira-dev/Subway-Surf",
     },
@@ -292,7 +292,7 @@ export const projects: Project[] = [
       "Bubble shooter em canvas com mira por toque/mouse, ricochete e dicas táticas.",
     tags: ["JavaScript", "HTML5", "Canvas", "CSS", "Hammer.js"],
     techStack: ["JavaScript", "HTML5", "Canvas", "CSS", "Hammer.js"],
-    coverImage: "/projects/slingshot/cover.png",
+    coverImage: "/Thmbnail/Thumbnail - English/Slingshot.png",
     links: {
       repo: "https://github.com/matheussiqueira-dev/Slingshot.git",
     },
@@ -324,7 +324,7 @@ export const projects: Project[] = [
       "HTML5 Canvas",
       "Tailwind CSS",
     ],
-    coverImage: "/projects/fruit-ninja/cover.svg",
+    coverImage: "/Thmbnail/Thumbnail - English/Fruit Ninja.png",
     links: {
       repo: "https://github.com/matheussiqueira-dev/Clone-Fruit-Ninja.git",
     },
@@ -355,7 +355,7 @@ export const projects: Project[] = [
       "Zustand",
       "MediaPipe Tasks Vision",
     ],
-    coverImage: "/projects/neon-runner-cyber-hand/cover.png",
+    coverImage: "/Thmbnail/Thumbnail - English/Neon Runner Cyber Hand.png",
     links: {
       repo: "https://github.com/matheussiqueira-dev/Neon-Runner-Cyber-Hand.git",
     },
@@ -373,7 +373,7 @@ export const projects: Project[] = [
       "Clone do jogo do Chrome para treinar lógica de colisão, pontuação e progressão.",
     tags: ["JavaScript", "HTML5", "Canvas", "CSS"],
     techStack: ["JavaScript", "HTML5", "Canvas", "CSS"],
-    coverImage: "/projects/dino-chrome/cover.png",
+    coverImage: "/Thmbnail/Thumbnail - English/Dino Chrome.png",
     links: {
       repo: "https://github.com/matheussiqueira-dev/Dino-Chrome.git",
     },
@@ -391,7 +391,7 @@ export const projects: Project[] = [
       "Aplicação para gerenciamento de notas, com criação, edição e organização simples.",
     tags: ["JavaScript", "HTML5", "CSS", "LocalStorage"],
     techStack: ["JavaScript", "HTML5", "CSS", "LocalStorage"],
-    coverImage: "/projects/gestor-de-notas/cover.png",
+    coverImage: "/Thmbnail/Thumbnail - English/Gestor de Notas.png",
     links: {
       repo: "https://github.com/matheussiqueira-dev/Gestor_de_Notas",
     },
@@ -417,4 +417,5 @@ export const hasExecutableDemo = (project: Project) => project.demo.mode !== "no
 export const interactiveProjectIds = new Set(
   projects.filter((project) => project.isInteractive).map((project) => project.id)
 );
+
 

@@ -241,7 +241,7 @@ export default function Projects() {
             const registryCover = registryProject?.coverImage
               ? { src: registryProject.coverImage, alt: project.title }
               : undefined;
-            const cover = registryCover ?? getCover(project);
+            const cover = getCover(project) ?? registryCover;
             const highlights = getHighlights(project);
             const badges = getProjectBadges(project);
             const isFeatured = featured.has(project.slug);

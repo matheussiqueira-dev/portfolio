@@ -34,7 +34,7 @@ export default function ProjectCard({
   const registryCover = registryProject?.coverImage
     ? { src: registryProject.coverImage, alt: project.title }
     : undefined;
-  const cover = registryCover ?? getCover(project);
+  const cover = getCover(project) ?? registryCover;
   const caseHref = localePrefix
     ? `${localePrefix}/projects/${project.slug}`
     : `/projetos/${project.slug}`;

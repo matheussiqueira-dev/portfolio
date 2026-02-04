@@ -15,7 +15,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/Simulação Estratégica de Decisão Empresarial.mp4",
-      poster: "/projects/business-decision-simulator/cover.png",
+      poster: "/Thmbnail/Thumbnail - English/Business Decision Simulator.png",
       caption: "Side-by-side scenarios, risk distribution and live KPIs.",
     },
     intro: {
@@ -44,7 +44,7 @@ const projectListEn: Project[] = [
       ],
       video: {
         src: "/Simulação Estratégica de Decisão Empresarial.mp4",
-        poster: "/projects/business-decision-simulator/cover.png",
+        poster: "/Thmbnail/Thumbnail - English/Business Decision Simulator.png",
         caption: "Walkthrough of scenarios, risk and KPI dashboards.",
       },
     },
@@ -102,7 +102,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/business-decision-simulator/cover.png",
+        src: "/Thmbnail/Thumbnail - English/Business Decision Simulator.png",
         alt: "Business Decision Simulator cover",
       },
       {
@@ -132,7 +132,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/projects/dashboard-vendas-power-bi/demo.mp4",
-      poster: "/projects/dashboard-vendas-power-bi/cover.png",
+      poster: "/Thmbnail/Thumbnail - English/Sales Dashboard - Power BI.png",
       caption: "Dashboard overview and main filters.",
     },
     intro: {
@@ -161,7 +161,7 @@ const projectListEn: Project[] = [
       ],
       video: {
         src: "/projects/dashboard-vendas-power-bi/demo.mp4",
-        poster: "/projects/dashboard-vendas-power-bi/cover.png",
+        poster: "/Thmbnail/Thumbnail - English/Sales Dashboard - Power BI.png",
         caption: "KPIs, filters, and quick performance reading.",
       },
     },
@@ -218,7 +218,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/dashboard-vendas-power-bi/cover.png",
+        src: "/Thmbnail/Thumbnail - English/Sales Dashboard - Power BI.png",
         alt: "Sales Dashboard cover",
       },
       {
@@ -247,7 +247,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
-      poster: "/projects/deteccao-de-anomalias-operacionais/cover.png",
+      poster: "/Thmbnail/Thumbnail - English/Operational Anomaly Detection.png",
       caption: "Radar with anomaly alerts and metric history.",
     },
     intro: {
@@ -276,7 +276,7 @@ const projectListEn: Project[] = [
       ],
       video: {
         src: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
-        poster: "/projects/deteccao-de-anomalias-operacionais/cover.png",
+        poster: "/Thmbnail/Thumbnail - English/Operational Anomaly Detection.png",
         caption: "Automatic detection, alerts, and investigation in one view.",
       },
     },
@@ -333,7 +333,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/deteccao-de-anomalias-operacionais/cover.png",
+        src: "/Thmbnail/Thumbnail - English/Operational Anomaly Detection.png",
         alt: "Operational Anomaly Detection cover",
       },
       {
@@ -365,7 +365,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/touchless-web-gesture-interface.mp4",
-      poster: "/projects/touchless-web-gesture-interface/cover.png",
+      poster: "/Thmbnail/Thumbnail - English/Touchless Web Gesture Interface.png",
       caption: "Quick walkthrough of the touchless interface in action.",
     },
     intro: {
@@ -522,7 +522,7 @@ const projectListEn: Project[] = [
       ],
       video: {
         src: "/touchless-web-gesture-interface.mp4",
-        poster: "/projects/touchless-web-gesture-interface/cover.png",
+        poster: "/Thmbnail/Thumbnail - English/Touchless Web Gesture Interface.png",
         caption: "Touchless Web Gesture Interface demo in action.",
       },
     },
@@ -586,7 +586,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/touchless-web-gesture-interface/cover.png",
+        src: "/Thmbnail/Thumbnail - English/Touchless Web Gesture Interface.png",
         alt: "Cover of Touchless Web Gesture Interface",
       },
       {
@@ -680,7 +680,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/chatbot-ia-api/cover.png",
+        src: "/Thmbnail/Thumbnail - English/Chatbot IA API.png",
         alt: "Cover of AI Chatbot API",
       },
       {
@@ -710,7 +710,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/projects/self-drive-car/demo.mp4",
-      poster: "/projects/self-drive-car/cover.png",
+      poster: "/Thmbnail/Thumbnail - English/Self-Drive Car.png",
       caption: "Autonomous driving simulator running in real time.",
     },
     context:
@@ -767,7 +767,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/self-drive-car/cover.png",
+        src: "/Thmbnail/Thumbnail - English/Self-Drive Car.png",
         alt: "Cover of Self-Drive Car",
       },
       {
@@ -848,7 +848,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/library-api-advanced/cover.png",
+        src: "/Thmbnail/Thumbnail - English/Library API Advanced.png",
         alt: "Cover of Library API Advanced",
       },
       {
@@ -878,7 +878,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/driver-monitoring-system.mp4",
-      poster: "/projects/driver-monitoring-system/cover.png",
+      poster: "/Thmbnail/Thumbnail - English/Driver Monitoring System.png",
       caption: "Attention and fatigue detection with computer vision.",
     },
     context:
@@ -935,7 +935,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/driver-monitoring-system/cover.png",
+        src: "/Thmbnail/Thumbnail - English/Driver Monitoring System.png",
         alt: "Cover of Driver Monitoring System",
       },
       {
@@ -952,8 +952,8 @@ const projectListEn: Project[] = [
   },
   {
     slug: "flappy-bird-gesture-control",
-    title: "Flappy Bird with Gestures",
-    headline: "Flappy Bird | Gesture control with MediaPipe and Pygame",
+    title: "Flappy Bird com Gestos",
+    headline: "Flappy Bird com Gestos | Gesture control with MediaPipe and Pygame",
     tagline:
       "Flappy Bird variant controlled by webcam, combining MediaPipe Hands, OpenCV, and Pygame.",
     role: "Developer",
@@ -962,8 +962,8 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/Flappy-Bird.mp4",
-      poster: "/projects/flappy-bird/cover.png",
-      caption: "Gameplay of Flappy Bird using webcam-based gestures.",
+      poster: "/Thmbnail/Thumbnail - English/Flappy Bird.png",
+      caption: "Gameplay of Flappy Bird com Gestos using webcam-based gestures.",
     },
     context:
       "Project built to explore hands-free gameplay by mapping hand gestures to the classic Flappy Bird controls.",
@@ -1019,25 +1019,25 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/flappy-bird/cover.png",
-        alt: "Cover of the gesture-controlled Flappy Bird",
+        src: "/Thmbnail/Thumbnail - English/Flappy Bird.png",
+        alt: "Cover of Flappy Bird com Gestos",
       },
       {
         src: "/Flappy-Bird.mp4",
-        alt: "Demo of Flappy Bird controlled by gestures",
+        alt: "Demo of Flappy Bird com Gestos",
         type: "video",
       },
     ],
     seo: {
-      title: "Flappy Bird with Gesture Control | MediaPipe, OpenCV, and Pygame",
+      title: "Flappy Bird com Gestos | Gesture Control with MediaPipe, OpenCV, and Pygame",
       description:
         "Webcam-controlled Flappy Bird using MediaPipe Hands, OpenCV, and Pygame, with discrete and continuous gesture modes.",
     },
   },
   {
     slug: "subway-surf",
-    title: "Subway Surf",
-    headline: "Subway Surf | 2D game in HTML5 Canvas",
+    title: "Subway Sufers",
+    headline: "Subway Sufers | 2D game in HTML5 Canvas",
     tagline:
       "Game inspired by Subway Surfers built to practice game logic and development.",
     role: "Developer",
@@ -1046,7 +1046,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/Subway Surf.mp4",
-      poster: "/projects/subway-surf/cover.png",
+      poster: "/Thmbnail/Thumbnail - English/Subway Surfers.png",
       caption: "Gameplay from the Subway Surfers-inspired prototype.",
     },
     context:
@@ -1102,12 +1102,12 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/subway-surf/cover.png",
-        alt: "Cover of Subway Surf",
+        src: "/Thmbnail/Thumbnail - English/Subway Surfers.png",
+        alt: "Cover of Subway Sufers",
       },
       {
         src: "/Subway Surf.mp4",
-        alt: "Subway Surf gameplay demo",
+        alt: "Subway Sufers gameplay demo",
         type: "video",
       },
     ],
@@ -1124,7 +1124,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/projects/slingshot/demo.mp4",
-      poster: "/projects/slingshot/cover.png",
+      poster: "/Thmbnail/Thumbnail - English/Slingshot.png",
       caption: "Touch aim, ricochet shots, and real-time tactical hints.",
     },
     context:
@@ -1182,7 +1182,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/slingshot/cover.png",
+        src: "/Thmbnail/Thumbnail - English/Slingshot.png",
         alt: "Slingshot cover",
       },
       {
@@ -1273,7 +1273,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/fruit-ninja/cover.svg",
+        src: "/Thmbnail/Thumbnail - English/Fruit Ninja.png",
         alt: "Fruit Ninja cover",
       },
     ],
@@ -1304,7 +1304,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/projects/neon-runner-cyber-hand/demo.mp4",
-      poster: "/projects/neon-runner-cyber-hand/cover.png",
+      poster: "/Thmbnail/Thumbnail - English/Neon Runner Cyber Hand.png",
       caption: "Neon runner with gesture control and cyber hand overlay.",
     },
     context:
@@ -1364,7 +1364,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/neon-runner-cyber-hand/cover.png",
+        src: "/Thmbnail/Thumbnail - English/Neon Runner Cyber Hand.png",
         alt: "Neon Runner: Cyber Hand cover",
       },
       {
@@ -1396,7 +1396,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/projects/dino-chrome/demo.mp4",
-      poster: "/projects/dino-chrome/cover.png",
+      poster: "/Thmbnail/Thumbnail - English/Dino Chrome.png",
       caption: "Gameplay of the Chrome Dino clone.",
     },
     context:
@@ -1452,7 +1452,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/dino-chrome/cover.png",
+        src: "/Thmbnail/Thumbnail - English/Dino Chrome.png",
         alt: "Cover of Dino Chrome",
       },
       {
@@ -1479,7 +1479,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/Gestor de Notas.mp4",
-      poster: "/projects/gestor-de-notas/cover.png",
+      poster: "/Thmbnail/Thumbnail - English/Gestor de Notas.png",
       caption: "Note creation and organization flow.",
     },
     context:
@@ -1535,7 +1535,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/gestor-de-notas/cover.png",
+        src: "/Thmbnail/Thumbnail - English/Gestor de Notas.png",
         alt: "Cover of Notes Manager",
       },
       {
@@ -1559,7 +1559,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/Hands Gesture.mp4",
-      poster: "/projects/hand-gesture-recognition-realtime/cover.png",
+      poster: "/Thmbnail/Thumbnail - English/Real-Time Hand Gesture Recognition.png",
       caption: "Real-time gesture recognition demonstration.",
     },
     intro: {
@@ -1694,7 +1694,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/hand-gesture-recognition-realtime/cover.png",
+        src: "/Thmbnail/Thumbnail - English/Real-Time Hand Gesture Recognition.png",
         alt: "Hand gesture recognition project cover",
       },
       {
@@ -1727,7 +1727,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/Detector de Stress.mp4",
-      poster: "/projects/detector-de-stress/cover.png",
+      poster: "/Thmbnail/Thumbnail - English/Stress Detector.png",
       caption: "HUD, baseline and broadcasting in real time.",
     },
     intro: {
@@ -1756,7 +1756,7 @@ const projectListEn: Project[] = [
       ],
       video: {
         src: "/Detector de Stress.mp4",
-        poster: "/projects/detector-de-stress/cover.png",
+        poster: "/Thmbnail/Thumbnail - English/Stress Detector.png",
         caption: "Watch the video demo: score, trend and alerts in real time.",
       },
     },
@@ -1815,7 +1815,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/detector-de-stress/cover.png",
+        src: "/Thmbnail/Thumbnail - English/Stress Detector.png",
         alt: "Stress Detector cover",
       },
       {
@@ -1867,4 +1867,5 @@ export const projectSlugsEn = projectsEn.map((project) => project.slug);
 
 export const getProjectBySlugEn = (slug: string) =>
   projectsEn.find((project) => project.slug === slug);
+
 
