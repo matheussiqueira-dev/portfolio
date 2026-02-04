@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import fs from "node:fs";
-import path from "node:path";
+import { certificatesEn, certificatesPageEn } from "@/data/certificates.en";
 import { buildAlternates, siteName } from "@/lib/seo";
 
 const pageTitle = "Academic | Matheus Siqueira";
@@ -17,58 +16,6 @@ const education = [
   "Bachelor's: Marketing (UNIFG, 2015–2017)",
   "ESL C1 (City College of San Francisco, 2019–2020)",
 ];
-
-const certificates = {
-  Alura: [
-    "Banco de dados e SQL",
-    "BI com Excel conhecendo o Power Query",
-    "BI com Excel criando bancos de dados com planilhas",
-    "BI com Excel criando Dashboard com Power Pivot",
-    "BI com Excel criando um Dashboard sem complicação",
-    "BI com Excel trabalhando com tabelas dinâmicas com Power Pivot",
-    "Carreira Análise de Dados Boas-vindas e primeiros passos",
-    "Carreira Especialista em IA Boas-vindas e primeiros passos",
-    "Começando em Programação carreira e primeiros passos",
-    "Lógica de programação mergulhe em programação com JavaScript",
-    "MySQL conhecendo a ferramenta",
-    "Power BI construindo cálculos com DAX",
-    "Power BI Desktop construindo meu primeiro dashboard",
-    "Power BI Desktop realizando ETL no Power Query",
-    "Power BI modelagem de dados",
-    "Power BI visualizando e analisando dados",
-    "Praticando Excel utilizando fórmulas matemáticas",
-    "Praticando Python condicionais if, elif e else",
-    "UX Design entenda a área da User Experience",
-  ],
-  Assimov: [
-    "Aplicações IA – Comece por aqui",
-    "Aprendendo Python Conceitos Básicos",
-    "Conceitos de Engenharia de Dados",
-    "Criando seu Setup para Programação Python",
-    "Dashboards com Dash",
-    "Engenharia de Prompts",
-    "Fundamentos de AI e Machine Learning",
-    "Introdução à Lógica de Programação",
-    "Por dentro das LLMs – como funcionam modelos como o ChatGPT",
-    "Python para Usuários de Excel",
-  ],
-  "Infinity School": [
-    "FullStack AI Programming (Technical Program)",
-    "FullStack AI Design (Technical Program)",
-  ],
-  Ulife: [
-    "EDGE COMPUTING E INTERNET DAS COISAS",
-    "ENGENHARIA, PREPARAÇÃO E VISUALIZAÇÃO DE DADOS",
-    "EXPERIÊNCIA DO USUÁRIO E IA",
-    "GERENCIAMENTO E GOVERNANÇA DE SERVIÇOS NA NUVEM",
-    "GESTÃO DO CONHECIMENTO E INTELIGÊNCIA COMPETITIVA",
-    "Modelagem de software",
-    "PROCESSAMENTO DE DADOS MASSIVOS E MODELOS DE APRENDIZADO",
-    "Programação de soluções computacionais",
-    "SEGURANÇA DA INFORMAÇÃO PARA CLOUD E EDGE COMPUTING",
-    "TEORIA DA COMPUTAÇÃO E COMPILADORES",
-  ],
-};
 
 const skillGroups = [
   {
@@ -111,54 +58,6 @@ const skillGroups = [
   },
 ];
 
-const driveUrl =
-  "https://drive.google.com/drive/folders/1K8uDtOCro_xvMWiukIr4GOiWwAEz8RM7";
-
-const certificateExtensions = new Set([
-  ".pdf",
-  ".png",
-  ".jpg",
-  ".jpeg",
-  ".webp",
-]);
-
-const getCertificateFiles = () => {
-  const basePath = path.join(process.cwd(), "public", "certificates");
-  try {
-    if (!fs.existsSync(basePath)) {
-      return [];
-    }
-
-    const folders = fs
-      .readdirSync(basePath, { withFileTypes: true })
-      .filter((entry) => entry.isDirectory())
-      .map((entry) => entry.name);
-
-    const files = folders.flatMap((folder) => {
-      const folderPath = path.join(basePath, folder);
-      return fs
-        .readdirSync(folderPath, { withFileTypes: true })
-        .filter(
-          (entry) =>
-            entry.isFile() &&
-            certificateExtensions.has(path.extname(entry.name).toLowerCase()),
-        )
-        .map((entry) => ({
-          href: `/certificates/${folder}/${entry.name}`,
-          name: entry.name,
-        }));
-    });
-
-    return files.sort((a, b) => a.name.localeCompare(b.name, "en-US"));
-  } catch {
-    return [];
-  }
-};
-
-const formatFileLabel = (fileName: string) => {
-  const base = fileName.replace(/\.[^/.]+$/, "").replace(/[-_]+/g, " ");
-  return base.replace(/\b\w/g, (char) => char.toUpperCase());
-};
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -191,7 +90,7 @@ export const metadata: Metadata = {
 };
 
 export default function AcademicPage() {
-  const certificateFiles = getCertificateFiles();
+  const { openLabel, downloadLabel } = certificatesPageEn;
 
   return (
     <main className="min-h-screen px-6 pt-28 pb-20">
@@ -219,19 +118,104 @@ export default function AcademicPage() {
 
         <section className="space-y-8">
           <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">Certificates</h2>
-          <div className="grid gap-6 md:grid-cols-3">
-            {Object.entries(certificates).map(([issuer, items]) => (
-              <div key={issuer} className="space-y-3">
-                <h3 className="text-sm uppercase tracking-[0.2em] text-[color:var(--muted)]">
-                  {issuer}
-                </h3>
-                <ul className="list-disc list-inside space-y-1 text-[color:var(--muted)]">
-                  {items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="grid gap-6 lg:grid-cols-2">
+            {certificatesEn.map((certificate) => {
+              const previewSrc =
+                `${certificate.pdfUrl}#page=1&view=FitH&toolbar=0&navpanes=0&scrollbar=0`;
+              const previewTitle = `${openLabel}: ${certificate.title}`;
+
+              return (
+                <article
+                  key={certificate.id}
+                  className="card card-hover certificate-card"
+                >
+                  <div className="certificate-card__media">
+                    <div className="certificate-card__frame">
+                      <div className="certificate-card__placeholder" aria-hidden="true">
+                        <span className="certificate-card__placeholder-label">
+                          {certificate.issuer}
+                        </span>
+                        <span className="certificate-card__placeholder-stamp" />
+                      </div>
+                      <iframe
+                        className="certificate-card__preview"
+                        title={previewTitle}
+                        src={previewSrc}
+                        loading="lazy"
+                        aria-hidden="true"
+                        tabIndex={-1}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="certificate-card__body">
+                    <div className="space-y-2">
+                      <h3 className="certificate-card__title">
+                        {certificate.title}
+                      </h3>
+                      <p className="certificate-card__issuer">
+                        {certificate.issuer}
+                      </p>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 text-xs text-[color:var(--muted)]">
+                      {certificate.areaTags.map((tag) => (
+                        <span key={`${certificate.id}-${tag}`} className="chip">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {certificate.details ? (
+                      <details className="panel">
+                        <summary className="cursor-pointer text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--muted)]">
+                          {certificate.details.summaryLabel}
+                        </summary>
+                        <div className="mt-4 space-y-4 text-sm text-[color:var(--muted)]">
+                          {certificate.details.modules.map((module) => (
+                            <div key={`${certificate.id}-${module.title}`} className="space-y-1">
+                              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--muted)]">
+                                {module.title}
+                              </p>
+                              {module.subtitle ? (
+                                <p className="text-xs text-[color:var(--muted-strong)]">
+                                  {module.subtitle}
+                                </p>
+                              ) : null}
+                              <p className="leading-relaxed text-[color:var(--muted)]">
+                                {module.description}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </details>
+                    ) : null}
+
+                    <div className="mt-auto flex flex-wrap gap-3">
+                      <a
+                        href={certificate.pdfUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+                        aria-label={`${openLabel}: ${certificate.title}`}
+                      >
+                        {openLabel}
+                      </a>
+                      <a
+                        href={certificate.pdfUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download
+                        className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+                        aria-label={`${downloadLabel}: ${certificate.title}`}
+                      >
+                        {downloadLabel}
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </section>
 
@@ -256,33 +240,6 @@ export default function AcademicPage() {
           </div>
         </section>
 
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">Files</h2>
-          {certificateFiles.length > 0 ? (
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {certificateFiles.map((file) => (
-                <a
-                  key={file.href}
-                  href={file.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card card-compact card-link text-sm text-[color:var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
-                >
-                  {formatFileLabel(file.name)}
-                </a>
-              ))}
-            </div>
-          ) : (
-            <a
-              href={driveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline w-fit"
-            >
-              View full folder on Drive
-            </a>
-          )}
-        </section>
       </div>
     </main>
   );
