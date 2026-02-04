@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import SafeImage from "@/src/components/demo/SafeImage";
 import type {
   Certificate,
   CertificateIssuer,
@@ -42,6 +43,11 @@ const matchesQuery = (certificate: Certificate, query: string) => {
 
   return haystack.includes(search);
 };
+
+const getCertificatePreview = (pdfUrl: string) =>
+  pdfUrl
+    .replace("/certificates/", "/certificates/previews/")
+    .replace(/\.pdf$/i, ".png");
 
 export default function CertificatesClient({ content, certificates }: Props) {
   const [activeIssuer, setActiveIssuer] = useState<CertificateIssuer | "all">(
@@ -112,9 +118,8 @@ export default function CertificatesClient({ content, certificates }: Props) {
       ) : (
         <div className="grid gap-6 lg:grid-cols-2">
           {filtered.map((certificate) => {
-            const previewSrc =
-              `${certificate.pdfUrl}#page=1&view=FitH&toolbar=0&navpanes=0&scrollbar=0`;
-            const previewTitle = `${content.openLabel}: ${certificate.title}`;
+            const previewSrc = getCertificatePreview(certificate.pdfUrl);
+            const previewAlt = `${certificate.title} - ${certificate.issuer}`;
 
             return (
               <article
@@ -129,13 +134,12 @@ export default function CertificatesClient({ content, certificates }: Props) {
                       </span>
                       <span className="certificate-card__placeholder-stamp" />
                     </div>
-                    <iframe
-                      className="certificate-card__preview"
-                      title={previewTitle}
+                    <SafeImage
                       src={previewSrc}
-                      loading="lazy"
-                      aria-hidden="true"
-                      tabIndex={-1}
+                      alt={previewAlt}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 620px"
+                      className="certificate-card__preview"
                     />
                   </div>
                 </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SafeImage from "@/src/components/demo/SafeImage";
 import { certificatesPagePt, certificatesPt } from "@/data/certificates.pt";
 import { buildAlternates, siteName } from "@/lib/seo";
 
@@ -92,6 +93,10 @@ export const metadata: Metadata = {
 
 export default function AcademicoPage() {
   const { openLabel, downloadLabel } = certificatesPagePt;
+  const getCertificatePreview = (pdfUrl: string) =>
+    pdfUrl
+      .replace("/certificates/", "/certificates/previews/")
+      .replace(/\.pdf$/i, ".png");
 
   return (
     <main className="min-h-screen px-6 pt-28 pb-20">
@@ -124,9 +129,8 @@ export default function AcademicoPage() {
           <h2 className="text-2xl font-semibold text-[color:var(--foreground)]">Certificados</h2>
           <div className="grid gap-6 lg:grid-cols-2">
             {certificatesPt.map((certificate) => {
-              const previewSrc =
-                `${certificate.pdfUrl}#page=1&view=FitH&toolbar=0&navpanes=0&scrollbar=0`;
-              const previewTitle = `${openLabel}: ${certificate.title}`;
+              const previewSrc = getCertificatePreview(certificate.pdfUrl);
+              const previewAlt = `${certificate.title} - ${certificate.issuer}`;
 
               return (
                 <article
@@ -141,16 +145,15 @@ export default function AcademicoPage() {
                         </span>
                         <span className="certificate-card__placeholder-stamp" />
                       </div>
-                      <iframe
-                        className="certificate-card__preview"
-                        title={previewTitle}
-                        src={previewSrc}
-                        loading="lazy"
-                        aria-hidden="true"
-                        tabIndex={-1}
-                      />
-                    </div>
+                    <SafeImage
+                      src={previewSrc}
+                      alt={previewAlt}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 620px"
+                      className="certificate-card__preview"
+                    />
                   </div>
+                </div>
 
                   <div className="certificate-card__body">
                     <div className="space-y-2">
