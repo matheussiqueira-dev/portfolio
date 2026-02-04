@@ -5,7 +5,7 @@ import { defaultLocale, locales, type Locale } from "./routing";
 
 const localeToMessages: Record<
   Locale,
-  () => Promise<{ default: AbstractIntlMessages }>
+  () => Promise<{ default: Record<string, unknown> }>
 > = {
   "pt-BR": () => import("../messages/pt.json"),
   en: () => import("../messages/en.json"),
@@ -18,7 +18,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
     locale = defaultLocale;
   }
 
-  const messages = (await localeToMessages[locale]()).default;
+  const messages = (await localeToMessages[locale]()).default as AbstractIntlMessages;
 
   return {
     locale,
