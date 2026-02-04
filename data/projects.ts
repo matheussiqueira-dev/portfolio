@@ -608,8 +608,8 @@ const projectList: ProjectCase[] = [
   },
   {
     slug: "chatbot-ia-api",
-    title: "Chatbot IA API",
-    headline: "Chatbot IA API | Backend de suporte com contexto e logs",
+    title: "API de Chatbot com IA",
+    headline: "API de Chatbot com IA | Backend de suporte com contexto e logs",
     tagline: "API de chatbot com contexto, logs e dados para automação de suporte.",
     role: "Analista/Desenvolvedor",
     stack: ["Python", "FastAPI", "PostgreSQL", "Redis"],
@@ -682,28 +682,28 @@ const projectList: ProjectCase[] = [
     screenshots: [
       {
         src: "/projects/chatbot-ia-api/cover.png",
-        alt: "Capa do projeto Chatbot IA API",
+        alt: "Capa do projeto API de Chatbot com IA",
       },
       {
         src: "/Chatbot.mp4",
-        alt: "Demonstração do Chatbot IA API",
+        alt: "Demonstração da API de Chatbot com IA",
         type: "video",
       },
       {
         src: "/projects/chatbot-ia-api/shot-1.webp",
-        alt: "Fluxo de conversa do Chatbot IA API",
+        alt: "Fluxo de conversa da API de Chatbot com IA",
       },
     ],
     seo: {
-      title: "Chatbot IA API | API REST com contexto, logs e dados",
+      title: "API de Chatbot com IA | API REST com contexto, logs e dados",
       description:
         "API de chatbot em FastAPI com PostgreSQL e Redis, contexto por sessão e logs estruturados para automação de suporte e analytics de atendimento.",
     },
   },
   {
     slug: "self-drive-car",
-    title: "Self-Drive Car",
-    headline: "Self-Drive Car | Machine Learning e visão computacional",
+    title: "Carro Para Dirigir Sem Motorista",
+    headline: "Carro Para Dirigir Sem Motorista | Machine Learning e visão computacional",
     tagline: "Simulador de direção autônoma com visão computacional e ML.",
     role: "Analista/Desenvolvedor",
     stack: ["Python", "OpenCV", "TensorFlow", "NumPy"],
@@ -769,28 +769,28 @@ const projectList: ProjectCase[] = [
     screenshots: [
       {
         src: "/projects/self-drive-car/cover.png",
-        alt: "Capa do projeto Self-Drive Car",
+        alt: "Capa do projeto Carro Para Dirigir Sem Motorista",
       },
       {
         src: "/projects/self-drive-car/demo.mp4",
-        alt: "Demonstração do simulador Self-Drive Car em ação",
+        alt: "Demonstração do simulador Carro Para Dirigir Sem Motorista em ação",
         type: "video",
       },
       {
         src: "/projects/self-drive-car/shot-1.webp",
-        alt: "Simulação do projeto Self-Drive Car",
+        alt: "Simulação do projeto Carro Para Dirigir Sem Motorista",
       },
     ],
     seo: {
-      title: "Self-Drive Car | Simulador de direção autônoma com ML",
+      title: "Carro Para Dirigir Sem Motorista | Simulador de direção autônoma com ML",
       description:
         "Simulador de direção autônoma com Python, OpenCV e TensorFlow para treinar e validar modelos de machine learning em tempo real com telemetria.",
     },
   },
   {
     slug: "library-api-advanced",
-    title: "Library API Advanced",
-    headline: "Library API Advanced | API REST com autenticação e regras de negócio",
+    title: "API de Biblioteca Avançada",
+    headline: "API de Biblioteca Avançada | API REST com autenticação e regras de negócio",
     tagline: "API de biblioteca com autenticação, regras de empréstimo e auditoria.",
     role: "Desenvolvedor",
     stack: ["Node.js", "TypeScript", "PostgreSQL", "Fastify"],
@@ -850,27 +850,27 @@ const projectList: ProjectCase[] = [
     screenshots: [
       {
         src: "/projects/library-api-advanced/cover.png",
-        alt: "Capa do projeto Library API Advanced",
+        alt: "Capa do projeto API de Biblioteca Avançada",
       },
       {
         src: "/library-api-advanced.png",
-        alt: "Tela adicional do Library API Advanced",
+        alt: "Tela adicional da API de Biblioteca Avançada",
       },
       {
         src: "/projects/library-api-advanced/shot-1.webp",
-        alt: "Dashboard técnico do Library API Advanced",
+        alt: "Dashboard técnico da API de Biblioteca Avançada",
       },
     ],
     seo: {
-      title: "Library API Advanced | API REST com Node.js e PostgreSQL",
+      title: "API de Biblioteca Avançada | API REST com Node.js e PostgreSQL",
       description:
         "API de biblioteca com Node.js, TypeScript, Fastify e PostgreSQL, incluindo autenticação JWT, regras de empréstimo e trilha de auditoria.",
     },
   },
   {
     slug: "driver-monitoring-system",
-    title: "Driver Monitoring System",
-    headline: "Driver Monitoring System | Monitoramento de atenção e fadiga",
+    title: "Sistema de Monitoramento do Motorista",
+    headline: "Sistema de Monitoramento do Motorista | Monitoramento de atenção e fadiga",
     tagline:
       "Sistema de monitoramento do motorista utilizando visão computacional para atenção e fadiga.",
     role: "Analista/Desenvolvedor",
@@ -937,16 +937,16 @@ const projectList: ProjectCase[] = [
     screenshots: [
       {
         src: "/projects/driver-monitoring-system/cover.png",
-        alt: "Capa do projeto Driver Monitoring System",
+        alt: "Capa do projeto Sistema de Monitoramento do Motorista",
       },
       {
         src: "/driver-monitoring-system.mp4",
-        alt: "Demonstração do Driver Monitoring System",
+        alt: "Demonstração do Sistema de Monitoramento do Motorista",
         type: "video",
       },
     ],
     seo: {
-      title: "Driver Monitoring System | Monitoramento de atenção e fadiga",
+      title: "Sistema de Monitoramento do Motorista | Monitoramento de atenção e fadiga",
       description:
         "Sistema de monitoramento do motorista com visão computacional para detectar atenção e fadiga em tempo real usando Python, OpenCV e MediaPipe.",
     },
@@ -1038,8 +1038,8 @@ const projectList: ProjectCase[] = [
   },
   {
     slug: "subway-surf",
-    title: "Subway Surf",
-    headline: "Subway Surf | Jogo 2D em HTML5 Canvas",
+    title: "Surf no Metrô",
+    headline: "Surf no Metrô | Jogo 2D em HTML5 Canvas",
     tagline:
       "Jogo inspirado no Subway Surfers para estudo de lógica e desenvolvimento de games.",
     role: "Desenvolvedor",
@@ -1105,19 +1105,19 @@ const projectList: ProjectCase[] = [
     screenshots: [
       {
         src: "/projects/subway-surf/cover.png",
-        alt: "Capa do projeto Subway Surf",
+        alt: "Capa do projeto Surf no Metrô",
       },
       {
         src: "/Subway Surf.mp4",
-        alt: "Gameplay do Subway Surf",
+        alt: "Gameplay do Surf no Metrô",
         type: "video",
       },
     ],
   },
   {
     slug: "slingshot",
-    title: "Slingshot",
-    headline: "Slingshot | Bubble shooter com ricochete e dicas táticas",
+    title: "Estilingue",
+    headline: "Estilingue | Bubble shooter com ricochete e dicas táticas",
     tagline:
       "Bubble shooter em canvas com mira por toque/mouse, ricochete nas paredes e sugestões de jogada.",
     role: "Desenvolvedor",
@@ -1185,29 +1185,29 @@ const projectList: ProjectCase[] = [
     screenshots: [
       {
         src: "/projects/slingshot/cover.png",
-        alt: "Capa do projeto Slingshot",
+        alt: "Capa do projeto Estilingue",
       },
       {
         src: "/projects/slingshot/demo.gif",
-        alt: "Demonstração do Slingshot",
+        alt: "Demonstração do Estilingue",
         type: "gif",
       },
       {
         src: "/projects/slingshot/demo.mp4",
-        alt: "Gameplay do Slingshot",
+        alt: "Gameplay do Estilingue",
         type: "video",
       },
     ],
     seo: {
-      title: "Slingshot | Bubble shooter com mira touch e ricochete",
+      title: "Estilingue | Bubble shooter com mira touch e ricochete",
       description:
         "Bubble shooter em HTML5 Canvas com mira por toque/mouse, ricochete nas paredes e dicas táticas calculadas localmente.",
     },
   },
   {
     slug: "fruit-ninja",
-    title: "Fruit Ninja",
-    headline: "Fruit Ninja | Corte por gestos com rastreamento de mão",
+    title: "Ninja das Frutas",
+    headline: "Ninja das Frutas | Corte por gestos com rastreamento de mão",
     tagline:
       "Experiência de corte com rastreamento de mão em tempo real usando a câmera.",
     role: "Desenvolvedor",
@@ -1221,7 +1221,7 @@ const projectList: ProjectCase[] = [
     ],
     repoUrl: "https://github.com/matheussiqueira-dev/Clone-Fruit-Ninja.git",
     context:
-      "A proposta era criar um Fruit Ninja jogável no navegador, com controle por gestos e performance consistente em diferentes taxas de quadros.",
+      "A proposta era criar um Ninja das Frutas jogável no navegador, com controle por gestos e performance consistente em diferentes taxas de quadros.",
     problem: [
       "Garantir rastreamento de mão fluido sem enviar dados para servidores.",
       "Manter física e colisões consistentes em FPS variáveis.",
@@ -1276,19 +1276,19 @@ const projectList: ProjectCase[] = [
     screenshots: [
       {
         src: "/projects/fruit-ninja/cover.svg",
-        alt: "Capa do projeto Fruit Ninja",
+        alt: "Capa do projeto Ninja das Frutas",
       },
     ],
     seo: {
-      title: "Fruit Ninja | Corte por gestos com MediaPipe no navegador",
+      title: "Ninja das Frutas | Corte por gestos com MediaPipe no navegador",
       description:
-        "Clone do Fruit Ninja em React e TypeScript com rastreamento de mão via MediaPipe Tasks Vision e gameplay em HTML5 Canvas.",
+        "Clone do Ninja das Frutas em React e TypeScript com rastreamento de mão via MediaPipe Tasks Vision e gameplay em HTML5 Canvas.",
     },
   },
   {
     slug: "neon-runner-cyber-hand",
-    title: "Neon Runner: Cyber Hand",
-    headline: "Neon Runner | Infinite runner cyberpunk controlado por gestos",
+    title: "Corredor Neon: Mão Cibernética",
+    headline: "Corredor Neon: Mão Cibernética | Runner cyberpunk controlado por gestos",
     tagline:
       "Infinite runner cyberpunk com visualização da mão em tempo real e atmosfera neon.",
     role: "Desenvolvedor",
@@ -1367,29 +1367,29 @@ const projectList: ProjectCase[] = [
     screenshots: [
       {
         src: "/projects/neon-runner-cyber-hand/cover.png",
-        alt: "Capa do projeto Neon Runner: Cyber Hand",
+        alt: "Capa do projeto Corredor Neon: Mão Cibernética",
       },
       {
         src: "/projects/neon-runner-cyber-hand/demo.gif",
-        alt: "Demonstração do Neon Runner: Cyber Hand",
+        alt: "Demonstração do Corredor Neon: Mão Cibernética",
         type: "gif",
       },
       {
         src: "/projects/neon-runner-cyber-hand/demo.mp4",
-        alt: "Gameplay do Neon Runner: Cyber Hand",
+        alt: "Gameplay do Corredor Neon: Mão Cibernética",
         type: "video",
       },
     ],
     seo: {
-      title: "Neon Runner | Runner 3D com controle por gestos",
+      title: "Corredor Neon | Runner 3D com controle por gestos",
       description:
         "Infinite runner cyberpunk em React e Three.js com rastreamento de mão via MediaPipe Tasks Vision e HUD responsivo.",
     },
   },
   {
     slug: "dino-chrome",
-    title: "Dino Chrome",
-    headline: "Dino Chrome | Jogo 2D em HTML5 Canvas",
+    title: "Dino do Chrome",
+    headline: "Dino do Chrome | Jogo 2D em HTML5 Canvas",
     tagline:
       "Clone do jogo do Chrome para treinar lógica de colisão, pontuação e progressão.",
     role: "Desenvolvedor",
@@ -1455,16 +1455,16 @@ const projectList: ProjectCase[] = [
     screenshots: [
       {
         src: "/projects/dino-chrome/cover.png",
-        alt: "Capa do projeto Dino Chrome",
+        alt: "Capa do projeto Dino do Chrome",
       },
       {
         src: "/projects/dino-chrome/demo.mp4",
-        alt: "Gameplay do Dino Chrome",
+        alt: "Gameplay do Dino do Chrome",
         type: "video",
       },
     ],
     seo: {
-      title: "Dino Chrome | Clone do jogo do Chrome em Canvas",
+      title: "Dino do Chrome | Clone do jogo do Chrome em Canvas",
       description:
         "Clone do Dino do Chrome feito em JavaScript e HTML5 Canvas com game loop, colisão e pontuação em tempo real.",
     },

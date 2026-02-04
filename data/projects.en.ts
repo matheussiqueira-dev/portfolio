@@ -607,8 +607,8 @@ const projectListEn: Project[] = [
   },
   {
     slug: "chatbot-ia-api",
-    title: "Chatbot IA API",
-    headline: "Chatbot IA API | Support backend with context and logs",
+    title: "AI Chatbot API",
+    headline: "AI Chatbot API | Support backend with context and logs",
     tagline: "Chatbot API with context, logs, and data for support automation.",
     role: "Analyst/Developer",
     stack: ["Python", "FastAPI", "PostgreSQL", "Redis"],
@@ -681,20 +681,20 @@ const projectListEn: Project[] = [
     screenshots: [
       {
         src: "/projects/chatbot-ia-api/cover.png",
-        alt: "Cover of Chatbot IA API",
+        alt: "Cover of AI Chatbot API",
       },
       {
         src: "/Chatbot.mp4",
-        alt: "Chatbot IA API demo",
+        alt: "AI Chatbot API demo",
         type: "video",
       },
       {
         src: "/projects/chatbot-ia-api/shot-1.webp",
-        alt: "Conversation flow of Chatbot IA API",
+        alt: "Conversation flow of AI Chatbot API",
       },
     ],
     seo: {
-      title: "Chatbot IA API | REST API with context, logs, and data",
+      title: "AI Chatbot API | REST API with context, logs, and data",
       description:
         "FastAPI chatbot API with PostgreSQL and Redis, session context, and structured logs for support automation and analytics.",
     },
@@ -1469,8 +1469,8 @@ const projectListEn: Project[] = [
   },
   {
     slug: "gestor-de-notas",
-    title: "Gestor de Notas",
-    headline: "Gestor de Notas | Notes management app",
+    title: "Notes Manager",
+    headline: "Notes Manager | Notes management app",
     tagline:
       "Notes management app to create, edit, and organize information quickly.",
     role: "Developer",
@@ -1536,11 +1536,11 @@ const projectListEn: Project[] = [
     screenshots: [
       {
         src: "/projects/gestor-de-notas/cover.png",
-        alt: "Cover of Gestor de Notas",
+        alt: "Cover of Notes Manager",
       },
       {
         src: "/Gestor de Notas.mp4",
-        alt: "Gestor de Notas demo",
+        alt: "Notes Manager demo",
         type: "video",
       },
     ],
