@@ -3,6 +3,29 @@
     "eyebrow": "Main stack",
     "title": "Primary stack for products, data, and cloud",
     "subtitle": "Technical capabilities focused on software engineering, data, and cloud infrastructure.",
+    "summary": "I connect front-end, back-end, and data engineering to deliver fast, secure, and metric-driven experiences. This stack is curated to reduce friction, scale efficiently, and keep the codebase readable for teams and recruiters.",
+    "highlights": [
+      {
+        "label": "Products",
+        "value": "Web Experiences",
+        "detail": "Responsive, accessible interfaces with consistent performance across the funnel."
+      },
+      {
+        "label": "Data",
+        "value": "Reliable Pipelines",
+        "detail": "ETL, APIs, and modeling for actionable analytics and clear dashboards."
+      },
+      {
+        "label": "Cloud",
+        "value": "Scale & Security",
+        "detail": "Predictable deploys, observability, and data governance on Azure."
+      }
+    ],
+    "roles": [
+      "Full Stack Developer",
+      "Data Engineer",
+      "Software Engineer"
+    ],
     "ariaLabel": "Main Tech Stack",
     "items": {
       "javascript": "JavaScript",

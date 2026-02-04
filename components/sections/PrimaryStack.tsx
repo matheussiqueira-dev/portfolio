@@ -62,12 +62,37 @@ export default function PrimaryStack() {
       aria-label={t("ariaLabel")}
     >
       <div className="section-inner">
-        <div className="section-heading" data-reveal>
+        <div className="section-heading stack-heading" data-reveal>
           <div className="section-heading__text">
             <p className="eyebrow">{t("eyebrow")}</p>
             <h2 className="section-title">{t("title")}</h2>
           </div>
-          <p className="section-description max-w-3xl">{t("subtitle")}</p>
+          <div className="section-heading__meta">
+            <p className="section-description max-w-3xl">{t("subtitle")}</p>
+            <p className="stack-heading__summary">{t("summary")}</p>
+            <div className="stack-heading__highlights">
+              {Array.from({ length: 3 }).map((_, index) => (
+                <div className="stack-highlight card card-compact" key={index}>
+                  <p className="stack-highlight__label">
+                    {t(`highlights.${index}.label`)}
+                  </p>
+                  <p className="stack-highlight__value">
+                    {t(`highlights.${index}.value`)}
+                  </p>
+                  <p className="stack-highlight__detail">
+                    {t(`highlights.${index}.detail`)}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="stack-heading__roles">
+              {Array.from({ length: 3 }).map((_, index) => (
+                <span className="stack-badge" key={index}>
+                  {t(`roles.${index}`)}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="stack-cloud" role="presentation">

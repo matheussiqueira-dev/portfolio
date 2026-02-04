@@ -3,6 +3,29 @@
     "eyebrow": "Stack principal",
     "title": "Stack principal para produtos, dados e cloud",
     "subtitle": "Competências técnicas com foco em engenharia de software, dados e infraestrutura em nuvem.",
+    "summary": "Integro front-end, back-end e engenharia de dados para entregar experiências rápidas, seguras e orientadas a métricas. A stack é escolhida para reduzir fricção, escalar com eficiência e manter legibilidade técnica para times e recrutadores.",
+    "highlights": [
+      {
+        "label": "Produtos",
+        "value": "Experiências Web",
+        "detail": "Interfaces responsivas, acessíveis e com performance consistente em todo o funil."
+      },
+      {
+        "label": "Dados",
+        "value": "Pipelines Confiáveis",
+        "detail": "ETL, APIs e modelagem para análises acionáveis e dashboards claros."
+      },
+      {
+        "label": "Cloud",
+        "value": "Escala e Segurança",
+        "detail": "Deploys previsíveis, observabilidade e governança de dados em Azure."
+      }
+    ],
+    "roles": [
+      "Full Stack Developer",
+      "Data Engineer",
+      "Software Engineer"
+    ],
     "ariaLabel": "Main Tech Stack",
     "items": {
       "javascript": "JavaScript",
