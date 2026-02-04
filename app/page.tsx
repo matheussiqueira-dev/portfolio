@@ -2,6 +2,7 @@ import About from "@/components/sections/About";
 import Contact from "@/components/sections/Contact";
 import ExecutiveSummary from "@/components/sections/ExecutiveSummary";
 import Hero from "@/components/sections/Hero";
+import Engagement from "@/components/sections/Engagement";
 import MetricsSection from "@/components/sections/MetricsSection";
 import Projects from "@/components/sections/Projects";
 import PrimaryStack from "@/components/sections/PrimaryStack";
@@ -84,6 +85,7 @@ export default function HomePage() {
       <ExecutiveSummary content={sitePt.executiveSummary} />
       <About content={sitePt.about} />
       <Services content={sitePt.services} />
+      <Engagement content={sitePt.engagement} />
       <PrimaryStack />
       <Projects />
       <MetricsSection content={sitePt.metrics} />

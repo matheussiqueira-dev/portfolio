@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Manrope, Space_Grotesk } from "next/font/google";
+import { JetBrains_Mono, Instrument_Sans, Sora } from "next/font/google";
 import Script from "next/script";
 import { NextIntlClientProvider } from "next-intl";
 import Header from "@/components/layout/Header";
@@ -15,14 +15,14 @@ import "./globals.css";
 // Google Tag Manager ID
 const GTM_ID = "GTM-WR93ZJ8C";
 
-const spaceGrotesk = Space_Grotesk({
+const sora = Sora({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
   weight: ["400", "500", "600", "700"],
 });
 
-const manrope = Manrope({
+const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
@@ -211,7 +211,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
-        className={`${spaceGrotesk.variable} ${manrope.variable} ${jetBrainsMono.variable} min-h-screen antialiased`}
+        className={`${sora.variable} ${instrumentSans.variable} ${jetBrainsMono.variable} min-h-screen antialiased`}
       >
         {/* Google Tag Manager (noscript) */}
         <noscript>

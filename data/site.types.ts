@@ -103,6 +103,20 @@ export type SiteContent = {
       secondaryLabel: string;
     };
   };
+  engagement: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    cards: {
+      label: string;
+      value: string;
+      detail: string;
+    }[];
+    cta: {
+      primaryLabel: string;
+      secondaryLabel: string;
+    };
+  };
   metrics: {
     eyebrow: string;
     title: string;
@@ -193,6 +207,45 @@ export type SiteContent = {
       linkedin: string;
       github: string;
       whatsapp: string;
+    };
+    brief: {
+      title: string;
+      description: string;
+      fields: {
+        name: {
+          label: string;
+          placeholder: string;
+        };
+        company: {
+          label: string;
+          placeholder: string;
+        };
+        email: {
+          label: string;
+          placeholder: string;
+        };
+        projectType: {
+          label: string;
+        };
+        timeline: {
+          label: string;
+        };
+        budget: {
+          label: string;
+        };
+        goal: {
+          label: string;
+          placeholder: string;
+        };
+      };
+      projectTypes: string[];
+      timelines: string[];
+      budgets: string[];
+      summaryTitle: string;
+      summaryHint: string;
+      emptySummary: string;
+      emailCta: string;
+      whatsappCta: string;
     };
   };
   certificatesSection: {

@@ -4,6 +4,7 @@ import CertificatesPreview from "@/components/sections/CertificatesPreview";
 import Contact from "@/components/sections/Contact";
 import ExecutiveSummary from "@/components/sections/ExecutiveSummary";
 import Hero from "@/components/sections/Hero";
+import Engagement from "@/components/sections/Engagement";
 import MetricsSection from "@/components/sections/MetricsSection";
 import Projects from "@/components/sections/Projects";
 import PrimaryStack from "@/components/sections/PrimaryStack";
@@ -100,6 +101,7 @@ export default function HomeEn() {
       <ExecutiveSummary content={siteEn.executiveSummary} />
       <About content={siteEn.about} />
       <Services content={siteEn.services} localePrefix="/en" />
+      <Engagement content={siteEn.engagement} localePrefix="/en" />
       <PrimaryStack />
       <Projects />
       <MetricsSection content={siteEn.metrics} />

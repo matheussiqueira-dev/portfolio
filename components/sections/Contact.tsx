@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import { TrackedAnchor } from "@/components/analytics/TrackedLink";
 import CopyButton from "@/components/ui/CopyButton";
+import ProjectBriefForm from "@/components/sections/ProjectBriefForm";
 import type { SiteContent } from "@/data/site.types";
 
 type Props = {
@@ -49,6 +50,12 @@ export default function Contact({ content }: Props) {
                 </TrackedAnchor>
               </div>
             </div>
+
+            <ProjectBriefForm
+              content={content.brief}
+              copyLabel={content.copyLabel}
+              copiedLabel={content.copiedLabel}
+            />
           </div>
 
           <div className="contact-cards">

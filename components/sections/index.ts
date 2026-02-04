@@ -4,6 +4,7 @@ export { default as Hero } from "./Hero";
 export { default as Projects } from "./Projects";
 export { default as About } from "./About";
 export { default as Services } from "./Services";
+export { default as Engagement } from "./Engagement";
 export { default as Contact } from "./Contact";
 export { default as ExecutiveSummary } from "./ExecutiveSummary";
 export { default as MetricsSection } from "./MetricsSection";

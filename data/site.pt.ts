@@ -269,6 +269,38 @@ export const sitePt: SiteContent = {
       secondaryLabel: "Ver cases",
     },
   },
+  engagement: {
+    eyebrow: "Disponibilidade",
+    title: "Disponibilidade e modelo de colaboração",
+    description:
+      "Transparência sobre agenda, tempo de resposta e formato de trabalho para acelerar decisões desde o primeiro contato.",
+    cards: [
+      {
+        label: "Disponibilidade",
+        value: "Próxima janela: Mar/2026",
+        detail: "Projetos remotos de 4 a 10 semanas com onboarding estruturado.",
+      },
+      {
+        label: "Tempo de resposta",
+        value: "Até 24h úteis",
+        detail: "Contato direto por email ou WhatsApp com próximos passos claros.",
+      },
+      {
+        label: "Modelos de trabalho",
+        value: "Projeto ou consultoria",
+        detail: "Escopo fechado, sprints ou apoio contínuo em dados e BI.",
+      },
+      {
+        label: "Entregáveis",
+        value: "KPIs, dashboards e pipelines",
+        detail: "Documentação, governança e handoff para o time interno.",
+      },
+    ],
+    cta: {
+      primaryLabel: "Iniciar conversa",
+      secondaryLabel: "Ver cases",
+    },
+  },
   metrics: {
     eyebrow: "Métricas",
     title: "Credibilidade em números",
@@ -380,6 +412,57 @@ export const sitePt: SiteContent = {
       linkedin: "LinkedIn",
       github: "GitHub",
       whatsapp: "WhatsApp",
+    },
+    brief: {
+      title: "Briefing rápido do projeto",
+      description:
+        "Preencha os campos principais e gere um resumo pronto para enviar.",
+      fields: {
+        name: {
+          label: "Nome",
+          placeholder: "Seu nome",
+        },
+        company: {
+          label: "Empresa/Órgão",
+          placeholder: "Nome da organização",
+        },
+        email: {
+          label: "Email para retorno",
+          placeholder: "voce@empresa.com",
+        },
+        projectType: {
+          label: "Tipo de demanda",
+        },
+        timeline: {
+          label: "Prazo desejado",
+        },
+        budget: {
+          label: "Faixa de investimento",
+        },
+        goal: {
+          label: "Objetivo principal",
+          placeholder: "Ex.: dashboard para diretoria, automação de ETL...",
+        },
+      },
+      projectTypes: [
+        "Diagnóstico de dados",
+        "Dashboard BI",
+        "Pipeline/ETL",
+        "Automação em Python",
+        "Consultoria em dados",
+      ],
+      timelines: [
+        "Urgente (até 2 semanas)",
+        "Curto (1 mês)",
+        "Médio (2-3 meses)",
+        "Contínuo",
+      ],
+      budgets: ["Até R$ 5k", "R$ 5k - 15k", "R$ 15k - 30k", "R$ 30k+"],
+      summaryTitle: "Resumo gerado",
+      summaryHint: "Revise antes de enviar. Você pode copiar ou enviar direto.",
+      emptySummary: "Preencha os campos para gerar um resumo do briefing.",
+      emailCta: "Enviar por email",
+      whatsappCta: "Enviar no WhatsApp",
     },
   },
   certificatesSection: {

@@ -269,6 +269,38 @@ export const siteEn: SiteContent = {
       secondaryLabel: "View cases",
     },
   },
+  engagement: {
+    eyebrow: "Availability",
+    title: "Availability and engagement model",
+    description:
+      "Clear expectations about timeline, response time, and delivery format from the first touchpoint.",
+    cards: [
+      {
+        label: "Availability",
+        value: "Next slot: Mar 2026",
+        detail: "Remote projects, 4 to 10-week cycles with structured onboarding.",
+      },
+      {
+        label: "Response time",
+        value: "Within 24 business hours",
+        detail: "Direct email or WhatsApp communication with clear next steps.",
+      },
+      {
+        label: "Engagement",
+        value: "Project or advisory",
+        detail: "Fixed scope, sprints, or ongoing data and BI support.",
+      },
+      {
+        label: "Deliverables",
+        value: "KPIs, dashboards, pipelines",
+        detail: "Documentation, governance, and handoff for internal teams.",
+      },
+    ],
+    cta: {
+      primaryLabel: "Start a conversation",
+      secondaryLabel: "View cases",
+    },
+  },
   metrics: {
     eyebrow: "Metrics",
     title: "Credibility at a glance",
@@ -380,6 +412,57 @@ export const siteEn: SiteContent = {
       linkedin: "LinkedIn",
       github: "GitHub",
       whatsapp: "WhatsApp",
+    },
+    brief: {
+      title: "Quick project brief",
+      description:
+        "Fill the key fields and generate a ready-to-send summary.",
+      fields: {
+        name: {
+          label: "Name",
+          placeholder: "Your name",
+        },
+        company: {
+          label: "Company/Org",
+          placeholder: "Organization name",
+        },
+        email: {
+          label: "Reply-to email",
+          placeholder: "you@company.com",
+        },
+        projectType: {
+          label: "Project type",
+        },
+        timeline: {
+          label: "Desired timeline",
+        },
+        budget: {
+          label: "Budget range",
+        },
+        goal: {
+          label: "Primary goal",
+          placeholder: "Example: executive dashboard, ETL automation...",
+        },
+      },
+      projectTypes: [
+        "Data assessment",
+        "BI dashboard",
+        "Pipeline/ETL",
+        "Python automation",
+        "Data advisory",
+      ],
+      timelines: [
+        "Urgent (up to 2 weeks)",
+        "Short (1 month)",
+        "Mid (2-3 months)",
+        "Ongoing",
+      ],
+      budgets: ["Up to $1k", "$1k - $3k", "$3k - $6k", "$6k+"],
+      summaryTitle: "Generated summary",
+      summaryHint: "Review before sending. You can copy or send directly.",
+      emptySummary: "Fill out the fields to generate a brief summary.",
+      emailCta: "Send via email",
+      whatsappCta: "Send via WhatsApp",
     },
   },
   certificatesSection: {

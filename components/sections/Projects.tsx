@@ -4,8 +4,16 @@ import dynamic from "next/dynamic";
 import SafeImage from "@/src/components/demo/SafeImage";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { CSSProperties } from "react";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import type { CSSProperties, ChangeEvent } from "react";
+import {
+  useCallback,
+  useDeferredValue,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  useTransition,
+} from "react";
 import { trackEvent } from "@/lib/analytics";
 import { projects, projectOrder } from "@/data/projects";
 import { projectsEn, projectOrderEn } from "@/data/projects.en";
@@ -120,6 +128,8 @@ export default function Projects() {
   const [loadingSlug, setLoadingSlug] = useState<string | null>(null);
   const [activeFilter, setActiveFilter] = useState("all");
   const [query, setQuery] = useState("");
+  const deferredQuery = useDeferredValue(query);
+  const [isPending, startTransition] = useTransition();
   const loadingTimeoutRef = useRef<number | null>(null);
   const repoSlugsByUrl = useMemo(() => {
     const map = new Map<string, string>();
@@ -176,7 +186,7 @@ export default function Projects() {
     return FILTER_ORDER.filter((label) => categories.has(label));
   }, [projectMeta]);
   const filteredProjects = useMemo(() => {
-    const normalizedQuery = query.trim().toLowerCase();
+    const normalizedQuery = deferredQuery.trim().toLowerCase();
     return projectMeta.filter((item) => {
       const matchesFilter =
         activeFilter === "all" || item.badges.includes(activeFilter);
@@ -184,7 +194,7 @@ export default function Projects() {
         normalizedQuery.length === 0 || item.searchable.includes(normalizedQuery);
       return matchesFilter && matchesQuery;
     });
-  }, [activeFilter, projectMeta, query]);
+  }, [activeFilter, deferredQuery, projectMeta]);
   const handleClose = useCallback(() => {
     setSelectedProject(null);
     setLoadingSlug(null);
@@ -271,6 +281,18 @@ export default function Projects() {
     loadStars();
   }, [repoUrlBySlug]);
 
+  const handleFilterChange = useCallback((filter: string) => {
+    startTransition(() => setActiveFilter(filter));
+  }, [startTransition]);
+
+  const handleQueryChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      const nextValue = event.target.value;
+      startTransition(() => setQuery(nextValue));
+    },
+    [startTransition]
+  );
+
   return (
     <section id="projects" className="page-section content-auto">
       <div className="section-inner">
@@ -284,7 +306,7 @@ export default function Projects() {
           <div className="project-filters" role="group" aria-label={content.filters.label}>
             <button
               type="button"
-              onClick={() => setActiveFilter("all")}
+              onClick={() => handleFilterChange("all")}
               className={`filter-pill ${activeFilter === "all" ? "is-active" : ""}`}
               aria-pressed={activeFilter === "all"}
             >
@@ -294,7 +316,7 @@ export default function Projects() {
               <button
                 key={filter}
                 type="button"
-                onClick={() => setActiveFilter(filter)}
+                onClick={() => handleFilterChange(filter)}
                 className={`filter-pill ${activeFilter === filter ? "is-active" : ""}`}
                 aria-pressed={activeFilter === filter}
               >
@@ -306,17 +328,18 @@ export default function Projects() {
             <input
               type="search"
               value={query}
-              onChange={(event) => setQuery(event.target.value)}
+              onChange={handleQueryChange}
               placeholder={content.filters.searchPlaceholder}
               aria-label={content.filters.searchPlaceholder}
               className="project-search__input"
             />
-            <span className="project-search__meta">
+            <span className="project-search__meta" aria-live="polite">
               {formatResultsLabel(
                 content.filters.resultsLabel,
                 filteredProjects.length,
                 projectMeta.length
               )}
+              {isPending ? " ..." : ""}
             </span>
           </div>
         </div>
