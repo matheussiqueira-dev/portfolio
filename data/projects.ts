@@ -3,9 +3,9 @@ import type { Project as ProjectCase } from "./projects.types";
 const projectList: ProjectCase[] = [
   {
     slug: "business-decision-simulator",
-    title: "Business Decision Simulator",
+    title: "Simulador de Decisão Empresarial",
     headline:
-      "Business Decision Simulator | Cenários, risco e impacto financeiro",
+      "Simulador de Decisão Empresarial | Cenários, risco e impacto financeiro",
     tagline:
       "Simulador interativo para comparar estratégias e medir impacto financeiro com Monte Carlo e análise de sensibilidade.",
     role: "Analista/Desenvolvedor",
@@ -103,17 +103,17 @@ const projectList: ProjectCase[] = [
     screenshots: [
       {
         src: "/projects/business-decision-simulator/cover.png",
-        alt: "Capa do Business Decision Simulator",
+        alt: "Capa do Simulador de Decisão Empresarial",
       },
       {
         src: "/Simulação Estratégica de Decisão Empresarial.mp4",
-        alt: "Demonstração do Business Decision Simulator",
+        alt: "Demonstração do Simulador de Decisão Empresarial",
         type: "video",
       },
     ],
     seo: {
       title:
-        "Business Decision Simulator | Cenários financeiros com Monte Carlo",
+        "Simulador de Decisão Empresarial | Cenários financeiros com Monte Carlo",
       description:
         "Simulador interativo em Python/Streamlit para comparar estratégias, rodar Monte Carlo e comunicar risco e impacto financeiro.",
     },
