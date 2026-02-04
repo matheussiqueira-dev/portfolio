@@ -15,7 +15,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/Simulação Estratégica de Decisão Empresarial.mp4",
-      poster: "/projects/business-decision-simulator/cover.svg",
+      poster: "/projects/business-decision-simulator/cover.png",
       caption: "Cenários lado a lado, risco e KPIs em tempo real.",
     },
     intro: {
@@ -44,7 +44,7 @@ const projectList: ProjectCase[] = [
       ],
       video: {
         src: "/Simulação Estratégica de Decisão Empresarial.mp4",
-        poster: "/projects/business-decision-simulator/cover.svg",
+        poster: "/projects/business-decision-simulator/cover.png",
         caption: "Tour pelas telas de cenários, risco e KPIs.",
       },
     },
@@ -102,7 +102,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/business-decision-simulator/cover.svg",
+        src: "/projects/business-decision-simulator/cover.png",
         alt: "Capa do Business Decision Simulator",
       },
       {
@@ -133,7 +133,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/projects/dashboard-vendas-power-bi/demo.mp4",
-      poster: "/projects/dashboard-vendas-power-bi/cover.svg",
+      poster: "/projects/dashboard-vendas-power-bi/cover.png",
       caption: "Visão geral do dashboard e filtros principais.",
     },
     intro: {
@@ -162,7 +162,7 @@ const projectList: ProjectCase[] = [
       ],
       video: {
         src: "/projects/dashboard-vendas-power-bi/demo.mp4",
-        poster: "/projects/dashboard-vendas-power-bi/cover.svg",
+        poster: "/projects/dashboard-vendas-power-bi/cover.png",
         caption: "KPIs, filtros e leitura rápida de desempenho.",
       },
     },
@@ -219,7 +219,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/dashboard-vendas-power-bi/cover.svg",
+        src: "/projects/dashboard-vendas-power-bi/cover.png",
         alt: "Capa do Dashboard de Vendas - Power B.I.",
       },
       {
@@ -248,7 +248,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
-      poster: "/projects/deteccao-de-anomalias-operacionais/cover.svg",
+      poster: "/projects/deteccao-de-anomalias-operacionais/cover.png",
       caption: "Radar com alertas de anomalia e histórico de métricas.",
     },
     intro: {
@@ -277,7 +277,7 @@ const projectList: ProjectCase[] = [
       ],
       video: {
         src: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
-        poster: "/projects/deteccao-de-anomalias-operacionais/cover.svg",
+        poster: "/projects/deteccao-de-anomalias-operacionais/cover.png",
         caption: "Detecção automática, alertas e investigação em um só painel.",
       },
     },
@@ -334,7 +334,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/deteccao-de-anomalias-operacionais/cover.svg",
+        src: "/projects/deteccao-de-anomalias-operacionais/cover.png",
         alt: "Capa do projeto Detecção de Anomalias Operacionais",
       },
       {
@@ -366,7 +366,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/touchless-web-gesture-interface.mp4",
-      poster: "/projects/touchless-web-gesture-interface/cover.svg",
+      poster: "/projects/touchless-web-gesture-interface/cover.png",
       caption: "Demonstração rápida da interface touchless em uso.",
     },
     intro: {
@@ -523,7 +523,7 @@ const projectList: ProjectCase[] = [
       ],
       video: {
         src: "/touchless-web-gesture-interface.mp4",
-        poster: "/projects/touchless-web-gesture-interface/cover.svg",
+        poster: "/projects/touchless-web-gesture-interface/cover.png",
         caption: "Demonstração da Interface Web de Gestos Sem Contato em uso.",
       },
     },
@@ -587,7 +587,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/touchless-web-gesture-interface/cover.svg",
+        src: "/projects/touchless-web-gesture-interface/cover.png",
         alt: "Capa do projeto Interface Web de Gestos Sem Contato",
       },
       {
@@ -681,7 +681,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/chatbot-ia-api/cover.svg",
+        src: "/projects/chatbot-ia-api/cover.png",
         alt: "Capa do projeto Chatbot IA API",
       },
       {
@@ -711,7 +711,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/projects/self-drive-car/demo.mp4",
-      poster: "/projects/self-drive-car/cover.svg",
+      poster: "/projects/self-drive-car/cover.png",
       caption: "Simulador de direção autônoma em execução.",
     },
     context:
@@ -768,7 +768,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/self-drive-car/cover.svg",
+        src: "/projects/self-drive-car/cover.png",
         alt: "Capa do projeto Self-Drive Car",
       },
       {
@@ -849,7 +849,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/library-api-advanced/cover.svg",
+        src: "/projects/library-api-advanced/cover.png",
         alt: "Capa do projeto Library API Advanced",
       },
       {
@@ -879,7 +879,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/driver-monitoring-system.mp4",
-      poster: "/projects/driver-monitoring-system/cover.svg",
+      poster: "/projects/driver-monitoring-system/cover.png",
       caption: "Detecção de atenção e fadiga com visão computacional.",
     },
     context:
@@ -936,7 +936,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/driver-monitoring-system/cover.svg",
+        src: "/projects/driver-monitoring-system/cover.png",
         alt: "Capa do projeto Driver Monitoring System",
       },
       {
@@ -963,7 +963,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/Flappy-Bird.mp4",
-      poster: "/images/projects/flappy-bird-gestos.webp",
+      poster: "/projects/flappy-bird/cover.png",
       caption: "Jogabilidade do Flappy Bird usando gestos pela webcam.",
     },
     context:
@@ -1020,7 +1020,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/images/projects/flappy-bird-gestos.webp",
+        src: "/projects/flappy-bird/cover.png",
         alt: "Capa do Flappy Bird controlado por gestos",
       },
       {
@@ -1048,7 +1048,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/Subway Surf.mp4",
-      poster: "/projects/subway-surf/cover.svg",
+      poster: "/projects/subway-surf/cover.png",
       caption: "Gameplay do protótipo inspirado no Subway Surfers.",
     },
     context:
@@ -1104,7 +1104,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/subway-surf/cover.svg",
+        src: "/projects/subway-surf/cover.png",
         alt: "Capa do projeto Subway Surf",
       },
       {
@@ -1126,7 +1126,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/projects/slingshot/demo.mp4",
-      poster: "/projects/slingshot/cover.svg",
+      poster: "/projects/slingshot/cover.png",
       caption: "Mira por toque, ricochete e dicas táticas em tempo real.",
     },
     context:
@@ -1184,7 +1184,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/slingshot/cover.svg",
+        src: "/projects/slingshot/cover.png",
         alt: "Capa do projeto Slingshot",
       },
       {
@@ -1275,7 +1275,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/fruit-ninja/cover.svg",
+        src: "/projects/fruit-ninja/cover.png",
         alt: "Capa do projeto Fruit Ninja",
       },
     ],
@@ -1306,7 +1306,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/projects/neon-runner-cyber-hand/demo.mp4",
-      poster: "/projects/neon-runner-cyber-hand/cover.svg",
+      poster: "/projects/neon-runner-cyber-hand/cover.png",
       caption: "Runner neon com controle por gestos e mão cibernética em cena.",
     },
     context:
@@ -1366,7 +1366,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/neon-runner-cyber-hand/cover.svg",
+        src: "/projects/neon-runner-cyber-hand/cover.png",
         alt: "Capa do projeto Neon Runner: Cyber Hand",
       },
       {
@@ -1398,7 +1398,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/projects/dino-chrome/demo.mp4",
-      poster: "/projects/dino-chrome/cover.svg",
+      poster: "/projects/dino-chrome/cover.png",
       caption: "Gameplay do clone do Dino do Chrome.",
     },
     context:
@@ -1454,7 +1454,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/dino-chrome/cover.svg",
+        src: "/projects/dino-chrome/cover.png",
         alt: "Capa do projeto Dino Chrome",
       },
       {
@@ -1481,7 +1481,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/Gestor de Notas.mp4",
-      poster: "/projects/gestor-de-notas/cover.svg",
+      poster: "/projects/gestor-de-notas/cover.png",
       caption: "Fluxo de criação e organização de notas.",
     },
     context:
@@ -1537,7 +1537,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/gestor-de-notas/cover.svg",
+        src: "/projects/gestor-de-notas/cover.png",
         alt: "Capa do projeto Gestor de Notas",
       },
       {
@@ -1561,7 +1561,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/Hands Gesture.mp4",
-      poster: "/projects/hand-gesture-recognition-realtime/cover.svg",
+      poster: "/projects/hand-gesture-recognition-realtime/cover.png",
       caption: "Demonstração do reconhecimento de gestos em tempo real.",
     },
     intro: {
@@ -1697,7 +1697,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/hand-gesture-recognition-realtime/cover.svg",
+        src: "/projects/hand-gesture-recognition-realtime/cover.png",
         alt: "Capa do projeto de reconhecimento de gestos de mão",
       },
       {
@@ -1730,7 +1730,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/Detector de Stress.mp4",
-      poster: "/projects/detector-de-stress/cover.svg",
+      poster: "/projects/detector-de-stress/cover.png",
       caption: "HUD, baseline e broadcasting em tempo real.",
     },
     intro: {
@@ -1759,7 +1759,7 @@ const projectList: ProjectCase[] = [
       ],
       video: {
         src: "/Detector de Stress.mp4",
-        poster: "/projects/detector-de-stress/cover.svg",
+        poster: "/projects/detector-de-stress/cover.png",
         caption: "Veja a demonstração em vídeo: score, tendência e alertas em tempo real.",
       },
     },
@@ -1818,7 +1818,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/detector-de-stress/cover.svg",
+        src: "/projects/detector-de-stress/cover.png",
         alt: "Capa do Detector de Stress",
       },
       {
@@ -1874,3 +1874,4 @@ export const getProjectBySlug = (slug: string) =>
 export type InlineDemoId = import("../src/data/projects").InlineDemoId;
 export type Project = import("../src/data/projects").Project;
 export { getProjectById, interactiveProjectIds } from "../src/data/projects";
+
