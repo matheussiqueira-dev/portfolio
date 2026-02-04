@@ -47,7 +47,7 @@ const matchesQuery = (certificate: Certificate, query: string) => {
 const getCertificatePreview = (pdfUrl: string) =>
   pdfUrl
     .replace("/certificates/", "/certificates/previews/")
-    .replace(/\.pdf$/i, ".png");
+    .replace(/\.pdf$/i, ".jpg");
 
 export default function CertificatesClient({ content, certificates }: Props) {
   const [activeIssuer, setActiveIssuer] = useState<CertificateIssuer | "all">(

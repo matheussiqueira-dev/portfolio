@@ -95,7 +95,7 @@ export default function AcademicPage() {
   const getCertificatePreview = (pdfUrl: string) =>
     pdfUrl
       .replace("/certificates/", "/certificates/previews/")
-      .replace(/\.pdf$/i, ".png");
+      .replace(/\.pdf$/i, ".jpg");
 
   return (
     <main className="min-h-screen px-6 pt-28 pb-20">
