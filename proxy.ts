@@ -15,8 +15,6 @@ const intlMiddleware = createMiddleware({
 
 export function proxy(request: NextRequest) {
   const host = request.nextUrl.hostname.toLowerCase();
-  const pathname = request.nextUrl.pathname;
-
   const isLocal =
     host.startsWith("localhost") ||
     host.startsWith("127.") ||
@@ -35,22 +33,6 @@ export function proxy(request: NextRequest) {
     url.protocol = "https";
     url.hostname = CANONICAL_HOST;
     return NextResponse.redirect(url, 308);
-  }
-
-  const isRoot = pathname === "/";
-  const isEnPath = pathname.startsWith("/en");
-
-  if (isRoot && !isEnPath) {
-    const acceptLanguage = request.headers.get("accept-language") ?? "";
-    const prefersEn = acceptLanguage
-      .split(",")
-      .map((entry) => entry.trim().toLowerCase())
-      .some((entry) => entry.startsWith("en"));
-
-    if (prefersEn) {
-      url.pathname = "/en";
-      return NextResponse.redirect(url, 307);
-    }
   }
 
   return intlMiddleware(request);
