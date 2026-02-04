@@ -1,10 +1,21 @@
+import createMiddleware from "next-intl/middleware";
 import { NextRequest, NextResponse } from "next/server";
+
+import { defaultLocale, locales } from "./i18n/routing";
 
 const CANONICAL_HOST = "www.matheussiqueira.dev";
 const VERCEL_PREVIEW_SUFFIX = ".vercel.app";
 
+const intlMiddleware = createMiddleware({
+  locales: [...locales],
+  defaultLocale,
+  localePrefix: "as-needed",
+  localeDetection: false,
+});
+
 export function proxy(request: NextRequest) {
   const host = request.nextUrl.hostname.toLowerCase();
+  const pathname = request.nextUrl.pathname;
 
   const isLocal =
     host.startsWith("localhost") ||
@@ -14,7 +25,7 @@ export function proxy(request: NextRequest) {
   const isProduction = process.env.VERCEL_ENV === "production";
 
   if (!isProduction || isLocal || isPreview) {
-    return NextResponse.next();
+    return intlMiddleware(request);
   }
 
   const url = request.nextUrl.clone();
@@ -26,9 +37,25 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(url, 308);
   }
 
-  return NextResponse.next();
+  const isRoot = pathname === "/";
+  const isEnPath = pathname.startsWith("/en");
+
+  if (isRoot && !isEnPath) {
+    const acceptLanguage = request.headers.get("accept-language") ?? "";
+    const prefersEn = acceptLanguage
+      .split(",")
+      .map((entry) => entry.trim().toLowerCase())
+      .some((entry) => entry.startsWith("en"));
+
+    if (prefersEn) {
+      url.pathname = "/en";
+      return NextResponse.redirect(url, 307);
+    }
+  }
+
+  return intlMiddleware(request);
 }
 
 export const config = {
-  matcher: ["/:path*"],
+  matcher: ["/((?!api|_next|.*\\..*).*)"],
 };

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Roboto } from "next/font/google";
 import Script from "next/script";
+import { NextIntlClientProvider } from "next-intl";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/seo/JsonLd";
@@ -8,6 +9,7 @@ import CursorGlow from "@/components/ui/CursorGlow";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import VideoBackground from "@/components/ui/VideoBackground";
 import { baseUrl, buildAlternates, siteName, sameAsLinks } from "@/lib/seo";
+import messages from "@/messages/pt.json";
 import "./globals.css";
 
 // Google Tag Manager ID
@@ -26,9 +28,33 @@ const jetBrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const siteTitle = `${siteName} | Desenvolvedor Full Stack | React, Python, Dados e Cloud`;
+const siteTitle =
+  "Matheus Siqueira | Desenvolvedor Full Stack & Engenharia de Dados";
 const siteDescription =
-  "Portfólio profissional de desenvolvedor full stack focado em aplicações web, engenharia de dados, BI e soluções escaláveis em cloud.";
+  "Desenvolvedor Full Stack especializado em React, TypeScript, Python, SQL, Engenharia de Dados, Power BI e Azure Cloud.";
+
+const stackKeywords = [
+  "JavaScript",
+  "TypeScript",
+  "Python",
+  "React.js",
+  "Node.js",
+  "SQL",
+  "MongoDB",
+  "Git",
+  "GitHub",
+  "HTML5",
+  "CSS3",
+  "Microsoft Azure",
+  "Power BI",
+  "Pandas",
+  "REST API",
+  "ETL",
+  "Data Warehouse",
+  "Tableau",
+  "Oracle Database",
+  "Shell Script",
+];
 
 const websiteJsonLd = {
   "@context": "https://schema.org",
@@ -38,6 +64,11 @@ const websiteJsonLd = {
   url: baseUrl,
   description: siteDescription,
   inLanguage: ["pt-BR", "en-US"],
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${baseUrl}/?q={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
 };
 
 const personJsonLd = {
@@ -45,72 +76,22 @@ const personJsonLd = {
   "@type": "Person",
   "@id": `${baseUrl}/#person`,
   name: "Matheus Siqueira",
-  jobTitle: "Desenvolvedor Full Stack",
-  description: "Desenvolvedor full stack focado em aplicações web, dados e cloud",
+  jobTitle: "Full Stack Developer, Data Engineer",
+  description:
+    "Desenvolvedor Full Stack e Data Engineer focado em aplicações web, dados e cloud",
   email: "matheussiqueirahub@gmail.com",
   telephone: "+55 81 99920-3683",
   url: baseUrl,
   image: `${baseUrl}/profile.jpg`,
   sameAs: sameAsLinks,
   inLanguage: ["pt-BR", "en-US"],
+  knowsAbout: stackKeywords,
   address: {
     "@type": "PostalAddress",
     addressLocality: "Recife",
     addressRegion: "Pernambuco",
     addressCountry: "BR",
   },
-  knowsAbout: [
-    "Full Stack Development",
-    "Software Engineering",
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Node.js",
-    "REST APIs",
-    "MongoDB",
-    "Python",
-    "SQL",
-    "Cloud Computing",
-    "Machine Learning",
-    "Business Intelligence",
-    "Data Engineering",
-  ],
-  skills: ["React", "Next.js", "Node.js", "Python", "SQL", "Power BI", "Cloud"],
-};
-
-const softwareDeveloperJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareDeveloper",
-  "@id": `${baseUrl}/#software-developer`,
-  name: "Matheus Siqueira",
-  jobTitle: "Desenvolvedor Full Stack",
-  description: "Desenvolvedor full stack focado em aplicações web, dados e cloud",
-  url: baseUrl,
-  image: `${baseUrl}/profile.jpg`,
-  sameAs: sameAsLinks,
-  inLanguage: ["pt-BR", "en-US"],
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Recife",
-    addressRegion: "Pernambuco",
-    addressCountry: "BR",
-  },
-  knowsAbout: [
-    "Full Stack Development",
-    "Software Engineering",
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Node.js",
-    "REST APIs",
-    "MongoDB",
-    "Python",
-    "SQL",
-    "Cloud Computing",
-    "Machine Learning",
-    "Business Intelligence",
-    "Data Engineering",
-  ],
 };
 
 export const metadata: Metadata = {
@@ -121,17 +102,13 @@ export const metadata: Metadata = {
   },
   description: siteDescription,
   keywords: [
-    "full stack developer",
-    "react",
-    "next.js",
-    "python",
-    "node.js",
-    "sql",
-    "power bi",
-    "data engineering",
-    "cloud computing",
-    "web applications",
+    "Matheus Siqueira",
+    "Full Stack Developer",
+    "Data Engineer",
+    "Software Engineer",
+    ...stackKeywords,
   ],
+  authors: [{ name: siteName, url: baseUrl }],
   alternates: {
     ...buildAlternates({ pt: "/", en: "/en", canonical: "/" }),
   },
@@ -162,6 +139,9 @@ export const metadata: Metadata = {
     description: siteDescription,
     // Replace with your social sharing image (1200x630).
     images: ["/og.png"],
+  },
+  other: {
+    language: "pt-BR",
   },
   robots: {
     index: true,
@@ -244,17 +224,19 @@ export default function RootLayout({
           Pular para o conteúdo principal
         </a>
 
-        <JsonLd data={[websiteJsonLd, personJsonLd, softwareDeveloperJsonLd]} />
+        <JsonLd data={[websiteJsonLd, personJsonLd]} />
         <VideoBackground />
         <CursorGlow />
         <ScrollReveal />
-        <div className="app-shell">
-          <Header />
-          <main id="main-content" className="min-h-screen">
-            {children}
-          </main>
-          <Footer />
-        </div>
+        <NextIntlClientProvider locale="pt-BR" messages={messages}>
+          <div className="app-shell">
+            <Header />
+            <main id="main-content" className="min-h-screen">
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

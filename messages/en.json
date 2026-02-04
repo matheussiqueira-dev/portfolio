@@ -1,0 +1,32 @@
+{
+  "primaryStack": {
+    "eyebrow": "Main stack",
+    "title": "Primary stack for products, data, and cloud",
+    "subtitle": "Technical capabilities focused on software engineering, data, and cloud infrastructure.",
+    "ariaLabel": "Main Tech Stack",
+    "items": {
+      "javascript": "JavaScript",
+      "typescript": "TypeScript",
+      "python": "Python",
+      "react": "React.js",
+      "node": "Node.js",
+      "sql": "SQL",
+      "mongodb": "MongoDB",
+      "git": "Git",
+      "github": "GitHub",
+      "html5": "HTML5",
+      "css3": "CSS3",
+      "azure": "Microsoft Azure",
+      "powerbi": "Power BI",
+      "pandas": "Pandas",
+      "rest": "REST API",
+      "etl": "ETL",
+      "warehouse": "Data Warehouse",
+      "tableau": "Tableau",
+      "oracle": "Oracle Database",
+      "shell": "Shell Script"
+    },
+    "srTitle": "Primary technology stack",
+    "srDescription": "Full Stack Developer and Data Engineer with experience in software engineering, data integration, automation, and cloud. Primary stack focused on JavaScript, TypeScript, Python, SQL, Power BI, Azure Cloud, ETL, and Data Warehouse, delivering as a Software Engineer for web products and data pipelines."
+  }
+}

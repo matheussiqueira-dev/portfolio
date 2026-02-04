@@ -6,15 +6,15 @@ import ExecutiveSummary from "@/components/sections/ExecutiveSummary";
 import Hero from "@/components/sections/Hero";
 import MetricsSection from "@/components/sections/MetricsSection";
 import Projects from "@/components/sections/Projects";
-import Stack from "@/components/sections/Stack";
+import PrimaryStack from "@/components/sections/PrimaryStack";
 import JsonLd from "@/components/seo/JsonLd";
 import { siteEn } from "@/data/site.en";
 import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 
 const homeTitle =
-  "Matheus Siqueira | Full Stack Developer | React, Python, Data & Cloud";
+  "Matheus Siqueira | Full Stack Developer & Data Engineer";
 const homeDescription =
-  "Professional full stack developer portfolio focused on web applications, data engineering, BI, and scalable cloud solutions.";
+  "Full Stack Developer specialized in React, TypeScript, Python, SQL, Data Engineering, Power BI and Azure Cloud.";
 
 const homeJsonLd = {
   "@context": "https://schema.org",
@@ -33,6 +33,34 @@ const homeJsonLd = {
 export const metadata: Metadata = {
   title: homeTitle,
   description: homeDescription,
+  keywords: [
+    "Matheus Siqueira",
+    "Full Stack Developer",
+    "Data Engineer",
+    "Software Engineer",
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "React.js",
+    "Node.js",
+    "SQL",
+    "MongoDB",
+    "Git",
+    "GitHub",
+    "HTML5",
+    "CSS3",
+    "Microsoft Azure",
+    "Power BI",
+    "Pandas",
+    "REST API",
+    "ETL",
+    "Data Warehouse",
+    "Tableau",
+    "Oracle Database",
+    "Shell Script",
+  ],
+  authors: [{ name: siteName, url: baseUrl }],
+  robots: { index: true, follow: true },
   alternates: {
     ...buildAlternates({ pt: "/", en: "/en", canonical: "/en" }),
   },
@@ -58,6 +86,9 @@ export const metadata: Metadata = {
     description: homeDescription,
     images: ["/og.png"],
   },
+  other: {
+    language: "en-US",
+  },
 };
 
 export default function HomeEn() {
@@ -67,7 +98,7 @@ export default function HomeEn() {
       <Hero content={siteEn.hero} localePrefix="/en" />
       <ExecutiveSummary content={siteEn.executiveSummary} />
       <About content={siteEn.about} />
-      <Stack content={siteEn.primaryStack} />
+      <PrimaryStack />
       <Projects />
       <MetricsSection content={siteEn.metrics} />
       <CertificatesPreview content={siteEn.certificatesSection} localePrefix="/en" />

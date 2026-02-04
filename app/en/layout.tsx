@@ -1,22 +1,52 @@
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { NextIntlClientProvider } from "next-intl";
 import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
+import messages from "@/messages/en.json";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: `${siteName} | Full Stack Developer | React, Python, Data & Cloud`,
+    default: "Matheus Siqueira | Full Stack Developer & Data Engineer",
     template: `%s | ${siteName}`,
   },
   description:
-    "Professional full stack developer portfolio focused on web applications, data engineering, BI, and scalable cloud solutions.",
+    "Full Stack Developer specialized in React, TypeScript, Python, SQL, Data Engineering, Power BI and Azure Cloud.",
+  keywords: [
+    "Matheus Siqueira",
+    "Full Stack Developer",
+    "Data Engineer",
+    "Software Engineer",
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "React.js",
+    "Node.js",
+    "SQL",
+    "MongoDB",
+    "Git",
+    "GitHub",
+    "HTML5",
+    "CSS3",
+    "Microsoft Azure",
+    "Power BI",
+    "Pandas",
+    "REST API",
+    "ETL",
+    "Data Warehouse",
+    "Tableau",
+    "Oracle Database",
+    "Shell Script",
+  ],
+  authors: [{ name: siteName, url: baseUrl }],
+  robots: { index: true, follow: true },
   alternates: {
     ...buildAlternates({ pt: "/", en: "/en", canonical: "/en" }),
   },
   openGraph: {
-    title: `${siteName} | Full Stack Developer | React, Python, Data & Cloud`,
+    title: "Matheus Siqueira | Full Stack Developer & Data Engineer",
     description:
-      "Professional full stack developer portfolio focused on web applications, data engineering, BI, and scalable cloud solutions.",
+      "Full Stack Developer specialized in React, TypeScript, Python, SQL, Data Engineering, Power BI and Azure Cloud.",
     url: "/en",
     locale: "en_US",
     type: "website",
@@ -33,11 +63,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} | Full Stack Developer | React, Python, Data & Cloud`,
+    title: "Matheus Siqueira | Full Stack Developer & Data Engineer",
     description:
-      "Professional full stack developer portfolio focused on web applications, data engineering, BI, and scalable cloud solutions.",
+      "Full Stack Developer specialized in React, TypeScript, Python, SQL, Data Engineering, Power BI and Azure Cloud.",
     // Replace with your social sharing image (1200x630).
     images: ["/og.png"],
+  },
+  other: {
+    language: "en-US",
   },
 };
 
@@ -50,7 +83,9 @@ export default function EnLayout({
 
   return (
     <section lang="en-US">
-      {children}
+      <NextIntlClientProvider locale="en" messages={messages}>
+        {children}
+      </NextIntlClientProvider>
       {shouldInjectSpeedInsights ? <SpeedInsights /> : null}
     </section>
   );
