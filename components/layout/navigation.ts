@@ -19,6 +19,13 @@ const NAV_CONFIG: NavConfigItem[] = [
   { id: "home", labelKey: "home", type: "anchor", ptHref: "/#home", enHref: "/en#home" },
   { id: "about", labelKey: "about", type: "anchor", ptHref: "/#about", enHref: "/en#about" },
   {
+    id: "services",
+    labelKey: "services",
+    type: "anchor",
+    ptHref: "/#services",
+    enHref: "/en#services",
+  },
+  {
     id: "projects",
     labelKey: "projects",
     type: "anchor",

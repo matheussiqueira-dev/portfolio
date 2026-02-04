@@ -42,8 +42,6 @@ const getHighlights = (project: Project) => {
   return base.slice(0, 3);
 };
 
-const repoStarsCache = new Map<string, number | null>();
-
 const parseRepoSlug = (repoUrl: string) => {
   try {
     const url = new URL(repoUrl);
@@ -52,39 +50,6 @@ const parseRepoSlug = (repoUrl: string) => {
     if (!owner || !repo) return null;
     return `${owner}/${repo.replace(/\.git$/, "")}`;
   } catch {
-    return null;
-  }
-};
-
-const fetchRepoStars = async (repoUrl: string) => {
-  if (repoStarsCache.has(repoUrl)) {
-    return repoStarsCache.get(repoUrl);
-  }
-
-  const slug = parseRepoSlug(repoUrl);
-  if (!slug) {
-    repoStarsCache.set(repoUrl, null);
-    return null;
-  }
-
-  try {
-    const response = await fetch(`https://api.github.com/repos/${slug}`, {
-      headers: {
-        Accept: "application/vnd.github+json",
-      },
-    });
-
-    if (!response.ok) {
-      repoStarsCache.set(repoUrl, null);
-      return null;
-    }
-
-    const data = (await response.json()) as { stargazers_count?: number };
-    const stars = typeof data.stargazers_count === "number" ? data.stargazers_count : null;
-    repoStarsCache.set(repoUrl, stars);
-    return stars;
-  } catch {
-    repoStarsCache.set(repoUrl, null);
     return null;
   }
 };
@@ -131,6 +96,13 @@ const getProjectBadges = (project: Project) => {
   );
 };
 
+const FILTER_ORDER = ["Full Stack", "Data", "AI", "Computer Vision"] as const;
+
+const formatResultsLabel = (template: string, count: number, total: number) =>
+  template
+    .replace("{count}", count.toString())
+    .replace("{total}", total.toString());
+
 export default function Projects() {
   const pathname = usePathname() ?? "/";
   const isEn = pathname.startsWith("/en");
@@ -146,7 +118,73 @@ export default function Projects() {
   );
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [loadingSlug, setLoadingSlug] = useState<string | null>(null);
+  const [activeFilter, setActiveFilter] = useState("all");
+  const [query, setQuery] = useState("");
   const loadingTimeoutRef = useRef<number | null>(null);
+  const repoSlugsByUrl = useMemo(() => {
+    const map = new Map<string, string>();
+    data.forEach((project) => {
+      const slug = parseRepoSlug(project.repoUrl);
+      if (slug) {
+        map.set(project.repoUrl, slug);
+      }
+    });
+    return map;
+  }, [data]);
+  const repoUrlBySlug = useMemo(() => {
+    const map = new Map<string, string>();
+    repoSlugsByUrl.forEach((slug, repoUrl) => {
+      map.set(slug, repoUrl);
+    });
+    return map;
+  }, [repoSlugsByUrl]);
+  const projectMeta = useMemo(() => {
+    return data.map((project) => {
+      const registryProject = registryMap.get(project.slug);
+      const registryCover = registryProject?.coverImage
+        ? { src: registryProject.coverImage, alt: project.title }
+        : undefined;
+      const cover = getCover(project) ?? registryCover;
+      const highlights = getHighlights(project);
+      const badges = getProjectBadges(project);
+      const searchable = [
+        project.title,
+        project.tagline,
+        project.role,
+        ...project.stack,
+        ...project.highlights,
+        ...project.demonstrates,
+      ]
+        .join(" ")
+        .toLowerCase();
+
+      return {
+        project,
+        cover,
+        highlights,
+        badges,
+        searchable,
+        isFeatured: featured.has(project.slug),
+      };
+    });
+  }, [data, featured, registryMap]);
+  const availableFilters = useMemo(() => {
+    const categories = new Set<string>();
+    projectMeta.forEach((item) => {
+      item.badges.forEach((badge) => categories.add(badge));
+    });
+    return FILTER_ORDER.filter((label) => categories.has(label));
+  }, [projectMeta]);
+  const filteredProjects = useMemo(() => {
+    const normalizedQuery = query.trim().toLowerCase();
+    return projectMeta.filter((item) => {
+      const matchesFilter =
+        activeFilter === "all" || item.badges.includes(activeFilter);
+      const matchesQuery =
+        normalizedQuery.length === 0 || item.searchable.includes(normalizedQuery);
+      return matchesFilter && matchesQuery;
+    });
+  }, [activeFilter, projectMeta, query]);
   const handleClose = useCallback(() => {
     setSelectedProject(null);
     setLoadingSlug(null);
@@ -195,36 +233,43 @@ export default function Projects() {
   };
 
   useEffect(() => {
-    let isActive = true;
-
     const loadStars = async () => {
-      const repos = Array.from(new Set(data.map((project) => project.repoUrl)));
-      const entries = await Promise.all(
-        repos.map(async (repoUrl) => {
-          const stars = await fetchRepoStars(repoUrl);
-          return [repoUrl, stars] as const;
-        })
-      );
+      const slugs = Array.from(repoUrlBySlug.keys());
+      if (slugs.length === 0) {
+        return;
+      }
 
-      if (!isActive) return;
-
-      setStarsByRepo((prev) => {
-        const next = { ...prev };
-        for (const [repoUrl, stars] of entries) {
-          if (stars !== null && stars !== undefined) {
-            next[repoUrl] = stars;
-          }
+      try {
+        const response = await fetch(
+          `/api/github-stars?repos=${encodeURIComponent(slugs.join(","))}`
+        );
+        if (!response.ok) {
+          return;
         }
-        return next;
-      });
+        const payload = (await response.json()) as {
+          results?: Record<string, number | null>;
+        };
+        if (!payload.results) {
+          return;
+        }
+        setStarsByRepo((prev) => {
+          const next = { ...prev };
+          Object.entries(payload.results ?? {}).forEach(([slug, stars]) => {
+            const repoUrl = repoUrlBySlug.get(slug);
+            if (!repoUrl) return;
+            if (typeof stars === "number") {
+              next[repoUrl] = stars;
+            }
+          });
+          return next;
+        });
+      } catch {
+        // ignore network errors
+      }
     };
 
     loadStars();
-
-    return () => {
-      isActive = false;
-    };
-  }, [data]);
+  }, [repoUrlBySlug]);
 
   return (
     <section id="projects" className="page-section content-auto">
@@ -235,16 +280,59 @@ export default function Projects() {
           <p className="section-description max-w-3xl">{content.description}</p>
         </div>
 
+        <div className="project-controls" data-reveal>
+          <div className="project-filters" role="group" aria-label={content.filters.label}>
+            <button
+              type="button"
+              onClick={() => setActiveFilter("all")}
+              className={`filter-pill ${activeFilter === "all" ? "is-active" : ""}`}
+              aria-pressed={activeFilter === "all"}
+            >
+              {content.filters.allLabel}
+            </button>
+            {availableFilters.map((filter) => (
+              <button
+                key={filter}
+                type="button"
+                onClick={() => setActiveFilter(filter)}
+                className={`filter-pill ${activeFilter === filter ? "is-active" : ""}`}
+                aria-pressed={activeFilter === filter}
+              >
+                {filter}
+              </button>
+            ))}
+          </div>
+          <div className="project-search">
+            <input
+              type="search"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder={content.filters.searchPlaceholder}
+              aria-label={content.filters.searchPlaceholder}
+              className="project-search__input"
+            />
+            <span className="project-search__meta">
+              {formatResultsLabel(
+                content.filters.resultsLabel,
+                filteredProjects.length,
+                projectMeta.length
+              )}
+            </span>
+          </div>
+        </div>
+
+        {filteredProjects.length === 0 ? (
+          <div className="project-empty card card-muted" data-reveal>
+            <p className="card-title text-left">{content.filters.emptyTitle}</p>
+            <p className="card-subtitle text-left">
+              {content.filters.emptyDescription}
+            </p>
+          </div>
+        ) : null}
+
         <div className="grid gap-5 lg:grid-cols-2 projects-grid">
-          {data.map((project, index) => {
-            const registryProject = registryMap.get(project.slug);
-            const registryCover = registryProject?.coverImage
-              ? { src: registryProject.coverImage, alt: project.title }
-              : undefined;
-            const cover = getCover(project) ?? registryCover;
-            const highlights = getHighlights(project);
-            const badges = getProjectBadges(project);
-            const isFeatured = featured.has(project.slug);
+          {filteredProjects.map((item, index) => {
+            const { project, cover, highlights, badges, isFeatured } = item;
             const stars = starsByRepo[project.repoUrl];
             const isOpen = selectedProject?.slug === project.slug;
             const isLoading = loadingSlug === project.slug;
@@ -293,7 +381,7 @@ export default function Projects() {
                       fill
                       sizes="(max-width: 1024px) 100vw, 520px"
                       quality={85}
-                      className="object-cover"
+                      className="object-cover transition duration-500 ease-out group-hover:scale-[1.02]"
                     />
                     <div className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 opacity-0 transition duration-200 group-hover:opacity-100">
                       <p className="max-h-24 overflow-hidden text-sm leading-relaxed text-[color:var(--foreground)]/90">

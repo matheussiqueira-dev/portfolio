@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Roboto } from "next/font/google";
+import { JetBrains_Mono, Manrope, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 import { NextIntlClientProvider } from "next-intl";
 import Header from "@/components/layout/Header";
@@ -15,16 +15,23 @@ import "./globals.css";
 // Google Tag Manager ID
 const GTM_ID = "GTM-WR93ZJ8C";
 
-const roboto = Roboto({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-roboto",
+  variable: "--font-display",
   display: "swap",
-  weight: ["400", "500", "700"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -204,7 +211,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
-        className={`${roboto.variable} ${jetBrainsMono.variable} min-h-screen antialiased`}
+        className={`${spaceGrotesk.variable} ${manrope.variable} ${jetBrainsMono.variable} min-h-screen antialiased`}
       >
         {/* Google Tag Manager (noscript) */}
         <noscript>
@@ -231,9 +238,9 @@ export default function RootLayout({
         <NextIntlClientProvider locale="pt-BR" messages={messages}>
           <div className="app-shell">
             <Header />
-            <main id="main-content" className="min-h-screen">
+            <div id="main-content" className="min-h-screen">
               {children}
-            </main>
+            </div>
             <Footer />
           </div>
         </NextIntlClientProvider>

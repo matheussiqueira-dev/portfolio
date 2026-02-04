@@ -4,6 +4,7 @@ export const siteEn: SiteContent = {
   nav: {
     home: "Home",
     about: "About",
+    services: "Services",
     projects: "Projects",
     contact: "Contact",
     certificates: "Certificates",
@@ -23,6 +24,11 @@ export const siteEn: SiteContent = {
       { label: "Business Intelligence", icon: "data" },
       { label: "Power BI & KPIs", icon: "ai" },
       { label: "SQL & Python", icon: "software" },
+    ],
+    facts: [
+      { label: "Based in", value: "Recife, Brazil · Remote" },
+      { label: "Focus", value: "Data, BI, Automation" },
+      { label: "Availability", value: "Projects and consulting" },
     ],
     ctas: {
       primary: "View projects",
@@ -200,6 +206,69 @@ export const siteEn: SiteContent = {
       },
     ],
   },
+  services: {
+    eyebrow: "How I help",
+    title: "Data strategy and senior execution that accelerate decisions",
+    description:
+      "From diagnosis to delivery, I align KPIs, data architecture, and automation to create operational clarity and measurable impact.",
+    offerings: [
+      {
+        title: "Data diagnosis and strategy",
+        description:
+          "I map critical flows, define KPIs, and design the minimum architecture for reliable decisions.",
+        bullets: [
+          "Source inventory and data quality",
+          "Data model and governance",
+          "Metrics and indicators plan",
+        ],
+      },
+      {
+        title: "Executive BI and storytelling",
+        description:
+          "Power BI dashboards focused on clarity, targets, and continuous monitoring.",
+        bullets: [
+          "KPIs by area and goal",
+          "Leadership-ready narratives",
+          "Reusable dashboard templates",
+        ],
+      },
+      {
+        title: "Automation and pipelines",
+        description:
+          "Python/SQL ETL/ELT and integrations to reduce rework and speed analysis.",
+        bullets: [
+          "Orchestration and alerts",
+          "APIs and integrations",
+          "Monitoring and performance",
+        ],
+      },
+    ],
+    processTitle: "Delivery process",
+    process: [
+      {
+        title: "Discovery",
+        description: "Understand context, objectives, and business constraints.",
+      },
+      {
+        title: "Architecture",
+        description: "Modeling, prioritization, and clear deliverables definition.",
+      },
+      {
+        title: "Build",
+        description: "Implementation, validation, and documentation for scale.",
+      },
+      {
+        title: "Evolve",
+        description: "Adjustments, enablement, and continuous metric-driven improvement.",
+      },
+    ],
+    cta: {
+      title: "Ready to accelerate your data operation?",
+      description: "Share the challenge and I will propose the most efficient path.",
+      primaryLabel: "Discuss a project",
+      secondaryLabel: "View cases",
+    },
+  },
   metrics: {
     eyebrow: "Metrics",
     title: "Credibility at a glance",
@@ -243,6 +312,14 @@ export const siteEn: SiteContent = {
     caseLabel: "Full case",
     viewAllLabel: "View all cases",
     featuredLabel: "Featured",
+    filters: {
+      label: "Filter by",
+      allLabel: "All",
+      searchPlaceholder: "Search by project, stack, or keyword",
+      resultsLabel: "Showing {count} of {total} projects",
+      emptyTitle: "No projects found",
+      emptyDescription: "Try adjusting the filters or search to see other cases.",
+    },
     modal: {
       title: "Project details",
       closeLabel: "Close",
@@ -296,6 +373,8 @@ export const siteEn: SiteContent = {
     ctaTitle:
       "Professional summary: data analyst focused on BI, KPIs, automation, and operational architecture.",
     ctaSubtitle: "Connect on LinkedIn or send an email to start a conversation.",
+    copyLabel: "Copy",
+    copiedLabel: "Copied",
     cards: {
       email: "Email",
       linkedin: "LinkedIn",

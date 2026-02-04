@@ -1,7 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import type { CSSProperties } from "react";
+import { getTranslations } from "next-intl/server";
 
 import { stackIcons, type StackIcon as StackIconData } from "@/data/stack-icons";
 
@@ -35,8 +33,8 @@ const stackItems: StackItem[] = [
 ];
 
 const getFloatConfig = (index: number) => {
-  const duration = 3.4 + (index % 6) * 0.55;
-  const delay = (index % 7) * 0.18;
+  const duration = 3.8 + (index % 6) * 0.6;
+  const delay = (index % 7) * 0.2;
   const offset = 6 + (index % 4);
   return { duration, delay, offset };
 };
@@ -52,8 +50,8 @@ const StackIcon = ({ icon }: { icon: StackIconData }) => (
   />
 );
 
-export default function PrimaryStack() {
-  const t = useTranslations("primaryStack");
+export default async function PrimaryStack() {
+  const t = await getTranslations("primaryStack");
 
   return (
     <section
@@ -96,51 +94,34 @@ export default function PrimaryStack() {
         </div>
 
         <div className="stack-cloud" role="presentation">
-          <motion.ul className="stack-cloud__grid" role="list">
+          <ul className="stack-cloud__grid" role="list">
             {stackItems.map((item, index) => {
               const { duration, delay, offset } = getFloatConfig(index);
-              const tooltipId = `stack-tooltip-${item.key}`;
               const icon = stackIcons[item.icon];
               const label = t(`items.${item.labelKey}`);
 
               return (
-                <motion.li
+                <li
                   key={item.key}
                   className="stack-cloud__item"
-                  animate={{ y: [-offset, offset, -offset] }}
-                  transition={{
-                    duration,
-                    repeat: Infinity,
-                    repeatType: "mirror",
-                    ease: "easeInOut",
-                    delay,
-                  }}
+                  style={
+                    {
+                      "--float-duration": `${duration}s`,
+                      "--float-delay": `${delay}s`,
+                      "--float-offset": `${offset}px`,
+                    } as CSSProperties
+                  }
                 >
-                  <motion.button
-                    type="button"
-                    className="stack-pill"
-                    aria-label={label}
-                    aria-describedby={tooltipId}
-                    whileHover={{ scale: 1.08 }}
-                    whileFocus={{ scale: 1.05 }}
-                    transition={{ type: "spring", stiffness: 220, damping: 18 }}
-                  >
+                  <span className="stack-pill" aria-label={label} tabIndex={0}>
                     <span className="stack-pill__icon" aria-hidden="true">
                       <StackIcon icon={icon} />
                     </span>
                     <span className="stack-pill__label">{label}</span>
-                    <span
-                      id={tooltipId}
-                      role="tooltip"
-                      className="stack-pill__tooltip"
-                    >
-                      {label}
-                    </span>
-                  </motion.button>
-                </motion.li>
+                  </span>
+                </li>
               );
             })}
-          </motion.ul>
+          </ul>
         </div>
 
         <div className="sr-only">

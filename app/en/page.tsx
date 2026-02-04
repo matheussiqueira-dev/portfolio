@@ -7,6 +7,7 @@ import Hero from "@/components/sections/Hero";
 import MetricsSection from "@/components/sections/MetricsSection";
 import Projects from "@/components/sections/Projects";
 import PrimaryStack from "@/components/sections/PrimaryStack";
+import Services from "@/components/sections/Services";
 import JsonLd from "@/components/seo/JsonLd";
 import { siteEn } from "@/data/site.en";
 import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
@@ -98,6 +99,7 @@ export default function HomeEn() {
       <Hero content={siteEn.hero} localePrefix="/en" />
       <ExecutiveSummary content={siteEn.executiveSummary} />
       <About content={siteEn.about} />
+      <Services content={siteEn.services} localePrefix="/en" />
       <PrimaryStack />
       <Projects />
       <MetricsSection content={siteEn.metrics} />

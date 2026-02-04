@@ -5,6 +5,7 @@ import Hero from "@/components/sections/Hero";
 import MetricsSection from "@/components/sections/MetricsSection";
 import Projects from "@/components/sections/Projects";
 import PrimaryStack from "@/components/sections/PrimaryStack";
+import Services from "@/components/sections/Services";
 import { sitePt } from "@/data/site.pt";
 import type { Metadata } from "next";
 import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
@@ -78,14 +79,15 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="pb-24">
+    <main className="pb-24">
       <Hero content={sitePt.hero} />
       <ExecutiveSummary content={sitePt.executiveSummary} />
       <About content={sitePt.about} />
+      <Services content={sitePt.services} />
       <PrimaryStack />
       <Projects />
       <MetricsSection content={sitePt.metrics} />
       <Contact content={sitePt.contact} />
-    </div>
+    </main>
   );
 }

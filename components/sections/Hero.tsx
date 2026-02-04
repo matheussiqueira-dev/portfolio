@@ -79,14 +79,12 @@ export default function Hero({ content, localePrefix }: Props) {
       role="region"
       aria-labelledby="hero-heading"
     >
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 md:grid-cols-[1.05fr_0.95fr]">
-        <div className="flex flex-col gap-5 text-center md:text-left">
-          {/* Eyebrow mais curto para abrir espaço para o título principal */}
+      <div className="section-inner hero-grid">
+        <div className="hero-copy">
           <p className="eyebrow animate-fade-up" style={{ animationDelay: "60ms" }}>
             {content.eyebrow}
           </p>
 
-          {/* Título em duas linhas para hierarquia visual clara */}
           <h1
             id="hero-heading"
             className="hero-title animate-fade-up"
@@ -96,34 +94,33 @@ export default function Hero({ content, localePrefix }: Props) {
             <span className="hero-title__role">{content.subtitle}</span>
           </h1>
 
-          {/* Stacks em formato de badges para leitura rápida */}
-          <ul
-            className="hero-stack animate-fade-up"
-            style={{ animationDelay: "180ms" }}
-            aria-label={stackLabel}
-          >
-            {content.stackHighlights.map((stack) => (
-              <li key={stack.label} className="hero-stack__item">
-                <span className="hero-stack__icon" aria-hidden="true">
-                  {stackIcons[stack.icon]}
-                </span>
-                <span>{stack.label}</span>
-              </li>
-            ))}
-          </ul>
-
           <p
             className="hero-description animate-fade-up"
-            style={{ animationDelay: "240ms" }}
+            style={{ animationDelay: "180ms" }}
           >
             {content.description}
           </p>
 
-          {/* CTAs com alinhamento e espaçamento consistentes */}
           <div
             className="hero-actions animate-fade-up"
-            style={{ animationDelay: "300ms" }}
+            style={{ animationDelay: "240ms" }}
           >
+            <TrackedLink
+              href={projectsHref}
+              ariaLabel={content.ctas.primary}
+              tracking={{
+                action: "view_projects",
+                category: "navigation",
+                label: "hero_cta",
+              }}
+              className="btn-primary cta-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+            >
+              <span className="btn-icon" aria-hidden="true">
+                {ctaIcons.projects}
+              </span>
+              <span>{content.ctas.primary}</span>
+            </TrackedLink>
+
             <TrackedLink
               href={resumeHref}
               ariaLabel={content.ctas.secondary}
@@ -132,7 +129,7 @@ export default function Hero({ content, localePrefix }: Props) {
                 category: "navigation",
                 label: "hero_cta",
               }}
-              className="btn-primary cta-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+              className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
               <span className="btn-icon" aria-hidden="true">
                 {ctaIcons.resume}
@@ -150,39 +147,33 @@ export default function Hero({ content, localePrefix }: Props) {
                 category: "engagement",
                 label: "hero_cta",
               }}
-              className="btn-outline btn-whatsapp focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+              className="btn-ghost focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
               <span className="btn-icon" aria-hidden="true">
                 {ctaIcons.chat}
               </span>
               <span>{content.ctas.tertiary}</span>
             </TrackedAnchor>
-
-            <TrackedLink
-              href={projectsHref}
-              ariaLabel={content.ctas.primary}
-              tracking={{
-                action: "view_projects",
-                category: "navigation",
-                label: "hero_cta",
-              }}
-              className="btn-ghost focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
-            >
-              <span className="btn-icon" aria-hidden="true">
-                {ctaIcons.projects}
-              </span>
-              <span>{content.ctas.primary}</span>
-            </TrackedLink>
           </div>
+
+          <ul
+            className="hero-stack animate-fade-up"
+            style={{ animationDelay: "300ms" }}
+            aria-label={stackLabel}
+          >
+            {content.stackHighlights.map((stack) => (
+              <li key={stack.label} className="hero-stack__item">
+                <span className="hero-stack__icon" aria-hidden="true">
+                  {stackIcons[stack.icon]}
+                </span>
+                <span>{stack.label}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div
-          className="flex justify-center md:justify-end animate-fade-in"
-          style={{ animationDelay: "180ms" }}
-        >
-          <div className="relative">
-            {/* Glow sutil para dar profundidade ao retrato */}
-            <div className="absolute -inset-4 rounded-3xl bg-[color:var(--surface-muted)] blur-2xl" />
+        <aside className="hero-profile card card-muted animate-fade-in" style={{ animationDelay: "180ms" }}>
+          <div className="hero-profile__image">
             <ImageWithFallback
               src="/profile.jpg"
               alt={imageAlt}
@@ -190,10 +181,19 @@ export default function Hero({ content, localePrefix }: Props) {
               height={360}
               quality={90}
               priority
-              className="hero-photo relative rounded-2xl border border-[color:var(--border)] object-cover shadow-xl"
+              className="hero-photo object-cover"
             />
           </div>
-        </div>
+
+          <div className="hero-profile__facts">
+            {content.facts.map((fact) => (
+              <div key={fact.label} className="hero-fact">
+                <span className="hero-fact__label">{fact.label}</span>
+                <span className="hero-fact__value">{fact.value}</span>
+              </div>
+            ))}
+          </div>
+        </aside>
       </div>
     </section>
   );

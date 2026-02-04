@@ -4,6 +4,7 @@ export const sitePt: SiteContent = {
   nav: {
     home: "Início",
     about: "Sobre",
+    services: "Serviços",
     projects: "Projetos",
     contact: "Contato",
     certificates: "Certificados",
@@ -23,6 +24,11 @@ export const sitePt: SiteContent = {
       { label: "Business Intelligence", icon: "data" },
       { label: "Power BI & KPIs", icon: "ai" },
       { label: "SQL & Python", icon: "software" },
+    ],
+    facts: [
+      { label: "Base", value: "Recife, Brasil · Remoto" },
+      { label: "Atuação", value: "Dados, BI e Automação" },
+      { label: "Disponibilidade", value: "Projetos e consultorias" },
     ],
     ctas: {
       primary: "Ver projetos",
@@ -200,6 +206,69 @@ export const sitePt: SiteContent = {
       },
     ],
   },
+  services: {
+    eyebrow: "Como posso ajudar",
+    title: "Estratégia de dados e execução técnica que acelera decisões",
+    description:
+      "Atuo do diagnóstico à entrega, alinhando KPIs, arquitetura de dados e automação para gerar clareza operacional e impacto mensurável.",
+    offerings: [
+      {
+        title: "Diagnóstico e estratégia de dados",
+        description:
+          "Mapeio fluxos críticos, defino KPIs e desenho a arquitetura mínima para decisões confiáveis.",
+        bullets: [
+          "Inventário de fontes e qualidade",
+          "Modelo de dados e governança",
+          "Plano de métricas e indicadores",
+        ],
+      },
+      {
+        title: "BI executivo e storytelling",
+        description:
+          "Dashboards em Power BI com foco em clareza, metas e acompanhamento contínuo.",
+        bullets: [
+          "KPIs por área e por meta",
+          "Narrativas para diretoria",
+          "Templates reutilizáveis",
+        ],
+      },
+      {
+        title: "Automação e pipelines",
+        description:
+          "ETL/ELT e integrações em Python/SQL para reduzir retrabalho e acelerar análises.",
+        bullets: [
+          "Orquestração e alertas",
+          "APIs e integrações",
+          "Monitoramento e performance",
+        ],
+      },
+    ],
+    processTitle: "Processo de entrega",
+    process: [
+      {
+        title: "Imersão",
+        description: "Entendimento do contexto, objetivos e restrições do negócio.",
+      },
+      {
+        title: "Arquitetura",
+        description: "Modelagem, priorização e definição clara dos entregáveis.",
+      },
+      {
+        title: "Construção",
+        description: "Implementação, validação e documentação para escala.",
+      },
+      {
+        title: "Evolução",
+        description: "Ajustes, treinamento e melhoria contínua orientada a métricas.",
+      },
+    ],
+    cta: {
+      title: "Vamos acelerar sua operação de dados?",
+      description: "Me conte sobre o desafio e eu proponho o caminho mais eficiente.",
+      primaryLabel: "Conversar sobre um projeto",
+      secondaryLabel: "Ver cases",
+    },
+  },
   metrics: {
     eyebrow: "Métricas",
     title: "Credibilidade em números",
@@ -243,6 +312,14 @@ export const sitePt: SiteContent = {
     caseLabel: "Case completo",
     viewAllLabel: "Ver todos os cases",
     featuredLabel: "Destaque",
+    filters: {
+      label: "Filtrar por",
+      allLabel: "Todos",
+      searchPlaceholder: "Buscar por projeto, stack ou palavra-chave",
+      resultsLabel: "Mostrando {count} de {total} projetos",
+      emptyTitle: "Nenhum projeto encontrado",
+      emptyDescription: "Tente ajustar o filtro ou a busca para ver outros cases.",
+    },
     modal: {
       title: "Detalhes do projeto",
       closeLabel: "Fechar",
@@ -296,6 +373,8 @@ export const sitePt: SiteContent = {
     ctaTitle:
       "Resumo profissional: analista de dados com foco em BI, KPIs, automação e arquitetura operacional.",
     ctaSubtitle: "Conecte-se no LinkedIn ou envie um e-mail para conversar.",
+    copyLabel: "Copiar",
+    copiedLabel: "Copiado",
     cards: {
       email: "Email",
       linkedin: "LinkedIn",

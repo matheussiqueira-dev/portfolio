@@ -2,6 +2,7 @@ export type SiteContent = {
   nav: {
     home: string;
     about: string;
+    services: string;
     projects: string;
     contact: string;
     certificates: string;
@@ -18,6 +19,10 @@ export type SiteContent = {
     stackHighlights: {
       label: string;
       icon: "stack" | "data" | "ai" | "software";
+    }[];
+    facts: {
+      label: string;
+      value: string;
     }[];
     ctas: {
       primary: string;
@@ -77,6 +82,27 @@ export type SiteContent = {
       title: string;
     }[];
   };
+  services: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    offerings: {
+      title: string;
+      description: string;
+      bullets: string[];
+    }[];
+    processTitle: string;
+    process: {
+      title: string;
+      description: string;
+    }[];
+    cta: {
+      title: string;
+      description: string;
+      primaryLabel: string;
+      secondaryLabel: string;
+    };
+  };
   metrics: {
     eyebrow: string;
     title: string;
@@ -103,6 +129,14 @@ export type SiteContent = {
     caseLabel: string;
     viewAllLabel: string;
     featuredLabel: string;
+    filters: {
+      label: string;
+      allLabel: string;
+      searchPlaceholder: string;
+      resultsLabel: string;
+      emptyTitle: string;
+      emptyDescription: string;
+    };
     modal: {
       title: string;
       closeLabel: string;
@@ -152,6 +186,8 @@ export type SiteContent = {
     description: string;
     ctaTitle: string;
     ctaSubtitle: string;
+    copyLabel: string;
+    copiedLabel: string;
     cards: {
       email: string;
       linkedin: string;
