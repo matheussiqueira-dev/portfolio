@@ -48,6 +48,34 @@ const defaultAspect: DemoAspectRatio = "16:9";
 
 export const projects: Project[] = [
   {
+    id: "capa-da-invisibilidade",
+    title: "Capa da Invisibilidade",
+    shortDescription:
+      "Efeito de invisibilidade em tempo real no navegador com ajustes finos de cor e mascaramento.",
+    longDescription:
+      "Projeto full stack com processamento local via Canvas e backend opcional em Fastify para snapshots e métricas.",
+    tags: ["React", "TypeScript", "Vite", "Canvas API", "Node.js", "Fastify", "Zod"],
+    techStack: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Canvas API",
+      "Node.js",
+      "Fastify",
+      "Zod",
+    ],
+    coverImage: "/projects/capa-da-invisibilidade/demo.gif",
+    links: {
+      repo: "https://github.com/matheussiqueira-dev/capa-da-invisibilidade.git",
+    },
+    demo: {
+      mode: "video",
+      videoUrl: "/Capa da Invisibilidade.mp4",
+      aspectRatio: defaultAspect,
+      minHeight: 420,
+    },
+  },
+  {
     id: "business-decision-simulator",
     title: "Business Decision Simulator",
     shortDescription:

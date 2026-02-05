@@ -738,9 +738,11 @@ body::after {
   }
 
   .hero-title__name {
-    font-size: clamp(2.8rem, 5.6vw, 4.9rem);
+    font-size: clamp(2.2rem, 6.2vw, 4.9rem);
     font-weight: 700;
     color: var(--foreground-strong);
+    white-space: nowrap;
+    text-wrap: nowrap;
   }
 
   .hero-title__role {

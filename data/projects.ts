@@ -2,6 +2,127 @@ import type { Project as ProjectCase } from "./projects.types";
 
 const projectList: ProjectCase[] = [
   {
+    slug: "capa-da-invisibilidade",
+    title: "Capa da Invisibilidade",
+    headline: "Capa da Invisibilidade | Efeito de invisibilidade em tempo real",
+    tagline:
+      "Efeito de invisibilidade em tempo real no navegador com ajustes finos de cor e mascaramento.",
+    role: "Desenvolvedor Full Stack",
+    stack: ["React", "TypeScript", "Vite", "Canvas API", "Node.js", "Fastify", "Zod"],
+    repoUrl: "https://github.com/matheussiqueira-dev/capa-da-invisibilidade.git",
+    demo: {
+      kind: "video",
+      src: "/Capa da Invisibilidade.mp4",
+      poster: "/projects/capa-da-invisibilidade/demo.gif",
+      caption: "Efeito de invisibilidade em tempo real com calibração visual.",
+    },
+    intro: {
+      title: "Capa da Invisibilidade — Efeito em tempo real no navegador",
+      paragraphs: [
+        "Projeto full stack que aplica um efeito de invisibilidade em tempo real no navegador, com controles de calibração e mascaramento.",
+        "O processamento acontece localmente via Canvas para reduzir latência e preservar privacidade, com backend opcional para snapshots e métricas.",
+      ],
+      sections: [
+        {
+          title: "Diferenciais",
+          items: [
+            "Processamento local de vídeo para privacidade e baixa latência.",
+            "Controles visuais para calibração precisa do efeito.",
+            "Backend modular e opcional para registrar resultados.",
+            "Setup simples para demonstrações e estudos.",
+          ],
+        },
+        {
+          title: "Arquitetura",
+          items: [
+            "Frontend com loop de vídeo no Canvas e estado em React.",
+            "Backend com API REST em Fastify, validação e segurança.",
+            "Persistência em arquivo JSON para facilitar o setup local.",
+          ],
+        },
+        {
+          title: "Stack e tecnologias",
+          items: [
+            "React, TypeScript, Vite e Canvas API no frontend.",
+            "Node.js, Fastify e Zod no backend.",
+          ],
+        },
+      ],
+      video: {
+        src: "/Capa da Invisibilidade.mp4",
+        poster: "/projects/capa-da-invisibilidade/demo.gif",
+        caption: "Demonstração do efeito de invisibilidade em tempo real.",
+      },
+    },
+    context:
+      "A meta era criar um efeito de invisibilidade em tempo real que rodasse no navegador, com baixa latência, calibração visual e backend opcional para registrar resultados.",
+    problem: [
+      "Mascarar cores de forma estável sob diferentes iluminações.",
+      "Manter performance no processamento de vídeo em tempo real.",
+      "Oferecer controles visuais para calibrar o efeito.",
+      "Registrar snapshots e métricas sem complicar o setup.",
+    ],
+    dataUsed: [
+      "Frames da webcam processados localmente.",
+      "Máscaras de cor e parâmetros de segmentação.",
+      "Snapshots e métricas de desempenho (opcional).",
+      "Configurações de calibração do efeito.",
+    ],
+    solution: [
+      "Pipeline de processamento no Canvas com mascaramento ajustável.",
+      "UI com controles de calibração de cor e intensidade.",
+      "API REST opcional em Fastify com validação Zod e API key.",
+      "Persistência simples em arquivo JSON para facilitar o setup.",
+    ],
+    features: [
+      "Efeito de invisibilidade em tempo real no navegador.",
+      "Controles visuais para ajuste fino do mascaramento.",
+      "Backend opcional para snapshots e métricas.",
+      "Configuração por variáveis de ambiente.",
+    ],
+    highlights: [
+      "Processamento local de vídeo para privacidade e baixa latência.",
+      "Backend modular e pronto para evoluir.",
+      "Setup simples para demos e estudos.",
+      "Boas práticas com validação, CORS e rate limiting.",
+    ],
+    demonstrates: [
+      "Visão computacional no navegador com Canvas API.",
+      "Integração full stack com API REST.",
+      "Validação e segurança com Zod e API key.",
+      "Arquitetura modular com frontend e backend opcionais.",
+    ],
+    techSummary:
+      "React + TypeScript + Canvas API no frontend e Fastify + Zod no backend opcional para snapshots e métricas.",
+    conclusion: [
+      "Entreguei um efeito de invisibilidade performático e calibrável.",
+      "Garanti privacidade com processamento local e backend opcional.",
+      "Deixei uma base pronta para evolução com métricas e integrações.",
+    ],
+    howToRun: [
+      "Frontend: npm install e npm run dev.",
+      "Backend (opcional): cd backend, npm install, cp .env.example .env e npm run dev.",
+      "Ajuste VITE_ENABLE_API, VITE_API_URL e VITE_API_KEY se usar o backend.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/capa-da-invisibilidade/demo.gif",
+        alt: "Demo em GIF da Capa da Invisibilidade",
+        type: "gif",
+      },
+      {
+        src: "/Capa da Invisibilidade.mp4",
+        alt: "Demonstração em vídeo da Capa da Invisibilidade",
+        type: "video",
+      },
+    ],
+    seo: {
+      title: "Capa da Invisibilidade | Efeito em tempo real no navegador",
+      description:
+        "Projeto full stack de efeito de invisibilidade em tempo real com Canvas no frontend e backend opcional em Fastify para snapshots e métricas.",
+    },
+  },
+  {
     slug: "business-decision-simulator",
     title: "Simulador de Decisão Empresarial",
     headline:
@@ -1836,6 +1957,7 @@ const projectList: ProjectCase[] = [
 ];
 
 export const projectOrder = [
+  "capa-da-invisibilidade",
   "business-decision-simulator",
   "deteccao-de-anomalias-operacionais",
   "dashboard-vendas-power-bi",
