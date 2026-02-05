@@ -13,7 +13,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/Capa da Invisibilidade.mp4",
-      poster: "/projects/capa-da-invisibilidade/demo.gif",
+      poster: "/Thmbnail/Thumbnail - Portugues/Capa da Invisibilidade.png",
       caption: "Efeito de invisibilidade em tempo real com calibração visual.",
     },
     intro: {
@@ -48,11 +48,6 @@ const projectList: ProjectCase[] = [
           ],
         },
       ],
-      video: {
-        src: "/Capa da Invisibilidade.mp4",
-        poster: "/projects/capa-da-invisibilidade/demo.gif",
-        caption: "Demonstração do efeito de invisibilidade em tempo real.",
-      },
     },
     context:
       "A meta era criar um efeito de invisibilidade em tempo real que rodasse no navegador, com baixa latência, calibração visual e backend opcional para registrar resultados.",
@@ -106,14 +101,18 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/capa-da-invisibilidade/demo.gif",
-        alt: "Demo em GIF da Capa da Invisibilidade",
-        type: "gif",
+        src: "/Thmbnail/Thumbnail - Portugues/Capa da Invisibilidade.png",
+        alt: "Capa do projeto Capa da Invisibilidade",
       },
       {
         src: "/Capa da Invisibilidade.mp4",
         alt: "Demonstração em vídeo da Capa da Invisibilidade",
         type: "video",
+      },
+      {
+        src: "/projects/capa-da-invisibilidade/demo.gif",
+        alt: "Demo em GIF da Capa da Invisibilidade",
+        type: "gif",
       },
     ],
     seo: {

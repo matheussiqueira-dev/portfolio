@@ -13,7 +13,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/Capa da Invisibilidade.mp4",
-      poster: "/projects/capa-da-invisibilidade/demo.gif",
+      poster: "/Thmbnail/Thumbnail - English/Invisibility Cloak.png",
       caption: "Real-time invisibility effect with visual calibration controls.",
     },
     intro: {
@@ -48,11 +48,6 @@ const projectListEn: Project[] = [
           ],
         },
       ],
-      video: {
-        src: "/Capa da Invisibilidade.mp4",
-        poster: "/projects/capa-da-invisibilidade/demo.gif",
-        caption: "Walkthrough of the invisibility effect in real time.",
-      },
     },
     context:
       "The goal was to build a real-time invisibility effect that runs in the browser with low latency, visual calibration, and an optional backend for recording results.",
@@ -106,14 +101,18 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/capa-da-invisibilidade/demo.gif",
-        alt: "Invisibility Cloak GIF demo",
-        type: "gif",
+        src: "/Thmbnail/Thumbnail - English/Invisibility Cloak.png",
+        alt: "Invisibility Cloak cover",
       },
       {
         src: "/Capa da Invisibilidade.mp4",
         alt: "Invisibility Cloak video demo",
         type: "video",
+      },
+      {
+        src: "/projects/capa-da-invisibilidade/demo.gif",
+        alt: "Invisibility Cloak GIF demo",
+        type: "gif",
       },
     ],
     seo: {

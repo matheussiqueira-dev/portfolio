@@ -64,7 +64,7 @@ export const projects: Project[] = [
       "Fastify",
       "Zod",
     ],
-    coverImage: "/projects/capa-da-invisibilidade/demo.gif",
+    coverImage: "/Thmbnail/Thumbnail - English/Invisibility Cloak.png",
     links: {
       repo: "https://github.com/matheussiqueira-dev/capa-da-invisibilidade.git",
     },
