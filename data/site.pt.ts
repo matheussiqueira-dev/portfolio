@@ -16,9 +16,10 @@ export const sitePt: SiteContent = {
   hero: {
     eyebrow: "Analista de Dados • Business Intelligence • Power BI • Infraestrutura",
     title: "Matheus Siqueira",
-    subtitle: "Desenvolvedor Full Stack | Dados, BI e Arquitetura Operacional",
+    subtitle:
+      "Infraestrutura | Desenvolvedor FullStack | Analista de Dados Júnior | Power BI | SQL | Python | React.Js",
     description:
-      "Transformo dados fiscais, públicos e organizacionais em decisões claras e sustentáveis, conectando Power BI, SQL, DAX, Power Query e automações em Python à arquitetura de dados e à infraestrutura. Atuo com mentalidade de liderança técnica e senioridade na execução end-to-end para gerar impacto mensurável no negócio.",
+      "Atuo no desenvolvimento de soluções analíticas e sistemas orientados à decisão, integrando Power BI, SQL, DAX, Power Query e automações em Python à arquitetura de dados e à infraestrutura. Trabalho de ponta a ponta, do tratamento e modelagem à visualização e entrega, com foco em eficiência operacional, confiabilidade e impacto mensurável no negócio.",
     stackHighlights: [
       { label: "Data Analytics", icon: "stack" },
       { label: "Business Intelligence", icon: "data" },

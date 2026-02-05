@@ -298,8 +298,12 @@ export default function Projects() {
       <div className="section-inner">
         <div className="flex flex-col gap-3 items-start text-left" data-reveal>
           <p className="eyebrow">{content.eyebrow}</p>
-          <h2 className="section-title md:whitespace-nowrap">{content.title}</h2>
-          <p className="section-description max-w-3xl">{content.description}</p>
+          <h2 className="section-title md:whitespace-nowrap w-full text-center">
+            {content.title}
+          </h2>
+          <p className="section-description max-w-3xl text-left">
+            {content.description}
+          </p>
         </div>
 
         <div className="project-controls" data-reveal>
