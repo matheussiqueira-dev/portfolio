@@ -187,7 +187,7 @@ export const sitePt: SiteContent = {
   },
   executiveSummary: {
     eyebrow: "Experiência & Especialidades",
-    title: "Decisão, arquitetura e execução em dados",
+    title: "Dados na prática: análise, arquitetura e impacto",
     paragraphs: [
       "Analista de Dados e BI com atuação end-to-end em engenharia de dados, BI e automação, convertendo demandas em decisões e resultados mensuráveis com Power BI, SQL, DAX e Python.",
       "Experiência com dados fiscais, públicos e organizacionais, integrando modelagem, governança, infraestrutura e BI estratégico para sustentar operação e acelerar decisões.",

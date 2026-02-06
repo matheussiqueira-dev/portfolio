@@ -1233,6 +1233,94 @@ const projectListEn: Project[] = [
     ],
   },
   {
+    slug: "synthwave-space",
+    title: "Synthwave Space",
+    headline: "Synthwave Space | 2D space shooter with synthwave aesthetics",
+    tagline:
+      "2D JavaScript game with retro-futuristic visuals, keyboard/touch controls, and adaptive difficulty.",
+    role: "Developer",
+    stack: ["JavaScript", "HTML5 Canvas", "CSS", "Web Audio API"],
+    repoUrl: "https://github.com/matheussiqueira-dev/synthwave-space.git",
+    demo: {
+      kind: "video",
+      src: "/projects/synthwave-space/demo.mp4",
+      poster: "/projects/synthwave-space/cover.png",
+      caption: "Gameplay featuring progressive waves, visual effects, and neon atmosphere.",
+    },
+    context:
+      "Built to practice 2D game architecture in vanilla JavaScript, with focus on performance, visual feedback, and desktop/mobile UX.",
+    problem: [
+      "Build a stable game loop without frameworks.",
+      "Keep gameplay smooth across different screen sizes.",
+      "Create difficulty progression without harming readability.",
+      "Add visual and audio effects while preserving performance.",
+    ],
+    dataUsed: [
+      "Keyboard and touch input for movement and actions.",
+      "Game state: energy, shield, score, and combo multiplier.",
+      "Timers for enemy waves, power-ups, and special events.",
+      "Scene entities (ship, enemies, projectiles, particles, HUD).",
+    ],
+    solution: [
+      "HTML5 Canvas rendering with a continuous delta-time game loop.",
+      "Entity-based structure (ship, enemies, shots, power-ups) for maintainability.",
+      "Adaptive difficulty with wave scaling and hazard pacing.",
+      "Synthwave audio-visual layer with effects powered by Web Audio API.",
+    ],
+    features: [
+      "Keyboard controls on desktop and touch controls on mobile.",
+      "Energy/shield system, boss fights, and score multiplier.",
+      "Power-ups, particle effects, camera shake, and visual feedback.",
+      "High-score persistence to track progression.",
+    ],
+    highlights: [
+      "Consistent retro-futuristic visual direction.",
+      "Experience adapted for both desktop and mobile.",
+      "Lightweight and responsive game loop in vanilla JavaScript.",
+      "Foundation ready for new stages, enemies, and mechanics.",
+    ],
+    demonstrates: [
+      "Canvas game loop, collision, and state management.",
+      "Gameplay design with progression and balancing.",
+      "Audio and visual effect integration for player feedback.",
+      "Modular front-end architecture without heavy dependencies.",
+    ],
+    techSummary:
+      "2D game built with JavaScript + HTML5 Canvas, real-time HUD, progressive difficulty, and a synthwave atmosphere with audio and particle effects.",
+    conclusion: [
+      "Consolidated core game-development fundamentals in vanilla JavaScript.",
+      "Delivered a consistent experience across desktop and mobile.",
+      "Left an extensible base for new modes and content.",
+    ],
+    howToRun: [
+      "Clone the repository.",
+      "Open index.html in a browser.",
+      "Optional: serve with python -m http.server 8000.",
+      "Open http://localhost:8000 and start playing.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/synthwave-space/cover.png",
+        alt: "Synthwave Space cover",
+      },
+      {
+        src: "/projects/synthwave-space/demo.gif",
+        alt: "Synthwave Space GIF demo",
+        type: "gif",
+      },
+      {
+        src: "/projects/synthwave-space/demo.mp4",
+        alt: "Synthwave Space gameplay demo",
+        type: "video",
+      },
+    ],
+    seo: {
+      title: "Synthwave Space | 2D shooter in JavaScript and HTML5 Canvas",
+      description:
+        "Retro-futuristic 2D shooter built in vanilla JavaScript and HTML5 Canvas, with progressive waves, power-ups, bosses, and mobile support.",
+    },
+  },
+  {
     slug: "slingshot",
     title: "Slingshot",
     headline: "Slingshot | Bubble shooter with ricochet and tactical hints",
@@ -1955,6 +2043,7 @@ const projectListEn: Project[] = [
 export const projectOrderEn = [
   "capa-da-invisibilidade",
   "business-decision-simulator",
+  "synthwave-space",
   "deteccao-de-anomalias-operacionais",
   "dashboard-vendas-power-bi",
   "detector-de-stress",

@@ -314,6 +314,24 @@ export const projects: Project[] = [
     },
   },
   {
+    id: "synthwave-space",
+    title: "Synthwave Space",
+    shortDescription:
+      "Jogo 2D com estética synthwave em JavaScript puro, controles teclado/toque e progressão por ondas.",
+    tags: ["JavaScript", "HTML5 Canvas", "CSS", "Web Audio API"],
+    techStack: ["JavaScript", "HTML5 Canvas", "CSS", "Web Audio API"],
+    coverImage: "/projects/synthwave-space/cover.png",
+    links: {
+      repo: "https://github.com/matheussiqueira-dev/synthwave-space.git",
+    },
+    demo: {
+      mode: "video",
+      videoUrl: "/projects/synthwave-space/demo.mp4",
+      aspectRatio: defaultAspect,
+      minHeight: 420,
+    },
+  },
+  {
     id: "slingshot",
     title: "Slingshot",
     shortDescription:

@@ -1235,6 +1235,94 @@ const projectList: ProjectCase[] = [
     ],
   },
   {
+    slug: "synthwave-space",
+    title: "Synthwave Space",
+    headline: "Synthwave Space | Shooter espacial 2D com estética synthwave",
+    tagline:
+      "Jogo 2D em JavaScript puro com visual retrô-futurista, controles por teclado/toque e progressão dinâmica.",
+    role: "Desenvolvedor",
+    stack: ["JavaScript", "HTML5 Canvas", "CSS", "Web Audio API"],
+    repoUrl: "https://github.com/matheussiqueira-dev/synthwave-space.git",
+    demo: {
+      kind: "video",
+      src: "/projects/synthwave-space/demo.mp4",
+      poster: "/projects/synthwave-space/cover.png",
+      caption: "Gameplay com ondas progressivas, efeitos visuais e ambientação neon.",
+    },
+    context:
+      "Projeto criado para praticar arquitetura de jogo 2D em JavaScript puro, com foco em performance, feedback visual e experiência mobile/desktop.",
+    problem: [
+      "Construir um game loop estável sem frameworks.",
+      "Manter jogabilidade fluida em diferentes tamanhos de tela.",
+      "Criar progressão de dificuldade sem perder legibilidade.",
+      "Implementar efeitos visuais e sonoros mantendo boa performance.",
+    ],
+    dataUsed: [
+      "Entrada de teclado e toque para movimentação e ações.",
+      "Estado do jogo: energia, escudo, pontuação e multiplicador.",
+      "Temporizadores para spawn de inimigos, power-ups e eventos.",
+      "Objetos em cena (nave, inimigos, projéteis, partículas e HUD).",
+    ],
+    solution: [
+      "Renderização com HTML5 Canvas e loop contínuo baseado em delta time.",
+      "Entidades separadas (nave, inimigos, tiros, power-ups) para facilitar evolução.",
+      "Dificuldade adaptativa com escalonamento de ondas e hazards.",
+      "Camada audiovisual com efeitos synthwave e trilha dinâmica via Web Audio API.",
+    ],
+    features: [
+      "Controle por teclado no desktop e toque no mobile.",
+      "Sistema de energia, escudo, combates com boss e multiplicador de score.",
+      "Power-ups, efeitos de partículas, shake de câmera e feedback visual.",
+      "Persistência de recordes para acompanhar progressão.",
+    ],
+    highlights: [
+      "Visual retrô-futurista consistente com identidade synthwave.",
+      "Experiência adaptada para desktop e mobile.",
+      "Loop de jogo leve e responsivo com JavaScript puro.",
+      "Base pronta para novas fases, inimigos e mecânicas.",
+    ],
+    demonstrates: [
+      "Game loop, colisão e gerenciamento de estado em Canvas.",
+      "Design de gameplay com progressão e balanceamento.",
+      "Integração de áudio e efeitos visuais para feedback do jogador.",
+      "Arquitetura front-end modular sem dependências pesadas.",
+    ],
+    techSummary:
+      "Jogo 2D em JavaScript + HTML5 Canvas com HUD em tempo real, dificuldade progressiva e ambientação synthwave com áudio e partículas.",
+    conclusion: [
+      "Consolidei fundamentos de desenvolvimento de jogos em JavaScript puro.",
+      "Entreguei uma experiência consistente entre desktop e mobile.",
+      "Deixei uma base extensível para novos modos e conteúdos.",
+    ],
+    howToRun: [
+      "Clone o repositório.",
+      "Abra o arquivo index.html no navegador.",
+      "Opcional: sirva com python -m http.server 8000.",
+      "Acesse http://localhost:8000 e inicie a partida.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/synthwave-space/cover.png",
+        alt: "Capa do projeto Synthwave Space",
+      },
+      {
+        src: "/projects/synthwave-space/demo.gif",
+        alt: "Demonstração em GIF do Synthwave Space",
+        type: "gif",
+      },
+      {
+        src: "/projects/synthwave-space/demo.mp4",
+        alt: "Gameplay do Synthwave Space",
+        type: "video",
+      },
+    ],
+    seo: {
+      title: "Synthwave Space | Shooter 2D em JavaScript e HTML5 Canvas",
+      description:
+        "Jogo 2D com estética synthwave construído em JavaScript puro e HTML5 Canvas, com ondas progressivas, power-ups, bosses e suporte mobile.",
+    },
+  },
+  {
     slug: "slingshot",
     title: "Estilingue",
     headline: "Estilingue | Bubble shooter com ricochete e dicas táticas",
@@ -1958,6 +2046,7 @@ const projectList: ProjectCase[] = [
 export const projectOrder = [
   "capa-da-invisibilidade",
   "business-decision-simulator",
+  "synthwave-space",
   "deteccao-de-anomalias-operacionais",
   "dashboard-vendas-power-bi",
   "detector-de-stress",
