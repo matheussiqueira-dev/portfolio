@@ -1260,7 +1260,8 @@ body::after {
   .contact-grid {
     margin-top: 2.5rem;
     display: grid;
-    gap: 1.5rem;
+    gap: 1.2rem;
+    align-items: start;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 
@@ -1361,37 +1362,44 @@ body::after {
 
   .contact-cards {
     display: grid;
-    gap: 0.8rem;
+    gap: 0.55rem;
+    align-self: start;
+    align-content: start;
+    grid-auto-rows: min-content;
   }
 
   .contact-card {
     display: grid;
-    gap: 0.6rem;
+    --card-padding: 0.85rem 0.95rem;
+    --card-radius: 0.9rem;
+    gap: 0.4rem;
+    min-height: 0;
   }
 
   .contact-card__top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 0.8rem;
+    gap: 0.5rem;
   }
 
   .contact-card__label {
-    font-size: 0.7rem;
+    font-size: 0.62rem;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.18em;
     color: var(--muted);
   }
 
   .contact-card__value {
-    font-size: 0.92rem;
+    font-size: 0.87rem;
+    line-height: 1.3;
     color: var(--foreground);
   }
 
   .contact-card__link {
-    font-size: 0.65rem;
+    font-size: 0.58rem;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.16em;
     color: var(--accent);
   }
 
@@ -1405,10 +1413,10 @@ body::after {
   .copy-button {
     border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
     border-radius: var(--radius-pill);
-    padding: 0.2rem 0.6rem;
-    font-size: 0.6rem;
+    padding: 0.16rem 0.5rem;
+    font-size: 0.56rem;
     text-transform: uppercase;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.18em;
     color: var(--muted);
     transition: border-color 0.2s ease, color 0.2s ease;
   }
