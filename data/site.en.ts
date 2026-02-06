@@ -206,6 +206,44 @@ export const siteEn: SiteContent = {
       },
     ],
   },
+  valueProposition: {
+    eyebrow: "Strategic value",
+    title: "Reliable data, executive visibility, and end-to-end automation",
+    description:
+      "I deliver business intelligence with clarity, consistency, and speed by connecting data architecture, BI, and automation into one cohesive system.",
+    pillars: [
+      {
+        title: "Reliable data architecture",
+        description:
+          "I build the foundations and pipelines that keep data trustworthy, traceable, and governed.",
+        bullets: [
+          "Modeling and ETL/ELT focused on consistency.",
+          "Governance and documentation for teams and leadership.",
+          "Integration across multiple sources with confidence.",
+        ],
+      },
+      {
+        title: "Executive visibility",
+        description:
+          "I craft dashboards and analytical storytelling that align teams and speed up decisions.",
+        bullets: [
+          "Actionable KPIs with clear business impact.",
+          "Power BI and DAX for deep analysis.",
+          "Clean, accessible data visualization design.",
+        ],
+      },
+      {
+        title: "Automation and scale",
+        description:
+          "I automate critical routines to reduce manual effort and amplify efficiency.",
+        bullets: [
+          "Python automation for intelligent reporting.",
+          "Monitoring for data quality and key indicators.",
+          "API integrations aligned with operations.",
+        ],
+      },
+    ],
+  },
   services: {
     eyebrow: "How I help",
     title: "Data strategy and senior execution that accelerate decisions",

@@ -207,6 +207,44 @@ export const sitePt: SiteContent = {
       },
     ],
   },
+  valueProposition: {
+    eyebrow: "Valor estratégico",
+    title: "Dados confiáveis, visão executiva e automação de ponta a ponta",
+    description:
+      "Entrego inteligência de negócio com clareza, consistência e velocidade, conectando arquitetura de dados, BI e automação para gerar decisões rápidas e sustentáveis.",
+    pillars: [
+      {
+        title: "Arquitetura de dados confiável",
+        description:
+          "Estruturo bases e pipelines para garantir qualidade, rastreabilidade e governança em cada etapa.",
+        bullets: [
+          "Modelagem e ETL/ELT orientados a consistência.",
+          "Governança e documentação para times e liderança.",
+          "Integração de múltiplas fontes com confiabilidade.",
+        ],
+      },
+      {
+        title: "Visibilidade executiva",
+        description:
+          "Crio dashboards e storytelling analítico que aceleram decisões e alinham a operação aos objetivos.",
+        bullets: [
+          "KPIs acionáveis com foco em impacto.",
+          "Power BI e DAX para análises aprofundadas.",
+          "Design de visualizações claras e intuitivas.",
+        ],
+      },
+      {
+        title: "Automação e escala",
+        description:
+          "Automatizo rotinas e fluxos críticos para reduzir esforço manual e aumentar eficiência.",
+        bullets: [
+          "Python para automações e relatórios inteligentes.",
+          "Monitoramento de dados e indicadores-chave.",
+          "Integração com APIs e fluxos operacionais.",
+        ],
+      },
+    ],
+  },
   services: {
     eyebrow: "Como posso ajudar",
     title: "Estratégia de dados e execução técnica que acelera decisões",
