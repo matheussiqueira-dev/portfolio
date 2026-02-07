@@ -320,7 +320,7 @@ export const projects: Project[] = [
       "Jogo 2D com estética synthwave em JavaScript puro, controles teclado/toque e progressão por ondas.",
     tags: ["JavaScript", "HTML5 Canvas", "CSS", "Web Audio API"],
     techStack: ["JavaScript", "HTML5 Canvas", "CSS", "Web Audio API"],
-    coverImage: "/projects/synthwave-space/cover.png",
+    coverImage: "/Thmbnail/Thumbnail - English/Synthwave Space EN US.png",
     links: {
       repo: "https://github.com/matheussiqueira-dev/synthwave-space.git",
     },

@@ -1244,7 +1244,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/projects/synthwave-space/demo.mp4",
-      poster: "/projects/synthwave-space/cover.png",
+      poster: "/Thmbnail/Thumbnail - English/Synthwave Space EN US.png",
       caption: "Gameplay featuring progressive waves, visual effects, and neon atmosphere.",
     },
     context:
@@ -1300,7 +1300,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/projects/synthwave-space/cover.png",
+        src: "/Thmbnail/Thumbnail - English/Synthwave Space EN US.png",
         alt: "Synthwave Space cover",
       },
       {

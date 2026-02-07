@@ -1246,7 +1246,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/projects/synthwave-space/demo.mp4",
-      poster: "/projects/synthwave-space/cover.png",
+      poster: "/Thmbnail/Thumbnail - Portugues/Synthwave Space PT BR.png",
       caption: "Gameplay com ondas progressivas, efeitos visuais e ambientação neon.",
     },
     context:
@@ -1302,7 +1302,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/projects/synthwave-space/cover.png",
+        src: "/Thmbnail/Thumbnail - Portugues/Synthwave Space PT BR.png",
         alt: "Capa do projeto Synthwave Space",
       },
       {
