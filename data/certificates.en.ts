@@ -152,6 +152,18 @@ export const certificatesEn: Certificate[] = [
     "pdfUrl": "/certificates/alura/java-trabalhando-com-listas-e-colecoes-de-dados.pdf"
   },
   {
+    "id": "java-consumindo-api-gravando-arquivos-e-lidando-com-erros",
+    "title": "Java: Consuming API, writing files, and handling errors",
+    "issuer": "Alura",
+    "areaTags": [
+      "Java",
+      "API",
+      "File I/O",
+      "Error Handling"
+    ],
+    "pdfUrl": "/certificates/alura/Java consumindo API, gravando arquivos e lidando com erros.pdf"
+  },
+  {
     "id": "mysql-conhecendo-a-ferramenta",
     "title": "MySQL: Getting to know the tool",
     "issuer": "Alura",
