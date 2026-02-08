@@ -255,6 +255,36 @@ export const certificatesPt: Certificate[] = [
     "pdfUrl": "/certificates/alura/praticando-python-condicionais-if-elif-e-else.pdf"
   },
   {
+    "id": "comecando-com-python",
+    "title": "Começando com Python",
+    "issuer": "Alura",
+    "areaTags": [
+      "Python"
+    ],
+    "pdfUrl": "/certificates/alura/Começando com Python.pdf"
+  },
+  {
+    "id": "estatistica-com-python-frequencias-e-medidas",
+    "title": "Estatística com Python frequências e medidas",
+    "issuer": "Alura",
+    "areaTags": [
+      "Python",
+      "Statistics",
+      "Data Analytics"
+    ],
+    "pdfUrl": "/certificates/alura/Estatística com Python frequências e medidas.pdf"
+  },
+  {
+    "id": "python-para-dados-trabalhando-com-funcoes-estruturas-de-dados-e-excecoes",
+    "title": "Python para Dados trabalhando com funções, estruturas de dados e exceções",
+    "issuer": "Alura",
+    "areaTags": [
+      "Python",
+      "Data Analytics"
+    ],
+    "pdfUrl": "/certificates/alura/Python para Dados trabalhando com funções, estruturas de dados e exceções.pdf"
+  },
+  {
     "id": "ux-design-entenda-a-area-da-user-experience",
     "title": "UX Design entenda a área da User Experience",
     "issuer": "Alura",
