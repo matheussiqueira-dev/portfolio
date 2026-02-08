@@ -164,6 +164,16 @@ export const certificatesEn: Certificate[] = [
     "pdfUrl": "/certificates/alura/Java consumindo API, gravando arquivos e lidando com erros.pdf"
   },
   {
+    "id": "aprenda-a-programar-em-java-com-orientacao-a-objetos",
+    "title": "Learn to program in Java with object-oriented programming",
+    "issuer": "Alura",
+    "areaTags": [
+      "Java",
+      "Object-Oriented Programming"
+    ],
+    "pdfUrl": "/certificates/alura/Aprenda a programar em Java com Orientação a Objetos.pdf"
+  },
+  {
     "id": "mysql-conhecendo-a-ferramenta",
     "title": "MySQL: Getting to know the tool",
     "issuer": "Alura",
