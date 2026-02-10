@@ -1,3 +1,3 @@
 export type InteractiveDemoProps = {
-  locale: "pt" | "en";
+  locale: "pt-BR" | "en";
 };

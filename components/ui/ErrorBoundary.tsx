@@ -81,6 +81,13 @@ export class ErrorBoundary extends Component<
     }
   }
 
+  private handleRetry = (): void => {
+    this.setState({
+      hasError: false,
+      error: null,
+    });
+  };
+
   render(): ReactNode {
     if (this.state.hasError) {
       // Use custom fallback if provided
@@ -115,10 +122,10 @@ export class ErrorBoundary extends Component<
           )}
 
           <button
-            onClick={() => window.location.reload()}
+            onClick={this.handleRetry}
             className="btn-primary mt-4"
           >
-            Recarregar página
+            Tentar novamente
           </button>
         </div>
       );

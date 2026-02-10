@@ -124,17 +124,7 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
-      // Resume redirects
-      {
-        source: "/resume/en",
-        destination: "/en/resume",
-        permanent: true,
-      },
-      {
-        source: "/en/resume/en",
-        destination: "/en/resume",
-        permanent: true,
-      },
+      // Legacy aliases that don't collide with next-intl localized routes
       {
         source: "/curriculo",
         destination: "/resume",
@@ -145,80 +135,28 @@ const nextConfig: NextConfig = {
         destination: "/resume",
         permanent: true,
       },
-      // Projects redirects
-      {
-        source: "/projects/en",
-        destination: "/en/projects",
-        permanent: true,
-      },
+      // Projects legacy path
       {
         source: "/projects/self-drive-car",
         destination: "/projetos/self-drive-car",
         permanent: true,
       },
-      {
-        source: "/projects",
-        destination: "/projetos",
-        permanent: true,
-      },
-      {
-        source: "/projects/:slug",
-        destination: "/projetos/:slug",
-        permanent: true,
-      },
-      // Hire/Contrate redirects
-      {
-        source: "/hire",
-        destination: "/contrate",
-        permanent: true,
-      },
-      {
-        source: "/en/contrate",
-        destination: "/en/hire",
-        permanent: true,
-      },
-      // Academic redirects
-      {
-        source: "/en/academico",
-        destination: "/en/academic",
-        permanent: true,
-      },
-      {
-        source: "/academic",
-        destination: "/academico",
-        permanent: true,
-      },
-      // Old profile/root redirects
+      // Profile aliases
       {
         source: "/profile",
         destination: "/resume",
         permanent: true,
       },
-      {
-        source: "/en/profile",
-        destination: "/en/resume",
-        permanent: true,
-      },
-      // Certificates redirects
+      // Certificates alias
       {
         source: "/certificados",
         destination: "/certificates",
         permanent: true,
       },
-      {
-        source: "/en/certificados",
-        destination: "/en/certificates",
-        permanent: true,
-      },
-      // Demo redirects
+      // Demo alias
       {
         source: "/demo",
         destination: "/demos",
-        permanent: true,
-      },
-      {
-        source: "/en/demo",
-        destination: "/en/demos",
         permanent: true,
       },
     ];

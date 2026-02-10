@@ -8,10 +8,10 @@ type TabKey = "request" | "response" | "logs";
 const tabs: TabKey[] = ["request", "response", "logs"];
 
 export function ApiPlaygroundDemo({ locale }: InteractiveDemoProps) {
-  const language = locale ?? "pt";
+  const language = locale ?? "pt-BR";
   const labels = useMemo(
     () =>
-      language === "pt"
+      language === "pt-BR"
         ? {
             title: "API Playground (mock)",
             description:
@@ -91,7 +91,7 @@ export function ApiPlaygroundDemo({ locale }: InteractiveDemoProps) {
 
   const runSimulation = () => {
     const timestamp = new Date().toLocaleTimeString(
-      language === "pt" ? "pt-BR" : "en-US",
+      language === "pt-BR" ? "pt-BR" : "en",
       { hour: "2-digit", minute: "2-digit", second: "2-digit" }
     );
 
@@ -100,7 +100,7 @@ export function ApiPlaygroundDemo({ locale }: InteractiveDemoProps) {
       const mockResponse = {
         ok: true,
         message:
-          language === "pt"
+          language === "pt-BR"
             ? "Simulação concluída com sucesso."
             : "Simulation completed successfully.",
         received: payload,
@@ -238,7 +238,7 @@ export function ApiPlaygroundDemo({ locale }: InteractiveDemoProps) {
               </ul>
             ) : (
               <p>
-                {language === "pt"
+                {language === "pt-BR"
                   ? "Nenhuma execução registrada ainda."
                   : "No executions recorded yet."}
               </p>

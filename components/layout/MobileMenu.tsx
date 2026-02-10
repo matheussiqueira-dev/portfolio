@@ -1,9 +1,9 @@
 "use client";
 
-import { useCallback, useEffect, useId, useRef, useState } from "react";
-import Link from "next/link";
+import { Suspense, useCallback, useEffect, useId, useRef, useState } from "react";
 import LanguageSwitch from "@/components/ui/LanguageSwitch";
 import ThemeToggle from "@/components/ui/ThemeToggle";
+import { Link } from "@/i18n/navigation";
 import type { NavItem } from "./navigation";
 
 type Props = {
@@ -259,8 +259,12 @@ export default function MobileMenu({
                   const isActive = activeId === item.id;
                   return (
                     <Link
-                      key={item.href}
-                      href={item.href}
+                      key={item.id}
+                      href={
+                        item.type === "anchor"
+                          ? { pathname: item.pathname, hash: item.hash }
+                          : item.pathname
+                      }
                       onClick={handleClose}
                       aria-current={
                         isActive ? (item.type === "page" ? "page" : "location") : undefined
@@ -282,7 +286,15 @@ export default function MobileMenu({
                   {languageLabel}
                 </p>
                 <div className="mt-3 text-sm text-[color:var(--muted)]">
-                  <LanguageSwitch />
+                  <Suspense
+                    fallback={
+                      <span className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
+                        PT-BR | EN
+                      </span>
+                    }
+                  >
+                    <LanguageSwitch />
+                  </Suspense>
                 </div>
                 <div className="mt-4">
                   <ThemeToggle />

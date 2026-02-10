@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { usePathname } from "next/navigation";
+import { useLocale } from "next-intl";
 
 type Theme = "light" | "dark";
 
@@ -34,8 +34,7 @@ const getInitialTheme = (): Theme => {
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>(() => getInitialTheme());
-  const pathname = usePathname() ?? "/";
-  const isEn = pathname.startsWith("/en");
+  const isEn = useLocale() === "en";
 
   const handleToggle = () => {
     setTheme((current) => {

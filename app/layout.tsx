@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Instrument_Sans, Sora } from "next/font/google";
 import Script from "next/script";
-import { NextIntlClientProvider } from "next-intl";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/seo/JsonLd";
 import CursorGlow from "@/components/ui/CursorGlow";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import VideoBackground from "@/components/ui/VideoBackground";
 import { baseUrl, buildAlternates, siteName, sameAsLinks } from "@/lib/seo";
-import messages from "@/messages/pt.json";
 import "./globals.css";
 
 // Google Tag Manager ID
@@ -70,7 +66,7 @@ const websiteJsonLd = {
   name: siteName,
   url: baseUrl,
   description: siteDescription,
-  inLanguage: ["pt-BR", "en-US"],
+  inLanguage: ["pt-BR", "en"],
   potentialAction: {
     "@type": "SearchAction",
     target: `${baseUrl}/?q={search_term_string}`,
@@ -91,7 +87,7 @@ const personJsonLd = {
   url: baseUrl,
   image: `${baseUrl}/profile.jpg`,
   sameAs: sameAsLinks,
-  inLanguage: ["pt-BR", "en-US"],
+  inLanguage: ["pt-BR", "en"],
   knowsAbout: stackKeywords,
   address: {
     "@type": "PostalAddress",
@@ -169,7 +165,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" data-theme="dark" suppressHydrationWarning>
+    <html lang="pt-BR" data-theme="dark">
       <head>
         {/* Google Tag Manager */}
         <Script
@@ -235,15 +231,7 @@ export default function RootLayout({
         <VideoBackground />
         <CursorGlow />
         <ScrollReveal />
-        <NextIntlClientProvider locale="pt-BR" messages={messages}>
-          <div className="app-shell">
-            <Header />
-            <div id="main-content" className="min-h-screen">
-              {children}
-            </div>
-            <Footer />
-          </div>
-        </NextIntlClientProvider>
+        {children}
       </body>
     </html>
   );

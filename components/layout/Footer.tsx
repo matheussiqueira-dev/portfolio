@@ -1,11 +1,10 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { useLocale } from "next-intl";
 import { TrackedAnchor } from "@/components/analytics/TrackedLink";
 
 export default function Footer() {
-  const pathname = usePathname() ?? "/";
-  const isEn = pathname.startsWith("/en");
+  const isEn = useLocale() === "en";
 
   const title = isEn ? "Let’s connect" : "Vamos conversar";
   const location = isEn ? "Brazil | Remote" : "Brasil | Remoto";

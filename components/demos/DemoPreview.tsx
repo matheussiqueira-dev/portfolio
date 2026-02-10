@@ -6,7 +6,7 @@ import { buildInternalDemoPath } from "@/lib/demos";
 type DemoPreviewProps = {
   demo?: DemoExperience;
   fallbackMedia?: { src: string; alt: string };
-  locale: "pt" | "en";
+  locale: "pt-BR" | "en";
   projectSlug: string;
   projectTitle: string;
 };
@@ -19,7 +19,7 @@ export function DemoPreview({
   projectTitle,
 }: DemoPreviewProps) {
   const labels =
-    locale === "pt"
+    locale === "pt-BR"
       ? {
           comingSoon: "Demo em breve",
           openDemo: "Abrir demo",
@@ -39,8 +39,7 @@ export function DemoPreview({
           interactiveTitle: "Interactive demo",
         };
 
-  const demoDetailPath =
-    locale === "en" ? `/en/demos/${projectSlug}` : `/demos/${projectSlug}`;
+  const demoDetailPath = locale === "en" ? `/en/demos/${projectSlug}` : `/demos/${projectSlug}`;
 
   const previewImage = fallbackMedia ? (
     <div className="card-media relative w-full aspect-video">

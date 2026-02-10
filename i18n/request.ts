@@ -1,24 +1,22 @@
 import type { AbstractIntlMessages } from "next-intl";
 import { getRequestConfig } from "next-intl/server";
 
-import { defaultLocale, locales, type Locale } from "./routing";
+import { isValidLocale, routing } from "./routing";
 
-const localeToMessages: Record<
-  Locale,
-  () => Promise<{ default: Record<string, unknown> }>
-> = {
+const messagesByLocale = {
   "pt-BR": () => import("../messages/pt.json"),
   en: () => import("../messages/en.json"),
 };
 
 export default getRequestConfig(async ({ requestLocale }) => {
-  let locale = (await requestLocale) as Locale | undefined;
+  const requested = await requestLocale;
 
-  if (!locale || !locales.includes(locale)) {
-    locale = defaultLocale;
-  }
+  const locale = requested && isValidLocale(requested)
+    ? requested
+    : routing.defaultLocale;
 
-  const messages = (await localeToMessages[locale]()).default as AbstractIntlMessages;
+  const messages = (await messagesByLocale[locale]())
+    .default as unknown as AbstractIntlMessages;
 
   return {
     locale,

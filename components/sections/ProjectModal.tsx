@@ -4,7 +4,7 @@ import Image from "next/image";
 import SafeImage from "@/src/components/demo/SafeImage";
 import { useEffect, useId, useMemo, useRef } from "react";
 import { createPortal } from "react-dom";
-import { usePathname } from "next/navigation";
+import { useLocale } from "next-intl";
 import { trackEvent } from "@/lib/analytics";
 import { sitePt } from "@/data/site.pt";
 import { siteEn } from "@/data/site.en";
@@ -37,8 +37,7 @@ const getCover = (screenshots: ProjectMedia[]) =>
   screenshots.find((shot) => shot.src.includes("/cover.")) ?? screenshots[0];
 
 export default function ProjectModal({ project, onClose }: Props) {
-  const pathname = usePathname() ?? "/";
-  const isEn = pathname.startsWith("/en");
+  const isEn = useLocale() === "en";
   const labels = useMemo(() => {
     const content = isEn ? siteEn.projects.modal : sitePt.projects.modal;
     return {

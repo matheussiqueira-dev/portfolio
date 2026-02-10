@@ -1,7 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
+import createMiddleware from "next-intl/middleware";
+
+import { routing } from "@/i18n/routing";
 
 const CANONICAL_HOST = "www.matheussiqueira.dev";
 const VERCEL_PREVIEW_SUFFIX = ".vercel.app";
+
+const handleI18nRouting = createMiddleware(routing);
 
 export function proxy(request: NextRequest) {
   const host = request.nextUrl.hostname.toLowerCase();
@@ -19,7 +24,7 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(url, 308);
   }
 
-  return NextResponse.next();
+  return handleI18nRouting(request);
 }
 
 export const config = {

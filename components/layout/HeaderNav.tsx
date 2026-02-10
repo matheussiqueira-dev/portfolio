@@ -1,17 +1,18 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Suspense, useSyncExternalStore } from "react";
+import { useLocale } from "next-intl";
 import { sitePt } from "@/data/site.pt";
 import { siteEn } from "@/data/site.en";
 import LanguageSwitch from "@/components/ui/LanguageSwitch";
 import ThemeToggle from "@/components/ui/ThemeToggle";
+import { Link, usePathname } from "@/i18n/navigation";
 import MobileMenu from "./MobileMenu";
 import { buildNavItems, getActiveNavId } from "./navigation";
 
 export default function HeaderNav() {
   const pathname = usePathname() ?? "/";
+  const locale = useLocale();
   const hash = useSyncExternalStore(
     (callback) => {
       window.addEventListener("hashchange", callback);
@@ -24,9 +25,9 @@ export default function HeaderNav() {
     () => window.location.hash,
     () => ""
   );
-  const isEn = pathname.startsWith("/en");
+  const isEn = locale === "en";
   const content = isEn ? siteEn : sitePt;
-  const navItems = buildNavItems(isEn, content.nav);
+  const navItems = buildNavItems(content.nav);
   const activeId = getActiveNavId(navItems, pathname, hash);
   const navLabel = isEn ? "Main navigation" : "Navegação principal";
   const menuLabel = isEn ? "Main menu" : "Menu principal";
@@ -42,8 +43,12 @@ export default function HeaderNav() {
         >
           {navItems.map((item) => (
             <Link
-              key={item.href}
-              href={item.href}
+              key={item.id}
+              href={
+                item.type === "anchor"
+                  ? { pathname: item.pathname, hash: item.hash }
+                  : item.pathname
+              }
               aria-current={
                 activeId === item.id ? (item.type === "page" ? "page" : "location") : undefined
               }
@@ -64,7 +69,15 @@ export default function HeaderNav() {
         <span className="h-6 w-px bg-[color:var(--border)]/70" aria-hidden="true" />
 
         <div className="flex items-center gap-4 text-sm text-[color:var(--muted)]">
-          <LanguageSwitch />
+          <Suspense
+            fallback={
+              <span className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
+                PT-BR | EN
+              </span>
+            }
+          >
+            <LanguageSwitch />
+          </Suspense>
           <ThemeToggle />
         </div>
       </div>

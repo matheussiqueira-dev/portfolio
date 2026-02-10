@@ -1,5 +1,5 @@
 type DemoPathOptions = {
-  locale: "pt" | "en";
+  locale: "pt-BR" | "en";
   projectSlug: string;
   demoPath?: string;
 };

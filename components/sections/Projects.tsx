@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import SafeImage from "@/src/components/demo/SafeImage";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useLocale } from "next-intl";
 import type { CSSProperties, ChangeEvent } from "react";
 import {
   useCallback,
@@ -112,8 +112,7 @@ const formatResultsLabel = (template: string, count: number, total: number) =>
     .replace("{total}", total.toString());
 
 export default function Projects() {
-  const pathname = usePathname() ?? "/";
-  const isEn = pathname.startsWith("/en");
+  const isEn = useLocale() === "en";
   const content = isEn ? siteEn.projects : sitePt.projects;
   const data = useMemo(() => (isEn ? projectsEn : projects), [isEn]);
   const featured = useMemo(
@@ -497,7 +496,7 @@ export default function Projects() {
                   </svg>
                   <span>
                     {stars !== undefined
-                      ? stars.toLocaleString(isEn ? "en-US" : "pt-BR")
+                      ? stars.toLocaleString(isEn ? "en" : "pt-BR")
                       : "GitHub"}
                   </span>
                 </div>

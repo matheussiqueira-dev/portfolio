@@ -1,4 +1,4 @@
-import type { Locale } from "@/lib/i18n";
+type SiteCopyLocale = "pt-BR" | "en";
 
 type SiteCopy = {
   nav: {
@@ -102,8 +102,8 @@ type SiteCopy = {
   };
 };
 
-export const siteCopy: Record<Locale, SiteCopy> = {
-  pt: {
+export const siteCopy: Record<SiteCopyLocale, SiteCopy> = {
+  "pt-BR": {
     nav: {
       about: "Sobre",
       projects: "Projects",

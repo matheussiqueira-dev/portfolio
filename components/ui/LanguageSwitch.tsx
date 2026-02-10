@@ -1,122 +1,53 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
-import { useSyncExternalStore } from "react";
+import { useLocale } from "next-intl";
+import { startTransition } from "react";
+import { useParams } from "next/navigation";
 
-/**
- * Mapeamento de rotas PT -> EN
- * Rotas que têm nomes diferentes entre idiomas
- */
-const PT_TO_EN_MAP: Record<string, string> = {
-  "/academico": "/en/academic",
-  "/contrate": "/en/hire",
-  "/data-analyst": "/en/data-analyst",
-  "/projetos": "/en/projects",
-  "/resume": "/en/resume",
-};
+import { usePathname, useRouter } from "@/i18n/navigation";
+import type { Locale } from "@/i18n/routing";
 
-/**
- * Mapeamento reverso EN -> PT
- */
-const EN_TO_PT_MAP: Record<string, string> = Object.fromEntries(
-  Object.entries(PT_TO_EN_MAP).map(([pt, en]) => [en, pt])
-);
-
-const PT_DYNAMIC = [
-  {
-    pattern: /^\/projetos(\/.*)?$/,
-    to: (match: RegExpMatchArray) => `/en/projects${match[1] ?? ""}`,
-  },
-];
-
-const EN_DYNAMIC = [
-  {
-    pattern: /^\/en\/projects(\/.*)?$/,
-    to: (match: RegExpMatchArray) => `/projetos${match[1] ?? ""}`,
-  },
-];
-
-/**
- * Converte uma rota EN para PT
- */
-function getPortuguesePath(pathname: string): string {
-  // Verifica mapeamento especial primeiro
-  if (EN_TO_PT_MAP[pathname]) {
-    return EN_TO_PT_MAP[pathname];
-  }
-
-  for (const route of EN_DYNAMIC) {
-    const match = pathname.match(route.pattern);
-    if (match) {
-      return route.to(match);
-    }
-  }
-
-  // Se não começa com /en, já é PT
-  if (!pathname.startsWith("/en")) {
-    return pathname;
-  }
-
-  // Remove /en do início
-  const stripped = pathname.replace(/^\/en/, "");
-  return stripped.length > 0 ? stripped : "/";
-}
-
-/**
- * Converte uma rota PT para EN
- */
-function getEnglishPath(pathname: string): string {
-  // Verifica mapeamento especial primeiro
-  if (PT_TO_EN_MAP[pathname]) {
-    return PT_TO_EN_MAP[pathname];
-  }
-
-  for (const route of PT_DYNAMIC) {
-    const match = pathname.match(route.pattern);
-    if (match) {
-      return route.to(match);
-    }
-  }
-
-  // Se já começa com /en, já é EN
-  if (pathname.startsWith("/en")) {
-    return pathname;
-  }
-
-  // Adiciona /en no início
-  return pathname === "/" ? "/en" : `/en${pathname}`;
-}
+type AppPathname = ReturnType<typeof usePathname>;
+type DynamicPathname = "/projects/[slug]" | "/demos/[slug]";
+type StaticPathname = Exclude<AppPathname, DynamicPathname>;
 
 export default function LanguageSwitch() {
-  const pathname = usePathname() ?? "/";
-  const searchParams = useSearchParams();
-  const hash = useSyncExternalStore(
-    (callback) => {
-      window.addEventListener("hashchange", callback);
-      window.addEventListener("popstate", callback);
-      return () => {
-        window.removeEventListener("hashchange", callback);
-        window.removeEventListener("popstate", callback);
-      };
-    },
-    () => window.location.hash,
-    () => ""
-  );
-  const isEnglish = pathname.startsWith("/en");
+  const router = useRouter();
+  const pathname = usePathname();
+  const params = useParams<{ slug?: string }>();
+  const locale = useLocale() as Locale;
+  const isEnglish = locale === "en";
+  const switchLocale = (nextLocale: Locale) => {
+    if (nextLocale === locale) return;
 
-  const query = searchParams?.toString();
-  const suffix = `${query ? `?${query}` : ""}${hash}`;
+    startTransition(() => {
+      if (pathname === "/projects/[slug]" || pathname === "/demos/[slug]") {
+        const slug = params.slug;
 
-  const ptPath = `${getPortuguesePath(pathname)}${suffix}`;
-  const enPath = `${getEnglishPath(pathname)}${suffix}`;
+        if (typeof slug === "string") {
+          router.replace(
+            { pathname: pathname as DynamicPathname, params: { slug } },
+            { locale: nextLocale, scroll: false }
+          );
+        }
+        return;
+      }
+
+      router.replace(pathname as StaticPathname, {
+        locale: nextLocale,
+        scroll: false,
+      });
+    });
+  };
 
   return (
     <div className="flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
-      <Link
-        href={ptPath}
-        className={`flex items-center gap-2 transition-colors ${
+      <button
+        type="button"
+        onClick={() => switchLocale("pt-BR")}
+        aria-pressed={!isEnglish}
+        className={`appearance-none border-0 bg-transparent p-0 flex items-center gap-2 transition-colors ${
           !isEnglish
             ? "text-[color:var(--foreground)] font-semibold"
             : "text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
@@ -127,13 +58,15 @@ export default function LanguageSwitch() {
           <Image src="/flags/br.png" alt="Bandeira do Brasil" width={14} height={14} />
         </span>
         PT-BR
-      </Link>
+      </button>
 
       <span className="text-[color:var(--border)]">|</span>
 
-      <Link
-        href={enPath}
-        className={`flex items-center gap-2 transition-colors ${
+      <button
+        type="button"
+        onClick={() => switchLocale("en")}
+        aria-pressed={isEnglish}
+        className={`appearance-none border-0 bg-transparent p-0 flex items-center gap-2 transition-colors ${
           isEnglish
             ? "text-[color:var(--foreground)] font-semibold"
             : "text-[color:var(--muted)] hover:text-[color:var(--foreground)]"
@@ -143,8 +76,8 @@ export default function LanguageSwitch() {
         <span className="flex h-5 w-5 items-center justify-center rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] shadow-sm">
           <Image src="/flags/us.png" alt="Bandeira dos Estados Unidos" width={14} height={14} />
         </span>
-        EN-US
-      </Link>
+        EN
+      </button>
     </div>
   );
 }
