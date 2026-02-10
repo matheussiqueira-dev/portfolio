@@ -50,8 +50,12 @@ const StackIcon = ({ icon }: { icon: StackIconData }) => (
   />
 );
 
-export default async function PrimaryStack() {
-  const t = await getTranslations("primaryStack");
+type Props = {
+  locale?: "pt-BR" | "en";
+};
+
+export default async function PrimaryStack({ locale = "pt-BR" }: Props) {
+  const t = await getTranslations({ locale, namespace: "primaryStack" });
 
   return (
     <section

@@ -102,7 +102,7 @@ export default function HomeEn() {
       <About content={siteEn.about} />
       <Services content={siteEn.services} localePrefix="/en" />
       <Engagement content={siteEn.engagement} localePrefix="/en" />
-      <PrimaryStack />
+      <PrimaryStack locale="en" />
       <Projects />
       <MetricsSection content={siteEn.metrics} />
       <CertificatesPreview content={siteEn.certificatesSection} localePrefix="/en" />

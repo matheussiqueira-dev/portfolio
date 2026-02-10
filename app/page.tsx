@@ -86,7 +86,7 @@ export default function HomePage() {
       <About content={sitePt.about} />
       <Services content={sitePt.services} />
       <Engagement content={sitePt.engagement} />
-      <PrimaryStack />
+      <PrimaryStack locale="pt-BR" />
       <Projects />
       <MetricsSection content={sitePt.metrics} />
       <Contact content={sitePt.contact} />
