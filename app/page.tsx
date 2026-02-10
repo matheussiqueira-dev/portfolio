@@ -7,6 +7,7 @@ import MetricsSection from "@/components/sections/MetricsSection";
 import Projects from "@/components/sections/Projects";
 import PrimaryStack from "@/components/sections/PrimaryStack";
 import Services from "@/components/sections/Services";
+import ValueProposition from "@/components/sections/ValueProposition";
 import { sitePt } from "@/data/site.pt";
 import type { Metadata } from "next";
 import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
@@ -83,6 +84,7 @@ export default function HomePage() {
     <main className="pb-24">
       <Hero content={sitePt.hero} />
       <ExecutiveSummary content={sitePt.executiveSummary} />
+      <ValueProposition content={sitePt.valueProposition} />
       <About content={sitePt.about} />
       <Services content={sitePt.services} />
       <Engagement content={sitePt.engagement} />

@@ -82,6 +82,16 @@ export type SiteContent = {
       title: string;
     }[];
   };
+  valueProposition: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    pillars: {
+      title: string;
+      description: string;
+      bullets: string[];
+    }[];
+  };
   services: {
     eyebrow: string;
     title: string;

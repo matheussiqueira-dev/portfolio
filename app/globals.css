@@ -1129,6 +1129,64 @@ body::after {
     margin-top: 1.5rem;
   }
 
+  .value-grid {
+    margin-top: 2.5rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .value-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .value-card__header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+
+  .value-card__index {
+    font-size: 0.7rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .value-card__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--foreground);
+  }
+
+  .value-card__description {
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .value-card__list {
+    display: grid;
+    gap: 0.55rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  .value-card__item {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+  }
+
+  .value-card__dot {
+    width: 0.4rem;
+    height: 0.4rem;
+    margin-top: 0.45rem;
+    border-radius: 999px;
+    background: var(--accent);
+  }
+
   .services-grid {
     margin-top: 2.5rem;
     display: grid;
@@ -1358,6 +1416,11 @@ body::after {
     flex-wrap: wrap;
     gap: 0.75rem;
     align-items: center;
+  }
+
+  .brief-actions a[aria-disabled="true"] {
+    opacity: 0.55;
+    pointer-events: none;
   }
 
   .contact-cards {
