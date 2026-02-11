@@ -26,15 +26,13 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <NextIntlClientProvider key={locale} locale={locale} messages={messages}>
-      <section key={locale} lang={locale} data-locale={locale}>
-        <div key={locale} className="app-shell">
-          <Header />
-          <div id="main-content" className="min-h-screen">
-            {children}
-          </div>
-          <Footer />
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <section lang={locale} data-locale={locale} className="relative z-10">
+        <Header />
+        <div id="main-content" className="min-h-screen">
+          {children}
         </div>
+        <Footer />
       </section>
     </NextIntlClientProvider>
   );

@@ -1,13 +1,4 @@
-import About from "@/components/sections/About";
-import Contact from "@/components/sections/Contact";
-import ExecutiveSummary from "@/components/sections/ExecutiveSummary";
-import Hero from "@/components/sections/Hero";
-import Engagement from "@/components/sections/Engagement";
-import MetricsSection from "@/components/sections/MetricsSection";
-import Projects from "@/components/sections/Projects";
-import PrimaryStack from "@/components/sections/PrimaryStack";
-import Services from "@/components/sections/Services";
-import { sitePt } from "@/data/site.pt";
+import PortfolioPage from "@/components/sections/PortfolioPage";
 import type { Metadata } from "next";
 import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 
@@ -79,17 +70,5 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  return (
-    <main className="pb-24">
-      <Hero content={sitePt.hero} />
-      <ExecutiveSummary content={sitePt.executiveSummary} />
-      <About content={sitePt.about} />
-      <Services content={sitePt.services} />
-      <Engagement content={sitePt.engagement} />
-      <PrimaryStack locale="pt-BR" />
-      <Projects />
-      <MetricsSection content={sitePt.metrics} />
-      <Contact content={sitePt.contact} />
-    </main>
-  );
+  return <PortfolioPage />;
 }
