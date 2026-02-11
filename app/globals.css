@@ -2,27 +2,27 @@
 @import "tailwindcss";
 
 :root {
-  --background: #030303;
-  --foreground: #f4f4f5;
-  --foreground-strong: #ffffff;
-  --muted: #a1a1aa;
-  --muted-strong: #d4d4d8;
-  --surface: rgba(17, 17, 17, 0.8);
-  --surface-muted: rgba(20, 20, 20, 0.78);
-  --surface-strong: rgba(30, 30, 30, 0.86);
-  --border: rgba(255, 255, 255, 0.1);
-  --accent: #9ca3af;
-  --accent-strong: #f4f4f5;
-  --accent-soft: #71717a;
-  --accent-warm: #d4d4d8;
-  --accent-cool: #94a3b8;
+  --background: #0a0f14;
+  --foreground: #f5f3ee;
+  --foreground-strong: #fff8ef;
+  --muted: #9aa6b2;
+  --muted-strong: #c7d0dc;
+  --surface: #121926;
+  --surface-muted: #0e141d;
+  --surface-strong: #182233;
+  --border: #233043;
+  --accent: #f0b35a;
+  --accent-strong: #ffd39a;
+  --accent-soft: #c98a34;
+  --accent-warm: #f6c27a;
+  --accent-cool: #6fd3c7;
   --whatsapp: #25d366;
-  --shadow: 0 28px 60px rgba(0, 0, 0, 0.55);
-  --shadow-soft: 0 16px 36px rgba(0, 0, 0, 0.4);
-  --bg-radial-1: rgba(88, 28, 135, 0.16);
-  --bg-radial-2: rgba(30, 58, 138, 0.16);
+  --shadow: 0 28px 60px rgba(7, 10, 14, 0.55);
+  --shadow-soft: 0 16px 36px rgba(6, 9, 12, 0.4);
+  --bg-radial-1: rgba(240, 179, 90, 0.16);
+  --bg-radial-2: rgba(111, 211, 199, 0.14);
   --bg-grid: rgba(255, 255, 255, 0.04);
-  --bg-glow: rgba(148, 163, 184, 0.1);
+  --bg-glow: rgba(240, 179, 90, 0.12);
   --cursor-x: 50vw;
   --cursor-y: 20vh;
   --radius-sm: 10px;
@@ -87,11 +87,30 @@ body {
 }
 
 body::before {
-  display: none;
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    radial-gradient(60% 45% at 8% -12%, var(--bg-radial-1), transparent 60%),
+    radial-gradient(50% 40% at 92% 10%, var(--bg-radial-2), transparent 65%),
+    linear-gradient(to right, var(--bg-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--bg-grid) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 140px 140px, 140px 140px;
+  pointer-events: none;
+  opacity: 0.75;
 }
 
 body::after {
-  display: none;
+  content: "";
+  position: fixed;
+  bottom: -22%;
+  right: -18%;
+  width: 46%;
+  height: 46%;
+  background: radial-gradient(ellipse at center, var(--bg-glow) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
@@ -107,34 +126,25 @@ body::after {
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
-  background: #030303;
+  background: var(--background);
 }
 
-.video-bg__base {
+.video-bg__veil {
   position: absolute;
   inset: 0;
-  background: #030303;
+  background:
+    linear-gradient(180deg, rgba(8, 11, 16, 0.92) 0%, rgba(8, 11, 16, 0.65) 55%, rgba(8, 11, 16, 0.95) 100%),
+    radial-gradient(40% 35% at 18% 12%, rgba(240, 179, 90, 0.18), transparent 60%);
 }
 
-.video-bg__orb {
+.video-bg__glow {
   position: absolute;
-  width: clamp(18rem, 34vw, 30rem);
-  height: clamp(18rem, 34vw, 30rem);
-  border-radius: 999px;
-  filter: blur(120px);
-  opacity: 0.5;
-}
-
-.video-bg__orb--purple {
-  top: -8rem;
-  left: -8rem;
-  background: rgba(88, 28, 135, 0.2);
-}
-
-.video-bg__orb--blue {
-  right: -8rem;
-  bottom: -8rem;
-  background: rgba(30, 58, 138, 0.2);
+  inset: -10%;
+  background:
+    radial-gradient(60% 50% at 80% 20%, rgba(111, 211, 199, 0.18), transparent 60%),
+    radial-gradient(45% 40% at 20% 70%, rgba(240, 179, 90, 0.16), transparent 65%);
+  mix-blend-mode: screen;
+  opacity: 0.6;
 }
 
 .video-bg__grain {
@@ -173,22 +183,14 @@ body::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    460px circle at var(--cursor-x) var(--cursor-y),
-    rgba(255, 255, 255, 0.08),
-    transparent 62%
-  );
+  background: radial-gradient(520px circle at var(--cursor-x) var(--cursor-y), rgba(240, 179, 90, 0.16), transparent 62%);
 }
 
 .cursor-glow::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    240px circle at var(--cursor-x) var(--cursor-y),
-    rgba(59, 130, 246, 0.07),
-    transparent 60%
-  );
+  background: radial-gradient(280px circle at var(--cursor-x) var(--cursor-y), rgba(255, 211, 154, 0.12), transparent 60%);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -254,15 +256,6 @@ body::after {
   }
   100% {
     transform: translateY(calc(-1 * var(--float-offset, 6px)));
-  }
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
   }
 }
 @layer components {
@@ -1626,10 +1619,6 @@ body::after {
 
   .animate-fade-in {
     animation: fade-in 0.6s ease forwards;
-  }
-
-  .marquee-track {
-    animation: marquee 22s linear infinite;
   }
 
   html.reveal-ready [data-reveal] {
