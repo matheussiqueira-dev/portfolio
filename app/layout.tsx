@@ -1,22 +1,31 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { JetBrains_Mono, Instrument_Sans, Sora } from "next/font/google";
 import Script from "next/script";
-import GlobalBackground from "@/components/layout/GlobalBackground";
 import JsonLd from "@/components/seo/JsonLd";
+import CursorGlow from "@/components/ui/CursorGlow";
+import ScrollReveal from "@/components/ui/ScrollReveal";
+import VideoBackground from "@/components/ui/VideoBackground";
 import { baseUrl, buildAlternates, siteName, sameAsLinks } from "@/lib/seo";
 import "./globals.css";
 
 // Google Tag Manager ID
 const GTM_ID = "GTM-WR93ZJ8C";
 
-const geist = Geist({
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
+const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
   weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
+const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
   display: "swap",
@@ -173,6 +182,22 @@ export default function RootLayout({
           }}
         />
         {/* End Google Tag Manager */}
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var stored = localStorage.getItem('theme');
+                  var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  var theme = stored || (prefersDark ? 'dark' : 'light');
+                  document.documentElement.dataset.theme = theme;
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         {/* Preload critical resources */}
         <link
           rel="preload"
@@ -182,7 +207,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
-        className={`${geist.variable} ${geistMono.variable} min-h-screen bg-[#030303] text-white antialiased`}
+        className={`${sora.variable} ${instrumentSans.variable} ${jetBrainsMono.variable} min-h-screen antialiased`}
       >
         {/* Google Tag Manager (noscript) */}
         <noscript>
@@ -203,7 +228,9 @@ export default function RootLayout({
         </a>
 
         <JsonLd data={[websiteJsonLd, personJsonLd]} />
-        <GlobalBackground />
+        <VideoBackground />
+        <CursorGlow />
+        <ScrollReveal />
         {children}
       </body>
     </html>
