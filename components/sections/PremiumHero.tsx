@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -144,12 +145,41 @@ export default function PremiumHero({ content, localePrefix }: Props) {
           transition={{ ...spring, delay: 0.2 }}
           className="space-y-4"
         >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ...spring, delay: 0.22 }}
+          >
+            <Card className="group relative overflow-hidden p-0">
+              <div className="relative aspect-[4/5] w-full">
+                <Image
+                  src="/profile.jpg"
+                  alt="Foto de perfil de Matheus Siqueira"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 420px"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <p className="text-[11px] uppercase tracking-[0.22em] text-zinc-400">
+                    {isEn ? "Profile" : "Perfil"}
+                  </p>
+                  <p className="mt-2 text-xl font-semibold text-white">
+                    Matheus Siqueira
+                  </p>
+                  <p className="mt-1 text-sm text-zinc-300">{content.subtitle}</p>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
+
           {content.facts.map((fact, index) => (
             <motion.div
               key={fact.label}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ ...spring, delay: 0.25 + index * 0.1 }}
+              transition={{ ...spring, delay: 0.3 + index * 0.1 }}
             >
               <Card className="p-5">
                 <p className="text-[11px] uppercase tracking-[0.22em] text-zinc-500">
