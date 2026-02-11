@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
-import About from "@/components/sections/About";
-import CertificatesPreview from "@/components/sections/CertificatesPreview";
-import Contact from "@/components/sections/Contact";
-import ExecutiveSummary from "@/components/sections/ExecutiveSummary";
-import Hero from "@/components/sections/Hero";
-import Engagement from "@/components/sections/Engagement";
-import MetricsSection from "@/components/sections/MetricsSection";
-import Projects from "@/components/sections/Projects";
-import PrimaryStack from "@/components/sections/PrimaryStack";
-import Services from "@/components/sections/Services";
+import AboutBento from "@/components/sections/AboutBento";
+import ExperienceStack from "@/components/sections/ExperienceStack";
+import PremiumContact from "@/components/sections/PremiumContact";
+import PremiumHero from "@/components/sections/PremiumHero";
+import ProjectsBento from "@/components/sections/ProjectsBento";
 import JsonLd from "@/components/seo/JsonLd";
 import { siteEn } from "@/data/site.en";
 import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
@@ -95,18 +90,13 @@ export const metadata: Metadata = {
 
 export default function HomeEn() {
   return (
-    <main className="min-h-screen">
+    <main className="relative min-h-screen pb-10">
       <JsonLd data={homeJsonLd} />
-      <Hero content={siteEn.hero} localePrefix="/en" />
-      <ExecutiveSummary content={siteEn.executiveSummary} />
-      <About content={siteEn.about} />
-      <Services content={siteEn.services} localePrefix="/en" />
-      <Engagement content={siteEn.engagement} localePrefix="/en" />
-      <PrimaryStack locale="en" />
-      <Projects />
-      <MetricsSection content={siteEn.metrics} />
-      <CertificatesPreview content={siteEn.certificatesSection} localePrefix="/en" />
-      <Contact content={siteEn.contact} />
+      <PremiumHero content={siteEn.hero} localePrefix="/en" />
+      <AboutBento content={siteEn.about} />
+      <ProjectsBento />
+      <ExperienceStack />
+      <PremiumContact content={siteEn.contact} />
     </main>
   );
 }

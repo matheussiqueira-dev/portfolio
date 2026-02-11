@@ -1,12 +1,8 @@
-import About from "@/components/sections/About";
-import Contact from "@/components/sections/Contact";
-import ExecutiveSummary from "@/components/sections/ExecutiveSummary";
-import Hero from "@/components/sections/Hero";
-import Engagement from "@/components/sections/Engagement";
-import MetricsSection from "@/components/sections/MetricsSection";
-import Projects from "@/components/sections/Projects";
-import PrimaryStack from "@/components/sections/PrimaryStack";
-import Services from "@/components/sections/Services";
+import AboutBento from "@/components/sections/AboutBento";
+import ExperienceStack from "@/components/sections/ExperienceStack";
+import PremiumContact from "@/components/sections/PremiumContact";
+import PremiumHero from "@/components/sections/PremiumHero";
+import ProjectsBento from "@/components/sections/ProjectsBento";
 import { sitePt } from "@/data/site.pt";
 import type { Metadata } from "next";
 import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
@@ -80,16 +76,12 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main className="pb-24">
-      <Hero content={sitePt.hero} />
-      <ExecutiveSummary content={sitePt.executiveSummary} />
-      <About content={sitePt.about} />
-      <Services content={sitePt.services} />
-      <Engagement content={sitePt.engagement} />
-      <PrimaryStack locale="pt-BR" />
-      <Projects />
-      <MetricsSection content={sitePt.metrics} />
-      <Contact content={sitePt.contact} />
+    <main className="relative min-h-screen pb-10">
+      <PremiumHero content={sitePt.hero} />
+      <AboutBento content={sitePt.about} />
+      <ProjectsBento />
+      <ExperienceStack />
+      <PremiumContact content={sitePt.contact} />
     </main>
   );
 }

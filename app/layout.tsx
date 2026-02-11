@@ -3,7 +3,6 @@ import { JetBrains_Mono, Instrument_Sans, Sora } from "next/font/google";
 import Script from "next/script";
 import JsonLd from "@/components/seo/JsonLd";
 import CursorGlow from "@/components/ui/CursorGlow";
-import ScrollReveal from "@/components/ui/ScrollReveal";
 import VideoBackground from "@/components/ui/VideoBackground";
 import { baseUrl, buildAlternates, siteName, sameAsLinks } from "@/lib/seo";
 import "./globals.css";
@@ -230,7 +229,6 @@ export default function RootLayout({
         <JsonLd data={[websiteJsonLd, personJsonLd]} />
         <VideoBackground />
         <CursorGlow />
-        <ScrollReveal />
         {children}
       </body>
     </html>
