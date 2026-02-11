@@ -1,44 +1,151 @@
 "use client";
 
 import Image from "next/image";
-import { useLocale } from "next-intl";
-import { startTransition } from "react";
-import { useParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 
-import { usePathname, useRouter } from "@/i18n/navigation";
-import type { Locale } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
 
-type AppPathname = ReturnType<typeof usePathname>;
-type DynamicPathname = "/projects/[slug]" | "/demos/[slug]";
-type StaticPathname = Exclude<AppPathname, DynamicPathname>;
+type LocalizedRoute = string | Partial<Record<Locale, string>>;
+
+const LOCALE_PREFIXES: Record<Locale, string> = {
+  "pt-BR": "",
+  en: "/en",
+};
+
+const normalizePathname = (pathname: string): string => {
+  if (!pathname) {
+    return "/";
+  }
+
+  const withLeadingSlash = pathname.startsWith("/") ? pathname : `/${pathname}`;
+  if (withLeadingSlash.length > 1 && withLeadingSlash.endsWith("/")) {
+    return withLeadingSlash.slice(0, -1);
+  }
+
+  return withLeadingSlash;
+};
+
+const readLocaleFromPathname = (pathname: string): Locale => {
+  const normalized = normalizePathname(pathname);
+
+  if (normalized === "/en" || normalized.startsWith("/en/")) {
+    return "en";
+  }
+
+  if (normalized === "/pt-BR" || normalized.startsWith("/pt-BR/")) {
+    return "pt-BR";
+  }
+
+  return routing.defaultLocale;
+};
+
+const stripLocalePrefix = (pathname: string): string => {
+  const normalized = normalizePathname(pathname);
+
+  if (normalized === "/en") {
+    return "/";
+  }
+
+  if (normalized.startsWith("/en/")) {
+    return normalized.slice(3);
+  }
+
+  if (normalized === "/pt-BR") {
+    return "/";
+  }
+
+  if (normalized.startsWith("/pt-BR/")) {
+    return normalized.slice(6);
+  }
+
+  return normalized;
+};
+
+const matchPattern = (
+  pathname: string,
+  pattern: string
+): Record<string, string> | null => {
+  const keys: string[] = [];
+  const regexSource = pattern
+    .replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+    .replace(/\\\[([^\]]+)\\\]/g, (_, key: string) => {
+      keys.push(key);
+      return "([^/]+)";
+    });
+
+  const match = new RegExp(`^${regexSource}$`).exec(pathname);
+
+  if (!match) {
+    return null;
+  }
+
+  return keys.reduce<Record<string, string>>((params, key, index) => {
+    params[key] = decodeURIComponent(match[index + 1] ?? "");
+    return params;
+  }, {});
+};
+
+const fillPattern = (pattern: string, params: Record<string, string>): string =>
+  pattern.replace(/\[([^\]]+)\]/g, (_, key: string) =>
+    encodeURIComponent(params[key] ?? "")
+  );
+
+const translateLocalizedPathname = (
+  pathname: string,
+  fromLocale: Locale,
+  toLocale: Locale
+): string => {
+  const entries = Object.values(routing.pathnames) as LocalizedRoute[];
+
+  for (const entry of entries) {
+    const sourcePattern =
+      typeof entry === "string" ? entry : entry[fromLocale];
+    const targetPattern = typeof entry === "string" ? entry : entry[toLocale];
+
+    if (!sourcePattern || !targetPattern) {
+      continue;
+    }
+
+    const params = matchPattern(pathname, normalizePathname(sourcePattern));
+    if (!params) {
+      continue;
+    }
+
+    return fillPattern(normalizePathname(targetPattern), params);
+  }
+
+  return pathname;
+};
+
+const addLocalePrefix = (pathname: string, locale: Locale): string => {
+  const normalized = normalizePathname(pathname);
+  const prefix = LOCALE_PREFIXES[locale];
+
+  if (!prefix) {
+    return normalized;
+  }
+
+  return normalized === "/" ? prefix : `${prefix}${normalized}`;
+};
 
 export default function LanguageSwitch() {
-  const router = useRouter();
-  const pathname = usePathname();
-  const params = useParams<{ slug?: string }>();
-  const locale = useLocale() as Locale;
+  const pathname = usePathname() ?? "/";
+  const locale = readLocaleFromPathname(pathname);
   const isEnglish = locale === "en";
+
   const switchLocale = (nextLocale: Locale) => {
     if (nextLocale === locale) return;
 
-    startTransition(() => {
-      if (pathname === "/projects/[slug]" || pathname === "/demos/[slug]") {
-        const slug = params.slug;
+    const pathnameWithoutLocale = stripLocalePrefix(pathname);
+    const translatedPathname = translateLocalizedPathname(
+      pathnameWithoutLocale,
+      locale,
+      nextLocale
+    );
+    const destination = addLocalePrefix(translatedPathname, nextLocale);
+    const { search, hash } = window.location;
 
-        if (typeof slug === "string") {
-          router.replace(
-            { pathname: pathname as DynamicPathname, params: { slug } },
-            { locale: nextLocale, scroll: false }
-          );
-        }
-        return;
-      }
-
-      router.replace(pathname as StaticPathname, {
-        locale: nextLocale,
-        scroll: false,
-      });
-    });
+    window.location.href = `${destination}${search}${hash}`;
   };
 
   return (
