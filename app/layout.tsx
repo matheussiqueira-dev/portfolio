@@ -7,6 +7,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import VideoBackground from "@/components/ui/VideoBackground";
 import { baseUrl, buildAlternates, siteName, sameAsLinks } from "@/lib/seo";
 import "./globals.css";
+import "./refined-theme.css";
 
 // Google Tag Manager ID
 const GTM_ID = "GTM-WR93ZJ8C";

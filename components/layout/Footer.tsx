@@ -14,9 +14,9 @@ export default function Footer() {
   const emailLabel = isEn ? "Email" : "E-mail";
 
   return (
-    <footer className="border-t border-[color:var(--border)] py-10">
-      <div className="section-inner flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-        <div className="space-y-2">
+    <footer className="site-footer">
+      <div className="section-inner site-footer__inner">
+        <div className="site-footer__content">
           <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
             {title}
           </p>
@@ -24,7 +24,7 @@ export default function Footer() {
           <p className="text-xs text-[color:var(--muted)]">{credit}</p>
         </div>
 
-        <div className="flex flex-wrap gap-3">
+        <div className="site-footer__actions">
           <TrackedAnchor
             href="mailto:matheussiqueirahub@gmail.com"
             ariaLabel={emailLabel}

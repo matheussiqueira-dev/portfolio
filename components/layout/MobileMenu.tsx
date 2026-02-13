@@ -195,7 +195,7 @@ export default function MobileMenu({
         aria-expanded={open}
         aria-controls={menuId}
         onClick={handleToggle}
-        className="inline-flex items-center justify-center rounded border border-[color:var(--border)] px-3 py-2 text-sm text-[color:var(--foreground)] transition hover:border-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+        className="mobile-menu-trigger focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
       >
         <span className="sr-only">{toggleLabel}</span>
         <span className="relative block h-4 w-5">
@@ -219,7 +219,7 @@ export default function MobileMenu({
 
       {isVisible ? (
         <div
-          className={`fixed inset-0 z-[60] bg-black/55 backdrop-blur-sm transition-opacity duration-200 ease-out motion-reduce:transition-none ${
+          className={`mobile-menu-overlay ${
             open ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
           onClick={handleClose}
@@ -232,19 +232,19 @@ export default function MobileMenu({
             aria-modal="true"
             aria-label={menuLabel}
             aria-hidden={!open}
-            className={`absolute right-0 top-0 flex h-[100dvh] w-[90vw] max-w-[22rem] flex-col border-l border-[color:var(--border)] bg-[color:var(--surface)] shadow-2xl transition-transform duration-200 ease-out motion-reduce:transition-none ${
+            className={`mobile-menu-panel ${
               open ? "translate-x-0" : "translate-x-full"
             }`}
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="flex items-center justify-between gap-4 border-b border-[color:var(--border)] pb-4 pt-[calc(1rem+env(safe-area-inset-top))] pl-[calc(1.25rem+env(safe-area-inset-left))] pr-[calc(1.25rem+env(safe-area-inset-right))]">
-              <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--muted)]">
+            <div className="mobile-menu-panel__head">
+              <p className="mobile-menu-panel__title">
                 {menuLabel}
               </p>
               <button
                 type="button"
                 onClick={handleClose}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--border)] text-sm text-[color:var(--foreground)] transition hover:border-[color:var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+                className="mobile-menu-close focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
               >
                 <span className="sr-only">{closeLabel}</span>
                 <span aria-hidden="true" className="text-lg leading-none">
@@ -253,8 +253,8 @@ export default function MobileMenu({
               </button>
             </div>
 
-            <div className="flex min-h-0 flex-1 flex-col pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-5 pl-[calc(1.25rem+env(safe-area-inset-left))] pr-[calc(1.25rem+env(safe-area-inset-right))]">
-              <nav className="flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto pr-1 text-[15px]">
+            <div className="mobile-menu-panel__body">
+              <nav className="mobile-menu-panel__nav">
                 {navItems.map((item) => {
                   const isActive = activeId === item.id;
                   return (
@@ -269,10 +269,8 @@ export default function MobileMenu({
                       aria-current={
                         isActive ? (item.type === "page" ? "page" : "location") : undefined
                       }
-                      className={`flex min-h-[44px] items-center justify-between rounded-lg border px-4 py-3 font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40 ${
-                        isActive
-                          ? "border-[color:var(--accent)]/40 bg-[color:var(--surface-muted)] text-[color:var(--foreground)]"
-                          : "border-[color:var(--border)] bg-transparent text-[color:var(--muted-strong)] hover:border-[color:var(--accent)]/40 hover:bg-[color:var(--surface-muted)] hover:text-[color:var(--foreground)]"
+                      className={`mobile-menu-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40 ${
+                        isActive ? "is-active" : ""
                       }`}
                     >
                       <span>{item.label}</span>
@@ -281,7 +279,7 @@ export default function MobileMenu({
                 })}
               </nav>
 
-              <div className="mt-6 border-t border-[color:var(--border)] pt-4">
+              <div className="mobile-menu-panel__footer">
                 <p className="text-xs uppercase tracking-[0.2em] text-[color:var(--muted)]">
                   {languageLabel}
                 </p>
