@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import type { SiteContent } from "@/data/site.types";
+import LiquidCard from "@/components/ui/LiquidCard";
 
 type Props = {
   content: SiteContent["services"];
@@ -61,12 +62,8 @@ export default function Services({ content, localePrefix }: Props) {
           ))}
         </div>
 
-        <div className="card service-cta" data-reveal>
-          <div>
-            <p className="card-title text-left">{content.cta.title}</p>
-            <p className="card-subtitle text-left">{content.cta.description}</p>
-          </div>
-          <div className="service-cta__actions">
+        <div className="service-cta" data-reveal>
+          <LiquidCard title={content.cta.title} description={content.cta.description}>
             <Link
               href={contactHref}
               className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
@@ -79,7 +76,7 @@ export default function Services({ content, localePrefix }: Props) {
             >
               {content.cta.secondaryLabel}
             </Link>
-          </div>
+          </LiquidCard>
         </div>
       </div>
     </section>

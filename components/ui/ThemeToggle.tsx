@@ -45,6 +45,11 @@ export default function ThemeToggle() {
       } catch {
         // ignore storage errors
       }
+
+      window.setTimeout(() => {
+        window.location.reload();
+      }, 80);
+
       return next;
     });
   };
@@ -117,3 +122,4 @@ export default function ThemeToggle() {
     </button>
   );
 }
+

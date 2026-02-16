@@ -4,6 +4,7 @@ import Script from "next/script";
 import JsonLd from "@/components/seo/JsonLd";
 import CursorGlow from "@/components/ui/CursorGlow";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import LiquidGlassPointer from "@/components/ui/LiquidGlassPointer";
 import VideoBackground from "@/components/ui/VideoBackground";
 import { baseUrl, buildAlternates, siteName, sameAsLinks } from "@/lib/seo";
 import "./globals.css";
@@ -232,8 +233,11 @@ export default function RootLayout({
         <VideoBackground />
         <CursorGlow />
         <ScrollReveal />
+        <LiquidGlassPointer />
         {children}
       </body>
     </html>
   );
 }
+
+

@@ -134,7 +134,10 @@ export default function LanguageSwitch() {
   const isEnglish = locale === "en";
 
   const switchLocale = (nextLocale: Locale) => {
-    if (nextLocale === locale) return;
+    if (nextLocale === locale) {
+      window.location.reload();
+      return;
+    }
 
     const pathnameWithoutLocale = stripLocalePrefix(pathname);
     const translatedPathname = translateLocalizedPathname(
@@ -145,7 +148,7 @@ export default function LanguageSwitch() {
     const destination = addLocalePrefix(translatedPathname, nextLocale);
     const { search, hash } = window.location;
 
-    window.location.href = `${destination}${search}${hash}`;
+    window.location.assign(`${destination}${search}${hash}`);
   };
 
   return (
@@ -188,3 +191,4 @@ export default function LanguageSwitch() {
     </div>
   );
 }
+
