@@ -61,7 +61,7 @@ export default function ChatbotDemo() {
         />
         <button
           onClick={send}
-          className="rounded-md border border-white/10 px-3 py-2 text-sm hover:bg-white/5"
+          className="liquid-control liquid-control--sm"
         >
           Enviar
         </button>

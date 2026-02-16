@@ -41,7 +41,7 @@ export function ProjectCard({ project }: { project: Project }) {
         <div className="mt-auto flex items-center gap-2 pt-2">
           <Link
             href={`/projects/${project.id}`}
-            className="rounded-md border border-white/10 px-3 py-2 text-sm hover:bg-white/5"
+            className="liquid-control liquid-control--sm"
           >
             Ver detalhes
           </Link>

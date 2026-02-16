@@ -76,7 +76,7 @@ export function DemoShell({ project, onClose }: Props) {
                 href={openInNewTabUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-md border border-white/10 px-3 py-1.5 text-xs hover:bg-white/5"
+                className="liquid-control liquid-control--xs"
               >
                 Abrir em nova aba
               </a>
@@ -84,7 +84,7 @@ export function DemoShell({ project, onClose }: Props) {
 
             <button
               onClick={() => setResetKey((key) => key + 1)}
-              className="rounded-md border border-white/10 px-3 py-1.5 text-xs hover:bg-white/5"
+              className="liquid-control liquid-control--xs"
               type="button"
             >
               Reiniciar
@@ -92,7 +92,7 @@ export function DemoShell({ project, onClose }: Props) {
 
             <button
               onClick={toggleFullscreen}
-              className="rounded-md border border-white/10 px-3 py-1.5 text-xs hover:bg-white/5"
+              className="liquid-control liquid-control--xs"
               type="button"
             >
               Fullscreen
@@ -100,7 +100,7 @@ export function DemoShell({ project, onClose }: Props) {
 
             <button
               onClick={onClose}
-              className="rounded-md border border-white/10 px-3 py-1.5 text-xs hover:bg-white/5"
+              className="liquid-control liquid-control--xs"
               type="button"
             >
               Voltar

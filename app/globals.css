@@ -31,6 +31,12 @@
   --radius-pill: 999px;
   --section-y: clamp(4rem, 8vw, 6.5rem);
   --section-x: 1.5rem;
+  --liquid-btn-bg: rgba(255, 255, 255, 0.08);
+  --liquid-btn-bg-strong: color-mix(in srgb, var(--surface) 74%, transparent);
+  --liquid-btn-border: rgba(255, 255, 255, 0.34);
+  --liquid-btn-highlight: rgba(255, 255, 255, 0.6);
+  --liquid-btn-glow: rgba(255, 255, 255, 0.22);
+  --liquid-btn-shadow: 0 14px 30px rgba(4, 8, 14, 0.42);
 }
 
 html[data-theme="light"] {
@@ -54,6 +60,12 @@ html[data-theme="light"] {
   --bg-radial-2: rgba(63, 159, 147, 0.12);
   --bg-grid: rgba(12, 18, 26, 0.05);
   --bg-glow: rgba(201, 129, 47, 0.12);
+  --liquid-btn-bg: rgba(255, 255, 255, 0.52);
+  --liquid-btn-bg-strong: color-mix(in srgb, var(--surface) 92%, transparent);
+  --liquid-btn-border: rgba(255, 255, 255, 0.78);
+  --liquid-btn-highlight: rgba(255, 255, 255, 0.92);
+  --liquid-btn-glow: rgba(255, 255, 255, 0.54);
+  --liquid-btn-shadow: 0 12px 26px rgba(15, 23, 38, 0.16);
 }
 
 @theme inline {
@@ -509,30 +521,182 @@ body::after {
     color: var(--foreground);
   }
 
+  button:not(.no-liquid-glass):not(.liquid-control) {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-color: color-mix(in srgb, var(--liquid-btn-border) 68%, transparent);
+    background: linear-gradient(
+      160deg,
+      color-mix(in srgb, var(--liquid-btn-highlight) 64%, transparent) -18%,
+      color-mix(in srgb, var(--liquid-btn-bg) 74%, transparent) 36%,
+      color-mix(in srgb, var(--liquid-btn-bg-strong) 86%, transparent) 100%
+    );
+    backdrop-filter: blur(16px) saturate(165%);
+    -webkit-backdrop-filter: blur(16px) saturate(165%);
+    box-shadow:
+      var(--liquid-btn-shadow),
+      inset 0 1px 0 color-mix(in srgb, #ffffff 62%, transparent);
+    transition:
+      background-color 0.25s ease,
+      border-color 0.25s ease,
+      box-shadow 0.25s ease,
+      backdrop-filter 0.25s ease;
+  }
+
+  button:not(.no-liquid-glass):not(.liquid-control):not(.cta-primary)::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: inherit;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        115deg,
+        color-mix(in srgb, var(--liquid-btn-highlight) 58%, transparent) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        125% 95% at 100% -15%,
+        var(--liquid-btn-glow) 0%,
+        transparent 58%
+      );
+    opacity: 0.8;
+  }
+
+  :where(a, button).liquid-control {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    border: 1px solid color-mix(in srgb, var(--liquid-btn-border) 66%, transparent);
+    color: var(--foreground);
+    text-decoration: none;
+    background: linear-gradient(
+      160deg,
+      color-mix(in srgb, var(--liquid-btn-highlight) 62%, transparent) -18%,
+      color-mix(in srgb, var(--liquid-btn-bg) 70%, transparent) 40%,
+      color-mix(in srgb, var(--liquid-btn-bg-strong) 84%, transparent) 100%
+    );
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    box-shadow:
+      var(--liquid-btn-shadow),
+      inset 0 1px 0 color-mix(in srgb, #ffffff 55%, transparent);
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  :where(a, button).liquid-control::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: inherit;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        115deg,
+        color-mix(in srgb, var(--liquid-btn-highlight) 52%, transparent) 0%,
+        transparent 42%
+      ),
+      radial-gradient(
+        130% 95% at 100% -20%,
+        color-mix(in srgb, var(--liquid-btn-glow) 90%, transparent) 0%,
+        transparent 58%
+      );
+    opacity: 0.72;
+  }
+
+  :where(a, button).liquid-control:hover {
+    transform: translateY(-1px);
+    border-color: color-mix(in srgb, var(--accent) 56%, transparent);
+    color: var(--foreground-strong);
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent),
+      0 16px 30px rgba(4, 8, 14, 0.42);
+  }
+
+  :where(a, button).liquid-control:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  :where(a, button).liquid-control:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 2px color-mix(in srgb, var(--accent) 42%, transparent),
+      0 16px 30px rgba(4, 8, 14, 0.42);
+  }
+
+  :where(a, button).liquid-control:disabled,
+  :where(a, button).liquid-control[aria-disabled="true"] {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: var(--liquid-btn-shadow);
+  }
+
+  .liquid-control--sm {
+    border-radius: 0.58rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.15;
+  }
+
+  .liquid-control--xs {
+    border-radius: 0.5rem;
+    padding: 0.38rem 0.75rem;
+    font-size: 0.75rem;
+    line-height: 1.1;
+  }
   .btn-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    background: linear-gradient(135deg, var(--accent), var(--accent-warm));
-    color: #0b1119;
-    border: 1px solid color-mix(in srgb, var(--accent) 70%, transparent);
+    color: var(--foreground-strong);
+    border: 1px solid color-mix(in srgb, var(--accent) 58%, var(--liquid-btn-border));
     border-radius: var(--radius-pill);
     padding: 0.7rem 1.6rem;
     font-size: 0.75rem;
     font-weight: 600;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.24);
+    background:
+      radial-gradient(
+        135% 180% at 0% 0%,
+        color-mix(in srgb, var(--accent) 34%, transparent) 0%,
+        transparent 62%
+      ),
+      linear-gradient(
+        150deg,
+        color-mix(in srgb, var(--liquid-btn-highlight) 78%, transparent) -12%,
+        color-mix(in srgb, var(--liquid-btn-bg) 72%, transparent) 44%,
+        color-mix(in srgb, var(--liquid-btn-bg-strong) 88%, transparent) 100%
+      );
     box-shadow:
-      0 14px 34px rgba(240, 179, 90, 0.2),
-      0 14px 34px rgba(0, 0, 0, 0.35);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      0 0 0 1px color-mix(in srgb, var(--accent) 20%, transparent),
+      var(--liquid-btn-shadow),
+      0 10px 26px color-mix(in srgb, var(--accent) 30%, transparent);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease,
+      filter 0.2s ease;
   }
 
   .btn-primary:hover {
     transform: translateY(-1px);
-    filter: brightness(0.98);
+    border-color: color-mix(in srgb, var(--accent) 78%, transparent);
+    filter: saturate(112%);
     box-shadow:
-      0 18px 40px rgba(240, 179, 90, 0.25),
-      0 18px 36px rgba(0, 0, 0, 0.4);
+      0 0 0 1px color-mix(in srgb, var(--accent) 38%, transparent),
+      0 18px 36px rgba(4, 8, 14, 0.48),
+      0 14px 30px color-mix(in srgb, var(--accent) 40%, transparent);
   }
 
   .btn-primary:active {
@@ -551,23 +715,23 @@ body::after {
     height: 0.9rem;
     margin-left: 0.45rem;
     border-radius: 999px;
-    border: 2px solid rgba(27, 20, 10, 0.35);
-    border-top-color: rgba(27, 20, 10, 0.8);
+    border: 2px solid color-mix(in srgb, currentColor 28%, transparent);
+    border-top-color: color-mix(in srgb, currentColor 78%, transparent);
     animation: spin 0.8s linear infinite;
   }
 
   .btn-primary[data-state="success"] {
     box-shadow:
-      0 0 0 1px rgba(37, 211, 102, 0.3),
-      0 14px 34px rgba(240, 179, 90, 0.2),
-      0 14px 34px rgba(0, 0, 0, 0.35);
+      0 0 0 1px rgba(37, 211, 102, 0.4),
+      var(--liquid-btn-shadow),
+      0 10px 26px color-mix(in srgb, var(--accent) 30%, transparent);
   }
 
   .btn-primary[data-state="error"] {
     box-shadow:
       0 0 0 1px rgba(248, 113, 113, 0.45),
-      0 14px 34px rgba(240, 179, 90, 0.2),
-      0 14px 34px rgba(0, 0, 0, 0.35);
+      var(--liquid-btn-shadow),
+      0 10px 26px color-mix(in srgb, var(--accent) 30%, transparent);
   }
 
   .cta-primary {
@@ -579,7 +743,7 @@ body::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.42), transparent);
     transform: translateX(-120%);
     transition: transform 0.6s ease;
     pointer-events: none;
@@ -594,22 +758,41 @@ body::after {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--liquid-btn-border));
     color: var(--foreground);
-    background: color-mix(in srgb, var(--surface) 70%, transparent);
+    background:
+      radial-gradient(
+        120% 140% at 0% 0%,
+        color-mix(in srgb, var(--accent) 18%, transparent) 0%,
+        transparent 64%
+      ),
+      linear-gradient(
+        160deg,
+        color-mix(in srgb, var(--liquid-btn-highlight) 68%, transparent) -20%,
+        color-mix(in srgb, var(--liquid-btn-bg) 72%, transparent) 40%,
+        color-mix(in srgb, var(--liquid-btn-bg-strong) 84%, transparent) 100%
+      );
     border-radius: var(--radius-pill);
     padding: 0.7rem 1.6rem;
     font-size: 0.75rem;
     font-weight: 600;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
-    transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow:
+      var(--liquid-btn-shadow),
+      inset 0 1px 0 color-mix(in srgb, #ffffff 58%, transparent);
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .btn-outline:hover {
-    border-color: var(--accent);
+    border-color: color-mix(in srgb, var(--accent) 72%, transparent);
     color: var(--accent-strong);
     transform: translateY(-1px);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--accent) 26%, transparent),
+      0 16px 32px rgba(4, 8, 14, 0.42);
   }
 
   .btn-outline:active {
@@ -617,27 +800,52 @@ body::after {
   }
 
   .btn-linkedin {
-    border-color: rgba(10, 102, 194, 0.6);
+    border-color: color-mix(in srgb, #0a66c2 56%, var(--liquid-btn-border));
     color: #0a66c2;
-    background: var(--surface);
+    background:
+      radial-gradient(120% 150% at 0% 0%, rgba(10, 102, 194, 0.28) 0%, transparent 66%),
+      linear-gradient(
+        160deg,
+        color-mix(in srgb, var(--liquid-btn-highlight) 66%, transparent) -18%,
+        color-mix(in srgb, var(--liquid-btn-bg) 70%, transparent) 42%,
+        color-mix(in srgb, var(--liquid-btn-bg-strong) 84%, transparent) 100%
+      );
   }
 
   .btn-linkedin:hover {
     border-color: #0a66c2;
     color: #0a66c2;
+    box-shadow:
+      0 0 0 1px rgba(10, 102, 194, 0.28),
+      0 16px 30px rgba(4, 8, 14, 0.42);
   }
 
   .btn-whatsapp {
-    background: var(--whatsapp);
-    border-color: var(--whatsapp);
-    color: var(--background);
-    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    border-color: color-mix(in srgb, var(--whatsapp) 58%, var(--liquid-btn-border));
+    color: color-mix(in srgb, #ffffff 94%, var(--whatsapp) 6%);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+    background:
+      radial-gradient(120% 160% at 0% 0%, rgba(37, 211, 102, 0.3) 0%, transparent 66%),
+      linear-gradient(
+        160deg,
+        color-mix(in srgb, var(--liquid-btn-highlight) 70%, transparent) -20%,
+        color-mix(in srgb, var(--liquid-btn-bg) 74%, transparent) 38%,
+        color-mix(in srgb, var(--liquid-btn-bg-strong) 86%, transparent) 100%
+      );
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .btn-whatsapp:hover {
-    background: #1fbb5b;
     border-color: var(--whatsapp);
-    color: var(--background);
+    color: #ffffff;
+    box-shadow:
+      0 0 0 1px rgba(37, 211, 102, 0.28),
+      0 16px 30px rgba(4, 8, 14, 0.42),
+      0 12px 28px rgba(37, 211, 102, 0.22);
   }
 
   .btn-ghost {
@@ -646,20 +854,35 @@ body::after {
     justify-content: center;
     gap: 0.5rem;
     color: var(--muted-strong);
-    background: rgba(20, 24, 33, 0.45);
-    border: 1px solid color-mix(in srgb, var(--border) 75%, transparent);
+    background:
+      linear-gradient(
+        160deg,
+        color-mix(in srgb, var(--liquid-btn-highlight) 54%, transparent) -24%,
+        color-mix(in srgb, var(--liquid-btn-bg) 60%, transparent) 42%,
+        color-mix(in srgb, var(--liquid-btn-bg-strong) 82%, transparent) 100%
+      );
+    border: 1px solid color-mix(in srgb, var(--liquid-btn-border) 64%, transparent);
     border-radius: var(--radius-pill);
     padding: 0.7rem 1.6rem;
     font-size: 0.75rem;
     font-weight: 600;
-    transition: color 0.2s ease, transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    box-shadow:
+      var(--liquid-btn-shadow),
+      inset 0 1px 0 color-mix(in srgb, #ffffff 52%, transparent);
+    transition:
+      color 0.2s ease,
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .btn-ghost:hover {
     color: var(--foreground);
     transform: translateY(-1px);
-    border-color: color-mix(in srgb, var(--accent) 60%, transparent);
-    background: rgba(20, 24, 33, 0.7);
+    border-color: color-mix(in srgb, var(--accent) 58%, transparent);
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--accent) 20%, transparent),
+      0 16px 30px rgba(4, 8, 14, 0.4);
   }
 
   .btn-ghost:active {
@@ -670,28 +893,44 @@ body::after {
     display: inline-flex;
     align-items: center;
     gap: 0.45rem;
-    border: 1px solid var(--border);
+    border: 1px solid color-mix(in srgb, var(--liquid-btn-border) 70%, transparent);
     border-radius: var(--radius-pill);
     padding: 0.45rem 0.85rem;
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: var(--foreground);
-    background: var(--surface);
-    transition: transform 0.2s ease, border-color 0.2s ease,
-      color 0.2s ease, background-color 0.25s ease;
+    background:
+      linear-gradient(
+        160deg,
+        color-mix(in srgb, var(--liquid-btn-highlight) 60%, transparent) -20%,
+        color-mix(in srgb, var(--liquid-btn-bg) 66%, transparent) 40%,
+        color-mix(in srgb, var(--liquid-btn-bg-strong) 82%, transparent) 100%
+      );
+    box-shadow:
+      var(--liquid-btn-shadow),
+      inset 0 1px 0 color-mix(in srgb, #ffffff 58%, transparent);
+    backdrop-filter: blur(16px) saturate(165%);
+    -webkit-backdrop-filter: blur(16px) saturate(165%);
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease,
+      box-shadow 0.25s ease;
   }
 
   .theme-toggle:hover {
-    border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+    border-color: color-mix(in srgb, var(--accent) 58%, var(--liquid-btn-border));
     color: var(--accent-strong);
     transform: translateY(-1px);
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--accent) 24%, transparent),
+      0 16px 30px rgba(4, 8, 14, 0.4);
   }
 
   .theme-toggle:active {
     transform: translateY(0) scale(0.98);
   }
-
   .theme-toggle__icon {
     font-size: 0.9rem;
   }
