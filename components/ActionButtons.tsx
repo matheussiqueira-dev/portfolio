@@ -7,7 +7,7 @@ import { trackCTA } from "@/lib/analytics";
 import { ANALYTICS_EVENTS } from "@/lib/constants";
 
 const BUTTON_CLASS =
-  "inline-flex h-12 items-center justify-center gap-2 rounded-2xl border border-[var(--landing-border)] bg-[var(--landing-button-bg)] px-5 text-sm font-medium tracking-[-0.01em] text-[var(--landing-button-fg)] shadow-[var(--landing-button-shadow)] transition duration-300 ease-out hover:scale-[1.03] hover:bg-[var(--landing-button-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--landing-focus)]";
+  "inline-flex w-full min-h-[48px] min-w-[11rem] items-center justify-center gap-2 rounded-2xl border border-[var(--landing-border)] bg-[var(--landing-button-bg)] px-6 py-3 text-sm font-medium text-[var(--landing-button-fg)] shadow-[var(--landing-button-shadow)] transition-all duration-300 ease-out hover:scale-105 hover:bg-[var(--landing-button-hover)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--landing-focus)]";
 
 type Props = {
   resumeHref: string;
@@ -41,10 +41,10 @@ export default function ActionButtons({
       };
 
   return (
-    <div className="mt-9 grid w-full max-w-xl gap-3 sm:grid-cols-3">
+    <div className="mt-8 grid w-full max-w-2xl gap-3 sm:grid-cols-3 sm:gap-4">
       <motion.div
         {...motionProps}
-        transition={reduceMotion ? undefined : { ...motionProps.transition, delay: 0.22 }}
+        transition={reduceMotion ? undefined : { ...motionProps.transition, delay: 0.24 }}
       >
         <Link
           href={resumeHref}
@@ -57,7 +57,7 @@ export default function ActionButtons({
 
       <motion.div
         {...motionProps}
-        transition={reduceMotion ? undefined : { ...motionProps.transition, delay: 0.3 }}
+        transition={reduceMotion ? undefined : { ...motionProps.transition, delay: 0.32 }}
       >
         <Link
           href={projectsHref}
@@ -70,7 +70,7 @@ export default function ActionButtons({
 
       <motion.div
         {...motionProps}
-        transition={reduceMotion ? undefined : { ...motionProps.transition, delay: 0.38 }}
+        transition={reduceMotion ? undefined : { ...motionProps.transition, delay: 0.4 }}
       >
         <a
           href={whatsappHref}

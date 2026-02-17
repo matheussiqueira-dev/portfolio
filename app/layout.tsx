@@ -196,7 +196,7 @@ export default function RootLayout({
             __html: `
               (function() {
                 var path = window.location.pathname;
-                if (path === "/en" || path === "/pt-BR") {
+                if (path === "/" || path === "/en" || path === "/pt-BR") {
                   document.documentElement.dataset.localeLanding = "true";
                 }
               })();
@@ -236,7 +236,6 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
           storageKey="theme"
-          disableTransitionOnChange
         >
           <JsonLd data={[websiteJsonLd, personJsonLd]} />
           <AppVisualEffects />
@@ -246,6 +245,7 @@ export default function RootLayout({
     </html>
   );
 }
+
 
 
 
