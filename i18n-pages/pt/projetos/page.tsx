@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
+import { FaArrowRight, FaPlayCircle } from "react-icons/fa";
 import { TrackedAnchor } from "@/components/analytics/TrackedLink";
 import JsonLd from "@/components/seo/JsonLd";
 import SafeImage from "@/src/components/demo/SafeImage";
@@ -139,9 +140,14 @@ export default function ProjectsPage({ searchParams }: PageProps) {
           </p>
           <Link
             href="/demos"
-            className="inline-flex w-fit text-sm text-[color:var(--accent)] underline decoration-[color:var(--accent-soft)]/60 underline-offset-4 transition hover:text-[color:var(--accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+            className="group inline-flex w-fit items-center gap-2 text-sm text-[color:var(--accent)] underline decoration-[color:var(--accent-soft)]/60 underline-offset-4 transition hover:text-[color:var(--accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
           >
-            {sitePt.projectsPage.demosLabel}
+            <FaPlayCircle className="text-[0.95rem]" aria-hidden="true" />
+            <span>{sitePt.projectsPage.demosLabel}</span>
+            <FaArrowRight
+              className="text-[0.75rem] transition-transform duration-200 group-hover:translate-x-1"
+              aria-hidden="true"
+            />
           </Link>
         </header>
 
@@ -282,3 +288,5 @@ export default function ProjectsPage({ searchParams }: PageProps) {
     </main>
   );
 }
+
+
