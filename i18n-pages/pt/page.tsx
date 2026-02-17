@@ -7,6 +7,18 @@ const homeTitle =
 const homeDescription =
   "Desenvolvedor Full Stack especializado em React, TypeScript, Python, SQL, Engenharia de Dados, Power BI e Azure Cloud.";
 
+const topNavItems = [
+  { label: "Inicio", href: "/pt-BR" },
+  { label: "Sobre", href: "/resume" },
+  { label: "Servicos", href: "/contrate" },
+  { label: "Projetos", href: "/projetos" },
+  { label: "Curriculo", href: "/resume" },
+  { label: "Academico", href: "/academico" },
+  { label: "Certificados", href: "/certificates" },
+  { label: "Contrate", href: "/contrate" },
+  { label: "Contato", href: "/contrate" },
+];
+
 export const metadata: Metadata = {
   title: homeTitle,
   description: homeDescription,
@@ -81,10 +93,13 @@ export default function HomePage() {
       whatsappHref="https://wa.me/5581999203683"
       contactLabel="Entrar em contato"
       contactAriaLabel="Entrar em contato pelo WhatsApp"
-      themeToLightLabel="Ativar tema claro"
-      themeToDarkLabel="Ativar tema escuro"
       trackingContext="landing_pt"
       localeLandingMode
+      topNavItems={topNavItems}
+      navigationAriaLabel="Navegacao principal"
+      ptHref="/pt-BR"
+      enHref="/en"
+      activeLocale="pt-BR"
     />
   );
 }

@@ -1,9 +1,10 @@
 ﻿"use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useMemo, type CSSProperties } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { useTheme } from "next-themes";
-import { HiMiniMoon, HiMiniSun } from "react-icons/hi2";
 import ActionButtons from "@/components/ActionButtons";
 import InteractivePhoto from "@/components/InteractivePhoto";
 
@@ -24,6 +25,11 @@ type Palette = {
   toggleBg: string;
 };
 
+type TopNavItem = {
+  label: string;
+  href: string;
+};
+
 type Props = {
   name?: string;
   subtitle: string;
@@ -35,10 +41,13 @@ type Props = {
   whatsappHref: string;
   contactLabel: string;
   contactAriaLabel: string;
-  themeToLightLabel: string;
-  themeToDarkLabel: string;
   trackingContext?: string;
   localeLandingMode?: boolean;
+  topNavItems: TopNavItem[];
+  navigationAriaLabel: string;
+  ptHref: string;
+  enHref: string;
+  activeLocale: "pt-BR" | "en";
 };
 
 const LIGHT_PALETTE: Palette = {
@@ -86,13 +95,16 @@ export default function ProfileCard({
   whatsappHref,
   contactLabel,
   contactAriaLabel,
-  themeToLightLabel,
-  themeToDarkLabel,
   trackingContext = "landing",
   localeLandingMode = false,
+  topNavItems,
+  navigationAriaLabel,
+  ptHref,
+  enHref,
+  activeLocale,
 }: Props) {
   const reduceMotion = useReducedMotion();
-  const { resolvedTheme, setTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === "dark";
   const palette = isDark ? DARK_PALETTE : LIGHT_PALETTE;
 
@@ -138,6 +150,48 @@ export default function ProfileCard({
         backgroundColor: "var(--landing-bg)",
       }}
     >
+      <div className="landing-top-shell" data-reveal>
+        <div className="landing-top-nav">
+          <nav className="landing-top-links" aria-label={navigationAriaLabel}>
+            {topNavItems.map((item) => (
+              <Link key={item.label} href={item.href} className="landing-top-link">
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="landing-top-controls" aria-label="Language switch">
+            <span className="landing-top-divider" aria-hidden="true" />
+
+            <Link
+              href={ptHref}
+              className={`landing-lang ${activeLocale === "pt-BR" ? "is-active" : ""}`}
+              aria-current={activeLocale === "pt-BR" ? "page" : undefined}
+            >
+              <span className="landing-lang__flag" aria-hidden="true">
+                <Image src="/flags/br.png" alt="Bandeira do Brasil" width={14} height={14} />
+              </span>
+              PT-BR
+            </Link>
+
+            <span className="landing-lang__separator" aria-hidden="true">
+              |
+            </span>
+
+            <Link
+              href={enHref}
+              className={`landing-lang ${activeLocale === "en" ? "is-active" : ""}`}
+              aria-current={activeLocale === "en" ? "page" : undefined}
+            >
+              <span className="landing-lang__flag" aria-hidden="true">
+                <Image src="/flags/us.png" alt="United States flag" width={14} height={14} />
+              </span>
+              EN
+            </Link>
+          </div>
+        </div>
+      </div>
+
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
@@ -147,18 +201,8 @@ export default function ProfileCard({
         }}
       />
 
-      <button
-        type="button"
-        onClick={() => setTheme(isDark ? "light" : "dark")}
-        className="absolute right-5 top-5 z-20 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--landing-border)] text-[var(--landing-text-primary)] transition duration-300 ease-out hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--landing-focus)]"
-        style={{ backgroundColor: "var(--landing-toggle-bg)" }}
-        aria-label={isDark ? themeToLightLabel : themeToDarkLabel}
-      >
-        {isDark ? <HiMiniSun className="text-base" /> : <HiMiniMoon className="text-base" />}
-      </button>
-
       <motion.section
-        className="relative z-10 flex w-full max-w-3xl flex-col items-center text-center"
+        className="relative z-10 flex w-full max-w-3xl flex-col items-center pt-24 text-center sm:pt-28"
         initial={reduceMotion ? undefined : { opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}

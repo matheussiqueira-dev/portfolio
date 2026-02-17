@@ -22,6 +22,18 @@ const homeJsonLd = {
   },
 };
 
+const topNavItems = [
+  { label: "Home", href: "/en" },
+  { label: "About", href: "/en/resume" },
+  { label: "Services", href: "/en/hire" },
+  { label: "Projects", href: "/en/projects" },
+  { label: "Resume", href: "/en/resume" },
+  { label: "Academic", href: "/en/academic" },
+  { label: "Certificates", href: "/en/certificates" },
+  { label: "Hire", href: "/en/hire" },
+  { label: "Contact", href: "/en/hire" },
+];
+
 export const metadata: Metadata = {
   title: homeTitle,
   description: homeDescription,
@@ -97,10 +109,13 @@ export default function HomeEn() {
         whatsappHref="https://wa.me/5581999203683"
         contactLabel="Contact"
         contactAriaLabel="Contact via WhatsApp"
-        themeToLightLabel="Switch to light mode"
-        themeToDarkLabel="Switch to dark mode"
         trackingContext="landing_en"
         localeLandingMode
+        topNavItems={topNavItems}
+        navigationAriaLabel="Main navigation"
+        ptHref="/pt-BR"
+        enHref="/en"
+        activeLocale="en"
       />
     </>
   );
