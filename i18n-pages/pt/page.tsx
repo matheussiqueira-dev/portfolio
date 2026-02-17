@@ -1,14 +1,5 @@
-import About from "@/components/sections/About";
-import Contact from "@/components/sections/Contact";
-import ExecutiveSummary from "@/components/sections/ExecutiveSummary";
-import Hero from "@/components/sections/Hero";
-import Engagement from "@/components/sections/Engagement";
-import MetricsSection from "@/components/sections/MetricsSection";
-import Projects from "@/components/sections/Projects";
-import PrimaryStack from "@/components/sections/PrimaryStack";
-import Services from "@/components/sections/Services";
-import { sitePt } from "@/data/site.pt";
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
+import ProfileCard from "@/components/ProfileCard";
 import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 
 const homeTitle =
@@ -80,16 +71,20 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main className="pb-24">
-      <Hero content={sitePt.hero} />
-      <ExecutiveSummary content={sitePt.executiveSummary} />
-      <About content={sitePt.about} />
-      <Services content={sitePt.services} />
-      <Engagement content={sitePt.engagement} />
-      <PrimaryStack locale="pt-BR" />
-      <Projects />
-      <MetricsSection content={sitePt.metrics} />
-      <Contact content={sitePt.contact} />
-    </main>
+    <ProfileCard
+      subtitle="Infraestrutura | Desenvolvedor FullStack | Analista de Dados Junior"
+      photoAlt="Foto de Matheus Siqueira"
+      resumeHref="/resume"
+      resumeLabel="Ver curriculo"
+      projectsHref="/projetos"
+      projectsLabel="Ver projetos"
+      whatsappHref="https://wa.me/5581999203683"
+      contactLabel="Entrar em contato"
+      contactAriaLabel="Entrar em contato pelo WhatsApp"
+      themeToLightLabel="Ativar tema claro"
+      themeToDarkLabel="Ativar tema escuro"
+      trackingContext="landing_pt"
+      localeLandingMode
+    />
   );
 }

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Global constants for the portfolio application
  * 
  * This file centralizes all magic strings and constant values used across
@@ -51,6 +51,8 @@ export const ROUTES = {
 
 export const ANALYTICS_EVENTS = {
   VIEW_RESUME: 'view_resume',
+  VIEW_PROJECTS: 'view_projects',
+  CONTACT_WHATSAPP: 'contact_whatsapp',
   DOWNLOAD_RESUME: 'download_resume',
   VIEW_CASE: 'view_case',
   VIEW_DEMO: 'view_demo',
@@ -124,3 +126,4 @@ export const VALIDATION = {
   EMAIL: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
   SLUG: /^[a-z0-9]+(?:-[a-z0-9]+)*$/,
 } as const;
+

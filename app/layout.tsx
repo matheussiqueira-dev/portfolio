@@ -1,11 +1,9 @@
-import type { Metadata } from "next";
-import { JetBrains_Mono, Instrument_Sans, Sora } from "next/font/google";
+﻿import type { Metadata } from "next";
+import { Inter, JetBrains_Mono, Instrument_Sans, Sora } from "next/font/google";
 import Script from "next/script";
+import { ThemeProvider } from "next-themes";
 import JsonLd from "@/components/seo/JsonLd";
-import CursorGlow from "@/components/ui/CursorGlow";
-import ScrollReveal from "@/components/ui/ScrollReveal";
-import LiquidGlassPointer from "@/components/ui/LiquidGlassPointer";
-import VideoBackground from "@/components/ui/VideoBackground";
+import AppVisualEffects from "@/components/layout/AppVisualEffects";
 import { baseUrl, buildAlternates, siteName, sameAsLinks } from "@/lib/seo";
 import "./globals.css";
 import "./refined-theme.css";
@@ -23,6 +21,13 @@ const sora = Sora({
 const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
   variable: "--font-body",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-landing",
   display: "swap",
   weight: ["400", "500", "600", "700"],
 });
@@ -83,7 +88,7 @@ const personJsonLd = {
   name: "Matheus Siqueira",
   jobTitle: "Full Stack Developer, Data Engineer",
   description:
-    "Desenvolvedor Full Stack e Data Engineer focado em aplicações web, dados e cloud",
+    "Desenvolvedor Full Stack e Data Engineer focado em aplicaÃ§Ãµes web, dados e cloud",
   email: "matheussiqueirahub@gmail.com",
   telephone: "+55 81 99920-3683",
   url: baseUrl,
@@ -134,7 +139,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: `${siteName} — Desenvolvedor Full Stack`,
+        alt: `${siteName} â€” Desenvolvedor Full Stack`,
       },
     ],
   },
@@ -167,7 +172,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" data-theme="dark">
+    <html lang="pt-BR" suppressHydrationWarning>
       <head>
         {/* Google Tag Manager */}
         <Script
@@ -185,17 +190,15 @@ export default function RootLayout({
         />
         {/* End Google Tag Manager */}
         <Script
-          id="theme-init"
+          id="locale-landing-init"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                try {
-                  var stored = localStorage.getItem('theme');
-                  var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  var theme = stored || (prefersDark ? 'dark' : 'light');
-                  document.documentElement.dataset.theme = theme;
-                } catch (e) {}
+                var path = window.location.pathname;
+                if (path === "/en" || path === "/pt-BR") {
+                  document.documentElement.dataset.localeLanding = "true";
+                }
               })();
             `,
           }}
@@ -209,7 +212,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
-        className={`${sora.variable} ${instrumentSans.variable} ${jetBrainsMono.variable} min-h-screen antialiased`}
+        className={`${sora.variable} ${instrumentSans.variable} ${inter.variable} ${jetBrainsMono.variable} min-h-screen antialiased`}
       >
         {/* Google Tag Manager (noscript) */}
         <noscript>
@@ -226,18 +229,27 @@ export default function RootLayout({
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[color:var(--surface)] focus:text-[color:var(--foreground)] focus:rounded-lg focus:font-medium focus:border focus:border-[color:var(--border)]"
         >
-          Pular para o conteúdo principal
+          Pular para o conteÃºdo principal
         </a>
-
-        <JsonLd data={[websiteJsonLd, personJsonLd]} />
-        <VideoBackground />
-        <CursorGlow />
-        <ScrollReveal />
-        <LiquidGlassPointer />
-        {children}
+        <ThemeProvider
+          attribute="data-theme"
+          defaultTheme="system"
+          enableSystem
+          storageKey="theme"
+          disableTransitionOnChange
+        >
+          <JsonLd data={[websiteJsonLd, personJsonLd]} />
+          <AppVisualEffects />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
 }
+
+
+
+
+
 
 

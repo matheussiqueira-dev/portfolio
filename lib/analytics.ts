@@ -1,4 +1,4 @@
-import { ANALYTICS_EVENTS, ANALYTICS_CATEGORIES } from "./constants";
+﻿import { ANALYTICS_EVENTS, ANALYTICS_CATEGORIES } from "./constants";
 
 // ============================================================================
 // TYPES
@@ -205,7 +205,8 @@ export const trackDownload = (fileName: string, fileType?: string) => {
  * ```
  */
 export const trackCTA = (action: string, location: string) => {
-  trackEvent(action, ANALYTICS_CATEGORIES.CONVERSION, location);
+  // Use value=1 so GA4 can aggregate explicit conversion counts per CTA event.
+  trackEvent(action, ANALYTICS_CATEGORIES.CONVERSION, location, 1);
 };
 
 /**
@@ -225,3 +226,5 @@ export const trackOutboundLink = (destination: string, label?: string) => {
 };
 
 export { };
+
+

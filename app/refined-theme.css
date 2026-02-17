@@ -529,3 +529,13 @@ html.reveal-ready [data-reveal] {
     transition-duration: 1ms !important;
   }
 }
+
+html[data-locale-landing="true"] .site-header,
+html[data-locale-landing="true"] .site-footer {
+  display: none;
+}
+
+html[data-locale-landing="true"] [data-locale] .app-shell,
+html[data-locale-landing="true"] [data-locale] .app-shell > #main-content {
+  min-height: 100vh;
+}

@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+﻿import { NextRequest, NextResponse } from "next/server";
 import createMiddleware from "next-intl/middleware";
 
 import { routing } from "@/i18n/routing";
@@ -24,9 +24,14 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(url, 308);
   }
 
+  if (request.nextUrl.pathname === "/") {
+    return NextResponse.next();
+  }
+
   return handleI18nRouting(request);
 }
 
 export const config = {
   matcher: ["/((?!api|_next|.*\\..*).*)"],
 };
+

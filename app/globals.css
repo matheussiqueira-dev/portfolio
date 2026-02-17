@@ -1,4 +1,4 @@
-
+﻿
 @import "tailwindcss";
 
 :root {
@@ -869,6 +869,19 @@ body::after {
     background: color-mix(in srgb, #0a66c2 22%, var(--liquid-btn-bg-strong));
   }
 
+  .btn-github {
+    color: #ffffff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.22);
+    border-color: color-mix(in srgb, #ffffff 58%, var(--liquid-btn-border));
+    background: color-mix(in srgb, #24292f 62%, var(--liquid-btn-bg));
+  }
+
+  .btn-github:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+    background: color-mix(in srgb, #30363d 74%, var(--liquid-btn-bg-strong));
+  }
+
   .btn-whatsapp {
     color: #eefcf4;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
@@ -1639,18 +1652,133 @@ body::after {
     color: var(--foreground);
   }
 
-  .contact-card__link {
-    font-size: 0.58rem;
+  .contact-card__value--whatsapp {
+    color: #effff6;
+    font-weight: 600;
+  }
+
+  .contact-card--interactive {
+    --contact-brand: var(--accent);
+    --contact-ink: var(--foreground);
+    --contact-chip-bg: color-mix(in srgb, var(--contact-brand) 20%, transparent);
+    --contact-chip-border: color-mix(in srgb, var(--contact-brand) 65%, transparent);
+    --contact-sheen: color-mix(in srgb, var(--contact-brand) 42%, transparent);
+    text-decoration: none;
+    border-color: color-mix(in srgb, var(--contact-brand) 58%, var(--card-border));
+    background:
+      linear-gradient(145deg, color-mix(in srgb, var(--contact-brand) 28%, transparent), transparent 72%),
+      var(--surface);
+    transition:
+      transform 0.24s ease,
+      box-shadow 0.24s ease,
+      border-color 0.24s ease,
+      background-color 0.24s ease;
+  }
+
+  .contact-card--interactive::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(120deg, transparent 15%, var(--contact-sheen) 45%, transparent 75%);
+    opacity: 0;
+    transform: translateX(-14%);
+    transition: opacity 0.24s ease, transform 0.3s ease;
+  }
+
+  .contact-card--interactive .contact-card__value {
+    color: var(--contact-ink);
+  }
+
+  .contact-card--interactive .contact-card__label {
+    color: color-mix(in srgb, var(--contact-ink) 82%, transparent);
+  }
+
+  .contact-card--interactive .contact-card__chip {
+    display: inline-flex;
+    align-items: center;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--contact-chip-border);
+    padding: 0.16rem 0.56rem;
+    font-size: 0.56rem;
     text-transform: uppercase;
-    letter-spacing: 0.16em;
-    color: var(--accent);
+    letter-spacing: 0.15em;
+    color: var(--contact-ink);
+    background: var(--contact-chip-bg);
+  }
+
+  .contact-card--interactive:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--contact-brand) 85%, #ffffff 15%);
+    box-shadow: 0 14px 34px color-mix(in srgb, var(--contact-brand) 24%, rgba(0, 0, 0, 0.4));
+  }
+
+  .contact-card--interactive:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .contact-card--interactive:hover .contact-card__chip {
+    background: color-mix(in srgb, var(--contact-brand) 30%, transparent);
+    border-color: color-mix(in srgb, var(--contact-brand) 82%, #ffffff 18%);
+  }
+
+  .contact-card--interactive:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--contact-brand) 72%, #ffffff 28%);
+    outline-offset: 3px;
+  }
+
+  .contact-card--linkedin {
+    --contact-brand: #0a66c2;
+    --contact-ink: #e8f3ff;
+  }
+
+  .contact-card--github {
+    --contact-brand: #24292f;
+    --contact-ink: #f6f8fa;
+    background:
+      linear-gradient(145deg, rgba(36, 41, 47, 0.7), rgba(56, 64, 73, 0.42)),
+      var(--surface);
   }
 
   .contact-card--whatsapp {
-    border-color: rgba(37, 211, 102, 0.55);
+    --contact-brand: #25d366;
+    --contact-ink: #f2fff8;
     background:
-      linear-gradient(160deg, rgba(37, 211, 102, 0.1), transparent 65%),
+      linear-gradient(145deg, rgba(37, 211, 102, 0.34), rgba(37, 211, 102, 0.09) 72%),
       var(--surface);
+  }
+
+  html[data-theme="light"] .contact-card--interactive {
+    --contact-chip-bg: color-mix(in srgb, var(--contact-brand) 14%, #ffffff 86%);
+    --contact-chip-border: color-mix(in srgb, var(--contact-brand) 54%, transparent);
+    --contact-sheen: color-mix(in srgb, var(--contact-brand) 28%, transparent);
+  }
+
+  html[data-theme="light"] .contact-card--linkedin {
+    --contact-ink: #084c93;
+    background:
+      linear-gradient(145deg, rgba(10, 102, 194, 0.22), rgba(10, 102, 194, 0.06) 72%),
+      #f8fbff;
+  }
+
+  html[data-theme="light"] .contact-card--github {
+    --contact-ink: #1f2328;
+    background:
+      linear-gradient(145deg, rgba(36, 41, 47, 0.2), rgba(36, 41, 47, 0.05) 70%),
+      #f7f8fa;
+  }
+
+  html[data-theme="light"] .contact-card--whatsapp {
+    --contact-ink: #0e5e2e;
+    background:
+      linear-gradient(145deg, rgba(37, 211, 102, 0.26), rgba(37, 211, 102, 0.08) 72%),
+      #f4fff8;
+  }
+
+  html[data-theme="light"] .contact-card__value--whatsapp {
+    color: #0e5e2e;
   }
 
   .copy-button {
@@ -1927,6 +2055,10 @@ body::after {
     white-space: normal;
   }
 }
+
+
+
+
 
 
 
