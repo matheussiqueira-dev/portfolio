@@ -1,8 +1,10 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { TrackedAnchor } from "@/components/analytics/TrackedLink";
 import JsonLd from "@/components/seo/JsonLd";
+import SafeImage from "@/src/components/demo/SafeImage";
 import { projects, projectOrder } from "@/data/projects";
+import type { Project } from "@/data/projects.types";
 import { sitePt } from "@/data/site.pt";
 import { baseUrl, buildAlternates, siteName } from "@/lib/seo";
 
@@ -61,6 +63,26 @@ type PageProps = {
   searchParams?: {
     stack?: string;
   };
+};
+
+const isVideoMedia = (shot: Project["screenshots"][number]) =>
+  shot.type === "video" || shot.src.endsWith(".mp4");
+
+const getCover = (project: Project) => {
+  const cover = project.screenshots.find((shot) => shot.src.includes("/cover."));
+  if (cover) {
+    return cover;
+  }
+
+  const firstImage = project.screenshots.find((shot) => !isVideoMedia(shot));
+  if (firstImage) {
+    return firstImage;
+  }
+
+  const demoPoster =
+    project.demo && "poster" in project.demo ? project.demo.poster : undefined;
+
+  return demoPoster ? { src: demoPoster, alt: project.title } : undefined;
 };
 
 export const metadata: Metadata = {
@@ -155,16 +177,32 @@ export default function ProjectsPage({ searchParams }: PageProps) {
         <div className="grid gap-6 md:grid-cols-2 projects-grid">
           {filteredProjects.map((project) => {
             const isFeatured = featured.has(project.slug);
+            const cover = getCover(project);
+
             return (
               <article
                 key={project.slug}
-                className="card card-hover project-card relative flex h-full flex-col gap-5"
+                className="card card-hover project-card group relative flex h-full flex-col gap-5"
               >
                 {isFeatured ? (
                   <span className="card-badge rounded-full bg-[color:var(--accent)]/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-[color:var(--accent-strong)]">
                     {sitePt.projects.featuredLabel}
                   </span>
                 ) : null}
+
+                {cover ? (
+                  <div className="card-media project-card__media relative w-full">
+                    <SafeImage
+                      src={cover.src}
+                      alt={cover.alt}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 560px"
+                      quality={85}
+                      className="object-cover transition duration-500 ease-out group-hover:scale-[1.02]"
+                    />
+                  </div>
+                ) : null}
+
                 <div className="card-header items-start text-left">
                   <span className="card-kicker text-left">{project.role}</span>
                   <h2 className="card-title text-left">{project.title}</h2>
