@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useMemo, type CSSProperties } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { useTheme } from "next-themes";
+import { HiMiniMoon, HiMiniSun } from "react-icons/hi2";
 import ActionButtons from "@/components/ActionButtons";
 import InteractivePhoto from "@/components/InteractivePhoto";
 
@@ -104,7 +105,7 @@ export default function ProfileCard({
   activeLocale,
 }: Props) {
   const reduceMotion = useReducedMotion();
-  const { resolvedTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const isDark = resolvedTheme === "dark";
   const palette = isDark ? DARK_PALETTE : LIGHT_PALETTE;
 
@@ -150,48 +151,6 @@ export default function ProfileCard({
         backgroundColor: "var(--landing-bg)",
       }}
     >
-      <div className="landing-top-shell" data-reveal>
-        <div className="landing-top-nav">
-          <nav className="landing-top-links" aria-label={navigationAriaLabel}>
-            {topNavItems.map((item) => (
-              <Link key={item.label} href={item.href} className="landing-top-link">
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="landing-top-controls" aria-label="Language switch">
-            <span className="landing-top-divider" aria-hidden="true" />
-
-            <Link
-              href={ptHref}
-              className={`landing-lang ${activeLocale === "pt-BR" ? "is-active" : ""}`}
-              aria-current={activeLocale === "pt-BR" ? "page" : undefined}
-            >
-              <span className="landing-lang__flag" aria-hidden="true">
-                <Image src="/flags/br.png" alt="Bandeira do Brasil" width={14} height={14} />
-              </span>
-              PT-BR
-            </Link>
-
-            <span className="landing-lang__separator" aria-hidden="true">
-              |
-            </span>
-
-            <Link
-              href={enHref}
-              className={`landing-lang ${activeLocale === "en" ? "is-active" : ""}`}
-              aria-current={activeLocale === "en" ? "page" : undefined}
-            >
-              <span className="landing-lang__flag" aria-hidden="true">
-                <Image src="/flags/us.png" alt="United States flag" width={14} height={14} />
-              </span>
-              EN
-            </Link>
-          </div>
-        </div>
-      </div>
-
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
@@ -202,12 +161,76 @@ export default function ProfileCard({
       />
 
       <motion.section
-        className="relative z-10 flex w-full max-w-3xl flex-col items-center pt-24 text-center sm:pt-28"
+        className="relative z-10 flex w-full max-w-3xl flex-col items-center text-center"
         initial={reduceMotion ? undefined : { opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <InteractivePhoto alt={photoAlt} />
+
+        <div className="landing-top-shell" data-reveal>
+          <div className="landing-top-nav">
+            <nav className="landing-top-links" aria-label={navigationAriaLabel}>
+              {topNavItems.map((item) => (
+                <Link key={item.label} href={item.href} className="landing-top-link">
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+
+            <div className="landing-top-controls" aria-label="Language and theme controls">
+              <span className="landing-top-divider" aria-hidden="true" />
+
+              <Link
+                href={ptHref}
+                className={`landing-lang ${activeLocale === "pt-BR" ? "is-active" : ""}`}
+                aria-current={activeLocale === "pt-BR" ? "page" : undefined}
+              >
+                <span className="landing-lang__flag" aria-hidden="true">
+                  <Image src="/flags/br.png" alt="Bandeira do Brasil" width={14} height={14} />
+                </span>
+                PT-BR
+              </Link>
+
+              <span className="landing-lang__separator" aria-hidden="true">
+                |
+              </span>
+
+              <Link
+                href={enHref}
+                className={`landing-lang ${activeLocale === "en" ? "is-active" : ""}`}
+                aria-current={activeLocale === "en" ? "page" : undefined}
+              >
+                <span className="landing-lang__flag" aria-hidden="true">
+                  <Image src="/flags/us.png" alt="United States flag" width={14} height={14} />
+                </span>
+                EN
+              </Link>
+
+              <button
+                type="button"
+                onClick={() => setTheme(isDark ? "light" : "dark")}
+                className="landing-theme-toggle focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--landing-focus)]"
+                aria-label={
+                  activeLocale === "en"
+                    ? isDark
+                      ? "Switch to light mode"
+                      : "Switch to dark mode"
+                    : isDark
+                      ? "Ativar tema claro"
+                      : "Ativar tema escuro"
+                }
+              >
+                {isDark ? (
+                  <HiMiniSun className="landing-theme-toggle__icon" aria-hidden="true" />
+                ) : (
+                  <HiMiniMoon className="landing-theme-toggle__icon" aria-hidden="true" />
+                )}
+                <span className="landing-theme-toggle__label">{isDark ? "Light" : "Dark"}</span>
+              </button>
+            </div>
+          </div>
+        </div>
 
         <motion.h1
           className="mt-8 text-4xl font-semibold tracking-[-0.03em] text-[var(--landing-text-primary)] sm:text-5xl"

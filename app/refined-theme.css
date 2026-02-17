@@ -1,4 +1,4 @@
-/* Visual refinement layer: preserves content and semantics while improving layout and interaction. */
+﻿/* Visual refinement layer: preserves content and semantics while improving layout and interaction. */
 
 :root {
   --space-1: 0.25rem;
@@ -623,14 +623,13 @@ h6,
   font-family: var(--font-landing), var(--font-body), ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Landing top full navigation */
+
+/* Landing navigation below photo */
 .landing-top-shell {
-  position: absolute;
-  top: 1rem;
-  left: 50%;
+  position: relative;
   z-index: 25;
   width: min(98vw, 1200px);
-  transform: translateX(-50%);
+  margin-top: 1.35rem;
 }
 
 .landing-top-nav {
@@ -727,6 +726,33 @@ h6,
   color: color-mix(in srgb, var(--landing-text-secondary) 75%, transparent);
 }
 
+.landing-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.34rem;
+  min-height: 2rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--landing-border) 86%, transparent);
+  padding: 0.3rem 0.62rem;
+  background: var(--landing-toggle-bg);
+  color: var(--landing-text-primary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.landing-theme-toggle:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--landing-text-secondary) 45%, var(--landing-border));
+  background: color-mix(in srgb, var(--landing-toggle-bg) 84%, var(--landing-card));
+}
+
+.landing-theme-toggle__icon {
+  font-size: 0.95rem;
+}
+
 @media (max-width: 880px) {
   .landing-top-nav {
     border-radius: 1rem;
@@ -734,17 +760,31 @@ h6,
   }
 
   .landing-top-links {
-    max-width: calc(100vw - 11rem);
+    max-width: calc(100vw - 13rem);
+  }
+
+  .landing-top-controls {
+    gap: 0.45rem;
+  }
+
+  .landing-theme-toggle {
+    min-height: 1.9rem;
+    padding: 0.25rem 0.55rem;
   }
 }
 
 @media (max-width: 640px) {
   .landing-top-shell {
-    top: 0.65rem;
+    width: 100%;
+    margin-top: 1rem;
   }
 
   .landing-top-nav {
     gap: 0.5rem;
+  }
+
+  .landing-top-links {
+    max-width: calc(100vw - 10rem);
   }
 
   .landing-top-link {
@@ -754,10 +794,20 @@ h6,
   }
 
   .landing-top-controls {
-    gap: 0.4rem;
+    gap: 0.38rem;
   }
 
   .landing-lang {
     font-size: 0.74rem;
+  }
+
+  .landing-theme-toggle {
+    min-height: 2rem;
+    min-width: 2rem;
+    padding: 0;
+  }
+
+  .landing-theme-toggle__label {
+    display: none;
   }
 }
