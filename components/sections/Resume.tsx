@@ -1,6 +1,6 @@
-import { resume } from "@/data/resume";
-import PrintButton from "../ui/PrintButton";
+﻿import { resume } from "@/data/resume";
 import LanguageSwitch from "../ui/LanguageSwitch";
+import ResumePDF from "./ResumePDF";
 
 export default function Resume() {
   return (
@@ -42,7 +42,7 @@ export default function Resume() {
               href="https://github.com/matheussiqueira-dev"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline w-fit text-[color:var(--muted)] hover:text-[color:var(--foreground)] transition-colors"
+              className="inline-flex w-fit rounded-full border border-white/35 bg-[#24292f] px-2.5 py-0.5 text-white transition-colors hover:bg-[#30363d] print:border-slate-400 print:bg-transparent print:text-slate-800"
             >
               GitHub
             </a>
@@ -59,7 +59,7 @@ export default function Resume() {
 
         <div className="mt-6 flex flex-wrap items-center gap-4 print:hidden">
           <LanguageSwitch />
-          <PrintButton />
+          <ResumePDF />
         </div>
       </header>
 
@@ -76,7 +76,7 @@ export default function Resume() {
 
           <section className="card rounded-3xl space-y-6 print:border-none print:bg-transparent print:p-0">
             <h2 className="card-title text-xl print:text-black">
-              Experiência profissional
+              ExperiÃªncia profissional
             </h2>
             {resume.experience.map((item) => (
               <div key={item.company} className="space-y-3">
@@ -116,7 +116,7 @@ export default function Resume() {
 
           <section className="card rounded-3xl space-y-6 print:border-none print:bg-transparent print:p-0">
             <h2 className="card-title text-xl print:text-black">
-              Formação acadêmica
+              FormaÃ§Ã£o acadÃªmica
             </h2>
             {resume.education.groups.map((group) => (
               <div key={group.title} className="space-y-3">
@@ -141,7 +141,7 @@ export default function Resume() {
 
           <section className="card rounded-3xl space-y-4 print:border-none print:bg-transparent print:p-0">
             <h2 className="card-title text-xl print:text-black">
-              Certificações
+              CertificaÃ§Ãµes
             </h2>
             <ul className="list-disc list-inside space-y-2 text-sm text-[color:var(--muted)] print:text-slate-700">
               {resume.certifications.map((item) => (
@@ -171,6 +171,8 @@ export default function Resume() {
             <div className="space-y-3 text-sm">
               {resume.contact.links.map((link) => {
                 const isExternal = link.href.startsWith("http");
+                const isLinkedIn = link.href.includes("linkedin.com");
+                const isGitHub = link.href.includes("github.com");
                 return (
                   <a
                     key={link.label}
@@ -182,7 +184,15 @@ export default function Resume() {
                     <span className="text-xs uppercase tracking-[0.2em] text-[color:var(--muted)] print:text-slate-600">
                       {link.label}
                     </span>
-                    <span className="text-sm text-[color:var(--muted-strong)] print:text-slate-700">
+                    <span
+                      className={
+                        isGitHub
+                          ? "inline-flex w-fit rounded-full border border-white/35 bg-[#24292f] px-2 py-0.5 text-sm text-white print:border-slate-400 print:bg-transparent print:text-slate-700"
+                          : isLinkedIn
+                            ? "text-sm text-[#0A66C2]"
+                            : "text-sm text-[color:var(--muted-strong)] print:text-slate-700"
+                      }
+                    >
                       {link.value}
                     </span>
                   </a>
@@ -195,3 +205,5 @@ export default function Resume() {
     </div>
   );
 }
+
+
