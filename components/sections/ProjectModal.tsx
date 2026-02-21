@@ -1,7 +1,8 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import SafeImage from "@/src/components/demo/SafeImage";
+import VideoWithHoverPlay from "@/components/projects/VideoWithHoverPlay";
 import { useEffect, useId, useMemo, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useLocale } from "next-intl";
@@ -54,9 +55,9 @@ export default function ProjectModal({ project, onClose }: Props) {
       highlightsTitle: isEn ? "Highlights" : "Destaques",
       howToRunTitle: isEn ? "How to run" : "Como executar",
       roleLabel: isEn ? "Role" : "Papel",
-      galleryTitle: isEn ? "Media" : "Mídia",
+      galleryTitle: isEn ? "Media" : "MÃ­dia",
       demoSoon: isEn ? "Demo: coming soon" : "Demo: em breve",
-      videoLabel: isEn ? "Watch the video demo" : "Veja a demonstração em vídeo",
+      videoLabel: isEn ? "Watch the video demo" : "Veja a demonstraÃ§Ã£o em vÃ­deo",
     };
   }, [isEn]);
   const sections = useMemo(
@@ -261,13 +262,12 @@ export default function ProjectModal({ project, onClose }: Props) {
                           {labels.videoLabel}
                         </p>
                         <div className="aspect-video w-full overflow-hidden rounded-lg">
-                          <video
-                            controls
-                            preload="metadata"
-                            className="h-full w-full object-cover"
-                          >
-                            <source src={media.src} />
-                          </video>
+                          <VideoWithHoverPlay
+                            src={media.src}
+                            alt={media.alt}
+                            poster={media.type === "video" ? undefined : media.src}
+                            className="h-full w-full"
+                          />
                         </div>
                       </div>
                     </div>
@@ -317,7 +317,7 @@ export default function ProjectModal({ project, onClose }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackEvent("view_case", "engagement", project.slug)}
-            className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+            className="btn-outline btn-github focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
           >
             {labels.caseCta}
           </a>
@@ -326,7 +326,7 @@ export default function ProjectModal({ project, onClose }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackEvent("click_github", "outbound", project.slug)}
-            className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+            className="btn-outline btn-github focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
           >
             {labels.githubLabel}
           </a>
@@ -356,3 +356,4 @@ export default function ProjectModal({ project, onClose }: Props) {
 
   return createPortal(modal, document.body);
 }
+

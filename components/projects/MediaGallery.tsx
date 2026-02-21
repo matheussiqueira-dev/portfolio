@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ProjectMedia } from "@/data/projects.types";
 import GifMedia from "./GifMedia";
+import VideoWithHoverPlay from "./VideoWithHoverPlay";
 
 type Props = {
   items: ProjectMedia[];
@@ -39,12 +40,10 @@ export default function MediaGallery({ items }: Props) {
               className={`relative w-full overflow-hidden rounded-xl border border-[color:var(--border)] ${aspectClass}`}
             >
               {type === "video" ? (
-                <video
-                  controls
-                  playsInline
-                  preload="metadata"
-                  className="h-full w-full object-cover"
+                <VideoWithHoverPlay
                   src={item.src}
+                  alt={item.alt}
+                  className="h-full w-full"
                 />
               ) : type === "gif" ? (
                 <GifMedia
