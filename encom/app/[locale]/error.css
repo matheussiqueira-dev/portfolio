@@ -1,0 +1,104 @@
+/* Error & Not Found Pages Styles */
+
+.error-container,
+.not-found-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  font-family: 'Courier New', monospace;
+}
+
+.error-content,
+.not-found-content {
+  text-align: center;
+  padding: 40px;
+  max-width: 600px;
+}
+
+.error-title,
+.not-found-title {
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--accent);
+  text-shadow: var(--glow);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.not-found-title {
+  font-size: 96px;
+  opacity: 0.3;
+  margin-bottom: 24px;
+}
+
+.error-code {
+  font-size: 14px;
+  color: var(--text-secondary);
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.error-message,
+.not-found-message,
+.not-found-description {
+  font-size: 16px;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.not-found-message {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  text-shadow: var(--glow);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.not-found-description {
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.error-button,
+.not-found-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Courier New', monospace;
+  text-decoration: none;
+}
+
+.error-button:hover,
+.not-found-button:hover {
+  background: var(--accent);
+  color: var(--bg-primary);
+  box-shadow: 0 0 16px var(--accent);
+  text-shadow: none;
+}
+
+html[data-mode='light'] .error-button,
+html[data-mode='light'] .not-found-button {
+  border-color: #ff003c;
+  color: #ff003c;
+}
+
+html[data-mode='light'] .error-button:hover,
+html[data-mode='light'] .not-found-button:hover {
+  background: #ff003c;
+  color: white;
+  box-shadow: 0 0 16px rgba(255, 0, 60, 0.6);
+}

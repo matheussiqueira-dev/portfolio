@@ -1,0 +1,106 @@
+/* System Status Component Styles */
+
+.systemStatus {
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  margin-bottom: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: var(--glow);
+}
+
+.timestamp {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.metric {
+  padding: 12px;
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--text-tertiary);
+  transition: all 0.3s ease;
+}
+
+.metric.healthy {
+  border-left-color: #00ff00;
+  box-shadow: inset 0 0 8px rgba(0, 255, 0, 0.1);
+}
+
+.metric.warning {
+  border-left-color: #ffff00;
+  box-shadow: inset 0 0 8px rgba(255, 255, 0, 0.1);
+}
+
+.metric.critical {
+  border-left-color: #ff0000;
+  box-shadow: inset 0 0 8px rgba(255, 0, 0, 0.1);
+}
+
+.label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.value {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--accent);
+  font-family: 'Courier New', monospace;
+  text-shadow: var(--glow);
+}
+
+.bar {
+  height: 6px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  transition: width 0.4s ease;
+  box-shadow: 0 0 6px var(--accent);
+}
+
+html[data-mode='light'] .fill {
+  background: linear-gradient(90deg, #ff003c, #ff6b7a);
+  box-shadow: 0 0 6px rgba(255, 0, 60, 0.6);
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .value {
+    font-size: 18px;
+  }
+}

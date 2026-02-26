@@ -1,0 +1,231 @@
+/* ENCOM Layout Styles */
+
+.encom-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 0;
+  min-height: 100vh;
+}
+
+.encom-sidebar {
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border-subtle);
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 280px;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.encom-logo {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--accent);
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  text-shadow: var(--glow);
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.encom-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  color: var(--text-primary);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-link:hover {
+  border-left-color: var(--accent);
+  background-color: var(--bg-primary);
+  padding-left: 18px;
+  color: var(--accent);
+  text-shadow: var(--glow);
+}
+
+.nav-icon {
+  opacity: 0.6;
+  font-size: 10px;
+}
+
+.nav-link:hover .nav-icon {
+  opacity: 1;
+}
+
+.nav-label {
+  flex: 1;
+}
+
+.sidebar-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 10px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.version {
+  font-family: 'Courier New', monospace;
+}
+
+.status-indicator-small {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #00ff00;
+}
+
+.encom-main {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  margin-left: 280px;
+}
+
+.encom-topbar {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.encom-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.status-indicator.online {
+  background-color: #00ff00;
+  box-shadow: 0 0 8px rgba(0, 255, 0, 0.6);
+}
+
+.status-indicator.offline {
+  background-color: #ff0000;
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.encom-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.encom-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .encom-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .encom-sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    width: 100%;
+    height: auto;
+    padding: 12px;
+    border-right: none;
+    border-top: 1px solid var(--border-subtle);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1001;
+  }
+
+  .encom-logo {
+    font-size: 14px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .encom-nav {
+    flex-direction: row;
+    gap: 6px;
+    flex: 1;
+    margin: 0 12px;
+  }
+
+  .nav-link {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+
+  .nav-link:hover {
+    padding-left: 10px;
+  }
+
+  .sidebar-footer {
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .encom-main {
+    grid-column: 1;
+    margin-left: 0;
+    margin-bottom: auto;
+    padding-bottom: 70px;
+  }
+}
