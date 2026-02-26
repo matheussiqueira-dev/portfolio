@@ -23,6 +23,26 @@ export interface ProjectLinks {
   caseStudy?: string;
 }
 
+export interface ProjectMetrics {
+  performance?: string; // e.g., "45ms average latency"
+  users?: string; // e.g., "1.2K monthly users"
+  uptime?: string; // e.g., "99.9%"
+  responseTime?: string; // e.g., "<200ms"
+  custom?: Record<string, string>; // Any other custom metrics
+}
+
+export interface ProjectChallenge {
+  pt: string;
+  en: string;
+}
+
+export interface ProjectArchitecture {
+  pt: string; // Architecture description in Portuguese
+  en: string; // Architecture description in English
+  diagram?: string; // Optional path to architecture diagram
+  components?: string[]; // High-level components
+}
+
 export interface ProjectCard {
   // Identity
   slug: string;
@@ -59,37 +79,47 @@ export interface ProjectCard {
   };
   highlights: string[]; // Language-agnostic highlights (or use PT default)
 
+  // Architecture & Technical Details
+  architecture?: ProjectArchitecture; // How the system is structured
+  challenges?: ProjectChallenge[]; // What problems were solved
+  metrics?: ProjectMetrics; // Performance & usage metrics
+
   // Links
   links: ProjectLinks;
 
   // Metadata
   featured?: boolean;
   order?: number;
+  status?: 'active' | 'completed' | 'archived'; // Project status
+  duration?: {
+    start: string; // YYYY-MM format
+    end: string; // YYYY-MM format or "ongoing"
+  }; // Project timeline
 }
 
 /**
  * Mapper function to convert existing ProjectCase to ProjectCard
  * Used for backwards compatibility while transitioning
  */
-export function projectToCard(project: any): ProjectCard {
+export function projectToCard(project: Record<string, unknown>): ProjectCard {
   return {
-    slug: project.slug,
-    id: project.slug,
+    slug: String(project.slug || ''),
+    id: String(project.slug || ''),
     title: {
-      pt: project.title,
-      en: project.titleEn || project.title,
+      pt: String(project.title || ''),
+      en: String(project.titleEn || project.title || ''),
     },
     tagline: {
-      pt: project.tagline,
-      en: project.taglineEn || project.tagline,
+      pt: String(project.tagline || ''),
+      en: String(project.taglineEn || project.tagline || ''),
     },
     description: {
-      pt: project.tagline,
-      en: project.taglineEn || project.tagline,
+      pt: String(project.tagline || ''),
+      en: String(project.taglineEn || project.tagline || ''),
     },
     fullDescription: {
-      pt: project.context || project.tagline,
-      en: project.contextEn || project.taglineEn || project.tagline,
+      pt: String(project.context || project.tagline || ''),
+      en: String(project.contextEn || project.taglineEn || project.tagline || ''),
     },
     thumbnail: {
       pt: `/thumbnails/pt/${project.slug}.png`,

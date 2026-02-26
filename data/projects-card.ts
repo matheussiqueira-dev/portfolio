@@ -161,6 +161,227 @@ export const projectsCardPt: ProjectCard[] = [
     featured: true,
     order: 3,
   },
+  {
+    slug: "sql-python-analytics-pipeline",
+    id: "sql-python-analytics-pipeline",
+    title: {
+      pt: "Pipeline de Analytics com SQL + Python",
+      en: "Analytics Pipeline with SQL + Python",
+    },
+    tagline: {
+      pt: "ETL automatizado com processamento de dados em tempo real",
+      en: "Automated ETL with real-time data processing",
+    },
+    description: {
+      pt: "Sistema de pipeline de dados que coleta, processa e analisa informações de múltiplas fontes usando SQL e Python.",
+      en: "Data pipeline system that collects, processes, and analyzes information from multiple sources using SQL and Python.",
+    },
+    fullDescription: {
+      pt: "Pipeline ETL robusto que integra dados de múltiplas APIs e bancos de dados, realiza transformações complexas em Python, armazena em PostgreSQL e expõe dashboards via Metabase. Inclui validação de dados, tratamento de erros e alertas em tempo real.",
+      en: "Robust ETL pipeline that integrates data from multiple APIs and databases, performs complex transformations in Python, stores in PostgreSQL, and exposes dashboards via Metabase. Includes data validation, error handling, and real-time alerts.",
+    },
+    thumbnail: {
+      pt: "/thumbnails/pt/sql-python-analytics-pipeline.png",
+      en: "/thumbnails/en/sql-python-analytics-pipeline.png",
+    },
+    videos: [],
+    stack: ["Python", "PostgreSQL", "Pandas", "SQL", "Airflow", "Metabase", "Docker"],
+    role: "Data Engineer & Python Developer",
+    context: {
+      pt: "Desenvolvimento de solução ETL para centralizar dados espalhados em diferentes sistemas legados.",
+      en: "Development of ETL solution to centralize data scattered across different legacy systems.",
+    },
+    highlights: [
+      "Processamento de 10M+ registros diários",
+      "Latência de dados < 5 minutos",
+      "Recuperação automática de falhas",
+      "Schema validation e data quality checks",
+    ],
+    architecture: {
+      pt: "Sistema em camadas: extração de APIs/BD → transformação Python → armazenamento PostgreSQL → visualização Metabase",
+      en: "Layered system: extraction from APIs/DB → Python transformation → PostgreSQL storage → Metabase visualization",
+      components: ["Data Extraction", "Transformation Engine", "Storage Layer", "Analytics Visualization"],
+    },
+    challenges: [
+      {
+        pt: "Sincronização de dados em tempo real sem picos de carga",
+        en: "Real-time data synchronization without load spikes",
+      },
+      {
+        pt: "Manutenção de consistência entre múltiplas fontes",
+        en: "Maintaining consistency across multiple data sources",
+      },
+    ],
+    metrics: {
+      performance: "45ms average query time",
+      users: "15 analyst users",
+      uptime: "99.7%",
+      responseTime: "<200ms dashboard loads",
+    },
+    links: {
+      repo: "https://github.com/matheussiqueira-dev/analytics-pipeline",
+      caseStudy: "/projetos/sql-python-analytics-pipeline",
+    },
+    featured: false,
+    order: 4,
+    status: "active",
+    duration: {
+      start: "2024-01",
+      end: "ongoing",
+    },
+  },
+  {
+    slug: "data-analyst-dashboard",
+    id: "data-analyst-dashboard",
+    title: {
+      pt: "Dashboard de Análise de Dados",
+      en: "Data Analysis Dashboard",
+    },
+    tagline: {
+      pt: "Visualização interativa de KPIs e métricas de negócio",
+      en: "Interactive visualization of KPIs and business metrics",
+    },
+    description: {
+      pt: "Dashboard analítico desenvolvido em React que integra dados de múltiplas fontes e apresenta visualizações avançadas.",
+      en: "Analytical dashboard developed in React that integrates data from multiple sources and presents advanced visualizations.",
+    },
+    fullDescription: {
+      pt: "Applied data analyst desenvolvendo dashboards interativos que conectam dados de CRM, e-commerce e sistemas de vendas. Interface responsiva com gráficos em tempo real, filtros avançados e exportação de relatórios em PDF.",
+      en: "Applied data analyst developing interactive dashboards connecting data from CRM, e-commerce, and sales systems. Responsive interface with real-time charts, advanced filters, and PDF report export.",
+    },
+    thumbnail: {
+      pt: "/thumbnails/pt/data-analyst-dashboard.png",
+      en: "/thumbnails/en/data-analyst-dashboard.png",
+    },
+    videos: [],
+    stack: ["React", "TypeScript", "Recharts", "API REST", "PostgreSQL", "Node.js"],
+    role: "Full Stack Data Analyst",
+    context: {
+      pt: "Desenvolvimento de ferramenta interna para visibilidade de métricas de negócio em tempo real.",
+      en: "Development of internal tool for real-time business metrics visibility.",
+    },
+    highlights: [
+      "Dashboard atualiza a cada 5 minutos",
+      "Suporta 50+ métricas diferentes",
+      "Filtros aninhados para análise granular",
+      "Exportação automática de relatórios",
+    ],
+    architecture: {
+      pt: "Frontend React com Redux para estado global → API Node.js → PostgreSQL com views pré-calculadas",
+      en: "React frontend with Redux for global state → Node.js API → PostgreSQL with pre-calculated views",
+      components: ["React UI Layer", "Node.js API", "Database Layer", "Cache Layer"],
+    },
+    challenges: [
+      {
+        pt: "Performance com grande volume de dados históricos",
+        en: "Performance with large volume of historical data",
+      },
+      {
+        pt: "Manutenção de cache sem inconsistências",
+        en: "Cache maintenance without data inconsistencies",
+      },
+    ],
+    metrics: {
+      performance: "First paint: 1.2s",
+      users: "45 analyst users",
+      uptime: "99.9%",
+      custom: {
+        "daily_reports": "120+",
+        "avg_filters": "3.5 per session",
+      },
+    },
+    links: {
+      live: "https://analytics.example.com",
+      caseStudy: "/projetos/data-analyst-dashboard",
+    },
+    featured: false,
+    order: 5,
+    status: "active",
+    duration: {
+      start: "2023-06",
+      end: "ongoing",
+    },
+  },
+  {
+    slug: "touchless-gesture-web-interface",
+    id: "touchless-gesture-web-interface",
+    title: {
+      pt: "Interface Web sem Contato com Gestos",
+      en: "Touchless Web Interface with Gesture Control",
+    },
+    tagline: {
+      pt: "Controle de aplicações web através de gestos com detecção de mão em tempo real",
+      en: "Web app control via hand gestures with real-time detection",
+    },
+    description: {
+      pt: "Aplicação web que permite navegação e controle usando gestos feitos com as mãos, capturados via câmera.",
+      en: "Web application that enables navigation and control using hand gestures captured via camera.",
+    },
+    fullDescription: {
+      pt: "Sistema de interface sem contato que usa visão computacional para detectar gestos de mão em tempo real. Integra MediaPipe com WebGL para renderização de espaço 3D, permitindo controle intuitivo de elementos web. Aplicável em ambientes médicos, industriais ou públicos.",
+      en: "Touchless interface system using computer vision to detect hand gestures in real-time. Integrates MediaPipe with WebGL for 3D space rendering, enabling intuitive control of web elements. Applicable in medical, industrial, or public environments.",
+    },
+    thumbnail: {
+      pt: "/thumbnails/pt/touchless-gesture-web-interface.png",
+      en: "/thumbnails/en/touchless-gesture-web-interface.png",
+    },
+    videos: [
+      {
+        type: "local",
+        src: "/touchless-gesture-demo.mp4",
+        poster: "/thumbnails/pt/touchless-gesture-web-interface.png",
+        caption: "Demonstração de controle por gestos",
+      },
+    ],
+    stack: ["React", "TypeScript", "MediaPipe", "WebGL", "Canvas API", "Tailwind CSS"],
+    role: "Full Stack Developer",
+    context: {
+      pt: "Prototipagem de sistema de controle sem contato para ambientes sensíveis a higiene.",
+      en: "Prototyping of touchless control system for hygiene-sensitive environments.",
+    },
+    highlights: [
+      "Detecção de 21 pontos de mão com precisão 98%+",
+      "Gestos customizáveis para diferentes ações",
+      "Latência < 100ms de detecção para resposta",
+      "Funciona no navegador, sem requis. de server",
+    ],
+    architecture: {
+      pt: "MediaPipe detecta landmarks → Web Workers processam gestos → Events disparam ações no DOM",
+      en: "MediaPipe detects hand landmarks → Web Workers process gestures → Events trigger DOM actions",
+      components: ["MediaPipe Detection", "Gesture Recognition", "Action Dispatcher", "UI Layer"],
+    },
+    challenges: [
+      {
+        pt: "Reduzir latência de detecção para resposta imediata",
+        en: "Reducing detection latency for immediate response",
+      },
+      {
+        pt: "Permitir customização de gestos sem código",
+        en: "Allowing gesture customization without coding",
+      },
+    ],
+    metrics: {
+      performance: "Detection latency: 85ms avg",
+      custom: {
+        "fps": "30+",
+        "accuracy": "98.5%",
+        "cpu_usage": "<40%",
+      },
+    },
+    links: {
+      repo: "https://github.com/matheussiqueira-dev/touchless-gesture",
+      live: "https://touchless-gesture.vercel.app",
+      demo: "https://touchless-gesture.vercel.app",
+      caseStudy: "/projetos/touchless-gesture-web-interface",
+    },
+    featured: true,
+    order: 6,
+    status: "completed",
+    duration: {
+      start: "2024-03",
+      end: "2024-06",
+    },
+  },
 ];
 
 /**
