@@ -18,7 +18,6 @@ export const themeTokens = {
   background: "--background",
   foreground: "--foreground",
   foregroundStrong: "--foreground-strong",
-  */
   surface: "--surface",
   surfaceMuted: "--surface-muted",
   surfaceStrong: "--surface-strong",
