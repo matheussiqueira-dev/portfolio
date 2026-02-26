@@ -1,0 +1,49 @@
+/**
+ * ENCOM i18n Types
+ * Enterprise-grade internationalization type definitions
+ */
+
+export type Locale = 'pt' | 'en'
+
+export interface Dictionary {
+  // Navigation
+  dashboard: string
+  projects: string
+  status: string
+  settings: string
+
+  // System Status
+  systemStatus: string
+  online: string
+  offline: string
+  cpu: string
+  memory: string
+  nodes: string
+  activeNodes: string
+  latency: string
+  performanceScore: string
+  uptime: string
+  requestsPerSecond: string
+
+  // Projects
+  description: string
+  stack: string
+  metrics: string
+  challenges: string
+  repository: string
+
+  // Common
+  loading: string
+  error: string
+  retry: string
+  close: string
+  save: string
+  cancel: string
+  confirm: string
+}
+
+export interface I18nEngine {
+  getLocale: () => Locale
+  getDictionary: (locale: Locale) => Dictionary
+  isValidLocale: (locale: string) => locale is Locale
+}

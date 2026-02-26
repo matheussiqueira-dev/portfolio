@@ -1,0 +1,45 @@
+/* Divider Component Styles */
+
+.divider {
+  background: var(--border-subtle);
+}
+
+/* Orientation */
+.horizontal {
+  width: 100%;
+  height: 1px;
+}
+
+.vertical {
+  width: 1px;
+  height: 100%;
+}
+
+/* Spacing */
+.spacing-none {
+  margin: 0;
+}
+
+.horizontal.spacing-small {
+  margin: 8px 0;
+}
+
+.horizontal.spacing-medium {
+  margin: 16px 0;
+}
+
+.horizontal.spacing-large {
+  margin: 32px 0;
+}
+
+.vertical.spacing-small {
+  margin: 0 8px;
+}
+
+.vertical.spacing-medium {
+  margin: 0 16px;
+}
+
+.vertical.spacing-large {
+  margin: 0 32px;
+}

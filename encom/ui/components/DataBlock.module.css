@@ -1,0 +1,87 @@
+/* DataBlock Component Styles */
+
+.dataBlock {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.dataBlock:hover {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 12px rgba(0, 240, 255, 0.08),
+    0 0 16px rgba(0, 240, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+html[data-mode='light'] .dataBlock:hover {
+  border-color: #ff003c;
+  box-shadow: inset 0 0 12px rgba(255, 0, 60, 0.08),
+    0 0 16px rgba(255, 0, 60, 0.2);
+}
+
+/* Accent variants */
+.primary {
+  border-left: 4px solid var(--accent);
+}
+
+.secondary {
+  border-left: 4px solid var(--text-secondary);
+}
+
+.success {
+  border-left: 4px solid #00ff00;
+}
+
+.warning {
+  border-left: 4px solid #ffff00;
+}
+
+.critical {
+  border-left: 4px solid #ff0000;
+}
+
+.icon {
+  font-size: 28px;
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  border: 1px dashed var(--border-subtle);
+  border-radius: 2px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.value {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--accent);
+  font-family: 'Courier New', monospace;
+  text-shadow: var(--glow);
+  word-break: break-word;
+}
+
+.subtitle {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+  font-style: italic;
+}

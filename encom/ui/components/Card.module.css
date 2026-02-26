@@ -1,0 +1,42 @@
+/* Card Component Styles */
+
+.card {
+  background: var(--bg-secondary);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* Variants */
+.default {
+  border: 1px solid var(--border-subtle);
+}
+
+.elevated {
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.elevated:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.outlined {
+  border: 2px solid var(--accent);
+}
+
+/* Padding */
+.padding-none {
+  padding: 0;
+}
+
+.padding-small {
+  padding: 12px;
+}
+
+.padding-medium {
+  padding: 20px;
+}
+
+.padding-large {
+  padding: 32px;
+}

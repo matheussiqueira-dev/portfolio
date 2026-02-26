@@ -1,115 +1,63 @@
-# ENCOM Dashboard System
-
-A modern, bilingual (PT/EN) dashboard system built with Next.js 14+, React 18, and TypeScript. Features a corporate dark/light theme system with system status monitoring and project management interface.
-
-## 🏗️ Architecture
-
-### Core Structure
+# ENCOM Dashboard v3 🔷
+---
+![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue)
+## ✨ Features
 ```
-encom/
-├── app/                      # Next.js App Router
-│   ├── [locale]/            # Dynamic locale routes
-│   │   ├── page.tsx         # Dashboard home
-│   │   ├── layout.tsx       # Locale layout with sidebar
-│   │   ├── error.tsx        # Error boundary
-│   │   ├── not-found.tsx    # 404 page
-│   │   ├── projects/        # Project listing & details
-│   │   ├── status/          # System status
-│   │   └── settings/        # User settings
-│   └── layout.tsx           # Root layout with locale validation
-├── components/              # React components
-│   ├── PageTransition.tsx   # Route transition overlay
-│   ├── SystemStatus.tsx     # System metrics display
-│   ├── DataBlock.tsx        # Reusable data blocks
-│   ├── ThemeToggle.tsx      # Dark/light theme switcher
-│   ├── LanguageToggle.tsx   # PT/EN language switcher
-│   ├── EncomLayout.tsx      # Main layout (server)
-│   └── EncomLayoutClient.tsx # Layout client wrapper
-├── hooks/                   # React hooks
-│   ├── useTheme.ts         # Theme state management
-│   ├── useLocale.ts        # Locale switching
-│   └── useDictionary.ts    # i18n dictionary loading
-├── styles/                  # Global styles
-│   └── global.css          # CSS variables, themes, base styles
-├── config/
-│   └── theme.ts            # Theme configuration (colors, vars)
-├── data/
-│   └── projects.ts         # System data & project mockdata
-├── locales/
-│   └── index.ts            # i18n Dictionary & translations
-├── middleware.ts           # Locale detection & routing
-├── next.config.ts          # Next.js configuration
-└── tailwind.config.ts      # Tailwind config (optional)
-```
+### 🎨 Theme System
+- **Custom theme engine** (no external deps)
+- Dark/Light modes with localStorage persistence
+- No FOUC (Flash of Unstyled Content)
+- CSS custom properties for easy customization
+│       System Layer (Features)           │  Business logic modules
+### 🌐 i18n System
+- **Custom i18n engine** (type-safe, no next-intl)
+- Portuguese + English support
+- Locale detection from URL path
+- 32 translation keys
+│        UI Layer (Components)            │  Pure React components
+### 📊 Real-time Dashboard
+- System metrics (CPU, memory, uptime, requests)
+- Project overview panel
+- Interactive project list with filters
 
-## 🎨 Design Themes
-
-### Dark Mode (Legacy Theme)
-- **Primary**: Azure Neon Blue `#00F0FF`
-- **Background**: Deep black `#0a0e27`
-- **Secondary**: Dark gray `#1a1f3a`
+### 🎯 UI Components
+- Button (3 variants, 3 sizes)
+- DataBlock (4 accent colors)
+- Card (3 variants)
+- Badge (5 variants)
+- Sidebar (responsive)
+- Topbar with controls
 - **Accent Glow**: Cyan neon shadow
-- **Typography**: Monospace (Courier New), uppercase, high contrast
-
-### Light Mode (Ares Theme)
-- **Primary**: Crimson Red `#FF003C`
-- **Background**: Light gray `#f3f4f6`
+### 🔀 Visual Effects
+- Page transitions (secure wipe animation)
+- Custom cursor with glow
+- Hover effects on all interactive elements
+- Smooth animations (controlled by feature flags)
 - **Secondary**: White `#ffffff`
-- **Borders**: Subtle gray `#e5e7eb`
+---
 - **Typography**: Same monospace, reduced glow effect
-
-## 🔄 Bilingual System (PT/EN)
-
-### Implementation
-- **No external i18n library** (lightweight custom solution)
+## 🚀 Quick Start
 - **Type-safe Dictionary** interface with 32+ translation keys
-- **Async dictionary loading** via `getDictionary(locale: Locale)`
-- **Locale detection** via middleware (Accept-Language header fallback)
-- **Client-side locale switching** with `useLocale` hook
-
-### Routes
+### Installation
 - Portuguese (default): `/`, `/pt/`, `/pt/projects`, `/pt/status`
-- English: `/en/`, `/en/projects`, `/en/status`, `/en/settings`
-
-## 🎛️ State Management
-
-### Theme (`useTheme` hook)
-```typescript
+```bash
+# Clone repository
+git clone https://github.com/matheussiqueira-dev/portfolio.git
+cd portfolio/encom
 const { theme, toggleTheme, mounted } = useTheme()
-// Persists to localStorage under key 'encom-theme'
+# Install dependencies
+npm install
 // Returns: 'dark' | 'light'
+# Start development server
+npm run dev
 ```
 
-### Locale (`useLocale` hook)
-```typescript
-const { locale, changeLocale } = useLocale()
-// Uses next/navigation for smooth transitions
-// Reconstructs path prefix with new locale
-```
+Open [http://localhost:3000/encom](http://localhost:3000/encom)
 
-### Dictionary (`useDictionary` hook)
-```typescript
-const dictionary = await useDictionary(locale)
-// Async loading of translated content
-```
-
-## 🎯 Key Features
+### Build for Production
 
 ### System Status Monitoring
-- Real-time metrics: CPU, Memory, Active Nodes, Latency
-- Health status indicators: Healthy, Warning, Critical
-- Animated progress bars with glow effects
-- Responsive grid layout
-
-### Project Management
-- Node-based project cards (NODE-01, NODE-02, etc.)
-- Project detail pages with metrics and challenges
-- Technology stack display with badge styling
-- Performance, reliability, and latency metrics
-
 ### Navigation
-- Fixed sidebar with main navigation
-- Sticky topbar with system status
 - Theme toggle (☀️/🌙) button
 - Language toggle (🇧🇷/🇺🇸) button
 - Mobile-responsive bottom navigation
@@ -151,82 +99,129 @@ npm run build
 npm start
 ```
 
-## 📝 Environment Variables
+---
 
-None required for basic functionality. ENCOM is self-contained.
+## 📁 Project Structure
 
-Optional (in `.env.local`):
 ```
-NEXT_PUBLIC_APP_NAME=ENCOM
-NEXT_PUBLIC_APP_VERSION=2.4.1
+encom/
+├── core/                    # Pure logic (engines, config)
+│   ├── theme/              # Theme engine
+│   ├── i18n/               # i18n engine
+│   ├── motion/             # Animation constants
+│   └── config/             # App configuration
+│
+├── ui/                      # Pure React components
+│   ├── components/         # Button, Card, Badge, etc.
+│   └── layout/             # Sidebar, Topbar, etc.
+│
+├── system/                  # Feature modules
+│   ├── dashboard/          # SystemStatus, MetricsPanel
+│   └── projects/           # ProjectCard, ProjectList
+│
+├── app/                     # Next.js routes
+│   ├── [locale]/           # Localized routes
+│   └── layout.tsx          # Root layout
+│
+├── ARCHITECTURE.md          # Architecture documentation
+└── README.md               # This file
 ```
-
-## 🔒 Security & Tracking
-
-- **No interference with external tracking** (GA, Meta Pixel, Sentry)
-- **XSS protection headers** via Next.js security headers config
-- **Content Security Policy** ready (CSP headers in next.config)
-- **No external API calls** (fully self-contained)
-- **localStorage only** for theme persistence (no cookies/tracking)
-
-## 🎬 Animations
-
-- **Page transitions**: Secure wipe effect (0.6s ease-out)
-- **Theme switch**: 300ms smooth color transitions
-- **Component fades**: Staggered fadeInUp animations
-- **Hover effects**: Border color, glow, transform (2px translateY)
-- **Status pulses**: Continuous 2s opacity animation
-
-## 📱 Responsive Breakpoints
-
-- **Desktop**: Full sidebar + content layout
-- **Tablet** (≤1024px): Adjusted grid columns
-- **Mobile** (≤768px): Bottom navigation, full-width layout
-- **Small Mobile** (≤640px): Single column grids, reduced font sizes
-
-## 🔍 Type Safety
-
-- **TypeScript strict mode**: `strict: true`
-- **No implicit `any`**: Enforced via ESLint
-- **Type-safe i18n**: Dictionary interface ensures all keys are translated
-- **Component props**: Fully typed interfaces
-- **Custom types** in `locales/index.ts`, `data/projects.ts`, `config/theme.ts`
-
-## 📚 Dictionary Keys
-
-32+ translation keys covering:
-- Dashboard labels (CPU, Memory, Nodes, Latency)
-- Navigation items
-- System status messages
-- Error messages
-- Settings labels
-- Section titles
-
-## 🛠️ Development Tips
-
-1. **Add new page**: Create folder in `app/[locale]/` with `page.tsx`
-2. **Add new translation**: Update `locales/index.ts` (both pt & en)
-3. **Change theme colors**: Edit `styles/global.css` CSS variables
-4. **Update data**: Modify `data/projects.ts` (system data & projects)
-5. **Create component**: Use CSS modules (`.module.css`) for encapsulation
-
-## 📊 Performance
-
-- **Zero client hydration issues** with proper SSR/SSG patterns
-- **Static generation** for locale routes via `generateStaticParams`
-- **Optimized images** configuration in next.config
-- **CSS variables** eliminate runtime theme calculations
-- **Minimal JavaScript** (form-free, state-light)
-
-## 🎓 Learning Resources
-
-- **Architecture**: See folder structure above
-- **i18n system**: Review `locales/index.ts` and `hooks/useDictionary.ts`
-- **Theming**: Study `styles/global.css` CSS variable system
-- **Components**: Check `components/*.tsx` and `.module.css` pairs
 
 ---
 
-**Version**: 2.4.1  
-**Status**: Operational | Systems Nominal  
-**Last Updated**: 2024-01-15
+## 🎯 Usage Examples
+
+### Using Theme Engine
+
+```typescript
+import { themeEngine } from '@/encom/core/theme/theme.engine'
+
+// Initialize theme
+themeEngine.initialize()
+
+// Get current mode
+const mode = themeEngine.getMode() // 'dark' | 'light'
+
+// Toggle theme
+themeEngine.toggleMode()
+
+// Set specific mode
+themeEngine.setMode('dark')
+```
+
+### Using i18n Engine
+
+```typescript
+import { i18nEngine } from '@/encom/core/i18n/i18n.engine'
+
+// Get dictionary for locale
+const dictionary = i18nEngine.getDictionary('pt')
+
+// Use translations
+<h1>{dictionary.dashboard}</h1>
+<p>{dictionary.online}</p>
+```
+
+### Using UI Components
+
+```typescript
+import { Button } from '@/encom/ui/components/Button'
+import { Card } from '@/encom/ui/components/Card'
+import { Badge } from '@/encom/ui/components/Badge'
+
+<Card variant="elevated" padding="large">
+	<Badge variant="success">Active</Badge>
+	<Button variant="primary" size="large">
+		Click Me
+	</Button>
+</Card>
+```
+
+### Using System Modules
+
+```typescript
+import { SystemStatus, MetricsPanel } from '@/encom/system'
+
+export default function Page() {
+	const dictionary = i18nEngine.getDictionary()
+  
+	return (
+		<>
+			<SystemStatus dictionary={dictionary} />
+			<MetricsPanel
+				dictionary={dictionary}
+				projectsCount={15}
+				certificatesCount={28}
+				stackCount={42}
+			/>
+		</>
+	)
+}
+```
+
+---
+
+## 📚 Documentation
+
+- **[ARCHITECTURE.md](./ARCHITECTURE.md)**: Complete architecture guide
+- **[MIGRATION.md](./MIGRATION.md)**: Migrating from old architecture
+- **API Reference**: Check each layer's index.ts for exports
+
+---
+
+## 📄 License
+
+MIT License - see [LICENSE](../LICENSE) for details
+
+---
+
+## 🔗 Links
+
+- **Portfolio**: [matheussiqueira.dev](https://matheussiqueira.dev)
+- **GitHub**: [@matheussiqueira-dev](https://github.com/matheussiqueira-dev)
+- **LinkedIn**: [Matheus Siqueira](https://linkedin.com/in/matheussiqueira-dev)
+
+---
+
+**ENCOM Dashboard v3** - Enterprise Portfolio System  
+Built with 💙 by Matheus Siqueira
