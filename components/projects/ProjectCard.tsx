@@ -1,4 +1,4 @@
-import SafeImage from "@/src/components/demo/SafeImage";
+﻿import SafeImage from "@/src/components/demo/SafeImage";
 import Link from "next/link";
 import type { Project } from "@/data/projects.types";
 import { getProjectById } from "@/src/data/projects";
@@ -80,7 +80,7 @@ export default function ProjectCard({
           href={project.repoUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+          className="btn-outline btn-github focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
         >
           GitHub
         </a>
@@ -88,3 +88,4 @@ export default function ProjectCard({
     </article>
   );
 }
+

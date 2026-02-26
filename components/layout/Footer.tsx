@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useLocale } from "next-intl";
 import { TrackedAnchor } from "@/components/analytics/TrackedLink";
@@ -62,7 +62,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             ariaLabel="GitHub"
             tracking={{ action: "footer_github", category: "engagement" }}
-            className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+            className="btn-outline btn-github focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
           >
             GitHub
           </TrackedAnchor>

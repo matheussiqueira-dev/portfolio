@@ -60,7 +60,6 @@ export default function LandingPage() {
       contactLabel="Entrar em contato"
       contactAriaLabel="Entrar em contato pelo WhatsApp"
       trackingContext="landing_root"
-      localeLandingMode
       topNavItems={topNavItems}
       navigationAriaLabel="Navegacao principal"
       ptHref="/pt-BR"

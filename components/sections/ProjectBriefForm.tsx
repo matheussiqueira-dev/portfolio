@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState, type ChangeEvent } from "react";
 import CopyButton from "@/components/ui/CopyButton";
@@ -223,7 +223,7 @@ export default function ProjectBriefForm({ content, copyLabel, copiedLabel }: Pr
           tabIndex={hasSummary ? 0 : -1}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+          className="btn-outline btn-whatsapp focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
         >
           {content.whatsappCta}
         </a>
@@ -231,3 +231,4 @@ export default function ProjectBriefForm({ content, copyLabel, copiedLabel }: Pr
     </div>
   );
 }
+

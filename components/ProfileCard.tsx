@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useEffect, useMemo, type CSSProperties } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { useTheme } from "next-themes";
-import { HiMiniMoon, HiMiniSun } from "react-icons/hi2";
 import ActionButtons from "@/components/ActionButtons";
 import InteractivePhoto from "@/components/InteractivePhoto";
 
@@ -52,37 +51,37 @@ type Props = {
 };
 
 const LIGHT_PALETTE: Palette = {
-  bg: "#FAFAFA",
+  bg: "#F7F7F8",
   textPrimary: "#0A0A0B",
-  textSecondary: "#737373",
+  textSecondary: "#6B7280",
   border: "#E5E7EB",
-  card: "rgba(255, 255, 255, 0.78)",
+  card: "rgba(255, 255, 255, 0.84)",
   buttonBg: "#000000",
   buttonFg: "#FFFFFF",
   buttonHover: "#262626",
-  focus: "rgba(15, 23, 42, 0.28)",
-  glow: "rgba(15, 23, 42, 0.12)",
-  cardShadow: "0 10px 40px rgba(0, 0, 0, 0.08)",
-  buttonShadow: "0 8px 20px rgba(15, 23, 42, 0.12)",
-  ambient: "radial-gradient(900px circle at 50% 8%, rgba(15, 23, 42, 0.12), transparent 65%)",
-  toggleBg: "rgba(255, 255, 255, 0.8)",
+  focus: "rgba(15, 23, 42, 0.32)",
+  glow: "rgba(15, 23, 42, 0.15)",
+  cardShadow: "0 24px 54px -32px rgba(15, 23, 42, 0.36)",
+  buttonShadow: "0 8px 16px -12px rgba(15, 23, 42, 0.32)",
+  ambient: "rgba(15, 23, 42, 0.11)",
+  toggleBg: "rgba(255, 255, 255, 0.72)",
 };
 
 const DARK_PALETTE: Palette = {
   bg: "#0B0F14",
   textPrimary: "#F3F4F6",
-  textSecondary: "#A3A3A3",
+  textSecondary: "#9CA3AF",
   border: "#1F2937",
   card: "rgba(16, 22, 30, 0.82)",
   buttonBg: "#FFFFFF",
   buttonFg: "#000000",
   buttonHover: "#E5E7EB",
-  focus: "rgba(229, 231, 235, 0.35)",
-  glow: "rgba(96, 165, 250, 0.12)",
-  cardShadow: "0 10px 40px rgba(0, 0, 0, 0.4)",
-  buttonShadow: "0 10px 24px rgba(0, 0, 0, 0.34)",
-  ambient: "radial-gradient(1000px circle at 50% 10%, rgba(52, 94, 170, 0.22), transparent 66%)",
-  toggleBg: "rgba(0, 0, 0, 0.42)",
+  focus: "rgba(229, 231, 235, 0.4)",
+  glow: "rgba(148, 163, 184, 0.2)",
+  cardShadow: "0 26px 58px -30px rgba(0, 0, 0, 0.58)",
+  buttonShadow: "0 10px 18px -12px rgba(0, 0, 0, 0.65)",
+  ambient: "rgba(148, 163, 184, 0.16)",
+  toggleBg: "rgba(15, 23, 42, 0.7)",
 };
 
 export default function ProfileCard({
@@ -105,7 +104,7 @@ export default function ProfileCard({
   activeLocale,
 }: Props) {
   const reduceMotion = useReducedMotion();
-  const { resolvedTheme, setTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === "dark";
   const palette = isDark ? DARK_PALETTE : LIGHT_PALETTE;
 
@@ -145,14 +144,12 @@ export default function ProfileCard({
   return (
     <main
       id="main-content"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-20 font-[var(--font-landing)] transition-colors duration-500 sm:px-6"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 py-12 font-[var(--font-landing)]"
       style={{
         ...styleVars,
         backgroundColor: "var(--landing-bg)",
       }}
     >
-      <div aria-hidden="true" className="landing-bg-layer" />
-
       <div className="landing-top-shell" data-reveal>
         <div className="landing-top-nav">
           <nav className="landing-top-links" aria-label={navigationAriaLabel}>
@@ -163,7 +160,7 @@ export default function ProfileCard({
             ))}
           </nav>
 
-          <div className="landing-top-controls" aria-label="Language and theme controls">
+          <div className="landing-top-controls" aria-label="Language switch">
             <span className="landing-top-divider" aria-hidden="true" />
 
             <Link
@@ -191,34 +188,21 @@ export default function ProfileCard({
               </span>
               EN
             </Link>
-
-            <button
-              type="button"
-              onClick={() => setTheme(isDark ? "light" : "dark")}
-              className="landing-theme-toggle focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--landing-focus)]"
-              aria-label={
-                activeLocale === "en"
-                  ? isDark
-                    ? "Switch to light mode"
-                    : "Switch to dark mode"
-                  : isDark
-                    ? "Ativar tema claro"
-                    : "Ativar tema escuro"
-              }
-            >
-              {isDark ? (
-                <HiMiniSun className="landing-theme-toggle__icon" aria-hidden="true" />
-              ) : (
-                <HiMiniMoon className="landing-theme-toggle__icon" aria-hidden="true" />
-              )}
-              <span className="landing-theme-toggle__label">{isDark ? "Light" : "Dark"}</span>
-            </button>
           </div>
         </div>
       </div>
 
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(circle at 50% 10%, var(--landing-ambient), transparent 56%)",
+        }}
+      />
+
       <motion.section
-        className="relative z-10 flex w-full max-w-3xl flex-col items-center text-center"
+        className="relative z-10 flex w-full max-w-3xl flex-col items-center pt-24 text-center sm:pt-28"
         initial={reduceMotion ? undefined : { opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
@@ -226,8 +210,8 @@ export default function ProfileCard({
         <InteractivePhoto alt={photoAlt} />
 
         <motion.h1
-          className="mt-8 text-4xl font-semibold leading-[1.1] tracking-tight text-[var(--landing-text-primary)] md:text-5xl"
-          initial={reduceMotion ? undefined : { opacity: 0, y: 8 }}
+          className="mt-8 text-4xl font-semibold tracking-[-0.03em] text-[var(--landing-text-primary)] sm:text-5xl"
+          initial={reduceMotion ? undefined : { opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.08 }}
         >
@@ -235,8 +219,8 @@ export default function ProfileCard({
         </motion.h1>
 
         <motion.p
-          className="mt-3 max-w-2xl text-sm font-medium tracking-[0.01em] text-[var(--landing-text-secondary)] md:text-base"
-          initial={reduceMotion ? undefined : { opacity: 0, y: 8 }}
+          className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--landing-text-secondary)] sm:text-base"
+          initial={reduceMotion ? undefined : { opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.16 }}
         >

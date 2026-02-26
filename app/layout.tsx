@@ -4,6 +4,8 @@ import Script from "next/script";
 import { ThemeProvider } from "next-themes";
 import JsonLd from "@/components/seo/JsonLd";
 import AppVisualEffects from "@/components/layout/AppVisualEffects";
+import Cursor from "@/components/Cursor";
+import PageTransition from "@/components/PageTransition";
 import { baseUrl, buildAlternates, siteName, sameAsLinks } from "@/lib/seo";
 import "./globals.css";
 import "./refined-theme.css";
@@ -196,7 +198,7 @@ export default function RootLayout({
             __html: `
               (function() {
                 var path = window.location.pathname;
-                if (path === "/" || path === "/en" || path === "/pt-BR") {
+                if (path === "/en" || path === "/pt-BR") {
                   document.documentElement.dataset.localeLanding = "true";
                 }
               })();
@@ -236,16 +238,19 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
           storageKey="theme"
+          disableTransitionOnChange
         >
+          <Cursor />
           <JsonLd data={[websiteJsonLd, personJsonLd]} />
           <AppVisualEffects />
-          {children}
+          <PageTransition>
+            {children}
+          </PageTransition>
         </ThemeProvider>
       </body>
     </html>
   );
 }
-
 
 
 

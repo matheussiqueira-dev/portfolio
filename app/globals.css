@@ -1,4 +1,4 @@
-﻿
+
 @import "tailwindcss";
 
 :root {
@@ -208,21 +208,33 @@ body::after {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.85;
+  opacity: 0.82;
+  filter: saturate(112%);
 }
 
 .cursor-glow::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(520px circle at var(--cursor-x) var(--cursor-y), rgba(240, 179, 90, 0.16), transparent 62%);
+  background: radial-gradient(
+    520px circle at var(--cursor-x) var(--cursor-y),
+    rgba(240, 179, 90, 0.14),
+    rgba(240, 179, 90, 0.06) 34%,
+    transparent 66%
+  );
+  filter: blur(28px);
 }
 
 .cursor-glow::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(280px circle at var(--cursor-x) var(--cursor-y), rgba(255, 211, 154, 0.12), transparent 60%);
+  background: radial-gradient(
+    260px circle at var(--cursor-x) var(--cursor-y),
+    rgba(255, 224, 176, 0.16),
+    transparent 62%
+  );
+  filter: blur(14px);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1926,7 +1938,305 @@ body::after {
     border-color: rgba(28, 31, 36, 0.2);
     box-shadow: inset 0 0 0 3px rgba(28, 31, 36, 0.08);
   }
+}
 
+/* ============================= */
+/* TRON THEME MODULE */
+/* ============================= */
+
+:root {
+  --tron-bg-dark: #05070D;
+  --tron-bg-deep: #0A0F1F;
+  --tron-blue: #00F0FF;
+  --tron-blue-soft: rgba(0, 240, 255, 0.4);
+  --tron-red: #FF003C;
+  --tron-text: #E6F7FF;
+}
+
+/* Reveal animation for scroll-based reveals */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tron hero styles (optional use) */
+.tron-hero {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.02) 0px,
+    rgba(255, 255, 255, 0.02) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+
+/* Tron title animation */
+.tron-hero-title {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: tronHeroFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes tronHeroFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tron divider animation */
+.tron-divider {
+  width: 0;
+  height: 2px;
+  background: var(--tron-blue);
+  box-shadow: 0 0 10px var(--tron-blue);
+  margin-top: 16px;
+  animation: tronExpandLine 0.25s ease-out 0.3s forwards;
+}
+
+@keyframes tronExpandLine {
+  to {
+    width: 120px;
+  }
+}
+
+/* Tron button styles */
+.tron-btn {
+  background: transparent;
+  border: 1px solid var(--tron-blue);
+  color: var(--tron-blue);
+  padding: 10px 20px;
+  transition: all 0.18s ease-out;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.875rem;
+}
+
+.tron-btn:hover {
+  background: var(--tron-blue);
+  color: var(--tron-bg-dark);
+  box-shadow: 0 0 20px var(--tron-blue);
+}
+
+.tron-btn:active {
+  transform: scale(0.98);
+}
+
+/* Tron CTA with pulse */
+@keyframes tronPulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 8px var(--tron-blue-soft);
+  }
+  50% {
+    box-shadow: 0 0 18px var(--tron-blue);
+  }
+}
+
+.tron-btn-cta {
+  animation: tronPulseGlow 2.5s infinite ease-in-out;
+}
+
+/* Tron card styles */
+.tron-card {
+  background: rgba(10, 15, 31, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 240, 255, 0.1);
+  transition: transform 0.22s ease-out,
+              box-shadow 0.22s ease-out,
+              border-color 0.22s ease-out;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.tron-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--tron-blue);
+  box-shadow: 0 0 25px var(--tron-blue-soft);
+}
+
+/* Tron nav link with underline animation */
+.tron-nav a {
+  position: relative;
+  text-decoration: none;
+  color: var(--tron-text);
+  transition: color 0.2s ease-out;
+}
+
+.tron-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--tron-blue);
+  box-shadow: 0 0 8px var(--tron-blue);
+  transition: width 0.2s linear;
+}
+
+.tron-nav a:hover {
+  color: var(--tron-blue);
+}
+
+.tron-nav a:hover::after {
+  width: 100%;
+}
+
+/* Tron input focus */
+.tron-input:focus {
+  outline: none;
+  border-color: var(--tron-blue);
+  box-shadow: 0 0 12px var(--tron-blue);
+  transition: 0.2s ease-out;
+}
+
+/* Tron section divider */
+.tron-section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--tron-blue), transparent);
+  margin: 80px 0;
+}
+
+/* ============================= */
+/* TRON CURSOR */
+/* ============================= */
+
+body {
+  cursor: none;
+}
+
+.tron-cursor {
+  position: fixed;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--tron-blue);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.15s ease-out,
+              height 0.15s ease-out,
+              border 0.15s ease-out,
+              box-shadow 0.2s ease-out;
+  z-index: 9999;
+  will-change: left, top;
+}
+
+.tron-cursor::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--tron-blue);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tron-cursor.active {
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 0 20px var(--tron-blue);
+}
+
+.tron-cursor.click {
+  width: 22px;
+  height: 22px;
+  border-color: var(--tron-blue);
+  box-shadow: 0 0 25px var(--tron-blue);
+}
+
+/* ============================= */
+/* BOOT SCREEN */
+/* ============================= */
+
+.boot-screen {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.boot-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.boot-title {
+  color: var(--tron-blue);
+  letter-spacing: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  text-shadow: 0 0 10px var(--tron-blue);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.boot-bar {
+  width: 250px;
+  height: 2px;
+  background: rgba(0, 240, 255, 0.2);
+  overflow: hidden;
+  border-radius: 1px;
+}
+
+.boot-progress {
+  width: 0%;
+  height: 100%;
+  background: var(--tron-blue);
+  box-shadow: 0 0 10px var(--tron-blue);
+  animation: bootLoad 1.8s ease-out forwards;
+}
+
+@keyframes bootLoad {
+  to {
+    width: 100%;
+  }
+}
+
+/* ============================= */
+/* PAGE TRANSITION */
+/* ============================= */
+
+.page-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 240, 255, 0.1),
+    transparent
+  );
+  backdrop-filter: blur(8px);
+  animation: pageSlide 0.6s ease-out forwards;
+  z-index: 9998;
+  pointer-events: none;
+}
+
+@keyframes pageSlide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@layer components {
   @media (min-width: 1024px) {
     .hero-grid {
       grid-template-columns: 1.05fr 0.95fr;
@@ -2055,6 +2365,7 @@ body::after {
     white-space: normal;
   }
 }
+
 
 
 

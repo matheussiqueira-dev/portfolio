@@ -1,4 +1,4 @@
-import type { Project } from "./projects.types";
+﻿import type { Project } from "./projects.types";
 
 const projectListEn: Project[] = [
   {
@@ -17,7 +17,7 @@ const projectListEn: Project[] = [
       caption: "Real-time invisibility effect with visual calibration controls.",
     },
     intro: {
-      title: "Invisibility Cloak — Real-time effect in the browser",
+      title: "Invisibility Cloak â€” Real-time effect in the browser",
       paragraphs: [
         "Full stack project that applies a real-time invisibility effect in the browser, with calibration controls and color masking.",
         "Processing happens locally via Canvas for low latency and privacy, with an optional backend for snapshots and metrics.",
@@ -134,7 +134,7 @@ const projectListEn: Project[] = [
       "https://github.com/matheussiqueira-dev/Simulacao-Estrategica-de-Decisao-Empresarial.git",
     demo: {
       kind: "video",
-      src: "/Simulação Estratégica de Decisão Empresarial.mp4",
+      src: "/SimulaÃ§Ã£o EstratÃ©gica de DecisÃ£o Empresarial.mp4",
       poster: "/Thmbnail/Thumbnail - English/Business Decision Simulator.png",
       caption: "Side-by-side scenarios, risk distribution and live KPIs.",
     },
@@ -163,7 +163,7 @@ const projectListEn: Project[] = [
         },
       ],
       video: {
-        src: "/Simulação Estratégica de Decisão Empresarial.mp4",
+        src: "/SimulaÃ§Ã£o EstratÃ©gica de DecisÃ£o Empresarial.mp4",
         poster: "/Thmbnail/Thumbnail - English/Business Decision Simulator.png",
         caption: "Walkthrough of scenarios, risk and KPI dashboards.",
       },
@@ -226,7 +226,7 @@ const projectListEn: Project[] = [
         alt: "Business Decision Simulator cover",
       },
       {
-        src: "/Simulação Estratégica de Decisão Empresarial.mp4",
+        src: "/SimulaÃ§Ã£o EstratÃ©gica de DecisÃ£o Empresarial.mp4",
         alt: "Business Decision Simulator demo",
         type: "video",
       },
@@ -2038,6 +2038,110 @@ const projectListEn: Project[] = [
         "MediaPipe + OpenCV pipeline estimating physiological stress with personalized baseline, HUD, REST/WS and a Streamlit dashboard.",
     },
   },
+  {
+    slug: "eye-tracking",
+    title: "Real-Time Eye Tracking",
+    headline: "Eye Tracking | Webcam-based gaze tracking",
+    tagline:
+      "Real-time eye tracking with a standard webcam, 9-point calibration, low-latency filters, and dynamic attention heatmap.",
+    role: "Developer/Architect",
+    stack: ["Python", "OpenCV", "MediaPipe", "NumPy", "Computer Vision"],
+    repoUrl: "https://github.com/matheussiqueira-dev/Eye-Tracking.git",
+    intro: {
+      title: "Real-time eye tracking for behavioral analytics",
+      paragraphs: [
+        "Computer vision project that turns a regular webcam into a real-time eye tracking system.",
+        "The architecture includes supervised 9-point calibration, gaze estimation with head-pose compensation, and a dynamic attention heatmap.",
+      ],
+      sections: [
+        {
+          title: "Architecture",
+          items: [
+            "Asynchronous camera capture to reduce latency.",
+            "Face/landmark detection with MediaPipe and iris vector modeling.",
+            "Gaze estimation with binocular fusion and head-pose fallback.",
+            "Temporal stabilization (One Euro + Kalman) and outlier rejection.",
+          ],
+        },
+        {
+          title: "Data delivery",
+          items: [
+            "Dynamic real-time visual attention heatmap.",
+            "NDJSON event export for analytics and BI.",
+            "Runtime shortcuts for calibration, reset, screenshot, and debug.",
+          ],
+        },
+      ],
+    },
+    context:
+      "The goal was to democratize eye tracking without proprietary hardware while keeping high performance and a product-ready architecture.",
+    problem: [
+      "Track gaze direction in real time using only a regular webcam.",
+      "Reduce jitter and instability under pose and lighting variation.",
+      "Provide simple, repeatable calibration to improve accuracy.",
+      "Generate structured attention data for downstream analysis.",
+    ],
+    dataUsed: [
+      "High-FPS webcam frames.",
+      "Facial and iris landmarks from MediaPipe.",
+      "Per-eye confidence-weighted gaze vectors with binocular fusion.",
+      "Gaze events and coordinates for heatmap and NDJSON export.",
+    ],
+    solution: [
+      "Modular pipeline: Camera -> Landmarks -> Gaze -> Stabilization -> Heatmap -> Event Log.",
+      "Supervised 9-point calibration with regularized linear regression.",
+      "Head-pose compensation and fallback under partial occlusion.",
+      "Temporal filters and outlier control to reduce visual noise.",
+    ],
+    features: [
+      "Real-time eye tracking from a standard webcam.",
+      "9-point calibration with quick runtime reset.",
+      "Dynamic visual attention heatmap.",
+      "Event export for analytics in NDJSON.",
+      "Debug, screenshot, and performance tuning controls.",
+    ],
+    highlights: [
+      "Extensible architecture designed for product evolution.",
+      "Low latency with async capture and temporal filters.",
+      "Confidence-weighted binocular fusion for robust gaze estimates.",
+      "Straightforward integration with data and BI pipelines.",
+    ],
+    demonstrates: [
+      "Computer vision applied to UX and behavioral analysis.",
+      "Gaze estimation with MediaPipe and OpenCV.",
+      "Data engineering for structured event logging.",
+      "Real-time pipeline design focused on performance.",
+    ],
+    techSummary:
+      "Python with OpenCV, MediaPipe, and NumPy for real-time eye tracking, supervised calibration, temporal stabilization, and heatmap/event export.",
+    conclusion: [
+      "Delivered a full eye-tracking prototype without dedicated hardware.",
+      "The foundation is ready for dashboards, observability, and streaming integrations.",
+      "The project combines computer vision, data engineering, and product thinking.",
+    ],
+    howToRun: [
+      "Requirements: Python 3.10 to 3.12 and a working webcam.",
+      "Create environment: python -m venv .venv and activate it.",
+      "Install dependencies: pip install -r requirements.txt.",
+      "Run: python run.py --camera-id 0 --width 1280 --height 720 --target-fps 120.",
+      "Use C to calibrate, H for heatmap, D for debug, R to reset, and Q/ESC to exit.",
+    ],
+    screenshots: [
+      {
+        src: "/projects/eye-tracking/cover.png",
+        alt: "Primary cover for the Real-Time Eye Tracking project",
+      },
+      {
+        src: "/projects/eye-tracking/cover-alt.png",
+        alt: "Alternative cover for the Real-Time Eye Tracking project",
+      },
+    ],
+    seo: {
+      title: "Real-Time Eye Tracking | Webcam + OpenCV + MediaPipe",
+      description:
+        "Real-time eye tracking with a standard webcam, 9-point calibration, low-latency filtering, dynamic heatmap, and NDJSON analytics export.",
+    },
+  },
 ];
 
 export const projectOrderEn = [
@@ -2047,6 +2151,7 @@ export const projectOrderEn = [
   "deteccao-de-anomalias-operacionais",
   "dashboard-vendas-power-bi",
   "detector-de-stress",
+  "eye-tracking",
   "touchless-web-gesture-interface",
   "driver-monitoring-system",
   "self-drive-car",
@@ -2077,5 +2182,11 @@ export const projectSlugsEn = projectsEn.map((project) => project.slug);
 
 export const getProjectBySlugEn = (slug: string) =>
   projectsEn.find((project) => project.slug === slug);
+
+
+
+
+
+
 
 

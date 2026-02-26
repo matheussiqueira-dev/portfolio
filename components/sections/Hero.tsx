@@ -1,4 +1,4 @@
-import ImageWithFallback from "@/components/ui/ImageWithFallback";
+﻿import ImageWithFallback from "@/components/ui/ImageWithFallback";
 import { TrackedAnchor, TrackedLink } from "@/components/analytics/TrackedLink";
 import type { SiteContent } from "@/data/site.types";
 
@@ -147,7 +147,7 @@ export default function Hero({ content, localePrefix }: Props) {
                 category: "engagement",
                 label: "hero_cta",
               }}
-              className="btn-ghost focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+              className="btn-outline btn-whatsapp focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
             >
               <span className="btn-icon" aria-hidden="true">
                 {ctaIcons.chat}
@@ -198,3 +198,4 @@ export default function Hero({ content, localePrefix }: Props) {
     </section>
   );
 }
+

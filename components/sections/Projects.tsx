@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import dynamic from "next/dynamic";
 import SafeImage from "@/src/components/demo/SafeImage";
@@ -87,12 +87,12 @@ const getProjectBadges = (project: Project) => {
     badges.add("Data");
   }
 
-  if (/\bai\b|\bia\b|machine learning|ml|llm|chatbot|inteligência artificial/.test(combined)) {
+  if (/\bai\b|\bia\b|machine learning|ml|llm|chatbot|inteligÃªncia artificial/.test(combined)) {
     badges.add("AI");
   }
 
   if (
-    /computer vision|visão computacional|opencv|mediapipe|gesture|gesto|hand|webcam/.test(
+    /computer vision|visÃ£o computacional|opencv|mediapipe|gesture|gesto|hand|webcam/.test(
       combined
     )
   ) {
@@ -469,7 +469,7 @@ export default function Projects() {
                     onClick={() =>
                       trackEvent("click_github", "outbound", project.slug)
                     }
-                    className="btn-ghost focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+                    className="btn-outline btn-github focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                   >
                     {content.caseLabel}
                   </a>
@@ -481,7 +481,7 @@ export default function Projects() {
                     onClick={() =>
                       trackEvent("click_github", "outbound", project.slug)
                     }
-                    className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+                    className="btn-outline btn-github focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                   >
                     {content.modal.githubLabel}
                   </a>
@@ -524,3 +524,4 @@ export default function Projects() {
     </section>
   );
 }
+

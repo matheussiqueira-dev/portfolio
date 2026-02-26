@@ -52,3 +52,4 @@ export function ProjectCard({ project }: { project: Project }) {
 }
 
 export default ProjectCard;
+

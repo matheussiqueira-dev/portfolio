@@ -59,28 +59,28 @@ export default function InteractivePhoto({ alt }: Props) {
 
   return (
     <motion.div
-      className="group relative mx-auto w-[min(300px,82vw)] sm:w-[min(320px,78vw)]"
+      className="group relative mx-auto w-[min(340px,86vw)]"
       style={{ perspective: "1200px" }}
-      initial={reduceMotion ? undefined : { opacity: 0, y: 16, scale: 0.985 }}
+      initial={reduceMotion ? undefined : { opacity: 0, y: 20, scale: 0.985 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       onMouseMove={handleMouseMove}
       onMouseLeave={resetTilt}
     >
       <motion.div
-        className="relative overflow-hidden rounded-3xl border border-[var(--landing-border)] bg-[var(--landing-card)] shadow-[var(--landing-card-shadow)]"
+        className="relative overflow-hidden rounded-[2rem] border border-[var(--landing-border)] bg-[var(--landing-card)] shadow-[var(--landing-card-shadow)]"
         style={{
           rotateX: reduceMotion ? 0 : smoothRotateX,
           rotateY: reduceMotion ? 0 : smoothRotateY,
           transformStyle: "preserve-3d",
           willChange: "transform",
         }}
-        whileHover={reduceMotion ? undefined : { scale: 1.05 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
+        whileHover={reduceMotion ? undefined : { scale: 1.008 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
       >
         <motion.div
           aria-hidden
-          className="pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-[400ms] group-hover:opacity-100"
+          className="pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           style={{
             backgroundImage: glowBackground,
             transform: "translateZ(36px)",
@@ -88,7 +88,7 @@ export default function InteractivePhoto({ alt }: Props) {
         />
 
         <div
-          className="relative h-[340px] w-full sm:h-[390px]"
+          className="relative h-[360px] w-full sm:h-[420px]"
           style={{ transform: "translateZ(48px)" }}
         >
           <Image
@@ -96,7 +96,7 @@ export default function InteractivePhoto({ alt }: Props) {
             alt={alt}
             fill
             priority
-            sizes="(max-width: 640px) 82vw, 320px"
+            sizes="(max-width: 640px) 86vw, 340px"
             className="object-cover object-center"
           />
         </div>
@@ -106,4 +106,3 @@ export default function InteractivePhoto({ alt }: Props) {
     </motion.div>
   );
 }
-
