@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { resolveLocale, type LocaleParams } from "../_lib";
+import { ProjectsContent } from "./projects-content";
+import { getProjectsCard } from "@/data/projects-card";
 
 type SearchParams = {
   stack?: string;
@@ -16,26 +18,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: locale === "en" ? "Projects" : "Projetos",
     description:
       locale === "en"
-        ? "My projects and portfolio"
-        : "Meus projetos e portfólio",
+        ? "Explore my portfolio of web, data, and BI projects"
+        : "Explore meu portfólio de projetos de web, dados e BI",
   };
 }
 
 export default async function ProjectsPage({
   params,
-  searchParams,
 }: Props) {
   const locale = await resolveLocale(params);
+  const projects = getProjectsCard(locale as "pt" | "en");
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>{locale === "en" ? "Projects" : "Projetos"}</h1>
-      <p>
-        {locale === "en"
-          ? "Page under construction"
-          : "Página em construção"}
-      </p>
-    </div>
+    <ProjectsContent
+      projects={projects}
+      locale={locale as "pt" | "en"}
+    />
   );
 }
 
