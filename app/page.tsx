@@ -1,6 +1,6 @@
 ﻿import type { Metadata } from "next";
 import ProfileCard from "@/components/ProfileCard";
-import { baseUrl } from "@/lib/seo";
+import { baseUrl } from "@/core/seo";
 
 const landingTitle =
   "Matheus Siqueira | Infraestrutura, FullStack e Analise de Dados";

@@ -2,7 +2,7 @@
 
 import type { CSSProperties, ReactNode } from "react";
 import Link from "next/link";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent } from "@/core/analytics";
 
 type Tracking = {
   action: string;

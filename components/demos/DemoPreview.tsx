@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { DemoExperience } from "@/data/projects.types";
-import { buildInternalDemoPath } from "@/lib/demos";
+import { buildInternalDemoPath } from "@/core/demos";
 
 type DemoPreviewProps = {
   demo?: DemoExperience;

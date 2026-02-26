@@ -18,7 +18,7 @@ import {
   getFileExtension,
   isExternalUrl,
   normalizeUrl,
-} from "@/lib/utils";
+} from "@/core/utils";
 
 // ============================================================================
 // STRING MANIPULATION TESTS

@@ -3,7 +3,7 @@
 import { Suspense, useCallback, useEffect, useId, useRef, useState } from "react";
 import LanguageSwitch from "@/components/ui/LanguageSwitch";
 import ThemeToggle from "@/components/ui/ThemeToggle";
-import { Link } from "@/i18n/navigation";
+import { Link } from "@/core/i18n/navigation";
 import type { NavItem } from "./navigation";
 
 type Props = {

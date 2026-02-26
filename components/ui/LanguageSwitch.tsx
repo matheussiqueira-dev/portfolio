@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-import { routing, type Locale } from "@/i18n/routing";
+import { routing, type Locale } from "@/core/i18n/routing";
 
 type LocalizedRoute = string | Partial<Record<Locale, string>>;
 

@@ -12,7 +12,7 @@ import { sitePt } from "@/data/site.pt";
 import { siteEn } from "@/data/site.en";
 import LanguageSwitch from "@/components/ui/LanguageSwitch";
 import ThemeToggle from "@/components/ui/ThemeToggle";
-import { Link, usePathname } from "@/i18n/navigation";
+import { Link, usePathname } from "@/core/i18n/navigation";
 import MobileMenu from "./MobileMenu";
 import {
   buildNavItems,

@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
-
-import ResumeEn, { metadata as metadataEn } from "@/i18n-pages/en/resume/page";
-import ResumePt, { metadata as metadataPt } from "@/i18n-pages/pt/resume/page";
-
-import { pickByLocale, resolveLocale, type LocaleParams } from "../_lib";
+import { resolveLocale, type LocaleParams } from "../_lib";
 
 type Props = {
   params: LocaleParams;
@@ -11,11 +7,24 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await resolveLocale(params);
-  return pickByLocale(locale, metadataPt, metadataEn);
+  return {
+    title: locale === "pt-BR" ? "Currículo" : "Resume",
+    description:
+      locale === "pt-BR" ? "Meu currículo profissional" : "My professional resume",
+  };
 }
 
 export default async function ResumePage({ params }: Props) {
   const locale = await resolveLocale(params);
-  return pickByLocale(locale, <ResumePt />, <ResumeEn />);
+  return (
+    <div style={{ padding: "2rem" }}>
+      <h1>{locale === "pt-BR" ? "Currículo" : "Resume"}</h1>
+      <p>
+        {locale === "pt-BR"
+          ? "Página em construção"
+          : "Page under construction"}
+      </p>
+    </div>
+  );
 }
 

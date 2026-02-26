@@ -14,7 +14,7 @@ import {
   filterScreenshotsByType,
   getVideoScreenshots,
   getImageScreenshots,
-} from "@/lib/media";
+} from "@/core/media";
 import type { Project } from "@/data/projects.types";
 
 describe("Media Utils", () => {

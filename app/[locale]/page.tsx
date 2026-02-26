@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
-
-import HomeEn, { metadata as metadataEn } from "@/i18n-pages/en/page";
-import HomePt, { metadata as metadataPt } from "@/i18n-pages/pt/page";
-
-import { pickByLocale, resolveLocale, type LocaleParams } from "./_lib";
+import { resolveLocale, type LocaleParams } from "./_lib";
 
 type Props = {
   params: LocaleParams;
@@ -11,11 +7,23 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await resolveLocale(params);
-  return pickByLocale(locale, metadataPt, metadataEn);
+  return {
+    title: locale === "pt-BR" ? "Home" : "Home",
+    description: locale === "pt-BR" ? "Página inicial" : "Home page",
+  };
 }
 
-export default async function LocaleHomePage({ params }: Props) {
+export default async function Home({ params }: Props) {
   const locale = await resolveLocale(params);
-  return pickByLocale(locale, <HomePt />, <HomeEn />);
+  return (
+    <div style={{ padding: "2rem" }}>
+      <h1>{locale === "pt-BR" ? "Bem-vindo" : "Welcome"}</h1>
+      <p>
+        {locale === "pt-BR"
+          ? "Página em construção"
+          : "Page under construction"}
+      </p>
+    </div>
+  );
 }
 

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { baseUrl } from "@/lib/seo";
+import { baseUrl } from "@/core/seo";
 
 export default function robots(): MetadataRoute.Robots {
   const base = baseUrl.replace(/\/$/, "");

@@ -8,17 +8,17 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await resolveLocale(params);
   return {
-    title: locale === "pt-BR" ? "Contrate-me" : "Hire Me",
+    title: locale === "pt-BR" ? "Data Analyst" : "Data Analyst",
     description:
-      locale === "pt-BR" ? "Contrate meus serviços" : "Hire my services",
+      locale === "pt-BR" ? "Data analyst projects" : "Data analyst projects",
   };
 }
 
-export default async function HirePage({ params }: Props) {
+export default async function DataAnalystPage({ params }: Props) {
   const locale = await resolveLocale(params);
   return (
     <div style={{ padding: "2rem" }}>
-      <h1>{locale === "pt-BR" ? "Contrate-me" : "Hire Me"}</h1>
+      <h1>Data Analyst</h1>
       <p>
         {locale === "pt-BR"
           ? "Página em construção"
@@ -27,4 +27,3 @@ export default async function HirePage({ params }: Props) {
     </div>
   );
 }
-

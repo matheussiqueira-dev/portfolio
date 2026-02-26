@@ -6,7 +6,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import AppVisualEffects from "@/components/layout/AppVisualEffects";
 import Cursor from "@/components/Cursor";
 import PageTransition from "@/components/PageTransition";
-import { baseUrl, buildAlternates, siteName, sameAsLinks } from "@/lib/seo";
+import { baseUrl, buildAlternates, siteName, sameAsLinks } from "@/core/seo";
 import "./globals.css";
 import "./refined-theme.css";
 

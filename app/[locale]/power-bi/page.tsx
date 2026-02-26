@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
-
-import PowerBiEn, { metadata as metadataEn } from "@/i18n-pages/en/power-bi/page";
-import PowerBiPt, { metadata as metadataPt } from "@/i18n-pages/pt/power-bi/page";
-
-import { pickByLocale, resolveLocale, type LocaleParams } from "../_lib";
+import { resolveLocale, type LocaleParams } from "../_lib";
 
 type Props = {
   params: LocaleParams;
@@ -11,11 +7,24 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await resolveLocale(params);
-  return pickByLocale(locale, metadataPt, metadataEn);
+  return {
+    title: locale === "pt-BR" ? "Power BI" : "Power BI",
+    description:
+      locale === "pt-BR" ? "Projetos Power BI" : "Power BI projects",
+  };
 }
 
 export default async function PowerBiPage({ params }: Props) {
   const locale = await resolveLocale(params);
-  return pickByLocale(locale, <PowerBiPt />, <PowerBiEn />);
+  return (
+    <div style={{ padding: "2rem" }}>
+      <h1>Power BI</h1>
+      <p>
+        {locale === "pt-BR"
+          ? "Página em construção"
+          : "Page under construction"}
+      </p>
+    </div>
+  );
 }
 

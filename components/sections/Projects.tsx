@@ -14,7 +14,7 @@ import {
   useState,
   useTransition,
 } from "react";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent } from "@/core/analytics";
 import { projects, projectOrder } from "@/data/projects";
 import { projectsEn, projectOrderEn } from "@/data/projects.en";
 import { projects as registryProjects } from "@/src/data/projects";

@@ -6,7 +6,7 @@ import VideoWithHoverPlay from "@/components/projects/VideoWithHoverPlay";
 import { useEffect, useId, useMemo, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useLocale } from "next-intl";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent } from "@/core/analytics";
 import { sitePt } from "@/data/site.pt";
 import { siteEn } from "@/data/site.en";
 import type { Project, ProjectMedia } from "@/data/projects.types";

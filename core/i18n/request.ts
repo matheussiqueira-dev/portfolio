@@ -4,8 +4,8 @@ import { getRequestConfig } from "next-intl/server";
 import { isValidLocale, routing } from "./routing";
 
 const messagesByLocale = {
-  "pt-BR": () => import("../messages/pt.json"),
-  en: () => import("../messages/en.json"),
+  "pt-BR": () => import("./locales/pt.json"),
+  en: () => import("./locales/en.json"),
 };
 
 export default getRequestConfig(async ({ requestLocale }) => {

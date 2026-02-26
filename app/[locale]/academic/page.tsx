@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
-
-import AcademicEn, { metadata as metadataEn } from "@/i18n-pages/en/academic/page";
-import AcademicPt, { metadata as metadataPt } from "@/i18n-pages/pt/academico/page";
-
-import { pickByLocale, resolveLocale, type LocaleParams } from "../_lib";
+import { resolveLocale, type LocaleParams } from "../_lib";
 
 type Props = {
   params: LocaleParams;
@@ -11,11 +7,28 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await resolveLocale(params);
-  return pickByLocale(locale, metadataPt, metadataEn);
+  return {
+    title: locale === "pt-BR" ? "Acadêmico" : "Academic",
+    description:
+      locale === "pt-BR"
+        ? "Educação e certificações"
+        : "Education and certifications",
+  };
 }
 
 export default async function AcademicPage({ params }: Props) {
   const locale = await resolveLocale(params);
-  return pickByLocale(locale, <AcademicPt />, <AcademicEn />);
+  const title = locale === "pt-BR" ? "Acadêmico" : "Academic";
+
+  return (
+    <div style={{ padding: "2rem" }}>
+      <h1>{title}</h1>
+      <p>
+        {locale === "pt-BR"
+          ? "Página em construção"
+          : "Page under construction"}
+      </p>
+    </div>
+  );
 }
 

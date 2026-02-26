@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
 import { projectsEn } from "@/data/projects.en";
-import { baseUrl } from "@/lib/seo";
+import { baseUrl } from "@/core/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

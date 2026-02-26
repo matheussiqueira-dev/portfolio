@@ -9,7 +9,7 @@ import DemosSlugPt, {
   generateMetadata as generatePtMetadata,
   generateStaticParams as generatePtStaticParams,
 } from "@/i18n-pages/pt/demos/[slug]/page";
-import { isValidLocale } from "@/i18n/routing";
+import { isValidLocale } from "@/core/i18n/routing";
 
 type RouteParams = Promise<{ locale: string; slug: string }>;
 

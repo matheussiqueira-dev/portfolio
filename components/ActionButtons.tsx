@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
-import { trackCTA } from "@/lib/analytics";
-import { ANALYTICS_EVENTS } from "@/lib/constants";
+import { trackCTA } from "@/core/analytics";
+import { ANALYTICS_EVENTS } from "@/core/constants";
 
 const BUTTON_CLASS =
   "inline-flex h-12 items-center justify-center gap-2 rounded-2xl border border-[var(--landing-border)] bg-[var(--landing-button-bg)] px-5 text-sm font-medium tracking-[-0.01em] text-[var(--landing-button-fg)] shadow-[var(--landing-button-shadow)] transition duration-300 ease-out hover:scale-[1.03] hover:bg-[var(--landing-button-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--landing-focus)]";

@@ -2186,9 +2186,6 @@ export const projectSlugs = projects.map((project) => project.slug);
 export const getProjectBySlug = (slug: string) =>
   projects.find((project) => project.slug === slug);
 
-export type InlineDemoId = import("../src/data/projects").InlineDemoId;
-export type Project = import("../src/data/projects").Project;
-export { getProjectById, interactiveProjectIds } from "../src/data/projects";
 
 
 

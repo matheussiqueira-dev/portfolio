@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { isValidLocale, type Locale } from "@/i18n/routing";
+import { isValidLocale, type Locale } from "@/core/i18n/routing";
 
 export type LocaleParams = Promise<{ locale: string }>;
 

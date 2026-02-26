@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
-import { isValidLocale, routing } from "@/i18n/routing";
+import { isValidLocale, routing } from "@/core/i18n/routing";
 
 type Props = Readonly<{
   children: React.ReactNode;
