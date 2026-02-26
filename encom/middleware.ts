@@ -15,11 +15,12 @@ export function middleware(request: NextRequest) {
   }
 
   // Get preferred locale from Accept-Language header
-  const acceptLanguage = request.headers.get('accept-language') || ''
+  const acceptLanguage = request.headers.get('accept-language') ?? ''
   const preferredLocale = acceptLanguage
     .split(',')[0]
-    .split('-')[0]
-    .toLowerCase()
+    ?.split('-')[0]
+    ?.toLowerCase()
+    ?? ''
 
   const locale = SUPPORTED_LOCALES.includes(preferredLocale)
     ? preferredLocale

@@ -1,4 +1,4 @@
-import { Locale, getDictionary } from '@/encom/locales'
+import type { Locale } from '@/encom/core/i18n/i18n.types'
 
 interface SettingsPageProps {
   params: Promise<{ locale: Locale }>
@@ -11,7 +11,6 @@ export const metadata = {
 
 export default async function SettingsPage({ params }: SettingsPageProps) {
   const { locale } = await params
-  const dictionary = await getDictionary(locale)
 
   const settingsGroups = [
     {

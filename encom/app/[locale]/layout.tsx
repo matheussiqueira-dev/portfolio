@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
-import { Locale, getDictionary } from '@/encom/locales'
-import { EncomLayout } from '@/encom/components/EncomLayout'
-import { PageTransition } from '@/encom/components/PageTransition'
+import type { Locale } from '@/encom/core/i18n/i18n.types'
+import { PageTransition } from '@/encom/ui/layout/PageTransition'
+import { Cursor } from '@/encom/ui/layout/Cursor'
 import '@/encom/styles/global.css'
 
 interface LocaleLayoutProps {
@@ -14,14 +14,13 @@ export default async function LocaleLayout({
   params,
 }: LocaleLayoutProps) {
   const { locale } = await params
-  const dictionary = await getDictionary(locale)
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className="encom-app">
-        <PageTransition>
-          <EncomLayout locale={locale}>{children}</EncomLayout>
-        </PageTransition>
+        <PageTransition />
+        <Cursor />
+        {children}
       </body>
     </html>
   )

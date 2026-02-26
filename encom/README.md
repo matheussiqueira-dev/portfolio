@@ -204,7 +204,7 @@ export default function Page() {
 ## 📚 Documentation
 
 - **[ARCHITECTURE.md](./ARCHITECTURE.md)**: Complete architecture guide
-- **[MIGRATION.md](./MIGRATION.md)**: Migrating from old architecture
+- **[MIGRATION.md](./MIGRATION.md)**: Migrating from old architecture (planned)
 - **API Reference**: Check each layer's index.ts for exports
 
 ---

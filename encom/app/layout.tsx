@@ -1,8 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { notFound } from 'next/navigation'
-import type { Locale } from '@/encom/locales'
-
-const SUPPORTED_LOCALES: Locale[] = ['pt', 'en']
+import type { Locale } from '@/encom/core/i18n/i18n.types'
+import { SUPPORTED_LOCALES } from '@/encom/core/i18n/dictionaries'
 
 export const metadata: Metadata = {
   title: 'ENCOM Dashboard',

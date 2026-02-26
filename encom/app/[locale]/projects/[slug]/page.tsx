@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
-import { Locale, getDictionary } from '@/encom/locales'
+import type { Locale } from '@/encom/core/i18n/i18n.types'
+import { i18nEngine } from '@/encom/core/i18n/i18n.engine'
 import { projects } from '@/encom/data/projects'
 import { DataBlock } from '@/encom/components/DataBlock'
 
@@ -14,15 +15,15 @@ export const metadata = {
 
 export function generateStaticParams() {
   return projects.map((project) => ({
-    slug: project.slug,
+    slug: project.id,
     locale: 'pt',
   }))
 }
 
 export default async function ProjectDetail({ params }: ProjectDetailProps) {
   const { slug, locale } = await params
-  const dictionary = await getDictionary(locale)
-  const project = projects.find((p) => p.slug === slug)
+  const dictionary = i18nEngine.getDictionary(locale)
+  const project = projects.find((p) => p.id === slug)
 
   if (!project) {
     notFound()
@@ -31,8 +32,8 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
   return (
     <div className="project-detail">
       <div className="project-header">
-        <h1 className="page-title">{project.title}</h1>
-        <div className="project-node-id">NODE-{project.id.toString().padStart(2, '0')}</div>
+        <h1 className="page-title">{project.name}</h1>
+        <div className="project-node-id">{project.nodeId}</div>
       </div>
 
       <div className="project-content">
@@ -56,22 +57,28 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
           <h2 className="section-title">{dictionary.metrics}</h2>
           <div className="metrics-grid-detail">
             <DataBlock
-              title="Performance"
+              title={dictionary.performanceScore}
               value={`${project.metrics.performanceScore}%`}
               icon="📊"
               accent="success"
             />
             <DataBlock
-              title="Reliability"
-              value={`${project.metrics.uptime}%`}
-              icon="⏱️"
+              title={dictionary.cpu}
+              value={`${project.metrics.cpuUsage}%`}
+              icon="🧠"
               accent="success"
+            />
+            <DataBlock
+              title={dictionary.memory}
+              value={`${project.metrics.memoryUsage}%`}
+              icon="💾"
+              accent="secondary"
             />
             <DataBlock
               title={dictionary.latency}
               value={`${project.metrics.latency}ms`}
               icon="📈"
-              accent="secondary"
+              accent="primary"
             />
           </div>
         </section>
@@ -79,7 +86,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
         <section className="project-section">
           <h2 className="section-title">{dictionary.challenges}</h2>
           <ul className="challenges-list">
-            {project.challenges.map((challenge, idx) => (
+            {project.technicalChallenges.map((challenge, idx) => (
               <li key={idx} className="challenge-item">
                 {challenge}
               </li>

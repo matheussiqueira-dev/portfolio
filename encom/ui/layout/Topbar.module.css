@@ -43,10 +43,6 @@
   }
 }
 
-.statusText {
-  /* text content */
-}
-
 .controls {
   display: flex;
   align-items: center;

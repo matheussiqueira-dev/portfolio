@@ -24,6 +24,11 @@ export interface Dictionary {
   performanceScore: string
   uptime: string
   requestsPerSecond: string
+  requests: string
+  usage: string
+  allocated: string
+  continuous: string
+  today: string
 
   // Projects
   description: string
@@ -31,6 +36,16 @@ export interface Dictionary {
   metrics: string
   challenges: string
   repository: string
+  overview: string
+  completed: string
+  earned: string
+  technologies: string
+  certificates: string
+  viewDetails: string
+  noProjects: string
+  all: string
+  active: string
+  archived: string
 
   // Common
   loading: string

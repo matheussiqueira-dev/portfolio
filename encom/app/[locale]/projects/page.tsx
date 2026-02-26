@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Locale, getDictionary } from '@/encom/locales'
+import type { Locale } from '@/encom/core/i18n/i18n.types'
+import { i18nEngine } from '@/encom/core/i18n/i18n.engine'
 import { projects } from '@/encom/data/projects'
 import { DataBlock } from '@/encom/components/DataBlock'
 
@@ -14,7 +15,7 @@ export const metadata = {
 
 export default async function ProjectsPage({ params }: ProjectsPageProps) {
   const { locale } = await params
-  const dictionary = await getDictionary(locale)
+  const dictionary = i18nEngine.getDictionary(locale)
 
   return (
     <div className="projects-page">
@@ -23,14 +24,14 @@ export default async function ProjectsPage({ params }: ProjectsPageProps) {
       <div className="projects-list">
         {projects.map((project) => (
           <Link
-            key={project.slug}
-            href={`/projects/${project.slug}`}
+            key={project.id}
+            href={`/${locale}/projects/${project.id}`}
             className="project-link"
           >
             <DataBlock
-              title={project.title}
-              value={`NODE-${project.id.toString().padStart(2, '0')}`}
-              subtitle={`${project.stack.length} technologies • ${project.metrics.performanceScore}% performance`}
+              title={project.name}
+              value={project.nodeId}
+              subtitle={`${project.stack.length} ${dictionary.technologies} • ${project.metrics.performanceScore}% ${dictionary.performanceScore}`}
               icon="⚙️"
               accent="primary"
             />

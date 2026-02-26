@@ -19,7 +19,7 @@ export function PageTransition() {
   const [isTransitioning, setIsTransitioning] = useState(false)
 
   useEffect(() => {
-    if (!APP_CONFIG.features.enablePageTransitions) return
+    if (!APP_CONFIG.features.enablePageTransitions) return undefined
 
     if (prevPath.current !== pathname) {
       setIsTransitioning(true)
@@ -31,6 +31,7 @@ export function PageTransition() {
 
       return () => clearTimeout(timer)
     }
+    return undefined
   }, [pathname])
 
   if (!isTransitioning) return null

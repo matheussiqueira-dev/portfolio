@@ -1,6 +1,6 @@
 'use client'
 
-import { Dictionary } from '@/encom/locales'
+import { Dictionary } from '@/encom/core/i18n/i18n.types'
 import { SystemData } from '@/encom/data/projects'
 import styles from './SystemStatus.module.css'
 

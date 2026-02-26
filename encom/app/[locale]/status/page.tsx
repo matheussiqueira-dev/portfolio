@@ -1,4 +1,5 @@
-import { Locale, getDictionary } from '@/encom/locales'
+import type { Locale } from '@/encom/core/i18n/i18n.types'
+import { i18nEngine } from '@/encom/core/i18n/i18n.engine'
 import { systemData } from '@/encom/data/projects'
 import { DataBlock } from '@/encom/components/DataBlock'
 
@@ -13,7 +14,7 @@ export const metadata = {
 
 export default async function StatusPage({ params }: StatusPageProps) {
   const { locale } = await params
-  const dictionary = await getDictionary(locale)
+  const dictionary = i18nEngine.getDictionary(locale)
 
   const statusItems = [
     { label: 'Core Systems', status: 'operational', icon: '🟢' },

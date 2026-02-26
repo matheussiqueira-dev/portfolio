@@ -31,6 +31,10 @@ export interface SystemData {
   systemStatus: 'online' | 'offline'
   buildVersion: string
   clearanceLevel: number
+  cpuUsage: number
+  memoryUsage: number
+  activeNodes: number
+  latency: number
 }
 
 export const systemData: SystemData = {
@@ -39,6 +43,10 @@ export const systemData: SystemData = {
   systemStatus: 'online',
   buildVersion: 'ENCOM-2.0.1-BETA',
   clearanceLevel: 9,
+  cpuUsage: 42,
+  memoryUsage: 58,
+  activeNodes: 9,
+  latency: 24,
 }
 
 export const projects: Project[] = [

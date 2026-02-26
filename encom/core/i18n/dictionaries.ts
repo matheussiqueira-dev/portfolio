@@ -26,6 +26,11 @@ export const DICTIONARIES: Record<Locale, Dictionary> = {
     performanceScore: 'Performance',
     uptime: 'Disponibilidade',
     requestsPerSecond: 'Req/seg',
+    requests: 'Requisicoes',
+    usage: 'Uso',
+    allocated: 'Alocado',
+    continuous: 'Continuo',
+    today: 'Hoje',
 
     // Projects
     description: 'Descrição',
@@ -33,6 +38,16 @@ export const DICTIONARIES: Record<Locale, Dictionary> = {
     metrics: 'Métricas',
     challenges: 'Desafios',
     repository: 'Repositório',
+    overview: 'Visao Geral',
+    completed: 'Concluidos',
+    earned: 'Conquistados',
+    technologies: 'Tecnologias',
+    certificates: 'Certificados',
+    viewDetails: 'Ver Detalhes',
+    noProjects: 'Nenhum projeto encontrado',
+    all: 'Todos',
+    active: 'Ativo',
+    archived: 'Arquivado',
 
     // Common
     loading: 'Carregando...',
@@ -62,6 +77,11 @@ export const DICTIONARIES: Record<Locale, Dictionary> = {
     performanceScore: 'Performance',
     uptime: 'Uptime',
     requestsPerSecond: 'Req/sec',
+    requests: 'Requests',
+    usage: 'Usage',
+    allocated: 'Allocated',
+    continuous: 'Continuous',
+    today: 'Today',
 
     // Projects
     description: 'Description',
@@ -69,6 +89,16 @@ export const DICTIONARIES: Record<Locale, Dictionary> = {
     metrics: 'Metrics',
     challenges: 'Challenges',
     repository: 'Repository',
+    overview: 'Overview',
+    completed: 'Completed',
+    earned: 'Earned',
+    technologies: 'Technologies',
+    certificates: 'Certificates',
+    viewDetails: 'View Details',
+    noProjects: 'No projects found',
+    all: 'All',
+    active: 'Active',
+    archived: 'Archived',
 
     // Common
     loading: 'Loading...',

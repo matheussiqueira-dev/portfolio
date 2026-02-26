@@ -33,7 +33,7 @@ export function EncomLayoutClient({
 
       <div className="encom-controls-portal">
         <ThemeToggle />
-        <LanguageToggle />
+        <LanguageToggle currentLocale={locale} />
       </div>
     </div>
   )

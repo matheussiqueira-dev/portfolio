@@ -10,6 +10,7 @@
 
 import { Metadata } from 'next'
 import { i18nEngine } from '@/encom/core/i18n/i18n.engine'
+import type { Locale } from '@/encom/core/i18n/i18n.types'
 import { Sidebar } from '@/encom/ui/layout/Sidebar'
 import { Topbar } from '@/encom/ui/layout/Topbar'
 import { SystemStatus } from '@/encom/system/dashboard/SystemStatus.module'
@@ -31,8 +32,11 @@ export default async function DashboardPage({
   params: { locale?: string }
 }) {
   // Get locale and dictionary from Core layer
-  const locale = await params.locale
-  const dictionary = i18nEngine.getDictionary(locale as 'pt' | 'en' | undefined)
+  const locale = params.locale
+  const resolvedLocale: Locale = i18nEngine.isValidLocale(locale ?? '')
+    ? (locale as Locale)
+    : 'pt'
+  const dictionary = i18nEngine.getDictionary(resolvedLocale)
 
   // Mock data - in production this would come from API/Database
   const projects = [
