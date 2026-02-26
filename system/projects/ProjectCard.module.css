@@ -53,8 +53,10 @@
 }
 
 .header:focus-visible {
-  outline: none;
-  background-color: rgba(0, 82, 204, 0.04);
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+  background-color: rgba(0, 82, 204, 0.06);
+  border-radius: 2px;
 }
 
 /* Thumbnail */
@@ -219,6 +221,12 @@
   border-color: var(--accent);
   color: var(--accent);
   background: rgba(0, 82, 204, 0.04);
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .buttonPrimary {
@@ -233,6 +241,12 @@
 .buttonPrimary:focus-visible {
   background: rgba(0, 82, 204, 0.15);
   box-shadow: 0 4px 12px rgba(0, 82, 204, 0.2);
+  outline: none;
+}
+
+.buttonPrimary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 /* Responsive Design */

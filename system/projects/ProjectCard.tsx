@@ -38,18 +38,27 @@ const labels = {
 /**
  * ProjectCard - Expandable project card with media and details
  * 
- * Features:
- * - Keyboard accessible (Enter/Space to toggle)
- * - ARIA labels for screen readers
- * - Lazy-load details on expand
+ * ♿ Accessibility Features:
+ * - Semantic HTML: <article>, <button>, <h2>
+ * - Keyboard support: Enter/Space to expand, Escape to collapse
+ * - ARIA labels: aria-expanded, aria-controls, aria-labelledby
+ * - Focus visible: Clear focus indicator for keyboard users
+ * - Reduced motion: Respects prefers-reduced-motion media query
+ * - Screen reader: Proper heading hierarchy and descriptions
+ * 
+ * 🎨 Visual Features:
+ * - Expandable accordion with smooth animation
+ * - Featured badge and tech stack preview
+ * - Lazy-loaded details on demand
  * - Responsive design (mobile/tablet/desktop)
- * - Smooth accordion animation
+ * - Image optimization with Next.js Image
  */
 export default function ProjectCard({ project, locale, index = 0 }: Props) {
   const headingId = useId();
   const detailsId = useId();
   const [expanded, setExpanded] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const [maxHeight, setMaxHeight] = useState(0);
   const t = labels[locale];
 
@@ -75,8 +84,13 @@ export default function ProjectCard({ project, locale, index = 0 }: Props) {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       handleToggle();
+    } else if (e.key === "Escape" && expanded) {
+      // Close on Escape key
+      e.preventDefault();
+      setExpanded(false);
     }
   };
+
 
   return (
     <article
@@ -85,6 +99,7 @@ export default function ProjectCard({ project, locale, index = 0 }: Props) {
     >
       {/* HEADER - Always visible, clickable */}
       <button
+        ref={buttonRef}
         className={styles.header}
         onClick={handleToggle}
         onKeyDown={handleKeyDown}
@@ -92,6 +107,7 @@ export default function ProjectCard({ project, locale, index = 0 }: Props) {
         aria-controls={detailsId}
         aria-labelledby={headingId}
         title={expanded ? t.viewLess : t.viewMore}
+        type="button"
       >
         {/* Thumbnail */}
         <div className={styles.thumbnailWrapper}>
