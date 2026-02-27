@@ -5,7 +5,7 @@ Complete QA execution for encoding, PT/EN copy, local validation, performance, g
 
 ## 1) Encoding and Character Integrity
 - [x] Tracked text files validated as UTF-8 (no BOM).
-  - `text_files_checked: 198`
+  - `text_files_checked: 199`
   - `bom_count: 0`
   - `invalid_utf8_count: 0`
 - [x] `package.json`, `tsconfig.json`, `next.config.ts` reviewed.
@@ -16,7 +16,7 @@ Complete QA execution for encoding, PT/EN copy, local validation, performance, g
 
 ## 2) Copy and Terminology Review (PT/EN)
 - [x] PT/EN wording normalized in updated routes/components.
-- [x] Terminology alignment applied (`Portfolio`, status labels, action labels).
+- [x] Terminology alignment applied (`portfolio`, status labels, action labels).
 - [x] Placeholder route copy standardized (PT/EN).
 
 ## 3) Local Functional Validation
@@ -34,7 +34,8 @@ Complete QA execution for encoding, PT/EN copy, local validation, performance, g
 - [x] `/pt-BR/projects` -> `307` (expected locale redirect)
 - [x] `/en/demos` -> `200`
 - [x] `/en/demos/chatbot-ia-api` -> `200`
-- [ ] `/system` -> `404` (route not implemented)
+- [x] `/system` -> `200`
+- [x] `/en/system` -> `200`
 
 ### Tracking and head checks
 - [x] GTM script present (`googletagmanager.com/gtm.js`)
@@ -59,7 +60,7 @@ Threshold status (requested):
 
 ## 5) Git Hygiene
 - [x] `.gitignore` covers `node_modules`, `.next`, `.env.local` pattern.
-- [x] No build artifacts or temporary runtime files staged.
+- [x] No temporary QA artifact was staged.
 
 ## 6) Deploy Readiness
 - [x] Build is green and production server runs locally.
@@ -70,5 +71,4 @@ Current deploy blocker:
 
 ## 7) Final Blocking Items
 1. Mobile Lighthouse Performance remains below target (`50 < 90`).
-2. `/system` route is still `404`.
-3. Vercel token is invalid, preventing deployment from this environment.
+2. Vercel token is invalid, preventing deployment from this environment.

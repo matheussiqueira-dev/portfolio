@@ -31,6 +31,7 @@ export const routing = defineRouting({
     "/sql-python": "/sql-python",
     "/demos": "/demos",
     "/demos/[slug]": "/demos/[slug]",
+    "/system": "/system",
   },
 });
 
