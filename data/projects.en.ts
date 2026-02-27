@@ -10,6 +10,7 @@ const projectListEn: Project[] = [
     role: "Full Stack Developer",
     stack: ["React", "TypeScript", "Vite", "Canvas API", "Node.js", "Fastify", "Zod"],
     repoUrl: "https://github.com/matheussiqueira-dev/capa-da-invisibilidade.git",
+    demoUrl: "https://capa-da-invisibilidade.vercel.app/",
     demo: {
       kind: "video",
       src: "/Capa da Invisibilidade.mp4",
@@ -482,6 +483,7 @@ const projectListEn: Project[] = [
     stack: ["Python", "FastAPI", "OpenCV", "MediaPipe", "React"],
     repoUrl:
       "https://github.com/matheussiqueira-dev/Interface-Web-de-Gestos-Sem-Contato.git",
+    demoUrl: "https://touchless-gestures-next.vercel.app/",
     demo: {
       kind: "video",
       src: "/touchless-web-gesture-interface.mp4",

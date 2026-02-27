@@ -51,39 +51,141 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  overflow: visible;
 }
 
 .filter {
+  --float-duration: 5.2s;
+  --float-amplitude: 4px;
+  --effective-float-amplitude: var(--float-amplitude);
+  --float-delay: 0s;
+  --hover-scale: 1;
+  --hover-lift: 0px;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   padding: 8px 16px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: 6px;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border));
+  background: color-mix(in srgb, var(--surface) 90%, var(--accent) 10%);
   font-size: 12px;
   font-weight: 500;
   color: var(--muted);
   cursor: pointer;
-  transition: all 0.2s ease;
   white-space: nowrap;
+
+  transform: translate3d(0, 0, 0) scale(var(--hover-scale));
+  animation: float var(--float-duration) ease-in-out var(--float-delay) infinite;
+  transition:
+    color 0.24s ease,
+    border-color 0.24s ease,
+    background-color 0.24s ease,
+    box-shadow 0.24s ease,
+    transform 0.24s ease;
+
+  box-shadow:
+    0 0 4px color-mix(in srgb, var(--accent) 45%, transparent),
+    0 0 10px color-mix(in srgb, var(--accent) 30%, transparent),
+    inset 0 0 6px color-mix(in srgb, var(--accent) 22%, transparent);
+
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.filter::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    color-mix(in srgb, var(--accent) 35%, transparent),
+    transparent
+  );
+  opacity: 0;
+  transform: translate3d(-110%, 0, 0);
+  transition: opacity 0.3s ease, transform 0.6s ease;
+}
+
+.filter > * {
+  position: relative;
+  z-index: 1;
 }
 
 .filter:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: rgba(0, 82, 204, 0.04);
+  --hover-scale: 1.04;
+  --hover-lift: 2px;
+
+  border-color: color-mix(in srgb, var(--accent) 82%, var(--border));
+  color: var(--foreground-strong, var(--foreground));
+  background: color-mix(in srgb, var(--surface) 84%, var(--accent) 16%);
+
+  box-shadow:
+    0 0 8px var(--accent),
+    0 0 18px color-mix(in srgb, var(--accent) 82%, transparent),
+    0 0 32px color-mix(in srgb, var(--accent) 70%, transparent),
+    inset 0 0 10px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.filter:hover::before,
+.filter:focus-visible::before {
+  opacity: 1;
+  transform: translate3d(110%, 0, 0);
 }
 
 .filter:focus-visible {
-  outline: none;
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  color: var(--foreground-strong, var(--foreground));
   border-color: var(--accent);
-  background: rgba(0, 82, 204, 0.08);
-  box-shadow: 0 0 0 2px rgba(0, 82, 204, 0.15);
+  box-shadow:
+    0 0 8px color-mix(in srgb, var(--accent) 82%, transparent),
+    0 0 20px color-mix(in srgb, var(--accent) 66%, transparent),
+    inset 0 0 8px color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
-.filter.active {
-  border-color: var(--accent);
-  background: rgba(0, 82, 204, 0.12);
-  color: var(--accent);
+.filter.active,
+.filter[data-active="true"] {
   font-weight: 600;
+  color: var(--foreground-strong, var(--foreground));
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+  box-shadow:
+    0 0 12px var(--accent),
+    0 0 22px color-mix(in srgb, var(--accent) 68%, transparent),
+    inset 0 0 10px color-mix(in srgb, var(--accent) 64%, transparent);
+  animation:
+    float var(--float-duration) ease-in-out var(--float-delay) infinite,
+    pulse 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translate3d(0, 0, 0) scale(var(--hover-scale));
+  }
+  50% {
+    transform: translate3d(
+      0,
+      calc(-1 * var(--effective-float-amplitude) - var(--hover-lift)),
+      0
+    ) scale(var(--hover-scale));
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(var(--hover-scale));
+  }
+}
+
+@keyframes pulse {
+  50% {
+    box-shadow:
+      0 0 20px var(--accent),
+      0 0 30px color-mix(in srgb, var(--accent) 80%, transparent),
+      inset 0 0 12px color-mix(in srgb, var(--accent) 68%, transparent);
+  }
 }
 
 /* Projects Grid */
@@ -137,8 +239,24 @@
   }
 
   .filter {
+    --effective-float-amplitude: calc(var(--float-amplitude) * 0.65);
+
     padding: 7px 12px;
     font-size: 11px;
+    box-shadow:
+      0 0 3px color-mix(in srgb, var(--accent) 34%, transparent),
+      0 0 8px color-mix(in srgb, var(--accent) 24%, transparent),
+      inset 0 0 4px color-mix(in srgb, var(--accent) 20%, transparent);
+  }
+
+  .filter:hover {
+    --hover-scale: 1.02;
+    --hover-lift: 1px;
+
+    box-shadow:
+      0 0 6px color-mix(in srgb, var(--accent) 72%, transparent),
+      0 0 12px color-mix(in srgb, var(--accent) 56%, transparent),
+      inset 0 0 6px color-mix(in srgb, var(--accent) 36%, transparent);
   }
 
   .grid {
@@ -202,6 +320,23 @@
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .filter,
+  .filter.active,
+  .filter[data-active="true"] {
+    animation: none !important;
+    transform: none !important;
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease,
+      background-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .filter::before {
+    opacity: 0;
+    transform: none;
+    transition: none;
+  }
+
   .grid {
     transition: none;
   }

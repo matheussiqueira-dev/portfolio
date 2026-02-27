@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type CSSProperties } from "react";
 
 import type { ProjectCard as ProjectCardType } from "@/data/projects-card.types";
 
@@ -12,6 +12,12 @@ interface Props {
   locale: "pt" | "en";
   allLabel?: string;
 }
+
+type FloatStyle = CSSProperties & {
+  "--float-duration"?: string;
+  "--float-amplitude"?: string;
+  "--float-delay"?: string;
+};
 
 const labels = {
   pt: {
@@ -36,6 +42,27 @@ const labels = {
     withStack: "with",
   },
 };
+
+function hashLabel(value: string) {
+  let hash = 0;
+  for (let idx = 0; idx < value.length; idx += 1) {
+    hash = (hash * 31 + value.charCodeAt(idx)) >>> 0;
+  }
+  return hash;
+}
+
+function getFloatStyle(label: string, index: number): FloatStyle {
+  const hash = hashLabel(`${label}-${index}`);
+  const duration = 4 + (hash % 301) / 100; // 4.00s to 7.00s
+  const amplitude = 2 + (hash % 5); // 2px to 6px
+  const delay = -((hash % 240) / 100); // -0.00s to -2.40s
+
+  return {
+    "--float-duration": `${duration.toFixed(2)}s`,
+    "--float-amplitude": `${amplitude}px`,
+    "--float-delay": `${delay.toFixed(2)}s`,
+  };
+}
 
 /**
  * ProjectList - Container for project cards with filtering
@@ -75,21 +102,25 @@ export default function ProjectList({ projects, locale, allLabel }: Props) {
             className={`${styles.filter} ${
               selectedStack === null ? styles.active : ""
             }`}
+            style={getFloatStyle(allLabel ?? t.allProjects, 0)}
             onClick={() => setSelectedStack(null)}
             aria-pressed={selectedStack === null}
+            data-active={selectedStack === null}
             type="button"
           >
             {allLabel ?? t.allProjects}
           </button>
 
-          {allStacks.map((stack) => (
+          {allStacks.map((stack, stackIndex) => (
             <button
               key={stack}
               className={`${styles.filter} ${
                 selectedStack === stack ? styles.active : ""
               }`}
+              style={getFloatStyle(stack, stackIndex + 1)}
               onClick={() => setSelectedStack(stack)}
               aria-pressed={selectedStack === stack}
+              data-active={selectedStack === stack}
               type="button"
             >
               {stack}

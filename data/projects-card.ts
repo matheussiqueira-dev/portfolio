@@ -5,6 +5,9 @@
  */
 
 import type { ProjectCard } from "./projects-card.types";
+import { projects } from "./projects";
+import { projectsEn } from "./projects.en";
+import type { Project } from "./projects.types";
 
 /**
  * Portuguese projects in card format
@@ -392,11 +395,149 @@ export const projectsCardEn: ProjectCard[] = projectsCardPt.map((p) => ({
   ...p,
 })); // Same structure, bilingual fields handle translation
 
+const projectsBySlugPt = new Map(projects.map((project) => [project.slug, project]));
+const projectsBySlugEn = new Map(projectsEn.map((project) => [project.slug, project]));
+
+function isExternalUrl(value: string) {
+  return /^https?:\/\//i.test(value);
+}
+
+function getDemoLink(project: Project): string | undefined {
+  if (project.demoUrl) {
+    return project.demoUrl;
+  }
+
+  if (!project.demo) {
+    return undefined;
+  }
+
+  switch (project.demo.kind) {
+    case "external":
+    case "embed":
+      return project.demo.url;
+    case "internal":
+      return project.demo.path;
+    default:
+      return undefined;
+  }
+}
+
+function getThumbnail(project: Project): string {
+  if (project.demo?.kind === "video" && project.demo.poster) {
+    return project.demo.poster;
+  }
+
+  const imageShot = project.screenshots.find(
+    (shot) => shot.type !== "video" && shot.type !== "gif"
+  );
+  if (imageShot) {
+    return imageShot.src;
+  }
+
+  if (project.screenshots[0]) {
+    return project.screenshots[0].src;
+  }
+
+  return "/placeholder.jpg";
+}
+
+function getVideos(project: Project, posterFallback: string): ProjectCard["videos"] {
+  if (project.demo?.kind === "video") {
+    return [
+      {
+        type: "local",
+        src: project.demo.src,
+        poster: project.demo.poster ?? posterFallback,
+        caption: project.demo.caption,
+      },
+    ];
+  }
+
+  const screenshotVideo = project.screenshots.find((shot) => shot.type === "video");
+  if (screenshotVideo) {
+    return [
+      {
+        type: "local",
+        src: screenshotVideo.src,
+        poster: posterFallback,
+        caption: screenshotVideo.alt,
+      },
+    ];
+  }
+
+  return [];
+}
+
+function toProjectCard(
+  sourceProject: Project,
+  translatedProject: Project | undefined,
+  locale: "pt" | "en",
+  index: number
+): ProjectCard {
+  const ptProject = locale === "pt" ? sourceProject : translatedProject ?? sourceProject;
+  const enProject = locale === "en" ? sourceProject : translatedProject ?? sourceProject;
+
+  const ptThumbnail = getThumbnail(ptProject);
+  const enThumbnail = getThumbnail(enProject);
+  const sourceThumbnail = locale === "pt" ? ptThumbnail : enThumbnail;
+  const demoLink = getDemoLink(sourceProject);
+  const externalDemo = demoLink ? isExternalUrl(demoLink) : false;
+
+  return {
+    slug: sourceProject.slug,
+    id: sourceProject.slug,
+    title: {
+      pt: ptProject.title,
+      en: enProject.title,
+    },
+    tagline: {
+      pt: ptProject.tagline,
+      en: enProject.tagline,
+    },
+    description: {
+      pt: ptProject.tagline,
+      en: enProject.tagline,
+    },
+    fullDescription: {
+      pt: ptProject.context,
+      en: enProject.context,
+    },
+    thumbnail: {
+      pt: ptThumbnail,
+      en: enThumbnail,
+    },
+    videos: getVideos(sourceProject, sourceThumbnail),
+    stack: sourceProject.stack,
+    role: sourceProject.role,
+    context: {
+      pt: ptProject.context,
+      en: enProject.context,
+    },
+    highlights: sourceProject.highlights,
+    links: {
+      repo: sourceProject.repoUrl,
+      live: externalDemo ? demoLink : undefined,
+      demo: !externalDemo ? demoLink : undefined,
+      caseStudy:
+        locale === "en"
+          ? "/en/projects/" + sourceProject.slug
+          : "/projetos/" + sourceProject.slug,
+    },
+    featured: index < 6,
+    order: index + 1,
+  };
+}
+
 /**
  * Helper function to get correct language projects
  */
 export function getProjectsCard(locale: "pt" | "en") {
-  return locale === "pt" ? projectsCardPt : projectsCardEn;
+  const source = locale === "pt" ? projects : projectsEn;
+  const translated = locale === "pt" ? projectsBySlugEn : projectsBySlugPt;
+
+  return source.map((project, index) =>
+    toProjectCard(project, translated.get(project.slug), locale, index)
+  );
 }
 
 /**
