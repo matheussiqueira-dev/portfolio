@@ -134,8 +134,8 @@ const projectListEn: Project[] = [
       "https://github.com/matheussiqueira-dev/Simulacao-Estrategica-de-Decisao-Empresarial.git",
     demo: {
       kind: "video",
-      src: "/Simulação Estratégica de Decisão Empresarial.mp4",
-      poster: "/Thmbnail/Thumbnail - English/Business Decision Simulator.png",
+      src: "/projects/business-decision-simulator/demo.mp4",
+      poster: "/thumbnails/en/business-decision-simulator.png",
       caption: "Side-by-side scenarios, risk distribution and live KPIs.",
     },
     intro: {
@@ -163,8 +163,8 @@ const projectListEn: Project[] = [
         },
       ],
       video: {
-        src: "/Simulação Estratégica de Decisão Empresarial.mp4",
-        poster: "/Thmbnail/Thumbnail - English/Business Decision Simulator.png",
+        src: "/projects/business-decision-simulator/demo.mp4",
+        poster: "/thumbnails/en/business-decision-simulator.png",
         caption: "Walkthrough of scenarios, risk and KPI dashboards.",
       },
     },
@@ -222,11 +222,11 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - English/Business Decision Simulator.png",
+        src: "/thumbnails/en/business-decision-simulator.png",
         alt: "Business Decision Simulator cover",
       },
       {
-        src: "/Simulação Estratégica de Decisão Empresarial.mp4",
+        src: "/projects/business-decision-simulator/demo.mp4",
         alt: "Business Decision Simulator demo",
         type: "video",
       },
@@ -367,7 +367,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
-      poster: "/Thmbnail/Thumbnail - English/Operational Anomaly Detection.png",
+      poster: "/thumbnails/en/deteccao-de-anomalias-operacionais.png",
       caption: "Radar with anomaly alerts and metric history.",
     },
     intro: {
@@ -396,7 +396,7 @@ const projectListEn: Project[] = [
       ],
       video: {
         src: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
-        poster: "/Thmbnail/Thumbnail - English/Operational Anomaly Detection.png",
+        poster: "/thumbnails/en/deteccao-de-anomalias-operacionais.png",
         caption: "Automatic detection, alerts, and investigation in one view.",
       },
     },
@@ -453,7 +453,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - English/Operational Anomaly Detection.png",
+        src: "/thumbnails/en/deteccao-de-anomalias-operacionais.png",
         alt: "Operational Anomaly Detection cover",
       },
       {
@@ -1767,7 +1767,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/Hands Gesture.mp4",
-      poster: "/Thmbnail/Thumbnail - English/Real-Time Hand Gesture Recognition.png",
+      poster: "/thumbnails/en/hand-gesture-recognition-realtime.png",
       caption: "Real-time gesture recognition demonstration.",
     },
     intro: {
@@ -1902,7 +1902,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - English/Real-Time Hand Gesture Recognition.png",
+        src: "/thumbnails/en/hand-gesture-recognition-realtime.png",
         alt: "Hand gesture recognition project cover",
       },
       {
@@ -2047,6 +2047,12 @@ const projectListEn: Project[] = [
     role: "Developer/Architect",
     stack: ["Python", "OpenCV", "MediaPipe", "NumPy", "Computer Vision"],
     repoUrl: "https://github.com/matheussiqueira-dev/Eye-Tracking.git",
+    demo: {
+      kind: "video",
+      src: "/projects/eye-tracking/demo.mp4",
+      poster: "/projects/eye-tracking/cover.png",
+      caption: "Real-time Eye Tracking demo.",
+    },
     intro: {
       title: "Real-time eye tracking for behavioral analytics",
       paragraphs: [
@@ -2134,6 +2140,11 @@ const projectListEn: Project[] = [
       {
         src: "/projects/eye-tracking/cover-alt.png",
         alt: "Alternative cover for the Real-Time Eye Tracking project",
+      },
+      {
+        src: "/projects/eye-tracking/demo.mp4",
+        alt: "Real-Time Eye Tracking demo video",
+        type: "video",
       },
     ],
     seo: {

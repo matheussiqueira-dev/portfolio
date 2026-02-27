@@ -134,8 +134,8 @@ const projectList: ProjectCase[] = [
       "https://github.com/matheussiqueira-dev/Simulacao-Estrategica-de-Decisao-Empresarial.git",
     demo: {
       kind: "video",
-      src: "/Simulação Estratégica de Decisão Empresarial.mp4",
-      poster: "/Thmbnail/Thumbnail - Portugues/Simulador de Decisão Empresarial.png",
+      src: "/projects/business-decision-simulator/demo.mp4",
+      poster: "/thumbnails/pt/business-decision-simulator.png",
       caption: "Cenários lado a lado, risco e KPIs em tempo real.",
     },
     intro: {
@@ -163,8 +163,8 @@ const projectList: ProjectCase[] = [
         },
       ],
       video: {
-        src: "/Simulação Estratégica de Decisão Empresarial.mp4",
-        poster: "/Thmbnail/Thumbnail - Portugues/Simulador de Decisão Empresarial.png",
+        src: "/projects/business-decision-simulator/demo.mp4",
+        poster: "/thumbnails/pt/business-decision-simulator.png",
         caption: "Tour pelas telas de cenários, risco e KPIs.",
       },
     },
@@ -222,11 +222,11 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - Portugues/Simulador de Decisão Empresarial.png",
+        src: "/thumbnails/pt/business-decision-simulator.png",
         alt: "Capa do Simulador de Decisão Empresarial",
       },
       {
-        src: "/Simulação Estratégica de Decisão Empresarial.mp4",
+        src: "/projects/business-decision-simulator/demo.mp4",
         alt: "Demonstração do Simulador de Decisão Empresarial",
         type: "video",
       },
@@ -368,7 +368,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
-      poster: "/Thmbnail/Thumbnail - Portugues/Detecção de Anomalias Operacionais.png",
+      poster: "/thumbnails/pt/deteccao-de-anomalias-operacionais.png",
       caption: "Radar com alertas de anomalia e histórico de métricas.",
     },
     intro: {
@@ -397,7 +397,7 @@ const projectList: ProjectCase[] = [
       ],
       video: {
         src: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
-        poster: "/Thmbnail/Thumbnail - Portugues/Detecção de Anomalias Operacionais.png",
+        poster: "/thumbnails/pt/deteccao-de-anomalias-operacionais.png",
         caption: "Detecção automática, alertas e investigação em um só painel.",
       },
     },
@@ -454,7 +454,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - Portugues/Detecção de Anomalias Operacionais.png",
+        src: "/thumbnails/pt/deteccao-de-anomalias-operacionais.png",
         alt: "Capa do projeto Detecção de Anomalias Operacionais",
       },
       {
@@ -1769,7 +1769,7 @@ const projectList: ProjectCase[] = [
     demo: {
       kind: "video",
       src: "/Hands Gesture.mp4",
-      poster: "/Thmbnail/Thumbnail - Portugues/Reconhecimento de Gestos de Mão em Tempo Real.png",
+      poster: "/thumbnails/pt/hand-gesture-recognition-realtime.png",
       caption: "Demonstração do reconhecimento de gestos em tempo real.",
     },
     intro: {
@@ -1905,7 +1905,7 @@ const projectList: ProjectCase[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - Portugues/Reconhecimento de Gestos de Mão em Tempo Real.png",
+        src: "/thumbnails/pt/hand-gesture-recognition-realtime.png",
         alt: "Capa do projeto de reconhecimento de gestos de mão",
       },
       {
@@ -2050,6 +2050,12 @@ const projectList: ProjectCase[] = [
     role: "Desenvolvedor/Arquiteto",
     stack: ["Python", "OpenCV", "MediaPipe", "NumPy", "Computer Vision"],
     repoUrl: "https://github.com/matheussiqueira-dev/Eye-Tracking.git",
+    demo: {
+      kind: "video",
+      src: "/projects/eye-tracking/demo.mp4",
+      poster: "/projects/eye-tracking/cover.png",
+      caption: "Demonstração do Eye Tracking em tempo real.",
+    },
     intro: {
       title: "Eye Tracking em tempo real para análise comportamental",
       paragraphs: [
@@ -2137,6 +2143,11 @@ const projectList: ProjectCase[] = [
       {
         src: "/projects/eye-tracking/cover-alt.png",
         alt: "Capa alternativa do projeto Eye Tracking em Tempo Real",
+      },
+      {
+        src: "/projects/eye-tracking/demo.mp4",
+        alt: "Demonstração do Eye Tracking em Tempo Real",
+        type: "video",
       },
     ],
     seo: {
