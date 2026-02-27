@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useId, useRef, useEffect } from "react";
-import Image from "next/image";
+import SafeImage from "@/components/demo/SafeImage";
 import type { ProjectCard } from "@/data/projects-card.types";
 import ProjectCardDetails from "./ProjectCardDetails";
 import styles from "./ProjectCard.module.css";
@@ -111,8 +111,9 @@ export default function ProjectCard({ project, locale, index = 0 }: Props) {
       >
         {/* Thumbnail */}
         <div className={styles.thumbnailWrapper}>
-          <Image
+          <SafeImage
             src={thumbnail}
+            fallbackSrc="/placeholder.jpg"
             alt={title}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 280px, 320px"

@@ -181,8 +181,8 @@ export const projectsCardPt: ProjectCard[] = [
       en: "Robust ETL pipeline that integrates data from multiple APIs and databases, performs complex transformations in Python, stores in PostgreSQL, and exposes dashboards via Metabase. Includes data validation, error handling, and real-time alerts.",
     },
     thumbnail: {
-      pt: "/thumbnails/pt/sql-python-analytics-pipeline.png",
-      en: "/thumbnails/en/sql-python-analytics-pipeline.png",
+      pt: "/placeholder.jpg",
+      en: "/placeholder.jpg",
     },
     videos: [],
     stack: ["Python", "PostgreSQL", "Pandas", "SQL", "Airflow", "Metabase", "Docker"],
@@ -250,8 +250,8 @@ export const projectsCardPt: ProjectCard[] = [
       en: "Applied data analyst developing interactive dashboards connecting data from CRM, e-commerce, and sales systems. Responsive interface with real-time charts, advanced filters, and PDF report export.",
     },
     thumbnail: {
-      pt: "/thumbnails/pt/data-analyst-dashboard.png",
-      en: "/thumbnails/en/data-analyst-dashboard.png",
+      pt: "/placeholder.jpg",
+      en: "/placeholder.jpg",
     },
     videos: [],
     stack: ["React", "TypeScript", "Recharts", "API REST", "PostgreSQL", "Node.js"],
@@ -322,14 +322,14 @@ export const projectsCardPt: ProjectCard[] = [
       en: "Touchless interface system using computer vision to detect hand gestures in real-time. Integrates MediaPipe with WebGL for 3D space rendering, enabling intuitive control of web elements. Applicable in medical, industrial, or public environments.",
     },
     thumbnail: {
-      pt: "/thumbnails/pt/touchless-gesture-web-interface.png",
-      en: "/thumbnails/en/touchless-gesture-web-interface.png",
+      pt: "/thumbnails/pt/touchless-web-gesture-interface.png",
+      en: "/thumbnails/en/touchless-web-gesture-interface.png",
     },
     videos: [
       {
         type: "local",
-        src: "/touchless-gesture-demo.mp4",
-        poster: "/thumbnails/pt/touchless-gesture-web-interface.png",
+        src: "/touchless-web-gesture-interface.mp4",
+        poster: "/thumbnails/pt/touchless-web-gesture-interface.png",
         caption: "Demonstração de controle por gestos",
       },
     ],
