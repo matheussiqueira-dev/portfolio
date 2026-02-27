@@ -1,23 +1,23 @@
 /**
  * @/components
- * Top-level components barrel export
- * 
- * Usage:
- *   import { Header, Footer, Cursor, PageTransition } from '@/components'
- *   import { ProjectCard, ProjectList } from '@/system/projects'
+ * Top-level components barrel export.
  */
 
 // Layout components
-export { Header, Footer, HeaderNav, MobileMenu, LogoLink, AppVisualEffects } from './layout';
+export {
+  Header,
+  Footer,
+  HeaderNav,
+  MobileMenu,
+  LogoLink,
+  AppVisualEffects,
+} from "./layout";
 
 // Interactive components at root
-export { Cursor } from './Cursor';
-export { PageTransition } from './PageTransition';
+export { default as Cursor } from "./Cursor";
+export { default as PageTransition } from "./PageTransition";
 
 // Standalone components at root level
-export { ActionButtons } from './ActionButtons';
-export { InteractivePhoto } from './InteractivePhoto';
-export { ProfileCard } from './ProfileCard';
-
-// Note: System components are under @/system/projects (not here)
-// Specific sections are under @/components/sections
+export { default as ActionButtons } from "./ActionButtons";
+export { default as InteractivePhoto } from "./InteractivePhoto";
+export { default as ProfileCard } from "./ProfileCard";

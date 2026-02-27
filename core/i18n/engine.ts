@@ -245,13 +245,21 @@ export function useI18n() {
      * @example
      *   t('projects.title')
      *   t('sections.hero.greeting', { name: 'John' })
-     */
-    t: <_T extends Record<string, unknown> | string = string>(
+     */    t: <_T extends Record<string, unknown> | string = string>(
       key: string,
-      values?: Record<string, string | number | boolean>
+      values?: Record<string, string | number | boolean | Date>
     ): string => {
       try {
-        return t(key, values as Record<string, string | number | boolean>);
+        const normalizedValues = values
+          ? (Object.fromEntries(
+              Object.entries(values).map(([entryKey, entryValue]) => [
+                entryKey,
+                typeof entryValue === "boolean" ? String(entryValue) : entryValue,
+              ])
+            ) as Record<string, string | number | Date>)
+          : undefined;
+
+        return t(key, normalizedValues);
       } catch {
         console.warn(`[i18n] Missing translation: ${key}`);
         return key;
@@ -290,7 +298,7 @@ export function useI18n() {
     formatRelativeTime: (date: Date, unit: 'days' | 'hours' | 'minutes' | 'weeks' = 'days'): string => {
       const now = new Date();
       const diff = now.getTime() - date.getTime();
-      const units: Record<string, number> = {
+      const units: Record<"days" | "hours" | "minutes" | "weeks", number> = {
         minutes: 60 * 1000,
         hours: 60 * 60 * 1000,
         days: 24 * 60 * 60 * 1000,
@@ -337,7 +345,7 @@ export function getLocaleHref(pathname: string, locale: Locale): string {
  */
 export function extractLocaleFromPath(pathname: string): Locale {
   const segments = pathname.split('/').filter(Boolean);
-  const firstSegment = segments[0];
+  const firstSegment = segments[0] ?? "";
 
   if (isValidLocale(firstSegment)) {
     return firstSegment;

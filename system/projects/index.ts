@@ -1,17 +1,14 @@
 /**
  * @/system/projects
- * Business logic components for project showcase
- * 
- * Usage:
- *   import { ProjectCard, ProjectCardDetails, ProjectList } from '@/system/projects'
+ * Business logic components for project showcase.
  */
 
-export { ProjectCard } from './ProjectCard';
-export { ProjectCardDetails } from './ProjectCardDetails';
-export { ProjectList } from './ProjectList';
+export { default as ProjectCard } from "./ProjectCard";
+export { default as ProjectCardDetails } from "./ProjectCardDetails";
+export { default as ProjectList } from "./ProjectList";
 
 // Deployment nodes
-export { default as ProjectDeployment } from './ProjectDeployment.module';
-export { DeploymentNodesList } from './DeploymentNodesList';
+export { default as ProjectDeployment } from "./ProjectDeployment.module";
+export { default as DeploymentNodesList } from "./DeploymentNodesList";
 
-export type {} from '../../data/projects-card.types';
+export type {} from "../../data/projects-card.types";

@@ -1,7 +1,6 @@
-import SafeImage from "@/src/components/demo/SafeImage";
+import SafeImage from "@/components/demo/SafeImage";
 import Link from "next/link";
 import type { Project } from "@/data/projects.types";
-import { getProjectById } from "@/src/data/projects";
 
 type Props = {
   project: Project;
@@ -29,12 +28,7 @@ export default function ProjectCard({
   project,
   caseLabel,
   localePrefix = "",
-}: Props) {
-  const registryProject = getProjectById(project.slug);
-  const registryCover = registryProject?.coverImage
-    ? { src: registryProject.coverImage, alt: project.title }
-    : undefined;
-  const cover = getCover(project) ?? registryCover;
+}: Props) {  const cover = getCover(project);
   const caseHref = localePrefix
     ? `${localePrefix}/projects/${project.slug}`
     : `/projetos/${project.slug}`;

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import { resolveLocale, type LocaleParams } from "../_lib";
 
 type SearchParams = {
@@ -12,18 +13,16 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await resolveLocale(params);
+
   return {
     title: locale === "en" ? "Projects" : "Projetos",
-    description:
-      locale === "en"
-        ? "My projects and portfolio"
-        : "Meus projetos e portfólio",
+    description: locale === "en" ? "My projects and portfolio" : "Meus projetos e portf\u00f3lio",
   };
 }
 
 export default async function ProjectsPage({
   params,
-  searchParams,
+  searchParams: _searchParams,
 }: Props) {
   const locale = await resolveLocale(params);
 
@@ -33,7 +32,7 @@ export default async function ProjectsPage({
       <p>
         {locale === "en"
           ? "Page under construction"
-          : "Página em construção"}
+          : "P\u00e1gina em constru\u00e7\u00e3o"}
       </p>
     </div>
   );

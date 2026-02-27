@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import SafeImage from "@/src/components/demo/SafeImage";
+import SafeImage from "@/components/demo/SafeImage";
 import VideoWithHoverPlay from "@/components/projects/VideoWithHoverPlay";
 import { useEffect, useId, useMemo, useRef } from "react";
 import { createPortal } from "react-dom";

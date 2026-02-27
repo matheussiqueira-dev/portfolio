@@ -31,7 +31,6 @@ const ContentSecurityPolicy = `
   form-action 'self';
   base-uri 'self';
   object-src 'none';
-  upgrade-insecure-requests;
 `.replace(/\s{2,}/g, " ").trim();
 
 /**
@@ -102,6 +101,7 @@ const securityHeaders = [
 const withNextIntl = createNextIntlPlugin("./core/i18n/request.ts");
 
 const nextConfig: NextConfig = {
+  productionBrowserSourceMaps: true,
   // ═══════════════════════════════════════════════════════════════════════════
   // SECURITY HEADERS - Aplicados a todas as rotas via async headers()
   // Compatível com Vercel Edge Runtime e Node.js Runtime

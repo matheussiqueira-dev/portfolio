@@ -160,6 +160,12 @@ export const darkModeColors = {
 
   border: "#7f897e",                 // Medium gray-green
 
+  // Spacing
+  radiusSm: "10px",
+  radiusMd: "16px",
+  radiusLg: "26px",
+  radiusPill: "999px",
+
   whatsapp: "#25d366",
 } as const;
 

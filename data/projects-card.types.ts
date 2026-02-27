@@ -98,54 +98,86 @@ export interface ProjectCard {
 }
 
 /**
- * Mapper function to convert existing ProjectCase to ProjectCard
- * Used for backwards compatibility while transitioning
+ * Mapper function to convert existing ProjectCase to ProjectCard.
+ * Used for backwards compatibility while transitioning.
  */
-export function projectToCard(project: Record<string, unknown>): ProjectCard {
+type LegacyProjectInput = {
+  slug?: string;
+  title?: string;
+  titleEn?: string;
+  tagline?: string;
+  taglineEn?: string;
+  context?: string;
+  contextEn?: string;
+  stack?: string[];
+  role?: string;
+  highlights?: string[];
+  features?: string[];
+  repoUrl?: string;
+  demoUrl?: string;
+  demo?: {
+    src?: string;
+    poster?: string;
+    caption?: string;
+  };
+};
+
+export function projectToCard(project: LegacyProjectInput): ProjectCard {
+  const slug = String(project.slug || "");
+  const stack = Array.isArray(project.stack)
+    ? project.stack.map((item) => String(item))
+    : [];
+  const highlights = Array.isArray(project.highlights)
+    ? project.highlights.map((item) => String(item))
+    : Array.isArray(project.features)
+      ? project.features.map((item) => String(item))
+      : [];
+
   return {
-    slug: String(project.slug || ''),
-    id: String(project.slug || ''),
+    slug,
+    id: slug,
     title: {
-      pt: String(project.title || ''),
-      en: String(project.titleEn || project.title || ''),
+      pt: String(project.title || ""),
+      en: String(project.titleEn || project.title || ""),
     },
     tagline: {
-      pt: String(project.tagline || ''),
-      en: String(project.taglineEn || project.tagline || ''),
+      pt: String(project.tagline || ""),
+      en: String(project.taglineEn || project.tagline || ""),
     },
     description: {
-      pt: String(project.tagline || ''),
-      en: String(project.taglineEn || project.tagline || ''),
+      pt: String(project.tagline || ""),
+      en: String(project.taglineEn || project.tagline || ""),
     },
     fullDescription: {
-      pt: String(project.context || project.tagline || ''),
-      en: String(project.contextEn || project.taglineEn || project.tagline || ''),
+      pt: String(project.context || project.tagline || ""),
+      en: String(project.contextEn || project.taglineEn || project.tagline || ""),
     },
     thumbnail: {
-      pt: `/thumbnails/pt/${project.slug}.png`,
-      en: `/thumbnails/en/${project.slug}.png`,
+      pt: `/thumbnails/pt/${slug}.png`,
+      en: `/thumbnails/en/${slug}.png`,
     },
-    videos: project.demo
-      ? [
-          {
-            type: "local",
-            src: project.demo.src,
-            poster: project.demo.poster,
-            caption: project.demo.caption,
-          },
-        ]
-      : [],
-    stack: project.stack,
-    role: project.role,
+    videos:
+      project.demo?.src
+        ? [
+            {
+              type: "local",
+              src: String(project.demo.src),
+              poster: project.demo.poster,
+              caption: project.demo.caption,
+            },
+          ]
+        : [],
+    stack,
+    role: String(project.role || ""),
     context: {
-      pt: project.context,
-      en: project.contextEn || project.context,
+      pt: String(project.context || ""),
+      en: String(project.contextEn || project.context || ""),
     },
-    highlights: project.highlights || project.features || [],
+    highlights,
     links: {
       repo: project.repoUrl,
       demo: project.demoUrl,
-      caseStudy: `/projetos/${project.slug}`,
+      caseStudy: `/projetos/${slug}`,
     },
   };
 }

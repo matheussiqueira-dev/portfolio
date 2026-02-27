@@ -49,6 +49,7 @@ export default function VideoWithHoverPlay({
         playsInline
         poster={poster}
         className="h-full w-full object-cover"
+        aria-label={alt}
       >
         <source src={src} />
       </video>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import SafeImage from "@/src/components/demo/SafeImage";
+import SafeImage from "@/components/demo/SafeImage";
 import type {
   Certificate,
   CertificateIssuer,

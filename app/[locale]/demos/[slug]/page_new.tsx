@@ -10,7 +10,7 @@ export function generateStaticParams() {
   return [];
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params: _params }: Props): Promise<Metadata> {
   return {
     title: "Demo",
     description: "Interactive demo",
@@ -28,7 +28,7 @@ export default async function DemoDetailPage({ params }: Props) {
       <p>
         {locale === "en"
           ? "Page under construction"
-          : "Página em construção"}
+          : "P\u00e1gina em constru\u00e7\u00e3o"}
       </p>
     </div>
   );

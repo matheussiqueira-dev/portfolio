@@ -1,67 +1,73 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import ProjectCard from "./ProjectCard";
+import { useMemo, useState } from "react";
+
 import type { ProjectCard as ProjectCardType } from "@/data/projects-card.types";
+
+import ProjectCard from "./ProjectCard";
 import styles from "./ProjectList.module.css";
 
 interface Props {
   projects: ProjectCardType[];
   locale: "pt" | "en";
+  allLabel?: string;
 }
 
 const labels = {
   pt: {
     title: "Meus Projetos",
-    description: "Portfólio de casos de sucesso em desenvolvimento full stack, dados e IA",
+    description:
+      "Portf\u00f3lio de casos de sucesso em desenvolvimento full stack, dados e IA",
     filterLabel: "Filtrar por stack",
     allProjects: "Todos os projetos",
     emptyState: "Nenhum projeto encontrado",
+    singularResult: "projeto",
+    pluralResult: "projetos",
+    withStack: "com",
   },
   en: {
     title: "My Projects",
-    description: "Portfolio of successful cases in full stack development, data and AI",
+    description: "Portf\u00f3lio of successful cases in full stack development, data, and AI",
     filterLabel: "Filter by stack",
     allProjects: "All projects",
     emptyState: "No projects found",
+    singularResult: "project",
+    pluralResult: "projects",
+    withStack: "with",
   },
 };
 
 /**
  * ProjectList - Container for project cards with filtering
- * 
- * Features:
- * - Stack-based filtering
- * - Responsive grid layout
- * - Staggered animations
- * - Empty state handling
  */
-export default function ProjectList({ projects, locale }: Props) {
+export default function ProjectList({ projects, locale, allLabel }: Props) {
   const [selectedStack, setSelectedStack] = useState<string | null>(null);
   const t = labels[locale];
 
-  // Extract all unique stacks for filters
   const allStacks = useMemo(() => {
     const stacks = new Set<string>();
-    projects.forEach((p) => p.stack.forEach((s) => stacks.add(s)));
+    projects.forEach((project) => project.stack.forEach((stack) => stacks.add(stack)));
     return Array.from(stacks).sort();
   }, [projects]);
 
-  // Filter projects
   const filteredProjects = useMemo(() => {
-    if (!selectedStack) return projects;
-    return projects.filter((p) => p.stack.includes(selectedStack));
+    if (!selectedStack) {
+      return projects;
+    }
+
+    return projects.filter((project) => project.stack.includes(selectedStack));
   }, [projects, selectedStack]);
+
+  const resultLabel =
+    filteredProjects.length === 1 ? t.singularResult : t.pluralResult;
 
   return (
     <section className={styles.container}>
-      {/* Header */}
       <header className={styles.header}>
-        <h1 className={styles.title}>{t.title}</h1>
+        <h2 className={styles.title}>{t.title}</h2>
         <p className={styles.description}>{t.description}</p>
       </header>
 
-      {/* Filters */}
       <nav className={styles.filterNav} aria-label={t.filterLabel}>
         <span className={styles.filterLabel}>{t.filterLabel}</span>
         <div className={styles.filters}>
@@ -71,8 +77,9 @@ export default function ProjectList({ projects, locale }: Props) {
             }`}
             onClick={() => setSelectedStack(null)}
             aria-pressed={selectedStack === null}
+            type="button"
           >
-            {t.allProjects}
+            {allLabel ?? t.allProjects}
           </button>
 
           {allStacks.map((stack) => (
@@ -83,6 +90,7 @@ export default function ProjectList({ projects, locale }: Props) {
               }`}
               onClick={() => setSelectedStack(stack)}
               aria-pressed={selectedStack === stack}
+              type="button"
             >
               {stack}
             </button>
@@ -90,7 +98,6 @@ export default function ProjectList({ projects, locale }: Props) {
         </div>
       </nav>
 
-      {/* Projects Grid */}
       {filteredProjects.length > 0 ? (
         <div className={styles.grid}>
           {filteredProjects.map((project, idx) => (
@@ -108,12 +115,10 @@ export default function ProjectList({ projects, locale }: Props) {
         </div>
       )}
 
-      {/* Results count */}
       {filteredProjects.length > 0 && (
         <p className={styles.resultCount}>
-          {filteredProjects.length}{" "}
-          {filteredProjects.length === 1 ? "projeto" : "projetos"}{" "}
-          {selectedStack ? `com ${selectedStack}` : ""}
+          {filteredProjects.length} {resultLabel}{" "}
+          {selectedStack ? `${t.withStack} ${selectedStack}` : ""}
         </p>
       )}
     </section>

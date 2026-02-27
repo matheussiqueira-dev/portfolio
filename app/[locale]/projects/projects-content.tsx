@@ -1,7 +1,7 @@
 "use client";
 
 import type { ProjectCard } from "@/data/projects-card.types";
-import { ProjectList } from "@/system/projects/ProjectList";
+import ProjectList from "@/system/projects/ProjectList";
 import styles from "./projects-page.module.css";
 
 interface ProjectsContentProps {
@@ -12,7 +12,7 @@ interface ProjectsContentProps {
 const labels = {
   pt: {
     title: "Projetos",
-    description: "Explore uma seleção dos meus projetos em web, dados e BI",
+    description: "Explore uma sele\u00e7\u00e3o dos meus projetos em web, dados e BI",
     filterAll: "Todos",
   },
   en: {
@@ -36,11 +36,7 @@ export function ProjectsContent({
         <p className={styles.description}>{t.description}</p>
       </div>
 
-      <ProjectList
-        projects={projects}
-        locale={locale}
-        allLabel={t.filterAll}
-      />
+      <ProjectList projects={projects} locale={locale} allLabel={t.filterAll} />
     </div>
   );
 }

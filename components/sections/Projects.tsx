@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import SafeImage from "@/src/components/demo/SafeImage";
+import SafeImage from "@/components/demo/SafeImage";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import type { CSSProperties, ChangeEvent } from "react";
@@ -17,7 +17,6 @@ import {
 import { trackEvent } from "@/core/analytics";
 import { projects, projectOrder } from "@/data/projects";
 import { projectsEn, projectOrderEn } from "@/data/projects.en";
-import { projects as registryProjects } from "@/src/data/projects";
 import { sitePt } from "@/data/site.pt";
 import { siteEn } from "@/data/site.en";
 import type { Project } from "@/data/projects.types";
@@ -119,10 +118,6 @@ export default function Projects() {
     () => new Set((isEn ? projectOrderEn : projectOrder).slice(0, 3)),
     [isEn]
   );
-  const registryMap = useMemo(
-    () => new Map(registryProjects.map((item) => [item.id, item])),
-    []
-  );
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [loadingSlug, setLoadingSlug] = useState<string | null>(null);
   const [activeFilter, setActiveFilter] = useState("all");
@@ -148,12 +143,7 @@ export default function Projects() {
     return map;
   }, [repoSlugsByUrl]);
   const projectMeta = useMemo(() => {
-    return data.map((project) => {
-      const registryProject = registryMap.get(project.slug);
-      const registryCover = registryProject?.coverImage
-        ? { src: registryProject.coverImage, alt: project.title }
-        : undefined;
-      const cover = getCover(project) ?? registryCover;
+    return data.map((project) => {      const cover = getCover(project);
       const highlights = getHighlights(project);
       const badges = getProjectBadges(project);
       const searchable = [
@@ -176,7 +166,7 @@ export default function Projects() {
         isFeatured: featured.has(project.slug),
       };
     });
-  }, [data, featured, registryMap]);
+  }, [data, featured]);
   const availableFilters = useMemo(() => {
     const categories = new Set<string>();
     projectMeta.forEach((item) => {

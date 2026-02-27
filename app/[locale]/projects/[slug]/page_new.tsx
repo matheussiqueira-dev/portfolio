@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { resolveLocale, type LocaleParams } from "../../_lib";
 
 type RouteParams = Promise<{ locale: string; slug: string }>;
 
@@ -11,7 +10,7 @@ export function generateStaticParams() {
   return [];
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params: _params }: Props): Promise<Metadata> {
   return {
     title: "Project",
     description: "Project details",
@@ -29,7 +28,7 @@ export default async function ProjectDetailPage({ params }: Props) {
       <p>
         {locale === "en"
           ? "Page under construction"
-          : "Página em construção"}
+          : "P\u00e1gina em constru\u00e7\u00e3o"}
       </p>
     </div>
   );

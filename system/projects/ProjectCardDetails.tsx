@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import Image from "next/image";
+import { useEffect, useRef } from "react";
+
 import type { ProjectCard } from "@/data/projects-card.types";
+
 import styles from "./ProjectCardDetails.module.css";
 
 interface Props {
@@ -14,7 +15,7 @@ const labels = {
   pt: {
     stack: "Stack",
     highlights: "Destaques",
-    videos: "Demonstração",
+    videos: "Demonstra\u00e7\u00e3o",
     role: "Meu papel",
   },
   en: {
@@ -26,30 +27,30 @@ const labels = {
 };
 
 /**
- * ProjectCardDetails - Expanded content for project card
- * Shows full description, videos with lazy-load, and highlights
+ * ProjectCardDetails - Expanded content for project card.
+ * Shows full description, videos with lazy-load, and highlights.
  */
 export default function ProjectCardDetails({ project, locale }: Props) {
-  const [videoLoaded, setVideoLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const videoLoadedRef = useRef(false);
   const t = labels[locale];
 
   const description = project.fullDescription[locale];
   const context = project.context[locale];
-  const hasVideo = project.videos.length > 0;
   const primaryVideo = project.videos[0];
 
-  // Lazy-load video on mount (already expanded)
+  // Lazy-load video only once when details mount.
   useEffect(() => {
-    if (videoRef.current && !videoLoaded) {
-      videoRef.current.load();
-      setVideoLoaded(true);
+    if (!videoRef.current || videoLoadedRef.current) {
+      return;
     }
-  }, [videoLoaded]);
+
+    videoRef.current.load();
+    videoLoadedRef.current = true;
+  }, []);
 
   return (
     <div className={styles.details}>
-      {/* Description Section */}
       <section className={styles.section}>
         <p className={styles.description}>{description || context}</p>
         {context && context !== description && (
@@ -57,8 +58,7 @@ export default function ProjectCardDetails({ project, locale }: Props) {
         )}
       </section>
 
-      {/* Video Section - Lazy-loaded */}
-      {hasVideo && primaryVideo.type === "local" && (
+      {primaryVideo?.type === "local" ? (
         <section className={styles.section}>
           <h3 className={styles.sectionTitle}>{t.videos}</h3>
           <div className={styles.videoWrapper}>
@@ -77,11 +77,9 @@ export default function ProjectCardDetails({ project, locale }: Props) {
             )}
           </div>
         </section>
-      )}
+      ) : null}
 
-      {/* Grid: Stack + Role + Highlights */}
       <div className={styles.grid}>
-        {/* Role */}
         {project.role && (
           <section className={styles.gridItem}>
             <h3 className={styles.itemTitle}>{t.role}</h3>
@@ -89,7 +87,6 @@ export default function ProjectCardDetails({ project, locale }: Props) {
           </section>
         )}
 
-        {/* Stack */}
         {project.stack.length > 0 && (
           <section className={styles.gridItem}>
             <h3 className={styles.itemTitle}>{t.stack}</h3>
@@ -103,7 +100,6 @@ export default function ProjectCardDetails({ project, locale }: Props) {
           </section>
         )}
 
-        {/* Highlights */}
         {project.highlights.length > 0 && (
           <section className={styles.gridItem}>
             <h3 className={styles.itemTitle}>{t.highlights}</h3>
