@@ -1,30 +1,24 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import SafeImage from "@/components/demo/SafeImage";
+import VideoWithHoverPlay from "@/components/projects/VideoWithHoverPlay";
+import { trackEvent } from "@/core/analytics";
+import { projects, projectOrder } from "@/data/projects";
+import { projectsEn, projectOrderEn } from "@/data/projects.en";
+import { siteEn } from "@/data/site.en";
+import { sitePt } from "@/data/site.pt";
+import type { Project } from "@/data/projects.types";
 import Link from "next/link";
 import { useLocale } from "next-intl";
-import type { CSSProperties, ChangeEvent } from "react";
+import type { ChangeEvent, CSSProperties } from "react";
 import {
   useCallback,
   useDeferredValue,
   useEffect,
   useMemo,
-  useRef,
   useState,
   useTransition,
 } from "react";
-import { trackEvent } from "@/core/analytics";
-import { projects, projectOrder } from "@/data/projects";
-import { projectsEn, projectOrderEn } from "@/data/projects.en";
-import { sitePt } from "@/data/site.pt";
-import { siteEn } from "@/data/site.en";
-import type { Project } from "@/data/projects.types";
-
-const ProjectModal = dynamic(() => import("./ProjectModal"), {
-  ssr: false,
-  loading: () => null,
-});
 
 const isVideoMedia = (shot: Project["screenshots"][number]) =>
   shot.type === "video" || shot.src.endsWith(".mp4");
@@ -44,8 +38,33 @@ const getCover = (project: Project) => {
   return demoPoster ? { src: demoPoster, alt: project.title } : undefined;
 };
 
+const getPrimaryVideo = (project: Project) => {
+  const screenshotVideo = project.screenshots.find(isVideoMedia);
+  if (screenshotVideo) {
+    return {
+      src: screenshotVideo.src,
+      alt: screenshotVideo.alt,
+      poster:
+        project.demo && "poster" in project.demo
+          ? project.demo.poster
+          : undefined,
+    };
+  }
+
+  if (project.demo?.kind === "video") {
+    return {
+      src: project.demo.src,
+      alt: project.demo.caption || project.title,
+      poster: project.demo.poster,
+    };
+  }
+
+  return null;
+};
+
 const getHighlights = (project: Project) => {
-  const base = project.highlights.length > 0 ? project.highlights : project.demonstrates;
+  const base =
+    project.highlights.length > 0 ? project.highlights : project.demonstrates;
   return base.slice(0, 3);
 };
 
@@ -82,16 +101,22 @@ const getProjectBadges = (project: Project) => {
     badges.add("Full Stack");
   }
 
-  if (/python|sql|power bi|pandas|numpy|etl|data|bi|dashboard/.test(combined)) {
+  if (
+    /python|sql|power bi|pandas|numpy|etl|data|bi|dashboard/.test(combined)
+  ) {
     badges.add("Data");
   }
 
-  if (/\bai\b|\bia\b|machine learning|ml|llm|chatbot|inteligência artificial/.test(combined)) {
+  if (
+    /\bai\b|\bia\b|machine learning|ml|llm|chatbot|intelig\u00eancia artificial/.test(
+      combined
+    )
+  ) {
     badges.add("AI");
   }
 
   if (
-    /computer vision|visão computacional|opencv|mediapipe|gesture|gesto|hand|webcam/.test(
+    /computer vision|vis\u00e3o computacional|opencv|mediapipe|gesture|gesto|hand|webcam/.test(
       combined
     )
   ) {
@@ -118,13 +143,14 @@ export default function Projects() {
     () => new Set((isEn ? projectOrderEn : projectOrder).slice(0, 3)),
     [isEn]
   );
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [loadingSlug, setLoadingSlug] = useState<string | null>(null);
+
+  const [expandedSlug, setExpandedSlug] = useState<string | null>(null);
   const [activeFilter, setActiveFilter] = useState("all");
   const [query, setQuery] = useState("");
   const deferredQuery = useDeferredValue(query);
   const [isPending, startTransition] = useTransition();
-  const loadingTimeoutRef = useRef<number | null>(null);
+  const [starsByRepo, setStarsByRepo] = useState<Record<string, number>>({});
+
   const repoSlugsByUrl = useMemo(() => {
     const map = new Map<string, string>();
     data.forEach((project) => {
@@ -135,6 +161,7 @@ export default function Projects() {
     });
     return map;
   }, [data]);
+
   const repoUrlBySlug = useMemo(() => {
     const map = new Map<string, string>();
     repoSlugsByUrl.forEach((slug, repoUrl) => {
@@ -142,8 +169,10 @@ export default function Projects() {
     });
     return map;
   }, [repoSlugsByUrl]);
+
   const projectMeta = useMemo(() => {
-    return data.map((project) => {      const cover = getCover(project);
+    return data.map((project) => {
+      const cover = getCover(project);
       const highlights = getHighlights(project);
       const badges = getProjectBadges(project);
       const searchable = [
@@ -167,6 +196,7 @@ export default function Projects() {
       };
     });
   }, [data, featured]);
+
   const availableFilters = useMemo(() => {
     const categories = new Set<string>();
     projectMeta.forEach((item) => {
@@ -174,6 +204,7 @@ export default function Projects() {
     });
     return FILTER_ORDER.filter((label) => categories.has(label));
   }, [projectMeta]);
+
   const filteredProjects = useMemo(() => {
     const normalizedQuery = deferredQuery.trim().toLowerCase();
     return projectMeta.filter((item) => {
@@ -184,52 +215,8 @@ export default function Projects() {
       return matchesFilter && matchesQuery;
     });
   }, [activeFilter, deferredQuery, projectMeta]);
-  const handleClose = useCallback(() => {
-    setSelectedProject(null);
-    setLoadingSlug(null);
-    if (loadingTimeoutRef.current !== null) {
-      window.clearTimeout(loadingTimeoutRef.current);
-      loadingTimeoutRef.current = null;
-    }
-  }, []);
-  const [starsByRepo, setStarsByRepo] = useState<Record<string, number>>({});
+
   const projectsHref = isEn ? "/en/projects" : "/projetos";
-
-  useEffect(() => {
-    return () => {
-      if (loadingTimeoutRef.current !== null) {
-        window.clearTimeout(loadingTimeoutRef.current);
-      }
-    };
-  }, []);
-
-  const openProject = useCallback((project: Project) => {
-    setSelectedProject(project);
-    setLoadingSlug(project.slug);
-    if (loadingTimeoutRef.current !== null) {
-      window.clearTimeout(loadingTimeoutRef.current);
-    }
-    loadingTimeoutRef.current = window.setTimeout(() => {
-      setLoadingSlug(null);
-      loadingTimeoutRef.current = null;
-    }, 450);
-  }, []);
-
-  const isInteractiveTarget = (
-    target: EventTarget | null,
-    currentTarget?: HTMLElement
-  ) => {
-    if (!(target instanceof HTMLElement)) {
-      return false;
-    }
-    const interactive = target.closest(
-      "a, button, input, textarea, select, [data-interactive]"
-    );
-    if (!interactive) {
-      return false;
-    }
-    return interactive !== currentTarget;
-  };
 
   useEffect(() => {
     const loadStars = async () => {
@@ -245,12 +232,15 @@ export default function Projects() {
         if (!response.ok) {
           return;
         }
+
         const payload = (await response.json()) as {
           results?: Record<string, number | null>;
         };
+
         if (!payload.results) {
           return;
         }
+
         setStarsByRepo((prev) => {
           const next = { ...prev };
           Object.entries(payload.results ?? {}).forEach(([slug, stars]) => {
@@ -270,9 +260,12 @@ export default function Projects() {
     loadStars();
   }, [repoUrlBySlug]);
 
-  const handleFilterChange = useCallback((filter: string) => {
-    startTransition(() => setActiveFilter(filter));
-  }, [startTransition]);
+  const handleFilterChange = useCallback(
+    (filter: string) => {
+      startTransition(() => setActiveFilter(filter));
+    },
+    [startTransition]
+  );
 
   const handleQueryChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
@@ -281,6 +274,19 @@ export default function Projects() {
     },
     [startTransition]
   );
+
+  const toggleExpanded = useCallback((slug: string) => {
+    setExpandedSlug((current) => (current === slug ? null : slug));
+  }, []);
+
+  const labels = {
+    hideDetails: isEn ? "Hide details" : "Ocultar detalhes",
+    detailsTitle: isEn ? "Project details" : "Detalhes do projeto",
+    summaryTitle: isEn ? "Technical summary" : "Resumo t\u00e9cnico",
+    contextTitle: isEn ? "Context" : "Contexto",
+    mediaTitle: isEn ? "Media" : "M\u00eddia",
+    stackTitle: isEn ? "Stack" : "Stack",
+  };
 
   return (
     <section id="projects" className="page-section content-auto">
@@ -317,6 +323,7 @@ export default function Projects() {
               </button>
             ))}
           </div>
+
           <div className="project-search">
             <input
               type="search"
@@ -350,9 +357,16 @@ export default function Projects() {
           {filteredProjects.map((item, index) => {
             const { project, cover, highlights, badges, isFeatured } = item;
             const stars = starsByRepo[project.repoUrl];
-            const isOpen = selectedProject?.slug === project.slug;
-            const isLoading = loadingSlug === project.slug;
-            const openLabel = isEn ? "Open project details" : "Abrir detalhes do projeto";
+            const isExpanded = expandedSlug === project.slug;
+            const detailsId = `project-details-${project.slug}`;
+            const primaryVideo = getPrimaryVideo(project);
+            const galleryImages = project.screenshots
+              .filter((shot) => !isVideoMedia(shot))
+              .filter((shot) => !cover || shot.src !== cover.src)
+              .slice(0, 3);
+            const caseHref = isEn
+              ? `/en/projects/${project.slug}`
+              : `/projetos/${project.slug}`;
 
             return (
               <article
@@ -364,31 +378,13 @@ export default function Projects() {
                     "--reveal-delay": `${index * 70}ms`,
                   } as CSSProperties
                 }
-                role="button"
-                tabIndex={0}
-                aria-haspopup="dialog"
-                aria-label={openLabel}
-                onClick={(event) => {
-                  if (
-                    event.defaultPrevented ||
-                    isInteractiveTarget(event.target, event.currentTarget)
-                  ) {
-                    return;
-                  }
-                  openProject(project);
-                }}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter" || event.key === " ") {
-                    event.preventDefault();
-                    openProject(project);
-                  }
-                }}
               >
                 {isFeatured ? (
                   <span className="card-badge rounded-full bg-[color:var(--accent)]/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-[color:var(--accent-strong)]">
                     {content.featuredLabel}
                   </span>
                 ) : null}
+
                 {cover ? (
                   <div className="card-media project-card__media relative w-full">
                     <SafeImage
@@ -425,14 +421,12 @@ export default function Projects() {
 
                 {highlights.length > 0 ? (
                   <div className="space-y-2 text-left">
-                    <p className="card-meta text-left">
-                      {content.highlightLabel}
-                    </p>
+                    <p className="card-meta text-left">{content.highlightLabel}</p>
                     <ul className="space-y-1 text-sm text-[color:var(--muted)]">
-                      {highlights.map((item) => (
-                        <li key={item} className="flex gap-2">
+                      {highlights.map((value) => (
+                        <li key={value} className="flex gap-2">
                           <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[color:var(--accent-soft)]" />
-                          <span>{item}</span>
+                          <span>{value}</span>
                         </li>
                       ))}
                     </ul>
@@ -442,27 +436,21 @@ export default function Projects() {
                 <div className="mt-auto flex flex-wrap items-center gap-3 pt-2">
                   <button
                     type="button"
-                    onClick={() => openProject(project)}
-                    data-state={
-                      isLoading ? "loading" : isOpen ? "success" : "idle"
-                    }
-                    aria-busy={isLoading}
+                    onClick={() => toggleExpanded(project.slug)}
+                    aria-expanded={isExpanded}
+                    aria-controls={detailsId}
                     className="btn-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                   >
-                    {content.detailsLabel}
+                    {isExpanded ? labels.hideDetails : content.detailsLabel}
                   </button>
 
-                  <a
-                    href={project.repoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() =>
-                      trackEvent("click_github", "outbound", project.slug)
-                    }
+                  <Link
+                    href={caseHref}
+                    onClick={() => trackEvent("view_case", "engagement", project.slug)}
                     className="btn-outline btn-github focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
                   >
                     {content.caseLabel}
-                  </a>
+                  </Link>
 
                   <a
                     href={project.repoUrl}
@@ -490,6 +478,100 @@ export default function Projects() {
                       : "GitHub"}
                   </span>
                 </div>
+
+                {isExpanded ? (
+                  <section
+                    id={detailsId}
+                    className="mt-3 space-y-4 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)]/40 p-4"
+                  >
+                    <p className="text-xs uppercase tracking-[0.22em] text-[color:var(--muted)]">
+                      {labels.detailsTitle}
+                    </p>
+
+                    {cover ? (
+                      <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-[color:var(--border)]">
+                        <SafeImage
+                          src={cover.src}
+                          alt={cover.alt}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 640px"
+                          className="object-cover"
+                        />
+                      </div>
+                    ) : null}
+
+                    {primaryVideo ? (
+                      <div className="space-y-2">
+                        <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
+                          {labels.mediaTitle}
+                        </p>
+                        <div className="overflow-hidden rounded-xl border border-[color:var(--border)] bg-black/10">
+                          <VideoWithHoverPlay
+                            src={primaryVideo.src}
+                            alt={primaryVideo.alt}
+                            poster={primaryVideo.poster}
+                            className="aspect-video"
+                          />
+                        </div>
+                      </div>
+                    ) : null}
+
+                    {galleryImages.length > 0 ? (
+                      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                        {galleryImages.map((shot) => (
+                          <div
+                            key={shot.src}
+                            className="relative aspect-video overflow-hidden rounded-lg border border-[color:var(--border)]"
+                          >
+                            <SafeImage
+                              src={shot.src}
+                              alt={shot.alt}
+                              fill
+                              sizes="(max-width: 640px) 45vw, 200px"
+                              className="object-cover"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    ) : null}
+
+                    <div className="space-y-2 text-left">
+                      <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
+                        {labels.summaryTitle}
+                      </p>
+                      <p className="text-sm leading-relaxed text-[color:var(--foreground)]/90">
+                        {project.techSummary}
+                      </p>
+                    </div>
+
+                    <div className="grid gap-4 lg:grid-cols-2">
+                      <div className="space-y-2">
+                        <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
+                          {labels.contextTitle}
+                        </p>
+                        <p className="text-sm leading-relaxed text-[color:var(--muted)]">
+                          {project.context}
+                        </p>
+                      </div>
+
+                      <div className="space-y-2">
+                        <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
+                          {labels.stackTitle}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {project.stack.map((tech) => (
+                            <span
+                              key={tech}
+                              className="rounded-full border border-[color:var(--border)] px-3 py-1 text-xs text-[color:var(--muted)]"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                ) : null}
               </article>
             );
           })}
@@ -504,14 +586,6 @@ export default function Projects() {
           </Link>
         </div>
       </div>
-
-      {selectedProject ? (
-        <ProjectModal
-          project={selectedProject}
-          onClose={handleClose}
-        />
-      ) : null}
     </section>
   );
 }
-
