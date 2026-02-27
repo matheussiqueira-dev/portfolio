@@ -1,4 +1,4 @@
-﻿# GA4 conversion setup for landing CTA clicks
+# GA4 conversion setup for landing CTA clicks
 
 This project sends the following CTA click events from the new landing pages:
 

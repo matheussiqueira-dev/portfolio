@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useMemo, useState, type ChangeEvent } from "react";
 import CopyButton from "@/components/ui/CopyButton";

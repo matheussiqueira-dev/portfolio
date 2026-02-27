@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import type { Project } from "@/data/projects.types";
 import type { SiteContent } from "@/data/site.types";
 import MediaGallery from "./MediaGallery";

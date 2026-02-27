@@ -1,4 +1,4 @@
-﻿import type { CSSProperties } from "react";
+import type { CSSProperties } from "react";
 import { TrackedAnchor } from "@/components/analytics/TrackedLink";
 import CopyButton from "@/components/ui/CopyButton";
 import ProjectBriefForm from "@/components/sections/ProjectBriefForm";

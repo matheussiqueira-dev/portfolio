@@ -403,7 +403,7 @@ export const certificatesPt: Certificate[] = [
   },
   {
     "id": "engenharia-preparacao-e-visualizacao-de-dados",
-    "title": "ENGENHARIA, PREPARACAO E VISUALIZACAO DE DADOS",
+    "title": "ENGENHARIA, PREPARAÇÃO E VISUALIZAÇÃO DE DADOS",
     "issuer": "Ulife",
     "areaTags": [
       "Data Analytics",
@@ -414,7 +414,7 @@ export const certificatesPt: Certificate[] = [
   },
   {
     "id": "experiencia-do-usuario-e-ia",
-    "title": "EXPERIENCIA DO USUARIO E IA",
+    "title": "EXPERIÊNCIA DO USUÁRIO E IA",
     "issuer": "Ulife",
     "areaTags": [
       "UX",
@@ -434,7 +434,7 @@ export const certificatesPt: Certificate[] = [
   },
   {
     "id": "gestao-do-conhecimento-e-inteligencia-competitiva",
-    "title": "GESTAO DO CONHECIMENTO E INTELIGENCIA COMPETITIVA",
+    "title": "GESTÃO DO CONHECIMENTO E INTELIGÊNCIA COMPETITIVA",
     "issuer": "Ulife",
     "areaTags": [
       "Business Intelligence",
@@ -472,7 +472,7 @@ export const certificatesPt: Certificate[] = [
   },
   {
     "id": "seguranca-da-informacao-para-cloud-e-edge-computing",
-    "title": "SEGURANCA DA INFORMACAO PARA CLOUD E EDGE COMPUTING",
+    "title": "SEGURANÇA DA INFORMAÇÃO PARA CLOUD E EDGE COMPUTING",
     "issuer": "Ulife",
     "areaTags": [
       "Information Security",

@@ -1,4 +1,4 @@
-﻿import SafeImage from "@/src/components/demo/SafeImage";
+import SafeImage from "@/src/components/demo/SafeImage";
 import Link from "next/link";
 import type { Project } from "@/data/projects.types";
 import { getProjectById } from "@/src/data/projects";

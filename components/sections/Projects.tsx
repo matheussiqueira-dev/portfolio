@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import dynamic from "next/dynamic";
 import SafeImage from "@/src/components/demo/SafeImage";
@@ -87,12 +87,12 @@ const getProjectBadges = (project: Project) => {
     badges.add("Data");
   }
 
-  if (/\bai\b|\bia\b|machine learning|ml|llm|chatbot|inteligÃªncia artificial/.test(combined)) {
+  if (/\bai\b|\bia\b|machine learning|ml|llm|chatbot|inteligência artificial/.test(combined)) {
     badges.add("AI");
   }
 
   if (
-    /computer vision|visÃ£o computacional|opencv|mediapipe|gesture|gesto|hand|webcam/.test(
+    /computer vision|visão computacional|opencv|mediapipe|gesture|gesto|hand|webcam/.test(
       combined
     )
   ) {

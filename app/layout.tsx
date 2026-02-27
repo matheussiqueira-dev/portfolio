@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Instrument_Sans, Sora } from "next/font/google";
 import Script from "next/script";
 import { ThemeProvider } from "next-themes";
@@ -90,7 +90,7 @@ const personJsonLd = {
   name: "Matheus Siqueira",
   jobTitle: "Full Stack Developer, Data Engineer",
   description:
-    "Desenvolvedor Full Stack e Data Engineer focado em aplicaÃ§Ãµes web, dados e cloud",
+    "Desenvolvedor Full Stack e Data Engineer focado em aplicações web, dados e cloud",
   email: "matheussiqueirahub@gmail.com",
   telephone: "+55 81 99920-3683",
   url: baseUrl,
@@ -141,7 +141,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: `${siteName} â€” Desenvolvedor Full Stack`,
+        alt: `${siteName} — Desenvolvedor Full Stack`,
       },
     ],
   },
@@ -231,7 +231,7 @@ export default function RootLayout({
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[color:var(--surface)] focus:text-[color:var(--foreground)] focus:rounded-lg focus:font-medium focus:border focus:border-[color:var(--border)]"
         >
-          Pular para o conteÃºdo principal
+          Pular para o conteúdo principal
         </a>
         <ThemeProvider
           attribute="data-theme"

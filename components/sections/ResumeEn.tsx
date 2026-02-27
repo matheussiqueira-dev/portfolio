@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { resumeEn } from "@/data/resume.en";
 import LanguageSwitch from "../ui/LanguageSwitch";

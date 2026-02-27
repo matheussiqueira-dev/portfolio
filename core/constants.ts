@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Global constants for the portfolio application
  * 
  * This file centralizes all magic strings and constant values used across

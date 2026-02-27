@@ -95,7 +95,7 @@ export const resumeEn = {
         title: "Additional Training",
         items: [
           {
-            course: "Full Stack A.I. Programming Technician",
+            course: "Full Stack AI Programming Technician",
             institution: "Infinity School",
             period: "2023 — 2025",
           },

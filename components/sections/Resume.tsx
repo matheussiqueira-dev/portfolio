@@ -1,4 +1,4 @@
-﻿import { resume } from "@/data/resume";
+import { resume } from "@/data/resume";
 import LanguageSwitch from "../ui/LanguageSwitch";
 import ResumePDF from "./ResumePDF";
 
@@ -76,7 +76,7 @@ export default function Resume() {
 
           <section className="card rounded-3xl space-y-6 print:border-none print:bg-transparent print:p-0">
             <h2 className="card-title text-xl print:text-black">
-              ExperiÃªncia profissional
+              Experiência profissional
             </h2>
             {resume.experience.map((item) => (
               <div key={item.company} className="space-y-3">
@@ -116,7 +116,7 @@ export default function Resume() {
 
           <section className="card rounded-3xl space-y-6 print:border-none print:bg-transparent print:p-0">
             <h2 className="card-title text-xl print:text-black">
-              FormaÃ§Ã£o acadÃªmica
+              Formação acadêmica
             </h2>
             {resume.education.groups.map((group) => (
               <div key={group.title} className="space-y-3">
@@ -141,7 +141,7 @@ export default function Resume() {
 
           <section className="card rounded-3xl space-y-4 print:border-none print:bg-transparent print:p-0">
             <h2 className="card-title text-xl print:text-black">
-              CertificaÃ§Ãµes
+              Certificações
             </h2>
             <ul className="list-disc list-inside space-y-2 text-sm text-[color:var(--muted)] print:text-slate-700">
               {resume.certifications.map((item) => (

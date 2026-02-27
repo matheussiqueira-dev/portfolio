@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import SafeImage from "@/src/components/demo/SafeImage";
@@ -55,9 +55,9 @@ export default function ProjectModal({ project, onClose }: Props) {
       highlightsTitle: isEn ? "Highlights" : "Destaques",
       howToRunTitle: isEn ? "How to run" : "Como executar",
       roleLabel: isEn ? "Role" : "Papel",
-      galleryTitle: isEn ? "Media" : "MÃ­dia",
+      galleryTitle: isEn ? "Media" : "Mídia",
       demoSoon: isEn ? "Demo: coming soon" : "Demo: em breve",
-      videoLabel: isEn ? "Watch the video demo" : "Veja a demonstraÃ§Ã£o em vÃ­deo",
+      videoLabel: isEn ? "Watch the video demo" : "Veja a demonstração em vídeo",
     };
   }, [isEn]);
   const sections = useMemo(

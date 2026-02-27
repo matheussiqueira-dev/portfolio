@@ -1,4 +1,4 @@
-﻿import ImageWithFallback from "@/components/ui/ImageWithFallback";
+import ImageWithFallback from "@/components/ui/ImageWithFallback";
 import { TrackedAnchor, TrackedLink } from "@/components/analytics/TrackedLink";
 import type { SiteContent } from "@/data/site.types";
 

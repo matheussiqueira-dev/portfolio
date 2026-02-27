@@ -17,7 +17,7 @@ export const sitePt: SiteContent = {
     eyebrow: "Analista de Dados • Business Intelligence • Power BI • Infraestrutura",
     title: "Matheus Siqueira",
     subtitle:
-      "Infraestrutura | Desenvolvedor FullStack | Analista de Dados Júnior",
+      "Infraestrutura | Desenvolvedor Full Stack | Analista de Dados Júnior",
     description:
       "Atuo no desenvolvimento de soluções analíticas e sistemas orientados à decisão, integrando Power BI, SQL, DAX, Power Query e automações em Python à arquitetura de dados e à infraestrutura. Trabalho de ponta a ponta, do tratamento e modelagem à visualização e entrega, com foco em eficiência operacional, confiabilidade e impacto mensurável no negócio.",
     stackHighlights: [

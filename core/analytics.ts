@@ -1,4 +1,4 @@
-﻿import { ANALYTICS_EVENTS, ANALYTICS_CATEGORIES } from "./constants";
+import { ANALYTICS_EVENTS, ANALYTICS_CATEGORIES } from "./constants";
 
 // ============================================================================
 // TYPES

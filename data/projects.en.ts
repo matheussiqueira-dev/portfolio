@@ -1,4 +1,4 @@
-﻿import type { Project } from "./projects.types";
+import type { Project } from "./projects.types";
 
 const projectListEn: Project[] = [
   {
@@ -17,7 +17,7 @@ const projectListEn: Project[] = [
       caption: "Real-time invisibility effect with visual calibration controls.",
     },
     intro: {
-      title: "Invisibility Cloak â€” Real-time effect in the browser",
+      title: "Invisibility Cloak — Real-time effect in the browser",
       paragraphs: [
         "Full stack project that applies a real-time invisibility effect in the browser, with calibration controls and color masking.",
         "Processing happens locally via Canvas for low latency and privacy, with an optional backend for snapshots and metrics.",
@@ -134,7 +134,7 @@ const projectListEn: Project[] = [
       "https://github.com/matheussiqueira-dev/Simulacao-Estrategica-de-Decisao-Empresarial.git",
     demo: {
       kind: "video",
-      src: "/SimulaÃ§Ã£o EstratÃ©gica de DecisÃ£o Empresarial.mp4",
+      src: "/Simulação Estratégica de Decisão Empresarial.mp4",
       poster: "/Thmbnail/Thumbnail - English/Business Decision Simulator.png",
       caption: "Side-by-side scenarios, risk distribution and live KPIs.",
     },
@@ -163,7 +163,7 @@ const projectListEn: Project[] = [
         },
       ],
       video: {
-        src: "/SimulaÃ§Ã£o EstratÃ©gica de DecisÃ£o Empresarial.mp4",
+        src: "/Simulação Estratégica de Decisão Empresarial.mp4",
         poster: "/Thmbnail/Thumbnail - English/Business Decision Simulator.png",
         caption: "Walkthrough of scenarios, risk and KPI dashboards.",
       },
@@ -226,7 +226,7 @@ const projectListEn: Project[] = [
         alt: "Business Decision Simulator cover",
       },
       {
-        src: "/SimulaÃ§Ã£o EstratÃ©gica de DecisÃ£o Empresarial.mp4",
+        src: "/Simulação Estratégica de Decisão Empresarial.mp4",
         alt: "Business Decision Simulator demo",
         type: "video",
       },
