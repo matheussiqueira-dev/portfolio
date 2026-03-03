@@ -2,8 +2,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
-import Footer from "@/components/layout/Footer";
-import Header from "@/components/layout/Header";
+import Footer from "@/ui/components/layout/Footer";
+import Header from "@/ui/components/layout/Header";
 import { isValidLocale, routing } from "@/core/i18n/routing";
 
 type Props = Readonly<{

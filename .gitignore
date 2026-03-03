@@ -18,6 +18,13 @@
 /out/
 .turbo/
 
+# cleanup baseline
+.next/
+node_modules/
+.env*
+*.log
+.DS_Store
+
 # production
 /build
 

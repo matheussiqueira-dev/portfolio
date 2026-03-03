@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useId, useRef, useEffect } from "react";
-import SafeImage from "@/components/demo/SafeImage";
+import SafeImage from "@/ui/components/demo/SafeImage";
 import type { ProjectCard } from "@/data/projects-card.types";
 import ProjectCardDetails from "./ProjectCardDetails";
 import styles from "./ProjectCard.module.css";
