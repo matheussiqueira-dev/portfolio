@@ -37,6 +37,7 @@ export default function ProjectDeployment({
         onClick={() => setExpanded(!expanded)}
         aria-expanded={expanded}
         aria-label={`${expanded ? dictionary.viewLess : dictionary.viewMore} - ${title}`}
+        type="button"
       >
         {/* Thumbnail */}
         <div className={styles.thumbnailWrapper}>
@@ -45,6 +46,7 @@ export default function ProjectDeployment({
             alt={title}
             width={500}
             height={300}
+            sizes="(max-width: 768px) 100vw, 280px"
             className={styles.thumbnail}
             priority={false}
           />

@@ -46,9 +46,9 @@ export default function DeploymentNodesList() {
   return (
     <section className={styles.deploymentSection}>
       <div className={styles.header}>
-        <h2 className={styles.title}>
+        <h1 className={styles.title}>
           {isPortuguese ? "N\u00f3s de Deployment" : "Deployment Nodes"}
-        </h2>
+        </h1>
         <p className={styles.subtitle}>
           {isPortuguese
             ? "Explore meus projetos em detalhe com arquitetura, desafios e m\u00e9tricas"
