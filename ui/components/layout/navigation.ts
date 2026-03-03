@@ -1,7 +1,7 @@
 import type { SiteContent } from "@/data/site.types";
 
 type HashAnchor = "home" | "about" | "services" | "projects" | "contact";
-type PagePath = "/resume" | "/academic" | "/certificates" | "/hire";
+type PagePath = "/resume" | "/academic" | "/certificates" | "/hire" | "/about";
 
 export type NavItem = {
   id: string;
@@ -21,7 +21,7 @@ type NavConfigItem = {
 
 const NAV_CONFIG: NavConfigItem[] = [
   { id: "home", labelKey: "home", type: "anchor", pathname: "/", hash: "home" },
-  { id: "about", labelKey: "about", type: "anchor", pathname: "/", hash: "about" },
+  { id: "about", labelKey: "about", type: "page", pathname: "/about" },
   {
     id: "services",
     labelKey: "services",

@@ -8,6 +8,10 @@ export const routing = defineRouting({
   localeCookie: false,
   pathnames: {
     "/": "/",
+    "/about": {
+      "pt-BR": "/sobre",
+      en: "/about",
+    },
     "/academic": {
       "pt-BR": "/academico",
       en: "/academic",
