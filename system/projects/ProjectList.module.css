@@ -1,96 +1,81 @@
-/* ProjectList.module.css - Projects container with filtering */
-
 .container {
   width: 100%;
-  padding: 64px 24px;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: grid;
+  gap: var(--space-2xl);
 }
 
-/* Header */
 .header {
-  margin-bottom: 48px;
+  display: grid;
+  gap: var(--space-lg);
+  justify-items: center;
   text-align: center;
 }
 
 .title {
-  margin: 0 0 16px;
-  font-size: 36px;
+  margin: 0;
+  font-size: clamp(1.65rem, 3.2vw, 2.3rem);
   font-weight: 700;
-  color: var(--foreground);
-  letter-spacing: -0.5px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
 }
 
 .description {
   margin: 0;
-  font-size: 16px;
-  color: var(--muted);
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 64ch;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
 }
 
-/* Filters */
 .filterNav {
-  margin-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  display: grid;
+  gap: var(--space-md);
 }
 
 .filterLabel {
-  display: block;
-  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--text-secondary);
 }
 
 .filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  overflow: visible;
+  gap: var(--space-sm);
+  align-items: center;
 }
 
 .filter {
   --float-duration: 5.2s;
-  --float-amplitude: 4px;
-  --effective-float-amplitude: var(--float-amplitude);
+  --float-amplitude: 2px;
   --float-delay: 0s;
-  --hover-scale: 1;
-  --hover-lift: 0px;
 
   position: relative;
-  isolation: isolate;
   overflow: hidden;
-  padding: 8px 16px;
-  border-radius: 8px;
-  border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border));
-  background: color-mix(in srgb, var(--surface) 90%, var(--accent) 10%);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--muted);
-  cursor: pointer;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 80%, transparent);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--bg-secondary) 94%, transparent);
+  color: var(--text-secondary);
+  padding: 0.45rem 0.85rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.2;
   white-space: nowrap;
-
-  transform: translate3d(0, 0, 0) scale(var(--hover-scale));
-  animation: float var(--float-duration) ease-in-out var(--float-delay) infinite;
+  cursor: pointer;
+  transform: translateY(0);
   transition:
-    color 0.24s ease,
-    border-color 0.24s ease,
-    background-color 0.24s ease,
-    box-shadow 0.24s ease,
-    transform 0.24s ease;
-
-  box-shadow:
-    0 0 4px color-mix(in srgb, var(--accent) 45%, transparent),
-    0 0 10px color-mix(in srgb, var(--accent) 30%, transparent),
-    inset 0 0 6px color-mix(in srgb, var(--accent) 22%, transparent);
-
-  will-change: transform;
-  backface-visibility: hidden;
+    transform 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    background-color 200ms ease,
+    box-shadow 200ms ease;
+  animation: filterFloat var(--float-duration) ease-in-out var(--float-delay) infinite;
 }
 
 .filter::before {
@@ -98,246 +83,122 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  pointer-events: none;
-  z-index: 0;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    color-mix(in srgb, var(--accent) 35%, transparent),
-    transparent
-  );
+  background: linear-gradient(120deg, transparent, color-mix(in srgb, var(--accent) 26%, transparent), transparent);
   opacity: 0;
-  transform: translate3d(-110%, 0, 0);
-  transition: opacity 0.3s ease, transform 0.6s ease;
-}
-
-.filter > * {
-  position: relative;
-  z-index: 1;
+  transform: translateX(-100%);
+  transition: opacity 220ms ease, transform 380ms ease;
 }
 
 .filter:hover {
-  --hover-scale: 1.04;
-  --hover-lift: 2px;
-
-  border-color: color-mix(in srgb, var(--accent) 82%, var(--border));
-  color: var(--foreground-strong, var(--foreground));
-  background: color-mix(in srgb, var(--surface) 84%, var(--accent) 16%);
-
-  box-shadow:
-    0 0 8px var(--accent),
-    0 0 18px color-mix(in srgb, var(--accent) 82%, transparent),
-    0 0 32px color-mix(in srgb, var(--accent) 70%, transparent),
-    inset 0 0 10px color-mix(in srgb, var(--accent) 45%, transparent);
+  color: var(--text-primary);
+  border-color: color-mix(in srgb, var(--accent) 62%, var(--border-subtle));
+  background: color-mix(in srgb, var(--bg-layer) 86%, transparent);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
 }
 
 .filter:hover::before,
 .filter:focus-visible::before {
   opacity: 1;
-  transform: translate3d(110%, 0, 0);
+  transform: translateX(100%);
 }
 
 .filter:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-  color: var(--foreground-strong, var(--foreground));
-  border-color: var(--accent);
-  box-shadow:
-    0 0 8px color-mix(in srgb, var(--accent) 82%, transparent),
-    0 0 20px color-mix(in srgb, var(--accent) 66%, transparent),
-    inset 0 0 8px color-mix(in srgb, var(--accent) 40%, transparent);
+  outline: 2px solid color-mix(in srgb, var(--accent) 62%, transparent);
+  outline-offset: 2px;
 }
 
 .filter.active,
 .filter[data-active="true"] {
-  font-weight: 600;
-  color: var(--foreground-strong, var(--foreground));
-  border-color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
-  box-shadow:
-    0 0 12px var(--accent),
-    0 0 22px color-mix(in srgb, var(--accent) 68%, transparent),
-    inset 0 0 10px color-mix(in srgb, var(--accent) 64%, transparent);
-  animation:
-    float var(--float-duration) ease-in-out var(--float-delay) infinite,
-    pulse 3s ease-in-out infinite;
+  color: var(--text-primary);
+  border-color: color-mix(in srgb, var(--accent) 78%, transparent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--bg-secondary));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 24%, transparent);
 }
 
-@keyframes float {
-  0% {
-    transform: translate3d(0, 0, 0) scale(var(--hover-scale));
-  }
-  50% {
-    transform: translate3d(
-      0,
-      calc(-1 * var(--effective-float-amplitude) - var(--hover-lift)),
-      0
-    ) scale(var(--hover-scale));
-  }
-  100% {
-    transform: translate3d(0, 0, 0) scale(var(--hover-scale));
-  }
-}
-
-@keyframes pulse {
-  50% {
-    box-shadow:
-      0 0 20px var(--accent),
-      0 0 30px color-mix(in srgb, var(--accent) 80%, transparent),
-      inset 0 0 12px color-mix(in srgb, var(--accent) 68%, transparent);
-  }
-}
-
-/* Projects Grid */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
-  margin-bottom: 32px;
+  gap: var(--space-xl);
 }
 
-/* Empty State */
 .emptyState {
   text-align: center;
-  padding: 60px 24px;
-  color: var(--muted);
-  font-size: 14px;
+  border: 1px dashed color-mix(in srgb, var(--border-subtle) 80%, transparent);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--bg-secondary) 92%, transparent);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding: var(--space-2xl);
 }
 
 .emptyState p {
   margin: 0;
 }
 
-/* Result Count */
 .resultCount {
+  margin: 0;
   text-align: center;
-  font-size: 13px;
-  color: var(--muted);
-  margin: 24px 0 0;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
 }
 
-/* Responsive Design */
+@keyframes filterFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(calc(-1 * var(--float-amplitude)));
+  }
+}
+
 @media (max-width: 768px) {
   .container {
-    padding: 48px 16px;
-  }
-
-  .header {
-    margin-bottom: 40px;
-  }
-
-  .title {
-    font-size: 28px;
-  }
-
-  .description {
-    font-size: 14px;
-  }
-
-  .filters {
-    gap: 6px;
-  }
-
-  .filter {
-    --effective-float-amplitude: calc(var(--float-amplitude) * 0.65);
-
-    padding: 7px 12px;
-    font-size: 11px;
-    box-shadow:
-      0 0 3px color-mix(in srgb, var(--accent) 34%, transparent),
-      0 0 8px color-mix(in srgb, var(--accent) 24%, transparent),
-      inset 0 0 4px color-mix(in srgb, var(--accent) 20%, transparent);
-  }
-
-  .filter:hover {
-    --hover-scale: 1.02;
-    --hover-lift: 1px;
-
-    box-shadow:
-      0 0 6px color-mix(in srgb, var(--accent) 72%, transparent),
-      0 0 12px color-mix(in srgb, var(--accent) 56%, transparent),
-      inset 0 0 6px color-mix(in srgb, var(--accent) 36%, transparent);
+    gap: var(--space-xl);
   }
 
   .grid {
-    gap: 20px;
+    gap: var(--space-lg);
   }
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 32px 12px;
-  }
-
   .header {
-    margin-bottom: 28px;
+    justify-items: flex-start;
+    text-align: left;
   }
 
   .title {
-    font-size: 22px;
-    margin-bottom: 12px;
+    font-size: clamp(1.4rem, 7vw, 1.8rem);
   }
 
   .description {
-    font-size: 13px;
-  }
-
-  .filterNav {
-    margin-bottom: 32px;
-  }
-
-  .filterLabel {
-    font-size: 10px;
-    letter-spacing: 1px;
+    font-size: 0.95rem;
   }
 
   .filters {
-    gap: 4px;
+    flex-wrap: nowrap;
     overflow-x: auto;
-    padding-bottom: 8px;
+    padding-bottom: var(--space-sm);
+    scrollbar-width: thin;
   }
 
   .filter {
-    padding: 6px 10px;
-    font-size: 10px;
-    flex-shrink: 0;
-  }
-
-  .grid {
-    gap: 14px;
+    flex: 0 0 auto;
+    font-size: 0.72rem;
+    padding: 0.42rem 0.75rem;
   }
 
   .emptyState {
-    padding: 40px 12px;
-    font-size: 13px;
-  }
-
-  .resultCount {
-    font-size: 12px;
+    padding: var(--space-xl);
   }
 }
 
-/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
-  .filter,
-  .filter.active,
-  .filter[data-active="true"] {
-    animation: none !important;
-    transform: none !important;
-    transition:
-      color 0.2s ease,
-      border-color 0.2s ease,
-      background-color 0.2s ease,
-      box-shadow 0.2s ease;
-  }
-
-  .filter::before {
-    opacity: 0;
-    transform: none;
-    transition: none;
-  }
-
-  .grid {
-    transition: none;
+  .filter {
+    animation: none;
   }
 }

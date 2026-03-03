@@ -1,16 +1,16 @@
 /* Visual refinement layer: preserves content and semantics while improving layout and interaction. */
 
 :root {
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
+  --space-1: var(--space-xs);
+  --space-2: var(--space-sm);
+  --space-3: var(--space-md);
+  --space-4: var(--space-lg);
   --space-5: 1.25rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
+  --space-6: var(--space-xl);
+  --space-8: var(--space-2xl);
   --space-10: 2.5rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
+  --space-12: var(--space-3xl);
+  --space-16: var(--space-4xl);
   --motion-fast: 180ms;
   --motion-base: 260ms;
   --motion-slow: 420ms;
@@ -31,10 +31,6 @@ body::after {
   width: 42%;
   height: 42%;
   opacity: 0.72;
-}
-
-.section-inner {
-  width: min(88rem, calc(100% - clamp(1.25rem, 4vw, 4rem)));
 }
 
 .site-header {
@@ -538,69 +534,6 @@ html[data-locale-landing="true"] .site-footer {
 html[data-locale-landing="true"] [data-locale] .app-shell,
 html[data-locale-landing="true"] [data-locale] .app-shell > #main-content {
   min-height: 100vh;
-}
-
-/* Unified landing palette + typography across all pages */
-:root {
-  --background: #0b0f14;
-  --foreground: #f3f4f6;
-  --foreground-strong: #f3f4f6;
-  --muted: #9ca3af;
-  --muted-strong: #d1d5db;
-  --surface: #111827;
-  --surface-muted: #0f172a;
-  --surface-strong: #1f2937;
-  --border: #1f2937;
-  --accent: #e5e7eb;
-  --accent-strong: #f3f4f6;
-  --accent-soft: #9ca3af;
-  --accent-warm: #d1d5db;
-  --accent-cool: #64748b;
-  --shadow: 0 24px 54px -30px rgba(0, 0, 0, 0.6);
-  --shadow-soft: 0 18px 36px -24px rgba(0, 0, 0, 0.48);
-  --bg-radial-1: rgba(148, 163, 184, 0.16);
-  --bg-radial-2: rgba(71, 85, 105, 0.14);
-  --bg-grid: rgba(255, 255, 255, 0.038);
-  --bg-glow: rgba(148, 163, 184, 0.16);
-  --liquid-btn-bg: rgba(255, 255, 255, 0.09);
-  --liquid-btn-bg-strong: rgba(255, 255, 255, 0.16);
-  --liquid-btn-border: rgba(255, 255, 255, 0.18);
-  --liquid-btn-highlight: rgba(255, 255, 255, 0.24);
-  --liquid-btn-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  --liquid-btn-text: #f3f4f6;
-  --liquid-btn-focus: rgba(229, 231, 235, 0.46);
-  --liquid-btn-blur: 14px;
-}
-
-html[data-theme="light"] {
-  --background: #f7f7f8;
-  --foreground: #0a0a0b;
-  --foreground-strong: #0a0a0b;
-  --muted: #6b7280;
-  --muted-strong: #4b5563;
-  --surface: #ffffff;
-  --surface-muted: #f9fafb;
-  --surface-strong: #f3f4f6;
-  --border: #e5e7eb;
-  --accent: #111827;
-  --accent-strong: #0a0a0b;
-  --accent-soft: #6b7280;
-  --accent-warm: #d1d5db;
-  --accent-cool: #4b5563;
-  --shadow: 0 20px 44px -28px rgba(15, 23, 42, 0.2);
-  --shadow-soft: 0 14px 28px -24px rgba(15, 23, 42, 0.14);
-  --bg-radial-1: rgba(15, 23, 42, 0.1);
-  --bg-radial-2: rgba(31, 41, 55, 0.08);
-  --bg-grid: rgba(15, 23, 42, 0.04);
-  --bg-glow: rgba(15, 23, 42, 0.08);
-  --liquid-btn-bg: rgba(255, 255, 255, 0.75);
-  --liquid-btn-bg-strong: rgba(255, 255, 255, 0.92);
-  --liquid-btn-border: rgba(15, 23, 42, 0.08);
-  --liquid-btn-highlight: rgba(255, 255, 255, 0.88);
-  --liquid-btn-shadow: 0 10px 20px -16px rgba(15, 23, 42, 0.24);
-  --liquid-btn-text: #0a0a0b;
-  --liquid-btn-focus: rgba(17, 24, 39, 0.25);
-  --liquid-btn-blur: 10px;
 }
 
 body {
