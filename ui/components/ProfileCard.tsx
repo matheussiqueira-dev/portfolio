@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, type CSSProperties } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { useTheme } from "next-themes";
 import ActionButtons from "@/ui/components/ActionButtons";
 import InteractivePhoto from "@/ui/components/InteractivePhoto";
 
@@ -50,23 +49,6 @@ type Props = {
   activeLocale: "pt-BR" | "en";
 };
 
-const LIGHT_PALETTE: Palette = {
-  bg: "#F7F7F8",
-  textPrimary: "#0A0A0B",
-  textSecondary: "#6B7280",
-  border: "#E5E7EB",
-  card: "rgba(255, 255, 255, 0.84)",
-  buttonBg: "#000000",
-  buttonFg: "#FFFFFF",
-  buttonHover: "#262626",
-  focus: "rgba(15, 23, 42, 0.32)",
-  glow: "rgba(15, 23, 42, 0.15)",
-  cardShadow: "0 24px 54px -32px rgba(15, 23, 42, 0.36)",
-  buttonShadow: "0 8px 16px -12px rgba(15, 23, 42, 0.32)",
-  ambient: "rgba(15, 23, 42, 0.11)",
-  toggleBg: "rgba(255, 255, 255, 0.72)",
-};
-
 const DARK_PALETTE: Palette = {
   bg: "#0B0F14",
   textPrimary: "#F3F4F6",
@@ -104,9 +86,7 @@ export default function ProfileCard({
   activeLocale,
 }: Props) {
   const reduceMotion = useReducedMotion();
-  const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme === "dark";
-  const palette = isDark ? DARK_PALETTE : LIGHT_PALETTE;
+  const palette = DARK_PALETTE;
 
   useEffect(() => {
     if (!localeLandingMode) {

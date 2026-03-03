@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Instrument_Sans, Sora } from "next/font/google";
 import Script from "next/script";
-import { ThemeProvider } from "next-themes";
 import JsonLd from "@/ui/components/seo/JsonLd";
 import AppVisualEffects from "@/ui/components/layout/AppVisualEffects";
 import Cursor from "@/ui/components/Cursor";
@@ -233,25 +232,16 @@ export default function RootLayout({
         >
           Pular para o conteúdo principal
         </a>
-        <ThemeProvider
-          attribute="data-theme"
-          defaultTheme="dark"
-          enableSystem={false}
-          storageKey="theme"
-          disableTransitionOnChange
-        >
-          <Cursor />
-          <JsonLd data={[websiteJsonLd, personJsonLd]} />
-          <AppVisualEffects />
-          <PageTransition>
-            {children}
-          </PageTransition>
-        </ThemeProvider>
+        <Cursor />
+        <JsonLd data={[websiteJsonLd, personJsonLd]} />
+        <AppVisualEffects />
+        <PageTransition>
+          {children}
+        </PageTransition>
       </body>
     </html>
   );
 }
-
 
 
 

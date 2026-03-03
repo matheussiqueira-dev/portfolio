@@ -2,7 +2,6 @@
 
 import { Suspense, useCallback, useEffect, useId, useRef, useState } from "react";
 import LanguageSwitch from "@/ui/components/ui/LanguageSwitch";
-import ThemeToggle from "@/ui/components/ui/ThemeToggle";
 import { Link } from "@/core/i18n/navigation";
 import type { NavItem } from "./navigation";
 
@@ -293,9 +292,6 @@ export default function MobileMenu({
                   >
                     <LanguageSwitch />
                   </Suspense>
-                </div>
-                <div className="mt-4">
-                  <ThemeToggle />
                 </div>
               </div>
             </div>

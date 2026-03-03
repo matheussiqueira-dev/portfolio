@@ -148,15 +148,11 @@ html[data-theme="light"] {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
-  color-scheme: light dark;
+  color-scheme: dark;
 }
 
 html[data-theme="dark"] {
   color-scheme: dark;
-}
-
-html[data-theme="light"] {
-  color-scheme: light;
 }
 
 body {
@@ -2352,7 +2348,6 @@ body::after {
     white-space: normal;
   }
 }
-
 
 
 

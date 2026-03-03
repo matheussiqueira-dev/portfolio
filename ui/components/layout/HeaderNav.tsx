@@ -11,7 +11,6 @@ import { useLocale } from "next-intl";
 import { sitePt } from "@/data/site.pt";
 import { siteEn } from "@/data/site.en";
 import LanguageSwitch from "@/ui/components/ui/LanguageSwitch";
-import ThemeToggle from "@/ui/components/ui/ThemeToggle";
 import { Link, usePathname } from "@/core/i18n/navigation";
 import MobileMenu from "./MobileMenu";
 import {
@@ -210,7 +209,6 @@ export default function HeaderNav() {
           >
             <LanguageSwitch />
           </Suspense>
-          <ThemeToggle />
         </div>
       </div>
 
