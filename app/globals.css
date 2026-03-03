@@ -271,21 +271,26 @@ body::after {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.82;
-  filter: saturate(112%);
+  opacity: 0.88;
+  filter: saturate(116%) brightness(106%);
+  will-change: opacity;
+  transform: translateZ(0);
 }
 
 .cursor-glow::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    520px circle at var(--cursor-x) var(--cursor-y),
-    rgba(240, 179, 90, 0.14),
-    rgba(240, 179, 90, 0.06) 34%,
-    transparent 66%
-  );
-  filter: blur(28px);
+  background:
+    radial-gradient(
+      520px circle at var(--cursor-x) var(--cursor-y),
+      #00f0ff 0%,
+      #00aeef 25%,
+      rgba(0, 174, 239, 0.45) 45%,
+      rgba(0, 119, 255, 0.18) 65%,
+      rgba(0, 0, 0, 0) 80%
+    );
+  filter: blur(28px) drop-shadow(0 0 22px rgba(0, 229, 255, 0.45));
 }
 
 .cursor-glow::after {
@@ -294,10 +299,12 @@ body::after {
   inset: 0;
   background: radial-gradient(
     260px circle at var(--cursor-x) var(--cursor-y),
-    rgba(255, 224, 176, 0.16),
-    transparent 62%
+    rgba(0, 240, 255, 0.28) 0%,
+    rgba(0, 174, 239, 0.16) 38%,
+    rgba(0, 119, 255, 0.1) 62%,
+    transparent 75%
   );
-  filter: blur(14px);
+  filter: blur(14px) drop-shadow(0 0 12px rgba(0, 229, 255, 0.35));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2029,8 +2036,21 @@ body::after {
 
 /* Shared neon accents for cursor/loading visuals */
 :root {
-  --tron-blue: #00f0ff;
-  --tron-blue-soft: rgba(0, 240, 255, 0.4);
+  --encom-primary: #00aeef;
+  --encom-core: #00e5ff;
+  --encom-electric: #00f0ff;
+  --encom-deep: #0077ff;
+  --encom-energy-accent: rgba(0, 229, 255, 1);
+  --encom-atmosphere: rgba(0, 174, 239, 0.35);
+  --encom-shadow-stack:
+    0 0 6px rgba(0, 240, 255, 0.9),
+    0 0 18px rgba(0, 174, 239, 0.6),
+    0 0 40px rgba(0, 119, 255, 0.35),
+    0 0 80px rgba(0, 119, 255, 0.15);
+
+  /* Backward-compatible aliases for existing TRON components */
+  --tron-blue: var(--encom-electric);
+  --tron-blue-soft: rgba(0, 229, 255, 0.4);
 }
 
 /* ============================= */
@@ -2047,16 +2067,25 @@ body::after {
   position: fixed;
   width: 28px;
   height: 28px;
-  border: 1px solid var(--tron-blue);
+  border: 1px solid var(--encom-core);
   border-radius: 50%;
   pointer-events: none;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) translateZ(0);
   transition: width 0.15s ease-out,
               height 0.15s ease-out,
               border 0.15s ease-out,
               box-shadow 0.2s ease-out;
   z-index: 9999;
-  will-change: left, top;
+  will-change: transform, opacity, left, top;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--encom-electric) 20%, transparent) 0%,
+    color-mix(in srgb, var(--encom-primary) 10%, transparent) 44%,
+    transparent 70%
+  );
+  box-shadow:
+    inset 0 0 10px color-mix(in srgb, var(--encom-core) 32%, transparent),
+    0 0 8px color-mix(in srgb, var(--encom-core) 28%, transparent);
 }
 
 .tron-cursor::after {
@@ -2064,24 +2093,43 @@ body::after {
   position: absolute;
   width: 4px;
   height: 4px;
-  background: var(--tron-blue);
+  background-color: var(--encom-electric);
   border-radius: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  box-shadow: var(--encom-shadow-stack);
+  animation: encomPulse 2.4s ease-in-out infinite;
 }
 
 .tron-cursor.active {
   width: 40px;
   height: 40px;
-  box-shadow: 0 0 20px var(--tron-blue);
+  border-color: var(--encom-electric);
+  box-shadow: var(--encom-shadow-stack);
 }
 
 .tron-cursor.click {
   width: 22px;
   height: 22px;
-  border-color: var(--tron-blue);
-  box-shadow: 0 0 25px var(--tron-blue);
+  border-color: var(--encom-core);
+  box-shadow:
+    0 0 8px rgba(0, 240, 255, 0.95),
+    0 0 20px rgba(0, 174, 239, 0.65),
+    0 0 46px rgba(0, 119, 255, 0.38),
+    0 0 90px rgba(0, 119, 255, 0.18);
+}
+
+@keyframes encomPulse {
+  0%,
+  100% {
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
 }
 
 @media (hover: none), (pointer: coarse) {
@@ -2302,7 +2350,6 @@ body::after {
     white-space: normal;
   }
 }
-
 
 
 
