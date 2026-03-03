@@ -13,8 +13,8 @@ const projectListEn: Project[] = [
     demoUrl: "https://capa-da-invisibilidade.vercel.app/",
     demo: {
       kind: "video",
-      src: "/Capa da Invisibilidade.mp4",
-      poster: "/Thmbnail/Thumbnail - English/Invisibility Cloak.png",
+      src: "/media/capa-da-invisibilidade.mp4",
+      poster: "/thumbnails/en/capa-da-invisibilidade.png",
       caption: "Real-time invisibility effect with visual calibration controls.",
     },
     intro: {
@@ -102,11 +102,11 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - English/Invisibility Cloak.png",
+        src: "/thumbnails/en/capa-da-invisibilidade.png",
         alt: "Invisibility Cloak cover",
       },
       {
-        src: "/Capa da Invisibilidade.mp4",
+        src: "/media/capa-da-invisibilidade.mp4",
         alt: "Invisibility Cloak video demo",
         type: "video",
       },
@@ -253,7 +253,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/projects/dashboard-vendas-power-bi/demo.mp4",
-      poster: "/Thmbnail/Thumbnail - English/Sales Dashboard - Power BI.png",
+      poster: "/thumbnails/en/dashboard-vendas-power-bi.png",
       caption: "Dashboard overview and main filters.",
     },
     intro: {
@@ -282,7 +282,7 @@ const projectListEn: Project[] = [
       ],
       video: {
         src: "/projects/dashboard-vendas-power-bi/demo.mp4",
-        poster: "/Thmbnail/Thumbnail - English/Sales Dashboard - Power BI.png",
+        poster: "/thumbnails/en/dashboard-vendas-power-bi.png",
         caption: "KPIs, filters, and quick performance reading.",
       },
     },
@@ -339,7 +339,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - English/Sales Dashboard - Power BI.png",
+        src: "/thumbnails/en/dashboard-vendas-power-bi.png",
         alt: "Sales Dashboard cover",
       },
       {
@@ -486,8 +486,8 @@ const projectListEn: Project[] = [
     demoUrl: "https://touchless-gestures-next.vercel.app/",
     demo: {
       kind: "video",
-      src: "/touchless-web-gesture-interface.mp4",
-      poster: "/Thmbnail/Thumbnail - English/Touchless Web Gesture Interface.png",
+      src: "/media/touchless-web-gesture-interface.mp4",
+      poster: "/thumbnails/en/touchless-web-gesture-interface.png",
       caption: "Quick walkthrough of the touchless interface in action.",
     },
     intro: {
@@ -643,8 +643,8 @@ const projectListEn: Project[] = [
         },
       ],
       video: {
-        src: "/touchless-web-gesture-interface.mp4",
-        poster: "/Thmbnail/Thumbnail - English/Touchless Web Gesture Interface.png",
+        src: "/media/touchless-web-gesture-interface.mp4",
+        poster: "/thumbnails/en/touchless-web-gesture-interface.png",
         caption: "Touchless Web Gesture Interface demo in action.",
       },
     },
@@ -708,11 +708,11 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - English/Touchless Web Gesture Interface.png",
+        src: "/thumbnails/en/touchless-web-gesture-interface.png",
         alt: "Cover of Touchless Web Gesture Interface",
       },
       {
-        src: "/touchless-web-gesture-interface.mp4",
+        src: "/media/touchless-web-gesture-interface.mp4",
         alt: "Touchless Web Gesture Interface demo in action",
         type: "video",
       },
@@ -802,11 +802,11 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - English/Chatbot IA API.png",
+        src: "/thumbnails/en/chatbot-ia-api.png",
         alt: "Cover of AI Chatbot API",
       },
       {
-        src: "/Chatbot.mp4",
+        src: "/media/chatbot.mp4",
         alt: "AI Chatbot API demo",
         type: "video",
       },
@@ -832,7 +832,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/projects/self-drive-car/demo.mp4",
-      poster: "/Thmbnail/Thumbnail - English/Self-Drive Car.png",
+      poster: "/thumbnails/en/self-drive-car.png",
       caption: "Autonomous driving simulator running in real time.",
     },
     context:
@@ -889,7 +889,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - English/Self-Drive Car.png",
+        src: "/thumbnails/en/self-drive-car.png",
         alt: "Cover of Self-Drive Car",
       },
       {
@@ -970,7 +970,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - English/Library API Advanced.png",
+        src: "/thumbnails/en/library-api-advanced.png",
         alt: "Cover of Library API Advanced",
       },
       {
@@ -999,8 +999,8 @@ const projectListEn: Project[] = [
     repoUrl: "https://github.com/matheussiqueira-dev/Driver-Monitoring-System",
     demo: {
       kind: "video",
-      src: "/driver-monitoring-system.mp4",
-      poster: "/Thmbnail/Thumbnail - English/Driver Monitoring System.png",
+      src: "/media/driver-monitoring-system.mp4",
+      poster: "/thumbnails/en/driver-monitoring-system.png",
       caption: "Attention and fatigue detection with computer vision.",
     },
     context:
@@ -1057,11 +1057,11 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - English/Driver Monitoring System.png",
+        src: "/thumbnails/en/driver-monitoring-system.png",
         alt: "Cover of Driver Monitoring System",
       },
       {
-        src: "/driver-monitoring-system.mp4",
+        src: "/media/driver-monitoring-system.mp4",
         alt: "Driver Monitoring System demo",
         type: "video",
       },
@@ -1083,8 +1083,8 @@ const projectListEn: Project[] = [
     repoUrl: "https://github.com/matheussiqueira-dev/Flappy-Bird",
     demo: {
       kind: "video",
-      src: "/Flappy-Bird.mp4",
-      poster: "/Thmbnail/Thumbnail - English/Flappy Bird.png",
+      src: "/media/flappy-bird.mp4",
+      poster: "/thumbnails/en/flappy-bird.png",
       caption: "Gameplay of Flappy Bird com Gestos using webcam-based gestures.",
     },
     context:
@@ -1141,11 +1141,11 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - English/Flappy Bird.png",
+        src: "/thumbnails/en/flappy-bird.png",
         alt: "Cover of Flappy Bird com Gestos",
       },
       {
-        src: "/Flappy-Bird.mp4",
+        src: "/media/flappy-bird.mp4",
         alt: "Demo of Flappy Bird com Gestos",
         type: "video",
       },
@@ -1167,8 +1167,8 @@ const projectListEn: Project[] = [
     repoUrl: "https://github.com/matheussiqueira-dev/Subway-Surf",
     demo: {
       kind: "video",
-      src: "/Subway Surf.mp4",
-      poster: "/Thmbnail/Thumbnail - English/Subway Surfers.png",
+      src: "/media/subway-surf.mp4",
+      poster: "/thumbnails/en/subway-surf.png",
       caption: "Gameplay from the Subway Surfers-inspired prototype.",
     },
     context:
@@ -1224,11 +1224,11 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - English/Subway Surfers.png",
+        src: "/thumbnails/en/subway-surf.png",
         alt: "Cover of Subway Surfers",
       },
       {
-        src: "/Subway Surf.mp4",
+        src: "/media/subway-surf.mp4",
         alt: "Subway Surfers gameplay demo",
         type: "video",
       },
@@ -1246,7 +1246,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/projects/synthwave-space/demo.mp4",
-      poster: "/Thmbnail/Thumbnail - English/Synthwave Space EN US.png",
+      poster: "/thumbnails/en/synthwave-space.png",
       caption: "Gameplay featuring progressive waves, visual effects, and neon atmosphere.",
     },
     context:
@@ -1302,7 +1302,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - English/Synthwave Space EN US.png",
+        src: "/thumbnails/en/synthwave-space.png",
         alt: "Synthwave Space cover",
       },
       {
@@ -1334,7 +1334,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/projects/slingshot/demo.mp4",
-      poster: "/Thmbnail/Thumbnail - English/Slingshot.png",
+      poster: "/thumbnails/en/slingshot.png",
       caption: "Touch aim, ricochet shots, and real-time tactical hints.",
     },
     context:
@@ -1392,7 +1392,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - English/Slingshot.png",
+        src: "/thumbnails/en/slingshot.png",
         alt: "Slingshot cover",
       },
       {
@@ -1483,7 +1483,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - English/Fruit Ninja.png",
+        src: "/thumbnails/en/fruit-ninja.png",
         alt: "Fruit Ninja cover",
       },
     ],
@@ -1514,7 +1514,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/projects/neon-runner-cyber-hand/demo.mp4",
-      poster: "/Thmbnail/Thumbnail - English/Neon Runner Cyber Hand.png",
+      poster: "/thumbnails/en/neon-runner-cyber-hand.png",
       caption: "Neon runner with gesture control and cyber hand overlay.",
     },
     context:
@@ -1574,7 +1574,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - English/Neon Runner Cyber Hand.png",
+        src: "/thumbnails/en/neon-runner-cyber-hand.png",
         alt: "Neon Runner: Cyber Hand cover",
       },
       {
@@ -1606,7 +1606,7 @@ const projectListEn: Project[] = [
     demo: {
       kind: "video",
       src: "/projects/dino-chrome/demo.mp4",
-      poster: "/Thmbnail/Thumbnail - English/Dino Chrome.png",
+      poster: "/thumbnails/en/dino-chrome.png",
       caption: "Gameplay of the Chrome Dino clone.",
     },
     context:
@@ -1662,7 +1662,7 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - English/Dino Chrome.png",
+        src: "/thumbnails/en/dino-chrome.png",
         alt: "Cover of Dino Chrome",
       },
       {
@@ -1688,8 +1688,8 @@ const projectListEn: Project[] = [
     repoUrl: "https://github.com/matheussiqueira-dev/Gestor_de_Notas",
     demo: {
       kind: "video",
-      src: "/Gestor de Notas.mp4",
-      poster: "/Thmbnail/Thumbnail - English/Gestor de Notas.png",
+      src: "/media/gestor-de-notas.mp4",
+      poster: "/thumbnails/en/gestor-de-notas.png",
       caption: "Note creation and organization flow.",
     },
     context:
@@ -1745,11 +1745,11 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - English/Gestor de Notas.png",
+        src: "/thumbnails/en/gestor-de-notas.png",
         alt: "Cover of Notes Manager",
       },
       {
-        src: "/Gestor de Notas.mp4",
+        src: "/media/gestor-de-notas.mp4",
         alt: "Notes Manager demo",
         type: "video",
       },
@@ -1768,7 +1768,7 @@ const projectListEn: Project[] = [
       "https://github.com/matheussiqueira-dev/Reconhecimento-de-Gestos-de-Mao",
     demo: {
       kind: "video",
-      src: "/Hands Gesture.mp4",
+      src: "/media/hands-gesture.mp4",
       poster: "/thumbnails/en/hand-gesture-recognition-realtime.png",
       caption: "Real-time gesture recognition demonstration.",
     },
@@ -1908,12 +1908,12 @@ const projectListEn: Project[] = [
         alt: "Hand gesture recognition project cover",
       },
       {
-        src: "/Hands Gesture.gif",
+        src: "/media/hands-gesture.gif",
         alt: "Real-time gesture recognition GIF demo",
         type: "gif",
       },
       {
-        src: "/Hands Gesture.mp4",
+        src: "/media/hands-gesture.mp4",
         alt: "Real-time gesture recognition demonstration",
         type: "video",
       },
@@ -1936,8 +1936,8 @@ const projectListEn: Project[] = [
     repoUrl: "https://github.com/matheussiqueira-dev/Detector-de-Stress",
     demo: {
       kind: "video",
-      src: "/Detector de Stress.mp4",
-      poster: "/Thmbnail/Thumbnail - English/Stress Detector.png",
+      src: "/media/detector-de-stress.mp4",
+      poster: "/thumbnails/en/detector-de-stress.png",
       caption: "HUD, baseline and broadcasting in real time.",
     },
     intro: {
@@ -1965,8 +1965,8 @@ const projectListEn: Project[] = [
         },
       ],
       video: {
-        src: "/Detector de Stress.mp4",
-        poster: "/Thmbnail/Thumbnail - English/Stress Detector.png",
+        src: "/media/detector-de-stress.mp4",
+        poster: "/thumbnails/en/detector-de-stress.png",
         caption: "Watch the video demo: score, trend and alerts in real time.",
       },
     },
@@ -2025,11 +2025,11 @@ const projectListEn: Project[] = [
     ],
     screenshots: [
       {
-        src: "/Thmbnail/Thumbnail - English/Stress Detector.png",
+        src: "/thumbnails/en/detector-de-stress.png",
         alt: "Stress Detector cover",
       },
       {
-        src: "/Detector de Stress.mp4",
+        src: "/media/detector-de-stress.mp4",
         alt: "Stress Detector video demo",
         type: "video",
       },

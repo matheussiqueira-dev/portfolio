@@ -7,10 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "type-check": "tsc --noEmit -p tsconfig.typecheck.json",
     "lint:fix": "eslint --fix",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
-    "validate": "npm run lint && npm run format:check && npm run build",
+    "validate": "npm run lint && npm run type-check && npm run format:check && npm run build",
     "clean": "rimraf .next node_modules/.cache .turbo",
     "rebuild": "npm run clean && npm run build"
   },
