@@ -245,12 +245,12 @@ export default function MobileMenu({
                 type="button"
                 onClick={handleClose}
                 className="mobile-menu-close focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
-              >
-                <span className="sr-only">{closeLabel}</span>
-                <span aria-hidden="true" className="text-lg leading-none">
-                  X
-                </span>
-              </button>
+                >
+                  <span className="sr-only">{closeLabel}</span>
+                  <span aria-hidden="true" className="text-lg leading-none">
+                    ×
+                  </span>
+                </button>
             </div>
 
             <div className="mobile-menu-panel__body">
