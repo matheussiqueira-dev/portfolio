@@ -271,8 +271,8 @@ body::after {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.88;
-  filter: saturate(116%) brightness(106%);
+  opacity: 0.32;
+  filter: saturate(104%) brightness(100%);
   will-change: opacity;
   transform: translateZ(0);
 }
@@ -283,14 +283,13 @@ body::after {
   inset: 0;
   background:
     radial-gradient(
-      520px circle at var(--cursor-x) var(--cursor-y),
-      #00f0ff 0%,
-      #00aeef 25%,
-      rgba(0, 174, 239, 0.45) 45%,
-      rgba(0, 119, 255, 0.18) 65%,
-      rgba(0, 0, 0, 0) 80%
+      24px circle at var(--cursor-x) var(--cursor-y),
+      rgba(0, 240, 255, 0.12) 0%,
+      rgba(0, 174, 239, 0.08) 42%,
+      rgba(0, 119, 255, 0.04) 68%,
+      rgba(0, 0, 0, 0) 86%
     );
-  filter: blur(28px) drop-shadow(0 0 22px rgba(0, 229, 255, 0.45));
+  filter: blur(3px);
 }
 
 .cursor-glow::after {
@@ -298,13 +297,12 @@ body::after {
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    260px circle at var(--cursor-x) var(--cursor-y),
-    rgba(0, 240, 255, 0.28) 0%,
-    rgba(0, 174, 239, 0.16) 38%,
-    rgba(0, 119, 255, 0.1) 62%,
-    transparent 75%
+    16px circle at var(--cursor-x) var(--cursor-y),
+    rgba(0, 229, 255, 0.22) 0%,
+    rgba(0, 174, 239, 0.1) 55%,
+    transparent 82%
   );
-  filter: blur(14px) drop-shadow(0 0 12px rgba(0, 229, 255, 0.35));
+  filter: blur(1px);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2042,11 +2040,13 @@ body::after {
   --encom-deep: #0077ff;
   --encom-energy-accent: rgba(0, 229, 255, 1);
   --encom-atmosphere: rgba(0, 174, 239, 0.35);
+  --encom-cursor-size: 10px;
+  --encom-cursor-active-size: 14px;
+  --encom-cursor-click-size: 8px;
   --encom-shadow-stack:
-    0 0 6px rgba(0, 240, 255, 0.9),
-    0 0 18px rgba(0, 174, 239, 0.6),
-    0 0 40px rgba(0, 119, 255, 0.35),
-    0 0 80px rgba(0, 119, 255, 0.15);
+    0 0 3px rgba(0, 240, 255, 0.45),
+    0 0 8px rgba(0, 174, 239, 0.28),
+    0 0 14px rgba(0, 119, 255, 0.18);
 
   /* Backward-compatible aliases for existing TRON components */
   --tron-blue: var(--encom-electric);
@@ -2065,9 +2065,9 @@ body::after {
 
 .tron-cursor {
   position: fixed;
-  width: 28px;
-  height: 28px;
-  border: 1px solid var(--encom-core);
+  width: var(--encom-cursor-size);
+  height: var(--encom-cursor-size);
+  border: 1px solid color-mix(in srgb, var(--encom-core) 76%, transparent);
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%) translateZ(0);
@@ -2079,20 +2079,20 @@ body::after {
   will-change: transform, opacity, left, top;
   background: radial-gradient(
     circle,
-    color-mix(in srgb, var(--encom-electric) 20%, transparent) 0%,
-    color-mix(in srgb, var(--encom-primary) 10%, transparent) 44%,
+    color-mix(in srgb, var(--encom-electric) 18%, transparent) 0%,
+    color-mix(in srgb, var(--encom-primary) 8%, transparent) 46%,
     transparent 70%
   );
   box-shadow:
-    inset 0 0 10px color-mix(in srgb, var(--encom-core) 32%, transparent),
-    0 0 8px color-mix(in srgb, var(--encom-core) 28%, transparent);
+    inset 0 0 4px color-mix(in srgb, var(--encom-core) 28%, transparent),
+    0 0 6px color-mix(in srgb, var(--encom-core) 22%, transparent);
 }
 
 .tron-cursor::after {
   content: "";
   position: absolute;
-  width: 4px;
-  height: 4px;
+  width: 2px;
+  height: 2px;
   background-color: var(--encom-electric);
   border-radius: 50%;
   top: 50%;
@@ -2103,32 +2103,34 @@ body::after {
 }
 
 .tron-cursor.active {
-  width: 40px;
-  height: 40px;
+  width: var(--encom-cursor-active-size);
+  height: var(--encom-cursor-active-size);
   border-color: var(--encom-electric);
-  box-shadow: var(--encom-shadow-stack);
+  box-shadow:
+    0 0 4px rgba(0, 240, 255, 0.48),
+    0 0 10px rgba(0, 174, 239, 0.3),
+    0 0 14px rgba(0, 119, 255, 0.2);
 }
 
 .tron-cursor.click {
-  width: 22px;
-  height: 22px;
+  width: var(--encom-cursor-click-size);
+  height: var(--encom-cursor-click-size);
   border-color: var(--encom-core);
   box-shadow:
-    0 0 8px rgba(0, 240, 255, 0.95),
-    0 0 20px rgba(0, 174, 239, 0.65),
-    0 0 46px rgba(0, 119, 255, 0.38),
-    0 0 90px rgba(0, 119, 255, 0.18);
+    0 0 4px rgba(0, 240, 255, 0.52),
+    0 0 9px rgba(0, 174, 239, 0.34),
+    0 0 12px rgba(0, 119, 255, 0.2);
 }
 
 @keyframes encomPulse {
   0%,
   100% {
-    opacity: 0.85;
+    opacity: 0.72;
     transform: translate(-50%, -50%) scale(1);
   }
   50% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1.03);
   }
 }
 
@@ -2350,7 +2352,6 @@ body::after {
     white-space: normal;
   }
 }
-
 
 
 
