@@ -22,13 +22,15 @@ export default async function DataAnalystPage({ params }: Props) {
   const locale = await resolveLocale(params);
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>Data Analyst</h1>
-      <p>
-        {locale === "pt-BR"
-          ? "P\u00e1gina em constru\u00e7\u00e3o"
-          : "Page under construction"}
-      </p>
-    </div>
+    <main className="layout-container page-shell">
+      <section className="page-placeholder">
+        <h1>Data Analyst</h1>
+        <p>
+          {locale === "pt-BR"
+            ? "P\u00e1gina em constru\u00e7\u00e3o"
+            : "Page under construction"}
+        </p>
+      </section>
+    </main>
   );
 }

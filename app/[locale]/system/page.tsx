@@ -24,7 +24,7 @@ export default async function SystemPage({ params }: Props) {
   await resolveLocale(params);
 
   return (
-    <main className="section-inner py-12">
+    <main className="layout-container page-shell">
       <DeploymentNodesList />
     </main>
   );

@@ -21,14 +21,15 @@ export default async function AcademicPage({ params }: Props) {
   const title = locale === "pt-BR" ? "Acadêmico" : "Academic";
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>{title}</h1>
-      <p>
-        {locale === "pt-BR"
-          ? "Página em construção"
-          : "Page under construction"}
-      </p>
-    </div>
+    <main className="layout-container page-shell">
+      <section className="page-placeholder">
+        <h1>{title}</h1>
+        <p>
+          {locale === "pt-BR"
+            ? "Página em construção"
+            : "Page under construction"}
+        </p>
+      </section>
+    </main>
   );
 }
-

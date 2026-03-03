@@ -30,13 +30,13 @@ export function ProjectsContent({
   const t = labels[locale];
 
   return (
-    <div className={styles.container}>
+    <main className="layout-container page-shell">
       <div className={styles.header}>
         <h1 className={styles.title}>{t.title}</h1>
         <p className={styles.description}>{t.description}</p>
       </div>
 
       <ProjectList projects={projects} locale={locale} allLabel={t.filterAll} />
-    </div>
+    </main>
   );
 }

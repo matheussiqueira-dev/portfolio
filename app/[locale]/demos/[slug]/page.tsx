@@ -30,15 +30,17 @@ export default async function DemosSlugPage({ params }: Props) {
   }
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>
-        {locale === "en" ? "Demo" : "Demo"} - {slug}
-      </h1>
-      <p>
-        {locale === "en"
-          ? "Page under construction"
-          : "P\u00e1gina em constru\u00e7\u00e3o"}
-      </p>
-    </div>
+    <main className="layout-container page-shell">
+      <section className="page-placeholder">
+        <h1>
+          {locale === "en" ? "Demo" : "Demo"} - {slug}
+        </h1>
+        <p>
+          {locale === "en"
+            ? "Page under construction"
+            : "P\u00e1gina em constru\u00e7\u00e3o"}
+        </p>
+      </section>
+    </main>
   );
 }

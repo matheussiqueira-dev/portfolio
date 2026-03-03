@@ -16,14 +16,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Home({ params }: Props) {
   const locale = await resolveLocale(params);
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>{locale === "pt-BR" ? "Bem-vindo" : "Welcome"}</h1>
-      <p>
-        {locale === "pt-BR"
-          ? "Página em construção"
-          : "Page under construction"}
-      </p>
-    </div>
+    <main className="layout-container page-shell">
+      <section className="page-placeholder">
+        <h1>{locale === "pt-BR" ? "Bem-vindo" : "Welcome"}</h1>
+        <p>
+          {locale === "pt-BR"
+            ? "Página em construção"
+            : "Page under construction"}
+        </p>
+      </section>
+    </main>
   );
 }
-
