@@ -235,8 +235,8 @@ export default function RootLayout({
         </a>
         <ThemeProvider
           attribute="data-theme"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          enableSystem={false}
           storageKey="theme"
           disableTransitionOnChange
         >
@@ -251,7 +251,6 @@ export default function RootLayout({
     </html>
   );
 }
-
 
 
 

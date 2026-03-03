@@ -24,11 +24,6 @@ const getInitialTheme = (): Theme => {
     // ignore storage errors
   }
 
-  if (typeof window !== "undefined") {
-    const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
-    return prefersDark ? "dark" : "light";
-  }
-
   return "dark";
 };
 
@@ -122,4 +117,3 @@ export default function ThemeToggle() {
     </button>
   );
 }
-
