@@ -1,76 +1,80 @@
-# Portfolio — Matheus Siqueira
+# ENCOM Enterprise Portfolio
 
-## Visão geral
-Portfolio bilíngue (PT/EN) focado em Dados, BI e Engenharia de Software. O frontend foi redesenhado para reforçar hierarquia visual, performance e conversão, com seções orientadas a credibilidade, disponibilidade e captação de briefing rápido.
+![Next.js](https://img.shields.io/badge/Next.js-16-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![Build](https://img.shields.io/badge/Build-CI%20Enabled-success)
+![Deploy](https://img.shields.io/badge/Deploy-Vercel-black)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-## Stack e tecnologias
-- Next.js 16 (App Router, Server Components, Route Handlers)
-- React 19
-- TypeScript 5
-- Tailwind CSS 4 + design tokens em CSS variables
-- next-intl (i18n)
-- Sentry (monitoramento de erros)
-- Vercel Speed Insights
-- ESLint e Prettier
+## 1. Project Overview
+Bilingual (PT/EN) enterprise portfolio built with Next.js and TypeScript, focused on high-quality presentation of projects, credentials, and professional profile.
 
-## Estrutura do projeto
-- `app/` Rotas, layouts, handlers de API e páginas
-- `components/` Componentes de UI, seções e layout
-- `data/` Conteúdo estático tipado (PT/EN)
-- `lib/` Utilitários (SEO, analytics, i18n)
-- `messages/` Traduções do next-intl
-- `public/` Assets, mídias e OG images
-- `src/` Demos e registry de projetos
+## 2. Live Demo
+- Production: [matheussiqueira.dev](https://www.matheussiqueira.dev/)
 
-## Setup e build
-### Pré-requisitos
-- Node.js 18+
-- npm
+## 3. Architecture
+The project follows modular layers:
+- `app/` routing and page composition
+- `core/` i18n/seo/analytics foundations
+- `ui/` reusable components
+- `system/` feature modules
+- `data/` typed content
+- `public/` static assets
+- `tests/` automated tests
+- `scripts/` utility scripts
 
-### Passo a passo
-1. Instale as dependências
+Detailed architecture: [`docs/architecture.md`](docs/architecture.md)
+
+## 4. Tech Stack
+- Next.js (App Router)
+- React
+- TypeScript
+- next-intl
+- next-themes
+- Sentry
+- ESLint + Prettier
+
+## 5. Features
+- PT/EN locale support
+- Dark/Light themes
+- Projects page with expandable cards and lazy media
+- System dashboard route
+- Global signature and WhatsApp CTA
+- Tracking instrumentation preserved
+
+## 6. Folder Structure
+```text
+.
+├── app/
+├── core/
+├── ui/
+├── system/
+├── data/
+├── public/
+│   ├── thumbnails/
+│   └── media/
+├── docs/
+├── tests/
+├── scripts/
+└── .github/
+```
+
+## 7. Local Development
 ```bash
 npm install
-```
-
-2. (Opcional) Configure `.env.local`
-```bash
-NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
-NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
-NEXT_PUBLIC_GSC_VERIFICATION=your_value_here
-NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your_value_here
-```
-
-3. Execute em desenvolvimento
-```bash
 npm run dev
 ```
 
-4. Build e produção
+Useful commands:
 ```bash
+npm run lint
+npm run type-check
 npm run build
 npm run start
 ```
 
-5. Validação completa
-```bash
-npm run validate
-```
+## 8. Deployment
+See [`docs/deployment.md`](docs/deployment.md).
 
-## Boas práticas adotadas
-- Separação clara entre Server e Client Components
-- Conteúdo tipado e centralizado em `data/`
-- Design system com tokens e componentes reutilizáveis
-- Otimizações de renderização (lazy modal, busca com `useDeferredValue`)
-- SEO completo com JSON-LD, Open Graph, sitemap e robots
-- Acessibilidade com skip-link, foco visível e suporte a redução de movimento
-- Headers de segurança configurados no Next.js
-
-## Melhorias futuras
-- CMS/headless para gestão de conteúdo
-- Formulário de contato com backend seguro e storage de leads
-- Testes de integração e visual regression
-- Documentação expandida do design system
-
-Autoria: Matheus Siqueira
-Website: https://www.matheussiqueira.dev/
+## 9. License
+MIT. See [`LICENSE`](LICENSE).

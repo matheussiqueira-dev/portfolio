@@ -1,44 +1,28 @@
 # Architecture
 
 ## Overview
-The application follows a modular architecture centered on Next.js App Router with locale-first routing:
+ENCOM Enterprise Portfolio is organized in modular layers:
 
-- `app/`: routes, layouts, metadata, API routes
-- `core/`: reusable logic (i18n, SEO, analytics, utilities, hooks)
-- `ui/`: reusable presentational components and UI primitives
-- `system/`: feature modules composed from `core` + `ui`
-- `data/`: typed static content (projects, certificates, resume, site copy)
-- `public/`: static assets
-- `docs/`: project documentation
+- `app/`: Next.js App Router routes, layouts, metadata, APIs
+- `core/`: framework-independent domain utilities (i18n, seo, analytics)
+- `ui/`: reusable UI components (`ui/components/*`)
+- `system/`: feature modules (`dashboard`, `projects`)
+- `data/`: typed static content and contracts
+- `public/`: static assets (`thumbnails`, `media`, project assets)
+- `tests/`: automated test files
+- `scripts/`: utility automation scripts
 
-## Routing and Product Constraints
-Critical routes and behaviors that must remain stable:
+## Layering Rules
+- `app` composes screens and routes.
+- `system` encapsulates feature composition.
+- `ui` exposes reusable visual primitives.
+- `core` does not depend on route-level modules.
+- `data` remains strongly typed and framework-agnostic.
 
-- Home: `/`
-- Projects: `/projects` and localized paths (`/en/projects`, `/projetos`)
-- System dashboard: `/system` and localized path (`/en/system`)
-- Locale switching: Portuguese/English
-- Theme switching: dark/light
-- Global signature, WhatsApp CTA, and tracking tags
-
-## Layer Rules
-- `core` must not depend on `app` or feature-level modules.
-- `ui` contains reusable components with minimal business coupling.
-- `system` contains domain behavior (e.g., projects module).
-- `app` orchestrates data loading and route composition.
-- `data` remains framework-agnostic and strongly typed.
-
-## i18n and Theme
-- i18n is driven by `core/i18n/*` and locale-segment routing.
-- Theme behavior is token/CSS-variable based and must preserve dark/light parity.
-
-## Build and Quality
-Recommended checks before deploy:
-
-```bash
-npm run lint
-npm run build
-npm run start
-```
-
-If build changes architecture contracts, update this document.
+## Runtime-critical Root Files
+These root files are intentionally kept because Next.js/Sentry load them by convention:
+- `instrumentation.ts`
+- `instrumentation-client.ts`
+- `proxy.ts`
+- `sentry.server.config.ts`
+- `sentry.edge.config.ts`

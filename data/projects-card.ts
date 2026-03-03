@@ -40,7 +40,7 @@ export const projectsCardPt: ProjectCard[] = [
     videos: [
       {
         type: "local",
-        src: "/Capa da Invisibilidade.mp4",
+        src: "/media/capa-da-invisibilidade.mp4",
         poster: "/thumbnails/pt/capa-da-invisibilidade.png",
         caption: "Efeito de invisibilidade em tempo real com calibração visual",
       },
@@ -98,7 +98,7 @@ export const projectsCardPt: ProjectCard[] = [
     videos: [
       {
         type: "local",
-        src: "/Hands Gesture.mp4",
+        src: "/media/hands-gesture.mp4",
         poster: "/thumbnails/pt/hand-gesture-recognition-realtime.png",
         caption: "Reconhecimento de gestos com as mãos em tempo real",
       },
@@ -331,7 +331,7 @@ export const projectsCardPt: ProjectCard[] = [
     videos: [
       {
         type: "local",
-        src: "/touchless-web-gesture-interface.mp4",
+        src: "/media/touchless-web-gesture-interface.mp4",
         poster: "/thumbnails/pt/touchless-web-gesture-interface.png",
         caption: "Demonstração de controle por gestos",
       },
