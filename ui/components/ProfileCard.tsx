@@ -150,7 +150,7 @@ export default function ProfileCard({
         backgroundColor: "var(--landing-bg)",
       }}
     >
-      <div className="landing-top-shell" data-reveal>
+      <div className="landing-top-shell">
         <div className="landing-top-nav">
           <nav className="landing-top-links" aria-label={navigationAriaLabel}>
             {topNavItems.map((item) => (
