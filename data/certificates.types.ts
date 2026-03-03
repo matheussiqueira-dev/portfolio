@@ -26,6 +26,7 @@ export type CertificatesPageContent = {
   description: string;
   searchPlaceholder: string;
   filterLabel: string;
+  categoryFilterLabel: string;
   allLabel: string;
   openLabel: string;
   downloadLabel: string;

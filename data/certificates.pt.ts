@@ -5,6 +5,7 @@ export const certificatesPagePt: CertificatesPageContent = {
   "description": "Certificados em Data Analytics, Business Intelligence, Power BI, SQL, Python, IA, Cloud e Segurança, com PDFs locais para consulta.",
   "searchPlaceholder": "Buscar certificado",
   "filterLabel": "Filtrar por plataforma",
+  "categoryFilterLabel": "Filtrar por categoria",
   "allLabel": "Todos",
   "openLabel": "Abrir PDF",
   "downloadLabel": "Baixar",
