@@ -3,20 +3,20 @@ import ProfileCard from "@/ui/components/ProfileCard";
 import { baseUrl } from "@/core/seo";
 
 const landingTitle =
-  "Matheus Siqueira | Infraestrutura, Full Stack e Análise de Dados";
+  "Matheus Siqueira | Infraestrutura, Full Stack e Analise de Dados";
 const landingDescription =
-  "Landing page pessoal de Matheus Siqueira com foco em engenharia de software, infraestrutura e análise de dados.";
+  "Landing page pessoal de Matheus Siqueira com foco em engenharia de software, infraestrutura e analise de dados.";
 
 const topNavItems = [
-  { label: "Início", href: "/" },
-  { label: "Sobre", href: "/resume" },
-  { label: "Serviços", href: "/contrate" },
-  { label: "Projetos", href: "/projetos" },
-  { label: "Currículo", href: "/resume" },
-  { label: "Acadêmico", href: "/academico" },
+  { label: "Inicio", href: "/" },
+  { label: "Sobre", href: "/pt-BR#about" },
+  { label: "Servicos", href: "/pt-BR#services" },
+  { label: "Projetos", href: "/pt-BR#projects" },
+  { label: "Curriculo", href: "/resume" },
+  { label: "Academico", href: "/academico" },
   { label: "Certificados", href: "/certificates" },
   { label: "Contrate", href: "/contrate" },
-  { label: "Contato", href: "/contrate" },
+  { label: "Contato", href: "/pt-BR#contact" },
 ];
 
 export const metadata: Metadata = {
@@ -50,10 +50,10 @@ export const metadata: Metadata = {
 export default function LandingPage() {
   return (
     <ProfileCard
-      subtitle="Infraestrutura | Desenvolvedor Full Stack | Analista de Dados Júnior"
+      subtitle="Infraestrutura | Desenvolvedor Full Stack | Analista de Dados Junior"
       photoAlt="Foto de Matheus Siqueira"
       resumeHref="/resume"
-      resumeLabel="Ver currículo"
+      resumeLabel="Ver curriculo"
       projectsHref="/projetos"
       projectsLabel="Ver projetos"
       whatsappHref="https://wa.me/5581999203683"
@@ -61,7 +61,7 @@ export default function LandingPage() {
       contactAriaLabel="Entrar em contato pelo WhatsApp"
       trackingContext="landing_root"
       topNavItems={topNavItems}
-      navigationAriaLabel="Navegação principal"
+      navigationAriaLabel="Navegacao principal"
       ptHref="/pt-BR"
       enHref="/en"
       activeLocale="pt-BR"
