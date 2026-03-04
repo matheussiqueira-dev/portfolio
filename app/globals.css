@@ -2036,9 +2036,9 @@ body::after {
   --encom-deep: #0077ff;
   --encom-energy-accent: rgba(0, 229, 255, 1);
   --encom-atmosphere: rgba(0, 174, 239, 0.35);
-  --encom-cursor-size: 10px;
-  --encom-cursor-active-size: 14px;
-  --encom-cursor-click-size: 8px;
+  --encom-cursor-size: 18px;
+  --encom-cursor-active-size: 26px;
+  --encom-cursor-click-size: 14px;
   --encom-shadow-stack:
     0 0 3px rgba(0, 240, 255, 0.45),
     0 0 8px rgba(0, 174, 239, 0.28),
@@ -2087,8 +2087,8 @@ body::after {
 .tron-cursor::after {
   content: "";
   position: absolute;
-  width: 2px;
-  height: 2px;
+  width: 3px;
+  height: 3px;
   background-color: var(--encom-electric);
   border-radius: 50%;
   top: 50%;
@@ -2348,7 +2348,6 @@ body::after {
     white-space: normal;
   }
 }
-
 
 
 
