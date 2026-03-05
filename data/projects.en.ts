@@ -2159,24 +2159,24 @@ const projectListEn: Project[] = [
 
 export const projectOrderEn = [
   "capa-da-invisibilidade",
+  "subway-surf",
+  "detector-de-stress",
+  "eye-tracking",
+  "self-drive-car",
+  "fruit-ninja",
+  "dino-chrome",
+  "slingshot",
+  "hand-gesture-recognition-realtime",
+  "touchless-web-gesture-interface",
+  "flappy-bird-gesture-control",
   "business-decision-simulator",
   "synthwave-space",
   "deteccao-de-anomalias-operacionais",
   "dashboard-vendas-power-bi",
-  "detector-de-stress",
-  "eye-tracking",
-  "touchless-web-gesture-interface",
   "driver-monitoring-system",
-  "self-drive-car",
   "chatbot-ia-api",
   "library-api-advanced",
-  "hand-gesture-recognition-realtime",
-  "flappy-bird-gesture-control",
-  "subway-surf",
-  "slingshot",
-  "fruit-ninja",
   "neon-runner-cyber-hand",
-  "dino-chrome",
   "gestor-de-notas",
 ];
 
@@ -2195,7 +2195,6 @@ export const projectSlugsEn = projectsEn.map((project) => project.slug);
 
 export const getProjectBySlugEn = (slug: string) =>
   projectsEn.find((project) => project.slug === slug);
-
 
 
 
