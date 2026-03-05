@@ -2051,6 +2051,7 @@ const projectListEn: Project[] = [
     role: "Developer/Architect",
     stack: ["Python", "OpenCV", "MediaPipe", "NumPy", "Computer Vision"],
     repoUrl: "https://github.com/matheussiqueira-dev/Eye-Tracking.git",
+    demoUrl: "https://eye-tracking-three.vercel.app/",
     demo: {
       kind: "video",
       src: "/projects/eye-tracking/demo.mp4",
@@ -2197,7 +2198,6 @@ export const projectSlugsEn = projectsEn.map((project) => project.slug);
 
 export const getProjectBySlugEn = (slug: string) =>
   projectsEn.find((project) => project.slug === slug);
-
 
 
 
