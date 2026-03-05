@@ -1934,6 +1934,7 @@ const projectListEn: Project[] = [
     role: "Developer/Architect",
     stack: ["Python", "OpenCV", "MediaPipe", "Streamlit", "WebSockets", "Machine Learning"],
     repoUrl: "https://github.com/matheussiqueira-dev/Detector-de-Stress",
+    demoUrl: "https://detector-de-stress.vercel.app/",
     demo: {
       kind: "video",
       src: "/media/detector-de-stress.mp4",
@@ -2195,7 +2196,6 @@ export const projectSlugsEn = projectsEn.map((project) => project.slug);
 
 export const getProjectBySlugEn = (slug: string) =>
   projectsEn.find((project) => project.slug === slug);
-
 
 
 
