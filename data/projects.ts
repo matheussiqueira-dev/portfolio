@@ -1768,6 +1768,7 @@ const projectList: ProjectCase[] = [
     stack: ["Python", "OpenCV", "MediaPipe"],
     repoUrl:
       "https://github.com/matheussiqueira-dev/Reconhecimento-de-Gestos-de-Mao",
+    demoUrl: "https://3-d-hands.vercel.app/",
     demo: {
       kind: "video",
       src: "/media/hands-gesture.mp4",
@@ -2199,7 +2200,6 @@ export const projectSlugs = projects.map((project) => project.slug);
 
 export const getProjectBySlug = (slug: string) =>
   projects.find((project) => project.slug === slug);
-
 
 
 
