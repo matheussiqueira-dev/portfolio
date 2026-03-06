@@ -16,7 +16,9 @@ export type Certificate = {
   title: string;
   issuer: CertificateIssuer;
   areaTags: string[];
-  pdfUrl: string;
+  pdfUrl?: string;
+  fileUrl?: string;
+  thumbnailUrl?: string;
   language?: "pt" | "en";
   details?: CertificateDetails;
 };

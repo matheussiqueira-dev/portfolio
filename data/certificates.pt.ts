@@ -2,12 +2,12 @@ import type { Certificate, CertificatesPageContent } from "./certificates.types"
 
 export const certificatesPagePt: CertificatesPageContent = {
   "title": "Certificados",
-  "description": "Certificados em Data Analytics, Business Intelligence, Power BI, SQL, Python, IA, Cloud e Segurança, com PDFs locais para consulta.",
+  "description": "Certificados em Data Analytics, Business Intelligence, Power BI, SQL, Python, IA, Cloud e Segurança, com arquivos locais para consulta.",
   "searchPlaceholder": "Buscar certificado",
   "filterLabel": "Filtrar por plataforma",
   "categoryFilterLabel": "Filtrar por categoria",
   "allLabel": "Todos",
-  "openLabel": "Abrir PDF",
+  "openLabel": "Abrir certificado",
   "downloadLabel": "Baixar",
   "emptyLabel": "Nenhum certificado encontrado."
 };
@@ -587,4 +587,3 @@ export const certificatesPt: Certificate[] = [
     }
   }
 ];
-

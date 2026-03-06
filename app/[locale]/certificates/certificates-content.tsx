@@ -9,11 +9,20 @@ type Props = {
   certificates: Certificate[];
 };
 
-/** Derive the thumbnail URL from a cert's pdfUrl. */
+function fileUrl(cert: Certificate): string {
+  return cert.fileUrl ?? cert.pdfUrl ?? "";
+}
+
+/** Resolve the thumbnail URL for image assets and PDF previews. */
 function thumbnailUrl(cert: Certificate): string {
-  return cert.pdfUrl
-    .replace("/certificates/", "/certificates/previews/")
-    .replace(/\.pdf$/i, ".jpg");
+  if (cert.thumbnailUrl) return cert.thumbnailUrl;
+  if (cert.pdfUrl) {
+    return cert.pdfUrl
+      .replace("/certificates/", "/certificates/previews/")
+      .replace(/\.pdf$/i, ".jpg");
+  }
+
+  return "";
 }
 
 export default function CertificatesContent({ content, certificates }: Props) {
@@ -174,7 +183,7 @@ export default function CertificatesContent({ content, certificates }: Props) {
                 )}
 
                 <a
-                  href={cert.pdfUrl}
+                  href={fileUrl(cert)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-xs font-medium text-[color:var(--accent-soft)] hover:text-[color:var(--foreground)] transition-colors mt-auto"

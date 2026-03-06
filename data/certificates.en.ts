@@ -2,12 +2,12 @@ import type { Certificate, CertificatesPageContent } from "./certificates.types"
 
 export const certificatesPageEn: CertificatesPageContent = {
   "title": "Certificates",
-  "description": "Certificates in Data Analytics, Business Intelligence, Power BI, SQL, Python, AI, Cloud, and Security with local PDFs.",
+  "description": "Certificates in Data Analytics, Business Intelligence, Power BI, SQL, Python, AI, Cloud, and Security with local files.",
   "searchPlaceholder": "Search certificate",
   "filterLabel": "Filter by provider",
   "categoryFilterLabel": "Filter by category",
   "allLabel": "All",
-  "openLabel": "Open PDF",
+  "openLabel": "Open certificate",
   "downloadLabel": "Download",
   "emptyLabel": "No certificates found."
 };
@@ -587,5 +587,4 @@ export const certificatesEn: Certificate[] = [
     }
   }
 ];
-
 
