@@ -98,6 +98,16 @@ export const certificatesEn: Certificate[] = [
     "pdfUrl": "/certificates/alura/carreira-especialista-em-ia-boas-vindas-e-primeiros-passos.pdf"
   },
   {
+    "id": "carreira-dotnet-boas-vindas-e-primeiros-passos",
+    "title": ".NET Career: Welcome and first steps",
+    "issuer": "Alura",
+    "areaTags": [
+      ".NET",
+      "C#"
+    ],
+    "pdfUrl": "/certificates/alura/Carreira .NET.pdf"
+  },
+  {
     "id": "comecando-em-programacao-carreira-e-primeiros-passos",
     "title": "Starting in Programming: Career and first steps",
     "issuer": "Alura",
@@ -587,4 +597,3 @@ export const certificatesEn: Certificate[] = [
     }
   }
 ];
-
