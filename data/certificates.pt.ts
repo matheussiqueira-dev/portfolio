@@ -403,6 +403,17 @@ export const certificatesPt: Certificate[] = [
     "pdfUrl": "/certificates/assimov/python-para-usuarios-de-excel.pdf"
   },
   {
+    "id": "diploma-ensino-superior-em-marketing",
+    "title": "Diploma de Ensino Superior em Marketing",
+    "issuer": "Ulife",
+    "areaTags": [
+      "Marketing",
+      "Higher Education",
+      "Business"
+    ],
+    "pdfUrl": "/certificates/ulife/Diploma Ensino Superior em Marketing.pdf"
+  },
+  {
     "id": "edge-computing-e-internet-das-coisas",
     "title": "EDGE COMPUTING E INTERNET DAS COISAS",
     "issuer": "Ulife",
