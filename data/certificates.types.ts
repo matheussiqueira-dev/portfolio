@@ -1,4 +1,4 @@
-export type CertificateIssuer = "Alura" | "Assimov" | "Ulife" | "Infinity School";
+export type CertificateIssuer = "Alura" | "Assimov" | "Ulife" | "Infinity School" | "UNINASSAU";
 
 export type CertificateModule = {
   title: string;

@@ -595,5 +595,127 @@ export const certificatesPt: Certificate[] = [
         }
       ]
     }
+  },
+  {
+    "id": "acessibilidade-digital-uninassau",
+    "title": "Acessibilidade Digital",
+    "issuer": "UNINASSAU",
+    "areaTags": [
+      "Accessibility",
+      "Digital Product"
+    ],
+    "pdfUrl": "/certificates/Uninassau/Acessibilidade Digital.pdf"
+  },
+  {
+    "id": "assessment-e-coaching-uninassau",
+    "title": "Assessment e Coaching",
+    "issuer": "UNINASSAU",
+    "areaTags": [
+      "Leadership",
+      "Coaching"
+    ],
+    "pdfUrl": "/certificates/Uninassau/Assessment e Coaching.pdf"
+  },
+  {
+    "id": "big-data-e-analytics-uninassau",
+    "title": "Big Data e Analytics",
+    "issuer": "UNINASSAU",
+    "areaTags": [
+      "Big Data",
+      "Data Analytics"
+    ],
+    "pdfUrl": "/certificates/Uninassau/Big data e Analytics.pdf"
+  },
+  {
+    "id": "business-design-uninassau",
+    "title": "Business Design",
+    "issuer": "UNINASSAU",
+    "areaTags": [
+      "Business Strategy",
+      "Design Thinking"
+    ],
+    "pdfUrl": "/certificates/Uninassau/Business Design.pdf"
+  },
+  {
+    "id": "computacao-grafica-uninassau",
+    "title": "Computação Gráfica",
+    "issuer": "UNINASSAU",
+    "areaTags": [
+      "Computer Graphics",
+      "Design"
+    ],
+    "pdfUrl": "/certificates/Uninassau/Computação Gráfica.pdf"
+  },
+  {
+    "id": "evolucao-da-gestao-uninassau",
+    "title": "Evolução da Gestão",
+    "issuer": "UNINASSAU",
+    "areaTags": [
+      "Management",
+      "Business Strategy"
+    ],
+    "pdfUrl": "/certificates/Uninassau/Evolução da Gestão.pdf"
+  },
+  {
+    "id": "gestao-de-talentos-uninassau",
+    "title": "Gestão de Talentos",
+    "issuer": "UNINASSAU",
+    "areaTags": [
+      "People Management",
+      "Leadership"
+    ],
+    "pdfUrl": "/certificates/Uninassau/Gestão de Talentos.pdf"
+  },
+  {
+    "id": "historia-da-evolucao-tecnologica-uninassau",
+    "title": "História da Evolução Tecnológica",
+    "issuer": "UNINASSAU",
+    "areaTags": [
+      "Technology",
+      "Innovation"
+    ],
+    "pdfUrl": "/certificates/Uninassau/História da Evolução Tecnológica.pdf"
+  },
+  {
+    "id": "mba-midias-digitais-performance-analytics-uninassau",
+    "title": "MBA em Mídias Digitais, Performance e Analytics",
+    "issuer": "UNINASSAU",
+    "areaTags": [
+      "Digital Marketing",
+      "Performance Marketing",
+      "Data Analytics"
+    ],
+    "pdfUrl": "/certificates/Uninassau/MBA em Mídias Digitais e Performance e analytics.pdf"
+  },
+  {
+    "id": "marketing-de-performance-uninassau",
+    "title": "Marketing de Performance",
+    "issuer": "UNINASSAU",
+    "areaTags": [
+      "Digital Marketing",
+      "Performance Marketing"
+    ],
+    "pdfUrl": "/certificates/Uninassau/Marketing de Performance.pdf"
+  },
+  {
+    "id": "otimizacao-de-campanhas-em-midias-digitais-uninassau",
+    "title": "Otimização de Campanhas em Mídias Digitais",
+    "issuer": "UNINASSAU",
+    "areaTags": [
+      "Digital Marketing",
+      "Campaign Optimization",
+      "Performance Marketing"
+    ],
+    "pdfUrl": "/certificates/Uninassau/Otimização de Campanhas em Mídias Digitais.pdf"
+  },
+  {
+    "id": "producao-de-conteudo-uninassau",
+    "title": "Produção de Conteúdo",
+    "issuer": "UNINASSAU",
+    "areaTags": [
+      "Content Marketing",
+      "Communication"
+    ],
+    "pdfUrl": "/certificates/Uninassau/Produção de Conteúdo.pdf"
   }
 ];
