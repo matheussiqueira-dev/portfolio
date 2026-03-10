@@ -554,7 +554,14 @@ function getHighlightedRepositoryCard(locale: "pt" | "en"): ProjectCard {
       pt: "/thumbnails/pt/portal-econ.png",
       en: "/thumbnails/en/portal-econ.png",
     },
-    videos: [],
+    videos: [
+      {
+        type: "local",
+        src: "/projects/portal-econ/demo.mp4",
+        poster: "/thumbnails/pt/portal-econ.png",
+        caption: "Portal Econ demo",
+      },
+    ],
     stack: ["JavaScript", "TensorFlow.js", "MediaPipe Hands", "Three.js", "HTML", "CSS", "Vercel"],
     role: isPt
       ? "Desenvolvedor Frontend e IA no navegador"
