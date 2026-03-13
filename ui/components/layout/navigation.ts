@@ -80,7 +80,11 @@ export const buildNavItems = (labels: SiteContent["nav"]): NavItem[] =>
     hash: item.hash,
   }));
 
-export const getActiveNavId = (items: NavItem[], pathname: string, hash: string): string | null => {
+export const getActiveNavId = (
+  items: NavItem[],
+  pathname: string,
+  hash: string
+): string | null => {
   const normalizedPath = normalizePath(pathname);
   const normalizedHash = hash ? (hash.startsWith("#") ? hash : `#${hash}`) : "";
 

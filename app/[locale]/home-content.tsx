@@ -11,15 +11,7 @@ type Props = {
 };
 
 export default function HomeContent({ site, projects, locale }: Props) {
-  const {
-    hero,
-    about,
-    executiveSummary,
-    services,
-    projects: projectsCopy,
-    contact,
-    metrics,
-  } = site;
+  const { hero, about, executiveSummary, services, projects: projectsCopy, contact, metrics } = site;
 
   return (
     <main className="layout-container page-shell">
@@ -31,7 +23,9 @@ export default function HomeContent({ site, projects, locale }: Props) {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[color:var(--foreground)] mb-4">
           {hero.title}
         </h1>
-        <p className="text-lg md:text-xl text-[color:var(--accent-soft)] mb-4">{hero.subtitle}</p>
+        <p className="text-lg md:text-xl text-[color:var(--accent-soft)] mb-4">
+          {hero.subtitle}
+        </p>
         <p className="text-sm text-[color:var(--muted)] max-w-3xl leading-relaxed mb-8">
           {hero.description}
         </p>
@@ -95,17 +89,11 @@ export default function HomeContent({ site, projects, locale }: Props) {
         {/* Summary / Who */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div>
-            <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-2">
-              {about.summary.title}
-            </h3>
-            <p className="text-sm text-[color:var(--muted)] leading-relaxed">
-              {about.summary.body}
-            </p>
+            <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-2">{about.summary.title}</h3>
+            <p className="text-sm text-[color:var(--muted)] leading-relaxed">{about.summary.body}</p>
           </div>
           <div>
-            <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-2">
-              {about.who.title}
-            </h3>
+            <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-2">{about.who.title}</h3>
             <p className="text-sm text-[color:var(--muted)] leading-relaxed">{about.who.body}</p>
           </div>
         </div>
@@ -123,9 +111,7 @@ export default function HomeContent({ site, projects, locale }: Props) {
         </div>
 
         {/* What I deliver */}
-        <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-3">
-          {about.deliver.title}
-        </h3>
+        <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-3">{about.deliver.title}</h3>
         <ul className="space-y-1 mb-8">
           {about.deliver.bullets.map((b) => (
             <li key={b} className="text-sm text-[color:var(--muted)] flex gap-2">
@@ -138,10 +124,7 @@ export default function HomeContent({ site, projects, locale }: Props) {
         {/* Snapshot */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           {about.snapshot.items.map((item) => (
-            <div
-              key={item.value}
-              className="p-4 rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)]"
-            >
+            <div key={item.value} className="p-4 rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)]">
               <p className="text-sm font-semibold text-[color:var(--foreground)]">{item.value}</p>
               <p className="text-xs text-[color:var(--muted)]">{item.label}</p>
             </div>
@@ -165,9 +148,7 @@ export default function HomeContent({ site, projects, locale }: Props) {
               key={o.title}
               className="p-6 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] transition-colors hover:border-[color:var(--accent-soft)]"
             >
-              <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-2">
-                {o.title}
-              </h3>
+              <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-2">{o.title}</h3>
               <p className="text-sm text-[color:var(--muted)] mb-4">{o.description}</p>
               <ul className="space-y-1">
                 {o.bullets.map((b) => (
@@ -182,9 +163,7 @@ export default function HomeContent({ site, projects, locale }: Props) {
         </div>
 
         {/* Process */}
-        <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-4">
-          {services.processTitle}
-        </h3>
+        <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-4">{services.processTitle}</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {services.process.map((step, i) => (
             <div key={step.title} className="flex items-start gap-3">
@@ -200,9 +179,7 @@ export default function HomeContent({ site, projects, locale }: Props) {
         </div>
 
         <div className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-6 text-center">
-          <h3 className="text-lg font-semibold text-[color:var(--foreground)] mb-2">
-            {services.cta.title}
-          </h3>
+          <h3 className="text-lg font-semibold text-[color:var(--foreground)] mb-2">{services.cta.title}</h3>
           <p className="text-sm text-[color:var(--muted)] mb-4">{services.cta.description}</p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link
@@ -231,10 +208,7 @@ export default function HomeContent({ site, projects, locale }: Props) {
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           {metrics.items.map((m) => (
-            <div
-              key={m.label}
-              className="p-5 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] text-center"
-            >
+            <div key={m.label} className="p-5 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] text-center">
               <p className="text-sm font-semibold text-[color:var(--foreground)]">{m.label}</p>
             </div>
           ))}
@@ -249,9 +223,7 @@ export default function HomeContent({ site, projects, locale }: Props) {
         <h2 className="text-2xl md:text-3xl font-bold text-[color:var(--foreground)] mb-3">
           {projectsCopy.title}
         </h2>
-        <p className="text-sm text-[color:var(--muted)] max-w-2xl mb-8">
-          {projectsCopy.description}
-        </p>
+        <p className="text-sm text-[color:var(--muted)] max-w-2xl mb-8">{projectsCopy.description}</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
           {projects.map((project) => {
@@ -262,9 +234,7 @@ export default function HomeContent({ site, projects, locale }: Props) {
                 key={project.slug}
                 className="p-5 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] transition-colors hover:border-[color:var(--accent-soft)] flex flex-col"
               >
-                <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-1">
-                  {title}
-                </h3>
+                <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-1">{title}</h3>
                 <p className="text-xs text-[color:var(--muted)] mb-3 line-clamp-2">{desc}</p>
                 <div className="flex flex-wrap gap-1 mb-4">
                   {project.stack.slice(0, 4).map((s) => (
@@ -316,7 +286,9 @@ export default function HomeContent({ site, projects, locale }: Props) {
           <p className="text-sm text-[color:var(--muted)] max-w-xl mx-auto mb-4">
             {contact.description}
           </p>
-          <p className="text-xs text-[color:var(--muted)] mb-6">{contact.ctaSubtitle}</p>
+          <p className="text-xs text-[color:var(--muted)] mb-6">
+            {contact.ctaSubtitle}
+          </p>
 
           <div className="flex flex-wrap justify-center gap-3">
             <a

@@ -2,7 +2,8 @@
 
 import { useEffect } from "react";
 
-const LIQUID_SELECTOR = ".btn-primary, .btn-outline, .btn-ghost, .theme-toggle, .liquid-control";
+const LIQUID_SELECTOR =
+  ".btn-primary, .btn-outline, .btn-ghost, .theme-toggle, .liquid-control";
 
 export default function LiquidGlassPointer() {
   useEffect(() => {

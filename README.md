@@ -7,17 +7,13 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ## 1. Project Overview
-
 Bilingual (PT/EN) enterprise portfolio built with Next.js and TypeScript, focused on high-quality presentation of projects, credentials, and professional profile.
 
 ## 2. Live Demo
-
 - Production: [matheussiqueira.dev](https://www.matheussiqueira.dev/)
 
 ## 3. Architecture
-
 The project follows modular layers:
-
 - `app/` routing and page composition
 - `core/` i18n/seo/analytics foundations
 - `ui/` reusable components
@@ -30,7 +26,6 @@ The project follows modular layers:
 Detailed architecture: [`docs/architecture.md`](docs/architecture.md)
 
 ## 4. Tech Stack
-
 - Next.js (App Router)
 - React
 - TypeScript
@@ -40,7 +35,6 @@ Detailed architecture: [`docs/architecture.md`](docs/architecture.md)
 - ESLint + Prettier
 
 ## 5. Features
-
 - PT/EN locale support
 - Dark/Light themes
 - Projects page with expandable cards and lazy media
@@ -49,7 +43,6 @@ Detailed architecture: [`docs/architecture.md`](docs/architecture.md)
 - Tracking instrumentation preserved
 
 ## 6. Folder Structure
-
 ```text
 .
 ├── app/
@@ -67,14 +60,12 @@ Detailed architecture: [`docs/architecture.md`](docs/architecture.md)
 ```
 
 ## 7. Local Development
-
 ```bash
 npm install
 npm run dev
 ```
 
 Useful commands:
-
 ```bash
 npm run lint
 npm run type-check
@@ -83,9 +74,7 @@ npm run start
 ```
 
 ## 8. Deployment
-
 See [`docs/deployment.md`](docs/deployment.md).
 
 ## 9. License
-
 MIT. See [`LICENSE`](LICENSE).

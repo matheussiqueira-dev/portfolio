@@ -8,7 +8,9 @@ const prefersReducedMotion = () =>
 export default function ScrollReveal() {
   useEffect(() => {
     document.documentElement.classList.add("reveal-ready");
-    const elements = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
+    const elements = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-reveal]")
+    );
     if (elements.length === 0) {
       return;
     }

@@ -125,7 +125,8 @@ const projectList: ProjectCase[] = [
   {
     slug: "business-decision-simulator",
     title: "Simulador de Decisão Empresarial",
-    headline: "Simulador de Decisão Empresarial | Cenários, risco e impacto financeiro",
+    headline:
+      "Simulador de Decisão Empresarial | Cenários, risco e impacto financeiro",
     tagline:
       "Simulador interativo para comparar estratégias e medir impacto financeiro com Monte Carlo e análise de sensibilidade.",
     role: "Analista/Desenvolvedor",
@@ -232,7 +233,8 @@ const projectList: ProjectCase[] = [
       },
     ],
     seo: {
-      title: "Simulador de Decisão Empresarial | Cenários financeiros com Monte Carlo",
+      title:
+        "Simulador de Decisão Empresarial | Cenários financeiros com Monte Carlo",
       description:
         "Simulador interativo em Python/Streamlit para comparar estratégias, rodar Monte Carlo e comunicar risco e impacto financeiro.",
     },
@@ -240,12 +242,14 @@ const projectList: ProjectCase[] = [
   {
     slug: "dashboard-vendas-power-bi",
     title: "Dashboard de Vendas - Power BI",
-    headline: "Dashboard de Vendas | Power BI com KPIs, metas e análises por região",
+    headline:
+      "Dashboard de Vendas | Power BI com KPIs, metas e análises por região",
     tagline:
       "Dashboard em Power BI para acompanhar desempenho de vendas, metas e mix de produtos com filtros dinâmicos.",
     role: "Analista de Dados",
     stack: ["Power BI", "DAX", "Power Query", "Excel"],
-    repoUrl: "https://github.com/matheussiqueira-dev/Dashboard-de-Vendas---Power-BI.git",
+    repoUrl:
+      "https://github.com/matheussiqueira-dev/Dashboard-de-Vendas---Power-BI.git",
     demoUrl: "/projects/dashboard-vendas-power-bi/dashboard.pdf",
     demo: {
       kind: "video",
@@ -321,7 +325,8 @@ const projectList: ProjectCase[] = [
       "Design de dashboards orientado à decisão.",
       "Tratamento de dados com Power Query.",
     ],
-    techSummary: "Power BI com Power Query para ETL e DAX para métricas e indicadores comerciais.",
+    techSummary:
+      "Power BI com Power Query para ETL e DAX para métricas e indicadores comerciais.",
     conclusion: [
       "Entreguei um painel de vendas com KPIs claros e filtros intuitivos.",
       "Facilitei o acompanhamento de metas e tendências sazonais.",
@@ -353,12 +358,14 @@ const projectList: ProjectCase[] = [
   {
     slug: "deteccao-de-anomalias-operacionais",
     title: "Detecção de Anomalias Operacionais",
-    headline: "Detecção de Anomalias | Radar operacional em tempo real",
+    headline:
+      "Detecção de Anomalias | Radar operacional em tempo real",
     tagline:
       "Sistema para identificar desvios operacionais com alertas em tempo real e painel interativo.",
     role: "Analista/Desenvolvedor",
     stack: ["Python", "FastAPI", "Isolation Forest", "TimescaleDB", "React", "D3"],
-    repoUrl: "https://github.com/matheussiqueira-dev/Deteccao-de-Anomalias-Operacionais.git",
+    repoUrl:
+      "https://github.com/matheussiqueira-dev/Deteccao-de-Anomalias-Operacionais.git",
     demo: {
       kind: "video",
       src: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
@@ -475,7 +482,8 @@ const projectList: ProjectCase[] = [
     tagline: "Interface web touchless com visão computacional para navegar dashboards e data apps.",
     role: "Analista/Desenvolvedor",
     stack: ["Python", "FastAPI", "OpenCV", "MediaPipe", "React"],
-    repoUrl: "https://github.com/matheussiqueira-dev/Interface-Web-de-Gestos-Sem-Contato.git",
+    repoUrl:
+      "https://github.com/matheussiqueira-dev/Interface-Web-de-Gestos-Sem-Contato.git",
     demoUrl: "https://touchless-gestures-next.vercel.app/",
     demo: {
       kind: "video",
@@ -601,7 +609,9 @@ const projectList: ProjectCase[] = [
         },
         {
           title: "Aplicações Práticas da Interface Web de Gestos Sem Contato",
-          paragraphs: ["Este tipo de solução pode ser aplicada em diversos contextos, como:"],
+          paragraphs: [
+            "Este tipo de solução pode ser aplicada em diversos contextos, como:",
+          ],
           items: [
             "Dashboards interativos controlados por gestos",
             "Ambientes corporativos e apresentações sem contato físico",
@@ -730,7 +740,8 @@ const projectList: ProjectCase[] = [
       kind: "internal",
       path: "/demos/chatbot-ia-api",
       title: "Abrir demo interativa",
-      description: "Playground simples para simular requests e visualizar respostas mock.",
+      description:
+        "Playground simples para simular requests e visualizar respostas mock.",
     },
     context:
       "Operações de atendimento precisavam padronizar respostas e gerar dados confiáveis para análise de qualidade, reduzindo o tempo de resposta em demandas recorrentes.",
@@ -1141,7 +1152,8 @@ const projectList: ProjectCase[] = [
       },
     ],
     seo: {
-      title: "Flappy Bird com Controle por Gestos | MediaPipe, OpenCV e Pygame",
+      title:
+        "Flappy Bird com Controle por Gestos | MediaPipe, OpenCV e Pygame",
       description:
         "Versão do Flappy Bird controlada pela webcam usando MediaPipe Hands, OpenCV e Pygame, com modos discreto e contínuo de gestos.",
     },
@@ -1150,7 +1162,8 @@ const projectList: ProjectCase[] = [
     slug: "subway-surf",
     title: "Subway Surfers",
     headline: "Subway Surfers | Jogo 2D em HTML5 Canvas",
-    tagline: "Jogo inspirado no Subway Surfers para estudo de lógica e desenvolvimento de games.",
+    tagline:
+      "Jogo inspirado no Subway Surfers para estudo de lógica e desenvolvimento de games.",
     role: "Desenvolvedor",
     stack: ["JavaScript", "HTML5", "Canvas", "CSS"],
     repoUrl: "https://github.com/matheussiqueira-dev/Subway-Surf",
@@ -1198,7 +1211,8 @@ const projectList: ProjectCase[] = [
       "Organização modular de código front-end.",
       "Prototipação rápida de jogos 2D.",
     ],
-    techSummary: "JavaScript e HTML5 Canvas para renderização, com CSS para layout e HUD.",
+    techSummary:
+      "JavaScript e HTML5 Canvas para renderização, com CSS para layout e HUD.",
     conclusion: [
       "Consolidei fundamentos de game loop em JS.",
       "Implementei colisões e pontuação em tempo real.",
@@ -1404,7 +1418,8 @@ const projectList: ProjectCase[] = [
     slug: "fruit-ninja",
     title: "Ninja das Frutas",
     headline: "Ninja das Frutas | Corte por gestos com rastreamento de mão",
-    tagline: "Experiência de corte com rastreamento de mão em tempo real usando a câmera.",
+    tagline:
+      "Experiência de corte com rastreamento de mão em tempo real usando a câmera.",
     role: "Desenvolvedor",
     stack: [
       "React",
@@ -1484,7 +1499,8 @@ const projectList: ProjectCase[] = [
     slug: "neon-runner-cyber-hand",
     title: "Corredor Neon: Mão Cibernética",
     headline: "Corredor Neon: Mão Cibernética | Runner cyberpunk controlado por gestos",
-    tagline: "Infinite runner cyberpunk com visualização da mão em tempo real e atmosfera neon.",
+    tagline:
+      "Infinite runner cyberpunk com visualização da mão em tempo real e atmosfera neon.",
     role: "Desenvolvedor",
     stack: [
       "React",
@@ -1495,7 +1511,8 @@ const projectList: ProjectCase[] = [
       "Zustand",
       "MediaPipe Tasks Vision",
     ],
-    repoUrl: "https://github.com/matheussiqueira-dev/Neon-Runner-Cyber-Hand.git",
+    repoUrl:
+      "https://github.com/matheussiqueira-dev/Neon-Runner-Cyber-Hand.git",
     demo: {
       kind: "video",
       src: "/projects/neon-runner-cyber-hand/demo.mp4",
@@ -1583,7 +1600,8 @@ const projectList: ProjectCase[] = [
     slug: "dino-chrome",
     title: "Dino Chrome",
     headline: "Dino Chrome | Jogo 2D em HTML5 Canvas",
-    tagline: "Clone do jogo do Chrome para treinar lógica de colisão, pontuação e progressão.",
+    tagline:
+      "Clone do jogo do Chrome para treinar lógica de colisão, pontuação e progressão.",
     role: "Desenvolvedor",
     stack: ["JavaScript", "HTML5", "Canvas", "CSS"],
     repoUrl: "https://github.com/matheussiqueira-dev/Dino-Chrome.git",
@@ -1631,7 +1649,8 @@ const projectList: ProjectCase[] = [
       "Organização modular de código front-end.",
       "Prototipação rápida de jogos 2D.",
     ],
-    techSummary: "JavaScript e HTML5 Canvas para renderização e lógica, com CSS para layout.",
+    techSummary:
+      "JavaScript e HTML5 Canvas para renderização e lógica, com CSS para layout.",
     conclusion: [
       "Consolidei fundamentos de game loop em JS.",
       "Implementei colisões e pontuação em tempo real.",
@@ -1664,7 +1683,8 @@ const projectList: ProjectCase[] = [
     slug: "gestor-de-notas",
     title: "Gestor de Notas",
     headline: "Gestor de Notas | Aplicação para organização pessoal",
-    tagline: "Aplicação para gerenciamento de notas, com criação, edição e organização simples.",
+    tagline:
+      "Aplicação para gerenciamento de notas, com criação, edição e organização simples.",
     role: "Desenvolvedor",
     stack: ["JavaScript", "HTML5", "CSS", "LocalStorage"],
     repoUrl: "https://github.com/matheussiqueira-dev/Gestor_de_Notas",
@@ -1740,12 +1760,14 @@ const projectList: ProjectCase[] = [
   {
     slug: "hand-gesture-recognition-realtime",
     title: "Reconhecimento de Gestos de Mão em Tempo Real",
-    headline: "Reconhecimento de Gestos | Visão Computacional com Python e MediaPipe",
+    headline:
+      "Reconhecimento de Gestos | Visão Computacional com Python e MediaPipe",
     tagline:
       "Sistema de visão computacional em tempo real para detectar mãos e contar dedos usando webcam.",
     role: "Desenvolvedor",
     stack: ["Python", "OpenCV", "MediaPipe"],
-    repoUrl: "https://github.com/matheussiqueira-dev/Reconhecimento-de-Gestos-de-Mao",
+    repoUrl:
+      "https://github.com/matheussiqueira-dev/Reconhecimento-de-Gestos-de-Mao",
     demoUrl: "https://3-d-hands.vercel.app/",
     demo: {
       kind: "video",
@@ -1754,7 +1776,8 @@ const projectList: ProjectCase[] = [
       caption: "Demonstração do reconhecimento de gestos em tempo real.",
     },
     intro: {
-      title: "Sistema de Reconhecimento de Gestos de Mão em Tempo Real",
+      title:
+        "Sistema de Reconhecimento de Gestos de Mão em Tempo Real",
       paragraphs: [
         "Este projeto implementa um sistema de visão computacional em tempo real para detectar mãos e contar dedos usando a webcam do computador.",
         "Desenvolvido com Python, OpenCV e MediaPipe, o sistema é capaz de detectar a mão, extrair landmarks e identificar quantos dedos estão levantados (0 a 5) com alta precisão.",
@@ -1786,7 +1809,9 @@ const projectList: ProjectCase[] = [
         },
         {
           title: "Tecnologias Utilizadas",
-          paragraphs: ["O projeto foi construído com uma stack focada em visão computacional:"],
+          paragraphs: [
+            "O projeto foi construído com uma stack focada em visão computacional:",
+          ],
           subSections: [
             {
               title: "Processamento de Vídeo",
@@ -1808,7 +1833,9 @@ const projectList: ProjectCase[] = [
         },
         {
           title: "Possíveis Melhorias Futuras",
-          paragraphs: ["O projeto foi estruturado para permitir evolução e novas funcionalidades:"],
+          paragraphs: [
+            "O projeto foi estruturado para permitir evolução e novas funcionalidades:",
+          ],
           items: [
             "Reconhecimento de gestos específicos (paz, rock, soco fechado, etc.)",
             "Controle do PC usando pyautogui (volume, mouse, atalhos)",
@@ -1896,7 +1923,8 @@ const projectList: ProjectCase[] = [
       },
     ],
     seo: {
-      title: "Reconhecimento de Gestos de Mão em Tempo Real | Python, OpenCV e MediaPipe",
+      title:
+        "Reconhecimento de Gestos de Mão em Tempo Real | Python, OpenCV e MediaPipe",
       description:
         "Sistema de visão computacional em tempo real para detectar mãos e contar dedos usando Python, OpenCV e MediaPipe. Projeto educacional com alta precisão.",
     },
@@ -2171,4 +2199,11 @@ export const projects = sortByPriority(projectList);
 
 export const projectSlugs = projects.map((project) => project.slug);
 
-export const getProjectBySlug = (slug: string) => projects.find((project) => project.slug === slug);
+export const getProjectBySlug = (slug: string) =>
+  projects.find((project) => project.slug === slug);
+
+
+
+
+
+

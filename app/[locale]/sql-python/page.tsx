@@ -9,7 +9,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await resolveLocale(params);
   return {
     title: locale === "pt-BR" ? "SQL Python" : "SQL Python",
-    description: locale === "pt-BR" ? "Projetos SQL e Python" : "SQL and Python projects",
+    description:
+      locale === "pt-BR" ? "Projetos SQL e Python" : "SQL and Python projects",
   };
 }
 
@@ -19,7 +20,11 @@ export default async function SqlPythonPage({ params }: Props) {
     <main className="layout-container page-shell">
       <section className="page-placeholder">
         <h1>SQL &amp; Python</h1>
-        <p>{locale === "pt-BR" ? "Página em construção" : "Page under construction"}</p>
+        <p>
+          {locale === "pt-BR"
+            ? "Página em construção"
+            : "Page under construction"}
+        </p>
       </section>
     </main>
   );

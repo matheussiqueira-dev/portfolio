@@ -90,7 +90,7 @@ export interface ProjectCard {
   // Metadata
   featured?: boolean;
   order?: number;
-  status?: "active" | "completed" | "archived"; // Project status
+  status?: 'active' | 'completed' | 'archived'; // Project status
   duration?: {
     start: string; // YYYY-MM format
     end: string; // YYYY-MM format or "ongoing"
@@ -124,7 +124,9 @@ type LegacyProjectInput = {
 
 export function projectToCard(project: LegacyProjectInput): ProjectCard {
   const slug = String(project.slug || "");
-  const stack = Array.isArray(project.stack) ? project.stack.map((item) => String(item)) : [];
+  const stack = Array.isArray(project.stack)
+    ? project.stack.map((item) => String(item))
+    : [];
   const highlights = Array.isArray(project.highlights)
     ? project.highlights.map((item) => String(item))
     : Array.isArray(project.features)
@@ -154,16 +156,17 @@ export function projectToCard(project: LegacyProjectInput): ProjectCard {
       pt: `/thumbnails/pt/${slug}.png`,
       en: `/thumbnails/en/${slug}.png`,
     },
-    videos: project.demo?.src
-      ? [
-          {
-            type: "local",
-            src: String(project.demo.src),
-            poster: project.demo.poster,
-            caption: project.demo.caption,
-          },
-        ]
-      : [],
+    videos:
+      project.demo?.src
+        ? [
+            {
+              type: "local",
+              src: String(project.demo.src),
+              poster: project.demo.poster,
+              caption: project.demo.caption,
+            },
+          ]
+        : [],
     stack,
     role: String(project.role || ""),
     context: {

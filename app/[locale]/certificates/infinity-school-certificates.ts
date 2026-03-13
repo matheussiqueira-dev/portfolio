@@ -51,24 +51,12 @@ const TITLE_TAGS = [
   { pattern: /python/i, tags: { "pt-BR": "Python", en: "Python" } },
   { pattern: /\bIA\b|chatgpt|generativa/i, tags: { "pt-BR": "IA", en: "AI" } },
   { pattern: /power\s*bi/i, tags: { "pt-BR": "Power BI", en: "Power BI" } },
-  {
-    pattern: /dados|data science|csv|banco de dados|sql/i,
-    tags: { "pt-BR": "Data Analytics", en: "Data Analytics" },
-  },
-  {
-    pattern: /marketing|instagram|linkedin|marca pessoal|vendas/i,
-    tags: { "pt-BR": "Marketing", en: "Marketing" },
-  },
-  {
-    pattern: /design|animação|motion|storytelling|tipografia|visual|capcut|vídeos|ui|ux/i,
-    tags: { "pt-BR": "Design", en: "Design" },
-  },
+  { pattern: /dados|data science|csv|banco de dados|sql/i, tags: { "pt-BR": "Data Analytics", en: "Data Analytics" } },
+  { pattern: /marketing|instagram|linkedin|marca pessoal|vendas/i, tags: { "pt-BR": "Marketing", en: "Marketing" } },
+  { pattern: /design|animação|motion|storytelling|tipografia|visual|capcut|vídeos|ui|ux/i, tags: { "pt-BR": "Design", en: "Design" } },
   { pattern: /git|github/i, tags: { "pt-BR": "Git/GitHub", en: "Git/GitHub" } },
   { pattern: /cibersegurança/i, tags: { "pt-BR": "Segurança", en: "Security" } },
-  {
-    pattern: /programação|programacao|poo|discord|web|portugol|no-code|game|rpg/i,
-    tags: { "pt-BR": "Programação", en: "Programming" },
-  },
+  { pattern: /programação|programacao|poo|discord|web|portugol|no-code|game|rpg/i, tags: { "pt-BR": "Programação", en: "Programming" } },
 ] as const;
 
 function normalizeText(value: string): string {
@@ -173,17 +161,13 @@ export async function getInfinitySchoolCertificates(locale: Locale): Promise<Cer
     const directoryPath = path.join(ROOT_DIR, directory.name);
     const files = await readdir(directoryPath, { withFileTypes: true });
     const images = files
-      .filter(
-        (file) => file.isFile() && IMAGE_EXTENSIONS.has(path.extname(file.name).toLowerCase())
-      )
+      .filter((file) => file.isFile() && IMAGE_EXTENSIONS.has(path.extname(file.name).toLowerCase()))
       .sort((a, b) => {
         const aTitle = normalizeKnownTerms(cleanupTitle(a.name, sectionName));
         const bTitle = normalizeKnownTerms(cleanupTitle(b.name, sectionName));
 
         if (sectionName === "Certificados do ranking") {
-          return (
-            rankingOrder(aTitle) - rankingOrder(bTitle) || aTitle.localeCompare(bTitle, locale)
-          );
+          return rankingOrder(aTitle) - rankingOrder(bTitle) || aTitle.localeCompare(bTitle, locale);
         }
 
         return aTitle.localeCompare(bTitle, locale);
@@ -194,13 +178,7 @@ export async function getInfinitySchoolCertificates(locale: Locale): Promise<Cer
       const publicUrl = toPublicUrl(["certificates", "infinity-school", directory.name, file.name]);
 
       certificates.push({
-        id: slugify(
-          path.posix.join(
-            "infinity-school",
-            normalizeText(directory.name),
-            normalizeText(file.name)
-          )
-        ),
+        id: slugify(path.posix.join("infinity-school", normalizeText(directory.name), normalizeText(file.name))),
         title,
         issuer: "Infinity School",
         areaTags: areaTags(title, sectionName, locale),

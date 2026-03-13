@@ -12,13 +12,15 @@ const globalCache = globalThis as typeof globalThis & {
   __githubStarsCache?: Map<string, CacheEntry>;
 };
 
-const starsCache = globalCache.__githubStarsCache ?? new Map<string, CacheEntry>();
+const starsCache =
+  globalCache.__githubStarsCache ?? new Map<string, CacheEntry>();
 
 if (!globalCache.__githubStarsCache) {
   globalCache.__githubStarsCache = starsCache;
 }
 
-const isValidSlug = (slug: string) => /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(slug);
+const isValidSlug = (slug: string) =>
+  /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(slug);
 
 const fetchStars = async (slug: string) => {
   try {
@@ -33,7 +35,9 @@ const fetchStars = async (slug: string) => {
     }
 
     const data = (await response.json()) as { stargazers_count?: number };
-    return typeof data.stargazers_count === "number" ? data.stargazers_count : null;
+    return typeof data.stargazers_count === "number"
+      ? data.stargazers_count
+      : null;
   } catch {
     return null;
   }

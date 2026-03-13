@@ -57,7 +57,13 @@ export default function ThemeToggle() {
       ? "Ativar modo claro"
       : "Ativar modo escuro";
 
-  const text = isEn ? (theme === "dark" ? "Dark" : "Light") : theme === "dark" ? "Escuro" : "Claro";
+  const text = isEn
+    ? theme === "dark"
+      ? "Dark"
+      : "Light"
+    : theme === "dark"
+      ? "Escuro"
+      : "Claro";
 
   const icon =
     theme === "dark" ? (

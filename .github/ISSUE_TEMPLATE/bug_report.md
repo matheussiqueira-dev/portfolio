@@ -7,7 +7,6 @@ labels: bug
 ## Description
 
 ## Steps to Reproduce
-
 1.
 2.
 3.
@@ -17,7 +16,6 @@ labels: bug
 ## Actual Behavior
 
 ## Environment
-
 - Device:
 - Browser:
 - Route:

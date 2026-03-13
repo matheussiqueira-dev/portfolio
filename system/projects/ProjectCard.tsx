@@ -37,7 +37,7 @@ const labels = {
 
 /**
  * ProjectCard - Expandable project card with media and details
- *
+ * 
  * ♿ Accessibility Features:
  * - Semantic HTML: <article>, <button>, <h2>
  * - Keyboard support: Enter/Space to expand, Escape to collapse
@@ -45,7 +45,7 @@ const labels = {
  * - Focus visible: Clear focus indicator for keyboard users
  * - Reduced motion: Respects prefers-reduced-motion media query
  * - Screen reader: Proper heading hierarchy and descriptions
- *
+ * 
  * 🎨 Visual Features:
  * - Expandable accordion with smooth animation
  * - Featured badge and tech stack preview
@@ -91,6 +91,7 @@ export default function ProjectCard({ project, locale, index = 0 }: Props) {
     }
   };
 
+
   return (
     <article
       className={`${styles.card} ${expanded ? styles.expanded : ""}`}
@@ -121,7 +122,9 @@ export default function ProjectCard({ project, locale, index = 0 }: Props) {
             placeholder="blur"
             blurDataURL="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 3'%3E%3Crect fill='%23e0e0e0'/%3E%3C/svg%3E"
           />
-          {project.featured && <span className={styles.badge}>{t.featured}</span>}
+          {project.featured && (
+            <span className={styles.badge}>{t.featured}</span>
+          )}
         </div>
 
         {/* Content */}
@@ -139,7 +142,9 @@ export default function ProjectCard({ project, locale, index = 0 }: Props) {
               </span>
             ))}
             {project.stack.length > 3 && (
-              <span className={styles.stackMore}>+{project.stack.length - 3}</span>
+              <span className={styles.stackMore}>
+                +{project.stack.length - 3}
+              </span>
             )}
           </div>
         </div>
@@ -163,7 +168,11 @@ export default function ProjectCard({ project, locale, index = 0 }: Props) {
       </button>
 
       {/* EXPANDED DETAILS - Accordion content */}
-      <div id={detailsId} className={styles.detailsWrapper} style={{ maxHeight: `${maxHeight}px` }}>
+      <div
+        id={detailsId}
+        className={styles.detailsWrapper}
+        style={{ maxHeight: `${maxHeight}px` }}
+      >
         <div ref={contentRef} className={styles.detailsContent}>
           <ProjectCardDetails project={project} locale={locale} />
 
@@ -200,7 +209,10 @@ export default function ProjectCard({ project, locale, index = 0 }: Props) {
               </a>
             )}
             {project.links.caseStudy && (
-              <a href={project.links.caseStudy} className={styles.buttonPrimary}>
+              <a
+                href={project.links.caseStudy}
+                className={styles.buttonPrimary}
+              >
                 {t.caseStudy} →
               </a>
             )}

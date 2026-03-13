@@ -11,7 +11,11 @@ type GtagEventParams = {
   page_path?: string;
 };
 
-type Gtag = (command: "event" | "config", action: string, params?: GtagEventParams) => void;
+type Gtag = (
+  command: "event" | "config",
+  action: string,
+  params?: GtagEventParams
+) => void;
 
 type DataLayerEvent = {
   event: string;
@@ -31,12 +35,14 @@ declare global {
 /**
  * Type-safe event actions from constants
  */
-export type AnalyticsEvent = (typeof ANALYTICS_EVENTS)[keyof typeof ANALYTICS_EVENTS];
+export type AnalyticsEvent =
+  (typeof ANALYTICS_EVENTS)[keyof typeof ANALYTICS_EVENTS];
 
 /**
  * Type-safe event categories from constants
  */
-export type AnalyticsCategory = (typeof ANALYTICS_CATEGORIES)[keyof typeof ANALYTICS_CATEGORIES];
+export type AnalyticsCategory =
+  (typeof ANALYTICS_CATEGORIES)[keyof typeof ANALYTICS_CATEGORIES];
 
 // ============================================================================
 // UTILITY FUNCTIONS
@@ -56,7 +62,9 @@ const _isAnalyticsAvailable = (): boolean => {
 
   if (!hasGtag && !hasDataLayer) {
     if (process.env.NODE_ENV === "development") {
-      console.warn("Analytics not loaded (gtag or dataLayer). Event tracking disabled.");
+      console.warn(
+        "Analytics not loaded (gtag or dataLayer). Event tracking disabled."
+      );
     }
     return false;
   }
@@ -66,19 +74,24 @@ const _isAnalyticsAvailable = (): boolean => {
 
 /**
  * Track custom events with type safety and validation
- *
+ * 
  * @param action - Event action (use ANALYTICS_EVENTS constants)
  * @param category - Event category (use ANALYTICS_CATEGORIES constants)
  * @param label - Optional event label (e.g., project slug, button location)
  * @param value - Optional numeric value associated with the event
- *
+ * 
  * @example
  * ```typescript
  * trackEvent('view_resume', 'engagement', 'hero-section');
  * trackEvent('click_github', 'outbound', 'project-card');
  * ```
  */
-export const trackEvent = (action: string, category: string, label?: string, value?: number) => {
+export const trackEvent = (
+  action: string,
+  category: string,
+  label?: string,
+  value?: number
+) => {
   if (!_isAnalyticsAvailable()) {
     return;
   }
@@ -110,9 +123,9 @@ export const trackEvent = (action: string, category: string, label?: string, val
 
 /**
  * Track page views with error handling
- *
+ * 
  * @param url - Page URL path
- *
+ * 
  * @example
  * ```typescript
  * trackPageView('/projects');
@@ -149,9 +162,9 @@ export const trackPageView = (url: string) => {
 
 /**
  * Track scroll to sections
- *
+ * 
  * @param section - Section ID or name (e.g., 'about', 'projects', 'contact')
- *
+ * 
  * @example
  * ```typescript
  * trackScroll('projects');
@@ -164,10 +177,10 @@ export const trackScroll = (section: string) => {
 
 /**
  * Track file downloads
- *
+ * 
  * @param fileName - Name of the downloaded file
  * @param fileType - Optional file type/extension
- *
+ * 
  * @example
  * ```typescript
  * trackDownload('resume.pdf', 'pdf');
@@ -181,10 +194,10 @@ export const trackDownload = (fileName: string, fileType?: string) => {
 
 /**
  * Track CTA (Call-to-Action) clicks with better organization
- *
+ * 
  * @param action - CTA action (e.g., 'view_resume', 'contact')
  * @param location - Where the CTA is located (e.g., 'hero', 'footer', 'navbar')
- *
+ * 
  * @example
  * ```typescript
  * trackCTA('view_resume', 'hero');
@@ -198,10 +211,10 @@ export const trackCTA = (action: string, location: string) => {
 
 /**
  * Track external link clicks
- *
+ * 
  * @param destination - Destination URL or identifier
  * @param label - Optional additional context
- *
+ * 
  * @example
  * ```typescript
  * trackOutboundLink('github', 'project-repo');
@@ -212,4 +225,6 @@ export const trackOutboundLink = (destination: string, label?: string) => {
   trackEvent(`click_${destination}`, ANALYTICS_CATEGORIES.OUTBOUND, label);
 };
 
-export {};
+export { };
+
+

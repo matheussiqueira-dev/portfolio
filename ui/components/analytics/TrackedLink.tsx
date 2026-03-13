@@ -38,7 +38,13 @@ const handleTrack = (tracking?: Tracking) => {
   trackEvent(tracking.action, tracking.category, tracking.label);
 };
 
-export function TrackedLink({ href, className, ariaLabel, children, tracking }: TrackedLinkProps) {
+export function TrackedLink({
+  href,
+  className,
+  ariaLabel,
+  children,
+  tracking,
+}: TrackedLinkProps) {
   return (
     <Link
       href={href}

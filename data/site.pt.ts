@@ -16,7 +16,8 @@ export const sitePt: SiteContent = {
   hero: {
     eyebrow: "Analista de Dados • Business Intelligence • Power BI • Infraestrutura",
     title: "Matheus Siqueira",
-    subtitle: "Infraestrutura | Desenvolvedor Full Stack | Analista de Dados Júnior",
+    subtitle:
+      "Infraestrutura | Desenvolvedor Full Stack | Analista de Dados Júnior",
     description:
       "Atuo no desenvolvimento de soluções analíticas e sistemas orientados à decisão, integrando Power BI, SQL, DAX, Power Query e automações em Python à arquitetura de dados e à infraestrutura. Trabalho de ponta a ponta, do tratamento e modelagem à visualização e entrega, com foco em eficiência operacional, confiabilidade e impacto mensurável no negócio.",
     stackHighlights: [
@@ -41,15 +42,18 @@ export const sitePt: SiteContent = {
     title: "Infraestrutura | Analista de Dados Júnior | Power BI | SQL | Python | React.js",
     summary: {
       title: "Sobre / Apresentação",
-      body: "Atuo em análise de dados e Business Intelligence, com experiência no setor público e privado. Fui Assistente Comercial no Grupo Moura, Analista de Cargos e Salários na Prefeitura de Jaboatão dos Guararapes e, atualmente, Estagiário em Análise de Dados na Secretaria da Fazenda de Jaboatão dos Guararapes. Minha atuação é orientada a KPIs, eficiência operacional e decisão baseada em dados.",
+      body:
+        "Atuo em análise de dados e Business Intelligence, com experiência no setor público e privado. Fui Assistente Comercial no Grupo Moura, Analista de Cargos e Salários na Prefeitura de Jaboatão dos Guararapes e, atualmente, Estagiário em Análise de Dados na Secretaria da Fazenda de Jaboatão dos Guararapes. Minha atuação é orientada a KPIs, eficiência operacional e decisão baseada em dados.",
     },
     who: {
       title: "Quem sou",
-      body: "Sou Analista de Dados com perfil híbrido (dados + desenvolvimento + infraestrutura). Graduando em Ciência da Computação, com pós-graduações em Inteligência Artificial e Ciência de Dados, Segurança da Informação e Cloud & Edge Computing, técnico em Programação Full Stack AI e graduação em Marketing. Trabalho com mentalidade analítica, rigor técnico e comunicação clara para traduzir necessidades de negócio em soluções de dados confiáveis.",
+      body:
+        "Sou Analista de Dados com perfil híbrido (dados + desenvolvimento + infraestrutura). Graduando em Ciência da Computação, com pós-graduações em Inteligência Artificial e Ciência de Dados, Segurança da Informação e Cloud & Edge Computing, técnico em Programação Full Stack AI e graduação em Marketing. Trabalho com mentalidade analítica, rigor técnico e comunicação clara para traduzir necessidades de negócio em soluções de dados confiáveis.",
     },
     complexData: {
       title: "Experiência com dados complexos em larga escala",
-      body: "Experiência com Business Intelligence aplicado à gestão pública, dashboards estratégicos em Power BI e análise de grandes volumes de dados fiscais. Atuo com dados públicos e organizacionais em múltiplas fontes, estruturando ETL/ELT, automações em Python e governança de dados para sustentar decisões e operação.",
+      body:
+        "Experiência com Business Intelligence aplicado à gestão pública, dashboards estratégicos em Power BI e análise de grandes volumes de dados fiscais. Atuo com dados públicos e organizacionais em múltiplas fontes, estruturando ETL/ELT, automações em Python e governança de dados para sustentar decisões e operação.",
     },
     differential: {
       title: "Diferencial",
@@ -221,7 +225,8 @@ export const sitePt: SiteContent = {
       },
       {
         title: "BI executivo e storytelling",
-        description: "Dashboards em Power BI com foco em clareza, metas e acompanhamento contínuo.",
+        description:
+          "Dashboards em Power BI com foco em clareza, metas e acompanhamento contínuo.",
         bullets: [
           "KPIs por área e por meta",
           "Narrativas para diretoria",
@@ -232,7 +237,11 @@ export const sitePt: SiteContent = {
         title: "Automação e pipelines",
         description:
           "ETL/ELT e integrações em Python/SQL para reduzir retrabalho e acelerar análises.",
-        bullets: ["Orquestração e alertas", "APIs e integrações", "Monitoramento e performance"],
+        bullets: [
+          "Orquestração e alertas",
+          "APIs e integrações",
+          "Monitoramento e performance",
+        ],
       },
     ],
     processTitle: "Processo de entrega",
@@ -407,7 +416,8 @@ export const sitePt: SiteContent = {
     },
     brief: {
       title: "Briefing rápido do projeto",
-      description: "Preencha os campos principais e gere um resumo pronto para enviar.",
+      description:
+        "Preencha os campos principais e gere um resumo pronto para enviar.",
       fields: {
         name: {
           label: "Nome",
@@ -442,7 +452,12 @@ export const sitePt: SiteContent = {
         "Automação em Python",
         "Consultoria em dados",
       ],
-      timelines: ["Urgente (até 2 semanas)", "Curto (1 mês)", "Médio (2-3 meses)", "Contínuo"],
+      timelines: [
+        "Urgente (até 2 semanas)",
+        "Curto (1 mês)",
+        "Médio (2-3 meses)",
+        "Contínuo",
+      ],
       budgets: ["Até R$ 5k", "R$ 5k - 15k", "R$ 15k - 30k", "R$ 30k+"],
       summaryTitle: "Resumo gerado",
       summaryHint: "Revise antes de enviar. Você pode copiar ou enviar direto.",

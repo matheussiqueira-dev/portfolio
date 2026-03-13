@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 
-import HomePageContent from "@/components/sections/HomePageContent";
-import { resolveLocale, type LocaleParams } from "@/app/[locale]/_lib";
-import { siteEn } from "@/data/site.en";
 import { sitePt } from "@/data/site.pt";
-import { featuredProjects } from "@/core/projects";
-import { buildBreadcrumbSchema, buildPageMetadata, buildWebPageSchema } from "@/system/seo";
-import JsonLd from "@/ui/components/seo/JsonLd";
+import { siteEn } from "@/data/site.en";
+import { getProjectsCard } from "@/data/projects-card";
+
+import { resolveLocale, type LocaleParams } from "./_lib";
+import HomeContent from "./home-content";
 
 type Props = {
   params: LocaleParams;
@@ -14,42 +13,21 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await resolveLocale(params);
-  const site = locale === "en" ? siteEn : sitePt;
+  const isPt = locale === "pt-BR";
 
-  return buildPageMetadata({
-    locale,
-    route: "home",
-    title: `${site.hero.title} | ${site.hero.subtitle}`,
-    description: site.hero.description,
-    keywords: [
-      "Data Analyst Brazil",
-      "Business Intelligence Developer",
-      "Power BI Developer Brazil",
-      "Python Automation Developer",
-      "Full Stack Developer Brazil",
-    ],
-  });
+  return {
+    title: isPt ? "Inicio" : "Home",
+    description: isPt
+      ? "Pagina inicial com secoes sobre, servicos, projetos e contato."
+      : "Home page with about, services, projects and contact sections.",
+  };
 }
 
-export default async function LocalizedHomePage({ params }: Props) {
+export default async function Home({ params }: Props) {
   const locale = await resolveLocale(params);
-  const site = locale === "en" ? siteEn : sitePt;
-  const path = locale === "en" ? "/en" : "/";
+  const uiLocale = locale === "en" ? "en" : "pt";
+  const site = locale === "pt-BR" ? sitePt : siteEn;
+  const projects = getProjectsCard(uiLocale).slice(0, 6);
 
-  return (
-    <>
-      <JsonLd
-        data={[
-          buildWebPageSchema({
-            locale,
-            path,
-            title: `${site.hero.title} | ${site.hero.subtitle}`,
-            description: site.hero.description,
-          }),
-          buildBreadcrumbSchema([{ name: "Home", item: path }]),
-        ]}
-      />
-      <HomePageContent locale={locale} featuredProjects={featuredProjects} />
-    </>
-  );
+  return <HomeContent site={site} projects={projects} locale={uiLocale} />;
 }

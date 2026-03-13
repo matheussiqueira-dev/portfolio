@@ -118,7 +118,7 @@ export default function ProfileCard({
         "--landing-ambient": palette.ambient,
         "--landing-toggle-bg": palette.toggleBg,
       }) as CSSProperties,
-    [palette]
+    [palette],
   );
 
   return (
@@ -176,7 +176,8 @@ export default function ProfileCard({
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
-          background: "radial-gradient(circle at 50% 10%, var(--landing-ambient), transparent 56%)",
+          background:
+            "radial-gradient(circle at 50% 10%, var(--landing-ambient), transparent 56%)",
         }}
       />
 

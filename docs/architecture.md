@@ -1,7 +1,6 @@
 # Architecture
 
 ## Overview
-
 ENCOM Enterprise Portfolio is organized in modular layers:
 
 - `app/`: Next.js App Router routes, layouts, metadata, APIs
@@ -14,7 +13,6 @@ ENCOM Enterprise Portfolio is organized in modular layers:
 - `scripts/`: utility automation scripts
 
 ## Layering Rules
-
 - `app` composes screens and routes.
 - `system` encapsulates feature composition.
 - `ui` exposes reusable visual primitives.
@@ -22,9 +20,7 @@ ENCOM Enterprise Portfolio is organized in modular layers:
 - `data` remains strongly typed and framework-agnostic.
 
 ## Runtime-critical Root Files
-
 These root files are intentionally kept because Next.js/Sentry load them by convention:
-
 - `instrumentation.ts`
 - `instrumentation-client.ts`
 - `proxy.ts`

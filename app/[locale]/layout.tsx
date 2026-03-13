@@ -2,7 +2,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
-import SiteFrame from "@/components/system/SiteFrame";
+import Footer from "@/ui/components/layout/Footer";
+import Header from "@/ui/components/layout/Header";
 import { isValidLocale, routing } from "@/core/i18n/routing";
 
 type Props = Readonly<{
@@ -25,9 +26,15 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
-      <section lang={locale} data-locale={locale}>
-        <SiteFrame locale={locale}>{children}</SiteFrame>
+    <NextIntlClientProvider key={locale} locale={locale} messages={messages}>
+      <section key={locale} lang={locale} data-locale={locale}>
+        <div key={locale} className="app-shell">
+          <Header />
+          <div id="main-content" className="min-h-screen">
+            {children}
+          </div>
+          <Footer />
+        </div>
       </section>
     </NextIntlClientProvider>
   );

@@ -35,7 +35,11 @@ export default async function DemosSlugPage({ params }: Props) {
         <h1>
           {locale === "en" ? "Demo" : "Demo"} - {slug}
         </h1>
-        <p>{locale === "en" ? "Page under construction" : "P\u00e1gina em constru\u00e7\u00e3o"}</p>
+        <p>
+          {locale === "en"
+            ? "Page under construction"
+            : "P\u00e1gina em constru\u00e7\u00e3o"}
+        </p>
       </section>
     </main>
   );

@@ -125,7 +125,8 @@ const projectListEn: Project[] = [
   {
     slug: "business-decision-simulator",
     title: "Business Decision Simulator",
-    headline: "Business Decision Simulator | Scenarios, risk and financial impact",
+    headline:
+      "Business Decision Simulator | Scenarios, risk and financial impact",
     tagline:
       "Interactive simulator to compare strategies and quantify financial impact with Monte Carlo and sensitivity analysis.",
     role: "Analyst/Developer",
@@ -240,12 +241,14 @@ const projectListEn: Project[] = [
   {
     slug: "dashboard-vendas-power-bi",
     title: "Sales Dashboard - Power BI",
-    headline: "Sales Dashboard | Power BI with KPIs, targets and regional insights",
+    headline:
+      "Sales Dashboard | Power BI with KPIs, targets and regional insights",
     tagline:
       "Power BI dashboard to track sales performance, targets, and product mix with dynamic filters.",
     role: "Data Analyst",
     stack: ["Power BI", "DAX", "Power Query", "Excel"],
-    repoUrl: "https://github.com/matheussiqueira-dev/Dashboard-de-Vendas---Power-BI.git",
+    repoUrl:
+      "https://github.com/matheussiqueira-dev/Dashboard-de-Vendas---Power-BI.git",
     demoUrl: "/projects/dashboard-vendas-power-bi/dashboard.pdf",
     demo: {
       kind: "video",
@@ -321,7 +324,8 @@ const projectListEn: Project[] = [
       "Decision-oriented dashboard design.",
       "Data preparation with Power Query.",
     ],
-    techSummary: "Power BI with Power Query for ETL and DAX for commercial KPIs and indicators.",
+    techSummary:
+      "Power BI with Power Query for ETL and DAX for commercial KPIs and indicators.",
     conclusion: [
       "Delivered a sales dashboard with clear KPIs and intuitive filters.",
       "Improved target tracking and seasonal trend analysis.",
@@ -353,12 +357,14 @@ const projectListEn: Project[] = [
   {
     slug: "deteccao-de-anomalias-operacionais",
     title: "Operational Anomaly Detection",
-    headline: "Anomaly Detection | Real-time operational radar",
+    headline:
+      "Anomaly Detection | Real-time operational radar",
     tagline:
       "System to detect operational deviations with real-time alerts and an interactive dashboard.",
     role: "Analyst/Developer",
     stack: ["Python", "FastAPI", "Isolation Forest", "TimescaleDB", "React", "D3"],
-    repoUrl: "https://github.com/matheussiqueira-dev/Deteccao-de-Anomalias-Operacionais.git",
+    repoUrl:
+      "https://github.com/matheussiqueira-dev/Deteccao-de-Anomalias-Operacionais.git",
     demo: {
       kind: "video",
       src: "/projects/deteccao-de-anomalias-operacionais/demo.mp4",
@@ -475,7 +481,8 @@ const projectListEn: Project[] = [
     tagline: "Touchless web interface with computer vision to navigate dashboards and data apps.",
     role: "Analyst/Developer",
     stack: ["Python", "FastAPI", "OpenCV", "MediaPipe", "React"],
-    repoUrl: "https://github.com/matheussiqueira-dev/Interface-Web-de-Gestos-Sem-Contato.git",
+    repoUrl:
+      "https://github.com/matheussiqueira-dev/Interface-Web-de-Gestos-Sem-Contato.git",
     demoUrl: "https://touchless-gestures-next.vercel.app/",
     demo: {
       kind: "video",
@@ -586,7 +593,9 @@ const projectListEn: Project[] = [
         },
         {
           title: "Architecture and Code Organization",
-          paragraphs: ["The codebase was structured following good development practices:"],
+          paragraphs: [
+            "The codebase was structured following good development practices:",
+          ],
           items: [
             "Clear separation of responsibilities",
             "Reusable components",
@@ -599,7 +608,9 @@ const projectListEn: Project[] = [
         },
         {
           title: "Practical Applications of Touchless Web Gesture Interface",
-          paragraphs: ["This type of solution can be applied in several contexts, such as:"],
+          paragraphs: [
+            "This type of solution can be applied in several contexts, such as:",
+          ],
           items: [
             "Gesture-controlled interactive dashboards",
             "Corporate environments and touchless presentations",
@@ -728,7 +739,8 @@ const projectListEn: Project[] = [
       kind: "internal",
       path: "/demos/chatbot-ia-api",
       title: "Open interactive demo",
-      description: "Lightweight playground to simulate requests and view mock responses.",
+      description:
+        "Lightweight playground to simulate requests and view mock responses.",
     },
     context:
       "Support operations needed consistent answers and reliable data for quality analysis, reducing response time for recurring requests.",
@@ -980,7 +992,8 @@ const projectListEn: Project[] = [
     slug: "driver-monitoring-system",
     title: "Driver Monitoring System",
     headline: "Driver Monitoring System | Attention and fatigue monitoring",
-    tagline: "Driver monitoring system using computer vision to detect attention and fatigue.",
+    tagline:
+      "Driver monitoring system using computer vision to detect attention and fatigue.",
     role: "Analyst/Developer",
     stack: ["Python", "OpenCV", "MediaPipe", "TensorFlow"],
     repoUrl: "https://github.com/matheussiqueira-dev/Driver-Monitoring-System",
@@ -1147,7 +1160,8 @@ const projectListEn: Project[] = [
     slug: "subway-surf",
     title: "Subway Surfers",
     headline: "Subway Surfers | 2D game in HTML5 Canvas",
-    tagline: "Game inspired by Subway Surfers built to practice game logic and development.",
+    tagline:
+      "Game inspired by Subway Surfers built to practice game logic and development.",
     role: "Developer",
     stack: ["JavaScript", "HTML5", "Canvas", "CSS"],
     repoUrl: "https://github.com/matheussiqueira-dev/Subway-Surf",
@@ -1195,7 +1209,8 @@ const projectListEn: Project[] = [
       "Modular front-end structure.",
       "Rapid 2D game prototyping.",
     ],
-    techSummary: "JavaScript and HTML5 Canvas for rendering, with CSS for layout and HUD.",
+    techSummary:
+      "JavaScript and HTML5 Canvas for rendering, with CSS for layout and HUD.",
     conclusion: [
       "Consolidated JS game loop fundamentals.",
       "Implemented real-time collision and scoring.",
@@ -1401,7 +1416,8 @@ const projectListEn: Project[] = [
     slug: "fruit-ninja",
     title: "Fruit Ninja",
     headline: "Fruit Ninja | Gesture slicing with real-time hand tracking",
-    tagline: "Gesture slicing experience using real-time hand tracking through the camera.",
+    tagline:
+      "Gesture slicing experience using real-time hand tracking through the camera.",
     role: "Developer",
     stack: [
       "React",
@@ -1481,7 +1497,8 @@ const projectListEn: Project[] = [
     slug: "neon-runner-cyber-hand",
     title: "Neon Runner: Cyber Hand",
     headline: "Neon Runner | Cyberpunk infinite runner with gesture control",
-    tagline: "Cyberpunk infinite runner with real-time hand visualization and neon atmosphere.",
+    tagline:
+      "Cyberpunk infinite runner with real-time hand visualization and neon atmosphere.",
     role: "Developer",
     stack: [
       "React",
@@ -1492,7 +1509,8 @@ const projectListEn: Project[] = [
       "Zustand",
       "MediaPipe Tasks Vision",
     ],
-    repoUrl: "https://github.com/matheussiqueira-dev/Neon-Runner-Cyber-Hand.git",
+    repoUrl:
+      "https://github.com/matheussiqueira-dev/Neon-Runner-Cyber-Hand.git",
     demo: {
       kind: "video",
       src: "/projects/neon-runner-cyber-hand/demo.mp4",
@@ -1580,7 +1598,8 @@ const projectListEn: Project[] = [
     slug: "dino-chrome",
     title: "Dino Chrome",
     headline: "Dino Chrome | 2D game in HTML5 Canvas",
-    tagline: "Clone of the Chrome Dino game to practice collision, scoring, and progression.",
+    tagline:
+      "Clone of the Chrome Dino game to practice collision, scoring, and progression.",
     role: "Developer",
     stack: ["JavaScript", "HTML5", "Canvas", "CSS"],
     repoUrl: "https://github.com/matheussiqueira-dev/Dino-Chrome.git",
@@ -1628,7 +1647,8 @@ const projectListEn: Project[] = [
       "Modular front-end structure.",
       "Rapid 2D game prototyping.",
     ],
-    techSummary: "JavaScript and HTML5 Canvas for rendering and logic, with CSS for layout.",
+    techSummary:
+      "JavaScript and HTML5 Canvas for rendering and logic, with CSS for layout.",
     conclusion: [
       "Consolidated JS game loop fundamentals.",
       "Implemented collisions and real-time scoring.",
@@ -1661,7 +1681,8 @@ const projectListEn: Project[] = [
     slug: "gestor-de-notas",
     title: "Notes Manager",
     headline: "Notes Manager | Notes management app",
-    tagline: "Notes management app to create, edit, and organize information quickly.",
+    tagline:
+      "Notes management app to create, edit, and organize information quickly.",
     role: "Developer",
     stack: ["JavaScript", "HTML5", "CSS", "LocalStorage"],
     repoUrl: "https://github.com/matheussiqueira-dev/Gestor_de_Notas",
@@ -1709,7 +1730,8 @@ const projectListEn: Project[] = [
       "UI organization focused on productivity.",
       "Solid JavaScript basics.",
     ],
-    techSummary: "Pure JavaScript web app with HTML and CSS, using LocalStorage for persistence.",
+    techSummary:
+      "Pure JavaScript web app with HTML and CSS, using LocalStorage for persistence.",
     conclusion: [
       "Implemented a simple, functional CRUD flow.",
       "Ensured local persistence without an API.",
@@ -1736,11 +1758,14 @@ const projectListEn: Project[] = [
   {
     slug: "hand-gesture-recognition-realtime",
     title: "Real-Time Hand Gesture Recognition",
-    headline: "Gesture Recognition | Computer Vision with Python and MediaPipe",
-    tagline: "Real-time computer vision system to detect hands and count fingers using webcam.",
+    headline:
+      "Gesture Recognition | Computer Vision with Python and MediaPipe",
+    tagline:
+      "Real-time computer vision system to detect hands and count fingers using webcam.",
     role: "Developer",
     stack: ["Python", "OpenCV", "MediaPipe"],
-    repoUrl: "https://github.com/matheussiqueira-dev/Reconhecimento-de-Gestos-de-Mao",
+    repoUrl:
+      "https://github.com/matheussiqueira-dev/Reconhecimento-de-Gestos-de-Mao",
     demoUrl: "https://3-d-hands.vercel.app/",
     demo: {
       kind: "video",
@@ -1770,7 +1795,9 @@ const projectListEn: Project[] = [
         },
         {
           title: "Finger Counting Logic",
-          paragraphs: ["The counting uses a heuristic approach based on landmark coordinates:"],
+          paragraphs: [
+            "The counting uses a heuristic approach based on landmark coordinates:",
+          ],
           items: [
             "4 Main Fingers: Checks the fingertip height relative to the middle joint.",
             "Thumb: Checks the horizontal position of the tip relative to the base joint.",
@@ -1779,7 +1806,9 @@ const projectListEn: Project[] = [
         },
         {
           title: "Technologies Used",
-          paragraphs: ["The project was built with a stack focused on computer vision:"],
+          paragraphs: [
+            "The project was built with a stack focused on computer vision:",
+          ],
           subSections: [
             {
               title: "Video Processing",
@@ -1801,7 +1830,9 @@ const projectListEn: Project[] = [
         },
         {
           title: "Possible Future Improvements",
-          paragraphs: ["The project was structured to allow evolution and new features:"],
+          paragraphs: [
+            "The project was structured to allow evolution and new features:",
+          ],
           items: [
             "Specific gesture recognition (peace, rock, closed fist, etc.)",
             "PC control using pyautogui (volume, mouse, shortcuts)",
@@ -1889,7 +1920,8 @@ const projectListEn: Project[] = [
       },
     ],
     seo: {
-      title: "Real-Time Hand Gesture Recognition | Python, OpenCV and MediaPipe",
+      title:
+        "Real-Time Hand Gesture Recognition | Python, OpenCV and MediaPipe",
       description:
         "Real-time computer vision system to detect hands and count fingers using Python, OpenCV, and MediaPipe. Educational project with high accuracy.",
     },
@@ -2166,3 +2198,7 @@ export const projectSlugsEn = projectsEn.map((project) => project.slug);
 
 export const getProjectBySlugEn = (slug: string) =>
   projectsEn.find((project) => project.slug === slug);
+
+
+
+

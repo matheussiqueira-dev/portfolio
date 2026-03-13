@@ -26,7 +26,9 @@ export default async function DataAnalystPage({ params }: Props) {
       <section className="page-placeholder">
         <h1>Data Analyst</h1>
         <p>
-          {locale === "pt-BR" ? "P\u00e1gina em constru\u00e7\u00e3o" : "Page under construction"}
+          {locale === "pt-BR"
+            ? "P\u00e1gina em constru\u00e7\u00e3o"
+            : "Page under construction"}
         </p>
       </section>
     </main>

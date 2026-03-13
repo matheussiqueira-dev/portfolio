@@ -1,4 +1,4 @@
-import type { DeploymentNode } from "@/data/deployment.types";
+import type { DeploymentNode } from "@/data/deployment.types"
 
 export const deploymentNodesPt: DeploymentNode[] = [
   {
@@ -16,7 +16,14 @@ export const deploymentNodesPt: DeploymentNode[] = [
       pt: "Plataforma avançada que utiliza machine learning para detectar e neutralizar sistemas de rastreamento web. Implementa várias técnicas de ofuscação de dados, mascaramento de fingerprint do navegador e roteamento de tráfego inteligente através de proxies distribuídos.",
       en: "Advanced platform that uses machine learning to detect and neutralize web tracking systems. Implements multiple data obfuscation techniques, browser fingerprint masking, and intelligent traffic routing through distributed proxies.",
     },
-    stack: ["React", "TypeScript", "Node.js", "WebSockets", "TensorFlow.js", "Docker"],
+    stack: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "WebSockets",
+      "TensorFlow.js",
+      "Docker",
+    ],
     architecture: [
       "Microserviços com orquestração Kubernetes",
       "Pipeline ML com processamento em tempo real",
@@ -86,4 +93,4 @@ export const deploymentNodesPt: DeploymentNode[] = [
       live: "https://example.com",
     },
   },
-];
+]

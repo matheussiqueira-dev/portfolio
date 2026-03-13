@@ -16,3 +16,4 @@ export async function resolveLocale(params: LocaleParams): Promise<Locale> {
 
 export const pickByLocale = <T>(locale: Locale, ptValue: T, enValue: T) =>
   locale === "en" ? enValue : ptValue;
+
