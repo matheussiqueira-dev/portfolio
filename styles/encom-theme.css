@@ -1,0 +1,43 @@
+:root {
+  --encom-black: #000000;
+  --encom-surface: #05070a;
+  --encom-panel: #0a0f1a;
+  --encom-neon: #00e5ff;
+  --encom-blue: #00b8d9;
+  --encom-cyan: #33f3ff;
+  --encom-glow: #00ffff;
+  --encom-text-primary: #e6ffff;
+  --encom-text-secondary: #8fa6b2;
+  --encom-border: #00e5ff40;
+  --encom-grid: #00e5ff20;
+  --encom-shadow: 0 0 14px rgba(0, 229, 255, 0.35);
+  --encom-panel-shadow: 0 0 10px #00e5ff55, inset 0 0 6px #00e5ff22;
+  --background: var(--encom-black);
+  --surface: var(--encom-surface);
+  --surface-elevated: #09111f;
+  --panel: var(--encom-panel);
+  --foreground: var(--encom-text-primary);
+  --muted: var(--encom-text-secondary);
+  --border: var(--encom-border);
+  --glow: var(--encom-neon);
+  --glow-soft: rgba(0, 229, 255, 0.12);
+  --success: #25d366;
+  --layout-max: 1280px;
+  --layout-padding: clamp(1rem, 2vw, 1.75rem);
+  --section-space: clamp(4rem, 8vw, 7rem);
+  --radius-panel: 1.25rem;
+  --radius-card: 1rem;
+  --shadow-panel: var(--encom-panel-shadow);
+}
+
+html[data-theme="light"] {
+  --background: #ecf7ff;
+  --surface: #f6fbff;
+  --surface-elevated: #ffffff;
+  --panel: rgba(235, 247, 255, 0.92);
+  --foreground: #021722;
+  --muted: #39515f;
+  --border: rgba(0, 184, 217, 0.3);
+  --glow-soft: rgba(0, 184, 217, 0.08);
+  --shadow-panel: 0 0 12px rgba(0, 184, 217, 0.18), inset 0 0 5px rgba(0, 184, 217, 0.08);
+}

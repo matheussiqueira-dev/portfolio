@@ -19,12 +19,7 @@ type AlternatesConfig = {
   xDefault?: string;
 };
 
-export const buildAlternates = ({
-  pt,
-  en,
-  canonical,
-  xDefault,
-}: AlternatesConfig) => ({
+export const buildAlternates = ({ pt, en, canonical, xDefault }: AlternatesConfig) => ({
   canonical: toAbsoluteUrl(canonical ?? pt),
   languages: {
     "pt-br": toAbsoluteUrl(pt),

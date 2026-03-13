@@ -21,11 +21,7 @@
         "detail": "Predictable deploys, observability, and data governance on Azure."
       }
     ],
-    "roles": [
-      "Full Stack Developer",
-      "Data Engineer",
-      "Software Engineer"
-    ],
+    "roles": ["Full Stack Developer", "Data Engineer", "Software Engineer"],
     "ariaLabel": "Main Tech Stack",
     "items": {
       "javascript": "JavaScript",

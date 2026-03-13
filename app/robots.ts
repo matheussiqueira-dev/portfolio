@@ -1,26 +1,40 @@
 import type { MetadataRoute } from "next";
-import { baseUrl } from "@/core/seo";
+
+import { siteConfig } from "@/core/config";
 
 export default function robots(): MetadataRoute.Robots {
-  const base = baseUrl.replace(/\/$/, "");
-
   return {
     rules: [
       {
         userAgent: "*",
-        allow: "/",
+        allow: [
+          "/",
+          "/en",
+          "/sobre",
+          "/projetos",
+          "/academico",
+          "/certificados",
+          "/contrate",
+          "/contato",
+          "/en/about",
+          "/en/projects",
+          "/en/academic",
+          "/en/certificates",
+          "/en/hire",
+          "/en/contact",
+        ],
         disallow: [
+          "/api/",
           "/_next/",
-          "/*favicon*",
-          "/*.woff",
-          "/*.woff2",
-          "/*.ttf",
-          "/*.otf",
-          "/*.map",
+          "/monitoring",
+          "/system",
+          "/en/system",
+          "/sentry-example-page",
+          "/matheussiqueira-dev",
         ],
       },
     ],
-    host: base,
-    sitemap: `${base}/sitemap.xml`,
+    host: siteConfig.siteUrl,
+    sitemap: `${siteConfig.siteUrl}/sitemap.xml`,
   };
 }

@@ -12,6 +12,6 @@ class SentryExampleAPIError extends Error {
 export function GET() {
   Sentry.logger.info("Sentry example API called");
   throw new SentryExampleAPIError(
-    "This error is raised on the backend called by the example page.",
+    "This error is raised on the backend called by the example page."
   );
 }

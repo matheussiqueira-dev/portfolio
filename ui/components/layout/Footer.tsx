@@ -17,9 +17,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="section-inner site-footer__inner">
         <div className="site-footer__content">
-          <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
-            {title}
-          </p>
+          <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">{title}</p>
           <p className="text-sm text-[color:var(--muted)]">{location}</p>
           <p className="text-xs text-[color:var(--muted)]">{credit}</p>
         </div>

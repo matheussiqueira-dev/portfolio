@@ -13,8 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await resolveLocale(params);
   return {
     title: locale === "pt-BR" ? "Currículo" : "Resume",
-    description:
-      locale === "pt-BR" ? "Meu currículo profissional" : "My professional resume",
+    description: locale === "pt-BR" ? "Meu currículo profissional" : "My professional resume",
   };
 }
 
@@ -32,7 +31,10 @@ export default async function ResumePage({ params }: Props) {
   };
 
   return (
-    <main className="layout-container page-shell" style={{ paddingTop: "var(--section-y)", paddingBottom: "var(--section-y)" }}>
+    <main
+      className="layout-container page-shell"
+      style={{ paddingTop: "var(--section-y)", paddingBottom: "var(--section-y)" }}
+    >
       {/* Header */}
       <header className="mb-12">
         <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] mb-2">
@@ -42,7 +44,9 @@ export default async function ResumePage({ params }: Props) {
           {data.name}
         </h1>
         <p className="text-lg text-[color:var(--accent-soft)] mb-4">{data.headline}</p>
-        <p className="text-sm text-[color:var(--muted)] max-w-3xl leading-relaxed">{data.summary}</p>
+        <p className="text-sm text-[color:var(--muted)] max-w-3xl leading-relaxed">
+          {data.summary}
+        </p>
       </header>
 
       {/* Core Skills */}
@@ -69,10 +73,17 @@ export default async function ResumePage({ params }: Props) {
         </h2>
         <div className="space-y-8">
           {data.experience.map((job) => (
-            <article key={`${job.company}-${job.period}`} className="relative pl-4 border-l-2 border-[color:var(--border)]">
+            <article
+              key={`${job.company}-${job.period}`}
+              className="relative pl-4 border-l-2 border-[color:var(--border)]"
+            >
               <div className="mb-2">
-                <h3 className="text-base font-semibold text-[color:var(--foreground)]">{job.role}</h3>
-                <p className="text-sm text-[color:var(--accent-soft)]">{job.company} — {job.location}</p>
+                <h3 className="text-base font-semibold text-[color:var(--foreground)]">
+                  {job.role}
+                </h3>
+                <p className="text-sm text-[color:var(--accent-soft)]">
+                  {job.company} — {job.location}
+                </p>
                 <p className="text-xs text-[color:var(--muted)]">{job.period}</p>
               </div>
               <ul className="space-y-1">
@@ -96,12 +107,21 @@ export default async function ResumePage({ params }: Props) {
         <div className="space-y-6">
           {data.education.groups.map((group) => (
             <div key={group.title}>
-              <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-3">{group.title}</h3>
+              <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-3">
+                {group.title}
+              </h3>
               <div className="space-y-2">
                 {group.items.map((item) => (
-                  <div key={item.course} className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 pl-4 border-l border-[color:var(--border)]">
-                    <span className="text-sm font-medium text-[color:var(--foreground)]">{item.course}</span>
-                    <span className="text-xs text-[color:var(--muted)]">{item.institution} · {item.period}</span>
+                  <div
+                    key={item.course}
+                    className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 pl-4 border-l border-[color:var(--border)]"
+                  >
+                    <span className="text-sm font-medium text-[color:var(--foreground)]">
+                      {item.course}
+                    </span>
+                    <span className="text-xs text-[color:var(--muted)]">
+                      {item.institution} · {item.period}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -133,7 +153,9 @@ export default async function ResumePage({ params }: Props) {
           </h2>
           <ul className="space-y-1">
             {data.languages.map((lang) => (
-              <li key={lang} className="text-sm text-[color:var(--muted)]">{lang}</li>
+              <li key={lang} className="text-sm text-[color:var(--muted)]">
+                {lang}
+              </li>
             ))}
           </ul>
         </section>

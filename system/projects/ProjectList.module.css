@@ -83,10 +83,17 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(120deg, transparent, color-mix(in srgb, var(--accent) 26%, transparent), transparent);
+  background: linear-gradient(
+    120deg,
+    transparent,
+    color-mix(in srgb, var(--accent) 26%, transparent),
+    transparent
+  );
   opacity: 0;
   transform: translateX(-100%);
-  transition: opacity 220ms ease, transform 380ms ease;
+  transition:
+    opacity 220ms ease,
+    transform 380ms ease;
 }
 
 .filter:hover {

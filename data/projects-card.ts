@@ -45,15 +45,7 @@ export const projectsCardPt: ProjectCard[] = [
         caption: "Efeito de invisibilidade em tempo real com calibração visual",
       },
     ],
-    stack: [
-      "React",
-      "TypeScript",
-      "Vite",
-      "Canvas API",
-      "Node.js",
-      "Fastify",
-      "Zod",
-    ],
+    stack: ["React", "TypeScript", "Vite", "Canvas API", "Node.js", "Fastify", "Zod"],
     role: "Desenvolvedor Full Stack",
     context: {
       pt: "A meta era criar um efeito de invisibilidade em tempo real que rodasse no navegador, com baixa latência, calibração visual e backend opcional para registrar resultados.",
@@ -203,7 +195,12 @@ export const projectsCardPt: ProjectCard[] = [
     architecture: {
       pt: "Sistema em camadas: extração de APIs/BD → transformação Python → armazenamento PostgreSQL → visualização Metabase",
       en: "Layered system: extraction from APIs/DB → Python transformation → PostgreSQL storage → Metabase visualization",
-      components: ["Data Extraction", "Transformation Engine", "Storage Layer", "Analytics Visualization"],
+      components: [
+        "Data Extraction",
+        "Transformation Engine",
+        "Storage Layer",
+        "Analytics Visualization",
+      ],
     },
     challenges: [
       {
@@ -289,8 +286,8 @@ export const projectsCardPt: ProjectCard[] = [
       users: "45 analyst users",
       uptime: "99.9%",
       custom: {
-        "daily_reports": "120+",
-        "avg_filters": "3.5 per session",
+        daily_reports: "120+",
+        avg_filters: "3.5 per session",
       },
     },
     links: {
@@ -366,9 +363,9 @@ export const projectsCardPt: ProjectCard[] = [
     metrics: {
       performance: "Detection latency: 85ms avg",
       custom: {
-        "fps": "30+",
-        "accuracy": "98.5%",
-        "cpu_usage": "<40%",
+        fps: "30+",
+        accuracy: "98.5%",
+        cpu_usage: "<40%",
       },
     },
     links: {
@@ -474,8 +471,8 @@ function toProjectCard(
   locale: "pt" | "en",
   index: number
 ): ProjectCard {
-  const ptProject = locale === "pt" ? sourceProject : translatedProject ?? sourceProject;
-  const enProject = locale === "en" ? sourceProject : translatedProject ?? sourceProject;
+  const ptProject = locale === "pt" ? sourceProject : (translatedProject ?? sourceProject);
+  const enProject = locale === "en" ? sourceProject : (translatedProject ?? sourceProject);
 
   const ptThumbnail = getThumbnail(ptProject);
   const enThumbnail = getThumbnail(enProject);
@@ -519,77 +516,10 @@ function toProjectCard(
       live: externalDemo ? demoLink : undefined,
       demo: !externalDemo ? demoLink : undefined,
       caseStudy:
-        locale === "en"
-          ? "/en/projects/" + sourceProject.slug
-          : "/projetos/" + sourceProject.slug,
+        locale === "en" ? "/en/projects/" + sourceProject.slug : "/projetos/" + sourceProject.slug,
     },
     featured: index < 6,
     order: index + 1,
-  };
-}
-
-function getHighlightedRepositoryCard(locale: "pt" | "en"): ProjectCard {
-  const isPt = locale === "pt";
-
-  return {
-    slug: "encom-gesture-console",
-    id: "encom-gesture-console",
-    title: {
-      pt: "ENCOM Gesture Console",
-      en: "ENCOM Gesture Console",
-    },
-    tagline: {
-      pt: "Console futurista com detecção de gestos pela webcam, telemetria visual e efeitos 3D em tempo real",
-      en: "Futuristic console with webcam gesture detection, visual telemetry, and real-time 3D effects",
-    },
-    description: {
-      pt: "Experiência client-side inspirada em Tron Legacy para reconhecer sinais das mãos e exibir feedback operacional em tempo real.",
-      en: "Client-side experience inspired by Tron Legacy to recognize hand signs and surface real-time operational feedback.",
-    },
-    fullDescription: {
-      pt: "Aplicação web publicada na Vercel que combina MediaPipe Hands, TensorFlow.js e Three.js para capturar sinais das mãos, renderizar efeitos especiais em painéis separados e exibir métricas operacionais em uma interface ENCOM. O projeto roda 100% no navegador e inclui fluxo dedicado para treinamento de novos gestos.",
-      en: "Web application deployed on Vercel that combines MediaPipe Hands, TensorFlow.js, and Three.js to capture hand signs, render special effects in separate panels, and display operational metrics in an ENCOM-inspired interface. The project runs entirely in the browser and includes a dedicated flow for training new gestures.",
-    },
-    thumbnail: {
-      pt: "/thumbnails/pt/portal-econ.png",
-      en: "/thumbnails/en/portal-econ.png",
-    },
-    videos: [
-      {
-        type: "local",
-        src: "/projects/portal-econ/demo.mp4",
-        poster: "/thumbnails/pt/portal-econ.png",
-        caption: "Portal Econ demo",
-      },
-    ],
-    stack: ["JavaScript", "TensorFlow.js", "MediaPipe Hands", "Three.js", "HTML", "CSS", "Vercel"],
-    role: isPt
-      ? "Desenvolvedor Frontend e IA no navegador"
-      : "Frontend and in-browser AI Developer",
-    context: {
-      pt: "O objetivo foi criar um console visual de alta presença para demos de visão computacional, separando captura da webcam, renderer 3D e indicadores de sessão em uma mesma experiência.",
-      en: "The goal was to create a high-presence visual console for computer vision demos, separating webcam capture, 3D rendering, and session indicators within the same experience.",
-    },
-    highlights: isPt
-      ? [
-          "Detecção de gestos em tempo real usando webcam no navegador",
-          "Interface ENCOM com painéis dedicados para captura e efeitos 3D",
-          "Treinador visual para coletar amostras, validar e exportar modelos",
-          "Deploy estático na Vercel com experiência pronta para demonstração",
-        ]
-      : [
-          "Real-time gesture detection through the browser webcam",
-          "ENCOM-style interface with dedicated panels for capture and 3D effects",
-          "Visual trainer to collect samples, validate, and export models",
-          "Static Vercel deployment ready for demos and evaluations",
-        ],
-    links: {
-      repo: "https://github.com/matheussiqueira-dev/Portal-Econ.git",
-      demo: "https://portaldedominiosecon.vercel.app",
-    },
-    featured: true,
-    order: 0,
-    status: "active",
   };
 }
 
@@ -600,12 +530,9 @@ export function getProjectsCard(locale: "pt" | "en") {
   const source = locale === "pt" ? projects : projectsEn;
   const translated = locale === "pt" ? projectsBySlugEn : projectsBySlugPt;
 
-  return [
-    getHighlightedRepositoryCard(locale),
-    ...source.map((project, index) =>
-      toProjectCard(project, translated.get(project.slug), locale, index)
-    ),
-  ];
+  return source.map((project, index) =>
+    toProjectCard(project, translated.get(project.slug), locale, index)
+  );
 }
 
 /**

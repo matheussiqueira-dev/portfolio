@@ -96,7 +96,9 @@
   color: var(--text-primary);
   white-space: normal;
   overflow-wrap: anywhere;
-  transition: border-color 180ms ease, background-color 180ms ease;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease;
 }
 
 .tag:hover {

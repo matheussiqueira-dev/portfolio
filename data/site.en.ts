@@ -41,18 +41,15 @@ export const siteEn: SiteContent = {
     title: "Data, BI, infrastructure, and technology applied to decision-making",
     summary: {
       title: "About / Introduction",
-      body:
-        "I work in data analysis and Business Intelligence with experience in both public and private sectors. I worked as a Commercial Assistant at Grupo Moura, as a Compensation Analyst at the Jaboatão dos Guararapes City Hall, and I am currently a Data Analysis Intern at the Jaboatão dos Guararapes Treasury Department. My work is focused on KPIs, operational efficiency, and data-driven decision-making.",
+      body: "I work in data analysis and Business Intelligence with experience in both public and private sectors. I worked as a Commercial Assistant at Grupo Moura, as a Compensation Analyst at the Jaboatão dos Guararapes City Hall, and I am currently a Data Analysis Intern at the Jaboatão dos Guararapes Treasury Department. My work is focused on KPIs, operational efficiency, and data-driven decision-making.",
     },
     who: {
       title: "Who I am",
-      body:
-        "I’m a Data Analyst with a hybrid profile (data + development + infrastructure). I’m a Computer Science undergraduate and hold postgraduate studies in Artificial Intelligence and Data Science, Information Security, and Cloud & Edge Computing, plus a Full Stack AI technical program and a degree in Marketing. I work with analytical mindset, technical rigor, and clear communication to translate business needs into reliable data solutions.",
+      body: "I’m a Data Analyst with a hybrid profile (data + development + infrastructure). I’m a Computer Science undergraduate and hold postgraduate studies in Artificial Intelligence and Data Science, Information Security, and Cloud & Edge Computing, plus a Full Stack AI technical program and a degree in Marketing. I work with analytical mindset, technical rigor, and clear communication to translate business needs into reliable data solutions.",
     },
     complexData: {
       title: "Experience with large-scale complex data",
-      body:
-        "Experience with Business Intelligence for public management, strategic Power BI dashboards, and large-scale fiscal data analysis. I handle public and organizational data from multiple sources, structuring ETL/ELT, Python automation, and data governance to support decisions and operations.",
+      body: "Experience with Business Intelligence for public management, strategic Power BI dashboards, and large-scale fiscal data analysis. I handle public and organizational data from multiple sources, structuring ETL/ELT, Python automation, and data governance to support decisions and operations.",
     },
     differential: {
       title: "Differentiator",
@@ -224,8 +221,7 @@ export const siteEn: SiteContent = {
       },
       {
         title: "Executive BI and storytelling",
-        description:
-          "Power BI dashboards focused on clarity, targets, and continuous monitoring.",
+        description: "Power BI dashboards focused on clarity, targets, and continuous monitoring.",
         bullets: [
           "KPIs by area and goal",
           "Leadership-ready narratives",
@@ -234,8 +230,7 @@ export const siteEn: SiteContent = {
       },
       {
         title: "Automation and pipelines",
-        description:
-          "Python/SQL ETL/ELT and integrations to reduce rework and speed analysis.",
+        description: "Python/SQL ETL/ELT and integrations to reduce rework and speed analysis.",
         bullets: [
           "Orchestration and alerts",
           "APIs and integrations",
@@ -415,8 +410,7 @@ export const siteEn: SiteContent = {
     },
     brief: {
       title: "Quick project brief",
-      description:
-        "Fill the key fields and generate a ready-to-send summary.",
+      description: "Fill the key fields and generate a ready-to-send summary.",
       fields: {
         name: {
           label: "Name",
@@ -451,12 +445,7 @@ export const siteEn: SiteContent = {
         "Python automation",
         "Data advisory",
       ],
-      timelines: [
-        "Urgent (up to 2 weeks)",
-        "Short (1 month)",
-        "Mid (2-3 months)",
-        "Ongoing",
-      ],
+      timelines: ["Urgent (up to 2 weeks)", "Short (1 month)", "Mid (2-3 months)", "Ongoing"],
       budgets: ["Up to $1k", "$1k - $3k", "$3k - $6k", "$6k+"],
       summaryTitle: "Generated summary",
       summaryHint: "Review before sending. You can copy or send directly.",

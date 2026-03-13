@@ -22,8 +22,7 @@ type FloatStyle = CSSProperties & {
 const labels = {
   pt: {
     title: "Meus Projetos",
-    description:
-      "Portf\u00f3lio de casos de sucesso em desenvolvimento full stack, dados e IA",
+    description: "Portf\u00f3lio de casos de sucesso em desenvolvimento full stack, dados e IA",
     filterLabel: "Filtrar por stack",
     allProjects: "Todos os projetos",
     emptyState: "Nenhum projeto encontrado",
@@ -85,8 +84,7 @@ export default function ProjectList({ projects, locale, allLabel }: Props) {
     return projects.filter((project) => project.stack.includes(selectedStack));
   }, [projects, selectedStack]);
 
-  const resultLabel =
-    filteredProjects.length === 1 ? t.singularResult : t.pluralResult;
+  const resultLabel = filteredProjects.length === 1 ? t.singularResult : t.pluralResult;
 
   return (
     <section className={styles.container}>
@@ -99,9 +97,7 @@ export default function ProjectList({ projects, locale, allLabel }: Props) {
         <span className={styles.filterLabel}>{t.filterLabel}</span>
         <div className={styles.filters}>
           <button
-            className={`${styles.filter} ${
-              selectedStack === null ? styles.active : ""
-            }`}
+            className={`${styles.filter} ${selectedStack === null ? styles.active : ""}`}
             style={getFloatStyle(allLabel ?? t.allProjects, 0)}
             onClick={() => setSelectedStack(null)}
             aria-pressed={selectedStack === null}
@@ -114,9 +110,7 @@ export default function ProjectList({ projects, locale, allLabel }: Props) {
           {allStacks.map((stack, stackIndex) => (
             <button
               key={stack}
-              className={`${styles.filter} ${
-                selectedStack === stack ? styles.active : ""
-              }`}
+              className={`${styles.filter} ${selectedStack === stack ? styles.active : ""}`}
               style={getFloatStyle(stack, stackIndex + 1)}
               onClick={() => setSelectedStack(stack)}
               aria-pressed={selectedStack === stack}
@@ -132,12 +126,7 @@ export default function ProjectList({ projects, locale, allLabel }: Props) {
       {filteredProjects.length > 0 ? (
         <div className={styles.grid}>
           {filteredProjects.map((project, idx) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              locale={locale}
-              index={idx}
-            />
+            <ProjectCard key={project.id} project={project} locale={locale} index={idx} />
           ))}
         </div>
       ) : (

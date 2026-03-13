@@ -28,7 +28,14 @@ export const routing = defineRouting({
       "pt-BR": "/projetos/[slug]",
       en: "/projects/[slug]",
     },
-    "/certificates": "/certificates",
+    "/certificates": {
+      "pt-BR": "/certificados",
+      en: "/certificates",
+    },
+    "/contact": {
+      "pt-BR": "/contato",
+      en: "/contact",
+    },
     "/resume": "/resume",
     "/data-analyst": "/data-analyst",
     "/power-bi": "/power-bi",
@@ -44,5 +51,4 @@ export const defaultLocale = routing.defaultLocale;
 
 export type Locale = (typeof locales)[number];
 
-export const isValidLocale = (value: string): value is Locale =>
-  locales.includes(value as Locale);
+export const isValidLocale = (value: string): value is Locale => locales.includes(value as Locale);

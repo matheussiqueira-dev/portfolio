@@ -1,144 +1,48 @@
 import type { MetadataRoute } from "next";
-import { projects } from "@/data/projects";
-import { projectsEn } from "@/data/projects.en";
-import { baseUrl } from "@/core/seo";
+
+import { siteConfig } from "@/core/config";
+import { allProjects } from "@/core/projects";
+import { getProjectRoute, getRoute } from "@/system/i18n";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const base = baseUrl.replace(/\/$/, "");
+  const staticUrls = [
+    getRoute("home", "pt-BR"),
+    getRoute("home", "en"),
+    getRoute("about", "pt-BR"),
+    getRoute("about", "en"),
+    getRoute("projects", "pt-BR"),
+    getRoute("projects", "en"),
+    getRoute("academic", "pt-BR"),
+    getRoute("academic", "en"),
+    getRoute("certificates", "pt-BR"),
+    getRoute("certificates", "en"),
+    getRoute("hire", "pt-BR"),
+    getRoute("hire", "en"),
+    getRoute("contact", "pt-BR"),
+    getRoute("contact", "en"),
+  ];
 
   return [
-    {
-      url: `${base}/`,
+    ...staticUrls.map((path, index) => ({
+      url: `${siteConfig.siteUrl}${path}`,
       lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 1,
-    },
-    {
-      url: `${base}/en`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.9,
-    },
-    {
-      url: `${base}/contrate`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${base}/en/hire`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${base}/projetos`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    },
-    {
-      url: `${base}/en/projects`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    },
-    {
-      url: `${base}/demos`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    },
-    {
-      url: `${base}/en/demos`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    },
-    {
-      url: `${base}/certificates`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    },
-    {
-      url: `${base}/en/certificates`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    },
-    {
-      url: `${base}/academico`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    },
-    {
-      url: `${base}/en/academic`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    },
-    {
-      url: `${base}/data-analyst`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    },
-    {
-      url: `${base}/en/data-analyst`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    },
-    {
-      url: `${base}/power-bi`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    },
-    {
-      url: `${base}/en/power-bi`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    },
-    {
-      url: `${base}/sql-python`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    },
-    {
-      url: `${base}/en/sql-python`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    },
-    ...projects.map((project) => ({
-      url: `${base}/projetos/${project.slug}`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
+      changeFrequency: "weekly" as const,
+      priority: index < 2 ? 1 : 0.8,
     })),
-    ...projectsEn.map((project) => ({
-      url: `${base}/en/projects/${project.slug}`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    })),
-    {
-      url: `${base}/resume`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${base}/en/resume`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
+    ...allProjects.flatMap((project) => [
+      {
+        url: `${siteConfig.siteUrl}${getProjectRoute("pt-BR", project.slug)}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: project.featured ? 0.9 : 0.7,
+      },
+      {
+        url: `${siteConfig.siteUrl}${getProjectRoute("en", project.slug)}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: project.featured ? 0.85 : 0.65,
+      },
+    ]),
   ];
 }
