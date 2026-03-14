@@ -11,11 +11,5 @@ interface ProjectsContentProps {
 export function ProjectsContent({ projects, locale }: ProjectsContentProps) {
   const site = locale === "pt" ? sitePt : siteEn;
 
-  return (
-    <ProjectsCommandCenter
-      projects={projects}
-      locale={locale}
-      copy={site.projects}
-    />
-  );
+  return <ProjectsCommandCenter projects={projects} locale={locale} copy={site.projects} />;
 }

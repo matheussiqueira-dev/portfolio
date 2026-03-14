@@ -1,4 +1,3 @@
-
 @import "tailwindcss";
 
 :root {
@@ -162,7 +161,9 @@ body {
   line-height: 1.6;
   position: relative;
   overflow-x: clip;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
 }
 
 :is(.layout-container, .section-inner) {
@@ -187,7 +188,11 @@ body::before {
     radial-gradient(50% 40% at 92% 10%, var(--bg-radial-2), transparent 65%),
     linear-gradient(to right, var(--bg-grid) 1px, transparent 1px),
     linear-gradient(to bottom, var(--bg-grid) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 140px 140px, 140px 140px;
+  background-size:
+    100% 100%,
+    100% 100%,
+    140px 140px,
+    140px 140px;
   pointer-events: none;
   opacity: 0.75;
 }
@@ -224,7 +229,12 @@ body::after {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(8, 11, 16, 0.92) 0%, rgba(8, 11, 16, 0.65) 55%, rgba(8, 11, 16, 0.95) 100%),
+    linear-gradient(
+      180deg,
+      rgba(8, 11, 16, 0.92) 0%,
+      rgba(8, 11, 16, 0.65) 55%,
+      rgba(8, 11, 16, 0.95) 100%
+    ),
     radial-gradient(40% 35% at 18% 12%, rgba(240, 179, 90, 0.18), transparent 60%);
 }
 
@@ -277,14 +287,13 @@ body::after {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(
-      24px circle at var(--cursor-x) var(--cursor-y),
-      rgba(0, 240, 255, 0.12) 0%,
-      rgba(0, 174, 239, 0.08) 42%,
-      rgba(0, 119, 255, 0.04) 68%,
-      rgba(0, 0, 0, 0) 86%
-    );
+  background: radial-gradient(
+    24px circle at var(--cursor-x) var(--cursor-y),
+    rgba(0, 240, 255, 0.12) 0%,
+    rgba(0, 174, 239, 0.08) 42%,
+    rgba(0, 119, 255, 0.04) 68%,
+    rgba(0, 0, 0, 0) 86%
+  );
   filter: blur(3px);
 }
 
@@ -503,14 +512,15 @@ body::after {
     --card-shadow: var(--shadow-soft);
     position: relative;
     border: 1px solid var(--card-border);
-    background:
-      linear-gradient(155deg, rgba(255, 255, 255, 0.05), transparent 55%),
-      var(--card-bg);
+    background: linear-gradient(155deg, rgba(255, 255, 255, 0.05), transparent 55%), var(--card-bg);
     border-radius: var(--card-radius);
     padding: var(--card-padding);
     box-shadow: var(--card-shadow);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease,
-      transform 0.2s ease, background-color 0.25s ease;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease,
+      background-color 0.25s ease;
   }
 
   .card-muted {
@@ -528,7 +538,10 @@ body::after {
   }
 
   .card-hover {
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
   }
 
   .card-hover:hover {
@@ -687,8 +700,7 @@ body::after {
     border: 1px solid var(--border);
     border-radius: 0.95rem;
     background:
-      linear-gradient(160deg, rgba(255, 255, 255, 0.04), transparent 60%),
-      var(--surface-muted);
+      linear-gradient(160deg, rgba(255, 255, 255, 0.04), transparent 60%), var(--surface-muted);
     padding: 0.85rem;
     height: 100%;
   }
@@ -699,7 +711,10 @@ body::after {
     justify-content: space-between;
     gap: 1rem;
     text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
   }
 
   .card-link:hover {
@@ -739,7 +754,9 @@ body::after {
     font-size: 0.68rem;
     color: var(--muted);
     background: color-mix(in srgb, var(--surface) 70%, transparent);
-    transition: border-color 0.2s ease, color 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease;
   }
 
   .chip:hover {
@@ -1123,8 +1140,11 @@ body::after {
     font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.02em;
-    transition: transform 0.2s ease, border-color 0.2s ease,
-      color 0.2s ease, background-color 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease,
+      background-color 0.2s ease;
   }
 
   .hero-stack__icon {
@@ -1237,8 +1257,8 @@ body::after {
     --card-radius: 1.2rem;
     border-color: rgba(52, 62, 82, 0.85);
     box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28);
-    background: linear-gradient(145deg, rgba(240, 179, 90, 0.12), transparent 70%),
-      var(--surface-muted);
+    background:
+      linear-gradient(145deg, rgba(240, 179, 90, 0.12), transparent 70%), var(--surface-muted);
   }
 
   .stack-highlight__label {
@@ -1308,7 +1328,9 @@ body::after {
     font-weight: 600;
     letter-spacing: 0.01em;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease;
     outline: none;
   }
 
@@ -1341,7 +1363,9 @@ body::after {
     letter-spacing: 0.04em;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
     box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
     z-index: 2;
   }
@@ -1400,7 +1424,10 @@ body::after {
     font-size: 0.72rem;
     color: var(--muted);
     background: color-mix(in srgb, var(--surface) 65%, transparent);
-    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease,
+      background-color 0.2s ease;
   }
 
   .filter-pill.is-active {
@@ -1766,7 +1793,11 @@ body::after {
     text-decoration: none;
     border-color: color-mix(in srgb, var(--contact-brand) 58%, var(--card-border));
     background:
-      linear-gradient(145deg, color-mix(in srgb, var(--contact-brand) 28%, transparent), transparent 72%),
+      linear-gradient(
+        145deg,
+        color-mix(in srgb, var(--contact-brand) 28%, transparent),
+        transparent 72%
+      ),
       var(--surface);
     transition:
       transform 0.24s ease,
@@ -1784,7 +1815,9 @@ body::after {
     background: linear-gradient(120deg, transparent 15%, var(--contact-sheen) 45%, transparent 75%);
     opacity: 0;
     transform: translateX(-14%);
-    transition: opacity 0.24s ease, transform 0.3s ease;
+    transition:
+      opacity 0.24s ease,
+      transform 0.3s ease;
   }
 
   .contact-card--interactive .contact-card__value {
@@ -1838,8 +1871,7 @@ body::after {
     --contact-brand: #24292f;
     --contact-ink: #f6f8fa;
     background:
-      linear-gradient(145deg, rgba(36, 41, 47, 0.7), rgba(56, 64, 73, 0.42)),
-      var(--surface);
+      linear-gradient(145deg, rgba(36, 41, 47, 0.7), rgba(56, 64, 73, 0.42)), var(--surface);
   }
 
   .contact-card--whatsapp {
@@ -1859,22 +1891,18 @@ body::after {
   html[data-theme="light"] .contact-card--linkedin {
     --contact-ink: #084c93;
     background:
-      linear-gradient(145deg, rgba(10, 102, 194, 0.22), rgba(10, 102, 194, 0.06) 72%),
-      #f8fbff;
+      linear-gradient(145deg, rgba(10, 102, 194, 0.22), rgba(10, 102, 194, 0.06) 72%), #f8fbff;
   }
 
   html[data-theme="light"] .contact-card--github {
     --contact-ink: #1f2328;
-    background:
-      linear-gradient(145deg, rgba(36, 41, 47, 0.2), rgba(36, 41, 47, 0.05) 70%),
-      #f7f8fa;
+    background: linear-gradient(145deg, rgba(36, 41, 47, 0.2), rgba(36, 41, 47, 0.05) 70%), #f7f8fa;
   }
 
   html[data-theme="light"] .contact-card--whatsapp {
     --contact-ink: #0e5e2e;
     background:
-      linear-gradient(145deg, rgba(37, 211, 102, 0.26), rgba(37, 211, 102, 0.08) 72%),
-      #f4fff8;
+      linear-gradient(145deg, rgba(37, 211, 102, 0.26), rgba(37, 211, 102, 0.08) 72%), #f4fff8;
   }
 
   html[data-theme="light"] .contact-card__value--whatsapp {
@@ -1889,7 +1917,9 @@ body::after {
     text-transform: uppercase;
     letter-spacing: 0.18em;
     color: var(--muted);
-    transition: border-color 0.2s ease, color 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease;
   }
 
   .copy-button[data-state="copied"] {
@@ -1972,8 +2002,13 @@ body::after {
     content: "";
     position: absolute;
     inset: 0;
-    background:
-      repeating-linear-gradient(120deg, rgba(15, 18, 26, 0.12) 0, rgba(15, 18, 26, 0.12) 1px, transparent 1px, transparent 12px);
+    background: repeating-linear-gradient(
+      120deg,
+      rgba(15, 18, 26, 0.12) 0,
+      rgba(15, 18, 26, 0.12) 1px,
+      transparent 1px,
+      transparent 12px
+    );
     opacity: 0.35;
   }
 
@@ -2040,8 +2075,7 @@ body::after {
   --encom-cursor-active-size: 26px;
   --encom-cursor-click-size: 14px;
   --encom-shadow-stack:
-    0 0 3px rgba(0, 240, 255, 0.45),
-    0 0 8px rgba(0, 174, 239, 0.28),
+    0 0 3px rgba(0, 240, 255, 0.45), 0 0 8px rgba(0, 174, 239, 0.28),
     0 0 14px rgba(0, 119, 255, 0.18);
 
   /* Backward-compatible aliases for existing TRON components */
@@ -2067,10 +2101,11 @@ body::after {
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%) translateZ(0);
-  transition: width 0.15s ease-out,
-              height 0.15s ease-out,
-              border 0.15s ease-out,
-              box-shadow 0.2s ease-out;
+  transition:
+    width 0.15s ease-out,
+    height 0.15s ease-out,
+    border 0.15s ease-out,
+    box-shadow 0.2s ease-out;
   z-index: 9999;
   will-change: transform, opacity, left, top;
   background: radial-gradient(
@@ -2144,7 +2179,11 @@ body::after {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(circle at 18% 14%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 55%),
+    radial-gradient(
+      circle at 18% 14%,
+      color-mix(in srgb, var(--accent) 12%, transparent),
+      transparent 55%
+    ),
     var(--bg-primary);
   display: flex;
   align-items: center;
@@ -2299,7 +2338,9 @@ body::after {
   html.reveal-ready [data-reveal] {
     opacity: 0;
     transform: translateY(14px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
     transition-delay: var(--reveal-delay, 0ms);
   }
 
@@ -2348,12 +2389,3 @@ body::after {
     white-space: normal;
   }
 }
-
-
-
-
-
-
-
-
-

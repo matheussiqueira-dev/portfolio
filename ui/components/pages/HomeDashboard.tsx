@@ -1,5 +1,12 @@
 import Image from "next/image";
-import { FiArrowRight, FiArrowUpRight, FiCpu, FiDatabase, FiLayers, FiShield } from "react-icons/fi";
+import {
+  FiArrowRight,
+  FiArrowUpRight,
+  FiCpu,
+  FiDatabase,
+  FiLayers,
+  FiShield,
+} from "react-icons/fi";
 
 import type { ProjectCard } from "@/data/projects-card.types";
 import type { SiteContent } from "@/data/site.types";
@@ -43,7 +50,8 @@ const PANEL_STATUS = {
     archive: "Arquivo",
     archiveDescription: "Curriculo, trilha academica e certificados prontos para consulta.",
     projectsSummary: "Ativos monitorados",
-    projectsDescription: "Projetos selecionados como ativos tecnicos com leitura rapida para recrutadores e liderancas.",
+    projectsDescription:
+      "Projetos selecionados como ativos tecnicos com leitura rapida para recrutadores e liderancas.",
     aboutTelemetry: "Perfil hibrido",
     processTelemetry: "Fluxo operacional",
     archiveTitle: "Arquivo de conhecimento",
@@ -62,7 +70,8 @@ const PANEL_STATUS = {
     archive: "Archive",
     archiveDescription: "Resume, academic track, and certificates ready for review.",
     projectsSummary: "Monitored assets",
-    projectsDescription: "Selected projects positioned as technical assets for recruiters and leadership teams.",
+    projectsDescription:
+      "Selected projects positioned as technical assets for recruiters and leadership teams.",
     aboutTelemetry: "Hybrid profile",
     processTelemetry: "Operational flow",
     archiveTitle: "Knowledge Archive",
@@ -110,11 +119,7 @@ export default function HomeDashboard({ site, projects, locale }: Props) {
           <div className="command-surface__shell">
             <div className="mb-5 flex flex-wrap gap-2">
               {HERO_TAGS[locale].map((tag, index) => (
-                <TelemetryPill
-                  key={tag}
-                  label={tag}
-                  tone={index === 0 ? "success" : "accent"}
-                />
+                <TelemetryPill key={tag} label={tag} tone={index === 0 ? "success" : "accent"} />
               ))}
             </div>
 
@@ -122,9 +127,7 @@ export default function HomeDashboard({ site, projects, locale }: Props) {
               <div className="grid gap-5">
                 <p className="section-eyebrow">{hero.eyebrow}</p>
                 <div className="grid gap-4">
-                  <h1 className="section-title !text-[clamp(3rem,7vw,5.75rem)]">
-                    {hero.title}
-                  </h1>
+                  <h1 className="section-title !text-[clamp(3rem,7vw,5.75rem)]">{hero.title}</h1>
                   <p className="max-w-3xl font-[family-name:var(--font-ui)] text-xl font-semibold uppercase tracking-[0.16em] text-[color:var(--accent-soft)]">
                     {hero.subtitle}
                   </p>
@@ -223,11 +226,7 @@ export default function HomeDashboard({ site, projects, locale }: Props) {
 
               <div className="command-grid sm:grid-cols-2 lg:grid-cols-1">
                 {about.snapshot.items.map((item) => (
-                  <StatTile
-                    key={item.value}
-                    label={item.label}
-                    value={item.value}
-                  />
+                  <StatTile key={item.value} label={item.label} value={item.value} />
                 ))}
               </div>
             </div>
@@ -285,9 +284,7 @@ export default function HomeDashboard({ site, projects, locale }: Props) {
 
               <article className="rounded-[1.2rem] border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
                 <p className="section-eyebrow">{about.who.title}</p>
-                <p className="mt-3 text-sm leading-7 text-[color:var(--muted)]">
-                  {about.who.body}
-                </p>
+                <p className="mt-3 text-sm leading-7 text-[color:var(--muted)]">{about.who.body}</p>
               </article>
             </div>
 
@@ -382,7 +379,10 @@ export default function HomeDashboard({ site, projects, locale }: Props) {
               <p className="section-eyebrow">{services.processTitle}</p>
               <div className="mt-4 grid gap-4">
                 {services.process.map((step, index) => (
-                  <div key={step.title} className="grid gap-2 rounded-[1rem] border border-[color:var(--border)] bg-[color:rgba(0,229,255,0.03)] p-4">
+                  <div
+                    key={step.title}
+                    className="grid gap-2 rounded-[1rem] border border-[color:var(--border)] bg-[color:rgba(0,229,255,0.03)] p-4"
+                  >
                     <p className="font-[family-name:var(--font-display)] text-xl uppercase tracking-[0.12em] text-[color:var(--accent)]">
                       {String(index + 1).padStart(2, "0")}
                     </p>
@@ -447,10 +447,7 @@ export default function HomeDashboard({ site, projects, locale }: Props) {
             </p>
           </Link>
 
-          <Link
-            href="/certificates"
-            className="command-surface rounded-[1.2rem] p-5 no-underline"
-          >
+          <Link href="/certificates" className="command-surface rounded-[1.2rem] p-5 no-underline">
             <p className="section-eyebrow">{nav.certificates}</p>
             <p className="mt-3 font-[family-name:var(--font-display)] text-xl uppercase tracking-[0.12em] text-[color:var(--foreground-strong)]">
               {panelText.certificates}
@@ -485,8 +482,7 @@ export default function HomeDashboard({ site, projects, locale }: Props) {
         <div className="grid gap-4 xl:grid-cols-3">
           {projects.map((project) => {
             const title = locale === "pt" ? project.title.pt : project.title.en;
-            const description =
-              locale === "pt" ? project.description.pt : project.description.en;
+            const description = locale === "pt" ? project.description.pt : project.description.en;
             const categories = inferProjectCategories(project).slice(0, 2);
             const status = inferProjectStatus(project);
             const thumbnail = locale === "pt" ? project.thumbnail.pt : project.thumbnail.en;
@@ -545,7 +541,7 @@ export default function HomeDashboard({ site, projects, locale }: Props) {
                     >
                       {projectsCopy.caseLabel}
                     </Link>
-                    {project.links.repo ?? project.links.demo ?? project.links.live ? (
+                    {(project.links.repo ?? project.links.demo ?? project.links.live) ? (
                       <a
                         href={project.links.repo ?? project.links.demo ?? project.links.live}
                         target="_blank"
@@ -579,20 +575,14 @@ export default function HomeDashboard({ site, projects, locale }: Props) {
         <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(260px,0.9fr)]">
           <div className="grid gap-4 md:grid-cols-2">
             <StatTile label={contact.cards.email} value="matheussiqueirahub@gmail.com" />
-            <StatTile
-              label={contact.cards.whatsapp}
-              value="+55 81 99920-3683"
-              tone="accent"
-            />
+            <StatTile label={contact.cards.whatsapp} value="+55 81 99920-3683" tone="accent" />
             <StatTile label={contact.cards.linkedin} value="/in/matheussiqueira-dev" />
             <StatTile label={contact.cards.github} value="/matheussiqueira-dev" />
           </div>
 
           <div className="grid gap-4 rounded-[1.25rem] border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
             <p className="section-eyebrow">{contact.ctaSubtitle}</p>
-            <p className="text-sm leading-7 text-[color:var(--muted)]">
-              {contact.ctaTitle}
-            </p>
+            <p className="text-sm leading-7 text-[color:var(--muted)]">{contact.ctaTitle}</p>
             <div className="flex flex-wrap gap-3">
               <a
                 href="mailto:matheussiqueirahub@gmail.com"

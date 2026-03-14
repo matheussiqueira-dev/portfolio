@@ -36,12 +36,8 @@ export default function DeploymentNodesList() {
   const locale = useLocale();
   const isPortuguese = locale === "pt-BR";
 
-  const nodes: DeploymentNode[] = isPortuguese
-    ? deploymentNodesPt
-    : deploymentNodesEn;
-  const dictionary = isPortuguese
-    ? deploymentDictionaryPt
-    : deploymentDictionaryEn;
+  const nodes: DeploymentNode[] = isPortuguese ? deploymentNodesPt : deploymentNodesEn;
+  const dictionary = isPortuguese ? deploymentDictionaryPt : deploymentDictionaryEn;
 
   return (
     <section className={styles.deploymentSection}>

@@ -45,15 +45,7 @@ export const projectsCardPt: ProjectCard[] = [
         caption: "Efeito de invisibilidade em tempo real com calibração visual",
       },
     ],
-    stack: [
-      "React",
-      "TypeScript",
-      "Vite",
-      "Canvas API",
-      "Node.js",
-      "Fastify",
-      "Zod",
-    ],
+    stack: ["React", "TypeScript", "Vite", "Canvas API", "Node.js", "Fastify", "Zod"],
     role: "Desenvolvedor Full Stack",
     context: {
       pt: "A meta era criar um efeito de invisibilidade em tempo real que rodasse no navegador, com baixa latência, calibração visual e backend opcional para registrar resultados.",
@@ -203,7 +195,12 @@ export const projectsCardPt: ProjectCard[] = [
     architecture: {
       pt: "Sistema em camadas: extração de APIs/BD → transformação Python → armazenamento PostgreSQL → visualização Metabase",
       en: "Layered system: extraction from APIs/DB → Python transformation → PostgreSQL storage → Metabase visualization",
-      components: ["Data Extraction", "Transformation Engine", "Storage Layer", "Analytics Visualization"],
+      components: [
+        "Data Extraction",
+        "Transformation Engine",
+        "Storage Layer",
+        "Analytics Visualization",
+      ],
     },
     challenges: [
       {
@@ -289,8 +286,8 @@ export const projectsCardPt: ProjectCard[] = [
       users: "45 analyst users",
       uptime: "99.9%",
       custom: {
-        "daily_reports": "120+",
-        "avg_filters": "3.5 per session",
+        daily_reports: "120+",
+        avg_filters: "3.5 per session",
       },
     },
     links: {
@@ -366,9 +363,9 @@ export const projectsCardPt: ProjectCard[] = [
     metrics: {
       performance: "Detection latency: 85ms avg",
       custom: {
-        "fps": "30+",
-        "accuracy": "98.5%",
-        "cpu_usage": "<40%",
+        fps: "30+",
+        accuracy: "98.5%",
+        cpu_usage: "<40%",
       },
     },
     links: {
@@ -474,8 +471,8 @@ function toProjectCard(
   locale: "pt" | "en",
   index: number
 ): ProjectCard {
-  const ptProject = locale === "pt" ? sourceProject : translatedProject ?? sourceProject;
-  const enProject = locale === "en" ? sourceProject : translatedProject ?? sourceProject;
+  const ptProject = locale === "pt" ? sourceProject : (translatedProject ?? sourceProject);
+  const enProject = locale === "en" ? sourceProject : (translatedProject ?? sourceProject);
 
   const ptThumbnail = getThumbnail(ptProject);
   const enThumbnail = getThumbnail(enProject);
@@ -519,9 +516,7 @@ function toProjectCard(
       live: externalDemo ? demoLink : undefined,
       demo: !externalDemo ? demoLink : undefined,
       caseStudy:
-        locale === "en"
-          ? "/en/projects/" + sourceProject.slug
-          : "/projetos/" + sourceProject.slug,
+        locale === "en" ? "/en/projects/" + sourceProject.slug : "/projetos/" + sourceProject.slug,
     },
     featured: index < 6,
     order: index + 1,

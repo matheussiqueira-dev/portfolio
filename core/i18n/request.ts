@@ -11,12 +11,9 @@ const messagesByLocale = {
 export default getRequestConfig(async ({ requestLocale }) => {
   const requested = await requestLocale;
 
-  const locale = requested && isValidLocale(requested)
-    ? requested
-    : routing.defaultLocale;
+  const locale = requested && isValidLocale(requested) ? requested : routing.defaultLocale;
 
-  const messages = (await messagesByLocale[locale]())
-    .default as unknown as AbstractIntlMessages;
+  const messages = (await messagesByLocale[locale]()).default as unknown as AbstractIntlMessages;
 
   return {
     locale,

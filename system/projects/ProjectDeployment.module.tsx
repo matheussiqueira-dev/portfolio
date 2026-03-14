@@ -1,36 +1,26 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import type { DeploymentNode, ProjectDictionary } from "@/data/deployment.types"
-import styles from "./ProjectDeployment.module.css"
+import { useState } from "react";
+import Image from "next/image";
+import type { DeploymentNode, ProjectDictionary } from "@/data/deployment.types";
+import styles from "./ProjectDeployment.module.css";
 
 interface Props {
-  project: DeploymentNode
-  locale: "pt-BR" | "en"
-  dictionary: ProjectDictionary
+  project: DeploymentNode;
+  locale: "pt-BR" | "en";
+  dictionary: ProjectDictionary;
 }
 
-export default function ProjectDeployment({
-  project,
-  locale,
-  dictionary,
-}: Props) {
-  const [expanded, setExpanded] = useState(false)
-  const isPortuguese = locale === "pt-BR"
-  const title = isPortuguese ? project.title.pt : project.title.en
-  const shortDesc = isPortuguese
-    ? project.shortDescription.pt
-    : project.shortDescription.en
-  const fullDesc = isPortuguese
-    ? project.fullDescription.pt
-    : project.fullDescription.en
-  const thumbnail = isPortuguese ? project.thumbnail.pt : project.thumbnail.en
+export default function ProjectDeployment({ project, locale, dictionary }: Props) {
+  const [expanded, setExpanded] = useState(false);
+  const isPortuguese = locale === "pt-BR";
+  const title = isPortuguese ? project.title.pt : project.title.en;
+  const shortDesc = isPortuguese ? project.shortDescription.pt : project.shortDescription.en;
+  const fullDesc = isPortuguese ? project.fullDescription.pt : project.fullDescription.en;
+  const thumbnail = isPortuguese ? project.thumbnail.pt : project.thumbnail.en;
 
   return (
-    <article
-      className={`${styles.deploymentCard} ${expanded ? styles.expanded : ""}`}
-    >
+    <article className={`${styles.deploymentCard} ${expanded ? styles.expanded : ""}`}>
       {/* HEADER - Clickable area to expand/collapse */}
       <button
         className={styles.deploymentHeader}
@@ -59,9 +49,7 @@ export default function ProjectDeployment({
           <p className={styles.shortDesc}>{shortDesc}</p>
 
           {/* Status Badge */}
-          <span
-            className={`${styles.status} ${styles[project.status.toLowerCase()]}`}
-          >
+          <span className={`${styles.status} ${styles[project.status.toLowerCase()]}`}>
             {project.status}
           </span>
         </div>
@@ -82,11 +70,7 @@ export default function ProjectDeployment({
       </button>
 
       {/* EXPANDED AREA */}
-      <div
-        className={`${styles.deploymentExpanded} ${
-          expanded ? styles.open : ""
-        }`}
-      >
+      <div className={`${styles.deploymentExpanded} ${expanded ? styles.open : ""}`}>
         <div className={styles.expandedContent}>
           {/* Full Description */}
           <section className={styles.descriptionSection}>
@@ -144,7 +128,7 @@ export default function ProjectDeployment({
           </div>
 
           {/* Links Section */}
-          {project.links && Object.values(project.links).some(val => val) && (
+          {project.links && Object.values(project.links).some((val) => val) && (
             <div className={styles.linksSection}>
               <div className={styles.linksList}>
                 {project.links.github && (
@@ -183,5 +167,5 @@ export default function ProjectDeployment({
         </div>
       </div>
     </article>
-  )
+  );
 }

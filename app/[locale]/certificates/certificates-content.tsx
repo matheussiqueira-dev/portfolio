@@ -170,7 +170,9 @@ export default function CertificatesContent({ content, certificates }: Props) {
                     <ul className="mt-3 space-y-2 pl-3 border-l border-[color:var(--border)]">
                       {cert.details.modules.map((mod) => (
                         <li key={mod.title}>
-                          <span className="font-medium text-[color:var(--foreground)]">{mod.title}</span>
+                          <span className="font-medium text-[color:var(--foreground)]">
+                            {mod.title}
+                          </span>
                           {mod.subtitle && (
                             <span className="text-[color:var(--muted)]"> — {mod.subtitle}</span>
                           )}

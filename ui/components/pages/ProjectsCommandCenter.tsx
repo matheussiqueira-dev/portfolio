@@ -42,11 +42,7 @@ type Props = {
   copy: ProjectsCopy;
 };
 
-export default function ProjectsCommandCenter({
-  locale,
-  projects,
-  copy,
-}: Props) {
+export default function ProjectsCommandCenter({ locale, projects, copy }: Props) {
   const reduceMotion = useReducedMotion();
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
@@ -397,18 +393,30 @@ export default function ProjectsCommandCenter({
             <StatTile
               label={locale === "pt" ? "Ativos" : "Assets"}
               value={String(projects.length).padStart(2, "0")}
-              detail={locale === "pt" ? "Projetos monitorados no sistema." : "Projects monitored inside the system."}
+              detail={
+                locale === "pt"
+                  ? "Projetos monitorados no sistema."
+                  : "Projects monitored inside the system."
+              }
               tone="accent"
             />
             <StatTile
               label={locale === "pt" ? "Categorias" : "Categories"}
               value={String(categories.length).padStart(2, "0")}
-              detail={locale === "pt" ? "Capacidades organizadas por dominio tecnico." : "Capabilities organized by technical domain."}
+              detail={
+                locale === "pt"
+                  ? "Capacidades organizadas por dominio tecnico."
+                  : "Capabilities organized by technical domain."
+              }
             />
             <StatTile
               label={locale === "pt" ? "Pipeline" : "Pipeline"}
               value={locale === "pt" ? "Expandir -> avaliar" : "Expand -> review"}
-              detail={locale === "pt" ? "Cada ativo abre contexto, stack, desafios e links." : "Every asset reveals context, stack, challenges, and links."}
+              detail={
+                locale === "pt"
+                  ? "Cada ativo abre contexto, stack, desafios e links."
+                  : "Every asset reveals context, stack, challenges, and links."
+              }
             />
           </div>
         </div>

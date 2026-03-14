@@ -28,8 +28,14 @@ export default function SystemsOverviewPage({ locale, totals, services }: Props)
         }
         telemetry={
           <>
-            <TelemetryPill label={locale === "pt" ? "Core modules online" : "Core modules online"} tone="success" />
-            <TelemetryPill label={locale === "pt" ? "Deployment ready" : "Deployment ready"} tone="accent" />
+            <TelemetryPill
+              label={locale === "pt" ? "Core modules online" : "Core modules online"}
+              tone="success"
+            />
+            <TelemetryPill
+              label={locale === "pt" ? "Deployment ready" : "Deployment ready"}
+              tone="accent"
+            />
           </>
         }
       >

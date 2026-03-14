@@ -232,25 +232,21 @@ export default function MobileMenu({
             aria-modal="true"
             aria-label={menuLabel}
             aria-hidden={!open}
-            className={`mobile-menu-panel ${
-              open ? "translate-x-0" : "translate-x-full"
-            }`}
+            className={`mobile-menu-panel ${open ? "translate-x-0" : "translate-x-full"}`}
             onClick={(event) => event.stopPropagation()}
           >
             <div className="mobile-menu-panel__head">
-              <p className="mobile-menu-panel__title">
-                {menuLabel}
-              </p>
+              <p className="mobile-menu-panel__title">{menuLabel}</p>
               <button
                 type="button"
                 onClick={handleClose}
                 className="mobile-menu-close focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
-                >
-                  <span className="sr-only">{closeLabel}</span>
-                  <span aria-hidden="true" className="text-lg leading-none">
-                    ×
-                  </span>
-                </button>
+              >
+                <span className="sr-only">{closeLabel}</span>
+                <span aria-hidden="true" className="text-lg leading-none">
+                  ×
+                </span>
+              </button>
             </div>
 
             <div className="mobile-menu-panel__body">

@@ -44,5 +44,4 @@ export const defaultLocale = routing.defaultLocale;
 
 export type Locale = (typeof locales)[number];
 
-export const isValidLocale = (value: string): value is Locale =>
-  locales.includes(value as Locale);
+export const isValidLocale = (value: string): value is Locale => locales.includes(value as Locale);

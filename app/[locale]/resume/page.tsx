@@ -17,8 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await resolveLocale(params);
   return {
     title: locale === "pt-BR" ? "Currículo" : "Resume",
-    description:
-      locale === "pt-BR" ? "Meu currículo profissional" : "My professional resume",
+    description: locale === "pt-BR" ? "Meu currículo profissional" : "My professional resume",
   };
 }
 
@@ -61,14 +60,26 @@ export default async function ResumePage({ params }: Props) {
           </div>
 
           <div className="grid gap-4">
-            <StatTile label={t.experience} value={String(data.experience.length).padStart(2, "0")} tone="accent" />
-            <StatTile label={t.education} value={String(data.education.groups.length).padStart(2, "0")} />
+            <StatTile
+              label={t.experience}
+              value={String(data.experience.length).padStart(2, "0")}
+              tone="accent"
+            />
+            <StatTile
+              label={t.education}
+              value={String(data.education.groups.length).padStart(2, "0")}
+            />
             <StatTile label={t.languages} value={data.languages.join(" / ")} />
           </div>
         </div>
       </SectionFrame>
 
-      <SectionFrame eyebrow={t.experience} title={t.experience} description={data.contact.description} className="mt-5">
+      <SectionFrame
+        eyebrow={t.experience}
+        title={t.experience}
+        description={data.contact.description}
+        className="mt-5"
+      >
         <div className="grid gap-4">
           {data.experience.map((job) => (
             <article
@@ -92,7 +103,12 @@ export default async function ResumePage({ params }: Props) {
         </div>
       </SectionFrame>
 
-      <SectionFrame eyebrow={t.education} title={t.education} description={data.summary} className="mt-5">
+      <SectionFrame
+        eyebrow={t.education}
+        title={t.education}
+        description={data.summary}
+        className="mt-5"
+      >
         <div className="grid gap-4 xl:grid-cols-3">
           {data.education.groups.map((group) => (
             <article
@@ -115,7 +131,12 @@ export default async function ResumePage({ params }: Props) {
         </div>
       </SectionFrame>
 
-      <SectionFrame eyebrow={t.certifications} title={t.contact} description={data.contact.description} className="mt-5">
+      <SectionFrame
+        eyebrow={t.certifications}
+        title={t.contact}
+        description={data.contact.description}
+        className="mt-5"
+      >
         <div className="grid gap-5 xl:grid-cols-2">
           <article className="rounded-[1.2rem] border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
             <p className="section-eyebrow">{t.certifications}</p>

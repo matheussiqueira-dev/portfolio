@@ -11,9 +11,7 @@ const handleI18nRouting = createMiddleware(routing);
 export function proxy(request: NextRequest) {
   const host = request.nextUrl.hostname.toLowerCase();
   const isLocal =
-    host.startsWith("localhost") ||
-    host.startsWith("127.") ||
-    host.startsWith("0.0.0.0");
+    host.startsWith("localhost") || host.startsWith("127.") || host.startsWith("0.0.0.0");
   const isPreview = host.endsWith(VERCEL_PREVIEW_SUFFIX);
   const isProduction = process.env.VERCEL_ENV === "production";
 
@@ -34,4 +32,3 @@ export function proxy(request: NextRequest) {
 export const config = {
   matcher: ["/((?!api|_next|monitoring|.*\\..*).*)"],
 };
-

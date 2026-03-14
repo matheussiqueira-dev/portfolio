@@ -53,9 +53,7 @@ export default function ProjectCardDetails({ project, locale }: Props) {
     <div className={styles.details}>
       <section className={styles.section}>
         <p className={styles.description}>{description || context}</p>
-        {context && context !== description && (
-          <p className={styles.context}>{context}</p>
-        )}
+        {context && context !== description && <p className={styles.context}>{context}</p>}
       </section>
 
       {primaryVideo?.type === "local" ? (
@@ -72,9 +70,7 @@ export default function ProjectCardDetails({ project, locale }: Props) {
               <source src={primaryVideo.src} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            {primaryVideo.caption && (
-              <p className={styles.caption}>{primaryVideo.caption}</p>
-            )}
+            {primaryVideo.caption && <p className={styles.caption}>{primaryVideo.caption}</p>}
           </div>
         </section>
       ) : null}

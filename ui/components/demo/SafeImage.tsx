@@ -7,13 +7,7 @@ type SafeImageProps = ImageProps & {
   fallbackSrc?: ImageProps["src"];
 };
 
-export function SafeImage({
-  alt,
-  src,
-  fallbackSrc,
-  onError,
-  ...props
-}: SafeImageProps) {
+export function SafeImage({ alt, src, fallbackSrc, onError, ...props }: SafeImageProps) {
   const [hasFailed, setHasFailed] = useState(false);
 
   const imageSrc = useMemo(() => {

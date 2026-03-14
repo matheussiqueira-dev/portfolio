@@ -94,10 +94,7 @@ export default function CapabilityRoutePage({
                           tone={status === "production_ready" ? "success" : "accent"}
                         />
                         {categories.map((item) => (
-                          <TelemetryPill
-                            key={item}
-                            label={getProjectCategoryLabel(item, locale)}
-                          />
+                          <TelemetryPill key={item} label={getProjectCategoryLabel(item, locale)} />
                         ))}
                       </div>
 
@@ -147,13 +144,21 @@ export default function CapabilityRoutePage({
             <StatTile
               label={locale === "pt" ? "Curadoria" : "Curation"}
               value={locale === "pt" ? "Filtragem tematica" : "Thematic filtering"}
-              detail={locale === "pt" ? "Ativos selecionados por stack, arquitetura e impacto." : "Assets selected by stack, architecture, and impact."}
+              detail={
+                locale === "pt"
+                  ? "Ativos selecionados por stack, arquitetura e impacto."
+                  : "Assets selected by stack, architecture, and impact."
+              }
               tone="accent"
             />
             <StatTile
               label={locale === "pt" ? "Uso" : "Use case"}
               value={locale === "pt" ? "Leitura executiva" : "Executive review"}
-              detail={locale === "pt" ? "Cada modulo resume contexto, stack e proximos passos." : "Each module summarizes context, stack, and next steps."}
+              detail={
+                locale === "pt"
+                  ? "Cada modulo resume contexto, stack e proximos passos."
+                  : "Each module summarizes context, stack, and next steps."
+              }
             />
           </div>
         </div>

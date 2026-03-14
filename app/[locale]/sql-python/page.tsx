@@ -13,8 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await resolveLocale(params);
   return {
     title: "SQL Python",
-    description:
-      locale === "pt-BR" ? "Projetos SQL e Python" : "SQL and Python projects",
+    description: locale === "pt-BR" ? "Projetos SQL e Python" : "SQL and Python projects",
   };
 }
 
@@ -43,7 +42,9 @@ export default async function SqlPythonPage({ params }: Props) {
           ? "Modulo orientado a ETL, APIs, validacao e processamento orientado a operacao."
           : "A module focused on ETL, APIs, validation, and operation-oriented processing."
       }
-      focusAreas={uiLocale === "pt" ? ["SQL", "Python", "ETL", "APIs"] : ["SQL", "Python", "ETL", "APIs"]}
+      focusAreas={
+        uiLocale === "pt" ? ["SQL", "Python", "ETL", "APIs"] : ["SQL", "Python", "ETL", "APIs"]
+      }
       projects={projects}
     />
   );

@@ -13,8 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await resolveLocale(params);
   return {
     title: "Power BI",
-    description:
-      locale === "pt-BR" ? "Projetos Power BI" : "Power BI projects",
+    description: locale === "pt-BR" ? "Projetos Power BI" : "Power BI projects",
   };
 }
 
@@ -23,9 +22,7 @@ export default async function PowerBiPage({ params }: Props) {
   const uiLocale = locale === "en" ? "en" : "pt";
   const projects = getProjectsCard(uiLocale).filter((project) =>
     project.stack.some((item) =>
-      ["power bi", "dax", "power query", "excel", "data analysis"].includes(
-        item.toLowerCase()
-      )
+      ["power bi", "dax", "power query", "excel", "data analysis"].includes(item.toLowerCase())
     )
   );
 
@@ -43,7 +40,11 @@ export default async function PowerBiPage({ params }: Props) {
           ? "Interface dedicada a ativos de BI, storytelling e monitoramento de metas."
           : "A dedicated interface for BI assets, storytelling, and target monitoring."
       }
-      focusAreas={uiLocale === "pt" ? ["Power BI", "DAX", "Power Query", "Storytelling"] : ["Power BI", "DAX", "Power Query", "Storytelling"]}
+      focusAreas={
+        uiLocale === "pt"
+          ? ["Power BI", "DAX", "Power Query", "Storytelling"]
+          : ["Power BI", "DAX", "Power Query", "Storytelling"]
+      }
       projects={projects}
     />
   );

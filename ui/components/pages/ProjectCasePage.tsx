@@ -37,7 +37,13 @@ const renderMedia = (src: string, alt: string, type?: "image" | "gif" | "video")
 
   return (
     <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[1rem]">
-      <Image src={src} alt={alt} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-cover"
+        sizes="(max-width: 1024px) 100vw, 50vw"
+      />
     </div>
   );
 };
@@ -76,15 +82,15 @@ export default function ProjectCasePage({ project, locale, copy }: Props) {
 
   return (
     <main className="layout-container page-shell command-page">
-      <section data-reveal className="grid gap-5 pb-[var(--section-y)] xl:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)]">
+      <section
+        data-reveal
+        className="grid gap-5 pb-[var(--section-y)] xl:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)]"
+      >
         <div className="command-surface">
           <div className="command-surface__shell">
             <div className="mb-4 flex flex-wrap gap-2">
               {categories.map((category) => (
-                <TelemetryPill
-                  key={category}
-                  label={getProjectCategoryLabel(category, locale)}
-                />
+                <TelemetryPill key={category} label={getProjectCategoryLabel(category, locale)} />
               ))}
               <TelemetryPill
                 label={getProjectStatusLabel(status, locale)}
@@ -93,9 +99,7 @@ export default function ProjectCasePage({ project, locale, copy }: Props) {
             </div>
 
             <p className="section-eyebrow">{project.role}</p>
-            <h1 className="section-title mt-4 !text-[clamp(2.6rem,5vw,4.8rem)]">
-              {project.title}
-            </h1>
+            <h1 className="section-title mt-4 !text-[clamp(2.6rem,5vw,4.8rem)]">{project.title}</h1>
             <p className="mt-4 max-w-4xl font-[family-name:var(--font-ui)] text-xl font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-soft)]">
               {project.tagline}
             </p>

@@ -61,10 +61,7 @@ const stripLocalePrefix = (pathname: string): string => {
   return normalized;
 };
 
-const matchPattern = (
-  pathname: string,
-  pattern: string
-): Record<string, string> | null => {
+const matchPattern = (pathname: string, pattern: string): Record<string, string> | null => {
   const keys: string[] = [];
   const regexSource = pattern
     .replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
@@ -86,9 +83,7 @@ const matchPattern = (
 };
 
 const fillPattern = (pattern: string, params: Record<string, string>): string =>
-  pattern.replace(/\[([^\]]+)\]/g, (_, key: string) =>
-    encodeURIComponent(params[key] ?? "")
-  );
+  pattern.replace(/\[([^\]]+)\]/g, (_, key: string) => encodeURIComponent(params[key] ?? ""));
 
 const translateLocalizedPathname = (
   pathname: string,
@@ -98,8 +93,7 @@ const translateLocalizedPathname = (
   const entries = Object.values(routing.pathnames) as LocalizedRoute[];
 
   for (const entry of entries) {
-    const sourcePattern =
-      typeof entry === "string" ? entry : entry[fromLocale];
+    const sourcePattern = typeof entry === "string" ? entry : entry[fromLocale];
     const targetPattern = typeof entry === "string" ? entry : entry[toLocale];
 
     if (!sourcePattern || !targetPattern) {
@@ -191,4 +185,3 @@ export default function LanguageSwitch() {
     </div>
   );
 }
-

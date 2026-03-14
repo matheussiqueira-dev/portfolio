@@ -7,19 +7,10 @@ type Props = {
   className?: string;
 };
 
-export function TelemetryPill({
-  label,
-  tone = "default",
-  icon,
-  className,
-}: Props) {
+export function TelemetryPill({ label, tone = "default", icon, className }: Props) {
   return (
     <span
-      className={[
-        "telemetry-pill",
-        tone !== "default" ? `telemetry-pill--${tone}` : "",
-        className,
-      ]
+      className={["telemetry-pill", tone !== "default" ? `telemetry-pill--${tone}` : "", className]
         .filter(Boolean)
         .join(" ")}
     >

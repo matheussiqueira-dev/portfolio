@@ -16,10 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await resolveLocale(params);
   return {
     title: locale === "pt-BR" ? "Acadêmico" : "Academic",
-    description:
-      locale === "pt-BR"
-        ? "Educação e certificações"
-        : "Education and certifications",
+    description: locale === "pt-BR" ? "Educação e certificações" : "Education and certifications",
   };
 }
 

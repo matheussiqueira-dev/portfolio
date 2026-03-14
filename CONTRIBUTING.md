@@ -1,6 +1,7 @@
 # Contributing
 
 ## Development Flow
+
 1. Create a branch from `main`.
 2. Implement focused changes.
 3. Run quality checks:
@@ -10,7 +11,9 @@
 4. Open a Pull Request with clear scope and validation evidence.
 
 ## Commit Convention
+
 Use conventional prefixes:
+
 - `feat:`
 - `fix:`
 - `refactor:`
@@ -22,6 +25,7 @@ Use conventional prefixes:
 Reference template: `.github/commit-template.md`
 
 ## Guardrails
+
 - Do not break i18n (`pt/en`) routes.
 - Do not break dark/light mode.
 - Do not remove tracking or analytics tags.

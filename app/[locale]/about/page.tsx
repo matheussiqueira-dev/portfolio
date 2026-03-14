@@ -46,8 +46,7 @@ const seo: { pt: SeoLocale; en: SeoLocale } = {
       "Profissional de tecnologia especializado em engenharia de software, análise de dados e desenvolvimento de soluções orientadas a impacto real.",
   },
   en: {
-    title:
-      "About Matheus Siqueira | Software Engineer & Data Analyst driven by AI",
+    title: "About Matheus Siqueira | Software Engineer & Data Analyst driven by AI",
     description:
       "Meet Matheus Siqueira, a tech professional specialised in Software Engineering, Business Intelligence, Data Science and AI-driven process automation.",
     keywords: [
@@ -110,11 +109,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: `${baseUrl}/og.png`,
           width: 1200,
           height: 630,
-          alt: pickByLocale(
-            locale,
-            "Sobre Matheus Siqueira",
-            "About Matheus Siqueira"
-          ),
+          alt: pickByLocale(locale, "Sobre Matheus Siqueira", "About Matheus Siqueira"),
         },
       ],
     },
@@ -174,12 +169,7 @@ const content = {
     differentiatorTitle: "O Que Me Diferencia",
     differentiatorIntro:
       "Grande parte dos profissionais especializa-se em apenas uma camada tecnológica. Meu diferencial está na integração entre:",
-    differentiatorAreas: [
-      "Dados",
-      "Desenvolvimento",
-      "Infraestrutura",
-      "Estratégia de negócio",
-    ],
+    differentiatorAreas: ["Dados", "Desenvolvimento", "Infraestrutura", "Estratégia de negócio"],
     differentiatorClosing:
       "Essa combinação permite reduzir dependências técnicas, acelerar entregas e aumentar previsibilidade de resultados.",
     visionTitle: "Visão de Futuro",
@@ -257,12 +247,7 @@ const content = {
     differentiatorTitle: "What Sets Me Apart",
     differentiatorIntro:
       "Most professionals specialise in a single technology layer. My differentiator lies in integrating:",
-    differentiatorAreas: [
-      "Data",
-      "Development",
-      "Infrastructure",
-      "Business strategy",
-    ],
+    differentiatorAreas: ["Data", "Development", "Infrastructure", "Business strategy"],
     differentiatorClosing:
       "This combination reduces technical dependencies, accelerates delivery and increases result predictability.",
     visionTitle: "Future Vision",
@@ -329,7 +314,10 @@ export default async function AboutPage({ params }: Props) {
       />
 
       <main className="layout-container page-shell command-page">
-        <section data-reveal className="grid gap-5 pb-[var(--section-y)] xl:grid-cols-[minmax(0,1.15fr)_minmax(300px,0.85fr)]">
+        <section
+          data-reveal
+          className="grid gap-5 pb-[var(--section-y)] xl:grid-cols-[minmax(0,1.15fr)_minmax(300px,0.85fr)]"
+        >
           <div className="command-surface">
             <div className="command-surface__shell">
               <div className="mb-5 flex flex-wrap gap-2">
@@ -411,9 +399,7 @@ export default async function AboutPage({ params }: Props) {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-              <p className="mt-4 text-sm leading-8 text-[color:var(--muted)]">
-                {t.mindsetClosing}
-              </p>
+              <p className="mt-4 text-sm leading-8 text-[color:var(--muted)]">{t.mindsetClosing}</p>
             </article>
 
             <StatTile
@@ -471,9 +457,7 @@ export default async function AboutPage({ params }: Props) {
                 className="rounded-[1.2rem] border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5"
               >
                 <p className="section-eyebrow">{group.label}</p>
-                <p className="mt-3 text-sm leading-8 text-[color:var(--muted)]">
-                  {group.items}
-                </p>
+                <p className="mt-3 text-sm leading-8 text-[color:var(--muted)]">{group.items}</p>
               </article>
             ))}
           </div>

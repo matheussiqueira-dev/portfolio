@@ -12,9 +12,7 @@ export default function Footer() {
 
   const title = isEn ? "Lower diagnostics" : "Diagnosticos inferiores";
   const location = isEn ? "Brazil | Remote operations" : "Brasil | Operacoes remotas";
-  const credit = isEn
-    ? "Created by Matheus Siqueira"
-    : "Criado por Matheus Siqueira";
+  const credit = isEn ? "Created by Matheus Siqueira" : "Criado por Matheus Siqueira";
   const emailLabel = isEn ? "Email" : "E-mail";
   const officialSite = "www.matheussiqueira.dev";
 
@@ -22,19 +20,14 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="section-inner site-footer__inner">
         <div className="site-footer__content">
-          <p className="section-eyebrow">
-            {title}
-          </p>
+          <p className="section-eyebrow">{title}</p>
           <p className="text-lg font-[family-name:var(--font-display)] uppercase tracking-[0.14em] text-[color:var(--foreground-strong)]">
             {credit}
           </p>
           <p className="text-sm text-[color:var(--muted)]">{location}</p>
           <p className="text-sm text-[color:var(--muted)]">{officialSite}</p>
           <div className="flex flex-wrap gap-2 pt-2">
-            <TelemetryPill
-              label={isEn ? "Deployment ready" : "Deployment pronto"}
-              tone="success"
-            />
+            <TelemetryPill label={isEn ? "Deployment ready" : "Deployment pronto"} tone="success" />
             <TelemetryPill
               label={isEn ? "Analytics synchronized" : "Analytics sincronizado"}
               tone="accent"

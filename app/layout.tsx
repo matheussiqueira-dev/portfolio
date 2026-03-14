@@ -39,8 +39,7 @@ const jetBrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const siteTitle =
-  "Matheus Siqueira | Desenvolvedor Full Stack & Engenharia de Dados";
+const siteTitle = "Matheus Siqueira | Desenvolvedor Full Stack & Engenharia de Dados";
 const siteDescription =
   "Desenvolvedor Full Stack especializado em React, TypeScript, Python, SQL, Engenharia de Dados, Power BI e Azure Cloud.";
 
@@ -88,8 +87,7 @@ const personJsonLd = {
   "@id": `${baseUrl}/#person`,
   name: "Matheus Siqueira",
   jobTitle: "Full Stack Developer, Data Engineer",
-  description:
-    "Desenvolvedor Full Stack e Data Engineer focado em aplicações web, dados e cloud",
+  description: "Desenvolvedor Full Stack e Data Engineer focado em aplicações web, dados e cloud",
   email: "matheussiqueirahub@gmail.com",
   telephone: "+55 81 99920-3683",
   url: baseUrl,
@@ -167,11 +165,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" data-theme="dark" suppressHydrationWarning>
       <head>
@@ -221,11 +215,7 @@ export default function RootLayout({
           }}
         />
         {/* Preload critical resources */}
-        <link
-          rel="preload"
-          as="image"
-          href="/profile.jpg"
-        />
+        <link rel="preload" as="image" href="/profile.jpg" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
@@ -250,12 +240,8 @@ export default function RootLayout({
         </a>
         <JsonLd data={[websiteJsonLd, personJsonLd]} />
         <AppVisualEffects />
-        <PageTransition>
-          {children}
-        </PageTransition>
+        <PageTransition>{children}</PageTransition>
       </body>
     </html>
   );
 }
-
-

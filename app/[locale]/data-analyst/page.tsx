@@ -46,7 +46,11 @@ export default async function DataAnalystPage({ params }: Props) {
           ? "Selecao de ativos orientados a modelagem, dashboards e pipelines analiticos."
           : "Selected assets focused on modeling, dashboards, and analytical pipelines."
       }
-      focusAreas={uiLocale === "pt" ? ["SQL", "Python", "Power BI", "KPIs"] : ["SQL", "Python", "Power BI", "KPIs"]}
+      focusAreas={
+        uiLocale === "pt"
+          ? ["SQL", "Python", "Power BI", "KPIs"]
+          : ["SQL", "Python", "Power BI", "KPIs"]
+      }
       projects={projects}
     />
   );

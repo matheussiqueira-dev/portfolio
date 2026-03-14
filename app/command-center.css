@@ -93,9 +93,7 @@ body::after {
   border: 1px solid var(--border);
   border-radius: 1.75rem;
   padding: clamp(1.5rem, 3vw, 2.5rem);
-  background:
-    linear-gradient(180deg, rgba(0, 229, 255, 0.03), transparent 40%),
-    var(--surface);
+  background: linear-gradient(180deg, rgba(0, 229, 255, 0.03), transparent 40%), var(--surface);
   box-shadow: var(--shadow-soft), var(--panel-glow);
 }
 
@@ -142,8 +140,7 @@ body::after {
   border: 1px solid var(--border);
   background:
     linear-gradient(180deg, rgba(0, 229, 255, 0.035), transparent 28%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 100%),
-    var(--surface);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 100%), var(--surface);
   box-shadow: var(--shadow-soft), var(--panel-glow);
 }
 
@@ -151,8 +148,7 @@ body::after {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.08), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.08), transparent);
   transform: translateX(-100%);
   animation: command-scan 14s linear infinite;
   pointer-events: none;
@@ -244,7 +240,8 @@ body::after {
   border-radius: 1.2rem;
   border: 1px solid var(--border);
   padding: 1rem 1rem 1.1rem;
-  background: linear-gradient(180deg, rgba(0, 229, 255, 0.03), transparent 45%), var(--surface-muted);
+  background:
+    linear-gradient(180deg, rgba(0, 229, 255, 0.03), transparent 45%), var(--surface-muted);
 }
 
 .stat-tile--accent {
@@ -289,8 +286,11 @@ body::after {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(140px circle at var(--x, 50%) var(--y, 50%), rgba(122, 231, 255, 0.16), transparent 55%);
+  background: radial-gradient(
+    140px circle at var(--x, 50%) var(--y, 50%),
+    rgba(122, 231, 255, 0.16),
+    transparent 55%
+  );
   opacity: 0;
   transition: opacity 0.2s ease;
 }
@@ -333,13 +333,11 @@ body::after {
   z-index: 50;
   border-bottom: 1px solid rgba(0, 229, 255, 0.12);
   backdrop-filter: blur(18px) saturate(140%);
-  background:
-    linear-gradient(180deg, rgba(3, 7, 16, 0.94) 0%, rgba(3, 7, 16, 0.78) 100%);
+  background: linear-gradient(180deg, rgba(3, 7, 16, 0.94) 0%, rgba(3, 7, 16, 0.78) 100%);
 }
 
 html[data-theme="light"] .site-header {
-  background:
-    linear-gradient(180deg, rgba(246, 252, 255, 0.92) 0%, rgba(231, 246, 255, 0.82) 100%);
+  background: linear-gradient(180deg, rgba(246, 252, 255, 0.92) 0%, rgba(231, 246, 255, 0.82) 100%);
 }
 
 .site-header::after {
@@ -374,7 +372,12 @@ html[data-theme="light"] .site-header {
   width: 0.8rem;
   height: 0.8rem;
   border-radius: 999px;
-  background: radial-gradient(circle at 35% 35%, #ffffff 0%, var(--accent) 45%, var(--accent-secondary) 100%);
+  background: radial-gradient(
+    circle at 35% 35%,
+    #ffffff 0%,
+    var(--accent) 45%,
+    var(--accent-secondary) 100%
+  );
   box-shadow: 0 0 18px rgba(0, 229, 255, 0.45);
 }
 
@@ -425,7 +428,10 @@ html[data-theme="light"] .site-header {
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .site-nav__link {
@@ -596,9 +602,7 @@ html[data-theme="light"] .mobile-menu-panel {
   border: 1px solid var(--border);
   border-radius: 1.9rem;
   padding: clamp(1.2rem, 2.5vw, 2rem);
-  background:
-    linear-gradient(180deg, rgba(0, 229, 255, 0.03), transparent 36%),
-    var(--surface);
+  background: linear-gradient(180deg, rgba(0, 229, 255, 0.03), transparent 36%), var(--surface);
   box-shadow: var(--shadow-soft), var(--panel-glow);
 }
 
@@ -606,14 +610,13 @@ html[data-theme="light"] .mobile-menu-panel {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      transparent 0,
-      transparent 42px,
-      rgba(122, 231, 255, 0.045) 42px,
-      rgba(122, 231, 255, 0.045) 43px
-    );
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 42px,
+    rgba(122, 231, 255, 0.045) 42px,
+    rgba(122, 231, 255, 0.045) 43px
+  );
   opacity: 0.5;
   pointer-events: none;
 }
@@ -752,14 +755,13 @@ html[data-theme="light"] .floating-dock__actions {
 }
 
 .system-background__scan {
-  background:
-    repeating-linear-gradient(
-      180deg,
-      transparent 0,
-      transparent 6px,
-      var(--scanline) 6px,
-      var(--scanline) 7px
-    );
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0,
+    transparent 6px,
+    var(--scanline) 6px,
+    var(--scanline) 7px
+  );
   opacity: 0.28;
 }
 
@@ -773,7 +775,11 @@ html[data-theme="light"] .floating-dock__actions {
 
 .system-background__traces {
   background:
-    radial-gradient(circle at var(--cursor-x) var(--cursor-y), rgba(122, 231, 255, 0.09), transparent 16%),
+    radial-gradient(
+      circle at var(--cursor-x) var(--cursor-y),
+      rgba(122, 231, 255, 0.09),
+      transparent 16%
+    ),
     linear-gradient(90deg, transparent 0%, rgba(122, 231, 255, 0.04) 30%, transparent 60%);
   opacity: 0.65;
 }
@@ -786,8 +792,16 @@ html[data-theme="light"] .floating-dock__actions {
 
 .system-background__reactive {
   background:
-    radial-gradient(220px circle at var(--cursor-x) var(--cursor-y), rgba(0, 229, 255, 0.12), transparent 58%),
-    radial-gradient(360px circle at var(--cursor-x) var(--cursor-y), rgba(0, 157, 255, 0.06), transparent 72%);
+    radial-gradient(
+      220px circle at var(--cursor-x) var(--cursor-y),
+      rgba(0, 229, 255, 0.12),
+      transparent 58%
+    ),
+    radial-gradient(
+      360px circle at var(--cursor-x) var(--cursor-y),
+      rgba(0, 157, 255, 0.06),
+      transparent 72%
+    );
   opacity: 0.95;
 }
 
@@ -809,8 +823,7 @@ html[data-theme="light"] .floating-dock__actions {
   inset: 0;
   z-index: 80;
   background:
-    linear-gradient(180deg, rgba(0, 229, 255, 0.08), transparent 48%),
-    rgba(2, 6, 15, 0.45);
+    linear-gradient(180deg, rgba(0, 229, 255, 0.08), transparent 48%), rgba(2, 6, 15, 0.45);
   backdrop-filter: blur(8px);
   animation: page-wipe 0.6s ease;
   pointer-events: none;
@@ -891,10 +904,14 @@ html[data-theme="light"] .floating-dock__actions {
 
 @keyframes grid-drift {
   from {
-    background-position: 0 0, 0 0;
+    background-position:
+      0 0,
+      0 0;
   }
   to {
-    background-position: 72px 0, 0 72px;
+    background-position:
+      72px 0,
+      0 72px;
   }
 }
 

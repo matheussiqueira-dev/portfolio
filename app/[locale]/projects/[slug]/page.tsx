@@ -21,9 +21,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
-  const locale = await resolveLocale(
-    Promise.resolve({ locale: resolvedParams.locale })
-  );
+  const locale = await resolveLocale(Promise.resolve({ locale: resolvedParams.locale }));
   const project =
     locale === "en"
       ? getProjectBySlugEn(resolvedParams.slug)
@@ -45,8 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ProjectsSlugPage({ params }: Props) {
   const { locale, slug } = await params;
   const resolvedLocale = await resolveLocale(Promise.resolve({ locale }));
-  const project =
-    resolvedLocale === "en" ? getProjectBySlugEn(slug) : getProjectBySlug(slug);
+  const project = resolvedLocale === "en" ? getProjectBySlugEn(slug) : getProjectBySlug(slug);
 
   if (!project) {
     notFound();

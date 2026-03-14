@@ -17,8 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await resolveLocale(params);
   return {
     title: locale === "pt-BR" ? "Contrate-me" : "Hire Me",
-    description:
-      locale === "pt-BR" ? "Contrate meus serviços" : "Hire my services",
+    description: locale === "pt-BR" ? "Contrate meus serviços" : "Hire my services",
   };
 }
 
@@ -85,12 +84,7 @@ export default async function HirePage({ params }: Props) {
       >
         <div className="grid gap-4 md:grid-cols-2">
           {engagement.cards.map((card) => (
-            <StatTile
-              key={card.label}
-              label={card.label}
-              value={card.value}
-              detail={card.detail}
-            />
+            <StatTile key={card.label} label={card.label} value={card.value} detail={card.detail} />
           ))}
         </div>
       </SectionFrame>

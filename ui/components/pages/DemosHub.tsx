@@ -26,7 +26,10 @@ export default function DemosHub({ locale, projects, copy }: Props) {
         description={copy.description}
         telemetry={
           <>
-            <TelemetryPill label={locale === "pt" ? "Demo pipeline" : "Demo pipeline"} tone="accent" />
+            <TelemetryPill
+              label={locale === "pt" ? "Demo pipeline" : "Demo pipeline"}
+              tone="accent"
+            />
             <TelemetryPill
               label={`${demoProjects.length} ${locale === "pt" ? "ativos publicados" : "published assets"}`}
               tone="success"
@@ -60,9 +63,7 @@ export default function DemosHub({ locale, projects, copy }: Props) {
                     <h2 className="font-[family-name:var(--font-display)] text-2xl uppercase tracking-[0.12em] text-[color:var(--foreground-strong)]">
                       {project.title}
                     </h2>
-                    <p className="text-sm leading-7 text-[color:var(--muted)]">
-                      {project.tagline}
-                    </p>
+                    <p className="text-sm leading-7 text-[color:var(--muted)]">{project.tagline}</p>
                   </div>
 
                   <div className="mt-4 flex flex-wrap gap-2">

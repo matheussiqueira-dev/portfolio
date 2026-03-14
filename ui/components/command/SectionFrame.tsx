@@ -41,11 +41,7 @@ export function SectionFrame({
 
         {telemetry ? <div className="command-surface__telemetry">{telemetry}</div> : null}
 
-        <div
-          className={["command-surface__content", contentClassName]
-            .filter(Boolean)
-            .join(" ")}
-        >
+        <div className={["command-surface__content", contentClassName].filter(Boolean).join(" ")}>
           {children}
         </div>
       </div>

@@ -1,7 +1,9 @@
 # Changelog
 
 ## 2026-03-02
+
 ### refactor(repo)
+
 - Reorganized repository to enterprise standard structure.
 - Moved tests to `tests/`.
 - Standardized public media paths under `public/media`.

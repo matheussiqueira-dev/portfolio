@@ -1,9 +1,4 @@
-export type CommandActionVariant =
-  | "primary"
-  | "secondary"
-  | "ghost"
-  | "chip"
-  | "icon";
+export type CommandActionVariant = "primary" | "secondary" | "ghost" | "chip" | "icon";
 
 const BASE =
   "command-action inline-flex items-center gap-2 rounded-[0.95rem] border text-sm font-medium transition duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/60";

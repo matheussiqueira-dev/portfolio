@@ -24,7 +24,11 @@ html {
 
 body::before {
   opacity: 0.58;
-  background-size: 100% 100%, 100% 100%, 130px 130px, 130px 130px;
+  background-size:
+    100% 100%,
+    100% 100%,
+    130px 130px,
+    130px 130px;
 }
 
 body::after {
@@ -38,8 +42,11 @@ body::after {
   inset: 0 0 auto;
   z-index: 60;
   border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--surface) 90%, transparent) 0%, color-mix(in srgb, var(--surface) 78%, transparent) 100%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface) 90%, transparent) 0%,
+    color-mix(in srgb, var(--surface) 78%, transparent) 100%
+  );
   backdrop-filter: blur(18px) saturate(130%);
 }
 
@@ -48,7 +55,12 @@ body::after {
   position: absolute;
   inset: auto 0 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 45%, transparent), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--accent) 45%, transparent),
+    transparent
+  );
   opacity: 0.58;
 }
 
@@ -107,8 +119,11 @@ body::after {
   border: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
   border-radius: 999px;
   padding: 0.25rem;
-  background:
-    linear-gradient(170deg, color-mix(in srgb, var(--surface) 90%, transparent), color-mix(in srgb, var(--surface-muted) 88%, transparent));
+  background: linear-gradient(
+    170deg,
+    color-mix(in srgb, var(--surface) 90%, transparent),
+    color-mix(in srgb, var(--surface-muted) 88%, transparent)
+  );
   box-shadow: 0 12px 30px rgba(5, 7, 10, 0.24);
 }
 
@@ -149,7 +164,11 @@ body::after {
   bottom: 0.22rem;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 65%, transparent), color-mix(in srgb, var(--accent-cool) 60%, transparent));
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--accent) 65%, transparent),
+    color-mix(in srgb, var(--accent-cool) 60%, transparent)
+  );
 }
 
 .site-nav__divider {
@@ -202,8 +221,11 @@ body::after {
   display: flex;
   flex-direction: column;
   border-left: 1px solid color-mix(in srgb, var(--border) 74%, transparent);
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--surface) 96%, transparent), color-mix(in srgb, var(--surface-muted) 96%, transparent));
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface) 96%, transparent),
+    color-mix(in srgb, var(--surface-muted) 96%, transparent)
+  );
   box-shadow: -32px 0 44px rgba(0, 0, 0, 0.26);
   transition: transform var(--motion-base) var(--easing-standard);
 }
@@ -250,10 +272,8 @@ body::after {
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding:
-    1rem calc(1.15rem + env(safe-area-inset-right))
-    calc(1.4rem + env(safe-area-inset-bottom))
-    calc(1.15rem + env(safe-area-inset-left));
+  padding: 1rem calc(1.15rem + env(safe-area-inset-right))
+    calc(1.4rem + env(safe-area-inset-bottom)) calc(1.15rem + env(safe-area-inset-left));
 }
 
 .mobile-menu-panel__nav {
@@ -443,8 +463,11 @@ body::after {
   position: relative;
   border-top: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
   padding-block: clamp(2.4rem, 5vw, 3.4rem);
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--surface-muted) 56%, transparent), transparent 90%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface-muted) 56%, transparent),
+    transparent 90%
+  );
 }
 
 .site-footer__inner {
@@ -605,7 +628,10 @@ h6,
   color: var(--landing-text-secondary);
   white-space: nowrap;
   text-decoration: none;
-  transition: color 200ms ease, background-color 200ms ease, transform 200ms ease;
+  transition:
+    color 200ms ease,
+    background-color 200ms ease,
+    transform 200ms ease;
 }
 
 .landing-top-link:hover {

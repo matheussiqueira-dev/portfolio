@@ -78,9 +78,7 @@ const includesAny = (source: string[], terms: string[]) =>
 const titleAsText = (title: ProjectLike["title"]) =>
   typeof title === "string" ? title : `${title.pt} ${title.en}`;
 
-export const inferProjectCategories = (
-  project: ProjectLike
-): ProjectCategory[] => {
+export const inferProjectCategories = (project: ProjectLike): ProjectCategory[] => {
   const tokens = [
     ...project.stack.map(normalize),
     normalize(project.slug),
@@ -114,17 +112,7 @@ export const inferProjectCategories = (
     categories.add("dashboard_system");
   }
 
-  if (
-    includesAny(tokens, [
-      "tensorflow",
-      "mediapipe",
-      "ai",
-      "ml",
-      "llm",
-      "chatbot",
-      "openai",
-    ])
-  ) {
+  if (includesAny(tokens, ["tensorflow", "mediapipe", "ai", "ml", "llm", "chatbot", "openai"])) {
     categories.add("ai_experiment");
   }
 
@@ -174,15 +162,11 @@ export const inferProjectStatus = (project: ProjectLike): ProjectStatus => {
   return "lab";
 };
 
-export const getProjectCategoryLabel = (
-  category: ProjectCategory,
-  locale: "pt" | "en"
-) => CATEGORY_LABELS[category][locale];
+export const getProjectCategoryLabel = (category: ProjectCategory, locale: "pt" | "en") =>
+  CATEGORY_LABELS[category][locale];
 
-export const getProjectStatusLabel = (
-  status: ProjectStatus,
-  locale: "pt" | "en"
-) => STATUS_LABELS[status][locale];
+export const getProjectStatusLabel = (status: ProjectStatus, locale: "pt" | "en") =>
+  STATUS_LABELS[status][locale];
 
 export const formatProjectPeriod = (
   duration: { start: string; end: string } | undefined,
@@ -216,6 +200,6 @@ export const formatProjectPeriod = (
 export const projectSupportsDemo = (project: Project | ProjectCard) =>
   Boolean(
     ("demo" in project && project.demo) ||
-      ("demoUrl" in project && project.demoUrl) ||
-      ("links" in project && (project.links.demo || project.links.live))
+    ("demoUrl" in project && project.demoUrl) ||
+    ("links" in project && (project.links.demo || project.links.live))
   );
