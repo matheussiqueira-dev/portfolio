@@ -1,42 +1,21 @@
-"use client";
-
+import { siteEn } from "@/data/site.en";
+import { sitePt } from "@/data/site.pt";
 import type { ProjectCard } from "@/data/projects-card.types";
-import ProjectList from "@/system/projects/ProjectList";
-import styles from "./projects-page.module.css";
+import ProjectsCommandCenter from "@/ui/components/pages/ProjectsCommandCenter";
 
 interface ProjectsContentProps {
   projects: ProjectCard[];
   locale: "pt" | "en";
 }
 
-const labels = {
-  pt: {
-    title: "Projetos",
-    description: "Explore uma sele\u00e7\u00e3o dos meus projetos em web, dados e BI",
-    filterAll: "Todos",
-  },
-  en: {
-    title: "Projects",
-    description:
-      "Explore a selection of my projects in web development, data, and BI",
-    filterAll: "All",
-  },
-};
-
-export function ProjectsContent({
-  projects,
-  locale,
-}: ProjectsContentProps) {
-  const t = labels[locale];
+export function ProjectsContent({ projects, locale }: ProjectsContentProps) {
+  const site = locale === "pt" ? sitePt : siteEn;
 
   return (
-    <main className="layout-container page-shell">
-      <div className={styles.header}>
-        <h1 className={styles.title}>{t.title}</h1>
-        <p className={styles.description}>{t.description}</p>
-      </div>
-
-      <ProjectList projects={projects} locale={locale} allLabel={t.filterAll} />
-    </main>
+    <ProjectsCommandCenter
+      projects={projects}
+      locale={locale}
+      copy={site.projects}
+    />
   );
 }

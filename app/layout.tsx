@@ -1,34 +1,34 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Instrument_Sans, Sora } from "next/font/google";
+import { Inter, JetBrains_Mono, Orbitron, Rajdhani } from "next/font/google";
 import Script from "next/script";
 import JsonLd from "@/ui/components/seo/JsonLd";
 import AppVisualEffects from "@/ui/components/layout/AppVisualEffects";
-import Cursor from "@/ui/components/Cursor";
 import PageTransition from "@/ui/components/PageTransition";
 import { baseUrl, buildAlternates, siteName, sameAsLinks } from "@/core/seo";
 import "./globals.css";
 import "./refined-theme.css";
+import "./command-center.css";
 
 // Google Tag Manager ID
 const GTM_ID = "GTM-WR93ZJ8C";
 
-const sora = Sora({
+const orbitron = Orbitron({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["500", "600", "700", "800"],
 });
 
-const instrumentSans = Instrument_Sans({
+const rajdhani = Rajdhani({
   subsets: ["latin"],
-  variable: "--font-body",
+  variable: "--font-ui",
   display: "swap",
   weight: ["400", "500", "600", "700"],
 });
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-landing",
+  variable: "--font-body",
   display: "swap",
   weight: ["400", "500", "600", "700"],
 });
@@ -204,6 +204,22 @@ export default function RootLayout({
             `,
           }}
         />
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem("theme");
+                  if (theme === "light" || theme === "dark") {
+                    document.documentElement.dataset.theme = theme;
+                  }
+                } catch (error) {}
+              })();
+            `,
+          }}
+        />
         {/* Preload critical resources */}
         <link
           rel="preload"
@@ -213,7 +229,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
-        className={`${sora.variable} ${instrumentSans.variable} ${inter.variable} ${jetBrainsMono.variable} min-h-screen antialiased`}
+        className={`${orbitron.variable} ${rajdhani.variable} ${inter.variable} ${jetBrainsMono.variable} min-h-screen antialiased`}
       >
         {/* Google Tag Manager (noscript) */}
         <noscript>
@@ -232,7 +248,6 @@ export default function RootLayout({
         >
           Pular para o conteúdo principal
         </a>
-        <Cursor />
         <JsonLd data={[websiteJsonLd, personJsonLd]} />
         <AppVisualEffects />
         <PageTransition>
@@ -242,7 +257,5 @@ export default function RootLayout({
     </html>
   );
 }
-
-
 
 

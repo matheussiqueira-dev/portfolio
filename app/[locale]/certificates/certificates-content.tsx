@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import type { Certificate, CertificatesPageContent } from "@/data/certificates.types";
+import { TelemetryPill } from "@/ui/components/command/TelemetryPill";
 
 type Props = {
   content: CertificatesPageContent;
@@ -57,19 +58,19 @@ export default function CertificatesContent({ content, certificates }: Props) {
   return (
     <div>
       {/* Filters */}
-      <div className="flex flex-col sm:flex-row gap-3 mb-8">
+      <div className="mb-8 grid gap-3 xl:grid-cols-[minmax(0,1fr)_220px_220px]">
         <input
           type="search"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder={content.searchPlaceholder}
-          className="flex-1 min-w-0 px-4 py-2.5 text-sm rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] text-[color:var(--foreground)] placeholder:text-[color:var(--muted)] focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-soft)]/40"
+          className="min-w-0 rounded-[1rem] border border-[color:var(--border)] bg-[color:var(--surface-muted)] px-4 py-3 text-sm text-[color:var(--foreground)] placeholder:text-[color:var(--muted)] focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-soft)]/40"
         />
         <select
           value={issuerFilter}
           onChange={(e) => setIssuerFilter(e.target.value)}
           aria-label={content.filterLabel}
-          className="px-4 py-2.5 text-sm rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] text-[color:var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-soft)]/40"
+          className="rounded-[1rem] border border-[color:var(--border)] bg-[color:var(--surface-muted)] px-4 py-3 text-sm text-[color:var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-soft)]/40"
         >
           <option value="all">{content.filterLabel}</option>
           {issuers.map((issuer) => (
@@ -82,7 +83,7 @@ export default function CertificatesContent({ content, certificates }: Props) {
           value={categoryFilter}
           onChange={(e) => setCategoryFilter(e.target.value)}
           aria-label={content.categoryFilterLabel}
-          className="px-4 py-2.5 text-sm rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] text-[color:var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-soft)]/40"
+          className="rounded-[1rem] border border-[color:var(--border)] bg-[color:var(--surface-muted)] px-4 py-3 text-sm text-[color:var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-soft)]/40"
         >
           <option value="all">{content.categoryFilterLabel}</option>
           {categories.map((cat) => (
@@ -95,11 +96,11 @@ export default function CertificatesContent({ content, certificates }: Props) {
 
       {/* Active filters indicator */}
       {(issuerFilter !== "all" || categoryFilter !== "all") && (
-        <div className="flex items-center gap-2 mb-5 flex-wrap">
+        <div className="mb-5 flex items-center gap-2 flex-wrap">
           {issuerFilter !== "all" && (
             <button
               onClick={() => setIssuerFilter("all")}
-              className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-[color:var(--accent)]/10 text-[color:var(--accent)] border border-[color:var(--accent)]/20 hover:bg-[color:var(--accent)]/20 transition-colors"
+              className="telemetry-pill telemetry-pill--accent"
             >
               {issuerFilter}
               <span aria-hidden="true">×</span>
@@ -108,15 +109,13 @@ export default function CertificatesContent({ content, certificates }: Props) {
           {categoryFilter !== "all" && (
             <button
               onClick={() => setCategoryFilter("all")}
-              className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-[color:var(--accent)]/10 text-[color:var(--accent)] border border-[color:var(--accent)]/20 hover:bg-[color:var(--accent)]/20 transition-colors"
+              className="telemetry-pill telemetry-pill--accent"
             >
               {categoryFilter}
               <span aria-hidden="true">×</span>
             </button>
           )}
-          <span className="text-xs text-[color:var(--muted)]">
-            {filtered.length} / {certificates.length}
-          </span>
+          <TelemetryPill label={`${filtered.length} / ${certificates.length}`} />
         </div>
       )}
 
@@ -124,52 +123,51 @@ export default function CertificatesContent({ content, certificates }: Props) {
       {filtered.length === 0 ? (
         <p className="text-sm text-[color:var(--muted)] text-center py-12">{content.emptyLabel}</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((cert) => (
             <article
               key={cert.id}
-              className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] transition-colors hover:border-[color:var(--accent-soft)] flex flex-col overflow-hidden"
+              className="flex flex-col overflow-hidden rounded-[1.35rem] border border-[color:var(--border)] bg-[color:var(--surface-muted)]"
             >
               {/* Thumbnail */}
-              <div className="relative w-full aspect-[4/3] bg-[color:var(--bg)]">
-                <Image
-                  src={thumbnailUrl(cert)}
-                  alt={cert.title}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-contain"
-                />
+              <div className="relative w-full aspect-[4/3] border-b border-[color:var(--border)] bg-[color:var(--background)]">
+                {thumbnailUrl(cert) ? (
+                  <Image
+                    src={thumbnailUrl(cert)}
+                    alt={cert.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-contain"
+                  />
+                ) : (
+                  <div className="flex h-full items-center justify-center px-6 text-center text-xs uppercase tracking-[0.24em] text-[color:var(--muted)]">
+                    Preview pending
+                  </div>
+                )}
               </div>
 
               {/* Card Body */}
               <div className="p-5 flex flex-col flex-1">
-                <h3 className="text-sm font-semibold text-[color:var(--foreground)] mb-1 line-clamp-2">
+                <h3 className="font-[family-name:var(--font-display)] text-lg uppercase tracking-[0.12em] text-[color:var(--foreground-strong)] mb-1 line-clamp-2">
                   {cert.title}
                 </h3>
-                <p className="text-xs text-[color:var(--accent-soft)] mb-2">{cert.issuer}</p>
-                <div className="flex flex-wrap gap-1 mb-4 mt-auto">
+                <p className="text-xs text-[color:var(--accent-soft)] mb-3">{cert.issuer}</p>
+                <div className="flex flex-wrap gap-2 mb-4 mt-auto">
                   {cert.areaTags.slice(0, 3).map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-[10px] px-2 py-0.5 rounded-full border border-[color:var(--border)] text-[color:var(--muted)]"
-                    >
-                      {tag}
-                    </span>
+                    <TelemetryPill key={tag} label={tag} />
                   ))}
                   {cert.areaTags.length > 3 && (
-                    <span className="text-[10px] px-2 py-0.5 rounded-full border border-[color:var(--border)] text-[color:var(--muted)]">
-                      +{cert.areaTags.length - 3}
-                    </span>
+                    <TelemetryPill label={`+${cert.areaTags.length - 3}`} />
                   )}
                 </div>
 
                 {/* Details (expandable modules) */}
                 {cert.details && (
-                  <details className="mb-3 text-xs">
+                  <details className="mb-3 text-xs rounded-[1rem] border border-[color:var(--border)] bg-[color:rgba(0,229,255,0.03)] p-3">
                     <summary className="cursor-pointer text-[color:var(--accent-soft)] hover:text-[color:var(--foreground)] transition-colors">
                       {cert.details.summaryLabel}
                     </summary>
-                    <ul className="mt-2 space-y-1.5 pl-3 border-l border-[color:var(--border)]">
+                    <ul className="mt-3 space-y-2 pl-3 border-l border-[color:var(--border)]">
                       {cert.details.modules.map((mod) => (
                         <li key={mod.title}>
                           <span className="font-medium text-[color:var(--foreground)]">{mod.title}</span>

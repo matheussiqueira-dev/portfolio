@@ -11,6 +11,7 @@ import { useLocale } from "next-intl";
 import { sitePt } from "@/data/site.pt";
 import { siteEn } from "@/data/site.en";
 import LanguageSwitch from "@/ui/components/ui/LanguageSwitch";
+import ThemeToggle from "@/ui/components/ui/ThemeToggle";
 import { Link, usePathname } from "@/core/i18n/navigation";
 import MobileMenu from "./MobileMenu";
 import {
@@ -200,6 +201,7 @@ export default function HeaderNav() {
         <span className="site-nav__divider" aria-hidden="true" />
 
         <div className="site-nav-controls">
+          <ThemeToggle />
           <Suspense
             fallback={
               <span className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">

@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-import { isValidLocale } from "@/core/i18n/routing";
+import { getProjectBySlug, projectSlugs } from "@/data/projects";
+import { getProjectBySlugEn } from "@/data/projects.en";
+import { siteEn } from "@/data/site.en";
+import { sitePt } from "@/data/site.pt";
+import DemoCasePage from "@/ui/components/pages/DemoCasePage";
+
+import { resolveLocale } from "../../_lib";
 
 type RouteParams = Promise<{ locale: string; slug: string }>;
 
@@ -9,38 +16,40 @@ type Props = {
 };
 
 export function generateStaticParams() {
-  return [];
+  return projectSlugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
-  const isEn = locale === "en";
+  const resolvedParams = await params;
+  const locale = await resolveLocale(
+    Promise.resolve({ locale: resolvedParams.locale })
+  );
+  const project =
+    locale === "en"
+      ? getProjectBySlugEn(resolvedParams.slug)
+      : getProjectBySlug(resolvedParams.slug);
 
   return {
-    title: isEn ? "Demo" : "Demo",
-    description: isEn ? "Interactive demo" : "Demo interativa",
+    title: project ? `${project.title} | Demo` : locale === "en" ? "Demo" : "Demo",
+    description: project?.tagline ?? (locale === "en" ? "Interactive demo" : "Demo interativa"),
   };
 }
 
 export default async function DemosSlugPage({ params }: Props) {
   const { locale, slug } = await params;
+  const resolvedLocale = await resolveLocale(Promise.resolve({ locale }));
+  const project =
+    resolvedLocale === "en" ? getProjectBySlugEn(slug) : getProjectBySlug(slug);
 
-  if (!isValidLocale(locale)) {
-    return null;
+  if (!project) {
+    notFound();
   }
 
   return (
-    <main className="layout-container page-shell">
-      <section className="page-placeholder">
-        <h1>
-          {locale === "en" ? "Demo" : "Demo"} - {slug}
-        </h1>
-        <p>
-          {locale === "en"
-            ? "Page under construction"
-            : "P\u00e1gina em constru\u00e7\u00e3o"}
-        </p>
-      </section>
-    </main>
+    <DemoCasePage
+      locale={resolvedLocale === "en" ? "en" : "pt"}
+      project={project}
+      copy={(resolvedLocale === "en" ? siteEn : sitePt).demos}
+    />
   );
 }

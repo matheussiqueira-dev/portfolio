@@ -1,27 +1,45 @@
 "use client";
 
 import { useLocale } from "next-intl";
+import { FiArrowUpRight } from "react-icons/fi";
 import { TrackedAnchor } from "@/ui/components/analytics/TrackedLink";
+
+import { commandActionClass } from "@/ui/components/command/actionStyles";
+import { TelemetryPill } from "@/ui/components/command/TelemetryPill";
 
 export default function Footer() {
   const isEn = useLocale() === "en";
 
-  const title = isEn ? "Let’s connect" : "Vamos conversar";
-  const location = isEn ? "Brazil | Remote" : "Brasil | Remoto";
+  const title = isEn ? "Lower diagnostics" : "Diagnosticos inferiores";
+  const location = isEn ? "Brazil | Remote operations" : "Brasil | Operacoes remotas";
   const credit = isEn
-    ? "Site developed by Matheus Siqueira."
-    : "Site desenvolvido por Matheus Siqueira.";
+    ? "Created by Matheus Siqueira"
+    : "Criado por Matheus Siqueira";
   const emailLabel = isEn ? "Email" : "E-mail";
+  const officialSite = "www.matheussiqueira.dev";
 
   return (
     <footer className="site-footer">
       <div className="section-inner site-footer__inner">
         <div className="site-footer__content">
-          <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
+          <p className="section-eyebrow">
             {title}
           </p>
+          <p className="text-lg font-[family-name:var(--font-display)] uppercase tracking-[0.14em] text-[color:var(--foreground-strong)]">
+            {credit}
+          </p>
           <p className="text-sm text-[color:var(--muted)]">{location}</p>
-          <p className="text-xs text-[color:var(--muted)]">{credit}</p>
+          <p className="text-sm text-[color:var(--muted)]">{officialSite}</p>
+          <div className="flex flex-wrap gap-2 pt-2">
+            <TelemetryPill
+              label={isEn ? "Deployment ready" : "Deployment pronto"}
+              tone="success"
+            />
+            <TelemetryPill
+              label={isEn ? "Analytics synchronized" : "Analytics sincronizado"}
+              tone="accent"
+            />
+          </div>
         </div>
 
         <div className="site-footer__actions">
@@ -29,9 +47,9 @@ export default function Footer() {
             href="mailto:matheussiqueirahub@gmail.com"
             ariaLabel={emailLabel}
             tracking={{ action: "footer_email", category: "engagement" }}
-            className="btn-outline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+            className={commandActionClass("secondary")}
           >
-            {emailLabel}
+            {emailLabel} <FiArrowUpRight aria-hidden="true" />
           </TrackedAnchor>
 
           <TrackedAnchor
@@ -40,9 +58,9 @@ export default function Footer() {
             rel="noopener noreferrer"
             ariaLabel="WhatsApp"
             tracking={{ action: "footer_whatsapp", category: "engagement" }}
-            className="btn-outline btn-whatsapp focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+            className={commandActionClass("secondary")}
           >
-            WhatsApp
+            WhatsApp <FiArrowUpRight aria-hidden="true" />
           </TrackedAnchor>
 
           <TrackedAnchor
@@ -51,9 +69,9 @@ export default function Footer() {
             rel="noopener noreferrer"
             ariaLabel="LinkedIn"
             tracking={{ action: "footer_linkedin", category: "engagement" }}
-            className="btn-outline btn-linkedin focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+            className={commandActionClass("ghost")}
           >
-            LinkedIn
+            LinkedIn <FiArrowUpRight aria-hidden="true" />
           </TrackedAnchor>
 
           <TrackedAnchor
@@ -62,9 +80,9 @@ export default function Footer() {
             rel="noopener noreferrer"
             ariaLabel="GitHub"
             tracking={{ action: "footer_github", category: "engagement" }}
-            className="btn-outline btn-github focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
+            className={commandActionClass("ghost")}
           >
-            GitHub
+            GitHub <FiArrowUpRight aria-hidden="true" />
           </TrackedAnchor>
         </div>
       </div>

@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { sitePt } from "@/data/site.pt";
 import { siteEn } from "@/data/site.en";
 import { getProjectsCard } from "@/data/projects-card";
+import HomeDashboard from "@/ui/components/pages/HomeDashboard";
 
 import { resolveLocale, type LocaleParams } from "./_lib";
-import HomeContent from "./home-content";
 
 type Props = {
   params: LocaleParams;
@@ -29,5 +29,5 @@ export default async function Home({ params }: Props) {
   const site = locale === "pt-BR" ? sitePt : siteEn;
   const projects = getProjectsCard(uiLocale).slice(0, 6);
 
-  return <HomeContent site={site} projects={projects} locale={uiLocale} />;
+  return <HomeDashboard site={site} projects={projects} locale={uiLocale} />;
 }

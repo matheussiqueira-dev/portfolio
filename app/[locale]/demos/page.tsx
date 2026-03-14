@@ -1,4 +1,11 @@
 import type { Metadata } from "next";
+
+import { projects } from "@/data/projects";
+import { projectsEn } from "@/data/projects.en";
+import { siteEn } from "@/data/site.en";
+import { sitePt } from "@/data/site.pt";
+import DemosHub from "@/ui/components/pages/DemosHub";
+
 import { resolveLocale, type LocaleParams } from "../_lib";
 
 type Props = {
@@ -16,16 +23,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function DemosPage({ params }: Props) {
   const locale = await resolveLocale(params);
+  const isEn = locale === "en";
+
   return (
-    <main className="layout-container page-shell">
-      <section className="page-placeholder">
-        <h1>Demos</h1>
-        <p>
-          {locale === "pt-BR"
-            ? "Página em construção"
-            : "Page under construction"}
-        </p>
-      </section>
-    </main>
+    <DemosHub
+      locale={isEn ? "en" : "pt"}
+      projects={isEn ? projectsEn : projects}
+      copy={(isEn ? siteEn : sitePt).demos}
+    />
   );
 }

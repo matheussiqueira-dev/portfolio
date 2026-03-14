@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 
 import { resume } from "@/data/resume";
 import { resumeEn } from "@/data/resume.en";
+import { SectionFrame } from "@/ui/components/command/SectionFrame";
+import { StatTile } from "@/ui/components/command/StatTile";
+import { TelemetryPill } from "@/ui/components/command/TelemetryPill";
 
 import { resolveLocale, type LocaleParams } from "../_lib";
 
@@ -35,70 +38,61 @@ export default async function AcademicPage({ params }: Props) {
   };
 
   return (
-    <main className="layout-container page-shell" style={{ paddingTop: "var(--section-y)", paddingBottom: "var(--section-y)" }}>
-      {/* Header */}
-      <header className="mb-12">
-        <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] mb-2">
-          {t.eyebrow}
-        </p>
-        <h1 className="text-3xl md:text-4xl font-bold text-[color:var(--foreground)] mb-3">
-          {t.title}
-        </h1>
-        <p className="text-sm text-[color:var(--muted)] max-w-2xl">{t.subtitle}</p>
-      </header>
-
-      {/* Education Groups */}
-      <div className="space-y-10 mb-12">
-        {data.education.groups.map((group) => (
-          <section key={group.title}>
-            <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-5 border-b border-[color:var(--border)] pb-2">
-              {group.title}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {group.items.map((item) => (
-                <article
-                  key={item.course}
-                  className="p-5 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] transition-colors hover:border-[color:var(--accent-soft)]"
-                >
-                  <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-1">
-                    {item.course}
-                  </h3>
-                  <p className="text-sm text-[color:var(--accent-soft)]">{item.institution}</p>
-                  <p className="text-xs text-[color:var(--muted)] mt-1">{item.period}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-        ))}
-      </div>
-
-      {/* Certifications + Languages */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <section>
-          <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-4 border-b border-[color:var(--border)] pb-2">
-            {t.certTitle}
-          </h2>
-          <ul className="space-y-2">
-            {data.certifications.map((cert) => (
-              <li key={cert} className="text-sm text-[color:var(--muted)] flex gap-2">
-                <span className="text-[color:var(--accent-soft)] shrink-0">▸</span>
-                <span>{cert}</span>
-              </li>
+    <main className="layout-container page-shell command-page">
+      <SectionFrame
+        eyebrow={t.eyebrow}
+        title={t.title}
+        description={t.subtitle}
+        telemetry={
+          <>
+            <TelemetryPill label={t.certTitle} tone="accent" />
+            <TelemetryPill label={t.langTitle} tone="success" />
+          </>
+        }
+      >
+        <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_280px]">
+          <div className="grid gap-4">
+            {data.education.groups.map((group) => (
+              <article
+                key={group.title}
+                className="rounded-[1.2rem] border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5"
+              >
+                <p className="section-eyebrow">{group.title}</p>
+                <div className="mt-4 grid gap-3 md:grid-cols-2">
+                  {group.items.map((item) => (
+                    <StatTile
+                      key={item.course}
+                      label={item.institution}
+                      value={item.course}
+                      detail={item.period}
+                    />
+                  ))}
+                </div>
+              </article>
             ))}
-          </ul>
-        </section>
+          </div>
 
-        <section>
-          <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-4 border-b border-[color:var(--border)] pb-2">
-            {t.langTitle}
-          </h2>
-          <ul className="space-y-1">
-            {data.languages.map((lang) => (
-              <li key={lang} className="text-sm text-[color:var(--muted)]">{lang}</li>
-            ))}
-          </ul>
-        </section>
-      </div>
+          <div className="grid gap-4">
+            <article className="rounded-[1.2rem] border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
+              <p className="section-eyebrow">{t.certTitle}</p>
+              <ul className="command-bullets mt-4">
+                {data.certifications.map((cert) => (
+                  <li key={cert}>{cert}</li>
+                ))}
+              </ul>
+            </article>
+
+            <article className="rounded-[1.2rem] border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
+              <p className="section-eyebrow">{t.langTitle}</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {data.languages.map((lang) => (
+                  <TelemetryPill key={lang} label={lang} />
+                ))}
+              </div>
+            </article>
+          </div>
+        </div>
+      </SectionFrame>
     </main>
   );
 }

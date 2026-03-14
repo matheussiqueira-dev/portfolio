@@ -2,6 +2,7 @@
 
 import { Suspense, useCallback, useEffect, useId, useRef, useState } from "react";
 import LanguageSwitch from "@/ui/components/ui/LanguageSwitch";
+import ThemeToggle from "@/ui/components/ui/ThemeToggle";
 import { Link } from "@/core/i18n/navigation";
 import type { NavItem } from "./navigation";
 
@@ -282,7 +283,8 @@ export default function MobileMenu({
                 <p className="text-xs uppercase tracking-[0.2em] text-[color:var(--muted)]">
                   {languageLabel}
                 </p>
-                <div className="mt-3 text-sm text-[color:var(--muted)]">
+                <div className="mt-3 flex items-center gap-3 text-sm text-[color:var(--muted)]">
+                  <ThemeToggle />
                   <Suspense
                     fallback={
                       <span className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
