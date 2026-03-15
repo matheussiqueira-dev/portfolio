@@ -2,7 +2,6 @@
 
 import { Suspense, useCallback, useEffect, useId, useRef, useState } from "react";
 import LanguageSwitch from "@/ui/components/ui/LanguageSwitch";
-import ThemeToggle from "@/ui/components/ui/ThemeToggle";
 import { Link } from "@/core/i18n/navigation";
 import type { NavItem } from "./navigation";
 
@@ -232,21 +231,25 @@ export default function MobileMenu({
             aria-modal="true"
             aria-label={menuLabel}
             aria-hidden={!open}
-            className={`mobile-menu-panel ${open ? "translate-x-0" : "translate-x-full"}`}
+            className={`mobile-menu-panel ${
+              open ? "translate-x-0" : "translate-x-full"
+            }`}
             onClick={(event) => event.stopPropagation()}
           >
             <div className="mobile-menu-panel__head">
-              <p className="mobile-menu-panel__title">{menuLabel}</p>
+              <p className="mobile-menu-panel__title">
+                {menuLabel}
+              </p>
               <button
                 type="button"
                 onClick={handleClose}
                 className="mobile-menu-close focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]/40"
-              >
-                <span className="sr-only">{closeLabel}</span>
-                <span aria-hidden="true" className="text-lg leading-none">
-                  ×
-                </span>
-              </button>
+                >
+                  <span className="sr-only">{closeLabel}</span>
+                  <span aria-hidden="true" className="text-lg leading-none">
+                    ×
+                  </span>
+                </button>
             </div>
 
             <div className="mobile-menu-panel__body">
@@ -279,8 +282,7 @@ export default function MobileMenu({
                 <p className="text-xs uppercase tracking-[0.2em] text-[color:var(--muted)]">
                   {languageLabel}
                 </p>
-                <div className="mt-3 flex items-center gap-3 text-sm text-[color:var(--muted)]">
-                  <ThemeToggle />
+                <div className="mt-3 text-sm text-[color:var(--muted)]">
                   <Suspense
                     fallback={
                       <span className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">

@@ -1,34 +1,34 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Orbitron, Rajdhani } from "next/font/google";
+import { Inter, JetBrains_Mono, Instrument_Sans, Sora } from "next/font/google";
 import Script from "next/script";
 import JsonLd from "@/ui/components/seo/JsonLd";
 import AppVisualEffects from "@/ui/components/layout/AppVisualEffects";
+import Cursor from "@/ui/components/Cursor";
 import PageTransition from "@/ui/components/PageTransition";
 import { baseUrl, buildAlternates, siteName, sameAsLinks } from "@/core/seo";
 import "./globals.css";
 import "./refined-theme.css";
-import "./command-center.css";
 
 // Google Tag Manager ID
 const GTM_ID = "GTM-WR93ZJ8C";
 
-const orbitron = Orbitron({
+const sora = Sora({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
-  weight: ["500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const rajdhani = Rajdhani({
+const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
-  variable: "--font-ui",
+  variable: "--font-body",
   display: "swap",
   weight: ["400", "500", "600", "700"],
 });
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-body",
+  variable: "--font-landing",
   display: "swap",
   weight: ["400", "500", "600", "700"],
 });
@@ -39,7 +39,8 @@ const jetBrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-const siteTitle = "Matheus Siqueira | Desenvolvedor Full Stack & Engenharia de Dados";
+const siteTitle =
+  "Matheus Siqueira | Desenvolvedor Full Stack & Engenharia de Dados";
 const siteDescription =
   "Desenvolvedor Full Stack especializado em React, TypeScript, Python, SQL, Engenharia de Dados, Power BI e Azure Cloud.";
 
@@ -87,7 +88,8 @@ const personJsonLd = {
   "@id": `${baseUrl}/#person`,
   name: "Matheus Siqueira",
   jobTitle: "Full Stack Developer, Data Engineer",
-  description: "Desenvolvedor Full Stack e Data Engineer focado em aplicações web, dados e cloud",
+  description:
+    "Desenvolvedor Full Stack e Data Engineer focado em aplicações web, dados e cloud",
   email: "matheussiqueirahub@gmail.com",
   telephone: "+55 81 99920-3683",
   url: baseUrl,
@@ -165,7 +167,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="pt-BR" data-theme="dark" suppressHydrationWarning>
       <head>
@@ -198,28 +204,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             `,
           }}
         />
-        <Script
-          id="theme-init"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var theme = localStorage.getItem("theme");
-                  if (theme === "light" || theme === "dark") {
-                    document.documentElement.dataset.theme = theme;
-                  }
-                } catch (error) {}
-              })();
-            `,
-          }}
-        />
         {/* Preload critical resources */}
-        <link rel="preload" as="image" href="/profile.jpg" />
+        <link
+          rel="preload"
+          as="image"
+          href="/profile.jpg"
+        />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
-        className={`${orbitron.variable} ${rajdhani.variable} ${inter.variable} ${jetBrainsMono.variable} min-h-screen antialiased`}
+        className={`${sora.variable} ${instrumentSans.variable} ${inter.variable} ${jetBrainsMono.variable} min-h-screen antialiased`}
       >
         {/* Google Tag Manager (noscript) */}
         <noscript>
@@ -238,10 +232,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Pular para o conteúdo principal
         </a>
+        <Cursor />
         <JsonLd data={[websiteJsonLd, personJsonLd]} />
         <AppVisualEffects />
-        <PageTransition>{children}</PageTransition>
+        <PageTransition>
+          {children}
+        </PageTransition>
       </body>
     </html>
   );
 }
+
+
+
+

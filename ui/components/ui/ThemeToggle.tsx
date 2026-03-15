@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocale } from "next-intl";
 
 type Theme = "light" | "dark";
@@ -31,18 +31,19 @@ export default function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>(() => getInitialTheme());
   const isEn = useLocale() === "en";
 
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-  }, [theme]);
-
   const handleToggle = () => {
     setTheme((current) => {
       const next = current === "dark" ? "light" : "dark";
+      document.documentElement.dataset.theme = next;
       try {
         localStorage.setItem(STORAGE_KEY, next);
       } catch {
         // ignore storage errors
       }
+
+      window.setTimeout(() => {
+        window.location.reload();
+      }, 80);
 
       return next;
     });
@@ -56,7 +57,13 @@ export default function ThemeToggle() {
       ? "Ativar modo claro"
       : "Ativar modo escuro";
 
-  const text = isEn ? (theme === "dark" ? "Dark" : "Light") : theme === "dark" ? "Escuro" : "Claro";
+  const text = isEn
+    ? theme === "dark"
+      ? "Dark"
+      : "Light"
+    : theme === "dark"
+      ? "Escuro"
+      : "Claro";
 
   const icon =
     theme === "dark" ? (

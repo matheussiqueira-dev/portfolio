@@ -2,10 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Link } from "@/core/i18n/navigation";
 import { baseUrl, buildAlternates, siteName } from "@/core/seo";
-import { commandActionClass } from "@/ui/components/command/actionStyles";
-import { SectionFrame } from "@/ui/components/command/SectionFrame";
-import { StatTile } from "@/ui/components/command/StatTile";
-import { TelemetryPill } from "@/ui/components/command/TelemetryPill";
 import { resolveLocale, pickByLocale, type LocaleParams } from "../_lib";
 
 /* ─── Types ─────────────────────────────────────────────────────────────────── */
@@ -46,7 +42,8 @@ const seo: { pt: SeoLocale; en: SeoLocale } = {
       "Profissional de tecnologia especializado em engenharia de software, análise de dados e desenvolvimento de soluções orientadas a impacto real.",
   },
   en: {
-    title: "About Matheus Siqueira | Software Engineer & Data Analyst driven by AI",
+    title:
+      "About Matheus Siqueira | Software Engineer & Data Analyst driven by AI",
     description:
       "Meet Matheus Siqueira, a tech professional specialised in Software Engineering, Business Intelligence, Data Science and AI-driven process automation.",
     keywords: [
@@ -109,7 +106,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: `${baseUrl}/og.png`,
           width: 1200,
           height: 630,
-          alt: pickByLocale(locale, "Sobre Matheus Siqueira", "About Matheus Siqueira"),
+          alt: pickByLocale(
+            locale,
+            "Sobre Matheus Siqueira",
+            "About Matheus Siqueira"
+          ),
         },
       ],
     },
@@ -169,7 +170,12 @@ const content = {
     differentiatorTitle: "O Que Me Diferencia",
     differentiatorIntro:
       "Grande parte dos profissionais especializa-se em apenas uma camada tecnológica. Meu diferencial está na integração entre:",
-    differentiatorAreas: ["Dados", "Desenvolvimento", "Infraestrutura", "Estratégia de negócio"],
+    differentiatorAreas: [
+      "Dados",
+      "Desenvolvimento",
+      "Infraestrutura",
+      "Estratégia de negócio",
+    ],
     differentiatorClosing:
       "Essa combinação permite reduzir dependências técnicas, acelerar entregas e aumentar previsibilidade de resultados.",
     visionTitle: "Visão de Futuro",
@@ -247,7 +253,12 @@ const content = {
     differentiatorTitle: "What Sets Me Apart",
     differentiatorIntro:
       "Most professionals specialise in a single technology layer. My differentiator lies in integrating:",
-    differentiatorAreas: ["Data", "Development", "Infrastructure", "Business strategy"],
+    differentiatorAreas: [
+      "Data",
+      "Development",
+      "Infrastructure",
+      "Business strategy",
+    ],
     differentiatorClosing:
       "This combination reduces technical dependencies, accelerates delivery and increases result predictability.",
     visionTitle: "Future Vision",
@@ -313,159 +324,204 @@ export default async function AboutPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
       />
 
-      <main className="layout-container page-shell command-page">
-        <section
-          data-reveal
-          className="grid gap-5 pb-[var(--section-y)] xl:grid-cols-[minmax(0,1.15fr)_minmax(300px,0.85fr)]"
-        >
-          <div className="command-surface">
-            <div className="command-surface__shell">
-              <div className="mb-5 flex flex-wrap gap-2">
-                <TelemetryPill label="OPERATOR DOSSIER" tone="accent" />
-                <TelemetryPill label="PROFILE VERIFIED" tone="success" />
-              </div>
+      <main
+        className="layout-container page-shell"
+        style={{
+          paddingTop: "var(--section-y)",
+          paddingBottom: "var(--section-y)",
+        }}
+      >
+        {/* ── Hero Section ─────────────────────────────────── */}
+        <header className="mb-16">
+          <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] mb-3">
+            {t.eyebrow}
+          </p>
 
-              <div className="grid gap-6 lg:grid-cols-[180px_minmax(0,1fr)]">
-                <div className="relative aspect-square overflow-hidden rounded-[1.5rem] border border-[color:var(--border)] bg-[color:var(--surface-muted)]">
-                  <Image
-                    src="/profile.jpg"
-                    alt="Matheus Siqueira"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-
-                <div className="grid gap-4">
-                  <p className="section-eyebrow">{t.eyebrow}</p>
-                  <h1 className="section-title !text-[clamp(2.5rem,5vw,4.6rem)]">
-                    Matheus Siqueira
-                  </h1>
-                  <p className="font-[family-name:var(--font-ui)] text-xl font-semibold uppercase tracking-[0.12em] text-[color:var(--accent-soft)]">
-                    {t.heroLine}
-                  </p>
-                  <p className="text-sm leading-8 text-[color:var(--muted)]">{t.heroIntroP1}</p>
-                  <p className="text-sm leading-8 text-[color:var(--muted)]">{t.heroIntroP2}</p>
-                  <p className="text-sm leading-8 text-[color:var(--muted)]">{t.heroIntroP3}</p>
-                </div>
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
+            {/* Photo */}
+            <div className="shrink-0">
+              <div className="relative w-36 h-36 md:w-44 md:h-44 rounded-2xl overflow-hidden border-2 border-[color:var(--border)] shadow-lg">
+                <Image
+                  src="/profile.jpg"
+                  alt="Matheus Siqueira"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
+            </div>
+
+            {/* Intro Copy */}
+            <div className="flex-1 min-w-0">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[color:var(--foreground)] mb-2 leading-tight">
+                Matheus Siqueira
+              </h1>
+              <p className="text-base md:text-lg font-medium text-[color:var(--accent-soft)] mb-5 max-w-xl">
+                {t.heroLine}
+              </p>
+              <p className="text-sm leading-relaxed text-[color:var(--muted)] max-w-2xl mb-3">
+                {t.heroIntroP1}
+              </p>
+              <p className="text-sm leading-relaxed text-[color:var(--muted)] max-w-2xl mb-3">
+                {t.heroIntroP2}
+              </p>
+              <p className="text-sm leading-relaxed text-[color:var(--muted)] max-w-2xl">
+                {t.heroIntroP3}
+              </p>
             </div>
           </div>
 
-          <div className="grid gap-5">
+          {/* Metrics Strip */}
+          <div className="grid grid-cols-3 gap-4 mt-10">
             {m.map((metric) => (
-              <StatTile
+              <div
                 key={metric.label}
-                label={t.eyebrow}
-                value={metric.value}
-                detail={metric.label}
-                tone="accent"
-              />
+                className="text-center p-4 rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)]"
+              >
+                <p className="text-xl md:text-2xl font-bold text-[color:var(--accent)]">
+                  {metric.value}
+                </p>
+                <p className="text-xs text-[color:var(--muted)] mt-1">
+                  {metric.label}
+                </p>
+              </div>
             ))}
           </div>
-        </section>
+        </header>
 
-        <SectionFrame eyebrow={t.eyebrow} title={t.profileTitle} description={t.heroIntroP1}>
-          <div className="grid gap-4 xl:grid-cols-3">
+        {/* ── Perfil Profissional ──────────────────────────── */}
+        <section className="mb-16">
+          <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-6 border-b border-[color:var(--border)] pb-2">
+            {t.profileTitle}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {t.pillars.map((pillar) => (
               <article
                 key={pillar.title}
-                className="rounded-[1.2rem] border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5"
+                className="p-6 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] transition-colors hover:border-[color:var(--accent-soft)]"
               >
-                <p className="section-eyebrow">{t.profileTitle}</p>
-                <h2 className="mt-3 font-[family-name:var(--font-display)] text-xl uppercase tracking-[0.12em] text-[color:var(--foreground-strong)]">
+                <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-3">
                   {pillar.title}
-                </h2>
-                <p className="mt-3 text-sm leading-8 text-[color:var(--muted)]">
+                </h3>
+                <p className="text-sm leading-relaxed text-[color:var(--muted)]">
                   {pillar.description}
                 </p>
               </article>
             ))}
           </div>
-        </SectionFrame>
+        </section>
 
-        <SectionFrame
-          eyebrow={t.mindsetTitle}
-          title={t.trajectoryTitle}
-          description={t.trajectoryDescription}
-          className="mt-5"
-          telemetry={<TelemetryPill label={t.trajectoryFlow} tone="accent" />}
-        >
-          <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(280px,0.9fr)]">
-            <article className="rounded-[1.2rem] border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
-              <p className="section-eyebrow">{t.mindsetTitle}</p>
-              <ul className="command-bullets mt-4">
-                {t.mindsetPrinciples.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-              <p className="mt-4 text-sm leading-8 text-[color:var(--muted)]">{t.mindsetClosing}</p>
-            </article>
-
-            <StatTile
-              label={t.trajectoryTitle}
-              value={t.trajectoryFlow}
-              detail={t.trajectoryDescription}
-              tone="accent"
-            />
-          </div>
-        </SectionFrame>
-
-        <SectionFrame
-          eyebrow={t.differentiatorTitle}
-          title={t.visionTitle}
-          description={t.visionDescription}
-          className="mt-5"
-        >
-          <div className="grid gap-5 xl:grid-cols-2">
-            <article className="rounded-[1.2rem] border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
-              <p className="section-eyebrow">{t.differentiatorTitle}</p>
-              <p className="mt-3 text-sm leading-8 text-[color:var(--muted)]">
-                {t.differentiatorIntro}
-              </p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {t.differentiatorAreas.map((area) => (
-                  <TelemetryPill key={area} label={area} />
-                ))}
-              </div>
-              <p className="mt-4 text-sm leading-8 text-[color:var(--muted)]">
-                {t.differentiatorClosing}
-              </p>
-            </article>
-
-            <article className="rounded-[1.2rem] border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
-              <p className="section-eyebrow">{t.visionTitle}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {t.visionAreas.map((area) => (
-                  <TelemetryPill key={area} label={area} tone="accent" />
-                ))}
-              </div>
-            </article>
-          </div>
-        </SectionFrame>
-
-        <SectionFrame
-          eyebrow={t.stackTitle}
-          title={t.stackTitle}
-          description={t.heroLine}
-          className="mt-5"
-        >
-          <div className="grid gap-4 md:grid-cols-2">
-            {t.stackGroups.map((group) => (
-              <article
-                key={group.label}
-                className="rounded-[1.2rem] border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5"
+        {/* ── Mentalidade ──────────────────────────────────── */}
+        <section className="mb-16">
+          <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-6 border-b border-[color:var(--border)] pb-2">
+            {t.mindsetTitle}
+          </h2>
+          <ul className="space-y-2 mb-5">
+            {t.mindsetPrinciples.map((p) => (
+              <li
+                key={p}
+                className="text-sm text-[color:var(--muted)] flex items-start gap-2"
               >
-                <p className="section-eyebrow">{group.label}</p>
-                <p className="mt-3 text-sm leading-8 text-[color:var(--muted)]">{group.items}</p>
-              </article>
+                <span className="text-[color:var(--accent)] shrink-0 mt-0.5">
+                  ▸
+                </span>
+                <span>{p}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-sm text-[color:var(--muted)] italic max-w-2xl">
+            {t.mindsetClosing}
+          </p>
+        </section>
+
+        {/* ── Trajetória ───────────────────────────────────── */}
+        <section className="mb-16">
+          <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-6 border-b border-[color:var(--border)] pb-2">
+            {t.trajectoryTitle}
+          </h2>
+          <div className="p-5 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] mb-5">
+            <p className="text-base md:text-lg font-semibold text-[color:var(--accent)] tracking-wide text-center">
+              {t.trajectoryFlow}
+            </p>
+          </div>
+          <p className="text-sm leading-relaxed text-[color:var(--muted)] max-w-3xl">
+            {t.trajectoryDescription}
+          </p>
+        </section>
+
+        {/* ── Diferencial ──────────────────────────────────── */}
+        <section className="mb-16">
+          <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-6 border-b border-[color:var(--border)] pb-2">
+            {t.differentiatorTitle}
+          </h2>
+          <p className="text-sm text-[color:var(--muted)] mb-4 max-w-2xl">
+            {t.differentiatorIntro}
+          </p>
+          <div className="flex flex-wrap gap-2 mb-5">
+            {t.differentiatorAreas.map((area) => (
+              <span
+                key={area}
+                className="px-3 py-1.5 text-xs font-medium rounded-full border border-[color:var(--accent)]/30 text-[color:var(--accent)] bg-[color:var(--accent)]/5"
+              >
+                {area}
+              </span>
             ))}
           </div>
-        </SectionFrame>
+          <p className="text-sm text-[color:var(--muted)] italic max-w-2xl">
+            {t.differentiatorClosing}
+          </p>
+        </section>
 
-        <section className="mt-5 pb-4 text-center" data-reveal>
-          <Link href="/projects" className={commandActionClass("primary")}>
+        {/* ── Visão de Futuro ──────────────────────────────── */}
+        <section className="mb-16">
+          <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-6 border-b border-[color:var(--border)] pb-2">
+            {t.visionTitle}
+          </h2>
+          <p className="text-sm text-[color:var(--muted)] mb-4 max-w-2xl">
+            {t.visionDescription}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {t.visionAreas.map((area) => (
+              <span
+                key={area}
+                className="px-3 py-1.5 text-xs font-medium rounded-full border border-[color:var(--border)] text-[color:var(--foreground)] bg-[color:var(--surface-muted)]"
+              >
+                {area}
+              </span>
+            ))}
+          </div>
+        </section>
+
+        {/* ── Stack / Tecnologias ──────────────────────────── */}
+        <section className="mb-16">
+          <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-6 border-b border-[color:var(--border)] pb-2">
+            {t.stackTitle}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {t.stackGroups.map((group) => (
+              <div
+                key={group.label}
+                className="p-5 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)]"
+              >
+                <h3 className="text-sm font-semibold text-[color:var(--foreground)] mb-2">
+                  {group.label}
+                </h3>
+                <p className="text-xs text-[color:var(--muted)] leading-relaxed">
+                  {group.items}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── CTA Final ────────────────────────────────────── */}
+        <section className="text-center py-10 border-t border-[color:var(--border)]">
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-full bg-[color:var(--accent)] text-[color:var(--bg)] hover:opacity-90 transition-opacity"
+          >
             {t.ctaLabel}
+            <span aria-hidden="true">→</span>
           </Link>
         </section>
       </main>

@@ -5,8 +5,13 @@ import { getProjectsCard } from "@/data/projects-card";
 import { resolveLocale, type LocaleParams } from "../_lib";
 import { ProjectsContent } from "./projects-content";
 
+type SearchParams = {
+  stack?: string;
+};
+
 type Props = {
   params: LocaleParams;
+  searchParams?: SearchParams;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

@@ -1,13 +1,6 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 
-import { getProjectBySlug, projectSlugs } from "@/data/projects";
-import { getProjectBySlugEn } from "@/data/projects.en";
-import { siteEn } from "@/data/site.en";
-import { sitePt } from "@/data/site.pt";
-import DemoCasePage from "@/ui/components/pages/DemoCasePage";
-
-import { resolveLocale } from "../../_lib";
+import { isValidLocale } from "@/core/i18n/routing";
 
 type RouteParams = Promise<{ locale: string; slug: string }>;
 
@@ -16,37 +9,38 @@ type Props = {
 };
 
 export function generateStaticParams() {
-  return projectSlugs.map((slug) => ({ slug }));
+  return [];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const resolvedParams = await params;
-  const locale = await resolveLocale(Promise.resolve({ locale: resolvedParams.locale }));
-  const project =
-    locale === "en"
-      ? getProjectBySlugEn(resolvedParams.slug)
-      : getProjectBySlug(resolvedParams.slug);
+  const { locale } = await params;
+  const isEn = locale === "en";
 
   return {
-    title: project ? `${project.title} | Demo` : locale === "en" ? "Demo" : "Demo",
-    description: project?.tagline ?? (locale === "en" ? "Interactive demo" : "Demo interativa"),
+    title: isEn ? "Demo" : "Demo",
+    description: isEn ? "Interactive demo" : "Demo interativa",
   };
 }
 
 export default async function DemosSlugPage({ params }: Props) {
   const { locale, slug } = await params;
-  const resolvedLocale = await resolveLocale(Promise.resolve({ locale }));
-  const project = resolvedLocale === "en" ? getProjectBySlugEn(slug) : getProjectBySlug(slug);
 
-  if (!project) {
-    notFound();
+  if (!isValidLocale(locale)) {
+    return null;
   }
 
   return (
-    <DemoCasePage
-      locale={resolvedLocale === "en" ? "en" : "pt"}
-      project={project}
-      copy={(resolvedLocale === "en" ? siteEn : sitePt).demos}
-    />
+    <main className="layout-container page-shell">
+      <section className="page-placeholder">
+        <h1>
+          {locale === "en" ? "Demo" : "Demo"} - {slug}
+        </h1>
+        <p>
+          {locale === "en"
+            ? "Page under construction"
+            : "P\u00e1gina em constru\u00e7\u00e3o"}
+        </p>
+      </section>
+    </main>
   );
 }
