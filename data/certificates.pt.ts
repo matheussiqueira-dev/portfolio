@@ -296,6 +296,7 @@ export const certificatesPt: Certificate[] = [
     issuer: "Ulife",
     areaTags: ["Marketing", "Higher Education", "Business"],
     pdfUrl: "/certificates/ulife/Diploma Ensino Superior em Marketing.pdf",
+    thumbnailUrl: "/certificates/previews/ulife/Diploma Ensino Superior em Marketing.png",
   },
   {
     id: "edge-computing-e-internet-das-coisas",
