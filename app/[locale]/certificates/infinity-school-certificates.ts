@@ -4,6 +4,7 @@ import { readdir } from "node:fs/promises";
 import path from "node:path";
 
 import type { Locale } from "@/core/i18n/routing";
+import { normalizeCertificate } from "@/data/certificates.normalize";
 import type { Certificate } from "@/data/certificates.types";
 
 const ROOT_DIR = path.join(process.cwd(), "public", "certificates", "infinity-school");
@@ -193,20 +194,22 @@ export async function getInfinitySchoolCertificates(locale: Locale): Promise<Cer
       const title = normalizeKnownTerms(cleanupTitle(file.name, sectionName));
       const publicUrl = toPublicUrl(["certificates", "infinity-school", directory.name, file.name]);
 
-      certificates.push({
-        id: slugify(
-          path.posix.join(
-            "infinity-school",
-            normalizeText(directory.name),
-            normalizeText(file.name)
-          )
-        ),
-        title,
-        issuer: "Infinity School",
-        areaTags: areaTags(title, sectionName, locale),
-        fileUrl: publicUrl,
-        thumbnailUrl: publicUrl,
-      });
+      certificates.push(
+        normalizeCertificate({
+          id: slugify(
+            path.posix.join(
+              "infinity-school",
+              normalizeText(directory.name),
+              normalizeText(file.name)
+            )
+          ),
+          title,
+          issuer: "Infinity School",
+          areaTags: areaTags(title, sectionName, locale),
+          fileUrl: publicUrl,
+          thumbnailUrl: publicUrl,
+        })
+      );
     }
   }
 

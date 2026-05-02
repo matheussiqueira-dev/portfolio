@@ -1,4 +1,5 @@
-import type { Certificate, CertificatesPageContent } from "./certificates.types";
+import { normalizeCertificates } from "./certificates.normalize";
+import type { CertificateSource, CertificatesPageContent } from "./certificates.types";
 
 export const certificatesPageEn: CertificatesPageContent = {
   title: "Certificates",
@@ -10,10 +11,26 @@ export const certificatesPageEn: CertificatesPageContent = {
   allLabel: "All",
   openLabel: "Open certificate",
   downloadLabel: "Download",
+  issuerLabel: "Issuer",
+  issueDateLabel: "Date",
+  unknownIssueDateLabel: "Date not provided",
+  areas: {
+    technology: {
+      title: "Technology and Computer Science",
+      description:
+        "Credentials in programming, data, AI, cloud, security, BI, and computing fundamentals.",
+    },
+    marketing: {
+      title: "Marketing, Business, and Performance",
+      description:
+        "Credentials in digital marketing, media, content, performance, management, and strategy.",
+    },
+  },
+  unavailableLabel: "Certificate unavailable",
   emptyLabel: "No certificates found.",
 };
 
-export const certificatesEn: Certificate[] = [
+const certificatesEnSource = [
   {
     id: "banco-de-dados-e-sql",
     title: "Databases and SQL",
@@ -126,7 +143,7 @@ export const certificatesEn: Certificate[] = [
     title: "Java: Consuming API, writing files, and handling errors",
     issuer: "Alura",
     areaTags: ["Java", "API", "File I/O", "Error Handling"],
-    pdfUrl: "/certificates/alura/Java consumindo API, gravando arquivos e lidando com erros.pdf",
+    pdfUrl: "/certificates/alura/Java consumindo API%2C gravando arquivos e lidando com erros.pdf",
   },
   {
     id: "aprenda-a-programar-em-java-com-orientacao-a-objetos",
@@ -211,7 +228,7 @@ export const certificatesEn: Certificate[] = [
     issuer: "Alura",
     areaTags: ["Python", "Data Analytics"],
     pdfUrl:
-      "/certificates/alura/Python para Dados trabalhando com funções, estruturas de dados e exceções.pdf",
+      "/certificates/alura/Python para Dados trabalhando com funções%2C estruturas de dados e exceções.pdf",
   },
   {
     id: "ux-design-entenda-a-area-da-user-experience",
@@ -499,35 +516,35 @@ export const certificatesEn: Certificate[] = [
     title: "Computer Graphics",
     issuer: "UNINASSAU",
     areaTags: ["Computer Graphics", "Design"],
-    pdfUrl: "/certificates/Uninassau/Computação Gráfica.pdf",
+    pdfUrl: "/certificates/Uninassau/Computação Gráfica.pdf",
   },
   {
     id: "evolucao-da-gestao-uninassau",
     title: "Evolution of Management",
     issuer: "UNINASSAU",
     areaTags: ["Management", "Business Strategy"],
-    pdfUrl: "/certificates/Uninassau/Evolução da Gestão.pdf",
+    pdfUrl: "/certificates/Uninassau/Evolução da Gestão.pdf",
   },
   {
     id: "gestao-de-talentos-uninassau",
     title: "Talent Management",
     issuer: "UNINASSAU",
     areaTags: ["People Management", "Leadership"],
-    pdfUrl: "/certificates/Uninassau/Gestão de Talentos.pdf",
+    pdfUrl: "/certificates/Uninassau/Gestão de Talentos.pdf",
   },
   {
     id: "historia-da-evolucao-tecnologica-uninassau",
     title: "History of Technological Evolution",
     issuer: "UNINASSAU",
     areaTags: ["Technology", "Innovation"],
-    pdfUrl: "/certificates/Uninassau/História da Evolução Tecnológica.pdf",
+    pdfUrl: "/certificates/Uninassau/História da Evolução Tecnológica.pdf",
   },
   {
     id: "mba-midias-digitais-performance-analytics-uninassau",
     title: "MBA in Digital Media, Performance, and Analytics",
     issuer: "UNINASSAU",
     areaTags: ["Digital Marketing", "Performance Marketing", "Data Analytics"],
-    pdfUrl: "/certificates/Uninassau/MBA em Mídias Digitais e Performance e analytics.pdf",
+    pdfUrl: "/certificates/Uninassau/MBA em Mídias Digitais e Performance e analytics.pdf",
   },
   {
     id: "marketing-de-performance-uninassau",
@@ -541,13 +558,15 @@ export const certificatesEn: Certificate[] = [
     title: "Digital Media Campaign Optimization",
     issuer: "UNINASSAU",
     areaTags: ["Digital Marketing", "Campaign Optimization", "Performance Marketing"],
-    pdfUrl: "/certificates/Uninassau/Otimização de Campanhas em Mídias Digitais.pdf",
+    pdfUrl: "/certificates/Uninassau/Otimização de Campanhas em Mídias Digitais.pdf",
   },
   {
     id: "producao-de-conteudo-uninassau",
     title: "Content Production",
     issuer: "UNINASSAU",
     areaTags: ["Content Marketing", "Communication"],
-    pdfUrl: "/certificates/Uninassau/Produção de Conteúdo.pdf",
+    pdfUrl: "/certificates/Uninassau/Produção de Conteúdo.pdf",
   },
-];
+] satisfies CertificateSource[];
+
+export const certificatesEn = normalizeCertificates(certificatesEnSource);
