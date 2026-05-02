@@ -476,7 +476,7 @@ const projectListEn: Project[] = [
     role: "Analyst/Developer",
     stack: ["Python", "FastAPI", "OpenCV", "MediaPipe", "React"],
     repoUrl: "https://github.com/matheussiqueira-dev/Interface-Web-de-Gestos-Sem-Contato.git",
-    demoUrl: "https://touchless-gestures-next.vercel.app/",
+    demoUrl: "https://interface-web-de-gestos-sem-contato.vercel.app/",
     demo: {
       kind: "video",
       src: "/media/touchless-web-gesture-interface.mp4",

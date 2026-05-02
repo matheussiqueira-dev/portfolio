@@ -291,7 +291,6 @@ export const projectsCardPt: ProjectCard[] = [
       },
     },
     links: {
-      live: "https://analytics.example.com",
       caseStudy: "/projetos/data-analyst-dashboard",
     },
     featured: false,
@@ -370,8 +369,8 @@ export const projectsCardPt: ProjectCard[] = [
     },
     links: {
       repo: "https://github.com/matheussiqueira-dev/touchless-gesture",
-      live: "https://touchless-gesture.vercel.app",
-      demo: "https://touchless-gesture.vercel.app",
+      live: "https://interface-web-de-gestos-sem-contato.vercel.app/",
+      demo: "https://interface-web-de-gestos-sem-contato.vercel.app/",
       caseStudy: "/projetos/touchless-gesture-web-interface",
     },
     featured: true,
@@ -602,55 +601,3 @@ export function getProjectsCard(locale: "pt" | "en") {
     ),
   ];
 }
-
-/**
- * Sample: Shows how to extend with more projects
- * This is a template for adding new project cards
- */
-export const projectCardTemplate: ProjectCard = {
-  slug: "template",
-  id: "template",
-  title: {
-    pt: "Título em Português",
-    en: "Title in English",
-  },
-  tagline: {
-    pt: "Descrição curta em português",
-    en: "Short description in English",
-  },
-  description: {
-    pt: "Descrição média em português",
-    en: "Medium description in English",
-  },
-  fullDescription: {
-    pt: "Descrição completa e detalhada em português. Explique o contexto, desafios e soluções.",
-    en: "Complete and detailed description in English. Explain context, challenges, and solutions.",
-  },
-  thumbnail: {
-    pt: "/thumbnails/pt/template.png",
-    en: "/thumbnails/en/template.png",
-  },
-  videos: [
-    {
-      type: "local",
-      src: "/path-to-video.mp4",
-      poster: "/thumbnails/pt/template.png",
-      caption: "Video caption",
-    },
-  ],
-  stack: ["Tech1", "Tech2", "Tech3"],
-  role: "Your role here",
-  context: {
-    pt: "Background context em português",
-    en: "Background context in English",
-  },
-  highlights: ["Highlight 1", "Highlight 2", "Highlight 3"],
-  links: {
-    repo: "https://github.com/...",
-    live: "https://...",
-    demo: "https://...",
-    caseStudy: "/projetos/slug",
-  },
-  featured: false,
-  order: 999,
-};

@@ -35,13 +35,8 @@ export const deploymentNodesEn: DeploymentNode[] = [
     },
     status: "STABLE",
     thumbnail: {
-      pt: "/thumbnails/pt/invisabilidade-digital.png",
-      en: "/thumbnails/en/invisabilidade-digital.png",
-    },
-    links: {
-      github: "https://github.com",
-      demo: "https://demo.example.com",
-      live: "https://example.com",
+      pt: "/thumbnails/pt/capa-da-invisibilidade.png",
+      en: "/thumbnails/en/capa-da-invisibilidade.png",
     },
   },
   {
@@ -78,12 +73,8 @@ export const deploymentNodesEn: DeploymentNode[] = [
     },
     status: "ACTIVE",
     thumbnail: {
-      pt: "/thumbnails/pt/dashboard-analytics.png",
-      en: "/thumbnails/en/dashboard-analytics.png",
-    },
-    links: {
-      github: "https://github.com",
-      live: "https://example.com",
+      pt: "/thumbnails/pt/dashboard-vendas-power-bi.png",
+      en: "/thumbnails/en/dashboard-vendas-power-bi.png",
     },
   },
 ];
