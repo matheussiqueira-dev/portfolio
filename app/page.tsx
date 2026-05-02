@@ -106,7 +106,9 @@ export default function LandingPage() {
       />
 
       <section id="about" aria-labelledby="about-title" className="layout-container py-16 md:py-24">
-        <p className="text-xs uppercase tracking-[0.28em] text-[color:var(--muted)] mb-3">Sobre Mim</p>
+        <p className="text-xs uppercase tracking-[0.28em] text-[color:var(--muted)] mb-3">
+          Sobre Mim
+        </p>
         <h2
           id="about-title"
           className="text-3xl md:text-4xl font-semibold tracking-tight text-[color:var(--foreground)] mb-6"
@@ -116,8 +118,9 @@ export default function LandingPage() {
 
         <div className="space-y-4 text-sm md:text-base leading-relaxed text-[color:var(--muted)] max-w-5xl">
           <p>
-            Sou um profissional de tecnologia com atuação orientada à construção de soluções digitais
-            capazes de transformar dados, processos e operações em vantagem estratégica mensurável.
+            Sou um profissional de tecnologia com atuação orientada à construção de soluções
+            digitais capazes de transformar dados, processos e operações em vantagem estratégica
+            mensurável.
           </p>
           <p>
             Minha trajetória profissional foi construída na interseção entre análise de dados,
@@ -146,8 +149,8 @@ export default function LandingPage() {
               Estruturação de ambientes analíticos voltados à tomada de decisão estratégica,
               incluindo modelagem de dados, construção de dashboards executivos e automação de
               pipelines analíticos. Experiência prática inclui desenvolvimento de soluções de
-              Business Intelligence aplicadas à gestão pública, suportando planejamento institucional
-              e análise operacional baseada em indicadores confiáveis.
+              Business Intelligence aplicadas à gestão pública, suportando planejamento
+              institucional e análise operacional baseada em indicadores confiáveis.
             </p>
           </article>
 
@@ -269,21 +272,33 @@ export default function LandingPage() {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           <article className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
-            <h4 className="text-base font-semibold text-[color:var(--foreground)] mb-2">Dados & Analytics</h4>
-            <p className="text-sm text-[color:var(--muted)]">Power BI · SQL · DAX · Python · ETL · Data Modeling</p>
+            <h4 className="text-base font-semibold text-[color:var(--foreground)] mb-2">
+              Dados & Analytics
+            </h4>
+            <p className="text-sm text-[color:var(--muted)]">
+              Power BI · SQL · DAX · Python · ETL · Data Modeling
+            </p>
           </article>
           <article className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
-            <h4 className="text-base font-semibold text-[color:var(--foreground)] mb-2">Desenvolvimento</h4>
+            <h4 className="text-base font-semibold text-[color:var(--foreground)] mb-2">
+              Desenvolvimento
+            </h4>
             <p className="text-sm text-[color:var(--muted)]">
               JavaScript · TypeScript · React · Next.js · APIs REST
             </p>
           </article>
           <article className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
-            <h4 className="text-base font-semibold text-[color:var(--foreground)] mb-2">Infraestrutura</h4>
-            <p className="text-sm text-[color:var(--muted)]">Cloud Computing · DevOps · Versionamento · CI/CD</p>
+            <h4 className="text-base font-semibold text-[color:var(--foreground)] mb-2">
+              Infraestrutura
+            </h4>
+            <p className="text-sm text-[color:var(--muted)]">
+              Cloud Computing · DevOps · Versionamento · CI/CD
+            </p>
           </article>
           <article className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
-            <h4 className="text-base font-semibold text-[color:var(--foreground)] mb-2">Metodologias</h4>
+            <h4 className="text-base font-semibold text-[color:var(--foreground)] mb-2">
+              Metodologias
+            </h4>
             <p className="text-sm text-[color:var(--muted)]">
               Scrum · Engenharia orientada a produto · Data-Driven Strategy
             </p>
@@ -296,15 +311,21 @@ export default function LandingPage() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
           <article className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
             <p className="text-2xl font-semibold text-[color:var(--foreground)]">14+</p>
-            <p className="text-sm text-[color:var(--muted)]">Projetos full stack e analíticos entregues</p>
+            <p className="text-sm text-[color:var(--muted)]">
+              Projetos full stack e analíticos entregues
+            </p>
           </article>
           <article className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
             <p className="text-2xl font-semibold text-[color:var(--foreground)]">3</p>
-            <p className="text-sm text-[color:var(--muted)]">Camadas integradas: dados, software e infraestrutura</p>
+            <p className="text-sm text-[color:var(--muted)]">
+              Camadas integradas: dados, software e infraestrutura
+            </p>
           </article>
           <article className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
             <p className="text-2xl font-semibold text-[color:var(--foreground)]">2</p>
-            <p className="text-sm text-[color:var(--muted)]">Contextos de atuação: setor público e privado</p>
+            <p className="text-sm text-[color:var(--muted)]">
+              Contextos de atuação: setor público e privado
+            </p>
           </article>
         </div>
 
