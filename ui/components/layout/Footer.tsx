@@ -44,7 +44,7 @@ export default function Footer() {
           </TrackedAnchor>
 
           <TrackedAnchor
-            href="https://www.linkedin.com/in/matheussiqueira-dev/"
+            href="https://br.linkedin.com/in/matheussiqueira-dev/"
             target="_blank"
             rel="noopener noreferrer"
             ariaLabel="LinkedIn"

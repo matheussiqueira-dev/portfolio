@@ -334,7 +334,7 @@ export default function HomeContent({ site, projects, locale }: Props) {
               {contact.cards.whatsapp}
             </a>
             <a
-              href="https://www.linkedin.com/in/matheussiqueira-dev/"
+              href="https://br.linkedin.com/in/matheussiqueira-dev/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-xl border border-[color:var(--border)] text-[color:var(--foreground)] bg-[color:var(--surface)] hover:bg-[color:var(--surface-strong)] transition-colors"

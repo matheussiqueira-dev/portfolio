@@ -151,7 +151,7 @@ export const resume = {
       },
       {
         label: "LinkedIn",
-        href: "https://www.linkedin.com/in/matheussiqueira-dev/",
+        href: "https://br.linkedin.com/in/matheussiqueira-dev/",
         value: "linkedin.com/in/matheussiqueira-dev",
       },
       {

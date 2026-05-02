@@ -92,7 +92,7 @@ export const IMAGE_QUALITY = {
 // ============================================================================
 
 export const SOCIAL_LINKS = {
-  LINKEDIN: "https://www.linkedin.com/in/matheussiqueira-dev/",
+  LINKEDIN: "https://br.linkedin.com/in/matheussiqueira-dev/",
   GITHUB: "https://github.com/matheussiqueira-dev",
 } as const;
 

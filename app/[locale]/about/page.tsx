@@ -72,7 +72,7 @@ const personJsonLd = {
   name: "Matheus Siqueira",
   url: baseUrl,
   jobTitle: "Software Engineer & Data Analyst",
-  sameAs: ["https://www.linkedin.com/in/matheussiqueira-dev/"],
+  sameAs: ["https://br.linkedin.com/in/matheussiqueira-dev/"],
   knowsAbout: [
     "Software Engineering",
     "Data Analytics",
