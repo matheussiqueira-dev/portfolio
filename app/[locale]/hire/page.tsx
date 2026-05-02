@@ -13,8 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await resolveLocale(params);
   return {
     title: locale === "pt-BR" ? "Contrate-me" : "Hire Me",
-    description:
-      locale === "pt-BR" ? "Contrate meus serviços" : "Hire my services",
+    description: locale === "pt-BR" ? "Contrate meus serviços" : "Hire my services",
   };
 }
 
@@ -24,7 +23,10 @@ export default async function HirePage({ params }: Props) {
   const { services, engagement, contact } = site;
 
   return (
-    <main className="layout-container page-shell" style={{ paddingTop: "var(--section-y)", paddingBottom: "var(--section-y)" }}>
+    <main
+      className="layout-container page-shell"
+      style={{ paddingTop: "var(--section-y)", paddingBottom: "var(--section-y)" }}
+    >
       {/* Services */}
       <section className="mb-16">
         <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] mb-2">
@@ -41,7 +43,9 @@ export default async function HirePage({ params }: Props) {
               key={offering.title}
               className="p-6 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] transition-colors hover:border-[color:var(--accent-soft)]"
             >
-              <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-2">{offering.title}</h3>
+              <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-2">
+                {offering.title}
+              </h3>
               <p className="text-sm text-[color:var(--muted)] mb-4">{offering.description}</p>
               <ul className="space-y-1">
                 {offering.bullets.map((b) => (
@@ -68,7 +72,9 @@ export default async function HirePage({ params }: Props) {
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div>
-                <h3 className="text-sm font-semibold text-[color:var(--foreground)] mb-1">{step.title}</h3>
+                <h3 className="text-sm font-semibold text-[color:var(--foreground)] mb-1">
+                  {step.title}
+                </h3>
                 <p className="text-xs text-[color:var(--muted)]">{step.description}</p>
               </div>
             </div>
@@ -92,8 +98,12 @@ export default async function HirePage({ params }: Props) {
               key={card.label}
               className="p-5 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)]"
             >
-              <p className="text-xs uppercase tracking-wider text-[color:var(--muted)] mb-1">{card.label}</p>
-              <p className="text-base font-semibold text-[color:var(--foreground)] mb-1">{card.value}</p>
+              <p className="text-xs uppercase tracking-wider text-[color:var(--muted)] mb-1">
+                {card.label}
+              </p>
+              <p className="text-base font-semibold text-[color:var(--foreground)] mb-1">
+                {card.value}
+              </p>
               <p className="text-xs text-[color:var(--muted)]">{card.detail}</p>
             </article>
           ))}
@@ -105,10 +115,10 @@ export default async function HirePage({ params }: Props) {
         <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] mb-2">
           {contact.eyebrow}
         </p>
-        <h2 className="text-2xl font-bold text-[color:var(--foreground)] mb-3">
-          {contact.title}
-        </h2>
-        <p className="text-sm text-[color:var(--muted)] max-w-xl mx-auto mb-6">{contact.description}</p>
+        <h2 className="text-2xl font-bold text-[color:var(--foreground)] mb-3">{contact.title}</h2>
+        <p className="text-sm text-[color:var(--muted)] max-w-xl mx-auto mb-6">
+          {contact.description}
+        </p>
 
         <div className="flex flex-wrap justify-center gap-3">
           <a

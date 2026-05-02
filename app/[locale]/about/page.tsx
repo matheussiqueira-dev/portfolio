@@ -42,8 +42,7 @@ const seo: { pt: SeoLocale; en: SeoLocale } = {
       "Profissional de tecnologia especializado em engenharia de software, análise de dados e desenvolvimento de soluções orientadas a impacto real.",
   },
   en: {
-    title:
-      "About Matheus Siqueira | Software Engineer & Data Analyst driven by AI",
+    title: "About Matheus Siqueira | Software Engineer & Data Analyst driven by AI",
     description:
       "Meet Matheus Siqueira, a tech professional specialised in Software Engineering, Business Intelligence, Data Science and AI-driven process automation.",
     keywords: [
@@ -106,11 +105,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: `${baseUrl}/og.png`,
           width: 1200,
           height: 630,
-          alt: pickByLocale(
-            locale,
-            "Sobre Matheus Siqueira",
-            "About Matheus Siqueira"
-          ),
+          alt: pickByLocale(locale, "Sobre Matheus Siqueira", "About Matheus Siqueira"),
         },
       ],
     },
@@ -170,12 +165,7 @@ const content = {
     differentiatorTitle: "O Que Me Diferencia",
     differentiatorIntro:
       "Grande parte dos profissionais especializa-se em apenas uma camada tecnológica. Meu diferencial está na integração entre:",
-    differentiatorAreas: [
-      "Dados",
-      "Desenvolvimento",
-      "Infraestrutura",
-      "Estratégia de negócio",
-    ],
+    differentiatorAreas: ["Dados", "Desenvolvimento", "Infraestrutura", "Estratégia de negócio"],
     differentiatorClosing:
       "Essa combinação permite reduzir dependências técnicas, acelerar entregas e aumentar previsibilidade de resultados.",
     visionTitle: "Visão de Futuro",
@@ -253,12 +243,7 @@ const content = {
     differentiatorTitle: "What Sets Me Apart",
     differentiatorIntro:
       "Most professionals specialise in a single technology layer. My differentiator lies in integrating:",
-    differentiatorAreas: [
-      "Data",
-      "Development",
-      "Infrastructure",
-      "Business strategy",
-    ],
+    differentiatorAreas: ["Data", "Development", "Infrastructure", "Business strategy"],
     differentiatorClosing:
       "This combination reduces technical dependencies, accelerates delivery and increases result predictability.",
     visionTitle: "Future Vision",
@@ -381,9 +366,7 @@ export default async function AboutPage({ params }: Props) {
                 <p className="text-xl md:text-2xl font-bold text-[color:var(--accent)]">
                   {metric.value}
                 </p>
-                <p className="text-xs text-[color:var(--muted)] mt-1">
-                  {metric.label}
-                </p>
+                <p className="text-xs text-[color:var(--muted)] mt-1">{metric.label}</p>
               </div>
             ))}
           </div>
@@ -418,20 +401,13 @@ export default async function AboutPage({ params }: Props) {
           </h2>
           <ul className="space-y-2 mb-5">
             {t.mindsetPrinciples.map((p) => (
-              <li
-                key={p}
-                className="text-sm text-[color:var(--muted)] flex items-start gap-2"
-              >
-                <span className="text-[color:var(--accent)] shrink-0 mt-0.5">
-                  ▸
-                </span>
+              <li key={p} className="text-sm text-[color:var(--muted)] flex items-start gap-2">
+                <span className="text-[color:var(--accent)] shrink-0 mt-0.5">▸</span>
                 <span>{p}</span>
               </li>
             ))}
           </ul>
-          <p className="text-sm text-[color:var(--muted)] italic max-w-2xl">
-            {t.mindsetClosing}
-          </p>
+          <p className="text-sm text-[color:var(--muted)] italic max-w-2xl">{t.mindsetClosing}</p>
         </section>
 
         {/* ── Trajetória ───────────────────────────────────── */}
@@ -477,9 +453,7 @@ export default async function AboutPage({ params }: Props) {
           <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-6 border-b border-[color:var(--border)] pb-2">
             {t.visionTitle}
           </h2>
-          <p className="text-sm text-[color:var(--muted)] mb-4 max-w-2xl">
-            {t.visionDescription}
-          </p>
+          <p className="text-sm text-[color:var(--muted)] mb-4 max-w-2xl">{t.visionDescription}</p>
           <div className="flex flex-wrap gap-2">
             {t.visionAreas.map((area) => (
               <span
@@ -506,9 +480,7 @@ export default async function AboutPage({ params }: Props) {
                 <h3 className="text-sm font-semibold text-[color:var(--foreground)] mb-2">
                   {group.label}
                 </h3>
-                <p className="text-xs text-[color:var(--muted)] leading-relaxed">
-                  {group.items}
-                </p>
+                <p className="text-xs text-[color:var(--muted)] leading-relaxed">{group.items}</p>
               </div>
             ))}
           </div>

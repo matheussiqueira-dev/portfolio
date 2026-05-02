@@ -13,10 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await resolveLocale(params);
   return {
     title: locale === "pt-BR" ? "Acadêmico" : "Academic",
-    description:
-      locale === "pt-BR"
-        ? "Educação e certificações"
-        : "Education and certifications",
+    description: locale === "pt-BR" ? "Educação e certificações" : "Education and certifications",
   };
 }
 
@@ -35,7 +32,10 @@ export default async function AcademicPage({ params }: Props) {
   };
 
   return (
-    <main className="layout-container page-shell" style={{ paddingTop: "var(--section-y)", paddingBottom: "var(--section-y)" }}>
+    <main
+      className="layout-container page-shell"
+      style={{ paddingTop: "var(--section-y)", paddingBottom: "var(--section-y)" }}
+    >
       {/* Header */}
       <header className="mb-12">
         <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] mb-2">
@@ -94,7 +94,9 @@ export default async function AcademicPage({ params }: Props) {
           </h2>
           <ul className="space-y-1">
             {data.languages.map((lang) => (
-              <li key={lang} className="text-sm text-[color:var(--muted)]">{lang}</li>
+              <li key={lang} className="text-sm text-[color:var(--muted)]">
+                {lang}
+              </li>
             ))}
           </ul>
         </section>
