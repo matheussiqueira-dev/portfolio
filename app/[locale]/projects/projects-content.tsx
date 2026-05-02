@@ -17,16 +17,12 @@ const labels = {
   },
   en: {
     title: "Projects",
-    description:
-      "Explore a selection of my projects in web development, data, and BI",
+    description: "Explore a selection of my projects in web development, data, and BI",
     filterAll: "All",
   },
 };
 
-export function ProjectsContent({
-  projects,
-  locale,
-}: ProjectsContentProps) {
+export function ProjectsContent({ projects, locale }: ProjectsContentProps) {
   const t = labels[locale];
 
   return (

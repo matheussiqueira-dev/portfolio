@@ -28,7 +28,10 @@ export default async function CertificatesPage({ params }: Props) {
   const certificates = [...baseCertificates, ...infinitySchoolCertificates];
 
   return (
-    <main className="layout-container page-shell" style={{ paddingTop: "var(--section-y)", paddingBottom: "var(--section-y)" }}>
+    <main
+      className="layout-container page-shell"
+      style={{ paddingTop: "var(--section-y)", paddingBottom: "var(--section-y)" }}
+    >
       <header className="mb-8">
         <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] mb-2">
           {content.title}

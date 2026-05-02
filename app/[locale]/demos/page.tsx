@@ -20,11 +20,7 @@ export default async function DemosPage({ params }: Props) {
     <main className="layout-container page-shell">
       <section className="page-placeholder">
         <h1>Demos</h1>
-        <p>
-          {locale === "pt-BR"
-            ? "Página em construção"
-            : "Page under construction"}
-        </p>
+        <p>{locale === "pt-BR" ? "Página em construção" : "Page under construction"}</p>
       </section>
     </main>
   );
