@@ -10,8 +10,8 @@
 
 .title {
   margin: 0;
-  max-width: 9ch;
-  font-size: clamp(3rem, 8vw, 5.8rem);
+  max-width: 15ch;
+  font-size: clamp(2.7rem, 7vw, 5.4rem);
   font-weight: 780;
   line-height: 0.92;
   letter-spacing: 0;

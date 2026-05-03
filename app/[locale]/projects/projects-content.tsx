@@ -11,13 +11,15 @@ interface ProjectsContentProps {
 
 const labels = {
   pt: {
-    title: "Projetos",
-    description: "Explore uma sele\u00e7\u00e3o dos meus projetos em web, dados e BI",
+    title: "Projetos que conectam produto, dados e automação",
+    description:
+      "Uma seleção de cases com contexto, stack, decisões técnicas e impacto em software, BI, IA e eficiência operacional.",
     filterAll: "Todos",
   },
   en: {
-    title: "Projects",
-    description: "Explore a selection of my projects in web development, data, and BI",
+    title: "Projects connecting product, data and automation",
+    description:
+      "Selected cases with context, stack, technical decisions and impact across software, BI, AI and operational efficiency.",
     filterAll: "All",
   },
 };

@@ -16,6 +16,37 @@ type Props = {
 
 const heroStack = ["Power BI", "SQL", "Python", "React", "Next.js", "TypeScript"];
 
+const heroDifferentials = {
+  pt: [
+    {
+      title: "BI & Dados",
+      description: "KPI, modelagem e dashboards para decisões executivas confiáveis.",
+    },
+    {
+      title: "Software Full Stack",
+      description: "Produtos digitais, APIs e interfaces preparadas para produção.",
+    },
+    {
+      title: "Automação & IA",
+      description: "Fluxos inteligentes para reduzir trabalho manual e acelerar operação.",
+    },
+  ],
+  en: [
+    {
+      title: "BI & Data",
+      description: "KPIs, modeling and dashboards for reliable executive decisions.",
+    },
+    {
+      title: "Full Stack Software",
+      description: "Digital products, APIs and interfaces prepared for production.",
+    },
+    {
+      title: "Automation & AI",
+      description: "Intelligent workflows to reduce manual work and accelerate operations.",
+    },
+  ],
+} as const;
+
 export default function HomeContent({ site, projects, locale }: Props) {
   const { hero, about, executiveSummary, projects: projectsCopy, contact, metrics } = site;
 
@@ -44,20 +75,33 @@ export default function HomeContent({ site, projects, locale }: Props) {
             <StackIconList items={heroStack} size="lg" showLabel className="home-stack-icons" />
 
             <div className="hero-actions">
-              <Link href="/projects" className="btn-primary">
+              <Link href="/hire" className="btn-primary">
                 {hero.ctas.primary}
               </Link>
-              <Link href="/resume" className="btn-outline">
+              <Link href="/projects" className="btn-outline">
                 {hero.ctas.secondary}
               </Link>
-              <a
-                href="https://wa.me/5581999203683"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-ghost"
-              >
+              <Link href="/services" className="btn-ghost">
                 {hero.ctas.tertiary}
-              </a>
+              </Link>
+            </div>
+
+            <div
+              className="home-differentiator-grid"
+              aria-label={locale === "pt" ? "Diferenciais principais" : "Core strengths"}
+            >
+              {heroDifferentials[locale].map((item, index) => (
+                <article
+                  key={item.title}
+                  className="home-differentiator"
+                  data-reveal
+                  style={{ "--reveal-delay": `${160 + index * 70}ms` } as CSSProperties}
+                >
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <h2>{item.title}</h2>
+                  <p>{item.description}</p>
+                </article>
+              ))}
             </div>
           </div>
 

@@ -46,13 +46,13 @@ const hireCopy = {
     processTitle: "Como conduzo o trabalho",
     process: [
       {
-        title: "Alinhamento de impacto",
+        title: "Diagnóstico",
         description:
-          "Definimos objetivo, usuários, restrições e métrica de sucesso antes de codar.",
+          "Entendo objetivo, usuários, gargalos, restrições e métrica de sucesso antes de propor solução.",
       },
       {
-        title: "Plano técnico enxuto",
-        description: "Transformo o problema em backlog, arquitetura e entregáveis verificáveis.",
+        title: "Planejamento técnico",
+        description: "Transformo o problema em arquitetura, backlog e entregáveis verificáveis.",
       },
       {
         title: "Execução com validação",
@@ -107,11 +107,11 @@ const hireCopy = {
     processTitle: "How I run the engagement",
     process: [
       {
-        title: "Impact alignment",
-        description: "We define goals, users, constraints, and success metrics before coding.",
+        title: "Diagnosis",
+        description: "We define goals, users, bottlenecks, constraints, and success metrics first.",
       },
       {
-        title: "Lean technical plan",
+        title: "Technical planning",
         description: "I turn the problem into backlog, architecture, and verifiable deliverables.",
       },
       {

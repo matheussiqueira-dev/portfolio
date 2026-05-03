@@ -23,8 +23,12 @@ type FloatStyle = CSSProperties & {
 const labels = {
   pt: {
     title: "Meus Projetos",
-    description: "Portf\u00f3lio de casos de sucesso em desenvolvimento full stack, dados e IA",
+    description: "Cases selecionados em produto digital, dados, IA, BI e automação",
     filterLabel: "Filtrar por stack",
+    searchLabel: "Buscar projetos",
+    searchPlaceholder: "Buscar por projeto, stack ou tecnologia",
+    quickFilters: "Filtros rápidos",
+    selectLabel: "Todas as stacks",
     allProjects: "Todos os projetos",
     emptyState: "Nenhum projeto encontrado",
     singularResult: "projeto",
@@ -33,8 +37,12 @@ const labels = {
   },
   en: {
     title: "My Projects",
-    description: "Portf\u00f3lio of successful cases in full stack development, data, and AI",
+    description: "Selected cases in digital product, data, AI, BI and automation",
     filterLabel: "Filter by stack",
+    searchLabel: "Search projects",
+    searchPlaceholder: "Search by project, stack or technology",
+    quickFilters: "Quick filters",
+    selectLabel: "All stacks",
     allProjects: "All projects",
     emptyState: "No projects found",
     singularResult: "project",
@@ -69,21 +77,55 @@ function getFloatStyle(label: string, index: number): FloatStyle {
  */
 export default function ProjectList({ projects, locale, allLabel }: Props) {
   const [selectedStack, setSelectedStack] = useState<string | null>(null);
+  const [query, setQuery] = useState("");
   const t = labels[locale];
 
   const allStacks = useMemo(() => {
-    const stacks = new Set<string>();
-    projects.forEach((project) => project.stack.forEach((stack) => stacks.add(stack)));
-    return Array.from(stacks).sort();
+    const stackCounts = new Map<string, number>();
+    projects.forEach((project) => {
+      project.stack.forEach((stack) => stackCounts.set(stack, (stackCounts.get(stack) ?? 0) + 1));
+    });
+
+    return Array.from(stackCounts.entries())
+      .sort(([firstStack, firstCount], [secondStack, secondCount]) => {
+        if (secondCount !== firstCount) {
+          return secondCount - firstCount;
+        }
+
+        return firstStack.localeCompare(secondStack);
+      })
+      .map(([stack]) => stack);
   }, [projects]);
 
-  const filteredProjects = useMemo(() => {
-    if (!selectedStack) {
-      return projects;
-    }
+  const quickStacks = useMemo(() => allStacks.slice(0, 10), [allStacks]);
 
-    return projects.filter((project) => project.stack.includes(selectedStack));
-  }, [projects, selectedStack]);
+  const filteredProjects = useMemo(() => {
+    const normalizedQuery = query.trim().toLowerCase();
+
+    return projects.filter((project) => {
+      if (selectedStack && !project.stack.includes(selectedStack)) {
+        return false;
+      }
+
+      if (!normalizedQuery) {
+        return true;
+      }
+
+      const searchableText = [
+        project.title[locale],
+        project.tagline[locale],
+        project.description[locale],
+        project.role,
+        ...project.stack,
+        ...project.highlights,
+      ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+
+      return searchableText.includes(normalizedQuery);
+    });
+  }, [locale, projects, query, selectedStack]);
 
   const resultLabel = filteredProjects.length === 1 ? t.singularResult : t.pluralResult;
 
@@ -94,9 +136,44 @@ export default function ProjectList({ projects, locale, allLabel }: Props) {
         <p className={styles.description}>{t.description}</p>
       </header>
 
-      <nav className={styles.filterNav} aria-label={t.filterLabel}>
-        <span className={styles.filterLabel}>{t.filterLabel}</span>
-        <div className={styles.filters}>
+      <section className={styles.filterNav} aria-labelledby="project-filter-title">
+        <h3 id="project-filter-title" className="sr-only">
+          {t.filterLabel}
+        </h3>
+        <div className={styles.searchWrap}>
+          <label className={styles.filterLabel} htmlFor="project-search">
+            {t.searchLabel}
+          </label>
+          <input
+            id="project-search"
+            type="search"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder={t.searchPlaceholder}
+            className={styles.searchInput}
+          />
+        </div>
+
+        <div className={styles.filterSelectWrap}>
+          <label className={styles.filterLabel} htmlFor="project-stack-filter">
+            {t.selectLabel}
+          </label>
+          <select
+            id="project-stack-filter"
+            className={styles.filterSelect}
+            value={selectedStack ?? ""}
+            onChange={(event) => setSelectedStack(event.target.value || null)}
+          >
+            <option value="">{allLabel ?? t.allProjects}</option>
+            {allStacks.map((stack) => (
+              <option key={stack} value={stack}>
+                {stack}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <nav className={styles.quickFilters} aria-label={t.quickFilters}>
           <button
             className={`${styles.filter} ${selectedStack === null ? styles.active : ""}`}
             style={getFloatStyle(allLabel ?? t.allProjects, 0)}
@@ -111,7 +188,7 @@ export default function ProjectList({ projects, locale, allLabel }: Props) {
             <span>{allLabel ?? t.allProjects}</span>
           </button>
 
-          {allStacks.map((stack, stackIndex) => (
+          {quickStacks.map((stack, stackIndex) => (
             <button
               key={stack}
               className={`${styles.filter} ${selectedStack === stack ? styles.active : ""}`}
@@ -124,8 +201,8 @@ export default function ProjectList({ projects, locale, allLabel }: Props) {
               <StackIcon name={stack} size="sm" showLabel />
             </button>
           ))}
-        </div>
-      </nav>
+        </nav>
+      </section>
 
       {filteredProjects.length > 0 ? (
         <div className={styles.grid}>
@@ -140,7 +217,7 @@ export default function ProjectList({ projects, locale, allLabel }: Props) {
       )}
 
       {filteredProjects.length > 0 && (
-        <p className={styles.resultCount}>
+        <p className={styles.resultCount} aria-live="polite">
           {filteredProjects.length} {resultLabel}{" "}
           {selectedStack ? `${t.withStack} ${selectedStack}` : ""}
         </p>

@@ -75,6 +75,8 @@ function PillarCard({
   const deliverableLabel = locale === "pt" ? "Entregáveis" : "Deliverables";
   const impactLabel = locale === "pt" ? "Impacto no negócio" : "Business impact";
   const toolsLabel = locale === "pt" ? "Ferramentas e tecnologias" : "Tools and technologies";
+  const problemLabel = locale === "pt" ? "Problema que resolve" : "Problem it solves";
+  const ctaLabel = locale === "pt" ? "Conversar sobre este serviço" : "Discuss this service";
 
   return (
     <Reveal className="services-pillar" delay={Math.min(index, 4) * 0.04}>
@@ -82,6 +84,7 @@ function PillarCard({
         <div className="services-pillar__head">
           <span className="services-pillar__index">{String(index + 1).padStart(2, "0")}</span>
           <h2>{pillar.title}</h2>
+          <span className="services-pillar__problem-label">{problemLabel}</span>
           <p>{pillar.description}</p>
         </div>
 
@@ -103,6 +106,10 @@ function PillarCard({
 
         <div className="services-pillar__tools" aria-label={toolsLabel}>
           <StackIconList items={pillar.tools} size="sm" showLabel />
+          <Link href="/hire" className="services-pillar__cta">
+            {ctaLabel}
+            <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </article>
     </Reveal>

@@ -28,18 +28,11 @@ export default async function CertificatesPage({ params }: Props) {
   const certificates = [...baseCertificates, ...infinitySchoolCertificates];
 
   return (
-    <main
-      className="layout-container page-shell"
-      style={{ paddingTop: "var(--section-y)", paddingBottom: "var(--section-y)" }}
-    >
-      <header className="mb-8">
-        <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] mb-2">
-          {content.title}
-        </p>
-        <h1 className="text-3xl md:text-4xl font-bold text-[color:var(--foreground)] mb-3">
-          {content.title}
-        </h1>
-        <p className="text-sm text-[color:var(--muted)] max-w-2xl">{content.description}</p>
+    <main className="layout-container page-shell certificates-page">
+      <header className="certificates-hero" data-reveal>
+        <p className="eyebrow">{content.title}</p>
+        <h1>{content.title}</h1>
+        <p>{content.description}</p>
       </header>
 
       <CertificatesContent content={content} certificates={certificates} />

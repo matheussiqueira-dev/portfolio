@@ -46,60 +46,54 @@ function CertificateCard({
   const certificateUrl = fileUrl(cert);
 
   return (
-    <article className="flex flex-col overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] transition-colors hover:border-[color:var(--accent-soft)]">
-      <div className="relative aspect-[4/3] w-full bg-[color:var(--bg)]">
-        <SafeImage
-          src={cert.thumbnailUrl}
-          fallbackSrc="/placeholder.jpg"
-          alt={cert.title}
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-contain"
-        />
+    <article className="certificate-card card card-hover">
+      <div className="certificate-card__media">
+        <div className="certificate-card__frame">
+          <SafeImage
+            src={cert.thumbnailUrl}
+            fallbackSrc="/placeholder.jpg"
+            alt={cert.title}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="certificate-card__preview"
+          />
+        </div>
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
-        <h3 className="mb-1 line-clamp-2 text-sm font-semibold text-[color:var(--foreground)]">
-          {cert.title}
-        </h3>
-        <dl className="mb-2 grid gap-1 text-xs">
-          <div className="flex items-center gap-1.5 text-[color:var(--accent-soft)]">
-            <dt className="sr-only">{content.issuerLabel}</dt>
-            <dd>{cert.issuer}</dd>
-          </div>
-          <div className="flex items-center gap-1.5 text-[color:var(--muted)]">
-            <dt>{content.issueDateLabel}:</dt>
-            <dd>{issueDateLabel(cert, content)}</dd>
-          </div>
-        </dl>
-        <div className="mb-4 mt-auto flex flex-wrap gap-1">
+      <div className="certificate-card__body">
+        <div>
+          <h3 className="certificate-card__title">{cert.title}</h3>
+          <dl className="certificate-card__meta">
+            <div>
+              <dt className="sr-only">{content.issuerLabel}</dt>
+              <dd className="certificate-card__issuer">{cert.issuer}</dd>
+            </div>
+            <div>
+              <dt>{content.issueDateLabel}:</dt>
+              <dd>{issueDateLabel(cert, content)}</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div className="certificate-card__tags">
           {cert.areaTags.slice(0, 3).map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full border border-[color:var(--border)] px-2 py-0.5 text-[10px] text-[color:var(--muted)]"
-            >
+            <span key={tag} className="certificate-card__tag">
               {tag}
             </span>
           ))}
           {cert.areaTags.length > 3 && (
-            <span className="rounded-full border border-[color:var(--border)] px-2 py-0.5 text-[10px] text-[color:var(--muted)]">
-              +{cert.areaTags.length - 3}
-            </span>
+            <span className="certificate-card__tag">+{cert.areaTags.length - 3}</span>
           )}
         </div>
 
         {cert.details && (
-          <details className="mb-3 text-xs">
-            <summary className="cursor-pointer text-[color:var(--accent-soft)] transition-colors hover:text-[color:var(--foreground)]">
-              {cert.details.summaryLabel}
-            </summary>
-            <ul className="mt-2 space-y-1.5 border-l border-[color:var(--border)] pl-3">
+          <details className="certificate-card__details">
+            <summary>{cert.details.summaryLabel}</summary>
+            <ul>
               {cert.details.modules.map((mod) => (
                 <li key={mod.title}>
-                  <span className="font-medium text-[color:var(--foreground)]">{mod.title}</span>
-                  {mod.subtitle && (
-                    <span className="text-[color:var(--muted)]"> - {mod.subtitle}</span>
-                  )}
+                  <span>{mod.title}</span>
+                  {mod.subtitle && <span> - {mod.subtitle}</span>}
                 </li>
               ))}
             </ul>
@@ -111,7 +105,7 @@ function CertificateCard({
             href={certificateUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-auto inline-flex items-center gap-1.5 text-xs font-medium text-[color:var(--accent-soft)] transition-colors hover:text-[color:var(--foreground)]"
+            className="certificate-card__link"
           >
             {content.openLabel} ↗
           </a>
@@ -163,21 +157,24 @@ export default function CertificatesContent({ content, certificates }: Props) {
     [filtered]
   );
 
+  const hasActiveFilters = issuerFilter !== "all" || categoryFilter !== "all";
+
   return (
-    <div>
-      <div className="mb-8 flex flex-col gap-3 sm:flex-row">
+    <div className="certificates-content">
+      <div className="certificates-controls" data-reveal>
         <input
           type="search"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder={content.searchPlaceholder}
-          className="min-w-0 flex-1 rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] px-4 py-2.5 text-sm text-[color:var(--foreground)] placeholder:text-[color:var(--muted)] focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-soft)]/40"
+          aria-label={content.searchPlaceholder}
+          className="certificates-control certificates-control--search"
         />
         <select
           value={issuerFilter}
           onChange={(e) => setIssuerFilter(e.target.value)}
           aria-label={content.filterLabel}
-          className="rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] px-4 py-2.5 text-sm text-[color:var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-soft)]/40"
+          className="certificates-control"
         >
           <option value="all">{content.filterLabel}</option>
           {issuers.map((issuer) => (
@@ -190,7 +187,7 @@ export default function CertificatesContent({ content, certificates }: Props) {
           value={categoryFilter}
           onChange={(e) => setCategoryFilter(e.target.value)}
           aria-label={content.categoryFilterLabel}
-          className="rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] px-4 py-2.5 text-sm text-[color:var(--foreground)] focus:outline-none focus:ring-2 focus:ring-[color:var(--accent-soft)]/40"
+          className="certificates-control"
         >
           <option value="all">{content.categoryFilterLabel}</option>
           {categories.map((cat) => (
@@ -199,14 +196,20 @@ export default function CertificatesContent({ content, certificates }: Props) {
             </option>
           ))}
         </select>
+
+        <span className="certificates-count">
+          {filtered.length} / {certificates.length}
+        </span>
       </div>
 
-      {(issuerFilter !== "all" || categoryFilter !== "all") && (
-        <div className="mb-5 flex flex-wrap items-center gap-2">
+      {hasActiveFilters && (
+        <div className="certificates-active-filters" data-reveal>
           {issuerFilter !== "all" && (
             <button
+              type="button"
               onClick={() => setIssuerFilter("all")}
-              className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--accent)]/20 bg-[color:var(--accent)]/10 px-3 py-1.5 text-xs text-[color:var(--accent)] transition-colors hover:bg-[color:var(--accent)]/20"
+              className="certificates-filter-pill"
+              aria-label={`${content.filterLabel}: ${issuerFilter}`}
             >
               {issuerFilter}
               <span aria-hidden="true">×</span>
@@ -214,23 +217,22 @@ export default function CertificatesContent({ content, certificates }: Props) {
           )}
           {categoryFilter !== "all" && (
             <button
+              type="button"
               onClick={() => setCategoryFilter("all")}
-              className="inline-flex items-center gap-1.5 rounded-full border border-[color:var(--accent)]/20 bg-[color:var(--accent)]/10 px-3 py-1.5 text-xs text-[color:var(--accent)] transition-colors hover:bg-[color:var(--accent)]/20"
+              className="certificates-filter-pill"
+              aria-label={`${content.categoryFilterLabel}: ${categoryFilter}`}
             >
               {categoryFilter}
               <span aria-hidden="true">×</span>
             </button>
           )}
-          <span className="text-xs text-[color:var(--muted)]">
-            {filtered.length} / {certificates.length}
-          </span>
         </div>
       )}
 
       {filtered.length === 0 ? (
-        <p className="py-12 text-center text-sm text-[color:var(--muted)]">{content.emptyLabel}</p>
+        <p className="certificates-empty">{content.emptyLabel}</p>
       ) : (
-        <div className="space-y-12">
+        <div className="certificates-sections">
           {sections.map((section) => {
             const areaContent = content.areas[section.area];
 
@@ -238,26 +240,18 @@ export default function CertificatesContent({ content, certificates }: Props) {
               <section
                 key={section.area}
                 aria-labelledby={`certificates-${section.area}`}
-                className="scroll-mt-24"
+                className="certificates-section"
+                data-reveal
               >
-                <div className="mb-5 flex flex-col gap-3 border-b border-[color:var(--border)] pb-4 sm:flex-row sm:items-end sm:justify-between">
+                <div className="certificates-section__head">
                   <div>
-                    <h2
-                      id={`certificates-${section.area}`}
-                      className="text-xl font-semibold text-[color:var(--foreground)] md:text-2xl"
-                    >
-                      {areaContent.title}
-                    </h2>
-                    <p className="mt-1 max-w-2xl text-sm text-[color:var(--muted)]">
-                      {areaContent.description}
-                    </p>
+                    <h2 id={`certificates-${section.area}`}>{areaContent.title}</h2>
+                    <p>{areaContent.description}</p>
                   </div>
-                  <span className="w-fit rounded-full border border-[color:var(--border)] px-3 py-1 text-xs text-[color:var(--muted)]">
-                    {section.certificates.length}
-                  </span>
+                  <span>{section.certificates.length}</span>
                 </div>
 
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="certificates-grid">
                   {section.certificates.map((cert) => (
                     <CertificateCard key={cert.id} cert={cert} content={content} />
                   ))}

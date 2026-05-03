@@ -14,11 +14,11 @@ export const sitePt: SiteContent = {
     resume: "Currículo",
   },
   hero: {
-    eyebrow: "Analista de Dados • Business Intelligence • Power BI • Infraestrutura",
-    title: "Matheus Siqueira",
-    subtitle: "Infraestrutura | Desenvolvedor Full Stack | Analista de Dados Júnior",
+    eyebrow: "Dados • Software • BI • IA • Automação",
+    title: "Transformo dados, software e automação em decisões melhores",
+    subtitle: "Sistemas digitais, dashboards, automações e IA aplicada",
     description:
-      "Atuo no desenvolvimento de soluções analíticas e sistemas orientados à decisão, integrando Power BI, SQL, DAX, Power Query e automações em Python à arquitetura de dados e à infraestrutura. Trabalho de ponta a ponta, do tratamento e modelagem à visualização e entrega, com foco em eficiência operacional, confiabilidade e impacto mensurável no negócio.",
+      "Desenvolvo sistemas digitais, dashboards, automações e soluções com IA para empresas que precisam operar com mais clareza, eficiência e escala.",
     stackHighlights: [
       { label: "Data Analytics", icon: "stack" },
       { label: "Business Intelligence", icon: "data" },
@@ -31,9 +31,9 @@ export const sitePt: SiteContent = {
       { label: "Disponibilidade", value: "Projetos e consultorias" },
     ],
     ctas: {
-      primary: "Ver projetos",
-      secondary: "Ver currículo",
-      tertiary: "Falar comigo",
+      primary: "Contratar agora",
+      secondary: "Ver projetos",
+      tertiary: "Ver serviços",
     },
   },
   about: {
@@ -195,7 +195,7 @@ export const sitePt: SiteContent = {
       },
       {
         icon: "projects",
-        title: "14+ Projetos Full Stack Entregues",
+        title: "21 Projetos de software, dados e IA",
       },
       {
         icon: "certifications",
@@ -299,7 +299,7 @@ export const sitePt: SiteContent = {
     items: [
       {
         icon: "projects",
-        label: "14+ Projetos Concluídos",
+        label: "21 Projetos Publicados",
       },
       {
         icon: "github",

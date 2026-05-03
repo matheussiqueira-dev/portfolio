@@ -310,191 +310,144 @@ export default async function AboutPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
       />
 
-      <main
-        className="layout-container page-shell"
-        style={{
-          paddingTop: "var(--section-y)",
-          paddingBottom: "var(--section-y)",
-        }}
-      >
-        {/* ── Hero Section ─────────────────────────────────── */}
-        <header className="mb-16" data-reveal>
-          <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] mb-3">
-            {t.eyebrow}
-          </p>
+      <main className="layout-container page-shell about-page">
+        <header className="about-hero" data-reveal>
+          <div className="about-hero__media" aria-hidden="true">
+            <Image
+              src="/profile.jpg"
+              alt=""
+              fill
+              className="about-hero__image"
+              priority
+              sizes="(max-width: 768px) 180px, 260px"
+            />
+          </div>
 
-          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
-            {/* Photo */}
-            <div className="shrink-0">
-              <div className="relative w-36 h-36 md:w-44 md:h-44 rounded-2xl overflow-hidden border-2 border-[color:var(--border)] shadow-lg">
-                <Image
-                  src="/profile.jpg"
-                  alt="Matheus Siqueira"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
+          <div className="about-hero__copy">
+            <p className="eyebrow">{t.eyebrow}</p>
+            <h1>Matheus Siqueira</h1>
+            <p className="about-hero__lead">{t.heroLine}</p>
+            <div className="about-hero__body">
+              <p>{t.heroIntroP1}</p>
+              <p>{t.heroIntroP2}</p>
+              <p>{t.heroIntroP3}</p>
             </div>
-
-            {/* Intro Copy */}
-            <div className="flex-1 min-w-0">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[color:var(--foreground)] mb-2 leading-tight">
-                Matheus Siqueira
-              </h1>
-              <p className="text-base md:text-lg font-medium text-[color:var(--accent-soft)] mb-5 max-w-xl">
-                {t.heroLine}
-              </p>
-              <p className="text-sm leading-relaxed text-[color:var(--muted)] max-w-2xl mb-3">
-                {t.heroIntroP1}
-              </p>
-              <p className="text-sm leading-relaxed text-[color:var(--muted)] max-w-2xl mb-3">
-                {t.heroIntroP2}
-              </p>
-              <p className="text-sm leading-relaxed text-[color:var(--muted)] max-w-2xl">
-                {t.heroIntroP3}
-              </p>
+            <div className="about-hero__actions">
+              <Link href="/projects" className="btn-primary">
+                {t.ctaLabel}
+              </Link>
+              <Link href="/hire" className="btn-outline">
+                {locale === "pt-BR" ? "Conversar sobre uma demanda" : "Discuss a project"}
+              </Link>
             </div>
           </div>
 
-          {/* Metrics Strip */}
-          <div className="grid grid-cols-3 gap-4 mt-10">
+          <div className="about-metrics" aria-label="Resumo profissional">
             {m.map((metric) => (
-              <div
-                key={metric.label}
-                className="text-center p-4 rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)]"
-              >
-                <p className="text-xl md:text-2xl font-bold text-[color:var(--accent)]">
-                  {metric.value}
-                </p>
-                <p className="text-xs text-[color:var(--muted)] mt-1">{metric.label}</p>
-              </div>
+              <article key={metric.label} className="about-metric">
+                <strong>{metric.value}</strong>
+                <span>{metric.label}</span>
+              </article>
             ))}
           </div>
         </header>
 
-        {/* ── Perfil Profissional ──────────────────────────── */}
-        <section className="mb-16" data-reveal>
-          <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-6 border-b border-[color:var(--border)] pb-2">
-            {t.profileTitle}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {t.pillars.map((pillar) => (
-              <article
-                key={pillar.title}
-                className="p-6 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] transition-colors hover:border-[color:var(--accent-soft)]"
-              >
-                <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-3">
-                  {pillar.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-[color:var(--muted)]">
-                  {pillar.description}
-                </p>
+        <section className="about-section" data-reveal aria-labelledby="about-profile-title">
+          <div className="section-heading stack-heading">
+            <div className="section-heading__text">
+              <p className="eyebrow">Perfil</p>
+              <h2 id="about-profile-title" className="section-title">
+                {t.profileTitle}
+              </h2>
+            </div>
+            <p className="section-description">{t.heroIntroP1}</p>
+          </div>
+
+          <div className="about-card-grid about-card-grid--three">
+            {t.pillars.map((pillar, index) => (
+              <article key={pillar.title} className="about-card" data-reveal>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h3>{pillar.title}</h3>
+                <p>{pillar.description}</p>
               </article>
             ))}
           </div>
         </section>
 
-        {/* ── Mentalidade ──────────────────────────────────── */}
-        <section className="mb-16" data-reveal>
-          <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-6 border-b border-[color:var(--border)] pb-2">
-            {t.mindsetTitle}
-          </h2>
-          <ul className="space-y-2 mb-5">
-            {t.mindsetPrinciples.map((p) => (
-              <li key={p} className="text-sm text-[color:var(--muted)] flex items-start gap-2">
-                <span className="text-[color:var(--accent)] shrink-0 mt-0.5">▸</span>
-                <span>{p}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-sm text-[color:var(--muted)] italic max-w-2xl">{t.mindsetClosing}</p>
+        <section className="about-section about-split" data-reveal>
+          <article className="about-card about-card--featured">
+            <span>Mindset</span>
+            <h2>{t.mindsetTitle}</h2>
+            <ul>
+              {t.mindsetPrinciples.map((principle) => (
+                <li key={principle}>{principle}</li>
+              ))}
+            </ul>
+            <p>{t.mindsetClosing}</p>
+          </article>
+
+          <article className="about-card about-card--featured">
+            <span>Trajetória</span>
+            <h2>{t.trajectoryTitle}</h2>
+            <strong>{t.trajectoryFlow}</strong>
+            <p>{t.trajectoryDescription}</p>
+          </article>
         </section>
 
-        {/* ── Trajetória ───────────────────────────────────── */}
-        <section className="mb-16" data-reveal>
-          <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-6 border-b border-[color:var(--border)] pb-2">
-            {t.trajectoryTitle}
-          </h2>
-          <div className="p-5 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] mb-5">
-            <p className="text-base md:text-lg font-semibold text-[color:var(--accent)] tracking-wide text-center">
-              {t.trajectoryFlow}
-            </p>
+        <section className="about-section about-split" data-reveal>
+          <article className="about-card about-card--featured">
+            <span>Diferenciais</span>
+            <h2>{t.differentiatorTitle}</h2>
+            <p>{t.differentiatorIntro}</p>
+            <div className="about-tag-list">
+              {t.differentiatorAreas.map((area) => (
+                <span key={area}>{area}</span>
+              ))}
+            </div>
+            <p>{t.differentiatorClosing}</p>
+          </article>
+
+          <article className="about-card about-card--featured">
+            <span>Visão</span>
+            <h2>{t.visionTitle}</h2>
+            <p>{t.visionDescription}</p>
+            <div className="about-tag-list">
+              {t.visionAreas.map((area) => (
+                <span key={area}>{area}</span>
+              ))}
+            </div>
+          </article>
+        </section>
+
+        <section className="about-section" data-reveal aria-labelledby="about-stack-title">
+          <div className="section-heading stack-heading">
+            <div className="section-heading__text">
+              <p className="eyebrow">Stack</p>
+              <h2 id="about-stack-title" className="section-title">
+                {t.stackTitle}
+              </h2>
+            </div>
           </div>
-          <p className="text-sm leading-relaxed text-[color:var(--muted)] max-w-3xl">
-            {t.trajectoryDescription}
-          </p>
-        </section>
 
-        {/* ── Diferencial ──────────────────────────────────── */}
-        <section className="mb-16" data-reveal>
-          <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-6 border-b border-[color:var(--border)] pb-2">
-            {t.differentiatorTitle}
-          </h2>
-          <p className="text-sm text-[color:var(--muted)] mb-4 max-w-2xl">
-            {t.differentiatorIntro}
-          </p>
-          <div className="flex flex-wrap gap-2 mb-5">
-            {t.differentiatorAreas.map((area) => (
-              <span
-                key={area}
-                className="px-3 py-1.5 text-xs font-medium rounded-full border border-[color:var(--accent)]/30 text-[color:var(--accent)] bg-[color:var(--accent)]/5"
-              >
-                {area}
-              </span>
-            ))}
-          </div>
-          <p className="text-sm text-[color:var(--muted)] italic max-w-2xl">
-            {t.differentiatorClosing}
-          </p>
-        </section>
-
-        {/* ── Visão de Futuro ──────────────────────────────── */}
-        <section className="mb-16" data-reveal>
-          <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-6 border-b border-[color:var(--border)] pb-2">
-            {t.visionTitle}
-          </h2>
-          <p className="text-sm text-[color:var(--muted)] mb-4 max-w-2xl">{t.visionDescription}</p>
-          <div className="flex flex-wrap gap-2">
-            {t.visionAreas.map((area) => (
-              <span
-                key={area}
-                className="px-3 py-1.5 text-xs font-medium rounded-full border border-[color:var(--border)] text-[color:var(--foreground)] bg-[color:var(--surface-muted)]"
-              >
-                {area}
-              </span>
-            ))}
-          </div>
-        </section>
-
-        {/* ── Stack / Tecnologias ──────────────────────────── */}
-        <section className="mb-16" data-reveal>
-          <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-6 border-b border-[color:var(--border)] pb-2">
-            {t.stackTitle}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="about-card-grid">
             {t.stackGroups.map((group) => (
-              <div
-                key={group.label}
-                className="p-5 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)]"
-              >
-                <h3 className="text-sm font-semibold text-[color:var(--foreground)] mb-2">
-                  {group.label}
-                </h3>
+              <article key={group.label} className="about-card about-stack-card">
+                <h3>{group.label}</h3>
                 <StackIconList items={group.items} size="sm" showLabel />
-              </div>
+              </article>
             ))}
           </div>
         </section>
 
-        {/* ── CTA Final ────────────────────────────────────── */}
-        <section className="text-center py-10 border-t border-[color:var(--border)]" data-reveal>
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-full bg-[color:var(--accent)] text-[color:var(--bg)] hover:opacity-90 transition-opacity"
-          >
+        <section className="about-final" data-reveal>
+          <h2>{locale === "pt-BR" ? "Quer ver isso aplicado?" : "Want to see this applied?"}</h2>
+          <p>
+            {locale === "pt-BR"
+              ? "Os projetos mostram como conecto dados, software, automação e operação em entregas reais."
+              : "The projects show how I connect data, software, automation and operations in real work."}
+          </p>
+          <Link href="/projects" className="btn-primary">
             {t.ctaLabel}
-            <span aria-hidden="true">→</span>
           </Link>
         </section>
       </main>

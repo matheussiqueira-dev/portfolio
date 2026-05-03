@@ -13,10 +13,10 @@
 
 .title {
   margin: 0;
-  max-width: 12ch;
-  font-size: clamp(2.35rem, 7vw, 5rem);
+  max-width: 24ch;
+  font-size: 1.45rem;
   font-weight: 750;
-  line-height: 0.95;
+  line-height: 1.15;
   letter-spacing: 0;
   color: var(--text-primary);
 }
@@ -24,16 +24,22 @@
 .description {
   margin: 0;
   max-width: 58ch;
-  font-size: clamp(0.98rem, 1.8vw, 1.15rem);
+  font-size: 0.95rem;
   line-height: 1.75;
   color: var(--text-secondary);
 }
 
 .filterNav {
   display: grid;
-  gap: var(--space-md);
-  border-block: 1px solid color-mix(in srgb, var(--border-subtle) 76%, transparent);
-  padding-block: var(--space-lg);
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-lg);
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 66%, transparent);
+  border-radius: 1rem;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, #ffffff 5%, transparent), transparent 62%),
+    color-mix(in srgb, var(--bg-secondary) 84%, transparent);
+  padding: clamp(0.9rem, 2.4vw, 1.2rem);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.18);
 }
 
 .filterLabel {
@@ -47,11 +53,45 @@
   color: var(--text-secondary);
 }
 
-.filters {
+.quickFilters {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-sm);
   align-items: center;
+}
+
+.searchWrap,
+.filterSelectWrap {
+  display: grid;
+  gap: var(--space-sm);
+  min-width: 0;
+}
+
+.searchInput,
+.filterSelect {
+  min-height: 2.85rem;
+  width: 100%;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 72%, transparent);
+  border-radius: 0.85rem;
+  background: color-mix(in srgb, var(--bg-primary) 54%, transparent);
+  color: var(--text-primary);
+  padding: 0.66rem 0.82rem;
+  font-size: 0.9rem;
+  outline: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.searchInput::placeholder {
+  color: color-mix(in srgb, var(--text-secondary) 82%, transparent);
+}
+
+.searchInput:focus-visible,
+.filterSelect:focus-visible {
+  border-color: color-mix(in srgb, var(--accent) 70%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
 }
 
 .filter {
@@ -156,29 +196,9 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
   gap: clamp(1rem, 2.4vw, 1.5rem);
-  align-items: start;
-}
-
-.grid > [data-project-card] {
-  grid-column: span 6;
-}
-
-.grid > [data-project-card][data-featured="true"]:nth-child(1) {
-  grid-column: span 7;
-}
-
-.grid > [data-project-card]:nth-child(2) {
-  grid-column: span 5;
-}
-
-.grid > [data-project-card]:nth-child(5n + 3) {
-  grid-column: span 5;
-}
-
-.grid > [data-project-card]:nth-child(5n + 4) {
-  grid-column: span 7;
+  align-items: stretch;
 }
 
 .emptyState {
@@ -226,18 +246,19 @@
   }
 }
 
-@media (max-width: 900px) {
-  .grid > [data-project-card],
-  .grid > [data-project-card][data-featured="true"]:nth-child(1),
-  .grid > [data-project-card]:nth-child(2),
-  .grid > [data-project-card]:nth-child(5n + 3),
-  .grid > [data-project-card]:nth-child(5n + 4) {
+@media (min-width: 980px) {
+  .filterNav {
+    grid-template-columns: minmax(18rem, 0.92fr) minmax(14rem, 0.42fr);
+    align-items: end;
+  }
+
+  .quickFilters {
     grid-column: 1 / -1;
   }
 }
 
 @media (max-width: 560px) {
-  .filters {
+  .quickFilters {
     flex-wrap: nowrap;
     overflow-x: auto;
     padding-bottom: var(--space-sm);

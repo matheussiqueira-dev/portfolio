@@ -14,11 +14,11 @@ export const siteEn: SiteContent = {
     resume: "Resume",
   },
   hero: {
-    eyebrow: "Data Analyst • Business Intelligence • Power BI • Infrastructure",
-    title: "Matheus Siqueira",
-    subtitle: "Full Stack Developer | Data, BI, and Operational Architecture",
+    eyebrow: "Data • Software • BI • AI • Automation",
+    title: "I turn data, software and automation into better decisions",
+    subtitle: "Digital systems, dashboards, automations and applied AI",
     description:
-      "I turn fiscal, public, and organizational data into clear, sustainable decisions, connecting Power BI, SQL, DAX, Power Query, and Python automation to data architecture and infrastructure. I work with a technical-leadership mindset and senior-level, end-to-end execution to deliver measurable business impact.",
+      "I build digital systems, dashboards, automations and AI solutions for companies that need more clarity, efficiency and scale.",
     stackHighlights: [
       { label: "Data Analytics", icon: "stack" },
       { label: "Business Intelligence", icon: "data" },
@@ -31,9 +31,9 @@ export const siteEn: SiteContent = {
       { label: "Availability", value: "Projects and consulting" },
     ],
     ctas: {
-      primary: "View projects",
-      secondary: "View resume",
-      tertiary: "Get in touch",
+      primary: "Hire now",
+      secondary: "View projects",
+      tertiary: "View services",
     },
   },
   about: {
@@ -195,7 +195,7 @@ export const siteEn: SiteContent = {
       },
       {
         icon: "projects",
-        title: "14+ Full Stack Projects Delivered",
+        title: "21 software, data and AI projects",
       },
       {
         icon: "certifications",
@@ -302,7 +302,7 @@ export const siteEn: SiteContent = {
     items: [
       {
         icon: "projects",
-        label: "14+ Projects Completed",
+        label: "21 Published Projects",
       },
       {
         icon: "github",
