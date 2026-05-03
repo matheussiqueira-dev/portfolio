@@ -143,7 +143,7 @@ const certificatesEnSource = [
     title: "Java: Consuming API, writing files, and handling errors",
     issuer: "Alura",
     areaTags: ["Java", "API", "File I/O", "Error Handling"],
-    pdfUrl: "/certificates/alura/Java consumindo API%2C gravando arquivos e lidando com erros.pdf",
+    pdfUrl: "/certificates/alura/Java consumindo API, gravando arquivos e lidando com erros.pdf",
   },
   {
     id: "aprenda-a-programar-em-java-com-orientacao-a-objetos",
@@ -228,7 +228,7 @@ const certificatesEnSource = [
     issuer: "Alura",
     areaTags: ["Python", "Data Analytics"],
     pdfUrl:
-      "/certificates/alura/Python para Dados trabalhando com funções%2C estruturas de dados e exceções.pdf",
+      "/certificates/alura/Python para Dados trabalhando com funções, estruturas de dados e exceções.pdf",
   },
   {
     id: "ux-design-entenda-a-area-da-user-experience",
