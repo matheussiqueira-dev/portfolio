@@ -2,6 +2,121 @@ import type { Project as ProjectCase } from "./projects.types";
 
 const projectList: ProjectCase[] = [
   {
+    slug: "encom-gesture-console",
+    title: "ENCOM Gesture Console",
+    headline: "ENCOM Gesture Console | Visão computacional, gestos e telemetria visual",
+    tagline:
+      "Console futurista com detecção de gestos pela webcam, telemetria visual e efeitos 3D em tempo real.",
+    role: "Desenvolvedor Frontend e IA no navegador",
+    stack: ["JavaScript", "TensorFlow.js", "MediaPipe Hands", "Three.js", "HTML", "CSS", "Vercel"],
+    repoUrl: "https://github.com/matheussiqueira-dev/Portal-Econ.git",
+    demoUrl: "https://portaldedominiosecon.vercel.app",
+    demo: {
+      kind: "video",
+      src: "/projects/portal-econ/demo.mp4",
+      poster: "/thumbnails/pt/portal-econ.png",
+      caption: "Portal Econ demo",
+    },
+    intro: {
+      title: "Console ENCOM para demonstrações de visão computacional",
+      paragraphs: [
+        "Aplicação web publicada na Vercel que combina MediaPipe Hands, TensorFlow.js e Three.js para capturar sinais das mãos, renderizar efeitos especiais em painéis separados e exibir métricas operacionais em uma interface ENCOM.",
+        "O projeto roda 100% no navegador e inclui fluxo dedicado para treinamento de novos gestos, mantendo a experiência pronta para demonstrações técnicas de alto impacto.",
+      ],
+      sections: [
+        {
+          title: "O que o vídeo demonstra",
+          items: [
+            "Captura de gestos pela webcam diretamente no navegador.",
+            "Painéis separados para câmera, telemetria, status de sessão e efeitos 3D.",
+            "Treinador visual para coletar amostras, validar sinais e exportar modelos.",
+          ],
+        },
+        {
+          title: "Arquitetura da experiência",
+          items: [
+            "Frontend estático com JavaScript, HTML e CSS.",
+            "MediaPipe Hands e TensorFlow.js para leitura e classificação de gestos.",
+            "Three.js para renderer visual e feedback imersivo em tempo real.",
+          ],
+        },
+      ],
+      video: {
+        src: "/projects/portal-econ/demo.mp4",
+        poster: "/thumbnails/pt/portal-econ.png",
+        caption: "Demonstração do console ENCOM com captura, telemetria e efeitos 3D.",
+      },
+    },
+    context:
+      "O objetivo foi criar um console visual de alta presença para demos de visão computacional, separando captura da webcam, renderer 3D e indicadores de sessão em uma mesma experiência.",
+    problem: [
+      "Demonstrações de visão computacional frequentemente ficam dispersas entre câmera, logs e visualização técnica.",
+      "Era necessário mostrar captura, status do modelo e feedback visual em uma interface única e memorável.",
+      "A experiência precisava rodar no navegador sem instalação ou backend obrigatório.",
+      "O treinamento de novos gestos precisava ser claro o suficiente para uso em demo ao vivo.",
+    ],
+    dataUsed: [
+      "Frames da webcam processados localmente no navegador.",
+      "Landmarks de mão fornecidos pelo MediaPipe Hands.",
+      "Amostras rotuladas de gestos para treinamento e validação.",
+      "Métricas de sessão, confiança e status operacional da experiência.",
+    ],
+    solution: [
+      "Console web estático com painéis dedicados para captura, telemetria e renderer 3D.",
+      "Pipeline client-side com MediaPipe Hands e TensorFlow.js para reconhecer sinais em tempo real.",
+      "Treinador visual para coletar amostras, validar gestos e exportar modelos.",
+      "Camada visual em Three.js para transformar a detecção em uma experiência de demonstração premium.",
+    ],
+    features: [
+      "Detecção de gestos em tempo real usando webcam no navegador.",
+      "Interface ENCOM com painéis dedicados para captura e efeitos 3D.",
+      "Telemetria visual de sessão, status e confiança do reconhecimento.",
+      "Treinador visual para coletar amostras, validar e exportar modelos.",
+      "Deploy estático na Vercel com experiência pronta para demonstração.",
+    ],
+    highlights: [
+      "Detecção de gestos em tempo real usando webcam no navegador.",
+      "Interface ENCOM com painéis dedicados para captura e efeitos 3D.",
+      "Treinador visual para coletar amostras, validar e exportar modelos.",
+      "Deploy estático na Vercel com experiência pronta para demonstração.",
+    ],
+    demonstrates: [
+      "Visão computacional no navegador com MediaPipe Hands.",
+      "Classificação e treinamento leve de gestos com TensorFlow.js.",
+      "Renderização 3D interativa com Three.js.",
+      "Design de interface técnica com telemetria clara para demos.",
+    ],
+    techSummary:
+      "JavaScript, MediaPipe Hands, TensorFlow.js e Three.js em uma aplicação estática publicada na Vercel.",
+    conclusion: [
+      "Entreguei uma experiência de alto impacto para demonstrar IA no navegador.",
+      "Centralizei captura, telemetria e efeitos visuais em um console único.",
+      "Deixei uma base pronta para novos gestos, novos efeitos e futuras integrações.",
+    ],
+    howToRun: [
+      "Clone o repositório.",
+      "Instale as dependências conforme README do projeto.",
+      "Execute o servidor local ou acesse a demo publicada na Vercel.",
+      "Permita o acesso à webcam para testar a captura de gestos.",
+    ],
+    screenshots: [
+      {
+        src: "/thumbnails/pt/portal-econ.png",
+        alt: "Capa do projeto ENCOM Gesture Console",
+      },
+      {
+        src: "/projects/portal-econ/demo.mp4",
+        alt: "Demonstração do ENCOM Gesture Console",
+        type: "video",
+      },
+    ],
+    seo: {
+      title: "ENCOM Gesture Console | Gestos, IA e Three.js no navegador",
+      description:
+        "Console web com MediaPipe Hands, TensorFlow.js e Three.js para detecção de gestos, telemetria visual e efeitos 3D em tempo real.",
+    },
+  },
+  {
     slug: "capa-da-invisibilidade",
     title: "Capa da Invisibilidade",
     headline: "Capa da Invisibilidade | Efeito de invisibilidade em tempo real",
@@ -2136,6 +2251,7 @@ const projectList: ProjectCase[] = [
 ];
 
 export const projectOrder = [
+  "encom-gesture-console",
   "capa-da-invisibilidade",
   "subway-surf",
   "detector-de-stress",

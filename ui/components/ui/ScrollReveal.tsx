@@ -10,33 +10,12 @@ export default function ScrollReveal() {
   const pathname = usePathname();
 
   useEffect(() => {
-    document.documentElement.classList.add("reveal-ready");
     const seenElements = new WeakSet<HTMLElement>();
     let revealObserver: IntersectionObserver | null = null;
     let mutationObserver: MutationObserver | null = null;
     let frameId = 0;
-
-    if (prefersReducedMotion()) {
-      document
-        .querySelectorAll<HTMLElement>("[data-reveal]")
-        .forEach((element) => element.classList.add("is-visible"));
-      return undefined;
-    }
-
-    revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            revealObserver?.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        rootMargin: "0px 0px -10% 0px",
-        threshold: 0.2,
-      }
-    );
+    let startTimer = 0;
+    let isCancelled = false;
 
     const observeElement = (element: HTMLElement) => {
       if (seenElements.has(element) || element.classList.contains("is-visible")) {
@@ -55,24 +34,73 @@ export default function ScrollReveal() {
       root.querySelectorAll?.<HTMLElement>("[data-reveal]").forEach(observeElement);
     };
 
-    frameId = window.requestAnimationFrame(() => observeTree());
+    const markInitialViewport = () => {
+      document.querySelectorAll<HTMLElement>("[data-reveal]").forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        const isInViewport = rect.top < window.innerHeight * 0.92 && rect.bottom > 0;
 
-    mutationObserver = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        mutation.addedNodes.forEach((node) => {
-          if (node instanceof HTMLElement) {
-            observeTree(node);
-          }
+        if (isInViewport) {
+          element.classList.add("is-visible");
+        }
+      });
+    };
+
+    const startReveal = () => {
+      if (isCancelled) {
+        return;
+      }
+
+      if (prefersReducedMotion()) {
+        document
+          .querySelectorAll<HTMLElement>("[data-reveal]")
+          .forEach((element) => element.classList.add("is-visible"));
+        document.documentElement.classList.add("reveal-ready");
+        return;
+      }
+
+      markInitialViewport();
+      document.documentElement.classList.add("reveal-ready");
+
+      revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              revealObserver?.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          rootMargin: "0px 0px -10% 0px",
+          threshold: 0.2,
+        }
+      );
+
+      frameId = window.requestAnimationFrame(() => observeTree());
+
+      mutationObserver = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          mutation.addedNodes.forEach((node) => {
+            if (node instanceof HTMLElement) {
+              observeTree(node);
+            }
+          });
         });
       });
-    });
 
-    mutationObserver.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
+      mutationObserver.observe(document.body, {
+        childList: true,
+        subtree: true,
+      });
+    };
+
+    startTimer = window.setTimeout(startReveal, 500);
 
     return () => {
+      isCancelled = true;
+      if (startTimer) {
+        window.clearTimeout(startTimer);
+      }
       if (frameId) {
         window.cancelAnimationFrame(frameId);
       }

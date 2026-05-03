@@ -2,6 +2,121 @@ import type { Project } from "./projects.types";
 
 const projectListEn: Project[] = [
   {
+    slug: "encom-gesture-console",
+    title: "ENCOM Gesture Console",
+    headline: "ENCOM Gesture Console | Computer vision, gestures, and visual telemetry",
+    tagline:
+      "Futuristic console with webcam gesture detection, visual telemetry, and real-time 3D effects.",
+    role: "Frontend and in-browser AI Developer",
+    stack: ["JavaScript", "TensorFlow.js", "MediaPipe Hands", "Three.js", "HTML", "CSS", "Vercel"],
+    repoUrl: "https://github.com/matheussiqueira-dev/Portal-Econ.git",
+    demoUrl: "https://portaldedominiosecon.vercel.app",
+    demo: {
+      kind: "video",
+      src: "/projects/portal-econ/demo.mp4",
+      poster: "/thumbnails/en/portal-econ.png",
+      caption: "Portal Econ demo",
+    },
+    intro: {
+      title: "ENCOM console for computer vision demonstrations",
+      paragraphs: [
+        "Web application deployed on Vercel that combines MediaPipe Hands, TensorFlow.js, and Three.js to capture hand signs, render special effects in separate panels, and surface operational metrics in an ENCOM-inspired interface.",
+        "The project runs entirely in the browser and includes a dedicated flow for training new gestures, keeping the experience ready for high-impact technical demos.",
+      ],
+      sections: [
+        {
+          title: "What the video shows",
+          items: [
+            "Webcam gesture capture directly in the browser.",
+            "Separate panels for camera, telemetry, session status, and 3D effects.",
+            "Visual trainer to collect samples, validate signs, and export models.",
+          ],
+        },
+        {
+          title: "Experience architecture",
+          items: [
+            "Static frontend with JavaScript, HTML, and CSS.",
+            "MediaPipe Hands and TensorFlow.js for gesture reading and classification.",
+            "Three.js for visual rendering and immersive real-time feedback.",
+          ],
+        },
+      ],
+      video: {
+        src: "/projects/portal-econ/demo.mp4",
+        poster: "/thumbnails/en/portal-econ.png",
+        caption: "Demo of the ENCOM console with capture, telemetry, and 3D effects.",
+      },
+    },
+    context:
+      "The goal was to create a high-presence visual console for computer vision demos, separating webcam capture, 3D rendering, and session indicators within the same experience.",
+    problem: [
+      "Computer vision demos often split camera feed, logs, and technical visualization across different surfaces.",
+      "The experience needed to show capture, model status, and visual feedback in one memorable interface.",
+      "It had to run in the browser without mandatory installation or backend services.",
+      "New gesture training needed to be clear enough for live demonstrations.",
+    ],
+    dataUsed: [
+      "Webcam frames processed locally in the browser.",
+      "Hand landmarks provided by MediaPipe Hands.",
+      "Labeled gesture samples for training and validation.",
+      "Session metrics, confidence, and operational status of the experience.",
+    ],
+    solution: [
+      "Static web console with dedicated panels for capture, telemetry, and 3D rendering.",
+      "Client-side pipeline with MediaPipe Hands and TensorFlow.js for real-time sign recognition.",
+      "Visual trainer to collect samples, validate gestures, and export models.",
+      "Three.js visual layer to turn detection into a premium demo experience.",
+    ],
+    features: [
+      "Real-time gesture detection through the browser webcam.",
+      "ENCOM-style interface with dedicated panels for capture and 3D effects.",
+      "Visual telemetry for session, status, and recognition confidence.",
+      "Visual trainer to collect samples, validate, and export models.",
+      "Static Vercel deployment ready for demos and evaluations.",
+    ],
+    highlights: [
+      "Real-time gesture detection through the browser webcam.",
+      "ENCOM-style interface with dedicated panels for capture and 3D effects.",
+      "Visual trainer to collect samples, validate, and export models.",
+      "Static Vercel deployment ready for demos and evaluations.",
+    ],
+    demonstrates: [
+      "Browser computer vision with MediaPipe Hands.",
+      "Lightweight gesture classification and training with TensorFlow.js.",
+      "Interactive 3D rendering with Three.js.",
+      "Technical interface design with clear telemetry for demos.",
+    ],
+    techSummary:
+      "JavaScript, MediaPipe Hands, TensorFlow.js, and Three.js in a static application deployed on Vercel.",
+    conclusion: [
+      "Delivered a high-impact experience for demonstrating in-browser AI.",
+      "Centralized capture, telemetry, and visual effects in a single console.",
+      "Left a foundation ready for new gestures, new effects, and future integrations.",
+    ],
+    howToRun: [
+      "Clone the repository.",
+      "Install dependencies according to the project README.",
+      "Run the local server or open the Vercel demo.",
+      "Allow webcam access to test gesture capture.",
+    ],
+    screenshots: [
+      {
+        src: "/thumbnails/en/portal-econ.png",
+        alt: "ENCOM Gesture Console cover",
+      },
+      {
+        src: "/projects/portal-econ/demo.mp4",
+        alt: "ENCOM Gesture Console demo",
+        type: "video",
+      },
+    ],
+    seo: {
+      title: "ENCOM Gesture Console | Gestures, AI, and Three.js in the browser",
+      description:
+        "Web console with MediaPipe Hands, TensorFlow.js, and Three.js for gesture detection, visual telemetry, and real-time 3D effects.",
+    },
+  },
+  {
     slug: "capa-da-invisibilidade",
     title: "Invisibility Cloak",
     headline: "Invisibility Cloak | Real-time browser effect",
@@ -2129,6 +2244,7 @@ const projectListEn: Project[] = [
 ];
 
 export const projectOrderEn = [
+  "encom-gesture-console",
   "capa-da-invisibilidade",
   "subway-surf",
   "detector-de-stress",

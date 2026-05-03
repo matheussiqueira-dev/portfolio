@@ -593,11 +593,13 @@ function getHighlightedRepositoryCard(locale: "pt" | "en"): ProjectCard {
 export function getProjectsCard(locale: "pt" | "en") {
   const source = locale === "pt" ? projects : projectsEn;
   const translated = locale === "pt" ? projectsBySlugEn : projectsBySlugPt;
+  const cards = source.map((project, index) =>
+    toProjectCard(project, translated.get(project.slug), locale, index)
+  );
 
-  return [
-    getHighlightedRepositoryCard(locale),
-    ...source.map((project, index) =>
-      toProjectCard(project, translated.get(project.slug), locale, index)
-    ),
-  ];
+  if (cards.some((project) => project.slug === "encom-gesture-console")) {
+    return cards;
+  }
+
+  return [getHighlightedRepositoryCard(locale), ...cards];
 }
