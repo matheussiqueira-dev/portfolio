@@ -1,9 +1,9 @@
 export const resume = {
   name: "Matheus Siqueira",
   headline:
-    "Analista de Dados e Engenheiro de Software com atuação em BI, ETL e infraestrutura, transformando operação em produto.",
+    "Product-Minded Developer em dados, BI, ETL e software, transformando operação em produto mensurável.",
   summary:
-    "Profissional de dados e software com experiência em BI, ETL, automação e infraestrutura. Atuo na tradução de rotinas operacionais em produtos e dashboards que reduzem retrabalho, aceleram decisões e sustentam a alta gestão com dados confiáveis.",
+    "Profissional de dados e software com experiência em BI, ETL, automação e infraestrutura. Transformo rotinas operacionais em dashboards, pipelines e aplicações que reduzem retrabalho, protegem SLA e sustentam decisões executivas com dados confiáveis.",
   coreSkills: [
     "Business Intelligence e Power BI",
     "SQL, Python e ETL",
@@ -19,11 +19,11 @@ export const resume = {
       role: "Suporte de Infraestrutura de TI – Nível 2",
       period: "Fev/2026 - Atual",
       highlights: [
-        "Atendi chamados N2 em ambiente educacional, reduzindo tempo de indisponibilidade e preservando SLA operacional.",
-        "Executei manutenção preventiva e corretiva em equipamentos, estendendo a vida útil do parque tecnológico.",
-        "Corrigi falhas de rede, cabeamento e conectividade para manter o atendimento estável durante a operação.",
-        "Estruturei inventário e documentação técnica para aumentar governança e rastreabilidade de TI.",
-        "Criei automações internas para organizar chamados e diminuir retrabalho da equipe.",
+        "Atendi chamados N2 em ambiente educacional, priorizando incidentes críticos para reduzir indisponibilidade e proteger o SLA operacional.",
+        "Executei manutenção preventiva e corretiva do parque tecnológico, ampliando vida útil dos ativos e reduzindo recorrência de falhas.",
+        "Corrigi falhas de rede, cabeamento e conectividade para manter atendimento estável em períodos de alta demanda.",
+        "Estruturei inventário e documentação técnica, aumentando governança, rastreabilidade e velocidade de diagnóstico.",
+        "Criei automações internas para organizar chamados, diminuir retrabalho e dar mais previsibilidade à fila de suporte.",
       ],
     },
     {
@@ -32,11 +32,11 @@ export const resume = {
       role: "Estagiário em Análise de Dados",
       period: "Jan/2025 - Jan/2026",
       highlights: [
-        "Desenvolvi dashboards em Power BI para acompanhar arrecadação municipal e apoiar a leitura executiva.",
-        "Criei pipelines ETL com SQL, Power Query e Python para integrar bases públicas com menos trabalho manual.",
-        "Modelei indicadores em DAX para padronizar métricas e acelerar a análise gerencial.",
-        "Automatizei relatórios recorrentes e reduzi retrabalho na entrega das análises.",
-        "Identifiquei tendências e inconsistências fiscais para apoiar decisões com mais precisão.",
+        "Desenvolvi dashboards em Power BI para acompanhar arrecadação municipal e transformar dados fiscais em leitura executiva acionável.",
+        "Criei pipelines ETL com SQL, Power Query e Python para integrar bases públicas e reduzir consolidação manual.",
+        "Modelei indicadores em DAX para padronizar métricas, diminuir divergências e acelerar análise gerencial.",
+        "Automatizei relatórios recorrentes, reduzindo retrabalho e liberando tempo para investigação analítica.",
+        "Identifiquei tendências e inconsistências fiscais para apoiar decisões com maior precisão e rastreabilidade.",
       ],
     },
     {
@@ -45,11 +45,11 @@ export const resume = {
       role: "Analista de Cargos e Salários",
       period: "Nov/2017 - Jun/2019",
       highlights: [
-        "Monitorei a verba de pessoal para manter o orçamento equilibrado e evitar desvios de execução.",
-        "Analisei impacto financeiro de reajustes e pisos salariais para orientar cenários com previsibilidade.",
-        "Estruturei estudos de viabilidade para concursos e reajustes com aderência aos limites legais.",
-        "Alinhei análises com Jurídico e sindicatos para garantir conformidade e reduzir risco institucional.",
-        "Produzi análises usadas pela alta gestão para decisões orçamentárias e de pessoal.",
+        "Monitorei verba de pessoal para manter execução orçamentária sob controle e antecipar desvios financeiros.",
+        "Analisei impacto de reajustes e pisos salariais, criando cenários para decisões com previsibilidade.",
+        "Estruturei estudos de viabilidade para concursos e reajustes com aderência a limites legais e fiscais.",
+        "Alinhei análises com Jurídico e sindicatos para reduzir risco institucional e sustentar negociações.",
+        "Produzi relatórios para alta gestão, conectando orçamento, legislação e impacto operacional.",
       ],
     },
     {
@@ -58,11 +58,11 @@ export const resume = {
       role: "Assistente Comercial | Trade Marketing & BI",
       period: "Jan/2014 - Mar/2017",
       highlights: [
-        "Criei relatórios gerenciais para monitorar vendas e apoiar decisões comerciais com mais rapidez.",
-        "Acompanho KPIs e metas de marketing para priorizar ações com melhor retorno.",
-        "Desenvolvi dashboards de performance que ajudaram a liderança a enxergar resultado e desvio com clareza.",
-        "Controlei verba e materiais promocionais para reduzir desperdício e manter a operação comercial organizada.",
-        "Apoiei vendas, marketing e liderança com análises e eventos alinhados a objetivo de negócio.",
+        "Criei relatórios gerenciais para monitorar vendas e acelerar decisões comerciais orientadas por dados.",
+        "Acompanhei KPIs e metas de marketing para priorizar ações com melhor retorno e maior aderência ao orçamento.",
+        "Desenvolvi dashboards de performance para dar clareza sobre resultado, desvio e oportunidades de correção.",
+        "Controlei verbas e materiais promocionais, reduzindo desperdício e mantendo a operação comercial organizada.",
+        "Apoiei vendas, marketing e liderança com análises e eventos conectados a objetivos de negócio.",
       ],
     },
   ],

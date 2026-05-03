@@ -126,27 +126,27 @@ const content = {
     eyebrow: "Sobre",
     heroLine: "Engenharia de Software, Dados e IA aplicada a resultados reais.",
     heroIntroP1:
-      "Construo soluções digitais que transformam dados, processos e operação em resultado mensurável.",
+      "Transformo dados dispersos, processos manuais e demandas de negócio em sistemas digitais com impacto verificável.",
     heroIntroP2:
-      "Minha trajetória une análise de dados, software e infraestrutura para entender o problema de ponta a ponta, da operação ao produto.",
+      "Minha trajetória une dados fiscais, BI, infraestrutura N2 e desenvolvimento full stack para entender o problema do SLA ao indicador executivo.",
     heroIntroP3:
-      "Isso me permite entregar automação, aplicações e dashboards com foco em clareza, eficiência e ROI.",
+      "Essa combinação me permite entregar automações, aplicações e dashboards que reduzem retrabalho, aceleram decisões e aumentam previsibilidade operacional.",
     profileTitle: "Perfil Profissional",
     pillars: [
       {
         title: "Engenharia de Dados e Business Intelligence",
         description:
-          "Estruturei ETL com SQL, Python e Power Query para bases fiscais e educacionais, reduzi retrabalho em rotinas analíticas e acelerei a leitura executiva com dashboards em Power BI.",
+          "Estruturei ETL com SQL, Python e Power Query para bases fiscais e educacionais, reduzindo esforço manual em rotinas analíticas e acelerando a leitura executiva com dashboards em Power BI.",
       },
       {
         title: "Engenharia de Software e Desenvolvimento Full Stack",
         description:
-          "Desenvolvi soluções web e integrações com foco em performance e manutenção, conectando front-end, back-end e dados para resolver problemas de negócio com menos fricção.",
+          "Desenvolvi soluções web e integrações com foco em performance e manutenção, conectando front-end, back-end e dados para transformar fluxos operacionais em produtos utilizáveis.",
       },
       {
         title: "Infraestrutura e Operações Tecnológicas",
         description:
-          "Sustentei ambientes críticos e suporte N2, reduzindo indisponibilidade e garantindo estabilidade operacional para equipes que dependem da tecnologia no dia a dia.",
+          "Sustentei ambientes educacionais e suporte N2, reduzindo indisponibilidade, organizando inventário técnico e protegendo a continuidade operacional das equipes.",
       },
     ],
     mindsetTitle: "Mentalidade de Trabalho",
@@ -157,8 +157,7 @@ const content = {
       "Arquitetura para escalar",
       "Clareza executiva na comunicação",
     ],
-    mindsetClosing:
-      "Meu objetivo é sair do diagnóstico para a solução com impacto verificável.",
+    mindsetClosing: "Meu objetivo é sair do diagnóstico para a solução com impacto verificável.",
     trajectoryTitle: "Trajetória e Evolução",
     trajectoryFlow: "Negócio → Dados → Software → Engenharia",
     trajectoryDescription:
@@ -204,27 +203,27 @@ const content = {
     eyebrow: "About",
     heroLine: "Software Engineering, Data & applied AI for real outcomes.",
     heroIntroP1:
-      "I build digital solutions that turn data, processes, and operations into measurable outcomes.",
+      "I turn scattered data, manual processes, and business demand into digital systems with verifiable impact.",
     heroIntroP2:
-      "My background combines data analysis, software, and infrastructure so I can understand the problem from operation to product.",
+      "My background combines fiscal data, BI, Tier 2 infrastructure, and full-stack development so I can understand the problem from SLA to executive KPI.",
     heroIntroP3:
-      "That lets me deliver automation, applications, and dashboards with clarity, efficiency, and ROI in mind.",
+      "That lets me deliver automation, applications, and dashboards that reduce rework, speed decisions, and increase operational predictability.",
     profileTitle: "Professional Profile",
     pillars: [
       {
         title: "Data Engineering & Business Intelligence",
         description:
-          "I structured ETL with SQL, Python, and Power Query for fiscal and educational datasets, reduced rework in analytical routines, and accelerated executive reading with Power BI dashboards.",
+          "I structured ETL with SQL, Python, and Power Query for fiscal and educational datasets, reducing manual effort in analytical routines and accelerating executive reading with Power BI dashboards.",
       },
       {
         title: "Software Engineering & Full Stack Development",
         description:
-          "I built web solutions and integrations focused on performance and maintainability, connecting frontend, backend, and data to solve business problems with less friction.",
+          "I built web solutions and integrations focused on performance and maintainability, connecting frontend, backend, and data to turn operational flows into usable products.",
       },
       {
         title: "Infrastructure & Technology Operations",
         description:
-          "I supported critical environments and Tier 2 operations, reducing downtime and keeping the systems teams depend on stable every day.",
+          "I supported educational environments and Tier 2 operations, reducing downtime, organizing technical inventory, and protecting continuity for dependent teams.",
       },
     ],
     mindsetTitle: "Work Mindset",
@@ -235,15 +234,13 @@ const content = {
       "Architecture designed to scale",
       "Executive clarity in communication",
     ],
-    mindsetClosing:
-      "My goal is to move from diagnosis to solution with verifiable impact.",
+    mindsetClosing: "My goal is to move from diagnosis to solution with verifiable impact.",
     trajectoryTitle: "Trajectory & Growth",
     trajectoryFlow: "Business → Data → Software → Engineering",
     trajectoryDescription:
       "Moving from business to data and then to software gives me context, analytical rigor, and execution ability. That lets me design systems that solve real pain and are aligned with metrics, operations, and governance from day one.",
     differentiatorTitle: "What Sets Me Apart",
-    differentiatorIntro:
-      "My differentiator is connecting layers that are usually split apart:",
+    differentiatorIntro: "My differentiator is connecting layers that are usually split apart:",
     differentiatorAreas: ["Data", "Product", "Engineering", "Operations"],
     differentiatorClosing:
       "This combination reduces handoffs, speeds up delivery, and increases outcome predictability.",

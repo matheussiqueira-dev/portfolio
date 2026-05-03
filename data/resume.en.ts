@@ -1,9 +1,9 @@
 export const resumeEn = {
   name: "Matheus Siqueira",
   headline:
-    "Data and Software Engineer building BI, ETL, and infrastructure solutions that turn operations into products.",
+    "Product-minded developer building BI, ETL, and software systems that turn operations into measurable products.",
   summary:
-    "Data and software professional with experience in BI, ETL, automation, and infrastructure. I turn operational routines into products and dashboards that reduce rework, speed up decisions, and support leadership with reliable data.",
+    "Data and software professional with experience in BI, ETL, automation, and infrastructure. I turn operational routines into dashboards, pipelines, and applications that reduce rework, protect SLA, and support executive decisions with reliable data.",
   coreSkills: [
     "React/Next.js and TypeScript for web applications",
     "Node.js, MongoDB, and REST APIs with auth and integrations",
@@ -14,16 +14,29 @@ export const resumeEn = {
   ],
   experience: [
     {
+      company: "Jaboatão dos Guararapes Education Department",
+      location: "Jaboatão dos Guararapes",
+      role: "Tier 2 IT Infrastructure Support",
+      period: "Feb 2026 — Present",
+      highlights: [
+        "Handled Tier 2 incidents in an educational environment, prioritizing critical issues to reduce downtime and protect operational SLA.",
+        "Performed preventive and corrective maintenance across IT assets, extending equipment life and reducing recurring failures.",
+        "Resolved network, cabling, and connectivity issues to keep services stable during high-demand periods.",
+        "Structured technical inventory and documentation, improving governance, traceability, and diagnostic speed.",
+        "Built internal automations to organize tickets, reduce team rework, and increase support queue predictability.",
+      ],
+    },
+    {
       company: "Municipal Treasury Department",
       location: "Jaboatão dos Guararapes",
       role: "Data Analyst Intern",
-      period: "2025 — Present",
+      period: "Jan 2025 — Jan 2026",
       highlights: [
-        "Built Power BI dashboards to track municipal revenue and support executive reading.",
-        "Created ETL pipelines with SQL, Power Query, and Python to integrate public datasets with less manual work.",
-        "Modeled KPIs in DAX to standardize metrics and speed up management analysis.",
-        "Automated recurring reports and reduced rework in analytical delivery.",
-        "Identified fiscal trends and inconsistencies to support more accurate decisions.",
+        "Built Power BI dashboards to track municipal revenue and turn fiscal data into actionable executive reading.",
+        "Created ETL pipelines with SQL, Power Query, and Python to integrate public datasets and reduce manual consolidation.",
+        "Modeled KPIs in DAX to standardize metrics, reduce divergence, and speed management analysis.",
+        "Automated recurring reports, reducing rework and freeing time for deeper analytical investigation.",
+        "Identified fiscal trends and inconsistencies to support decisions with stronger precision and traceability.",
       ],
     },
     {
@@ -32,11 +45,11 @@ export const resumeEn = {
       role: "Job and Salary Analyst",
       period: "2017 — 2019",
       highlights: [
-        "Monitored workforce budget to keep execution balanced and avoid overspending.",
-        "Analyzed the financial impact of salary adjustments to support predictable scenarios.",
-        "Built feasibility studies for hiring and salary changes with legal compliance in mind.",
-        "Aligned analysis with Legal and unions to reduce institutional risk.",
-        "Delivered analysis used by leadership for staffing and budget decisions.",
+        "Monitored workforce budget to keep execution controlled and anticipate financial deviations.",
+        "Analyzed the financial impact of salary adjustments, creating scenarios for predictable decisions.",
+        "Built feasibility studies for hiring and salary changes aligned with legal and fiscal constraints.",
+        "Aligned analysis with Legal and unions to reduce institutional risk and support negotiations.",
+        "Delivered reports for leadership, connecting budget, legislation, and operational impact.",
       ],
     },
     {
@@ -45,11 +58,11 @@ export const resumeEn = {
       role: "Commercial Assistant",
       period: "2014 — 2017",
       highlights: [
-        "Built management reports to track sales and support faster commercial decisions.",
-        "Monitored KPIs and marketing targets to prioritize actions with better ROI.",
-        "Created performance dashboards that gave leadership clearer visibility into results and gaps.",
-        "Controlled promotional budget and materials to reduce waste and keep the operation organized.",
-        "Supported sales, marketing, and leadership with analysis and business-aligned events.",
+        "Built management reports to track sales and accelerate data-driven commercial decisions.",
+        "Monitored KPIs and marketing targets to prioritize actions with better ROI and budget adherence.",
+        "Created performance dashboards that clarified results, deviations, and correction opportunities.",
+        "Controlled promotional budget and materials, reducing waste and keeping the operation organized.",
+        "Supported sales, marketing, and leadership with analysis and events connected to business goals.",
       ],
     },
   ],

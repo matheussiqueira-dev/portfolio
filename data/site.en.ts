@@ -49,20 +49,21 @@ export const siteEn: SiteContent = {
     },
     complexData: {
       title: "Experience with large-scale complex data",
-      body: "I have structured ETL with SQL, Python, and Power Query, automated fiscal and educational reporting, and delivered strategic Power BI dashboards. The result was less manual work, less rework, and faster operational reading for leadership.",
+      body: "I modeled fiscal and educational datasets, automated pipelines with SQL, Python, and Power Query, and translated scattered data into Power BI dashboards. The result was less manual consolidation, lower rework, and faster executive reading for management decisions.",
     },
     differential: {
       title: "Differentiator",
-      description: "I connect business, data, and engineering to reduce dependencies, accelerate delivery, and turn metrics into decisions.",
+      description:
+        "I connect business, data, and engineering to reduce dependencies, accelerate delivery, and turn metrics into decisions.",
     },
     deliver: {
       title: "What I do",
       bullets: [
-        "Map business pains, indicators, and critical flows before writing code.",
-        "Shape BI with Power BI, DAX, and Power Query to give data executive context.",
-        "Design ETL/ELT with SQL and Python to cut rework and gain operational speed.",
-        "Build applications and integrations that connect frontend, backend, and data with traceability.",
-        "Translate analysis into short, clear, actionable narratives for leadership and operations.",
+        "Map business pains and critical flows to turn vague demand into measurable backlog.",
+        "Shape BI with Power BI, DAX, and Power Query to connect indicators to executive decisions.",
+        "Design ETL/ELT with SQL and Python to reduce hours of rework in recurring routines.",
+        "Build applications and integrations that connect frontend, backend, and data with operational traceability.",
+        "Translate analysis into concise narratives that speed alignment between leadership and operations.",
       ],
     },
     snapshot: {
@@ -89,11 +90,11 @@ export const siteEn: SiteContent = {
     highlights: {
       title: "Professional Differentiators",
       items: [
-        "Hybrid profile (data + development + infrastructure) with end-to-end ownership.",
-        "Experience with fiscal, public, and organizational data focused on decisions.",
-        "Ability to integrate BI, automation, APIs, and operational architecture into complete solutions.",
-        "Clear communication with technical and non-technical stakeholders.",
-        "Public and private sector background with impact focus.",
+        "Hybrid profile across data, software, and infrastructure, from problem discovery to operational support.",
+        "Experience turning fiscal, educational, and commercial data into actionable indicators.",
+        "BI, automation, APIs, and operational architecture integrated to reduce manual dependency.",
+        "Executive communication that aligns technical and non-technical stakeholders around metrics.",
+        "Public and private sector background focused on efficiency, governance, and measurable impact.",
       ],
     },
     stack: {
@@ -181,10 +182,10 @@ export const siteEn: SiteContent = {
   },
   executiveSummary: {
     eyebrow: "Experience & Specialties",
-      title: "Decision, architecture, and execution in data",
+    title: "Decision, architecture, and execution in data",
     paragraphs: [
-        "Data and software professional with end-to-end work across BI, automation, and engineering, turning operational requests into measurable decisions with Power BI, SQL, DAX, Python, and web applications.",
-        "Experience with fiscal, educational, and organizational data, integrating modeling, governance, infrastructure, and product thinking to lower operational cost and speed up decision-making.",
+      "Data and software professional with end-to-end work across BI, automation, and engineering, turning operational requests into measurable decisions with Power BI, SQL, DAX, Python, and web applications.",
+      "Experience with fiscal, educational, and commercial data, integrating modeling, governance, infrastructure, and product thinking to reduce operational effort, improve SLA, and speed up decision-making.",
     ],
     cards: [
       {

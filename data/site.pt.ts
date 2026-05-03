@@ -49,20 +49,21 @@ export const sitePt: SiteContent = {
     },
     complexData: {
       title: "Experiência com dados complexos em larga escala",
-      body: "Estruturei ETL com SQL, Python e Power Query, automatizei relatórios fiscais e educacionais e entreguei dashboards estratégicos em Power BI. O resultado foi menos trabalho manual, menos retrabalho e leitura operacional mais rápida para a gestão.",
+      body: "Modelei bases fiscais e educacionais, automatizei pipelines com SQL, Python e Power Query e traduzi dados dispersos em dashboards de Power BI. O resultado foi menos consolidação manual, menor retrabalho e leitura executiva mais rápida para decisões de gestão.",
     },
     differential: {
       title: "Diferencial",
-      description: "Integro negócio, dados e engenharia para reduzir dependências, acelerar entregas e transformar métricas em decisão.",
+      description:
+        "Integro negócio, dados e engenharia para reduzir dependências, acelerar entregas e transformar métricas em decisão.",
     },
     deliver: {
       title: "O que faço",
       bullets: [
-        "Mapeio dores de negócio, indicadores e fluxos críticos antes de escrever código.",
-        "Estruturo BI com Power BI, DAX e Power Query para dar contexto executivo aos dados.",
-        "Desenho ETL/ELT com SQL e Python para reduzir retrabalho e ganhar velocidade operacional.",
-        "Crio aplicações e integrações que conectam front-end, back-end e dados com rastreabilidade.",
-        "Transformo análise em narrativas curtas, claras e acionáveis para liderança e operação.",
+        "Mapeio dores de negócio e fluxos críticos para transformar demanda vaga em backlog mensurável.",
+        "Estruturo BI com Power BI, DAX e Power Query para conectar indicadores a decisões executivas.",
+        "Desenho ETL/ELT com SQL e Python para reduzir horas de retrabalho em rotinas recorrentes.",
+        "Crio aplicações e integrações que conectam front-end, back-end e dados com rastreabilidade operacional.",
+        "Traduzo análises em narrativas curtas para acelerar alinhamento entre liderança e operação.",
       ],
     },
     snapshot: {
@@ -89,11 +90,11 @@ export const sitePt: SiteContent = {
     highlights: {
       title: "Diferenciais Profissionais",
       items: [
-        "Perfil híbrido (dados + desenvolvimento + infraestrutura) com visão end-to-end.",
-        "Experiência em dados fiscais, públicos e organizacionais com foco em decisão.",
-        "Integração de BI, automação, APIs e arquitetura operacional em soluções completas.",
-        "Comunicação clara com stakeholders técnicos e não técnicos.",
-        "Atuação no setor público e privado com foco em impacto.",
+        "Perfil híbrido em dados, software e infraestrutura, com visão do problema até a sustentação.",
+        "Experiência em dados fiscais, educacionais e comerciais convertidos em indicadores acionáveis.",
+        "Integração de BI, automação, APIs e arquitetura operacional para diminuir dependências manuais.",
+        "Comunicação executiva para alinhar stakeholders técnicos e não técnicos em torno de métricas.",
+        "Vivência no setor público e privado com foco em eficiência, governança e impacto mensurável.",
       ],
     },
     stack: {
@@ -181,10 +182,10 @@ export const sitePt: SiteContent = {
   },
   executiveSummary: {
     eyebrow: "Experiência & Especialidades",
-      title: "Dados na prática: análise, arquitetura e impacto",
+    title: "Dados na prática: análise, arquitetura e impacto",
     paragraphs: [
-        "Profissional de dados e software com atuação end-to-end em BI, automação e engenharia, convertendo demandas operacionais em decisões mensuráveis com Power BI, SQL, DAX, Python e aplicações web.",
-        "Experiência com dados fiscais, educacionais e organizacionais, integrando modelagem, governança, infraestrutura e produto para reduzir custo operacional e acelerar a tomada de decisão.",
+      "Profissional de dados e software com atuação end-to-end em BI, automação e engenharia, convertendo demandas operacionais em decisões mensuráveis com Power BI, SQL, DAX, Python e aplicações web.",
+      "Experiência com dados fiscais, educacionais e comerciais, integrando modelagem, governança, infraestrutura e produto para reduzir esforço operacional, melhorar SLA e acelerar decisões.",
     ],
     cards: [
       {
