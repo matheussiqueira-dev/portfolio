@@ -1,9 +1,9 @@
 export const resumeEn = {
   name: "Matheus Siqueira",
   headline:
-    "Full Stack Developer with a data and AI foundation, building web apps, APIs, and automation with React/Next.js, Node.js, Python, and SQL.",
+    "Data and Software Engineer building BI, ETL, and infrastructure solutions that turn operations into products.",
   summary:
-    "Full Stack Developer and Computer Science student with postgraduate studies in Cloud, Security, and AI. Hands-on experience in BI and automation in the public sector, working with large datasets, ETL, and indicators. I apply that foundation to build end-to-end products integrating frontend, backend, and data, focused on quality, performance, and impact.",
+    "Data and software professional with experience in BI, ETL, automation, and infrastructure. I turn operational routines into products and dashboards that reduce rework, speed up decisions, and support leadership with reliable data.",
   coreSkills: [
     "React/Next.js and TypeScript for web applications",
     "Node.js, MongoDB, and REST APIs with auth and integrations",
@@ -19,13 +19,11 @@ export const resumeEn = {
       role: "Data Analyst Intern",
       period: "2025 — Present",
       highlights: [
-        "Developed strategic Power BI dashboards for KPI tracking.",
-        "Modeled data with SQL, DAX, and Power Query to standardize indicators.",
-        "Automated ETL routines with Python, reducing rework and operational time.",
-        "Integrated multiple data sources and validated data consistency.",
-        "Performed exploratory analysis to identify trends and anomalies.",
-        "Produced executive reports and process documentation.",
-        "Collaborated with cross-functional teams in an agile environment.",
+        "Built Power BI dashboards to track municipal revenue and support executive reading.",
+        "Created ETL pipelines with SQL, Power Query, and Python to integrate public datasets with less manual work.",
+        "Modeled KPIs in DAX to standardize metrics and speed up management analysis.",
+        "Automated recurring reports and reduced rework in analytical delivery.",
+        "Identified fiscal trends and inconsistencies to support more accurate decisions.",
       ],
     },
     {
@@ -34,11 +32,11 @@ export const resumeEn = {
       role: "Job and Salary Analyst",
       period: "2017 — 2019",
       highlights: [
-        "Analyzed and standardized employee and budget data.",
-        "Modeled salary ranges based on data and benchmarks.",
-        "Produced financial impact studies and personnel KPIs.",
-        "Supported executive decisions with analysis and legal compliance.",
-        "Communicated insights to leadership and stakeholders.",
+        "Monitored workforce budget to keep execution balanced and avoid overspending.",
+        "Analyzed the financial impact of salary adjustments to support predictable scenarios.",
+        "Built feasibility studies for hiring and salary changes with legal compliance in mind.",
+        "Aligned analysis with Legal and unions to reduce institutional risk.",
+        "Delivered analysis used by leadership for staffing and budget decisions.",
       ],
     },
     {
@@ -47,10 +45,11 @@ export const resumeEn = {
       role: "Commercial Assistant",
       period: "2014 — 2017",
       highlights: [
-        "Analyzed sales, orders, and customer data.",
-        "Produced management reports and commercial KPIs.",
-        "Supported commercial strategy with performance analysis.",
-        "Ensured organization and integrity of operational data.",
+        "Built management reports to track sales and support faster commercial decisions.",
+        "Monitored KPIs and marketing targets to prioritize actions with better ROI.",
+        "Created performance dashboards that gave leadership clearer visibility into results and gaps.",
+        "Controlled promotional budget and materials to reduce waste and keep the operation organized.",
+        "Supported sales, marketing, and leadership with analysis and business-aligned events.",
       ],
     },
   ],

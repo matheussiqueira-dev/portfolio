@@ -124,54 +124,54 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const content = {
   pt: {
     eyebrow: "Sobre",
-    heroLine: "Engenharia de Software, Dados e IA aplicada a decisões reais.",
+    heroLine: "Engenharia de Software, Dados e IA aplicada a resultados reais.",
     heroIntroP1:
-      "Sou um profissional de tecnologia com atuação orientada à construção de soluções digitais capazes de transformar dados, processos e operações em vantagem estratégica mensurável.",
+      "Construo soluções digitais que transformam dados, processos e operação em resultado mensurável.",
     heroIntroP2:
-      "Minha trajetória profissional foi construída na interseção entre análise de dados, engenharia de software e infraestrutura tecnológica, permitindo compreender sistemas não apenas do ponto de vista técnico, mas também operacional e organizacional.",
+      "Minha trajetória une análise de dados, software e infraestrutura para entender o problema de ponta a ponta, da operação ao produto.",
     heroIntroP3:
-      "Atuo desenvolvendo soluções que reduzem complexidade, aumentam eficiência e tornam decisões dependentes de evidência — não de suposição.",
+      "Isso me permite entregar automação, aplicações e dashboards com foco em clareza, eficiência e ROI.",
     profileTitle: "Perfil Profissional",
     pillars: [
       {
         title: "Engenharia de Dados e Business Intelligence",
         description:
-          "Estruturação de ambientes analíticos voltados à tomada de decisão estratégica, incluindo modelagem de dados, construção de dashboards executivos e automação de pipelines analíticos. Experiência prática inclui desenvolvimento de soluções de Business Intelligence aplicadas à gestão pública, suportando planejamento institucional e análise operacional baseada em indicadores confiáveis.",
+          "Estruturei ETL com SQL, Python e Power Query para bases fiscais e educacionais, reduzi retrabalho em rotinas analíticas e acelerei a leitura executiva com dashboards em Power BI.",
       },
       {
         title: "Engenharia de Software e Desenvolvimento Full Stack",
         description:
-          "Desenvolvimento de aplicações modernas com foco em escalabilidade, manutenção sustentável e integração entre sistemas. Atuação envolvendo APIs e serviços backend, aplicações web modernas, arquitetura de sistemas, integração de dados e boas práticas de engenharia (SOLID, Clean Code).",
+          "Desenvolvi soluções web e integrações com foco em performance e manutenção, conectando front-end, back-end e dados para resolver problemas de negócio com menos fricção.",
       },
       {
         title: "Infraestrutura e Operações Tecnológicas",
         description:
-          "Experiência direta com sustentação de ambientes críticos, suporte técnico avançado e organização de infraestrutura de TI, permitindo visão completa do ciclo tecnológico — da operação ao software. Essa vivência reduz desalinhamentos comuns entre desenvolvimento e operação.",
+          "Sustentei ambientes críticos e suporte N2, reduzindo indisponibilidade e garantindo estabilidade operacional para equipes que dependem da tecnologia no dia a dia.",
       },
     ],
     mindsetTitle: "Mentalidade de Trabalho",
     mindsetPrinciples: [
-      "Tecnologia aplicada a problemas reais",
-      "Decisão orientada por dados",
-      "Automação como ganho estrutural",
-      "Engenharia sustentável",
-      "Comunicação técnica clara com stakeholders",
+      "Problema de negócio antes da implementação",
+      "Métrica antes de opinião",
+      "Automação onde há repetição",
+      "Arquitetura para escalar",
+      "Clareza executiva na comunicação",
     ],
     mindsetClosing:
-      "O foco não está apenas em desenvolver sistemas, mas em entregar impacto operacional verificável.",
+      "Meu objetivo é sair do diagnóstico para a solução com impacto verificável.",
     trajectoryTitle: "Trajetória e Evolução",
     trajectoryFlow: "Negócio → Dados → Software → Engenharia",
     trajectoryDescription:
-      "Essa progressão permite compreender tanto o contexto estratégico quanto a implementação técnica necessária para viabilizar soluções digitais completas. Experiências anteriores em análise organizacional e dados corporativos contribuíram para forte capacidade analítica aplicada à tomada de decisão executiva e planejamento institucional.",
+      "A transição de negócio para dados e depois software me dá leitura de contexto, rigor analítico e capacidade de execução. Isso me permite projetar sistemas que resolvem a dor real e já nascem alinhados a métricas, operação e governança.",
     differentiatorTitle: "O Que Me Diferencia",
     differentiatorIntro:
-      "Grande parte dos profissionais especializa-se em apenas uma camada tecnológica. Meu diferencial está na integração entre:",
-    differentiatorAreas: ["Dados", "Desenvolvimento", "Infraestrutura", "Estratégia de negócio"],
+      "Meu diferencial está em conectar as camadas que normalmente ficam separadas:",
+    differentiatorAreas: ["Dados", "Produto", "Engenharia", "Operação"],
     differentiatorClosing:
-      "Essa combinação permite reduzir dependências técnicas, acelerar entregas e aumentar previsibilidade de resultados.",
+      "Essa combinação reduz handoffs, acelera delivery e aumenta a previsibilidade dos resultados.",
     visionTitle: "Visão de Futuro",
     visionDescription:
-      "Meu objetivo profissional é atuar no desenvolvimento de soluções tecnológicas de alto impacto, sempre com foco em tecnologia como instrumento de eficiência, transparência e inovação sustentável.",
+      "Quero atuar em produtos e plataformas que unam dados, automação e software para gerar eficiência, receita ou redução de custo com rastreabilidade.",
     visionAreas: [
       "Inteligência Artificial aplicada",
       "Engenharia de Dados",
@@ -202,54 +202,54 @@ const content = {
   },
   en: {
     eyebrow: "About",
-    heroLine: "Software Engineering, Data & applied AI for real decisions.",
+    heroLine: "Software Engineering, Data & applied AI for real outcomes.",
     heroIntroP1:
-      "I'm a technology professional focused on building digital solutions that turn data, processes and operations into measurable strategic advantages.",
+      "I build digital solutions that turn data, processes, and operations into measurable outcomes.",
     heroIntroP2:
-      "My career was built at the intersection of data analysis, software engineering and technology infrastructure — allowing me to understand systems not only from a technical standpoint but also operational and organisational.",
+      "My background combines data analysis, software, and infrastructure so I can understand the problem from operation to product.",
     heroIntroP3:
-      "I develop solutions that reduce complexity, increase efficiency and make decisions depend on evidence — not assumptions.",
+      "That lets me deliver automation, applications, and dashboards with clarity, efficiency, and ROI in mind.",
     profileTitle: "Professional Profile",
     pillars: [
       {
         title: "Data Engineering & Business Intelligence",
         description:
-          "Structuring analytical environments for strategic decision-making, including data modelling, executive dashboards and analytics pipeline automation. Practical experience includes BI solutions applied to public management, supporting institutional planning and indicator-based operational analysis.",
+          "I structured ETL with SQL, Python, and Power Query for fiscal and educational datasets, reduced rework in analytical routines, and accelerated executive reading with Power BI dashboards.",
       },
       {
         title: "Software Engineering & Full Stack Development",
         description:
-          "Building modern applications focused on scalability, sustainable maintenance and system integration. Experience spans backend APIs and services, modern web applications, system architecture, data integration and engineering best practices (SOLID, Clean Code).",
+          "I built web solutions and integrations focused on performance and maintainability, connecting frontend, backend, and data to solve business problems with less friction.",
       },
       {
         title: "Infrastructure & Technology Operations",
         description:
-          "Direct experience sustaining critical environments, advanced technical support and IT infrastructure organisation — providing a complete view of the tech cycle, from operations to software. This background reduces the common misalignment between development and operations.",
+          "I supported critical environments and Tier 2 operations, reducing downtime and keeping the systems teams depend on stable every day.",
       },
     ],
     mindsetTitle: "Work Mindset",
     mindsetPrinciples: [
-      "Technology applied to real problems",
-      "Data-driven decisions",
-      "Automation as a structural gain",
-      "Sustainable engineering",
-      "Clear technical communication with stakeholders",
+      "Business problem before implementation",
+      "Metrics before opinions",
+      "Automation where repetition exists",
+      "Architecture designed to scale",
+      "Executive clarity in communication",
     ],
     mindsetClosing:
-      "The focus is not just building systems, but delivering verifiable operational impact.",
+      "My goal is to move from diagnosis to solution with verifiable impact.",
     trajectoryTitle: "Trajectory & Growth",
     trajectoryFlow: "Business → Data → Software → Engineering",
     trajectoryDescription:
-      "This progression enables understanding both strategic context and technical implementation needed to deliver complete digital solutions. Previous experience in organisational analysis and corporate data contributed to strong analytical capability applied to executive decision-making and institutional planning.",
+      "Moving from business to data and then to software gives me context, analytical rigor, and execution ability. That lets me design systems that solve real pain and are aligned with metrics, operations, and governance from day one.",
     differentiatorTitle: "What Sets Me Apart",
     differentiatorIntro:
-      "Most professionals specialise in a single technology layer. My differentiator lies in integrating:",
-    differentiatorAreas: ["Data", "Development", "Infrastructure", "Business strategy"],
+      "My differentiator is connecting layers that are usually split apart:",
+    differentiatorAreas: ["Data", "Product", "Engineering", "Operations"],
     differentiatorClosing:
-      "This combination reduces technical dependencies, accelerates delivery and increases result predictability.",
+      "This combination reduces handoffs, speeds up delivery, and increases outcome predictability.",
     visionTitle: "Future Vision",
     visionDescription:
-      "My professional objective is to work on high-impact technology solutions, always focused on technology as an instrument of efficiency, transparency and sustainable innovation.",
+      "I want to work on products and platforms that combine data, automation, and software to generate efficiency, revenue, or cost reduction with traceability.",
     visionAreas: [
       "Applied Artificial Intelligence",
       "Data Engineering",

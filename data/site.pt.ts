@@ -15,10 +15,10 @@ export const sitePt: SiteContent = {
   },
   hero: {
     eyebrow: "Dados • Software • BI • IA • Automação",
-    title: "Transformo dados, software e automação em decisões melhores",
-    subtitle: "Sistemas digitais, dashboards, automações e IA aplicada",
+    title: "Transformo dados, software e automação em resultado de negócio",
+    subtitle: "Produtos digitais, dashboards e IA aplicada para reduzir fricção e gerar ROI",
     description:
-      "Desenvolvo sistemas digitais, dashboards, automações e soluções com IA para empresas que precisam operar com mais clareza, eficiência e escala.",
+      "Atuo na interseção entre negócio, dados e engenharia para construir soluções que reduzem retrabalho, aceleram decisão e resolvem problemas reais.",
     stackHighlights: [
       { label: "Data Analytics", icon: "stack" },
       { label: "Business Intelligence", icon: "data" },
@@ -38,33 +38,31 @@ export const sitePt: SiteContent = {
   },
   about: {
     eyebrow: "Sobre",
-    title: "Infraestrutura | Analista de Dados Júnior | Power BI | SQL | Python | React.js",
+    title: "Dados, software e infraestrutura para decisões melhores",
     summary: {
       title: "Sobre / Apresentação",
-      body: "Atuo em análise de dados e Business Intelligence, com experiência no setor público e privado. Fui Assistente Comercial no Grupo Moura, Analista de Cargos e Salários na Prefeitura de Jaboatão dos Guararapes e, atualmente, Estagiário em Análise de Dados na Secretaria da Fazenda de Jaboatão dos Guararapes. Minha atuação é orientada a KPIs, eficiência operacional e decisão baseada em dados.",
+      body: "Atuo na interseção entre dados, software e operação para transformar rotinas analíticas em decisão executiva. Minha trajetória combina BI no setor público, automação de processos, infraestrutura e desenvolvimento de produtos digitais orientados a impacto.",
     },
     who: {
       title: "Quem sou",
-      body: "Sou Analista de Dados com perfil híbrido (dados + desenvolvimento + infraestrutura). Graduando em Ciência da Computação, com pós-graduações em Inteligência Artificial e Ciência de Dados, Segurança da Informação e Cloud & Edge Computing, técnico em Programação Full Stack AI e graduação em Marketing. Trabalho com mentalidade analítica, rigor técnico e comunicação clara para traduzir necessidades de negócio em soluções de dados confiáveis.",
+      body: "Sou um profissional product-minded que começa pela dor do processo e termina com uma entrega mensurável. Transitei de dados para software para construir aplicações confiáveis, escaláveis e alinhadas a negócio, sem perder rigor analítico nem visão operacional.",
     },
     complexData: {
       title: "Experiência com dados complexos em larga escala",
-      body: "Experiência com Business Intelligence aplicado à gestão pública, dashboards estratégicos em Power BI e análise de grandes volumes de dados fiscais. Atuo com dados públicos e organizacionais em múltiplas fontes, estruturando ETL/ELT, automações em Python e governança de dados para sustentar decisões e operação.",
+      body: "Estruturei ETL com SQL, Python e Power Query, automatizei relatórios fiscais e educacionais e entreguei dashboards estratégicos em Power BI. O resultado foi menos trabalho manual, menos retrabalho e leitura operacional mais rápida para a gestão.",
     },
     differential: {
       title: "Diferencial",
-      description:
-        "Perfil end-to-end que conecta modelagem, automação, APIs, visualização e infraestrutura para entregar inteligência de negócio com clareza e impacto.",
+      description: "Integro negócio, dados e engenharia para reduzir dependências, acelerar entregas e transformar métricas em decisão.",
     },
     deliver: {
       title: "O que faço",
       bullets: [
-        "Análise de dados e data analytics para orientar KPIs e decisões.",
-        "Business Intelligence com Power BI, DAX e Power Query para dashboards executivos.",
-        "Modelagem de dados e SQL analytics para construção de KPIs confiáveis.",
-        "ETL/ELT e automações em Python (Pandas, NumPy) para eficiência operacional.",
-        "Visualização de dados e storytelling analítico para diferentes públicos.",
-        "APIs REST e integrações com Flask para orquestrar fluxos de dados.",
+        "Mapeio dores de negócio, indicadores e fluxos críticos antes de escrever código.",
+        "Estruturo BI com Power BI, DAX e Power Query para dar contexto executivo aos dados.",
+        "Desenho ETL/ELT com SQL e Python para reduzir retrabalho e ganhar velocidade operacional.",
+        "Crio aplicações e integrações que conectam front-end, back-end e dados com rastreabilidade.",
+        "Transformo análise em narrativas curtas, claras e acionáveis para liderança e operação.",
       ],
     },
     snapshot: {
@@ -183,10 +181,10 @@ export const sitePt: SiteContent = {
   },
   executiveSummary: {
     eyebrow: "Experiência & Especialidades",
-    title: "Dados na prática: análise, arquitetura e impacto",
+      title: "Dados na prática: análise, arquitetura e impacto",
     paragraphs: [
-      "Analista de Dados e BI com atuação end-to-end em engenharia de dados, BI e automação, convertendo demandas em decisões e resultados mensuráveis com Power BI, SQL, DAX e Python.",
-      "Experiência com dados fiscais, públicos e organizacionais, integrando modelagem, governança, infraestrutura e BI estratégico para sustentar operação e acelerar decisões.",
+        "Profissional de dados e software com atuação end-to-end em BI, automação e engenharia, convertendo demandas operacionais em decisões mensuráveis com Power BI, SQL, DAX, Python e aplicações web.",
+        "Experiência com dados fiscais, educacionais e organizacionais, integrando modelagem, governança, infraestrutura e produto para reduzir custo operacional e acelerar a tomada de decisão.",
     ],
     cards: [
       {

@@ -15,10 +15,10 @@ export const siteEn: SiteContent = {
   },
   hero: {
     eyebrow: "Data • Software • BI • AI • Automation",
-    title: "I turn data, software and automation into better decisions",
-    subtitle: "Digital systems, dashboards, automations and applied AI",
+    title: "I turn data, software, and automation into business outcomes",
+    subtitle: "Digital products, dashboards, and applied AI that reduce friction and improve ROI",
     description:
-      "I build digital systems, dashboards, automations and AI solutions for companies that need more clarity, efficiency and scale.",
+      "I work at the intersection of business, data, and engineering to build solutions that cut rework, speed up decisions, and solve real problems.",
     stackHighlights: [
       { label: "Data Analytics", icon: "stack" },
       { label: "Business Intelligence", icon: "data" },
@@ -38,33 +38,31 @@ export const siteEn: SiteContent = {
   },
   about: {
     eyebrow: "About",
-    title: "Data, BI, infrastructure, and technology applied to decision-making",
+    title: "Data, software, and infrastructure for better decisions",
     summary: {
       title: "About / Introduction",
-      body: "I work in data analysis and Business Intelligence with experience in both public and private sectors. I worked as a Commercial Assistant at Grupo Moura, as a Compensation Analyst at the Jaboatão dos Guararapes City Hall, and I am currently a Data Analysis Intern at the Jaboatão dos Guararapes Treasury Department. My work is focused on KPIs, operational efficiency, and data-driven decision-making.",
+      body: "I work at the intersection of data, software, and operations to turn analytical routines into executive decisions. My background combines public-sector BI, process automation, infrastructure, and product-oriented digital delivery.",
     },
     who: {
       title: "Who I am",
-      body: "I’m a Data Analyst with a hybrid profile (data + development + infrastructure). I’m a Computer Science undergraduate and hold postgraduate studies in Artificial Intelligence and Data Science, Information Security, and Cloud & Edge Computing, plus a Full Stack AI technical program and a degree in Marketing. I work with analytical mindset, technical rigor, and clear communication to translate business needs into reliable data solutions.",
+      body: "I’m a product-minded professional who starts with the business pain and ends with a measurable delivery. I moved from data into software to build reliable, scalable applications aligned with the business without losing analytical rigor or operational awareness.",
     },
     complexData: {
       title: "Experience with large-scale complex data",
-      body: "Experience with Business Intelligence for public management, strategic Power BI dashboards, and large-scale fiscal data analysis. I handle public and organizational data from multiple sources, structuring ETL/ELT, Python automation, and data governance to support decisions and operations.",
+      body: "I have structured ETL with SQL, Python, and Power Query, automated fiscal and educational reporting, and delivered strategic Power BI dashboards. The result was less manual work, less rework, and faster operational reading for leadership.",
     },
     differential: {
       title: "Differentiator",
-      description:
-        "End-to-end profile connecting modeling, automation, APIs, visualization, and infrastructure to deliver business intelligence with clarity and impact.",
+      description: "I connect business, data, and engineering to reduce dependencies, accelerate delivery, and turn metrics into decisions.",
     },
     deliver: {
       title: "What I do",
       bullets: [
-        "Data analysis and data analytics to guide KPIs and decisions.",
-        "Business Intelligence with Power BI, DAX, and Power Query for executive dashboards.",
-        "Data modeling and SQL analytics to build reliable KPIs.",
-        "ETL/ELT and Python automation (Pandas, NumPy) for operational efficiency.",
-        "Data visualization and analytical storytelling for different audiences.",
-        "REST APIs and Flask integrations to orchestrate data flows.",
+        "Map business pains, indicators, and critical flows before writing code.",
+        "Shape BI with Power BI, DAX, and Power Query to give data executive context.",
+        "Design ETL/ELT with SQL and Python to cut rework and gain operational speed.",
+        "Build applications and integrations that connect frontend, backend, and data with traceability.",
+        "Translate analysis into short, clear, actionable narratives for leadership and operations.",
       ],
     },
     snapshot: {
@@ -183,10 +181,10 @@ export const siteEn: SiteContent = {
   },
   executiveSummary: {
     eyebrow: "Experience & Specialties",
-    title: "Decision, architecture, and execution in data",
+      title: "Decision, architecture, and execution in data",
     paragraphs: [
-      "Data Analyst and BI professional with end-to-end work across data engineering, BI, and automation, turning requests into measurable decisions and outcomes with Power BI, SQL, DAX, and Python.",
-      "Experience with fiscal, public, and organizational data, integrating modeling, governance, infrastructure, and strategic BI to support operations and accelerate decisions.",
+        "Data and software professional with end-to-end work across BI, automation, and engineering, turning operational requests into measurable decisions with Power BI, SQL, DAX, Python, and web applications.",
+        "Experience with fiscal, educational, and organizational data, integrating modeling, governance, infrastructure, and product thinking to lower operational cost and speed up decision-making.",
     ],
     cards: [
       {
