@@ -26,10 +26,17 @@ The codebase is organized around a narrow set of responsibilities:
 - `public/` contains images, videos, PDFs, and other static assets.
 - `docs/` documents architecture and engineering decisions.
 
+Project case studies are modeled with explicit business and technical fields:
+
+- `businessProblem`: the pain, risk, or decision bottleneck the project addresses.
+- `technicalArchitecture`: how the system is built and how data flows through it.
+- `impact`: the expected operational, financial, or product outcome.
+
 Key references:
 
 - [Architecture notes](docs/architecture.md)
 - [Deployment notes](docs/deployment.md)
+- [Performance and accessibility patterns](docs/performance-accessibility.md)
 - [Project case studies data](data/project-case-studies.ts)
 
 ## Tech Stack
@@ -84,16 +91,16 @@ The portfolio is built to target Lighthouse 100/100/100/100 by default. The most
 
 ```html
 <picture>
-	<source srcset="/images/project.avif" type="image/avif" />
-	<source srcset="/images/project.webp" type="image/webp" />
-	<img
-		src="/images/project.jpg"
-		alt="Project screenshot showing the main dashboard"
-		width="1280"
-		height="720"
-		loading="lazy"
-		decoding="async"
-	/>
+  <source srcset="/images/project.avif" type="image/avif" />
+  <source srcset="/images/project.webp" type="image/webp" />
+  <img
+    src="/images/project.jpg"
+    alt="Project screenshot showing the main dashboard"
+    width="1280"
+    height="720"
+    loading="lazy"
+    decoding="async"
+  />
 </picture>
 ```
 
@@ -101,16 +108,16 @@ The portfolio is built to target Lighthouse 100/100/100/100 by default. The most
 
 ```html
 <video
-	controls
-	playsinline
-	preload="metadata"
-	poster="/videos/project-poster.webp"
-	width="1280"
-	height="720"
-	aria-label="Project demo video"
+  controls
+  playsinline
+  preload="metadata"
+  poster="/videos/project-poster.webp"
+  width="1280"
+  height="720"
+  aria-label="Project demo video"
 >
-	<source src="/videos/project.webm" type="video/webm" />
-	<source src="/videos/project.mp4" type="video/mp4" />
+  <source src="/videos/project.webm" type="video/webm" />
+  <source src="/videos/project.mp4" type="video/mp4" />
 </video>
 ```
 
@@ -118,16 +125,16 @@ The portfolio is built to target Lighthouse 100/100/100/100 by default. The most
 
 ```html
 <nav aria-label="Primary navigation">
-	<ul>
-		<li><a href="/projects">Projects</a></li>
-		<li><a href="/resume">Resume</a></li>
-	</ul>
+  <ul>
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/resume">Resume</a></li>
+  </ul>
 </nav>
 
 <button aria-expanded="false" aria-controls="language-menu">Language</button>
 
 <div role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
-	<h2 id="project-modal-title">Project details</h2>
+  <h2 id="project-modal-title">Project details</h2>
 </div>
 
 <button aria-pressed="true">All projects</button>
@@ -137,25 +144,25 @@ The portfolio is built to target Lighthouse 100/100/100/100 by default. The most
 
 ```html
 <script>
-	(() => {
-		const storageKey = 'theme';
-		const root = document.documentElement;
-		const storedTheme = localStorage.getItem(storageKey);
-		const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-		const theme = storedTheme ?? (systemPrefersDark ? 'dark' : 'light');
+  (() => {
+    const storageKey = "theme";
+    const root = document.documentElement;
+    const storedTheme = localStorage.getItem(storageKey);
+    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const theme = storedTheme ?? (systemPrefersDark ? "dark" : "light");
 
-		root.dataset.theme = theme;
-		root.style.colorScheme = theme;
+    root.dataset.theme = theme;
+    root.style.colorScheme = theme;
 
-		if (!storedTheme) {
-			const media = window.matchMedia('(prefers-color-scheme: dark)');
-			media.addEventListener('change', (event) => {
-				const nextTheme = event.matches ? 'dark' : 'light';
-				root.dataset.theme = nextTheme;
-				root.style.colorScheme = nextTheme;
-			});
-		}
-	})();
+    if (!storedTheme) {
+      const media = window.matchMedia("(prefers-color-scheme: dark)");
+      media.addEventListener("change", (event) => {
+        const nextTheme = event.matches ? "dark" : "light";
+        root.dataset.theme = nextTheme;
+        root.style.colorScheme = nextTheme;
+      });
+    }
+  })();
 </script>
 ```
 
