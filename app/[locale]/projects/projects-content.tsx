@@ -27,7 +27,7 @@ export function ProjectsContent({ projects, locale }: ProjectsContentProps) {
 
   return (
     <main className="layout-container page-shell">
-      <div className={styles.header}>
+      <div className={styles.header} data-reveal>
         <h1 className={styles.title}>{t.title}</h1>
         <p className={styles.description}>{t.description}</p>
       </div>

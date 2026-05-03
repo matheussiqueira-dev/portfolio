@@ -1,8 +1,18 @@
 "use client";
 
-import { useState, useCallback, useId, useRef, useEffect } from "react";
+import {
+  useState,
+  useCallback,
+  useId,
+  useRef,
+  useEffect,
+  type CSSProperties,
+  type KeyboardEvent,
+  type TransitionEvent,
+} from "react";
 import SafeImage from "@/ui/components/demo/SafeImage";
 import type { ProjectCard } from "@/data/projects-card.types";
+import { StackIconList } from "@/ui/components/StackIcon";
 import ProjectCardDetails from "./ProjectCardDetails";
 import styles from "./ProjectCard.module.css";
 
@@ -60,6 +70,7 @@ export default function ProjectCard({ project, locale, index = 0 }: Props) {
   const contentRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [maxHeight, setMaxHeight] = useState(0);
+  const [detailsMounted, setDetailsMounted] = useState(false);
   const t = labels[locale];
 
   const title = project.title[locale];
@@ -68,19 +79,34 @@ export default function ProjectCard({ project, locale, index = 0 }: Props) {
 
   // Calculate max-height for smooth accordion
   useEffect(() => {
-    if (!contentRef.current) return;
     if (expanded) {
+      if (!contentRef.current) return;
       setMaxHeight(contentRef.current.scrollHeight);
     } else {
       setMaxHeight(0);
     }
-  }, [expanded]);
+  }, [detailsMounted, expanded]);
 
   const handleToggle = useCallback(() => {
-    setExpanded((prev) => !prev);
+    setExpanded((prev) => {
+      if (!prev) {
+        setDetailsMounted(true);
+      }
+
+      return !prev;
+    });
   }, []);
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+  const handleDetailsTransitionEnd = useCallback(
+    (event: TransitionEvent<HTMLDivElement>) => {
+      if (event.propertyName === "max-height" && !expanded) {
+        setDetailsMounted(false);
+      }
+    },
+    [expanded]
+  );
+
+  const handleKeyDown = (e: KeyboardEvent<HTMLButtonElement>) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       handleToggle();
@@ -94,7 +120,14 @@ export default function ProjectCard({ project, locale, index = 0 }: Props) {
   return (
     <article
       className={`${styles.card} ${expanded ? styles.expanded : ""}`}
-      style={{ animationDelay: `${index * 50}ms` }}
+      data-project-card
+      data-featured={project.featured ? "true" : undefined}
+      style={
+        {
+          animationDelay: `${index * 50}ms`,
+          "--reveal-delay": `${Math.min(index, 6) * 70}ms`,
+        } as CSSProperties
+      }
     >
       {/* HEADER - Always visible, clickable */}
       <button
@@ -132,16 +165,12 @@ export default function ProjectCard({ project, locale, index = 0 }: Props) {
           <p className={styles.tagline}>{tagline}</p>
 
           {/* Stack preview */}
-          <div className={styles.stackPreview}>
-            {project.stack.slice(0, 3).map((tech) => (
-              <span key={tech} className={styles.stackTag}>
-                {tech}
-              </span>
-            ))}
-            {project.stack.length > 3 && (
-              <span className={styles.stackMore}>+{project.stack.length - 3}</span>
-            )}
-          </div>
+          <StackIconList
+            items={project.stack}
+            limit={5}
+            size="sm"
+            className={styles.stackPreview}
+          />
         </div>
 
         {/* Expand toggle icon */}
@@ -163,50 +192,57 @@ export default function ProjectCard({ project, locale, index = 0 }: Props) {
       </button>
 
       {/* EXPANDED DETAILS - Accordion content */}
-      <div id={detailsId} className={styles.detailsWrapper} style={{ maxHeight: `${maxHeight}px` }}>
-        <div ref={contentRef} className={styles.detailsContent}>
-          <ProjectCardDetails project={project} locale={locale} />
+      {detailsMounted && (
+        <div
+          id={detailsId}
+          className={styles.detailsWrapper}
+          style={{ maxHeight: `${maxHeight}px` }}
+          onTransitionEnd={handleDetailsTransitionEnd}
+        >
+          <div ref={contentRef} className={styles.detailsContent}>
+            <ProjectCardDetails project={project} locale={locale} />
 
-          {/* Action buttons */}
-          <div className={styles.actions}>
-            {project.links.repo && (
-              <a
-                href={project.links.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.button}
-              >
-                {t.repo} ↗
-              </a>
-            )}
-            {project.links.live && (
-              <a
-                href={project.links.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.button}
-              >
-                {t.live} ↗
-              </a>
-            )}
-            {project.links.demo && (
-              <a
-                href={project.links.demo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.button}
-              >
-                {t.demo} ↗
-              </a>
-            )}
-            {project.links.caseStudy && (
-              <a href={project.links.caseStudy} className={styles.buttonPrimary}>
-                {t.caseStudy} →
-              </a>
-            )}
+            {/* Action buttons */}
+            <div className={styles.actions}>
+              {project.links.repo && (
+                <a
+                  href={project.links.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.button}
+                >
+                  {t.repo} ↗
+                </a>
+              )}
+              {project.links.live && (
+                <a
+                  href={project.links.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.button}
+                >
+                  {t.live} ↗
+                </a>
+              )}
+              {project.links.demo && (
+                <a
+                  href={project.links.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.button}
+                >
+                  {t.demo} ↗
+                </a>
+              )}
+              {project.links.caseStudy && (
+                <a href={project.links.caseStudy} className={styles.buttonPrimary}>
+                  {t.caseStudy} →
+                </a>
+              )}
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </article>
   );
 }

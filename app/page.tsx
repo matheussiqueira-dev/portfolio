@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import ProfileCard from "@/ui/components/ProfileCard";
+import { StackIconList } from "@/ui/components/StackIcon";
 
 const aboutTitle =
   "Sobre Matheus Siqueira | Engenheiro de Software e Analista de Dados orientado a Inteligência Artificial";
@@ -24,7 +25,7 @@ const aboutKeywords = [
 const topNavItems = [
   { label: "Início", href: "/" },
   { label: "Sobre", href: "#about" },
-  { label: "Serviços", href: "/contrate" },
+  { label: "Serviços", href: "/servicos" },
   { label: "Projetos", href: "/projetos" },
   { label: "Currículo", href: "/resume" },
   { label: "Acadêmico", href: "/academico" },
@@ -105,7 +106,12 @@ export default function LandingPage() {
         activeLocale="pt-BR"
       />
 
-      <section id="about" aria-labelledby="about-title" className="layout-container py-16 md:py-24">
+      <section
+        id="about"
+        aria-labelledby="about-title"
+        className="layout-container landing-about-modern py-16 md:py-24"
+        data-reveal
+      >
         <p className="text-xs uppercase tracking-[0.28em] text-[color:var(--muted)] mb-3">
           Sobre Mim
         </p>
@@ -141,7 +147,10 @@ export default function LandingPage() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-          <article className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
+          <article
+            className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5"
+            data-reveal
+          >
             <h4 className="text-base font-semibold text-[color:var(--foreground)] mb-2">
               Engenharia de Dados e Business Intelligence
             </h4>
@@ -154,7 +163,10 @@ export default function LandingPage() {
             </p>
           </article>
 
-          <article className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
+          <article
+            className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5"
+            data-reveal
+          >
             <h4 className="text-base font-semibold text-[color:var(--foreground)] mb-2">
               Engenharia de Software e Desenvolvimento Full Stack
             </h4>
@@ -176,7 +188,10 @@ export default function LandingPage() {
           </article>
         </div>
 
-        <article className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5 mb-8">
+        <article
+          className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5 mb-8"
+          data-reveal
+        >
           <h4 className="text-base font-semibold text-[color:var(--foreground)] mb-2">
             Infraestrutura e Operações Tecnológicas
           </h4>
@@ -270,38 +285,38 @@ export default function LandingPage() {
         <h3 className="text-xl md:text-2xl font-semibold text-[color:var(--foreground)] mt-10 mb-4">
           Tecnologias e Áreas de Atuação
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8" data-reveal>
           <article className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
             <h4 className="text-base font-semibold text-[color:var(--foreground)] mb-2">
               Dados & Analytics
             </h4>
-            <p className="text-sm text-[color:var(--muted)]">
-              Power BI · SQL · DAX · Python · ETL · Data Modeling
-            </p>
+            <StackIconList items={["Power BI", "SQL", "Python", "Excel"]} size="sm" showLabel />
           </article>
           <article className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
             <h4 className="text-base font-semibold text-[color:var(--foreground)] mb-2">
               Desenvolvimento
             </h4>
-            <p className="text-sm text-[color:var(--muted)]">
-              JavaScript · TypeScript · React · Next.js · APIs REST
-            </p>
+            <StackIconList
+              items={["JavaScript", "TypeScript", "React", "Next.js", "Node.js"]}
+              size="sm"
+              showLabel
+            />
           </article>
           <article className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
             <h4 className="text-base font-semibold text-[color:var(--foreground)] mb-2">
               Infraestrutura
             </h4>
-            <p className="text-sm text-[color:var(--muted)]">
-              Cloud Computing · DevOps · Versionamento · CI/CD
-            </p>
+            <StackIconList items={["AWS", "Azure", "Docker", "GitHub"]} size="sm" showLabel />
           </article>
           <article className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-5">
             <h4 className="text-base font-semibold text-[color:var(--foreground)] mb-2">
               Metodologias
             </h4>
-            <p className="text-sm text-[color:var(--muted)]">
-              Scrum · Engenharia orientada a produto · Data-Driven Strategy
-            </p>
+            <StackIconList
+              items={["Figma", "Power BI", "ChatGPT", "GitHub Copilot"]}
+              size="sm"
+              showLabel
+            />
           </article>
         </div>
 

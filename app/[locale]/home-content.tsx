@@ -1,8 +1,12 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import type { SiteContent } from "@/data/site.types";
 import type { ProjectCard } from "@/data/projects-card.types";
+import { getServiceExperience } from "@/data/services";
 import { Link } from "@/core/i18n/navigation";
+import SafeImage from "@/ui/components/demo/SafeImage";
+import { StackIconList } from "@/ui/components/StackIcon";
 
 type Props = {
   site: SiteContent;
@@ -10,326 +14,311 @@ type Props = {
   locale: "pt" | "en";
 };
 
+const heroStack = ["Power BI", "SQL", "Python", "React", "Next.js", "TypeScript"];
+
 export default function HomeContent({ site, projects, locale }: Props) {
-  const {
-    hero,
-    about,
-    executiveSummary,
-    services,
-    projects: projectsCopy,
-    contact,
-    metrics,
-  } = site;
+  const { hero, about, executiveSummary, projects: projectsCopy, contact, metrics } = site;
+
+  const featuredProjects = [...projects]
+    .sort((first, second) => (first.order ?? 99) - (second.order ?? 99))
+    .slice(0, 6);
+  const serviceExperience = getServiceExperience(locale);
 
   return (
-    <main className="layout-container page-shell">
-      {/* ── HERO ── */}
-      <section id="home" className="py-20 md:py-28">
-        <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] mb-3">
-          {hero.eyebrow}
-        </p>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[color:var(--foreground)] mb-4">
-          {hero.title}
-        </h1>
-        <p className="text-lg md:text-xl text-[color:var(--accent-soft)] mb-4">{hero.subtitle}</p>
-        <p className="text-sm text-[color:var(--muted)] max-w-3xl leading-relaxed mb-8">
-          {hero.description}
-        </p>
+    <main className="layout-container page-shell home-shell">
+      <section
+        id="home"
+        className="hero-section home-hero"
+        data-reveal
+        aria-labelledby="home-title"
+      >
+        <div className="home-hero__grid">
+          <div className="hero-copy home-hero__copy" data-reveal>
+            <p className="eyebrow">{hero.eyebrow}</p>
+            <h1 id="home-title" className="hero-title">
+              <span className="hero-title__name">{hero.title}</span>
+              <span className="hero-title__role">{hero.subtitle}</span>
+            </h1>
+            <p className="hero-description">{hero.description}</p>
 
-        {/* Stack Highlights */}
-        <div className="flex flex-wrap gap-3 mb-8">
-          {hero.stackHighlights.map((s) => (
-            <span
-              key={s.label}
-              className="text-xs px-3 py-1.5 rounded-full border border-[color:var(--border)] text-[color:var(--muted)] bg-[color:var(--surface-muted)]"
-            >
-              {s.label}
-            </span>
-          ))}
-        </div>
+            <StackIconList items={heroStack} size="lg" showLabel className="home-stack-icons" />
 
-        {/* Facts */}
-        <div className="flex flex-wrap gap-6 mb-8 text-sm">
-          {hero.facts.map((f) => (
-            <div key={f.label}>
-              <span className="text-[color:var(--muted)]">{f.label}: </span>
-              <span className="text-[color:var(--foreground)] font-medium">{f.value}</span>
+            <div className="hero-actions">
+              <Link href="/projects" className="btn-primary">
+                {hero.ctas.primary}
+              </Link>
+              <Link href="/resume" className="btn-outline">
+                {hero.ctas.secondary}
+              </Link>
+              <a
+                href="https://wa.me/5581999203683"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost"
+              >
+                {hero.ctas.tertiary}
+              </a>
             </div>
-          ))}
-        </div>
+          </div>
 
-        {/* CTAs */}
-        <div className="flex flex-wrap gap-3">
-          <Link
-            href="/projects"
-            className="inline-flex items-center px-5 py-2.5 text-sm font-medium rounded-xl bg-[color:var(--foreground)] text-[color:var(--background)] hover:opacity-90 transition-opacity"
+          <aside
+            className="home-hero-panel"
+            aria-label={locale === "pt" ? "Resumo profissional" : "Professional summary"}
+            data-reveal
+            style={{ "--reveal-delay": "120ms" } as CSSProperties}
           >
-            {hero.ctas.primary}
-          </Link>
-          <Link
-            href="/resume"
-            className="inline-flex items-center px-5 py-2.5 text-sm font-medium rounded-xl border border-[color:var(--border)] text-[color:var(--foreground)] hover:bg-[color:var(--surface-muted)] transition-colors"
-          >
-            {hero.ctas.secondary}
-          </Link>
-          <a
-            href="https://wa.me/5581999203683"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-5 py-2.5 text-sm font-medium rounded-xl border border-[color:var(--border)] text-[color:var(--foreground)] hover:bg-[color:var(--surface-muted)] transition-colors"
-          >
-            {hero.ctas.tertiary}
-          </a>
+            <div className="home-hero-panel__glow" aria-hidden="true" />
+            <div className="home-hero-panel__topline">
+              <span>01</span>
+              <span>{locale === "pt" ? "Market-ready" : "Market-ready"}</span>
+            </div>
+            <div className="home-hero-panel__facts">
+              {hero.facts.map((fact) => (
+                <div key={fact.label} className="home-fact">
+                  <span className="home-fact__label">{fact.label}</span>
+                  <span className="home-fact__value">{fact.value}</span>
+                </div>
+              ))}
+            </div>
+            <div className="home-hero-panel__chips">
+              {hero.stackHighlights.map((item) => (
+                <span key={item.label} className="home-signal">
+                  {item.label}
+                </span>
+              ))}
+            </div>
+          </aside>
         </div>
       </section>
 
-      {/* ── ABOUT ── */}
-      <section id="about" style={{ paddingBlock: "var(--section-y)" }}>
-        <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] mb-2">
-          {about.eyebrow}
-        </p>
-        <h2 className="text-2xl md:text-3xl font-bold text-[color:var(--foreground)] mb-6">
-          {about.title}
-        </h2>
-
-        {/* Summary / Who */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <div>
-            <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-2">
-              {about.summary.title}
-            </h3>
-            <p className="text-sm text-[color:var(--muted)] leading-relaxed">
-              {about.summary.body}
-            </p>
+      <section
+        id="about"
+        className="page-section home-section"
+        data-reveal
+        aria-labelledby="about-title"
+      >
+        <div className="section-heading stack-heading">
+          <div className="section-heading__text">
+            <p className="eyebrow">{about.eyebrow}</p>
+            <h2 id="about-title" className="section-title">
+              {about.title}
+            </h2>
           </div>
-          <div>
-            <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-2">
-              {about.who.title}
-            </h3>
-            <p className="text-sm text-[color:var(--muted)] leading-relaxed">{about.who.body}</p>
-          </div>
+          <p className="section-description">{about.summary.body}</p>
         </div>
 
-        {/* Executive Summary Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+        <div className="home-about-grid">
+          <article className="home-panel home-panel--large" data-reveal>
+            <span className="home-panel__index">A</span>
+            <h3>{about.summary.title}</h3>
+            <p>{about.summary.body}</p>
+          </article>
+          <article
+            className="home-panel"
+            data-reveal
+            style={{ "--reveal-delay": "80ms" } as CSSProperties}
+          >
+            <span className="home-panel__index">B</span>
+            <h3>{about.who.title}</h3>
+            <p>{about.who.body}</p>
+          </article>
+          <article
+            className="home-panel"
+            data-reveal
+            style={{ "--reveal-delay": "140ms" } as CSSProperties}
+          >
+            <span className="home-panel__index">C</span>
+            <h3>{about.deliver.title}</h3>
+            <ul className="home-clean-list">
+              {about.deliver.bullets.slice(0, 4).map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
+            </ul>
+          </article>
+        </div>
+
+        <div className="home-proof-strip" data-reveal>
           {executiveSummary.cards.map((card) => (
-            <div
-              key={card.title}
-              className="p-5 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] text-center"
-            >
-              <p className="text-sm font-semibold text-[color:var(--foreground)]">{card.title}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* What I deliver */}
-        <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-3">
-          {about.deliver.title}
-        </h3>
-        <ul className="space-y-1 mb-8">
-          {about.deliver.bullets.map((b) => (
-            <li key={b} className="text-sm text-[color:var(--muted)] flex gap-2">
-              <span className="text-[color:var(--accent-soft)] shrink-0">▸</span>
-              <span>{b}</span>
-            </li>
-          ))}
-        </ul>
-
-        {/* Snapshot */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {about.snapshot.items.map((item) => (
-            <div
-              key={item.value}
-              className="p-4 rounded-xl border border-[color:var(--border)] bg-[color:var(--surface-muted)]"
-            >
-              <p className="text-sm font-semibold text-[color:var(--foreground)]">{item.value}</p>
-              <p className="text-xs text-[color:var(--muted)]">{item.label}</p>
+            <div key={card.title} className="home-proof">
+              <span className="home-proof__dot" aria-hidden="true" />
+              <span>{card.title}</span>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── SERVICES ── */}
-      <section id="services" style={{ paddingBlock: "var(--section-y)" }}>
-        <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] mb-2">
-          {services.eyebrow}
-        </p>
-        <h2 className="text-2xl md:text-3xl font-bold text-[color:var(--foreground)] mb-3">
-          {services.title}
-        </h2>
-        <p className="text-sm text-[color:var(--muted)] max-w-2xl mb-8">{services.description}</p>
+      <section
+        id="services"
+        className="page-section home-section"
+        data-reveal
+        aria-labelledby="services-title"
+      >
+        <div className="section-heading stack-heading">
+          <div className="section-heading__text">
+            <p className="eyebrow">{serviceExperience.eyebrow}</p>
+            <h2 id="services-title" className="section-title">
+              {serviceExperience.title}
+            </h2>
+          </div>
+          <p className="section-description">{serviceExperience.intro}</p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
-          {services.offerings.map((o) => (
+        <div className="home-service-list">
+          {serviceExperience.pillars.map((pillar, index) => (
             <article
-              key={o.title}
-              className="p-6 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] transition-colors hover:border-[color:var(--accent-soft)]"
+              key={pillar.id}
+              className="home-service-row"
+              data-reveal
+              style={{ "--reveal-delay": `${index * 70}ms` } as CSSProperties}
             >
-              <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-2">
-                {o.title}
-              </h3>
-              <p className="text-sm text-[color:var(--muted)] mb-4">{o.description}</p>
-              <ul className="space-y-1">
-                {o.bullets.map((b) => (
-                  <li key={b} className="text-xs text-[color:var(--muted)] flex gap-2">
-                    <span className="text-[color:var(--accent-soft)] shrink-0">▸</span>
-                    <span>{b}</span>
-                  </li>
+              <span className="home-service-row__number">{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <h3>{pillar.title}</h3>
+                <p>{pillar.description}</p>
+                <StackIconList
+                  items={pillar.tools}
+                  limit={5}
+                  size="sm"
+                  className="home-service-row__tools"
+                />
+              </div>
+              <ul className="home-clean-list home-clean-list--compact">
+                {pillar.deliverables.slice(0, 4).map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
                 ))}
               </ul>
             </article>
           ))}
         </div>
 
-        {/* Process */}
-        <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-4">
-          {services.processTitle}
-        </h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          {services.process.map((step, i) => (
-            <div key={step.title} className="flex items-start gap-3">
-              <span className="text-2xl font-bold text-[color:var(--accent-soft)] leading-none shrink-0">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <div>
-                <p className="text-sm font-medium text-[color:var(--foreground)]">{step.title}</p>
-                <p className="text-xs text-[color:var(--muted)]">{step.description}</p>
-              </div>
-            </div>
+        <div className="home-process" data-reveal>
+          {serviceExperience.process.map((step, index) => (
+            <article key={step.title} className="home-process__step">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </article>
           ))}
         </div>
+      </section>
 
-        <div className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-6 text-center">
-          <h3 className="text-lg font-semibold text-[color:var(--foreground)] mb-2">
-            {services.cta.title}
-          </h3>
-          <p className="text-sm text-[color:var(--muted)] mb-4">{services.cta.description}</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <Link
-              href="/hire"
-              className="inline-flex items-center px-5 py-2.5 text-sm font-medium rounded-xl bg-[color:var(--foreground)] text-[color:var(--background)] hover:opacity-90 transition-opacity"
-            >
-              {services.cta.primaryLabel}
-            </Link>
-            <Link
-              href="/projects"
-              className="inline-flex items-center px-5 py-2.5 text-sm font-medium rounded-xl border border-[color:var(--border)] text-[color:var(--foreground)] hover:bg-[color:var(--surface-muted)] transition-colors"
-            >
-              {services.cta.secondaryLabel}
-            </Link>
+      <section
+        className="page-section home-section home-metrics"
+        data-reveal
+        aria-labelledby="metrics-title"
+      >
+        <div>
+          <p className="eyebrow">{metrics.eyebrow}</p>
+          <h2 id="metrics-title" className="section-title">
+            {metrics.title}
+          </h2>
+        </div>
+        <div className="home-metrics__grid">
+          {metrics.items.map((item) => (
+            <article key={item.label} className="home-metric">
+              <span>{item.label}</span>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section
+        id="projects"
+        className="page-section home-section"
+        data-reveal
+        aria-labelledby="projects-title"
+      >
+        <div className="section-heading stack-heading">
+          <div className="section-heading__text">
+            <p className="eyebrow">{projectsCopy.eyebrow}</p>
+            <h2 id="projects-title" className="section-title">
+              {projectsCopy.title}
+            </h2>
           </div>
+          <p className="section-description">{projectsCopy.description}</p>
         </div>
-      </section>
 
-      {/* ── METRICS ── */}
-      <section style={{ paddingBlock: "var(--section-y)" }}>
-        <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] mb-2">
-          {metrics.eyebrow}
-        </p>
-        <h2 className="text-2xl md:text-3xl font-bold text-[color:var(--foreground)] mb-6">
-          {metrics.title}
-        </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {metrics.items.map((m) => (
-            <div
-              key={m.label}
-              className="p-5 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] text-center"
-            >
-              <p className="text-sm font-semibold text-[color:var(--foreground)]">{m.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+        <div className="home-project-mosaic">
+          {featuredProjects.map((project, index) => {
+            const title = project.title[locale];
+            const description = project.description[locale];
+            const thumbnail = project.thumbnail[locale];
 
-      {/* ── PROJECTS ── */}
-      <section id="projects" style={{ paddingBlock: "var(--section-y)" }}>
-        <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] mb-2">
-          {projectsCopy.eyebrow}
-        </p>
-        <h2 className="text-2xl md:text-3xl font-bold text-[color:var(--foreground)] mb-3">
-          {projectsCopy.title}
-        </h2>
-        <p className="text-sm text-[color:var(--muted)] max-w-2xl mb-8">
-          {projectsCopy.description}
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
-          {projects.map((project) => {
-            const title = locale === "pt" ? project.title.pt : project.title.en;
-            const desc = locale === "pt" ? project.description.pt : project.description.en;
             return (
               <article
                 key={project.slug}
-                className="p-5 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] transition-colors hover:border-[color:var(--accent-soft)] flex flex-col"
+                className="home-project-card"
+                data-reveal
+                style={{ "--reveal-delay": `${index * 70}ms` } as CSSProperties}
               >
-                <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-1">
-                  {title}
-                </h3>
-                <p className="text-xs text-[color:var(--muted)] mb-3 line-clamp-2">{desc}</p>
-                <div className="flex flex-wrap gap-1 mb-4">
-                  {project.stack.slice(0, 4).map((s) => (
-                    <span
-                      key={s}
-                      className="text-[10px] px-2 py-0.5 rounded-full border border-[color:var(--border)] text-[color:var(--muted)]"
-                    >
-                      {s}
-                    </span>
-                  ))}
-                  {project.stack.length > 4 && (
-                    <span className="text-[10px] px-2 py-0.5 rounded-full border border-[color:var(--border)] text-[color:var(--muted)]">
-                      +{project.stack.length - 4}
-                    </span>
-                  )}
+                <div className="home-project-card__media">
+                  <SafeImage
+                    src={thumbnail}
+                    fallbackSrc="/placeholder.jpg"
+                    alt={title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 420px"
+                    className="home-project-card__image"
+                  />
                 </div>
-                {project.links.caseStudy && (
+                <div className="home-project-card__body">
+                  <span className="home-project-card__kicker">
+                    {projectsCopy.cardLabel} {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                  <StackIconList
+                    items={project.stack}
+                    limit={5}
+                    size="sm"
+                    className="home-project-card__stack"
+                  />
                   <Link
                     href={{ pathname: "/projects/[slug]", params: { slug: project.slug } }}
-                    className="text-xs font-medium text-[color:var(--accent-soft)] hover:text-[color:var(--foreground)] transition-colors mt-auto"
+                    className="home-project-card__link"
                   >
-                    {projectsCopy.caseLabel} →
+                    {projectsCopy.caseLabel}
                   </Link>
-                )}
+                </div>
               </article>
             );
           })}
         </div>
 
-        <div className="text-center">
-          <Link
-            href="/projects"
-            className="inline-flex items-center px-5 py-2.5 text-sm font-medium rounded-xl border border-[color:var(--border)] text-[color:var(--foreground)] hover:bg-[color:var(--surface-muted)] transition-colors"
-          >
-            {projectsCopy.viewAllLabel} →
+        <div className="home-section-cta" data-reveal>
+          <Link href="/projects" className="btn-outline">
+            {projectsCopy.viewAllLabel}
+          </Link>
+          <Link href="/services" className="btn-outline">
+            {locale === "pt" ? "Ver serviços" : "View services"}
+          </Link>
+          <Link href="/hire" className="btn-primary">
+            {serviceExperience.cta.button}
           </Link>
         </div>
       </section>
 
-      {/* ── CONTACT ── */}
-      <section id="contact" style={{ paddingBlock: "var(--section-y)" }}>
-        <div className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-8 md:p-12 text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] mb-2">
-            {contact.eyebrow}
-          </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-[color:var(--foreground)] mb-3">
+      <section
+        id="contact"
+        className="page-section home-section"
+        data-reveal
+        aria-labelledby="contact-title"
+      >
+        <div className="home-contact-panel">
+          <p className="eyebrow">{contact.eyebrow}</p>
+          <h2 id="contact-title" className="section-title">
             {contact.title}
           </h2>
-          <p className="text-sm text-[color:var(--muted)] max-w-xl mx-auto mb-4">
-            {contact.description}
-          </p>
-          <p className="text-xs text-[color:var(--muted)] mb-6">{contact.ctaSubtitle}</p>
-
-          <div className="flex flex-wrap justify-center gap-3">
-            <a
-              href="mailto:matheussiqueirahub@gmail.com"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-xl border border-[color:var(--border)] text-[color:var(--foreground)] bg-[color:var(--surface)] hover:bg-[color:var(--surface-strong)] transition-colors"
-            >
+          <p>{contact.description}</p>
+          <div className="home-contact-panel__actions">
+            <a href="mailto:matheussiqueirahub@gmail.com" className="btn-outline">
               {contact.cards.email}
             </a>
             <a
               href="https://wa.me/5581999203683"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-xl border border-[color:var(--border)] text-[color:var(--foreground)] bg-[color:var(--surface)] hover:bg-[color:var(--surface-strong)] transition-colors"
+              className="btn-primary"
             >
               {contact.cards.whatsapp}
             </a>
@@ -337,17 +326,9 @@ export default function HomeContent({ site, projects, locale }: Props) {
               href="https://br.linkedin.com/in/matheussiqueira-dev/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-xl border border-[color:var(--border)] text-[color:var(--foreground)] bg-[color:var(--surface)] hover:bg-[color:var(--surface-strong)] transition-colors"
+              className="btn-ghost"
             >
               {contact.cards.linkedin}
-            </a>
-            <a
-              href="https://github.com/matheussiqueira-dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-xl border border-[color:var(--border)] text-[color:var(--foreground)] bg-[color:var(--surface)] hover:bg-[color:var(--surface-strong)] transition-colors"
-            >
-              {contact.cards.github}
             </a>
           </div>
         </div>

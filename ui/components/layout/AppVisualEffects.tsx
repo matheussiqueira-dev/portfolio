@@ -12,7 +12,7 @@ export default function AppVisualEffects() {
   const pathname = usePathname();
 
   if (LANDING_PATHS.has(pathname)) {
-    return null;
+    return <ScrollReveal />;
   }
 
   return (

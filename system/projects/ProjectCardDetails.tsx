@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 
 import type { ProjectCard } from "@/data/projects-card.types";
+import { StackIconList } from "@/ui/components/StackIcon";
 
 import styles from "./ProjectCardDetails.module.css";
 
@@ -86,13 +87,7 @@ export default function ProjectCardDetails({ project, locale }: Props) {
         {project.stack.length > 0 && (
           <section className={styles.gridItem}>
             <h3 className={styles.itemTitle}>{t.stack}</h3>
-            <div className={styles.tagList}>
-              {project.stack.map((tech) => (
-                <span key={tech} className={styles.tag}>
-                  {tech}
-                </span>
-              ))}
-            </div>
+            <StackIconList items={project.stack} size="sm" showLabel className={styles.tagList} />
           </section>
         )}
 

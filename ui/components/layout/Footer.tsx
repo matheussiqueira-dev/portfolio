@@ -14,7 +14,7 @@ export default function Footer() {
   const emailLabel = isEn ? "Email" : "E-mail";
 
   return (
-    <footer className="site-footer">
+    <footer className="site-footer" data-reveal>
       <div className="section-inner site-footer__inner">
         <div className="site-footer__content">
           <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">{title}</p>

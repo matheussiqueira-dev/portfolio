@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Link } from "@/core/i18n/navigation";
 import { baseUrl, buildAlternates, siteName } from "@/core/seo";
+import { StackIconList } from "@/ui/components/StackIcon";
 import { resolveLocale, pickByLocale, type LocaleParams } from "../_lib";
 
 /* ─── Types ─────────────────────────────────────────────────────────────────── */
@@ -182,19 +183,19 @@ const content = {
     stackGroups: [
       {
         label: "Dados & Analytics",
-        items: "Power BI · SQL · DAX · Python · ETL · Data Modeling",
+        items: ["Power BI", "SQL", "Python", "Excel", "Pandas"],
       },
       {
         label: "Desenvolvimento",
-        items: "JavaScript · TypeScript · React · Next.js · APIs REST",
+        items: ["JavaScript", "TypeScript", "React", "Next.js", "Node.js"],
       },
       {
         label: "Infraestrutura",
-        items: "Cloud Computing · DevOps · Versionamento · CI/CD",
+        items: ["AWS", "Azure", "Docker", "GitHub", "Visual Studio Code"],
       },
       {
         label: "Metodologias",
-        items: "Scrum · Engenharia orientada a produto · Data-Driven Strategy",
+        items: ["Power BI", "Figma", "ChatGPT", "GitHub Copilot"],
       },
     ],
     ctaLabel: "Veja meus projetos",
@@ -260,19 +261,19 @@ const content = {
     stackGroups: [
       {
         label: "Data & Analytics",
-        items: "Power BI · SQL · DAX · Python · ETL · Data Modelling",
+        items: ["Power BI", "SQL", "Python", "Excel", "Pandas"],
       },
       {
         label: "Development",
-        items: "JavaScript · TypeScript · React · Next.js · REST APIs",
+        items: ["JavaScript", "TypeScript", "React", "Next.js", "Node.js"],
       },
       {
         label: "Infrastructure",
-        items: "Cloud Computing · DevOps · Version control · CI/CD",
+        items: ["AWS", "Azure", "Docker", "GitHub", "Visual Studio Code"],
       },
       {
         label: "Methodologies",
-        items: "Scrum · Product-oriented engineering · Data-Driven Strategy",
+        items: ["Power BI", "Figma", "ChatGPT", "GitHub Copilot"],
       },
     ],
     ctaLabel: "See my projects",
@@ -317,7 +318,7 @@ export default async function AboutPage({ params }: Props) {
         }}
       >
         {/* ── Hero Section ─────────────────────────────────── */}
-        <header className="mb-16">
+        <header className="mb-16" data-reveal>
           <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] mb-3">
             {t.eyebrow}
           </p>
@@ -373,7 +374,7 @@ export default async function AboutPage({ params }: Props) {
         </header>
 
         {/* ── Perfil Profissional ──────────────────────────── */}
-        <section className="mb-16">
+        <section className="mb-16" data-reveal>
           <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-6 border-b border-[color:var(--border)] pb-2">
             {t.profileTitle}
           </h2>
@@ -395,7 +396,7 @@ export default async function AboutPage({ params }: Props) {
         </section>
 
         {/* ── Mentalidade ──────────────────────────────────── */}
-        <section className="mb-16">
+        <section className="mb-16" data-reveal>
           <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-6 border-b border-[color:var(--border)] pb-2">
             {t.mindsetTitle}
           </h2>
@@ -411,7 +412,7 @@ export default async function AboutPage({ params }: Props) {
         </section>
 
         {/* ── Trajetória ───────────────────────────────────── */}
-        <section className="mb-16">
+        <section className="mb-16" data-reveal>
           <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-6 border-b border-[color:var(--border)] pb-2">
             {t.trajectoryTitle}
           </h2>
@@ -426,7 +427,7 @@ export default async function AboutPage({ params }: Props) {
         </section>
 
         {/* ── Diferencial ──────────────────────────────────── */}
-        <section className="mb-16">
+        <section className="mb-16" data-reveal>
           <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-6 border-b border-[color:var(--border)] pb-2">
             {t.differentiatorTitle}
           </h2>
@@ -449,7 +450,7 @@ export default async function AboutPage({ params }: Props) {
         </section>
 
         {/* ── Visão de Futuro ──────────────────────────────── */}
-        <section className="mb-16">
+        <section className="mb-16" data-reveal>
           <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-6 border-b border-[color:var(--border)] pb-2">
             {t.visionTitle}
           </h2>
@@ -467,7 +468,7 @@ export default async function AboutPage({ params }: Props) {
         </section>
 
         {/* ── Stack / Tecnologias ──────────────────────────── */}
-        <section className="mb-16">
+        <section className="mb-16" data-reveal>
           <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-6 border-b border-[color:var(--border)] pb-2">
             {t.stackTitle}
           </h2>
@@ -480,14 +481,14 @@ export default async function AboutPage({ params }: Props) {
                 <h3 className="text-sm font-semibold text-[color:var(--foreground)] mb-2">
                   {group.label}
                 </h3>
-                <p className="text-xs text-[color:var(--muted)] leading-relaxed">{group.items}</p>
+                <StackIconList items={group.items} size="sm" showLabel />
               </div>
             ))}
           </div>
         </section>
 
         {/* ── CTA Final ────────────────────────────────────── */}
-        <section className="text-center py-10 border-t border-[color:var(--border)]">
+        <section className="text-center py-10 border-t border-[color:var(--border)]" data-reveal>
           <Link
             href="/projects"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-full bg-[color:var(--accent)] text-[color:var(--bg)] hover:opacity-90 transition-opacity"

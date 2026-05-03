@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import type { DeploymentNode, ProjectDictionary } from "@/data/deployment.types";
+import { StackIconList } from "@/ui/components/StackIcon";
 import styles from "./ProjectDeployment.module.css";
 
 interface Props {
@@ -82,13 +83,12 @@ export default function ProjectDeployment({ project, locale, dictionary }: Props
             {/* Stack */}
             <div className={styles.detailBlock}>
               <h4>{dictionary.stack}</h4>
-              <div className={styles.badgesContainer}>
-                {project.stack.map((tech) => (
-                  <span key={tech} className={styles.badge}>
-                    {tech}
-                  </span>
-                ))}
-              </div>
+              <StackIconList
+                items={project.stack}
+                size="sm"
+                showLabel
+                className={styles.badgesContainer}
+              />
             </div>
 
             {/* Architecture */}

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 
-import { sitePt } from "@/data/site.pt";
-import { siteEn } from "@/data/site.en";
+import { Link } from "@/core/i18n/navigation";
 
 import { resolveLocale, type LocaleParams } from "../_lib";
 
@@ -9,147 +9,247 @@ type Props = {
   params: LocaleParams;
 };
 
+const hireCopy = {
+  "pt-BR": {
+    title: "Contrate um profissional que conecta dados, software e operação",
+    metaDescription:
+      "Contrate Matheus Siqueira para projetos de dashboards, automação, aplicações web e soluções orientadas por dados.",
+    eyebrow: "Contratação",
+    lead: "Eu ajudo empresas e equipes a sair do improviso técnico para produtos, dashboards e automações que funcionam em produção, com clareza de escopo e foco em resultado mensurável.",
+    primaryCta: "Falar pelo WhatsApp",
+    secondaryCta: "Enviar briefing por e-mail",
+    projectsCta: "Ver projetos",
+    fitTitle: "Projetos em que faço mais diferença",
+    fitDescription:
+      "Ideal quando você precisa de alguém que entenda tanto a regra de negócio quanto a implementação técnica.",
+    projectTypes: [
+      {
+        title: "Dashboards executivos e BI",
+        description: "KPIs, modelos de dados, storytelling e painéis para decisão operacional.",
+      },
+      {
+        title: "Automação de processos",
+        description:
+          "Rotinas com Python, integração de dados e redução de trabalho manual repetitivo.",
+      },
+      {
+        title: "Aplicações web e MVPs",
+        description:
+          "Interfaces modernas, APIs, protótipos funcionais e evolução para produto real.",
+      },
+      {
+        title: "Auditoria técnica e melhoria contínua",
+        description:
+          "Diagnóstico de código, performance, acessibilidade, dados e riscos de manutenção.",
+      },
+    ],
+    processTitle: "Como conduzo o trabalho",
+    process: [
+      {
+        title: "Alinhamento de impacto",
+        description:
+          "Definimos objetivo, usuários, restrições e métrica de sucesso antes de codar.",
+      },
+      {
+        title: "Plano técnico enxuto",
+        description: "Transformo o problema em backlog, arquitetura e entregáveis verificáveis.",
+      },
+      {
+        title: "Execução com validação",
+        description: "Entregas curtas, testes, revisão visual e ajustes baseados em feedback real.",
+      },
+      {
+        title: "Transferência e continuidade",
+        description: "Documentação, próximos passos e base organizada para manutenção ou escala.",
+      },
+    ],
+    differentiatorsTitle: "Por que me chamar",
+    differentiators: [
+      "Visão integrada de dados, backend, frontend e operação.",
+      "Comunicação direta com linguagem executiva e técnica.",
+      "Preocupação com SEO, acessibilidade, performance e qualidade de entrega.",
+      "Capacidade de transformar requisito solto em produto utilizável.",
+    ],
+    finalTitle: "Tem uma demanda real para tirar do papel?",
+    finalDescription:
+      "Me envie o contexto, prazo desejado e o resultado que você precisa alcançar. Eu respondo com um caminho objetivo para avançarmos.",
+  },
+  en: {
+    title: "Hire a professional who connects data, software, and operations",
+    metaDescription:
+      "Hire Matheus Siqueira for dashboards, automation, web applications, and data-driven solutions.",
+    eyebrow: "Hire",
+    lead: "I help teams move from technical improvisation to production-ready products, dashboards, and automations with clear scope and measurable outcomes.",
+    primaryCta: "Talk on WhatsApp",
+    secondaryCta: "Send an email brief",
+    projectsCta: "View projects",
+    fitTitle: "Where I create the most leverage",
+    fitDescription:
+      "Best fit when you need someone who understands both business rules and technical implementation.",
+    projectTypes: [
+      {
+        title: "Executive dashboards and BI",
+        description: "KPIs, data models, storytelling, and dashboards for operational decisions.",
+      },
+      {
+        title: "Process automation",
+        description: "Python routines, data integration, and reduction of repetitive manual work.",
+      },
+      {
+        title: "Web apps and MVPs",
+        description: "Modern interfaces, APIs, functional prototypes, and product evolution.",
+      },
+      {
+        title: "Technical audit and improvement",
+        description: "Code, performance, accessibility, data, and maintainability risk review.",
+      },
+    ],
+    processTitle: "How I run the engagement",
+    process: [
+      {
+        title: "Impact alignment",
+        description: "We define goals, users, constraints, and success metrics before coding.",
+      },
+      {
+        title: "Lean technical plan",
+        description: "I turn the problem into backlog, architecture, and verifiable deliverables.",
+      },
+      {
+        title: "Validated execution",
+        description: "Short delivery cycles, tests, visual review, and feedback-based adjustments.",
+      },
+      {
+        title: "Handoff and continuity",
+        description: "Documentation, next steps, and an organized base for maintenance or scale.",
+      },
+    ],
+    differentiatorsTitle: "Why bring me in",
+    differentiators: [
+      "Integrated view across data, backend, frontend, and operations.",
+      "Direct communication in both executive and technical language.",
+      "Attention to SEO, accessibility, performance, and delivery quality.",
+      "Ability to turn loose requirements into usable products.",
+    ],
+    finalTitle: "Have a real demand to ship?",
+    finalDescription:
+      "Send me the context, desired timeline, and outcome you need. I will reply with a practical path forward.",
+  },
+} as const;
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = await resolveLocale(params);
+  const copy = locale === "en" ? hireCopy.en : hireCopy["pt-BR"];
+
   return {
-    title: locale === "pt-BR" ? "Contrate-me" : "Hire Me",
-    description: locale === "pt-BR" ? "Contrate meus serviços" : "Hire my services",
+    title: locale === "en" ? "Hire Me" : "Contrate-me",
+    description: copy.metaDescription,
   };
 }
 
 export default async function HirePage({ params }: Props) {
   const locale = await resolveLocale(params);
-  const site = locale === "pt-BR" ? sitePt : siteEn;
-  const { services, engagement, contact } = site;
+  const copy = locale === "en" ? hireCopy.en : hireCopy["pt-BR"];
 
   return (
-    <main
-      className="layout-container page-shell"
-      style={{ paddingTop: "var(--section-y)", paddingBottom: "var(--section-y)" }}
-    >
-      {/* Services */}
-      <section className="mb-16">
-        <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] mb-2">
-          {services.eyebrow}
-        </p>
-        <h1 className="text-3xl md:text-4xl font-bold text-[color:var(--foreground)] mb-3">
-          {services.title}
-        </h1>
-        <p className="text-sm text-[color:var(--muted)] max-w-2xl mb-8">{services.description}</p>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {services.offerings.map((offering) => (
-            <article
-              key={offering.title}
-              className="p-6 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] transition-colors hover:border-[color:var(--accent-soft)]"
-            >
-              <h3 className="text-base font-semibold text-[color:var(--foreground)] mb-2">
-                {offering.title}
-              </h3>
-              <p className="text-sm text-[color:var(--muted)] mb-4">{offering.description}</p>
-              <ul className="space-y-1">
-                {offering.bullets.map((b) => (
-                  <li key={b} className="text-xs text-[color:var(--muted)] flex gap-2">
-                    <span className="text-[color:var(--accent-soft)] shrink-0">▸</span>
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="mb-16">
-        <h2 className="text-xl font-semibold text-[color:var(--foreground)] mb-6 border-b border-[color:var(--border)] pb-2">
-          {services.processTitle}
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          {services.process.map((step, i) => (
-            <div key={step.title} className="flex items-start gap-3">
-              <span className="text-2xl font-bold text-[color:var(--accent-soft)] leading-none shrink-0">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <div>
-                <h3 className="text-sm font-semibold text-[color:var(--foreground)] mb-1">
-                  {step.title}
-                </h3>
-                <p className="text-xs text-[color:var(--muted)]">{step.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Engagement */}
-      <section className="mb-16">
-        <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] mb-2">
-          {engagement.eyebrow}
-        </p>
-        <h2 className="text-2xl font-bold text-[color:var(--foreground)] mb-3">
-          {engagement.title}
-        </h2>
-        <p className="text-sm text-[color:var(--muted)] max-w-2xl mb-6">{engagement.description}</p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {engagement.cards.map((card) => (
-            <article
-              key={card.label}
-              className="p-5 rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)]"
-            >
-              <p className="text-xs uppercase tracking-wider text-[color:var(--muted)] mb-1">
-                {card.label}
-              </p>
-              <p className="text-base font-semibold text-[color:var(--foreground)] mb-1">
-                {card.value}
-              </p>
-              <p className="text-xs text-[color:var(--muted)]">{card.detail}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* Contact CTA */}
-      <section className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface-muted)] p-8 text-center">
-        <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)] mb-2">
-          {contact.eyebrow}
-        </p>
-        <h2 className="text-2xl font-bold text-[color:var(--foreground)] mb-3">{contact.title}</h2>
-        <p className="text-sm text-[color:var(--muted)] max-w-xl mx-auto mb-6">
-          {contact.description}
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-3">
-          <a
-            href="mailto:matheussiqueirahub@gmail.com"
-            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-xl border border-[color:var(--border)] text-[color:var(--foreground)] bg-[color:var(--surface)] hover:bg-[color:var(--surface-strong)] transition-colors"
-          >
-            {contact.cards.email}
-          </a>
+    <main className="layout-container page-shell hire-page">
+      <section className="hire-hero" data-reveal aria-labelledby="hire-title">
+        <p className="eyebrow">{copy.eyebrow}</p>
+        <h1 id="hire-title">{copy.title}</h1>
+        <p>{copy.lead}</p>
+        <div className="hire-hero__actions">
           <a
             href="https://wa.me/5581999203683"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-xl border border-[color:var(--border)] text-[color:var(--foreground)] bg-[color:var(--surface)] hover:bg-[color:var(--surface-strong)] transition-colors"
+            className="btn-primary"
           >
-            {contact.cards.whatsapp}
+            {copy.primaryCta}
           </a>
+          <a href="mailto:matheussiqueirahub@gmail.com" className="btn-outline">
+            {copy.secondaryCta}
+          </a>
+          <Link href="/projects" className="btn-ghost">
+            {copy.projectsCta}
+          </Link>
+        </div>
+      </section>
+
+      <section className="hire-section" data-reveal aria-labelledby="hire-fit-title">
+        <div className="section-heading stack-heading">
+          <div className="section-heading__text">
+            <p className="eyebrow">Fit</p>
+            <h2 id="hire-fit-title" className="section-title">
+              {copy.fitTitle}
+            </h2>
+          </div>
+          <p className="section-description">{copy.fitDescription}</p>
+        </div>
+
+        <div className="hire-type-grid">
+          {copy.projectTypes.map((type, index) => (
+            <article
+              key={type.title}
+              className="hire-type"
+              data-reveal
+              style={{ "--reveal-delay": `${index * 70}ms` } as CSSProperties}
+            >
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{type.title}</h3>
+              <p>{type.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="hire-section hire-flow" data-reveal aria-labelledby="hire-process-title">
+        <p className="eyebrow">Processo</p>
+        <h2 id="hire-process-title" className="section-title">
+          {copy.processTitle}
+        </h2>
+        <div className="hire-flow__steps">
+          {copy.process.map((step, index) => (
+            <article key={step.title} className="hire-step">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section
+        className="hire-section hire-differentials"
+        data-reveal
+        aria-labelledby="hire-diff-title"
+      >
+        <div>
+          <p className="eyebrow">Diferenciais</p>
+          <h2 id="hire-diff-title" className="section-title">
+            {copy.differentiatorsTitle}
+          </h2>
+        </div>
+        <ul>
+          {copy.differentiators.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="hire-final" data-reveal aria-labelledby="hire-final-title">
+        <p className="eyebrow">{locale === "en" ? "Next step" : "Próximo passo"}</p>
+        <h2 id="hire-final-title">{copy.finalTitle}</h2>
+        <p>{copy.finalDescription}</p>
+        <div className="hire-hero__actions">
           <a
-            href="https://br.linkedin.com/in/matheussiqueira-dev/"
+            href="https://wa.me/5581999203683"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-xl border border-[color:var(--border)] text-[color:var(--foreground)] bg-[color:var(--surface)] hover:bg-[color:var(--surface-strong)] transition-colors"
+            className="btn-primary"
           >
-            {contact.cards.linkedin}
+            {copy.primaryCta}
           </a>
-          <a
-            href="https://github.com/matheussiqueira-dev"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-xl border border-[color:var(--border)] text-[color:var(--foreground)] bg-[color:var(--surface)] hover:bg-[color:var(--surface-strong)] transition-colors"
-          >
-            {contact.cards.github}
+          <a href="mailto:matheussiqueirahub@gmail.com" className="btn-outline">
+            {copy.secondaryCta}
           </a>
         </div>
       </section>

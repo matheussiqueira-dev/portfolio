@@ -3,6 +3,7 @@
 import { useMemo, useState, type CSSProperties } from "react";
 
 import type { ProjectCard as ProjectCardType } from "@/data/projects-card.types";
+import { StackIcon } from "@/ui/components/StackIcon";
 
 import ProjectCard from "./ProjectCard";
 import styles from "./ProjectList.module.css";
@@ -104,7 +105,10 @@ export default function ProjectList({ projects, locale, allLabel }: Props) {
             data-active={selectedStack === null}
             type="button"
           >
-            {allLabel ?? t.allProjects}
+            <span className={styles.filterAllMark} aria-hidden="true">
+              *
+            </span>
+            <span>{allLabel ?? t.allProjects}</span>
           </button>
 
           {allStacks.map((stack, stackIndex) => (
@@ -117,7 +121,7 @@ export default function ProjectList({ projects, locale, allLabel }: Props) {
               data-active={selectedStack === stack}
               type="button"
             >
-              {stack}
+              <StackIcon name={stack} size="sm" showLabel />
             </button>
           ))}
         </div>

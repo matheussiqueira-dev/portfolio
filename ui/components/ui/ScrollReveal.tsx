@@ -1,29 +1,34 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const prefersReducedMotion = () =>
   window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
 
 export default function ScrollReveal() {
+  const pathname = usePathname();
+
   useEffect(() => {
     document.documentElement.classList.add("reveal-ready");
-    const elements = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
-    if (elements.length === 0) {
-      return;
-    }
+    const seenElements = new WeakSet<HTMLElement>();
+    let revealObserver: IntersectionObserver | null = null;
+    let mutationObserver: MutationObserver | null = null;
+    let frameId = 0;
 
     if (prefersReducedMotion()) {
-      elements.forEach((element) => element.classList.add("is-visible"));
-      return;
+      document
+        .querySelectorAll<HTMLElement>("[data-reveal]")
+        .forEach((element) => element.classList.add("is-visible"));
+      return undefined;
     }
 
-    const observer = new IntersectionObserver(
+    revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
+            revealObserver?.unobserve(entry.target);
           }
         });
       },
@@ -33,10 +38,48 @@ export default function ScrollReveal() {
       }
     );
 
-    elements.forEach((element) => observer.observe(element));
+    const observeElement = (element: HTMLElement) => {
+      if (seenElements.has(element) || element.classList.contains("is-visible")) {
+        return;
+      }
 
-    return () => observer.disconnect();
-  }, []);
+      seenElements.add(element);
+      revealObserver?.observe(element);
+    };
+
+    const observeTree = (root: ParentNode = document) => {
+      if (root instanceof HTMLElement && root.matches("[data-reveal]")) {
+        observeElement(root);
+      }
+
+      root.querySelectorAll?.<HTMLElement>("[data-reveal]").forEach(observeElement);
+    };
+
+    frameId = window.requestAnimationFrame(() => observeTree());
+
+    mutationObserver = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (node instanceof HTMLElement) {
+            observeTree(node);
+          }
+        });
+      });
+    });
+
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    return () => {
+      if (frameId) {
+        window.cancelAnimationFrame(frameId);
+      }
+      mutationObserver?.disconnect();
+      revealObserver?.disconnect();
+    };
+  }, [pathname]);
 
   return null;
 }

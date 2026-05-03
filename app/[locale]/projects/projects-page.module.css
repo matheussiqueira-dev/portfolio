@@ -1,23 +1,26 @@
 .header {
   margin-bottom: var(--space-3xl);
   display: grid;
-  justify-items: center;
+  justify-items: start;
   gap: var(--space-lg);
-  text-align: center;
+  text-align: left;
+  border-bottom: 1px solid color-mix(in srgb, var(--border-subtle) 76%, transparent);
+  padding-bottom: clamp(1.25rem, 4vw, 2rem);
 }
 
 .title {
   margin: 0;
-  font-size: clamp(2rem, 5vw, 3.25rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  max-width: 9ch;
+  font-size: clamp(3rem, 8vw, 5.8rem);
+  font-weight: 780;
+  line-height: 0.92;
+  letter-spacing: 0;
   color: var(--text-primary);
 }
 
 .description {
   margin: 0;
-  max-width: 62ch;
+  max-width: 58ch;
   font-size: clamp(1rem, 2.2vw, 1.15rem);
   line-height: 1.7;
   color: var(--text-secondary);
